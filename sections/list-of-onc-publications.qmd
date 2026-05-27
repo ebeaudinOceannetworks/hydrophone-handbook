@@ -1,0 +1,14 @@
+---
+title: List of ONC publications
+---
+
+* https://ieeexplore.ieee.org/document/10754545/authors#authors
+* https://www.sciencedirect.com/science/article/pii/S0003682X19301616
+* https://pubs.aip.org/asa/jasa/article/141/5_Supplement/3863/713799/Passive-acoustic-localization-of-fish-using-a
+* https://pubs.aip.org/asa/jel/article/4/1/016001/2932985/Performance-of-three-hydrophone-flow-shields-in-a
+* https://ieeexplore.ieee.org/document/10754545
+* https://pubs.aip.org/asa/jasa/article/134/5_Supplement/3973/708860/Remote-performance-assessment-of-cabled
+* https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9976955&tag=1
+
+
+Scientific Output: https://internal.oceannetworks.ca/spaces/OS/pages/249300119/Scientific+Output

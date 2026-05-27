@@ -1,0 +1,296 @@
+---
+title: Data Products
+---
+
+::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
+## Improvements for this page
+* add figures
+* verify equations
+:::
+
+# Overview
+
+Hydrophone data is archived several formats, ranging from raw acoustic recordings to processed spectral products.
+
+Each device has a collection of files for every 5 minutes of recording:
+
+| Description |  Data Product Code | Data Product ID | File Extension |
+|---------|-----|---|---|
+Raw Audio Data (lossless) |  AD | 7 | .flac
+Raw Audio Data (lossless)| AD | 7 | .wav 
+Raw Audio Data (with loss) | AD | 7 | .mp3
+Raw Audio Data (IOS arrays only) | AD | 38 | .hyd (*retired*)
+Proprietary Spectral Data (Ocean Sonics only) | HSD  | 45 | .fft
+Processed Spectral Data  | HSD | 45 | .mat
+Spectrogram | HSD | 45 | .png
+Spectral Probability Density | HSPD | 51 | .png
+
+: Archived formats for hydrophone data.
+
+\
+
+Note that both **Data Product Code** and **File Extension** are needed when downloading data through the API.
+Each data product (dataProductCode) has a set of data product options (dpo) that can be use to narrow down the request.
+
+::: {.callout-note}
+## API Request Example
+
+<pre style="font-family: 'Courier New', Courier, monospace; background: transparent; border: none; color: inherit;">
+params = {
+    'dateFrom': '2026-04-14T10:00:00.000Z',
+    'dateTo': '2026-04-14T11:00:00.000Z',
+    'deviceCode': 'ICLISTENHF6016', # Clayoquot Slope Hydrophone A
+    'dataProductCode': 'HSD',        # Hydrophone Spectral Data
+    'extension': 'mat',             # MATLAB file extension
+    'dpo_resample': 'none',         # 'none' for full resolution
+}
+request = onc.orderDataProduct(params)
+</pre>
+
+:::
+
+
+# Audio Data (AD)
+
+Formats: .flac/.wav/.mp3
+
+Available API data product options:
+
+* dpo_audioDownsample: "16000", "8000", "256", "-1", "44100", "4000", "512", "2000", "48000"
+* dpo_audioFormatConversion: "0", "1"
+* dpo_audioFormatConversion: "1"
+* dpo_hydrophoneAcquisitionMode: "All", "LF", "HF"
+* dpo_hydrophoneChannel: "All", "H1", "H2", "H3"
+* dpo_hydrophoneDataDiversionMode: "All", "LPF", "OD", "HPF"
+
+The audio data is what is being recorded from the acoustic environment, it is the raw data.
+Older data was stored in .wav format, but ONC has now fully transitioned to FLAC (Free Lossless Audio Codec), which allow for metadata to also be stored within the file.
+It is possible to request the data in mp3 format, which has a much smaller file size, although not recommended for scientific research since it is a compressed format with several frequencies being lost.
+
+Here a few advantages of the FLAC format:
+
+* **Lossless Compression**: Unlike MP3s, FLAC retains 100% of the original information.
+* **Storage Efficiency**: FLAC files are significantly smaller than .wav files and maintain the same quality.
+* **Metadata Support**: FLAC files support metadata tagging for deployment and device information.
+
+# Hydrophone Spectral Data (HSD)
+
+Available extensions: .fft/.mat
+
+Available API data product options:
+
+* dpo_hydrophoneAcquisitionMode: "All", "LF", "HF"
+* dpo_hydrophoneChannel: "All", "H1", "H2", "H3"
+* dpo_hydrophoneDataDiversionMode: "All", "LPF", "OD", "HPF"
+* dpo_lowerColourLimit: range from -160 to 140
+* dpo_upperColourLimit: range from -160 to 140
+* dpo_spectrogramColourPalette: "0", "1", "2", "3", "4", "5"
+* dpo_spectrogramConcatenation: "Adjacent", "Daily", "Weekly", "None"
+* dpo_spectrogramFrequencyUpperLimit: range from 100 to 500000
+* dpo_spectrogramSource: "WAVFLAC", "FFT", "MIX"
+
+
+Spectral products are advantageous for research of monitoring, because they allow for analyzing data without having to process terabytes of raw audio.
+
+## Proprietary Spectral Data (.fft)
+
+The Fast Fourier Transform files (.fft) are broadband spectrogram, and somewhat a raw version of the actual spectrogram.
+They are unique to Ocean Sonics hydrophones.
+
+Technical warning: the .fft files are usually considered "preliminary" and not suitable for scientific research, because a single broadband sensitivity value (around -165 to -170 dB) was used rather than a ferquency-dependent calibration curve.
+They are best used for a "quick-look" to verify the hydrophone is functional.
+
+Ocean Sonics has they in-house software *Lucy* to read the files, but it is also possible to read them with in python or MATLAB.
+
+## Processed Spectral Data (.mat)
+
+The MATLAB files contain the true scientific data where the **frequency-dependent sensitivity curve** has been applied.
+
+* **Calibration**: Unlike .fft files, .mat spectral products are corrected using the specific hydrophone's calibration data.
+* **Structure**: The data contain a SpectData MATLAB structure with frequency bins (Hz) and power spectral density.
+
+## Spectrogram (.png)
+
+A spectrogram is a 2D *heat map* of sound, visualizing how the **Power Spectral Density** of an acoustic signal evolves over time.
+
+* X-axis: Time
+* Y-axis: Frequency (Hz)
+* Color/intensity: Sound Level expressed in $\text{dB}~\text{re}~1~\mu Pa^2 / Hz$.
+
+Here is how a spectrogram is generated:
+
+To transform raw audio into a visual spectrogram, the data undergoes several steps:
+
+1. **Time Windowing**: Raw audio is divided into short, finite segments using a time window (e.g., Hann Window), to prevent spectral leakage.
+2. **FFT Calculation**: A Fast Fourier Transform (FFT) is applied to each segment, converting the signal from the *time domain* to the *frequency domain*.
+3. **Averaging**: Successive windows are overlapped (typically by 50%) to ensure a smooth transition and prevent data loss at the window edges.
+4. **Calibration**: The values are converted to physical units ($\mu$ Pa) by applying the device-specific frequency-dependent **calibration curve** (this step is critical!).
+
+[!IMPORTANT]
+There has been some issues in the past from using the wrong calibration curve: https://internal.oceannetworks.ca/spaces/ONCData/pages/255101693/1.+Power+spectral+density+vs.+power+spectrum.)
+
+**Why use Windows?**
+
+Fourier transforms assume a signal in *infinite*.
+By analyzing finite segments, at the edges of each segment there is a discontinuity that causes **spectral leakage**, where a signal energy *leaks* into neighboring frequency bins.
+**Windowing** (or *tapering*) solves this by multiplying the data segment by a specific mathematical shape (see examples below) that smooths the edges to zero.
+Mathematically, this is what is called a **convolution**.
+The Fourier transform of the convolution is the product of the individual Fourier transforms of the signal and the window.
+
+**The Stationary Assumption**
+
+Fourier transforms assume a signal is and *stationary*.
+The Heisenberg Uncertainty Principe dictates that you cannot have perfect resolution in both time and frequency simultaneously.
+
+* **Narrow window**: excellent **time resolution** (you see exactly when a whale click happened), but poor frequency resolution (the pitch is blurry).
+* **Wide window**: excellent **frequency resolution** (you see the exact harmonics of a whale call), but poor time resolution (start and end times are blurry).
+
+
+Time windowing:
+*Windowing* is used to reduce spectral leakage when analyzing signals with a fourier transform.
+Multiplying a spectral segment by a window smooths the segment edges and recues discontinuities that cause leakage.
+Effectivemely, a segment is created by multiplying the data by a window of finitie length and a specific shape. This is called a *convolution*.
+The window that multiplies the function is called the window function (or sometimes tapering function).
+The Fourier transform of the convolution is the product of th eindividual Fourier transforms.
+There's an implicit assumption that the signal frequency is invariant within the window, since it can only characterize stationay signals.
+Therefore, the signal is decomposed into finite segments (each segment is assumed *stationary*), and for each time window the Fourier transform is applied.
+If one slides the time-filtering window, then the signal is assumed to be decomposed with both information in frequency and time.
+Narrow window leads to goop time resolution, wide window leads to good frequency resolution.
+Can't have both: Heisenberg Unertainty Principle.
+A drawback is that any signal with a wavelength longer than the window width is completely lost.
+In contrast, longer windows retain more frequency components, but at the expense of losing the time resolution of the signal.
+
+I found a similar past issue here: DSO-598
+
+Examples of windows: 
+
+In this example, the information of the spectrogram is as follows:
+
+* Hann window with 50% overlap at ONC
+* 128000 samples per FFT window
+* Temporal resolution: 0.05 s
+* Spectral resolution: 10 Hz
+
+# Hydrophone Spectral Probability Density (HSPD)
+
+Format: .png
+
+Available API Data Product Options:
+
+* dpo_filePlotBreaks: Full Range: "0", Hourly: "1", Daily: "2", Weekly: "3", Monthly: "4", Yearly: "5"
+* dpo_hydrophoneAcquisitionMode: "All", "LF", "HF"
+* dpo_hydrophoneChannel: 'All', "H1", "H2", "H3"
+* dpo_hydrophoneDataDiversionMode: "All", "LPF", "OD", "HPF"
+* dpo_spectralProbabilityDensityColourAxisUpperLimit:"0", "0.1", "1.0", "0.05", "0.25", "0.5", "0.12"
+* dpo_spectralProbabilityDensityPSDRange: "0", "40_160", "40_140", "20_140"
+
+This data product is a sophisticated statistical tool used for long-term ambient noise analysis.
+It was originally proposed by [Merchant et al., (2013)](https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient).
+It calculates how frequently a specific dB level occurs at each frequency bin.
+The result is a heatmap showing the persistent ambiant noise floor
+
+Derivation:
+
+The mean square value in frequency range $(f, \Delta f)$ is:
+
+$$
+\Psi^2_x(f,\Delta f) = \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt
+$$
+
+The power spectral density is approximately $\Psi^2_x(f,\Delta f) \approx G_x(f) \Delta f$.
+
+$$
+G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \lim_{\Delta f\rightarrow 0} \frac{1}{\Delta f} \left[ \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt \right]
+$$
+
+# Metadata & Log Files
+
+## Oceans3.0: Hydrophone Auxiliary Data
+Ocean Sonics devices provide a .txt file with *auxiliary* data, which are all the data related to the instrument itself, not the passive acoustics.
+For example, information about internal humidity, temperature, battery charge, etc., are contained within this product.
+Although the auxiliary data does not give any information regarding the ocean soudscape, it can be useful to diagnose potential issues, such as water leakage within the hydrophone (>50% humidity), overheating, or dead sensor (dead battery).
+There are many more variables like magnetic flux and acceleration which can be used to determine the hydrophone direction and strong currents.
+
+More information here: [insert link].
+
+# Future Data Products
+
+Visit the Passive Acoustics Data Products confluence page to find out ideas for future development of data products at ONC, and even add your own!
+https://internal.oceannetworks.ca/spaces/ONCData/pages/216205790/Passive+acoustics
+
+Read this for Spectral probability density as a tool for ambient noise analysis : https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient
+
+# Useful links
+
+```{=html}
+<div style="border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 8px; 
+            padding: 16px; 
+            background: rgba(255, 255, 255, 0.05); 
+            margin-top: 15px;
+            backdrop-filter: blur(5px);
+            color: white;">
+
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="../images/confluence_logo_no_bckg.png" width="24" style="object-fit: contain;">
+    <span style="font-weight: bold; font-size: 1.1em; letter-spacing: 0.3px;">
+      Confluence Documentation
+    </span>
+  </div>
+
+  <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
+    
+
+	<li style="margin-bottom: 10px;">
+      <a href="https://internal.oceannetworks.ca/spaces/DS/pages/7639165/Hydrophone+Matlab+Postprocess+Jobs" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+         Hydrophone MATLAB Post-process Jobs
+      </a>
+    </li>
+    
+    <li style="margin-bottom: 10px;">
+      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758104/7" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+         Data Product: Audio Data (7)
+      </a>
+	</li>
+
+	<li style="margin-bottom: 10px;">
+      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+         Data Product: Hydrophone Spectral Probability Density (51)
+      </a>
+    </li>
+
+	<li style="margin-bottom: 10px;">
+      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+         Data Product: Spectrogram For Hydrophone Viewer (146)
+      </a>
+    </li>
+
+    <li style="margin-bottom: 10px;">
+      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+         Data Product: Hydrophone Acceleration Data (128)
+      </a>
+    </li>
+
+    <li style="margin-bottom: 10px;">
+      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+         Data Product: Hydrophone Spectral Data (45)
+      </a>
+    </li>
+
+    <li style="margin-bottom: 10px;">
+      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758026/4" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+         Data Product: Log File (4)
+      </a>
+    </li>
+
+  </ul>
+</div>
+```
+

@@ -1,0 +1,110 @@
+---
+title: Glossary
+---
+
+
+## Table of quantities and units
+[insert table here]
+
+## Definition of acousitc metrics and terms
+
+### Absorption
+Reduction of acoustic pressure amplitude due to acoustic particle motion energy converting to heat in the propagation medium.
+
+### Ambiant sound/noise
+Sound that would be present in the absence of a specified activity. It is location-specific and time-specific.
+def 2: all-encompassing sound at a given place, usually a composite of sound from many sources near and far (e.g. shipping vessels, seismic activity, precipitation, sea ice, wave, biological activity).
+
+### Attenuation
+Gradual loss of acoustic energy from absorption and scattering as sound propagates through a medium.
+
+### Background noise
+All sound recorded by the hydrophone in the absence of the pile driving signal for a specified pile driving acoustic signal beaing measured.
+### Propagation loss
+
+### Cetacean
+Any anumal in the order Cetacea. These are aquatic, mostly maine mammals and include whales, dolphins, and porpoises.
+
+### Compressional wave
+A mechanical vibration wave in which the direction of particle motion is parallel to the direction of the propagation. Also called primary wave, or P-wave.
+
+### Decibel (dB)
+Relative unit of measurement equal to one-tenth of a bel, measuring the level when the base of the logarithm is the tenth root of ten, and the quantities concerned are proportional to power.
+
+### Ensonified
+Exposed to sound.
+
+### Fast Fourier Transform (FFT)
+A computationally efficiently algorithm for computing the Discrete Fourier Transform (DFT).
+A DFT requires $O(n^2)$ computations, while an FFT requires $O(n log n)$.
+A Fourier transform converts a signal from its original domain (time/space) to a representation in the frequency domain.
+
+### Frequency
+The rate of oscillation of a periodic function measured in cycles-per-unit-time. Symbol: $f$. Unit: Hertz (Hz), is equal to 1 cycle per second.
+
+### Power Spectrum Density
+The acoustic signal power per unit frequency as measured at a single frequency. Unit: $\micro Pa^2\cdot s$
+
+### Pressure
+Unit: Pa
+
+* acoustic: deviation from the ambient hydrostatic pressure caused by a sound wave.
+* hydrostatic: pressure at any given depth in a static liquid that is the result of the weight of the liquid acting on a unit area at that depth, plus any pressure acting on the surface of the liquid.
+
+### Reverberation
+Sound resulting from cumulative scattering of sound by an aggregation, or ensemble, of scatterers.
+
+### Root-mean-square sound pressure level (SPL) $L_{p,rms}$
+The Root Mean Square (RMS) of the sound pressure taken over a time interval $\Delta t = t_2-t_1$ [s].
+Starting from the Mean Square average sound pressure $p_{ms}$, [Pa$^2] the RMS pressure $p_{rms}$ [Pa] is:
+
+$$
+p_{ms} = \bar p^2 = \frac{1}{\Delta t} \int_{t_1}^{t_2} p^2 (t) dt
+$$
+
+... there is more...
+
+### Soundscape
+Underwater acoustics characterization of the *ambient sound* in terms of its spatial, temporal and frequency attributes, and the types of sources contributing to the sound field.
+### Pulse duration
+The pulse duration is the percentage energy signal duration over the acoustic pulse, defined in ISO 18406, assuming an energy percentage for the pulse duration of 90%.
+
+### Sound pressure ($p$)
+Contribution to total pressure caused by the action of sound.
+Sound pressure is a function of time: $p=p(t)$, and expressed in pascals (Pa).
+
+### Sound pressure spectrum ($P$)
+Fourier transform of the sound pressure.
+Sound pressure spectrum is a function of frequency: $P=P(f)$, and expressed in pascals per hertz (Pa Hz-1).
+The formula form is:
+
+$$
+P(f) = \int_\infty^\infty exp\left(-2\pi i f t \right) p(t) dt
+$$
+
+### Sound Exposure Level (SEL)
+
+### Source level (SL$_E$)
+
+### Sound speed profile
+Speed of sound in the water column as a function of depth below the water surface.
+
+### Spectrogram
+A visual representation of acoustic amplitude compared with time and frequency.
+
+### Transmission loss
+
+### Wavelength
+Distance over which a wave completes one scillation cycle. Unit: meter (m). Symbol: $\lambda$.
+
+## Acronyms
+
+IPP: Information Point Person
+
+
+## References
+
+* PNNL report.
+* ISO 18405 - Underwater acoustics. Link: https://cdn.standards.iteh.ai/samples/62406/d4e330b42f944401bf8522761712519b/ISO-18405-2017.pdf
+* 2017 JASCO report: Underwater Sound Propagation Assessment report: Nexen Energy ULC Flemish Pass Exploration Drilling Project
+
