@@ -1,0 +1,85 @@
+BACAX,Barkley Canyon Axis
+BACND,Barkley Node
+BACNH.H1,Barkley Node Hydrophone A
+BACNH.H2,Barkley Node Hydrophone B
+BACNH.H3,Barkley Node Hydrophone C
+BACNH.H4,Barkley Node Hydrophone D
+BACUS,Barkley Upper Slope
+BACUS.H1,Barkley Upper Slope Hydrophone A
+BACUS.H2,Barkley Upper Slope Hydrophone B
+BACVP,Barkley Upper Slope Vertical Profiler
+BIIP,Burrard Inlet
+CBCH.H1,Cascadia Basin Hydrophone A
+CBCH.H2,Cascadia Basin Hydrophone B
+CBCH.H3,Cascadia Basin Hydrophone C
+CBCH.H4,Cascadia Basin Hydrophone D
+CBYIP,Cambridge Bay
+CCIP,China Creek
+CQS64.H1,Clayoquot Slope 64 Hydrophone A
+CQS64.H2,Clayoquot Slope 64 Hydrophone B
+CQSH.H1,Clayoquot Slope Hydrophone A
+CQSH.H2,Clayoquot Slope Hydrophone B
+CQSH.H3,Clayoquot Slope Hydrophone C
+CQSH.H4,Clayoquot Slope Hydrophone D
+CRIP,Campbell River
+DIIP,Digby Island
+ECHO1.H1
+ECHO1.H2
+ECHO1.H3
+ECHO1.H4
+ECHO2.H1
+ECHO2.H2
+ECHO2.H3
+ECHO2.H4
+ECHO3.H1,Strait of Georgia East Hydrophone A
+ECHO3.H2,Strait of Georgia East Hydrophone B
+ECHO3.H3,Strait of Georgia East Hydrophone C
+ECHO3.H4,Strait of Georgia East Hydrophone D
+FAE,Fish Acoustics Experiment
+FGPD,Folger Deep
+FGPD.H1,Folger Deep Hydrophone A
+FGPD.H2,Folger Deep Hydrophone B
+FGPD.H3,Folger Deep Hydrophone C
+FGPD.H4,Folger Deep Hydrophone D
+HAK1A
+HBIP,Hartley Bay
+HEC1B.H1
+HRBIP,Holyrood
+JBTCT,Yuquot
+KEMF,Main Endeavour Field
+KEMFH.H1,Main Endeavour Field Hydrophone A
+KEMFH.H2,Main Endeavour Field Hydrophone B
+KEMFH.H3,Main Endeavour Field Hydrophone C
+KEMFH.H4,Main Endeavour Field Hydrophone D
+KEMO,Mothra
+KVIP,Kitamaat Village
+LSBBL
+LSHA.H1
+LSHA.H2
+LSHA.H3
+LSHA.H4
+LSHA.H5
+NC27.H1
+NC27.H2
+NC27.H3
+NC27.H4
+NC89.H1
+NC89.H2
+NCBC
+PHYD
+PSGCH.H1,Strait of Georgia Central Hydrophone A
+PSGCH.H3,Strait of Georgia Central Hydrophone C
+PVIP,Saanich Inlet
+PVIPH.H1,Saanich Inlet Hydrophone A
+PVIPH.H3,Saanich Inlet Hydrophone B
+SCVIP,VENUS Strait of Georgia
+SEDDL
+SEHA.H5
+SEHDW,Simon Fraser University Forensics
+SEVIP,Strait of Georgia East
+SGC.H1
+SGC.H2
+SGE.H1
+SGE.H2
+USDDL
+USSLP
