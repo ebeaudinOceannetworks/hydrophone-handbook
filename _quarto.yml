@@ -64,22 +64,22 @@ format:
     sticky-sidebar: true
     page-layout: article
     self-contained: false
-  pdf:
-    pdf-engine: xelatex
-    toc: true
-    toc-depth: 3
-    number-sections: true
-    classoption: [11pt]
-    include-in-header:
-      text: |
-        \usepackage{enumitem}
-        
-        \renewlist{itemize}{itemize}{20}
-        \setlist[itemize]{label=\textbullet}
-        \let\oldtoc\tableofcontents
-        \renewcommand{\tableofcontents}{\oldtoc\newpage} # Forces content to start on a fresh page
-    geometry:
-      - top=20mm
-      - left=20mm
-      - right=20mm
-      - bottom=20mm
+  #pdf:
+  #  pdf-engine: xelatex
+  #  toc: true
+  #  toc-depth: 3
+  #  number-sections: true
+  #  classoption: [11pt]
+  #  include-in-header:
+  #    text: |
+  #      \usepackage{enumitem}
+  #      
+  #      \renewlist{itemize}{itemize}{20}
+  #      \setlist[itemize]{label=\textbullet}
+  #      \let\oldtoc\tableofcontents
+  #      \renewcommand{\tableofcontents}{\oldtoc\newpage} # Forces content to start on a fresh page
+  #  geometry:
+  #    - top=20mm
+  #    - left=20mm
+  #    - right=20mm
+  #    - bottom=20mm
