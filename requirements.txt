@@ -1,0 +1,8 @@
+pandas
+matplotlib
+warnings
+geopandas
+pyogrio
+jupyter
+onc
+python-dotenv
