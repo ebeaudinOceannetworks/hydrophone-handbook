@@ -14,7 +14,7 @@ ONC commits to share and preserve data long-term.
 [INSERT DIAGRAM OF LIFE CYCLE/DATA FLOW]
 
 
-# 1. Planning
+# 1. Planning and Governance
 
 *Teams involved: Science, DAQ, DSO, Engineers*
 
@@ -22,85 +22,80 @@ Before a hydrophone is deployed in the water, the following legal and technical 
 
 * **Data Agreements**: ONC establishes legal agreements to define data ownership, usage restrictions, and attribution.
 * **Stewardship**: Data Stewards (DSO) apply standardized metadata and attributions to ensure the sensor is *discoverable*.
-* **Product Definition**: We identify what data products (e.g., spectrograms, MAT files) the community needs.
+* **Product Definition**: We identify new data products the community might need.
 
 
-* The need for new or updated data products is identified here.
+# 2. Data Collection & Signal Chain
 
+*Teams involved: DAQ, DSO, Systems, Marine Ops, Engineers*
 
-data ownership?
+* **Hardware**: We primarily use **Ocean Sonics** (HF/AF) and **GeoSpectrum** (from JASCO distributor) instruments, deployed as single units or four-element arrays.
+* **Calibration (HydroCal)**: Instruments undergo rigorous pre-deployment and post-recovery calibration to ensure accuracy. If sensors drift, they are returned to the manufacturer.
+* **Data Diversion**: Hydrophones are "Tier 1" instruments, meaning that the data streams are subject to diversion by the Royal Canadian Navy and US Navy before reaching the ONC archive.
+* **Data Transmission**:
+	* Acoustic Data: Transferred as raw audio (.wav or .flac).
+	* Ancillary Data: Instrument "health" (temperature, humidity, clock drift) is transmitted without diversion to minitor device's status (only for Ocean Sonics). Also referred to as auxiliary data. 
+* **Data Processing**: Performed to generate Spectral Data (HSD) in MAT format, and Spectral Density Plots (HSDP) the raw audio files, and archived.
+* **Data Availability**: Data is made readily available (within a few minutes) to end-users through Oceans 3.0.
 
-
-
-# Data Collection
-
-*Main teams involved: DAQ, DSO, Engineers*
-
-* single hydrophone or hydrophone array tests calibrations (HydroCal)
-* post-recovery calibrations is also performed and compared to pre-deplopyment values. if inconsistencies, device may be returned to manufacturer.
-* hydrophones are categorized as Tier 1 instruments: instruments that are of concern to the Royal Canadian Navy (RCN) and US Navy (USN). Therefore, data stream may be subject to data diversion before sent to ONC. 
-* main manufacturers: GeoSpectrum Technologies and Ocean Sonics, deployed as single element or four element hydrophone arrays.
-* icHF (HF=High Frequency) deployed with sample rates of 60k, 128k or 256k S/s.
-* icAF deployed at 32k S/s.
-* communication and power supply tests are performed
-* once a hydrophone is deployed, raw acoustic data is transferred directly (or after diversion) to ONC archive file servers (the servers are a UVic).
-* Ancillary (also auxiliiary) data are transmitted, without diversion. this data is *instrument health*, including tempreature, internal humidity, battery, internal clock drift.
-* data processing is performed to generate Spectral Data (HSD) in MAT format, and Spectral Density Plots (HSDP) from .wav or .flac files which are archived.
-* data becomes readily available to end-users thorugh Oceans 3.0.
-
-signal chain, driver
-
-# Data Quality Assurance
-
-*Main teams involved: DAQ, Science, Systems*
-
-* At this time, there is no QAQC procedures for hydrophone data, because it is considered **complex data** (per QuartoD manual).
-* manual (visual) Quality Assurance is done periodically (ideally daily) to identify clipping, masking, interference, energy spikes, but the data is not modified.
-* annotations in Oceans 3.0 can be made for anything unsual seen in the data
-* data gaps occur often, due to either instrument failure, connectivity issues, communication down, network maintenance, data diversion. it is up to the hydrophone team to identify the root cause and annnotate data gaps.
-
-# Commissioning
+# 3. Commissioning
 
 *Teams involved: DAQ, DSO*
 
-# Metadata
+Once a hydrophone is deployed and recording data, the commissioning of the device starts.
+This process is designed to catch technical issues early and ensures the data is "science-ready".
 
-*Main teams involved: DSO, DAQ*
+* **Immediate Post-Deployment**: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming. A JIRA ticket is created which consolidates all relevant information.
+* **1-2 Months Post-Deployment**: A detailed analysis of data stream is performed, and several elements are analyzed including the presence of noise, saturation, array consistency (for 4 elements arrays), auxiliary data.
 
-* each hydrophone type (AF, HF, etc?) has several underlying metadata which contain high-level information about network details, baud rate, data products, calirbration processes, etc
-* per FAIR principles, and IOOS categories, SeaDataNet Device Categories, and SeaVox Device Catalogue.
-* metadata adhere to the ISO. 19115 standards.
+The commissioning ticket is closed one the data is confirmed found in the Hydrophone Data Viewer, accessible through ONC API, and that the data products are generated correctly.
 
-
-# 5. PRESERVE
-
-*Main teams involved: Software, DSO, Systems*
-
-* terabytes of raw acoustic data have been stored locally at University of Victoria data center.
-* also data products (SPD, etc), daily log files, MAT files.
-* offsite complete backup also (where? manitoba?)
+For the complete procedure: [Hydrophone Commissioning Procedure](https://internal.oceannetworks.ca/spaces/ONCData/pages/272761113/Hydrophone+commissioning+procedure)
 
 
-# Access the data
-* Data search within Oceans3.0 can be filtered by device location, device category (Hydrophone), time windows, 
-* choice between clean and raw (??? are we talking about the aux data?)
-* 5-min segments of spectrogram avaialble in the Hydrophoen Data Viewer
-* Oceans3.0 API is an easier way to access the data
-* each dataset has a DOI
+# 4. Data Quality & Assurance
+
+*Teams involved: DAQ, Science, Systems*
+
+Because hydrophone data is classified as *complex* data (unlike *scalar* data), standard automated QAQC (like those for temperature or salinity) does not yet exist.
+
+* **Manual Inspection**: The DAQ team performs daily visual checks for issues like clipping, electronic interference, energy spikes, sensitivity drifts.
+* **Annotations**: Any unusual events or data gaps (caused by network maintenance, instrument failure, communication down) are recorded as annotations in Oceans 3.0 so researchers know why data might be missing.
 
 
-# Analyse
+# 5. Metadata & Standards
 
-*Teams involved: Science, DAQ*
+*Teams involved: DSO*
 
-# WORKFLOWS
-* each events in a hydrophone life cycle is recorded as a *device action*, such as deplyoment, recovery, calibrations
+To make our data globally compatible, we follow strict international standards:
 
-# Recovery
+* **ISO 19115**: Governs our high-level metadata records
+* **Global Catalogues**: We align with IOOS, SeaDataNet and SeaVox device categories.
+* **FAIR Principles**: Ensuring every byte of data is Findable, Accessible, Interoperable, and Reusable.
+* **Device Action**: Every event in a hydrophone life cycle, from deplyoment, calibrations, to recovery, is recorded as a permanent action in the database.
+
+# 6. Preservation & Storage
+
+*Teams involved: Software, DSO, Systems*
+
+* **Primary Storage**: Terabytes of data are stored locally at the University of Victoria data center.
+* **Redundancy**: A complete offsite backup is maintained to prevent data loss, and also shares data processing load.
+
+
+# 7. Access & Analysis
+* Teams involved: Science, DSO, End-Users*
+
+* **Discovery**: Users find data via Oceans 3.0 using Data Search, the Hydrophone Viewer (5-minute spectrogram previews), or the API.
+* **Identification**: Each dataset is assigned a **DOI** (Digital Object Identifier) to ensure researchers can cite the specific data they used in their papers.
+
+
+# 9. Recovery & Decommissioning
 
 *Teams involved: DSO, MarineOps, Systems*
 
+The end of a deployement does not mean the end of a instrument's use.
+Hydrophones are often re-deployed during the ONC maintenance cruises, or returning to MTC of the manufacturer for maintenance.
 
-# 9. DECOMMISSIONING (GOOD BYE)
-
-*Team involved: DSO*
+* **Post-Recovery Calibration**: Once a hydrophone is pulled out of the water, calibration is performed to check if sensitivity shifted dramatically while underwater. If the before and after are very different, the instrument is often sent back to the manufacturer.
+* **Re-Deployment**: Hydrophones are often re-deployed at the same location, or at a new site. If moved to a different site, the instrument keeps its device code, but the device id will be re-assigned.
+* **Permanent Decommissioning (Goodbye)**: When an instrument reaches the end of its functional life or can no longer be repaired, it is officially *decommissioned* in the database.
