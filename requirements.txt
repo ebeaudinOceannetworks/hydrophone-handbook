@@ -1,7 +1,0 @@
-pandas
-matplotlib
-geopandas
-pyogrio
-jupyter
-onc
-python-dotenv

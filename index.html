@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Listening to the ocean since 2006</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./sections/life-cycle.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dc1f82c011cb95e3e098e6b40fcb3855.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+</head><body class="nav-sidebar docked quarto-light"><div class="quarto-title-banner" style="
+  background-image: linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.8)), url('/images/orcas.png'); 
+  background-size: cover; 
+  background-position: center; 
+  height: 65vh; 
+  color: white; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 5px solid #f39200;"> <h1 style="font-size: 4.5em; font-weight: 800; color: white; margin-bottom: 0;">Hydrophone Handbook</h1>
+  <p style="font-size: 1.8em; font-style: italic; opacity: 0.9;">from the whale to the user</p>
+  <div style="margin-top: 20px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">
+    Data Analytics &amp; Quality | Ocean Networks Canada
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Listening to the ocean since 2006</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Hydrophone Handbook</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Listening to the ocean since 2006</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/life-cycle.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrophone Life Cycle</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/how-hydrophones-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">How do hydrophones work?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/sound-propagation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sound Propagation in the Ocean</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/ocean-soundscape-taxonomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ocean Soundscape &amp; Taxonomy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/sound-examples.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Examples of Sounds</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/hydrophone-network.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">ONC Hydrophone Network</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/array-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrophone Array Design</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/calibration.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Calibration (HydroCal)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/data-products.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Products</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/data-access.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Access</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/data-diversion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Diversion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/monitoring-troubleshooting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Monitoring &amp; Troubleshooting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/science.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Science and Applications at ONC</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/useful-equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Useful Equations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/hydrophone-specs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hydrophone Specs &amp; Manufacturers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/list-of-onc-publications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">List of ONC publications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sections/glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Glossary</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#why-listening-to-the-ocean" id="toc-why-listening-to-the-ocean" class="nav-link" data-scroll-target="#why-listening-to-the-ocean">Why listening to the ocean?</a></li>
+  <li><a href="#goals-and-future-direction-for-passive-acoustics" id="toc-goals-and-future-direction-for-passive-acoustics" class="nav-link" data-scroll-target="#goals-and-future-direction-for-passive-acoustics">Goals and future direction for passive acoustics</a></li>
+  <li><a href="#territory-acknowledgment" id="toc-territory-acknowledgment" class="nav-link" data-scroll-target="#territory-acknowledgment">Territory Acknowledgment</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Listening to the ocean since 2006</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- LANDING PAGE -->
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>Ocean Networks Canada has been recording the underwater soundscape since the first installation of the VENUS node in Saanich Inlet in 2006. What started as a single location has expanded into a pan-Canadian array monitoring the Pacific, Atlantic, and Arctic coasts.</p>
+<p>As of May 27, 2026, ONC manages <strong>37 active hydrophones</strong> from coast to coast to coast.</p>
+<script type="ojs-define">{"contents": [{"name": "hydro_data", "value": {"locationName": ["Barkley Canyon Axis", "Barkley Node", "Hydrophone A", "Hydrophone B", "Hydrophone C", "Hydrophone D", "Upper Slope South", "Hydrophone High Frequency 2.8 mab", "Hydrophone Low Frequency 1.3 mab", "Upper Slope Vertical Profiler", "Burrard Inlet Underwater Network", "Hydrophone A", "Hydrophone B", "Hydrophone C", "Hydrophone D", "Cambridge Bay Underwater Network", "China Creek Underwater Network", "Hydrophone High Frequency 2.8 mab", "Hydrophone High Frequency 1.3 mab", "Hydrophone A", "Hydrophone B", "Hydrophone C", "Hydrophone D", "Campbell River Underwater Network", "Digby Island Underwater Network", "JASCO Hydrophone 1", "JASCO Hydrophone 2", "JASCO Hydrophone 3", "JASCO Hydrophone 4", "JASCO Hydrophone 1", "JASCO Hydrophone 2", "JASCO Hydrophone 3", "JASCO Hydrophone 4", "Hydrophone A", "Hydrophone B", "Hydrophone C", "Hydrophone D", "Fish Acoustics Experiment", "Folger Deep", "Hydrophone A", "Hydrophone B", "Hydrophone C", "Hydrophone D", "Hydrophone Hak1-A Station", "Hartley Bay Underwater Network", "Hydrophone 82m", "Holyrood Bay Underwater Network", "Yuquot", "Main Endeavour Field", "Hydrophone A", "Hydrophone B", "Hydrophone C", "Hydrophone D", "Mothra", "Kitamaat Village Underwater Network", "Bottom Boundary Layer", "JASCO Hydrophone 1", "JASCO Hydrophone 2", "JASCO Hydrophone 3", "JASCO Hydrophone 4", "Ocean Sonics Hydrophone Low Frequency", "Hydrophone Broadband", "Hydrophone Low Frequency", "Hydrophone Audio Frequency 1.3 mab", "Hydrophone Audio Frequency 2.8 mab", "Hydrophone High Frequency", "Hydrophone Low Frequency", "Barkley Upper Slope", "Hydrophone", "Hydrophone A", "Hydrophone C", "Saanich Inlet VENUS Instrument Platform", "Hydrophone A", "Hydrophone C", "Strait of Georgia VENUS Instrument Platform", "Delta Dynamics Laboratory", "Ocean Sonics Hydrophone Low Frequency", "Simon Fraser University Forensics", "Strait of Georgia East VENUS Instrument Platform", "Hydrophone IOS Array", "Hydrophone Naxys", "Hydrophone IOS Array", "Hydrophone Low Frequency", "Delta Dynamics Laboratory", "Seismic Liquefaction In-Situ Penetrometer "], "lat": [48.31671, 48.345725, 48.345174, 48.345174, 48.345174, 48.345174, 48.426687, 48.426393, 48.426393, 48.427313, 49.300977, 47.756974, 47.756974, 47.756974, 47.756974, 69.112712, 49.153864, 48.699407, 48.699407, 48.699442, 48.699442, 48.699442, 48.699442, 50.020755, 54.258777, 49.042645, 49.042645, 49.042645, 49.042645, 49.043035, 49.043035, 49.043035, 49.043035, 49.0433, 49.0433, 49.0433, 49.0433, 49.080816, 48.813794, 48.813824, 48.813824, 48.813824, 48.813824, 51.71195, 53.422279, 52.820633, 47.425814, 49.561652, 47.949022, 47.949322, 47.949322, 47.949322, 47.949322, 47.923621, 53.974697, 49.080927, 49.08097, 49.08097, 49.08097, 49.08097, 49.080981, 47.763642, 47.763317, 47.763135, 47.763135, 48.671031, 48.671371, 48.427482, 48.650242, 49.039564, 49.039564, 48.651626, 48.651762, 48.651762, 49.039929, 49.087142, 49.042643, 49.042587, 49.043226, 49.029883, 49.041258, 49.036352, 49.042422, 49.084446, 49.085321], "lon": [-126.050205, -126.157961, -126.157316, -126.157316, -126.157316, -126.157316, -126.174336, -126.174394, -126.174394, -126.174111, -123.111492, -127.731206, -127.731206, -127.731206, -127.731206, -105.063573, -124.802447, -126.872425, -126.872425, -126.872439, -126.872439, -126.872439, -126.872439, -125.235365, -130.430702, -123.31744, -123.31744, -123.31744, -123.31744, -123.317639, -123.317639, -123.317639, -123.317639, -123.316108, -123.316108, -123.316108, -123.316108, -123.339145, -125.28034, -125.274707, -125.274707, -125.274707, -125.274707, -128.235917, -129.246681, -129.84575, -53.121113, -126.66386, -129.098539, -129.098209, -129.098209, -129.098209, -129.098209, -129.108826, -128.657144, -123.338713, -123.340547, -123.340547, -123.340547, -123.340547, -123.340402, -127.75873, -127.758703, -127.758548, -127.758548, -126.84816, -126.847514, -126.174598, -123.48599, -123.425255, -123.425255, -123.486423, -123.486981, -123.486981, -123.425704, -123.330252, -123.31782, -123.317257, -123.316137, -123.319177, -123.42572, -123.272172, -123.317143, -123.329777, -123.329648], "locationCode": ["BACAX", "BACND", "BACNH.H1", "BACNH.H2", "BACNH.H3", "BACNH.H4", "BACUS", "BACUS.H1", "BACUS.H2", "BACVP", "BIIP", "CBCH.H1", "CBCH.H2", "CBCH.H3", "CBCH.H4", "CBYIP", "CCIP", "CQS64.H1", "CQS64.H2", "CQSH.H1", "CQSH.H2", "CQSH.H3", "CQSH.H4", "CRIP", "DIIP", "ECHO1.H1", "ECHO1.H2", "ECHO1.H3", "ECHO1.H4", "ECHO2.H1", "ECHO2.H2", "ECHO2.H3", "ECHO2.H4", "ECHO3.H1", "ECHO3.H2", "ECHO3.H3", "ECHO3.H4", "FAE", "FGPD", "FGPD.H1", "FGPD.H2", "FGPD.H3", "FGPD.H4", "HAK1A", "HBIP", "HEC1B.H1", "HRBIP", "JBTCT", "KEMF", "KEMFH.H1", "KEMFH.H2", "KEMFH.H3", "KEMFH.H4", "KEMO", "KVIP", "LSBBL", "LSHA.H1", "LSHA.H2", "LSHA.H3", "LSHA.H4", "LSHA.H5", "NC27.H1", "NC27.H2", "NC27.H3", "NC27.H4", "NC89.H1", "NC89.H2", "NCBC", "PHYD", "PSGCH.H1", "PSGCH.H3", "PVIP", "PVIPH.H1", "PVIPH.H3", "SCVIP", "SEDDL", "SEHA.H5", "SEHDW", "SEVIP", "SGC.H1", "SGC.H2", "SGE.H1", "SGE.H2", "USDDL", "USSLP"]}}]}</script>
+<div style="width: 80%; margin: auto;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/onc-hydrophone-canada.jpeg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><em>Hydrophone Network at Ocean Networks Canada. Most hydrophones are located on the west coast. There is currently one in the Arctic, and one in the east coast.</em></figcaption>
+</figure>
+</div>
+</div>
+<p>This handbook is an internal source for ONC’s hydrophone network, spanning hardware specs, signal processing, and the lifecycle of an instrument.</p>
+</section>
+<section id="why-listening-to-the-ocean" class="level1">
+<h1>Why listening to the ocean?</h1>
+<p>Sound is the primary way we “see” in the ocean. Because light travels poorly in water, acoustic signals are essential for navigation, communication, and monitoring the health of marine ecosystems. Unlike several oceanic instruments, hydrophones use <em>passive acoustics</em>, hence are a non-disruptive form of monitoring the ocean soundscape.</p>
+<div class="text-center quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hydrophone.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption><em>Hydrophone under water.</em></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>From <strong>national defense</strong> using SOSUS (sound surveillance system) to identify vessels and nuclear testing, to <strong>resource exploration</strong> using seismic surveys to map minerals, acoustics drive the blue economy. These sensors can also be used to monitor <strong>vessel traffic</strong>, which for example is increasing in the Arctic as sea ice melts unveiling new shipping routes.</p>
+<p>Hydrophones are also used to <strong>track marine mammals</strong> distribution and abundance. Beyond biology, hydrophones can be used to detect as <strong>earthquakes</strong> and <strong>seismic activity</strong>, and even the sound of <strong>wind</strong> and <strong>rain</strong></p>
+</section>
+<section id="goals-and-future-direction-for-passive-acoustics" class="level1">
+<h1>Goals and future direction for passive acoustics</h1>
+<ul>
+<li>Delivering science-ready (trusted) hydrophone data and data products</li>
+<li>Becoming a reference in terms of passive acoustics data quality assessment and calibration</li>
+<li>Leader in Arctic hydrophone array deployments</li>
+</ul>
+</section>
+<section id="territory-acknowledgment" class="level1">
+<h1>Territory Acknowledgment</h1>
+<p>We recognize that marine research in the Victoria region takes place on the traditional lands of the Lək̓ʷəŋən (Lekwungen) people, known today as the Songhees and Esquimalt Nations, as well as the Xwsepsum (Esquimalt) and W̱SÁNEĆ peoples.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sections/life-cycle.html" class="pagination-link" aria-label="Hydrophone Life Cycle">
+        <span class="nav-page-text"><span class="chapter-title">Hydrophone Life Cycle</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
