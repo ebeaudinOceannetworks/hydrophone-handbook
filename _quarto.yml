@@ -5,6 +5,17 @@ project:
     - images/
     - banner.html
 
+# --- to publish the website on github ---
+
+execute:
+  freeze: auto # only re-renders .qmd files when they have been modified
+  echo: true
+  warning: false
+
+jupyter: python3
+
+# ----------------------------------------
+
 book:
   title: "Hydrophone Handbook"
 
@@ -52,7 +63,7 @@ format:
     toc-depth: 2
     sticky-sidebar: true
     page-layout: article
-    self-contained: true
+    self-contained: false
   pdf:
     pdf-engine: xelatex
     toc: true
