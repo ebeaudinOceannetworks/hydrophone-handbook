@@ -1,6 +1,5 @@
 pandas
 matplotlib
-warnings
 geopandas
 pyogrio
 jupyter
