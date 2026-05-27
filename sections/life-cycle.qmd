@@ -11,7 +11,7 @@ The life cycle workflow ensures that data is not just collected, but are **FAIR*
 ONC commits to share and preserve data long-term. 
 
 
-[INSERT DIAGRAM OF LIFE CYCLE/DATA FLOW]
+![Diagram of a Hydrophone life cycle at Ocean Networks Canada.](../images/Hydrophone-Life-Cycle.png)
 
 
 # 1. Planning and Governance
@@ -63,7 +63,7 @@ Because hydrophone data is classified as *complex* data (unlike *scalar* data), 
 * **Annotations**: Any unusual events or data gaps (caused by network maintenance, instrument failure, communication down) are recorded as annotations in Oceans 3.0 so researchers know why data might be missing.
 
 
-# 5. Metadata & Standards
+# 5. Metadata & Standardization
 
 *Teams involved: DSO*
 
@@ -89,7 +89,7 @@ To make our data globally compatible, we follow strict international standards:
 * **Identification**: Each dataset is assigned a **DOI** (Digital Object Identifier) to ensure researchers can cite the specific data they used in their papers.
 
 
-# 9. Recovery & Decommissioning
+# 8. Recovery & Decommissioning
 
 *Teams involved: DSO, MarineOps, Systems*
 
