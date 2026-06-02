@@ -44,7 +44,17 @@
     "href": "sections/sound-propagation.html",
     "title": "Sound Propagation in the Ocean",
     "section": "",
-    "text": "What is sound?\nIn the ocean, sound is the primary sense for communication and navigation because light attenuates rapidly, whereas sound can travel thousands of kilometers.\nSound is a longitudinal oscillatory wave, which travels through a medium (e.g., water, air) as alternating high and low pressures. As sound propagates under water, it induces lateral movement of water molecules which creates pressure change. The closer the molecules, the tighter their bonds, the less time it takes to pass the sound to each other.\nNote that a sound wave is omnidirectional, meaning that it propagates in all directions.",
+    "text": "What is sound?\nIn the ocean, light attenuates rapidly, whereas sound can travel thousands of kilometers, making sound is the primary sense for communication and navigation for marine mammals and human underwater telecommunications.\nSound is created by a vibrating object which compressesion and expansion produces a pressure difference which generates a sound wave that propagates. The resulting sound wave is a longitudinal oscillatory wave, which travels through a medium (e.g., water, air) as alternating high and low pressures. As sound propagates under water, it induces lateral movement of water molecules which creates pressure change. The closer the molecules, the tighter their bonds, the less time it takes to pass the sound to each other.\nNote that a sound wave is omnidirectional, meaning that it propagates in all directions.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
+    ]
+  },
+  {
+    "objectID": "sections/sound-propagation.html#sound-characterization",
+    "href": "sections/sound-propagation.html#sound-characterization",
+    "title": "Sound Propagation in the Ocean",
+    "section": "Sound characterization",
+    "text": "Sound characterization\nSound is described by characteristics that can be measured:\n\nLoudness is measured by intensity: how much particles move. The amplitude of a wave is related to the amount of energy it carries. The intensity of a sound wave is defined as the energy transmitted through a unit area, per unit time, in the direction in which the sound wave is traveling; it is a vector quantity having both a magnitude and direction. Relative intensity is given in dB.\nPitch is measured by frequency: how often particles move\nPhase cannot be heard. It specifies the location\n\nhigh frequency vs low frequency image\nIn general, larger objects produce low-frequency sounds.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
     ]
@@ -74,7 +84,7 @@
     "href": "sections/sound-propagation.html#why-does-sound-travel-faster-in-water-than-air",
     "title": "Sound Propagation in the Ocean",
     "section": "Why does sound travel faster in water than air?",
-    "text": "Why does sound travel faster in water than air?\nSound travels roughly 4.3 times faster in water than in air (\\(\\approx 1500\\) m/s vs 343 m/s). The speed of sound (\\(v\\)) is governed by the relationship between a material’s bulk modulus (B), its resistance to compression) and its density (\\(\\rho\\)):\n\n\nBulk Modulus: The stiffness, or resistance to compression of a medium, which depends on the medium’s density: \\(B=\\rho \\partial P / \\partial \\rho\\).\n\\[\nv = \\sqrt{\\left(B/\\rho\\right)}\n\\]\nWhile water is 800 times denser than air (1000 kg/m vs 1.2 kg m/3), it is also 20,000 times less compressible than air. The extreme stiffness of seawater allows for kinetic energy to transfer more efficienttly between molecules and as a result, sound to travel much fast underwater.",
+    "text": "Why does sound travel faster in water than air?\nSound travels roughly 4.3 times faster in water than in air (\\(\\approx 1500\\) m/s in water vs 340 m/s in air). he speed of sound (\\(v\\)) is governed by the relationship between a material’s bulk modulus (B), its resistance to compression) and its density (\\(\\rho\\)):\n\n\nBulk Modulus: The stiffness, or resistance to compression of a medium, which depends on the medium’s density: \\(B=\\rho \\partial P / \\partial \\rho\\).\n\\[\nv = \\sqrt{\\left(B/\\rho\\right)}\n\\]\nWhile water is 800 times denser than air (1000 kg/m vs 1.2 kg m/3), it is also 20,000 times less compressible than air. The extreme stiffness of seawater allows for kinetic energy to transfer more efficienttly between molecules and as a result, sound to travel much fast underwater.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
     ]
@@ -110,6 +120,16 @@
     ]
   },
   {
+    "objectID": "sections/sound-propagation.html#absorption",
+    "href": "sections/sound-propagation.html#absorption",
+    "title": "Sound Propagation in the Ocean",
+    "section": "Absorption",
+    "text": "Absorption\nAs sound travels through water, it gets absorbed, caught by the molecules which vibrate and transform the wave energy into heat. As a result, the sound wave amplitude decreases as it propagates. High frequency sound gets absorbed faster, so high frequency sounds do not travel as far as low frequency sounds.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
+    ]
+  },
+  {
     "objectID": "sections/sound-propagation.html#attenuation",
     "href": "sections/sound-propagation.html#attenuation",
     "title": "Sound Propagation in the Ocean",
@@ -124,7 +144,7 @@
     "href": "sections/sound-propagation.html#reflection",
     "title": "Sound Propagation in the Ocean",
     "section": "Reflection",
-    "text": "Reflection\nSound waves reflect and bounce back from a boundary (e.g., air, sea floor). Elements like sea floor sediment types can impact reflection efficiency.",
+    "text": "Reflection\nSound waves reflect and bounce off a surface (e.g., air, sea floor), creating echoes. Elements like sea floor sediment types can impact reflection efficiency.\nA seafloor of hard bedrock and is a better reflector than watery sand.\n\n\n\nadd sound reflection off seafloor",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
     ]
@@ -144,7 +164,7 @@
     "href": "sections/sound-propagation.html#refraction",
     "title": "Sound Propagation in the Ocean",
     "section": "Refraction",
-    "text": "Refraction",
+    "text": "Refraction\nSound refracts when it encounters a change in the sound speed (sound speed changes with temperature, salinity, and pressure).",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
     ]
@@ -174,7 +194,7 @@
     "href": "sections/sound-propagation.html#references",
     "title": "Sound Propagation in the Ocean",
     "section": "References",
-    "text": "References\n\nPrinciples of Undewater Acoustics, Urick\nUnderwater Acoustics, Hodges\nMedwin and Clay",
+    "text": "References\n\nPrinciples of Undewater Acoustics, Urick\nUnderwater Acoustics, Hodges\nMedwin and Clay\nNOAA: Ocean Noise\nDiscovery of Sound in the Sea (dosits): Science of Sound",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
     ]
