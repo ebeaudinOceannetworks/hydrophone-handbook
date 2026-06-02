@@ -2,12 +2,6 @@
 title: ONC Hydrophone Network
 ---
 
-::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
-## Improvements for this page
-On the map, several hydrophones are hidden behind others, especially in hydrophone arrays.
-:::
-
-
 Ocean Networks Canada operates a massive spatial array of underwater acoustics monitoring across the country.
 Each hydrophone has a designated **Device Code** (ex: ICLISTENHF6016) and is located at a designated **Location code** (ex: CSQH.H1).
 The **Location Code** is used by the database, but they also have a **Colloquial Name** (ex: Clayoquot Slope), used by humans.
