@@ -325,10 +325,22 @@ window.Quarto = {
 </header>
 
 
-<!-- ::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
-## Improvements for this page
-:::
--->
+<div class="callout callout-style-simple callout-important callout-titled" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Improvements for this page
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>seasonal sound profiles wrong</li>
+<li>point to more outside resources (keep it to essentials)</li>
+</ul>
+</div>
+</div>
 <p>In the ocean, light attenuates rapidly, whereas sound can travel thousands of kilometers, making sound is the primary sense for communication and navigation for marine mammals and human underwater telecommunications.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -506,6 +518,12 @@ v = \sqrt{\left(B/\rho\right)}
 <section id="transmission-loss-propagation-loss" class="level1">
 <h1>Transmission Loss (Propagation Loss)</h1>
 <p>As a sound wave travels from the source (whale) to the receiver (hydrophone), it loses energy. This reduction in sound pressure level is defined as <strong>Transmission Loss (TL)</strong>, also known as propagation loss.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/SCM4_fig11.png" class="img-fluid figure-img"></p>
+<figcaption>Model output of transmission loss of an acoustic sound wave.</figcaption>
+</figure>
+</div>
 <p>The relationship between how loud a sound is emitted, how far it travels, and how loud it is then perceived when it arrives is as follows:</p>
 <p><span class="math display">\[
 RL = SL - TL
@@ -519,8 +537,8 @@ TL = GS + EA
 <h2 class="anchored" data-anchor-id="geometric-spreading-gs">Geometric Spreading (GS)</h2>
 <p>Geometric spreading, energy loss due to sound spreading in space, is independant of frequency, but it depends on the shape of the spreading:</p>
 <ul>
-<li>Deep ocean and open water (spherical spreading): GS = 20 _{10} (r)</li>
-<li>Shallow water and surface ducts (cylindrical spreading): GS = 10 _{10} (r)</li>
+<li>Deep ocean and open water (spherical spreading): <span class="math inline">\(GS = 20 \log_{10} (r)\)</span></li>
+<li>Shallow water and surface ducts (cylindrical spreading): <span class="math inline">\(GS = 10 \log_{10} (r)\)</span></li>
 </ul>
 </section>
 <section id="excess-attenuation-ea" class="level2">
