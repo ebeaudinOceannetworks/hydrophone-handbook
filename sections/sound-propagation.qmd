@@ -2,11 +2,10 @@
 title: "Sound Propagation in the Ocean"
 ---
 
-::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
+<!-- ::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
 ## Improvements for this page
-* move wave equation section somewhere else
-* wave characteristics are there twice
 :::
+-->
 
 In the ocean, light attenuates rapidly, whereas sound can travel thousands of kilometers, making sound is the primary sense for communication and navigation for marine mammals and human underwater telecommunications.
 
@@ -39,20 +38,6 @@ Relative intensity is given in dB.
 
 In general, larger objects produce low-frequency sounds.
 
-
-## Wave equation
-Sound can be expressed as a solution of the wave equation as the following:
-
-$$
-\nabla^2 p - \frac{1}{c^2} \frac{\partial^2 p}{\partial t^2} = 0
-$$
-
-where $p$ is the acoustic sound pressure (deviation from the ambiant pressure), $c$ is the speed of sound in the medium (about 1500 m/s in seawater), and $t$ is time.  
-$$
-v(t) = A(2\pi \cdot \omega t)
-$$
-
-This equation is essential as it is the fundamental physics that allows us to convert the changes in voltage recorded by the hydrophones into the physical pressure waves.
 
 ## Key wave characteristics:
 
@@ -102,21 +87,26 @@ In general,
 
 ## SOFAR channel (ocean acoustic waveguide)
 
-At approximately 1000 m depth, there is a point where the decrease in temperature and the increase in pressure the sound speed reaches a miniumum sound speed layer, also called the **SOFAR channel** (Sound Fixing And Ranging).
-This channel exists because of **refraction**, where waves tend to bend towards regions of slower speed, and sound converges and is *trapped*.
+There's a unique sweet spot at about 1000 m where sound emitted at this depth can travel much farther away, known as the SOFAR channel (SOund Fixing And Ranging).
+This is a result of decrease in temperature and the increase in pressure making sound speed reach a miniumum.
+Because of **refraction**, sound waves always bend toward regions of slower speed.
+As a result, any sound waves traveling upward or downward from this 1000-meter layer are continuously bended right back into the center of the low-speed layer.
 
 ::: {.aside}
-**SOFAR channel**: Depth-range at which sound speed reaches a minimum, usually around 1000 m.
+**SOFAR channel**: The specific depth range at which the speed of sound reaches a minimum, usually around 1000 m.
 :::
 
 ::: {.aside}
-**Refraction**: Change in direction as a wave crosses a boundary (such as temperature, pressure, salinity). Sound will bend from high sound speed to low sound speed (Snell’s law).
+**Refraction**: The bending of a wave as it moves through changing water properties (temperature, pressure, salinity) Sound will bend from high sound speed to low sound speed (Snell’s law).
 :::
 
 ![](../images/sofar.png)
 
-This channel is also called an ocean waveguide, because sound travels way farther at that depth.
-It is often used by marine mammals or humans for communications reachings thousands of kilometers.
+This deep channel is also called an ocean waveguide, where inside acoustic energy does not escape and thus can travel great distances.
+This channel has several useful applications:
+
+* **Marine mammals** use it for communications with low-frequency sounds across thousands of kilometers.
+* **The Military** during WWII used it to locate downed aviators, which would released small detonations within the SOFAR channel detectable far away.
 
 ## Surface Duct
 
@@ -125,7 +115,177 @@ This is due to ...
 
 Surface sound channel where all sound waves bend upwards.
 
-## Arctic Propagation
+![Model simulation of sound trapped in a surface duct. Figure from Lynch et al., 2018; Fig. 5.](../images/surface-duct.png)
+
+
+# Wave behaviours
+
+The propagation path of a sound wave is nearly nevery linear.
+Temperature and pressure variations create a sound speed profile that refracts acoustic rays.
+Surface like the sea bed and sea surface reflect the sound wave, creating echoes.
+This sound wave distortion creates a complex pathway propagation which can result in shadow zones, where no sound can be heard.
+
+![Acoustic Sound Propagation. Credit: National Academy of Sciences.](../images/sound-propagation.png)
+
+Here are the descriptions of such behaviours that may affect the sound propagation path and intensity.
+
+## Absorption
+As sound travels through water, it gets *absorbed*, caught by the molecules which vibrate and transform the wave energy into heat.
+As a result, the sound wave amplitude decreases as it propagates.
+High frequency sound gets absorbed faster, so high frequency sounds do not travel as far as low frequency sounds.
+
+## Attenuation
+A sound wave is spherical, with propagation in all directions.
+As it propagates, the aplitude (or intensity) is reduces (~ $1/r^2$) due to absorption or scattering within the surrounding medium (sea water).
+Attenuation is very small for low frequencies, so sounds like doplhin clicks are absorbed rapidly and vanish, while whale calls or ships rumbles can propagate across entire ocean basins with minimal energy loss.
+
+## Diffraction
+Diffraction occurs when a sound wave is partially obstructed.
+The rays behind a wall (or sea mount) are reflected.
+
+## Reflection
+Sound waves reflect and bounce off a surface (e.g., sea surface, sea floor), creating echoes.
+Elements like sea floor sediment types can impact reflection efficiency.
+
+A seafloor of hard bedrock and is a better reflector than watery sand.
+
+![Reflection of a sound wave as it reaches the surface. Figure from Lynch et al., 2018; Fig. 2.](../images/sound-reflection-scattering.png){width=60%}
+
+## Interference
+Multiple paths can create constructive and destructive interference.
+When a sound is emitted and propagates, the sound waves take different paths from reflecting and bouncing around.
+They arrive at the same hydrophone at slightly different times, causing their waveforms to overlap and create interference.
+
+* constructive interference: two peaks arrive exactly at the same time, reinforcing their intensity and creating an artificially loud sound.
+* destructive interference: the trough of one aligns with the peak of the other, annulling the signal which can make the sound completely disappear.
+
+![Constructive and destructive interference.](../images/interference.png){width=40%}
+
+## Refraction
+Refraction is the change of direction (also bending) of sound propagation, due to changes in the sound speed from changes in temperature, salinity, or pressure.
+
+![Example of refracted ray paths. Credits: Kessel & Hollett, 2006](../images/refraction.png)
+
+The refraction angle (direction) follows Snell's Law:
+
+$$
+\frac{\sin{\theta_1}}{\sin{\theta_2}} = \frac{c_1}{c_2}
+$$
+
+The frequency of the sound wave does not change while being refracted, but its wavelength might depending on the refracted angle and its velocity ($c=\lambda f$).
+
+Two wave guides in the ocean are a result of refraction: the SOFAR channel, and the surface duct.
+
+## Scattering
+When a sound wave encouters a boundary (sea surface, sea floor, sea mount, marine animal), the wave is reflected if the surface is smooth.
+In case of a rough surface or complex medium (bubbles, turbulence, heavy storm, small fishes, suspended sediments), the sound wave is reflected in many directions all at once.
+This causes the sound to disperse in random direction and the acoustic signal loses energy quickly.
+
+## Reverberation
+Reverberation is not exactly a wave behaviour, but rather the result of it.
+It is the accumulation of sound that have been scattered and persists even if the source is turned off.
+It can limit sound detection due to clouding the incoming signal.
+It is even more important in shallow water, as sound interacts multiple times with the surface and the bottom as it travels.
+
+# Transmission Loss
+Transmission loss has three components: spreading, scattering, and attenuation.
+It is the total loss of energy from the source to a receiver, also known as propagation loss.
+
+Received Level = Source Level - Propagation Loss - Excess Attenuation
+RL = SL - 20 log10 (r) - EA (independant of the frequency, only on the geometry of the source and sound field)
+
+EA = \alpha * r + reflection + scattering + diffraction
+
+When a wave passes through a medium, a portion of the energy is lost due to multiple factors.
+A wave loses energy as it travels, and we quantify this as the transmission loss.
+Examples of mechanisms that can result in transmission lost are wave attenuation, geometrical spreading, bottom reflection loss, boundary scattering.
+
+# Arctic propagation
+
+## How does sea ice affect how sound travel?
+When sea ice is present, the upward bending sound waves constantly interact with the rough sea ice surface which creates constant scattering.
+Historically, this instance scattering has limited long-range sound propagation to frequencies below 30 Hz.
+Under global warmin, the Arctic has warmed and sea ice extent has decreased dramatically, affecting how sound travels and making higher frequencies travel longer ranges than before.
+
+## The polar sound speed profile
+The sound profile in polar regions varies differently than in temperate regions.
+Unlike temperate oceans, polar temperatures are much less variable with depth, which lead to specific arctic sound speed characteristics:
+
+* **wintertime**: sound speed minimum sits at the surface. Because sound speed increases with depth, sound waves are constantly refracted upward towards the surface, causing massive energy loss through intense scattering against sea ice.
+* **summertime**: solar heating warms the upper layer, shifting the sound speed minimum, and.sub-surface duct, at around 150 m. This deep channel isolates sound waves from the surface, allowing high frequencies to travel much further.
+
+![Typical sound speed profile in the Arctic.](../images/arctic-sound-speed-profile.png){width=80%}
+
+
+Read more: Ambient Noise in the Canadian Arctic, pp 105-133, from Cook, Barclay & Richards.
+
+# Acoustic masking
+
+Loud anthropogenic (human-made) activities can severely affect marine mammals by completely masking or interfering with the sounds they use for communication, navigation, mating, and feeding.
+If the sound is loud enough, it makes the marine species' sounds undetectable to others.
+Such sounds include shipping traffic, sonar, construction, airguns used to detect oil and gas below the sea floor, and military exercises.
+
+Sound masking has led to impacting:
+
+* physical health: some sounds can be so loud that they can destroy hearing sensitivity temporarily, and in extreme cases permanently damaging hearing.
+* behavior: marine mammals can get lost, and reduce or no longer mate. 
+
+# Propagation modelling (Ray tracing)
+
+Modelling the propagation of a sound wave is useful for:
+
+* identifying the location of a sound source
+* assessing sound disturbance ahead of underwater work
+* regulating marine traffic
+* determining the optimal location for new hydrophones
+
+Sound propagation can be described by the *wave equation*:
+
+$$
+\nabla^2 p - \frac{1}{c^2} \frac{\partial^2 p}{\partial t^2} = 0
+$$
+
+where $p$ is the acoustic sound pressure (deviation from the ambiant pressure), $c$ is the speed of sound in the medium (about 1500 m/s in seawater), and $t$ is time.  
+
+::: {.callout-tip style="color: green; border-left-color: green; background-color: white;"}
+## Theory to application
+The wave equation is essential for measuring sounds, as it is the fundamental physics that allows us to convert the changes in voltage recorded by the hydrophones into the physical pressure waves.
+:::
+
+Several numerical models have been developed in order to predict sound propagation, each with limitations.
+
+For example, the sound propagation model **BELLHOP**, developed by Michael B. Porter, is a *beam tracing model*, meaning that it traces the pathway of a sound wave at a specific frequency.
+The model requires knowledge of the water depth along the pathway (bathymetry), the sound speed profile (derived from T, S, p), and the sea floor composition (e.g., clay).
+Ray tracing allows to predict the pathway, travel time and acoustic amplitude of a sound source.
+
+![Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left).](../images/Bellhop-ray-tracing-right-box-for-a-standard-sound-speed-profile-left-box-indicating.png)
+
+
+# Relevant acoustics units
+
+## Decibel (dB)
+Underwater sounds span many orders of magnitude, so sound pressure levels are measured on a base-10 logarithmic scale, called the decibel (dB).
+The standard reference pressure for underwater sounds is 1 $\mu$ Pa (whereas 20$\mu$ Pa is the reference for air).
+
+$$
+SPL = 20 \log_{10} \left(\frac{p}{p_{ref}}\right)~\text{dB re 1}~\mu\text{Pa}
+$$
+
+Example: a sound wave with a pressure of 1,000,000 times greater than the reference pressure has a sound pressure level of:
+$$
+20 \log_{10}\left(10^6\right) = 120~\text{dB re 1}~\mu\text{Pa}
+$$
+
+
+## Spectral units: from space to frequency domain
+
+The raw, continuous audio data is decomposed into individual frequencies using a Fourier Transform.
+This transformation produces the **Power Spectral Density (PSD)**, expressed in units of $\text{Pa}^2/\text{Hz}$, which reflects how acoustic energy is distributed across the frequencies.
+
+To make these values easier to read and analyze, we convert the PSD to a logarithmic scale.
+The resulting **Spectrum Level** measures the acoustic intensity contained within a 1 Hz bandwidth:
+
+![$\text{Spectrum Level Unit: dB re } 1\ \mu\text{Pa}^2/\text{Hz}$](../images/ICLISTENHF6328_20240306T084000.000Z-spect.png){width=60%}
 
 # Empirical equations for sound speed
 
@@ -142,91 +302,12 @@ $$
 c(T,S,p) = c_{000} + \Delta c_T + \Delta c_S + \Delta c_P + \Delta c_{STp}
 $$
 
-Chen-Millero-Li:
 
-
-# Wave behaviours
-
-## Absorption
-As sound travels through water, it gets *absorbed*, caught by the molecules which vibrate and transform the wave energy into heat.
-As a result, the sound wave amplitude decreases as it propagates.
-High frequency sound gets absorbed faster, so high frequency sounds do not travel as far as low frequency sounds.
-
-## Attenuation
-A sound wave is spherical, with propagation in all directions.
-As it propagates, the aplitude (or intensity) is reduces (~ $1/r^2$) due to absorption or scattering within the surrounding medium (sea water).
-Attenuation is very small for low frequnecy, so sounds like whale calls can propagate across entire ocean basins.
-
-## Reflection
-
-Sound waves reflect and bounce off a surface (e.g., air, sea floor), creating echoes.
-Elements like sea floor sediment types can impact reflection efficiency.
-
-A seafloor of hard bedrock and is a better reflector than watery sand.
-
-![add sound reflection off seafloor](reflection.png)
-
-## Interference
-Multiple paths can create constructive and destructive interference.
-Multi-path interference is very tricking to predict.
-
-## Refraction
-
-Sound refracts when it encounters a change in the sound speed (sound speed changes with temperature, salinity, and pressure).
-
-# Transmission Loss
-When a wave passes through a medium, a portion of the energy is lost due to multiple factors.
-A wave loses energy as it travels, and we quantify this as the transmission loss.
-Examples of mechanisms that can result in transmission lost are wave attenuation, geometrical spreading, bottom reflection loss, boundary scattering.
-
-
-# Marine Soundscape
-move here soundscape characterization from "how do hydrophones work" section.
-
-
-# Ambient Noise
-* ocean turbulence
-* seismic noise
-* wave noise
-* thermal noise
-* rain noise
-* shipping noise
-
-# Relevant Units
-
-* The 1/Hz comes from the normalization of the Fourier transform, so that integrating over frequency gives back total variance. By definition:
-	
-	$<p2>=\int_0^\infty Spp(f) df$
-
-	Parseval theorem: Energy in time = Energy in frequency
-
-## Intensity and Decibels (dB)
-
-The *decibel* (dB) is the dominant unit in underwater acoustics.
-It is the ratio of the sound level intensity with a reference intensity, expresseed in a base 10 logarithmic scale.
-The accepted reference intensity is the intensity of a plane wave having a root-mean-squared (*rms*) pressure equal to 1 micro Pascal ($\mu$Pa).
-
-A sound wave with an intensity of one million times that of the reference intensity has a level of $10 \log{10^6}\equiv 60~\text{dB}~\text{re}~1~\mu Pa$.
-
-## Spectrum Level
-
-The intensity refers to the levels at a single frequency. Often, we are interested in the level of a broadband signal or noise.
-In this case, the acoustic intensity must be referenced to a bandwidth (often 1 Hz).
-It also must have a reference distance.
-For a 1 m distance reference, the spectrum level is expressed in units of decibels referenced to a micropascal ($\mu Pa$) in a 1.0 Hz band @ 1 m.
-
-
-# Acoustic Masking
-(check out the dredging report)
-
-# Challenges
-
-* increases in ship strikes and noise
-* disorientation
-
-## References
+# References
 * Principles of Undewater Acoustics, Urick
 * Underwater Acoustics, Hodges
 * Medwin and Clay
 * NOAA: [Ocean Noise](https://www.fisheries.noaa.gov/national/science-data/ocean-noise)
 * Discovery of Sound in the Sea (dosits): [Science of Sound](https://dosits.org/science/sound/what-is-sound/)
+* Ambient Noise in the Canadian Arctic, pp 105-133, from Cook, Barclay & Richards.
+
