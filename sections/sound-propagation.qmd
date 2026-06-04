@@ -25,30 +25,28 @@ Note that a sound wave is omnidirectional, meaning that it propagates in all dir
 
 ## Sound characterization
 
+
 Sound is described by characteristics that can be measured:
 
-* Loudness is measured by intensity: how much particles move. The amplitude of a wave is related to the amount of energy it carries.
-The intensity of a sound wave is defined as the energy transmitted through a unit area, per unit time, in the direction in which the sound wave is traveling; it is a vector quantity having both a magnitude and direction.
-Relative intensity is given in dB.
+* **Amplitude & Intensity (Loudness)**: Amplitude represents the energy the wave carries, and how much the water particles move. Intensity is the energy transmitted through a unit area per time in the direction of travel. Relative intensity is expressed in decibels (dB).
+* **Frequency ($f$) (Pitch)**: Measured in Hertz (Hz). Frequency defines the sound's pitch by how often the water particles oscillate. In general, larger objects (like baleen whales or container ships) produce lower frequency sounds, while smaller objects produce higher frequency sounds.
 
-* Pitch is measured by frequency: how often particles move
-* Phase cannot be heard. It specifies the location 
-
-[high frequency vs low frequency image](frequency.png)
-
-In general, larger objects produce low-frequency sounds.
+![Bigger objects make low-frequency sounds while smaller objects make high frequency sounds.](../images/Amplitude-Frequency.png){width=80%}
 
 
-## Key wave characteristics:
+* **Wavelength ($\lambda$)**: The distance over which the wave's shape repeats, directly related to the speed of sound ($c$) and frequency ($f$): $c=f\lambda$.
+* **Phase ($\phi$)**: Phase specifies the exact alignment or timing of a wave at a given moment. While it cannot be heard, phase is critical for hydrophone arrays to determine the precise direction a sound is coming from.
 
-* Amplitude: measured in decibels (dB), it represents the energy/intensity of the wave.
-* Frequency ($f$): measured in Hertz (Hz), it defines the pitch.
-* Wavelength ($\lambda$): related to speec ($c$) and frequency by $c=f\lambda$.
+Mathematical representation of a classic pressure ($p$) sine wave as a function of time ($t$):
+$$
+p(t) = A \sin{(2\pi f t + \phi)}
+$$
+
 
 
 ## Why does sound travel faster in water than air?
 
-Sound travels roughly 4.3 times faster in water than in air ($\approx 1500$ m/s in water vs 340 m/s in air).
+Sound travels roughly **4.3 times faster** in water than in air ($\approx 1500$ m/s in water vs 340 m/s in air).
 he speed of sound ($v$) is governed by the relationship between a material's **bulk modulus** (B), its resistance to compression) and its **density** ($\rho$):
 
 ::: {.aside}
@@ -106,7 +104,7 @@ This deep channel is also called an ocean waveguide, where inside acoustic energ
 This channel has several useful applications:
 
 * **Marine mammals** use it for communications with low-frequency sounds across thousands of kilometers.
-* **The Military** during WWII used it to locate downed aviators, which would released small detonations within the SOFAR channel detectable far away.
+* During WWII, **the military** used it to locate downed aviators, which would released small detonations within the SOFAR channel detectable far away.
 
 ## Surface Duct
 
@@ -116,7 +114,6 @@ This is due to ...
 Surface sound channel where all sound waves bend upwards.
 
 ![Model simulation of sound trapped in a surface duct. Figure from Lynch et al., 2018; Fig. 5.](../images/surface-duct.png)
-
 
 # Wave behaviours
 
@@ -187,18 +184,43 @@ It is the accumulation of sound that have been scattered and persists even if th
 It can limit sound detection due to clouding the incoming signal.
 It is even more important in shallow water, as sound interacts multiple times with the surface and the bottom as it travels.
 
-# Transmission Loss
-Transmission loss has three components: spreading, scattering, and attenuation.
-It is the total loss of energy from the source to a receiver, also known as propagation loss.
+# Transmission Loss (Propagation Loss)
 
-Received Level = Source Level - Propagation Loss - Excess Attenuation
-RL = SL - 20 log10 (r) - EA (independant of the frequency, only on the geometry of the source and sound field)
+As a sound wave travels from the source (whale) to the receiver (hydrophone), it loses energy.
+This reduction in sound pressure level is defined as **Transmission Loss (TL)**, also known as propagation loss.
 
-EA = \alpha * r + reflection + scattering + diffraction
+The relationship between how loud a sound is emitted, how far it travels, and how loud it is then perceived when it arrives is as follows:
 
-When a wave passes through a medium, a portion of the energy is lost due to multiple factors.
-A wave loses energy as it travels, and we quantify this as the transmission loss.
-Examples of mechanisms that can result in transmission lost are wave attenuation, geometrical spreading, bottom reflection loss, boundary scattering.
+$$
+RL = SL - TL
+$$
+
+where **RL** is the **Received Level**, the loudness recorded at the hydrophone, and **SL** is the initial **Sound Level** from the source.
+
+Transmission loss has different components: loss due sound spreading in space (function of distance $r$) and loss due to physical interactions with water and boundaries (excess attenuation, EA):
+
+$$
+TL = GS + EA
+$$
+
+## Geometric Spreading (GS)
+
+Geometric spreading, energy loss due to sound spreading in space, is independant of frequency, but it depends on the shape of the spreading:
+
+* Deep ocean and open water (spherical spreading): GS = 20 \log_{10} (r)
+* Shallow water and surface ducts (cylindrical spreading): GS = 10 \log_{10} (r)
+
+## Excess Attenuation (EA)
+
+Energy is lost through reflection, scattering, diffraction depending on environmental conditions, terrain, weather:
+
+$$
+EA =  \text{Loss}_{absorption} + \text{Loss}_{reflection} + \text{Loss}_{scattering} + \text{Loss}_{diffraction}
+$$
+
+* Absorption: $\alpha * r$, energy is absorbed by seawater and converted to heat.
+* Boundary reflection and scattering: energy is lost when sound hits the seafloor, the sea surface, or sea ice.
+* Diffraction: energy is diverted when a wave bends around underwater seamounts or ridges.
 
 # Arctic propagation
 
