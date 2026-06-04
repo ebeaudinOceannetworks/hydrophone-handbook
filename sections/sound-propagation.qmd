@@ -2,10 +2,12 @@
 title: "Sound Propagation in the Ocean"
 ---
 
-<!-- ::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
+::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
 ## Improvements for this page
+* seasonal sound profiles wrong
+* point to more outside resources (keep it to essentials)
 :::
--->
+
 
 In the ocean, light attenuates rapidly, whereas sound can travel thousands of kilometers, making sound is the primary sense for communication and navigation for marine mammals and human underwater telecommunications.
 
@@ -189,6 +191,8 @@ It is even more important in shallow water, as sound interacts multiple times wi
 As a sound wave travels from the source (whale) to the receiver (hydrophone), it loses energy.
 This reduction in sound pressure level is defined as **Transmission Loss (TL)**, also known as propagation loss.
 
+![Model output of transmission loss of an acoustic sound wave.](../images/SCM4_fig11.png)
+
 The relationship between how loud a sound is emitted, how far it travels, and how loud it is then perceived when it arrives is as follows:
 
 $$
@@ -207,8 +211,8 @@ $$
 
 Geometric spreading, energy loss due to sound spreading in space, is independant of frequency, but it depends on the shape of the spreading:
 
-* Deep ocean and open water (spherical spreading): GS = 20 \log_{10} (r)
-* Shallow water and surface ducts (cylindrical spreading): GS = 10 \log_{10} (r)
+* Deep ocean and open water (spherical spreading): $GS = 20 \log_{10} (r)$
+* Shallow water and surface ducts (cylindrical spreading): $GS = 10 \log_{10} (r)$
 
 ## Excess Attenuation (EA)
 
