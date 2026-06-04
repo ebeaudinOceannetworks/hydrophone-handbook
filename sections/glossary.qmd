@@ -42,6 +42,19 @@ A Fourier transform converts a signal from its original domain (time/space) to a
 ### Frequency
 The rate of oscillation of a periodic function measured in cycles-per-unit-time. Symbol: $f$. Unit: Hertz (Hz), is equal to 1 cycle per second.
 
+### Intensity
+The intensity ($I$) of a sound wave is defined as the energy transmitted through a unit area, per unit time, in the direction in which the sound wave is traveling.
+It is a vector quantity having both a magnitude and direction.
+
+$$
+\vec{I} = p \vec{u}
+$$
+
+where $p$ is pressure, and $u$ the particle velocity.
+
+### Impedance
+Impedance of water is much greater than that of air.
+
 ### Power Spectrum Density
 The acoustic signal power per unit frequency as measured at a single frequency. Unit: $\micro Pa^2\cdot s$
 
