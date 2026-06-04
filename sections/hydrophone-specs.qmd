@@ -2,17 +2,17 @@
 title: Hydrophone Specs & Manufacturers
 ---
 
-Most hydrophones at ONC are from Ocean Sonics: icListen HF (10 Hz - 200 kHz; high frequency), and icListen AF (10 Hz - 12 kHz; low-frequency).
-A few arrays use Geospectrum hydrophones provided by JASCO.
-
 ::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
 ## Improvements for this page
-* Fill remaining Hydrophone specs.
-* make the selection look better
-* make sure this can render in a pdf
+* Fill remaining Hydrophone specs
 :::
 
-# Hydrophone Specs
+
+Ocean Networks Canada uses hydrophones from several manufacturers and distributors: the main ones being *Ocean Sonics* and *JASCO Applied Sciences*.
+
+Most hydrophones are Ocean Sonics icListen smart hydrophones: icListen HF (High Frequency; 10 Hz to 200k Hz), and icListen AF (Audio Frequency; 10 Hz to 12 kHz).
+JASCO provides Geospectrum-manufactured hydrophones for multi-element directional arrays, great for localizing sources.
+
 
 ```{python}
 #| echo: false
@@ -30,7 +30,6 @@ df_raw = df_raw.fillna("--")
 # 3. Clean column names but KEEP duplicates distinct!
 clean_columns = []
 for i, col in enumerate(df_raw.columns):
-    # We must keep JASCO.1, JASCO.2 so Pandas doesn't erase them.
     name = str(col)
     if "Unnamed" in name:
         clean_columns.append(f"Field_{i}")
@@ -43,7 +42,6 @@ df_raw.columns = clean_columns
 my_data = df_raw.to_dict(orient='records')
 ojs_define(specs_data = my_data)
 ```
-
 
 ```{ojs}
 //| echo: false
@@ -61,25 +59,32 @@ all_cols = {
 label_col = all_cols.length > 0 ? all_cols[0] : ""
 model_cols = all_cols.length > 0 ? all_cols.slice(1) : []
 
-// NEW: Extract the "Device" row (first row) and separate it from the rest of the specs
+// Extract the "Device" row (first row) and separate it from the rest of the specs
 deviceRow = specs_data.length > 0 ? specs_data[0] : {}
 specRows = specs_data.length > 1 ? specs_data.slice(1) : []
 
-// 3. Map YOUR specific manufacturers to colors
+// 3. Map manufacturers to colors (Fixed naming mismatch to match file logic)
 brandColors = ({
-  "JASCO": "#ffc107",        // Yellow
-  "Ocean Sonics": "#03a9f4", // Blue
-  "Naxys": "#9c27b0",        // Purple
-  "Feature": "#e64a19"       // Orange (for the Manufacturer label column)
+  "JASCO": "darkblue",         // Warm Amber
+  "Ocean Sonics": "orange",  // Marine Deep Blue
+  "Naxys": "purple",         // Deep Indigo/Purple
+  "Feature": "darkgrey"        // Charcoal Slate for parameters
 })
 
-// 4. Create the interactive checkbox UI for selecting models
+// Helper function to dynamically check column string headers
+function getBrandColor(m) {
+  if (m.includes("JASCO")) return brandColors.JASCO;
+  if (m.includes("Ocean")) return brandColors["Ocean Sonics"];
+  if (m.includes("Naxys")) return brandColors.Naxys;
+  return "#475569";
+}
+
+// 4. IMPROVEMENT: Inline pill/tag selection UI that removes bulky checkboxes
 viewof selectedModels = Inputs.checkbox(
   model_cols, 
   { 
-    label: html`<b>Select Models to Compare:</b>`, 
-    value: model_cols.slice(0, 3), // Select first 3 by default
-    // Show the Device name in the checkboxes, fallback to Manufacturer if missing
+    label: html`<span style="font-size: 1.1rem; color: #1e293b; font-weight: 700; margin-bottom: 8px; display: block;">Select Models to Compare:</span>`, 
+    value: [model_cols[0], model_cols[3], model_cols[4]], // Default layout
     format: x => deviceRow[x] && deviceRow[x] !== "--" ? deviceRow[x] : x.split('.')[0]
   }
 )
@@ -87,47 +92,107 @@ viewof selectedModels = Inputs.checkbox(
 // 5. Render the styled table!
 html`
 <style>
+  /* Modernizing the Observable default checkboxes into a horizontal button bar */
+  div.oi-3a0a3a {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+  }
+  div.oi-3a0a3a label {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    border: 1px solid #cbd5e1 !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    color: #475569 !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0 !important;
+  }
+  div.oi-3a0a3a label:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8 !important;
+  }
+  div.oi-3a0a3a input[type="checkbox"] {
+    margin-right: 8px !important;
+    accent-color: #0284C7;
+  }
+  
+  /* Table Container */
   .table-responsive {
     overflow-x: auto; 
     overflow-y: auto;
-    max-height: 600px; /* Enables vertical scrolling within the table area */
-    border-radius: 12px; /* Smooth corners for the container */
+    max-height: 600px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
   }
+  
   .branded-table {
     border-collapse: separate;
-    border-spacing: 8px 0;
+    border-spacing: 0;
     width: 100%;
-    margin-top: 10px;
-    font-family: sans-serif;
+    font-family: system-ui, -apple-system, sans-serif;
   }
+  
+  /* Fixed Headers styling */
   .branded-table th {
-    padding: 20px 10px;
+    padding: 16px 12px;
     color: white;
-    font-weight: bold;
-    border-radius: 12px 12px 0 0;
+    font-weight: 600;
+    font-size: 0.95rem;
     text-align: center;
-    border: none;
-    min-width: 150px; 
-    position: sticky; /* Makes the header sticky */
-    top: 0;           /* Pins it to the top */
-    z-index: 10;      /* Ensures it floats above the table body */
-    box-shadow: 0px 4px 6px -4px rgba(0,0,0,0.4); /* Slight shadow to separate from content */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.1);
   }
+  
+  /* Parameters row header sticky to the left side */
+  .branded-table td:first-child, .branded-table th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    background-color: #f1f5f9;
+    font-weight: 600;
+    text-align: left;
+    border-right: 2px solid #e2e8f0;
+    min-width: 220px;
+  }
+  
+  .branded-table th:first-child {
+    z-index: 15; /* Top-left corner stays above everything */
+  }
+
   .branded-table td {
-    padding: 15px 10px;
+    padding: 12px 16px;
     text-align: center;
-    border: none;
-    background-color: #f8f9fa;
-    color: #333;
-    min-width: 150px; 
-  }
-  .branded-table tr:nth-child(even) td {
+    font-size: 0.9rem;
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
     background-color: #ffffff;
+    min-width: 160px; 
   }
-  .footer-row td {
-    height: 15px;
-    border-radius: 0 0 12px 12px;
-    padding: 0;
+  
+  /* Alternating Row Tint */
+  .branded-table tr:nth-child(even) td:not(:first-child) {
+    background-color: #f8fafc;
+  }
+  
+  /* Custom highlights for Manufacturer Row */
+  .mfg-row td {
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    background-color: #ecf1f6 !important;
+    border-bottom: 2px solid #cbd5e1;
   }
 </style>
 
@@ -135,50 +200,29 @@ html`
   <table class="branded-table">
     <thead>
       <tr>
-        <th style="background-color: ${brandColors.Feature || '#e64a19'}; min-width: 220px;">Device / Model</th>
+        <th style="background-color: ${brandColors.Feature};">Specification</th>
         ${selectedModels.map(m => {
-          // Use the actual device name for the header
           let deviceName = deviceRow[m] && deviceRow[m] !== "--" ? deviceRow[m] : m.split('.')[0];
-
-          // Determine color based on manufacturer
-          let color = "#333";
-          if (m.includes("JASCO")) color = brandColors.JASCO;
-          if (m.includes("Ocean")) color = brandColors.OceanSonics;
-          if (m.includes("Naxys")) color = brandColors.Naxys;
-
-          return html`<th style="background-color: ${color}">${deviceName}</th>`;
+          return html`<th style="background-color: ${getBrandColor(m)}">${deviceName}</th>`;
         })}
       </tr>
     </thead>
     <tbody>
-      <!-- NEW: Manufacturer Row inserted at the very top of the table body -->
-      <tr>
-        <td style="font-weight: bold; text-align: left; color: #333; background-color: #eef2f5;">Manufacturer</td>
-        ${selectedModels.map(m => {
-          let mfgName = m.split('.')[0]; // Clean out the .1, .2
-          return html`<td style="font-weight: bold; color: #444; background-color: #eef2f5;">${mfgName}</td>`;
-        })}
+      <tr class="mfg-row">
+        <td>Manufacturer/Supplier</td>
+        ${selectedModels.map(m => html`<td>${m.split('.')[0]}</td>`)}
       </tr>
 
-      <!-- Render the rest of the specifications -->
       ${specRows.map(row => html`
         <tr>
-          <td style="font-weight: bold; text-align: left; color: #333;">${row[label_col]}</td>
-          ${selectedModels.map(m => html`<td>${row[m] || "--"}</td>`)}
+          <td>${row[label_col]}</td>
+          ${selectedModels.map(m => {
+            let val = row[m];
+            let style = val === "--" ? "color: #94a3b8; font-style: italic;" : "";
+            return html`<td style="${style}">${val}</td>`;
+          })}
         </tr>
       `)}
-      
-      <!-- Branded Footer -->
-      <tr class="footer-row">
-        <td style="background-color: ${brandColors.Feature || '#e64a19'}"></td>
-        ${selectedModels.map(m => {
-          let color = "#333";
-          if (m.includes("JASCO")) color = brandColors.JASCO;
-          if (m.includes("Ocean")) color = brandColors.OceanSonics;
-          if (m.includes("Naxys")) color = brandColors.Naxys;
-          return html`<td style="background-color: ${color}"></td>`;
-        })}
-      </tr>
     </tbody>
   </table>
 </div>
@@ -186,4 +230,30 @@ html`
 ```
 
 
-# Manufacturers
+# Information about suppliers and manufacturers
+
+## JASCO Applied Sciences [{{< fa link >}}](https://www.jasco.com/)
+A scientific consulting firm and equipment supplier specializing in underwater acoustics.
+Founded by Joseph Arnold Scrimger in Victoria, British Columbia, in 1981, the company now has its largest primary operations office in Halifax, Nova Scotia, Canada.
+
+JASCO operates globally across national defense, marine environmental stewardship, oil and gas asset monitoring, and academic research.
+They also perform acoustic modeling, field data collection, and advanced analysis suites.
+
+Their *Autonomous Multichannel Acoustic Recorder (AMAR)* provides passive acoustic data acquisition with high bandwidth and low noise. 
+
+Their hydrophones are manufactured by GeoSpectrum Technologies Inc.
+
+## GeoSpectrum Technologies Inc. (GTI) [{{< fa link >}}](https://www.geospectrum.ca/)
+A specialized Canadian aerospace and defense company, based in Halifax, NS, that focuses on the design, engineering, and manufacturing of underwater acoustic transducers and specialized systems.
+GeoSpectrum hydrophones are high-performance, and frequently deployed as part of hydrophone arrays managed by JASCO.
+
+## Ocean Sonics [{{< fa link >}}](https://oceansonicsinc.com/)
+Ocean Sonics is a canadian, Nova Scotia-based pioneer in the development of smart digital hydrophones, found in 2005.
+They have developed both low-frequency (icListenLF/AF) and high-frequency (icListenHF) hydrophones.
+
+## Wildlife Acoustics [{{< fa link >}}](https://www.wildlifeacoustics.com/)
+A US-based private company based in Maynar, MA specialized provider of bioacoustics monitoring technology founded in 2003 by Ian Agranat.
+Their primary focus is on designing autonomous underwater recorders and sound analysis software for ecosystem biodiversity monitoring, environmental assessments, and wildlife presence/absence surveys.
+
+Their hydrophone Song Meter SM2M, released in 2011, is designed for long-term autonomous deployments.
+
