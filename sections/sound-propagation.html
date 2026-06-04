@@ -262,7 +262,6 @@ window.Quarto = {
   <li><a href="#what-is-sound" id="toc-what-is-sound" class="nav-link active" data-scroll-target="#what-is-sound">What is sound?</a>
   <ul class="collapse">
   <li><a href="#sound-characterization" id="toc-sound-characterization" class="nav-link" data-scroll-target="#sound-characterization">Sound characterization</a></li>
-  <li><a href="#key-wave-characteristics" id="toc-key-wave-characteristics" class="nav-link" data-scroll-target="#key-wave-characteristics">Key wave characteristics:</a></li>
   <li><a href="#why-does-sound-travel-faster-in-water-than-air" id="toc-why-does-sound-travel-faster-in-water-than-air" class="nav-link" data-scroll-target="#why-does-sound-travel-faster-in-water-than-air">Why does sound travel faster in water than air?</a></li>
   </ul></li>
   <li><a href="#sound-speed-profile" id="toc-sound-speed-profile" class="nav-link" data-scroll-target="#sound-speed-profile">Sound speed profile</a></li>
@@ -282,7 +281,11 @@ window.Quarto = {
   <li><a href="#scattering" id="toc-scattering" class="nav-link" data-scroll-target="#scattering">Scattering</a></li>
   <li><a href="#reverberation" id="toc-reverberation" class="nav-link" data-scroll-target="#reverberation">Reverberation</a></li>
   </ul></li>
-  <li><a href="#transmission-loss" id="toc-transmission-loss" class="nav-link" data-scroll-target="#transmission-loss">Transmission Loss</a></li>
+  <li><a href="#transmission-loss-propagation-loss" id="toc-transmission-loss-propagation-loss" class="nav-link" data-scroll-target="#transmission-loss-propagation-loss">Transmission Loss (Propagation Loss)</a>
+  <ul class="collapse">
+  <li><a href="#geometric-spreading-gs" id="toc-geometric-spreading-gs" class="nav-link" data-scroll-target="#geometric-spreading-gs">Geometric Spreading (GS)</a></li>
+  <li><a href="#excess-attenuation-ea" id="toc-excess-attenuation-ea" class="nav-link" data-scroll-target="#excess-attenuation-ea">Excess Attenuation (EA)</a></li>
+  </ul></li>
   <li><a href="#arctic-propagation" id="toc-arctic-propagation" class="nav-link" data-scroll-target="#arctic-propagation">Arctic propagation</a>
   <ul class="collapse">
   <li><a href="#how-does-sea-ice-affect-how-sound-travel" id="toc-how-does-sea-ice-affect-how-sound-travel" class="nav-link" data-scroll-target="#how-does-sea-ice-affect-how-sound-travel">How does sea ice affect how sound travel?</a></li>
@@ -347,24 +350,26 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="sound-characterization">Sound characterization</h2>
 <p>Sound is described by characteristics that can be measured:</p>
 <ul>
-<li><p>Loudness is measured by intensity: how much particles move. The amplitude of a wave is related to the amount of energy it carries. The intensity of a sound wave is defined as the energy transmitted through a unit area, per unit time, in the direction in which the sound wave is traveling; it is a vector quantity having both a magnitude and direction. Relative intensity is given in dB.</p></li>
-<li><p>Pitch is measured by frequency: how often particles move</p></li>
-<li><p>Phase cannot be heard. It specifies the location</p></li>
+<li><strong>Amplitude &amp; Intensity (Loudness)</strong>: Amplitude represents the energy the wave carries, and how much the water particles move. Intensity is the energy transmitted through a unit area per time in the direction of travel. Relative intensity is expressed in decibels (dB).</li>
+<li><strong>Frequency (<span class="math inline">\(f\)</span>) (Pitch)</strong>: Measured in Hertz (Hz). Frequency defines the sound’s pitch by how often the water particles oscillate. In general, larger objects (like baleen whales or container ships) produce lower frequency sounds, while smaller objects produce higher frequency sounds.</li>
 </ul>
-<p><a href="frequency.png">high frequency vs low frequency image</a></p>
-<p>In general, larger objects produce low-frequency sounds.</p>
-</section>
-<section id="key-wave-characteristics" class="level2">
-<h2 class="anchored" data-anchor-id="key-wave-characteristics">Key wave characteristics:</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/Amplitude-Frequency.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Bigger objects make low-frequency sounds while smaller objects make high frequency sounds.</figcaption>
+</figure>
+</div>
 <ul>
-<li>Amplitude: measured in decibels (dB), it represents the energy/intensity of the wave.</li>
-<li>Frequency (<span class="math inline">\(f\)</span>): measured in Hertz (Hz), it defines the pitch.</li>
-<li>Wavelength (<span class="math inline">\(\lambda\)</span>): related to speec (<span class="math inline">\(c\)</span>) and frequency by <span class="math inline">\(c=f\lambda\)</span>.</li>
+<li><strong>Wavelength (<span class="math inline">\(\lambda\)</span>)</strong>: The distance over which the wave’s shape repeats, directly related to the speed of sound (<span class="math inline">\(c\)</span>) and frequency (<span class="math inline">\(f\)</span>): <span class="math inline">\(c=f\lambda\)</span>.</li>
+<li><strong>Phase (<span class="math inline">\(\phi\)</span>)</strong>: Phase specifies the exact alignment or timing of a wave at a given moment. While it cannot be heard, phase is critical for hydrophone arrays to determine the precise direction a sound is coming from.</li>
 </ul>
+<p>Mathematical representation of a classic pressure (<span class="math inline">\(p\)</span>) sine wave as a function of time (<span class="math inline">\(t\)</span>): <span class="math display">\[
+p(t) = A \sin{(2\pi f t + \phi)}
+\]</span></p>
 </section>
 <section id="why-does-sound-travel-faster-in-water-than-air" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="why-does-sound-travel-faster-in-water-than-air">Why does sound travel faster in water than air?</h2>
-<p>Sound travels roughly 4.3 times faster in water than in air (<span class="math inline">\(\approx 1500\)</span> m/s in water vs 340 m/s in air). he speed of sound (<span class="math inline">\(v\)</span>) is governed by the relationship between a material’s <strong>bulk modulus</strong> (B), its resistance to compression) and its <strong>density</strong> (<span class="math inline">\(\rho\)</span>):</p>
+<p>Sound travels roughly <strong>4.3 times faster</strong> in water than in air (<span class="math inline">\(\approx 1500\)</span> m/s in water vs 340 m/s in air). he speed of sound (<span class="math inline">\(v\)</span>) is governed by the relationship between a material’s <strong>bulk modulus</strong> (B), its resistance to compression) and its <strong>density</strong> (<span class="math inline">\(\rho\)</span>):</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p><strong>Bulk Modulus</strong>: The <em>stiffness</em>, or resistance to compression of a medium, which depends on the medium’s density: <span class="math inline">\(B=\rho \partial P / \partial \rho\)</span>.</p>
@@ -411,7 +416,7 @@ v = \sqrt{\left(B/\rho\right)}
 <p>This deep channel is also called an ocean waveguide, where inside acoustic energy does not escape and thus can travel great distances. This channel has several useful applications:</p>
 <ul>
 <li><strong>Marine mammals</strong> use it for communications with low-frequency sounds across thousands of kilometers.</li>
-<li><strong>The Military</strong> during WWII used it to locate downed aviators, which would released small detonations within the SOFAR channel detectable far away.</li>
+<li>During WWII, <strong>the military</strong> used it to locate downed aviators, which would released small detonations within the SOFAR channel detectable far away.</li>
 </ul>
 </section>
 <section id="surface-duct" class="level2">
@@ -498,12 +503,38 @@ v = \sqrt{\left(B/\rho\right)}
 <p>Reverberation is not exactly a wave behaviour, but rather the result of it. It is the accumulation of sound that have been scattered and persists even if the source is turned off. It can limit sound detection due to clouding the incoming signal. It is even more important in shallow water, as sound interacts multiple times with the surface and the bottom as it travels.</p>
 </section>
 </section>
-<section id="transmission-loss" class="level1">
-<h1>Transmission Loss</h1>
-<p>Transmission loss has three components: spreading, scattering, and attenuation. It is the total loss of energy from the source to a receiver, also known as propagation loss.</p>
-<p>Received Level = Source Level - Propagation Loss - Excess Attenuation RL = SL - 20 log10 (r) - EA (independant of the frequency, only on the geometry of the source and sound field)</p>
-<p>EA = r + reflection + scattering + diffraction</p>
-<p>When a wave passes through a medium, a portion of the energy is lost due to multiple factors. A wave loses energy as it travels, and we quantify this as the transmission loss. Examples of mechanisms that can result in transmission lost are wave attenuation, geometrical spreading, bottom reflection loss, boundary scattering.</p>
+<section id="transmission-loss-propagation-loss" class="level1">
+<h1>Transmission Loss (Propagation Loss)</h1>
+<p>As a sound wave travels from the source (whale) to the receiver (hydrophone), it loses energy. This reduction in sound pressure level is defined as <strong>Transmission Loss (TL)</strong>, also known as propagation loss.</p>
+<p>The relationship between how loud a sound is emitted, how far it travels, and how loud it is then perceived when it arrives is as follows:</p>
+<p><span class="math display">\[
+RL = SL - TL
+\]</span></p>
+<p>where <strong>RL</strong> is the <strong>Received Level</strong>, the loudness recorded at the hydrophone, and <strong>SL</strong> is the initial <strong>Sound Level</strong> from the source.</p>
+<p>Transmission loss has different components: loss due sound spreading in space (function of distance <span class="math inline">\(r\)</span>) and loss due to physical interactions with water and boundaries (excess attenuation, EA):</p>
+<p><span class="math display">\[
+TL = GS + EA
+\]</span></p>
+<section id="geometric-spreading-gs" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-spreading-gs">Geometric Spreading (GS)</h2>
+<p>Geometric spreading, energy loss due to sound spreading in space, is independant of frequency, but it depends on the shape of the spreading:</p>
+<ul>
+<li>Deep ocean and open water (spherical spreading): GS = 20 _{10} (r)</li>
+<li>Shallow water and surface ducts (cylindrical spreading): GS = 10 _{10} (r)</li>
+</ul>
+</section>
+<section id="excess-attenuation-ea" class="level2">
+<h2 class="anchored" data-anchor-id="excess-attenuation-ea">Excess Attenuation (EA)</h2>
+<p>Energy is lost through reflection, scattering, diffraction depending on environmental conditions, terrain, weather:</p>
+<p><span class="math display">\[
+EA =  \text{Loss}_{absorption} + \text{Loss}_{reflection} + \text{Loss}_{scattering} + \text{Loss}_{diffraction}
+\]</span></p>
+<ul>
+<li>Absorption: <span class="math inline">\(\alpha * r\)</span>, energy is absorbed by seawater and converted to heat.</li>
+<li>Boundary reflection and scattering: energy is lost when sound hits the seafloor, the sea surface, or sea ice.</li>
+<li>Diffraction: energy is diverted when a wave bends around underwater seamounts or ridges.</li>
+</ul>
+</section>
 </section>
 <section id="arctic-propagation" class="level1">
 <h1>Arctic propagation</h1>

@@ -54,17 +54,7 @@
     "href": "sections/sound-propagation.html#sound-characterization",
     "title": "Sound Propagation in the Ocean",
     "section": "Sound characterization",
-    "text": "Sound characterization\nSound is described by characteristics that can be measured:\n\nLoudness is measured by intensity: how much particles move. The amplitude of a wave is related to the amount of energy it carries. The intensity of a sound wave is defined as the energy transmitted through a unit area, per unit time, in the direction in which the sound wave is traveling; it is a vector quantity having both a magnitude and direction. Relative intensity is given in dB.\nPitch is measured by frequency: how often particles move\nPhase cannot be heard. It specifies the location\n\nhigh frequency vs low frequency image\nIn general, larger objects produce low-frequency sounds.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
-    ]
-  },
-  {
-    "objectID": "sections/sound-propagation.html#key-wave-characteristics",
-    "href": "sections/sound-propagation.html#key-wave-characteristics",
-    "title": "Sound Propagation in the Ocean",
-    "section": "Key wave characteristics:",
-    "text": "Key wave characteristics:\n\nAmplitude: measured in decibels (dB), it represents the energy/intensity of the wave.\nFrequency (\\(f\\)): measured in Hertz (Hz), it defines the pitch.\nWavelength (\\(\\lambda\\)): related to speec (\\(c\\)) and frequency by \\(c=f\\lambda\\).",
+    "text": "Sound characterization\nSound is described by characteristics that can be measured:\n\nAmplitude & Intensity (Loudness): Amplitude represents the energy the wave carries, and how much the water particles move. Intensity is the energy transmitted through a unit area per time in the direction of travel. Relative intensity is expressed in decibels (dB).\nFrequency (\\(f\\)) (Pitch): Measured in Hertz (Hz). Frequency defines the sound’s pitch by how often the water particles oscillate. In general, larger objects (like baleen whales or container ships) produce lower frequency sounds, while smaller objects produce higher frequency sounds.\n\n\n\n\nBigger objects make low-frequency sounds while smaller objects make high frequency sounds.\n\n\n\nWavelength (\\(\\lambda\\)): The distance over which the wave’s shape repeats, directly related to the speed of sound (\\(c\\)) and frequency (\\(f\\)): \\(c=f\\lambda\\).\nPhase (\\(\\phi\\)): Phase specifies the exact alignment or timing of a wave at a given moment. While it cannot be heard, phase is critical for hydrophone arrays to determine the precise direction a sound is coming from.\n\nMathematical representation of a classic pressure (\\(p\\)) sine wave as a function of time (\\(t\\)): \\[\np(t) = A \\sin{(2\\pi f t + \\phi)}\n\\]",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
     ]
@@ -84,7 +74,7 @@
     "href": "sections/sound-propagation.html#sofar-channel-ocean-acoustic-waveguide",
     "title": "Sound Propagation in the Ocean",
     "section": "SOFAR channel (ocean acoustic waveguide)",
-    "text": "SOFAR channel (ocean acoustic waveguide)\nThere’s a unique sweet spot at about 1000 m where sound emitted at this depth can travel much farther away, known as the SOFAR channel (SOund Fixing And Ranging). This is a result of decrease in temperature and the increase in pressure making sound speed reach a miniumum. Because of refraction, sound waves always bend toward regions of slower speed. As a result, any sound waves traveling upward or downward from this 1000-meter layer are continuously bended right back into the center of the low-speed layer.\n\n\nSOFAR channel: The specific depth range at which the speed of sound reaches a minimum, usually around 1000 m.\n\nRefraction: The bending of a wave as it moves through changing water properties (temperature, pressure, salinity) Sound will bend from high sound speed to low sound speed (Snell’s law).\n\n\nThis deep channel is also called an ocean waveguide, where inside acoustic energy does not escape and thus can travel great distances. This channel has several useful applications:\n\nMarine mammals use it for communications with low-frequency sounds across thousands of kilometers.\nThe Military during WWII used it to locate downed aviators, which would released small detonations within the SOFAR channel detectable far away.",
+    "text": "SOFAR channel (ocean acoustic waveguide)\nThere’s a unique sweet spot at about 1000 m where sound emitted at this depth can travel much farther away, known as the SOFAR channel (SOund Fixing And Ranging). This is a result of decrease in temperature and the increase in pressure making sound speed reach a miniumum. Because of refraction, sound waves always bend toward regions of slower speed. As a result, any sound waves traveling upward or downward from this 1000-meter layer are continuously bended right back into the center of the low-speed layer.\n\n\nSOFAR channel: The specific depth range at which the speed of sound reaches a minimum, usually around 1000 m.\n\nRefraction: The bending of a wave as it moves through changing water properties (temperature, pressure, salinity) Sound will bend from high sound speed to low sound speed (Snell’s law).\n\n\nThis deep channel is also called an ocean waveguide, where inside acoustic energy does not escape and thus can travel great distances. This channel has several useful applications:\n\nMarine mammals use it for communications with low-frequency sounds across thousands of kilometers.\nDuring WWII, the military used it to locate downed aviators, which would released small detonations within the SOFAR channel detectable far away.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
     ]
@@ -175,6 +165,26 @@
     "title": "Sound Propagation in the Ocean",
     "section": "Reverberation",
     "text": "Reverberation\nReverberation is not exactly a wave behaviour, but rather the result of it. It is the accumulation of sound that have been scattered and persists even if the source is turned off. It can limit sound detection due to clouding the incoming signal. It is even more important in shallow water, as sound interacts multiple times with the surface and the bottom as it travels.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
+    ]
+  },
+  {
+    "objectID": "sections/sound-propagation.html#geometric-spreading-gs",
+    "href": "sections/sound-propagation.html#geometric-spreading-gs",
+    "title": "Sound Propagation in the Ocean",
+    "section": "Geometric Spreading (GS)",
+    "text": "Geometric Spreading (GS)\nGeometric spreading, energy loss due to sound spreading in space, is independant of frequency, but it depends on the shape of the spreading:\n\nDeep ocean and open water (spherical spreading): GS = 20 _{10} (r)\nShallow water and surface ducts (cylindrical spreading): GS = 10 _{10} (r)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
+    ]
+  },
+  {
+    "objectID": "sections/sound-propagation.html#excess-attenuation-ea",
+    "href": "sections/sound-propagation.html#excess-attenuation-ea",
+    "title": "Sound Propagation in the Ocean",
+    "section": "Excess Attenuation (EA)",
+    "text": "Excess Attenuation (EA)\nEnergy is lost through reflection, scattering, diffraction depending on environmental conditions, terrain, weather:\n\\[\nEA =  \\text{Loss}_{absorption} + \\text{Loss}_{reflection} + \\text{Loss}_{scattering} + \\text{Loss}_{diffraction}\n\\]\n\nAbsorption: \\(\\alpha * r\\), energy is absorbed by seawater and converted to heat.\nBoundary reflection and scattering: energy is lost when sound hits the seafloor, the sea surface, or sea ice.\nDiffraction: energy is diverted when a wave bends around underwater seamounts or ridges.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sound Propagation in the Ocean</span>"
     ]
