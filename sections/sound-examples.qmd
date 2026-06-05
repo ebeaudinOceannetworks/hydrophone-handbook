@@ -2,14 +2,18 @@
 title: "Examples of Sounds"
 ---
 
-# Regional Soundscape Characterization
+Explore acoustic signatures captured across our monitoring stations.
+Examples shown here are include marine mammals, interference from nearby instruments, weather events.
 
-Explore the specific acoustic signatures captured across our monitoring stations.
-Examples shown here are from marine mammals, interference from nearby instruments, weather events, etc.
+Go to [ONC's soundcloud page](https://soundcloud.com/oceannetworkscanada) to get the full list of sounds discovered from the hydrophone data.
 
+More examples on [Voices in the Sea](https://voicesinthesea.ucsd.edu/index.html)
+
+<!--
 ---
 
-### Template
+
+# Template
 
 ::: {layout="[[35, 65]]"}
 ::: {#metadata}
@@ -23,9 +27,9 @@ Examples shown here are from marine mammals, interference from nearby instrument
 ![**Spectrogram:** Caption](../images/linktoimage.png){}
 :::
 
----
+-->
 
-### Acoustic Interference from Nearby Instruments
+# Acoustic Interference from Nearby Instruments
 
 ::: {layout="[[35, 65]]"}
 ::: {#metadata}
@@ -36,12 +40,37 @@ Examples shown here are from marine mammals, interference from nearby instrument
 
 :::
 
-![**Spectrogram:** Caption](../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png){}
+![**Spectrogram** ](../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png){}
 :::
 
----
 
-### Tonals
+# SONAR
+
+::: {layout="[[35, 65]]"}
+::: {#metadata}
+**Location:** Clayoquot Slope, BC
+**Sounds:** SONAR at 2 kHz and 7 kHz.
+
+:::
+
+![**Spectrogram** ](../images/ICLISTENHF6013_20260602T091500.000Z-spect.png){}
+:::
+
+
+# Airplane
+
+::: {layout="[[35, 65]]"}
+::: {#metadata}
+**Location:** Cambridge Bay, NU
+**Sounds:** Airplane flying over.
+
+:::
+
+![**Spectrogram** ](../images/ICLISTENHF1951_20230808T043007.000Z-spect.png){}
+:::
+
+
+# Tonals
 
 ::: {layout="[[35, 65]]"}
 ::: {#metadata}
@@ -52,12 +81,11 @@ Examples shown here are from marine mammals, interference from nearby instrument
 
 :::
 
-![**Spectrogram:** .](../images/.png){}
+![**Spectrogram** .](../images/.png){}
 :::
 
----
 
-### Snowmobile
+# Snowmobile
 
 ::: {layout="[[35, 65]]"}
 ::: {#metadata}
@@ -73,9 +101,19 @@ Link to the article: [Marine soundscapes of the Arctic and human impacts: going 
 ![**Spectrogram:** Snowmobile passing on sea ice above a hydrophone in Cambridge Bay.](../images/snowmobile.png){}
 :::
 
----
+::: {layout="[[35, 65]]"}
+::: {#metadata}
+**Location:** Cambridge Bay, NU  
+**Sound:** Snowmobile Transit
 
-### Earthquake at Endeavour
+:::
+
+![**Spectrogram:** Snowmobile passing on sea ice above a hydrophone in Cambridge Bay.](../images/ICLISTENHF1951_20260129T110012.000Z-spect.png){}
+:::
+
+
+
+# Earthquake at Endeavour
 
 ::: {layout="[[35, 65]]"}
 ::: {#metadata}
@@ -90,6 +128,19 @@ Link to the article: [Marine soundscapes of the Arctic and human impacts: going 
 ![**Spectrogram:** Earthquake at Endeavour.](../images/ICLISTENHF6328_20240306T084000.000Z-spect.png){}
 :::
 
+
+# Pump contamination
+
+::: {layout="[[35, 65]]"}
+::: {#metadata}
+**Location:** Cambridge Bay, NU
+**Sounds:** Pump
+
+**Analysis:** At that time, the hydrophone was too close to a plafform with other noisy instruments which included a pump.
+:::
+
+![**Spectrogram:** Caption](../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png){}
+:::
 
 ---
 
