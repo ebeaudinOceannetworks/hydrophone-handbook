@@ -48,7 +48,7 @@ This process is designed to catch technical issues early and ensures the data is
 * **Immediate Post-Deployment**: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming. A JIRA ticket is created which consolidates all relevant information.
 * **1-2 Months Post-Deployment**: A detailed analysis of data stream is performed, and several elements are analyzed including the presence of noise, saturation, array consistency (for 4 elements arrays), auxiliary data.
 
-The commissioning ticket is closed one the data is confirmed found in the Hydrophone Data Viewer, accessible through ONC API, and that the data products are generated correctly.
+The commissioning ticket is closed once the data is confirmed found in the Hydrophone Data Viewer, accessible through ONC API, and that the data products are generated correctly.
 
 For the complete procedure: [Hydrophone Commissioning Procedure](https://internal.oceannetworks.ca/spaces/ONCData/pages/272761113/Hydrophone+commissioning+procedure)
 
