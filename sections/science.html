@@ -234,7 +234,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#fin-whale-autodetector" id="toc-fin-whale-autodetector" class="nav-link" data-scroll-target="#fin-whale-autodetector">Fin whale autodetector</a></li>
   <li><a href="#acoustic-modelling" id="toc-acoustic-modelling" class="nav-link" data-scroll-target="#acoustic-modelling">Acoustic modelling</a></li>
   <li><a href="#earthquake-detection" id="toc-earthquake-detection" class="nav-link" data-scroll-target="#earthquake-detection">Earthquake detection</a></li>
-  <li><a href="#beamformings" id="toc-beamformings" class="nav-link" data-scroll-target="#beamformings">Beamformings</a></li>
   </ul>
 </nav>
     </div>
@@ -267,18 +266,26 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <section id="marine-mammals-monitoring" class="level1">
 <h1>Marine mammals monitoring</h1>
+<p>Underwater sound monitoring is used at ONC for monitoring whale activity and behavior. In 2015, ONC joined the Enhancing Cetacean and Habitat Observation (<a href="https://www.portvancouver.com/environment/healthy-ecosystem/echo">ECHO</a>) Program which aim at investigating ways to reduce shipping traffic impacts on whale activity in the Straight of Georgia. As part of the program, hydrophone arrays from <em>JASCO Applied Science</em> were deployed and the data ingested in ONC’s servers.</p>
+<p>The program has known quite a bit of success, as thousands of ships have voluntarily reduced speed or distanced themselves from whales.</p>
+<p><em>Read ONC’s story <a href="https://www.oceannetworks.ca/news-and-stories/stories/listening-to-deep-ocean-whales/">here</a>.</em></p>
+<p>Since then, ONC has kept expanding its hydrophone network which has turned into more partnerships with BC in 2017, to study ship traffic in Haro Strait (<a href="https://www.oceannetworks.ca/news-and-stories/stories/monitoring-canadas-ocean-coasts-and-killer-whales-through-technology-and-data/">read story here</a> to specifically monitor southern residents killer whales.</p>
+<p>Whale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behavior, and their seasonal presence.</p>
 </section>
 <section id="fin-whale-autodetector" class="level1">
 <h1>Fin whale autodetector</h1>
+<p>Historically, whale identification in hydrophone data is done by listening to the audio file. This method, while proof, is extremely time-consuming. At ONC, Spencer Bialek has developed a Machine Learning tool able to detect several whale species and differentiate several calls. The first iteration of this model was applied to fin whales, which are extremely common in BC and we have tons of recordings. The model is able to identify 3 distinct call types: 20 Hz, 40 Hz, and song. Each of these are associated with different behaviors such as mating, grazing, communication and navigation (read more about fin whales on <a href="https://dosits.org/galleries/audio-gallery/marine-mammals/baleen-whales/fin-whale/">DOSIT</a>).</p>
+<p>The model is able to do in a few minutes what humans typically would do in several weeks or months, which allows for building long-term time series of whale presence. However, humans are needed to guide the model, detect false alarms (misidentified whale call), and inject more data. Moreover, the model is not able to detect <em>new</em> call types which humans are able to detect. Humans will always be needed together with this model, but so far it is bringing a lot of hopes analyzing terabytes of audio files.</p>
 </section>
 <section id="acoustic-modelling" class="level1">
 <h1>Acoustic modelling</h1>
+<p>Hydrophones are useful for understanding the ocean soundscape, meaning the types of sounds that can be heard underwater. One might be interested however in how the environment affects sound propagation. Temperature, depth, seamounts, seafloor sediments are all properties of the ocean that can impact how sound travels, and thus how <em>far</em> can sound travel. This information can be useful to characterize the detection range of a hydrophone, to understand how far a whale might be. In addition, knowing the detection range is important when wanting to deploy new hydrophones and make sure we are covering as much as possible, and the hydrophone is not located in <em>deaf zone</em> for sounds of interest. Note that the detection range depends on the sound frequency, and thus on the whale species and call type. Lower frequencies travel farther.</p>
+<p>Lanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.</p>
 </section>
 <section id="earthquake-detection" class="level1">
 <h1>Earthquake detection</h1>
-</section>
-<section id="beamformings" class="level1">
-<h1>Beamformings</h1>
+<p>Seismic waves from earthquakes travel with typical frequencies between 5-50 Hz, making them detectable on low-frequency hydrophones which have high sensitivity down to 10 Hz. However, hydrophones are not the primary sensors used for earthquake detection, since ONC has several Ocean-Bottom seismometers (OBS).</p>
+<p>Interesting to note that conversely, seismometers can also be used to detect whale calls. OBS have been deployed around Endeavour hydrothermal vent, starting with eight in early 2000s and more since then. Fin whale calls are relatively low frequency (20 Hz), and overlap with the detection bandwidth of these seismometers. Numerous studies have used them to track fin whales (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0186127">Weirathmueller et al., 2007</a>,<a href="https://faculty.washington.edu/wilcock/files/PaperPDFs/wilcock_JASA_2012.pdf">Wilcock 2012</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23464044/">Soule &amp; Wilcock, 2013</a>).</p>
 
 
 </section>
