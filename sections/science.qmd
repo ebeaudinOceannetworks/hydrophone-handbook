@@ -10,10 +10,31 @@ https://pubs.aip.org/asa/jasa/article/158/2/1113/3358979/Receptions-of-Kauai-Bea
 
 # Marine mammals monitoring
 
+Underwater sound monitoring is used at ONC for monitoring whale activity and behavior. In 2015, ONC joined the Enhancing Cetacean and Habitat Observation ([ECHO](https://www.portvancouver.com/environment/healthy-ecosystem/echo)) Program which aim at investigating ways to reduce shipping traffic impacts on whale activity in the Straight of Georgia. As part of the program, hydrophone arrays from *JASCO Applied Science* were deployed and the data ingested in ONC’s servers.
+
+The program has known quite a bit of success, as thousands of ships have voluntarily reduced speed or distanced themselves from whales.
+
+*Read ONC’s story [here](https://www.oceannetworks.ca/news-and-stories/stories/listening-to-deep-ocean-whales/).*
+
+Since then, ONC has kept expanding its hydrophone network which has turned into more partnerships with BC in 2017, to study ship traffic in Haro Strait ([read story here](https://www.oceannetworks.ca/news-and-stories/stories/monitoring-canadas-ocean-coasts-and-killer-whales-through-technology-and-data/) to specifically monitor southern residents killer whales.
+
+Whale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behavior, and their seasonal presence. 
+
+
 # Fin whale autodetector
 
+Historically, whale identification in hydrophone data is done by listening to the audio file. This method, while proof, is extremely time-consuming. At ONC, Spencer Bialek has developed a Machine Learning tool able to detect several whale species and differentiate several calls. The first iteration of this model was applied to fin whales, which are extremely common in BC and we have tons of recordings. The model is able to identify 3 distinct call types: 20 Hz, 40 Hz, and song. Each of these are associated with different behaviors such as mating, grazing, communication and navigation (read more about fin whales on [DOSIT](https://dosits.org/galleries/audio-gallery/marine-mammals/baleen-whales/fin-whale/)).
+
+The model is able to do in a few minutes what humans typically would do in several weeks or months, which allows for building long-term time series of whale presence. However, humans are needed to guide the model, detect false alarms (misidentified whale call), and inject more data. Moreover, the model is not able to detect *new* call types which humans are able to detect. Humans will always be needed together with this model, but so far it is bringing a lot of hopes analyzing terabytes of audio files.
+
+
 # Acoustic modelling
+Hydrophones are useful for understanding the ocean soundscape, meaning the types of sounds that can be heard underwater. One might be interested however in how the environment affects sound propagation. Temperature, depth, seamounts, seafloor sediments are all properties of the ocean that can impact how sound travels, and thus how *far* can sound travel. This information can be useful to characterize the detection range of a hydrophone, to understand how far a whale might be. In addition, knowing the detection range is important when wanting to deploy new hydrophones and make sure we are covering as much as possible, and the hydrophone is not located in  *deaf zone* for sounds of interest. Note that the detection range depends on the sound frequency, and thus on the whale species and call type. Lower frequencies travel farther.
+
+Lanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.
+
 
 # Earthquake detection
+Seismic waves from earthquakes travel with typical frequencies between 5-50 Hz, making them detectable on low-frequency hydrophones which have high sensitivity down to 10 Hz. However, hydrophones are not the primary sensors used for earthquake detection, since ONC has several Ocean-Bottom seismometers (OBS).
 
-# Beamformings
+Interesting to note that conversely, seismometers can also be used to detect whale calls. OBS have been deployed around Endeavour hydrothermal vent, starting with eight in early 2000s and more since then. Fin whale calls are relatively low frequency (20 Hz), and overlap with the detection bandwidth of these seismometers. Numerous studies have used them to track fin whales ([Weirathmueller et al., 2007](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0186127),[Wilcock 2012](https://faculty.washington.edu/wilcock/files/PaperPDFs/wilcock_JASA_2012.pdf), [Soule & Wilcock, 2013](https://pubmed.ncbi.nlm.nih.gov/23464044/)).
