@@ -1,7 +1,7 @@
 <!-- LANDING PAGE -->
 
 ---
-title: "Listening to the ocean since 2006"
+title: "Listening to the Ocean since 2006"
 ---
 
 # Overview
@@ -33,7 +33,12 @@ ojs_define(hydro_data = locations[['locationName', 'lat', 'lon', 'locationCode']
 ```
 
 ::: {style="width: 80%; margin: auto;"}
-![*Hydrophone Network at Ocean Networks Canada. Most hydrophones are located on the west coast. There is currently one in the Arctic, and one in the east coast.*](images/onc-hydrophone-canada.jpeg){width="80%"}
+![*Hydrophone Network at Ocean Networks Canada. Most hydrophones are located on the west coast. There is currently one in the Arctic, and one in the east coast.*](images/onc-hydrophone-canada.jpeg){width="100%"}
+:::
+
+
+::: {style="width: 80%; margin: auto;"}
+![*Hydrophone locations in coastal BC.*](images/20260521_ONCWesternBC_Hydrophones_v2.png){width="100%"}
 :::
 
 This handbook is an internal source for ONC's hydrophone network, spanning hardware specs, signal processing, and the lifecycle of an instrument.
