@@ -22,21 +22,21 @@
   {
     "objectID": "sections/how-hydrophones-work.html",
     "href": "sections/how-hydrophones-work.html",
-    "title": "How do hydrophones work?",
+    "title": "How do Hydrophones Work?",
     "section": "",
     "text": "General\nA hydrophone is a device that passively detects acoustic signal underwater. The word hydrophone comes from the Greek hydro (water), and phone (voice).\nAcoustic data are recorded in the form of a time-amplitude signal, at a specified sampling rate.\nSeveral types of hydrophones exist depending on the applications, with different frequency range. Some of the most common applications of passive acoustics are:",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How do hydrophones work?</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How do Hydrophones Work?</span>"
     ]
   },
   {
     "objectID": "sections/how-hydrophones-work.html#signal-to-noise-ratio",
     "href": "sections/how-hydrophones-work.html#signal-to-noise-ratio",
-    "title": "How do hydrophones work?",
+    "title": "How do Hydrophones Work?",
     "section": "Signal to Noise ratio",
     "text": "Signal to Noise ratio\nSignal to Noise ratio is an important element to consider for hydrophones.\nA bigger element increases sensitivity, but also can lower SNR.\nA rule of thumb is to ensure the measured amplitude is at least 5 times larger than the noise equavalent pressure (NEP) of the hydrophone to maximize the signal to noise ratio (SNR).\n\\[\nNEP [Pa] = \\frac{\\text{Pre-amp Noise} ~[\\mu V]}{\\text{Sensitivity} ~[nV~Pa^{-1}] \\times \\text{Pre-amp Gain}} \\times 1000\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How do hydrophones work?</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How do Hydrophones Work?</span>"
     ]
   },
   {
