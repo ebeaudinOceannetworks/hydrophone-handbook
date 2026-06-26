@@ -53,7 +53,6 @@ The commissioning ticket is closed once the data is confirmed found in the Hydro
 
 For the complete procedure: [Hydrophone Commissioning Procedure](https://internal.oceannetworks.ca/spaces/ONCData/pages/272761113/Hydrophone+commissioning+procedure)
 
-
 # 4. Data Quality & Assurance
 
 *Teams involved: DAQ, Science, Systems*
@@ -92,7 +91,7 @@ To make our data globally compatible, we follow strict international standards:
 
 # 8. Recovery & Decommissioning
 
-*Teams involved: DSO, MarineOps, Systems*
+*Teams involved: DSO, Marine Ops, Systems*
 
 The end of a deployement does not mean the end of a instrument's use.
 Hydrophones are often re-deployed during the ONC maintenance cruises, or returning to MTC of the manufacturer for maintenance.
