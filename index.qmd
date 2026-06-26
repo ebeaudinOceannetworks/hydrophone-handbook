@@ -48,18 +48,17 @@ This handbook is an internal source for ONC's hydrophone network, spanning hardw
 
 Sound is the primary way we "see" in the ocean.
 Because light travels poorly in water, acoustic signals are essential for navigation, communication, and monitoring the health of marine ecosystems.
-Unlike several oceanic instruments, hydrophones use *passive acoustics*, hence are a non-disruptive form of monitoring the ocean soundscape.
+Unlike several oceanic instruments, hydrophones use *passive acoustics*, hence are a non-disruptive form of monitoring the ocean soundscape. A few applications include:
+
+* **Whale monitoring** to track migration patterns, distribution, abundance, and understand behaviours.
+* **Ship traffic monitoring** to identify areas of increase activity such as the Arctic in the recent years as sea ice melt unveils new shipping routes.
+* **National defense**: SOSUS (sound surveillance system) to identify vessels and nuclear testing
+* **Resource exploration**
+* **Seimic Survey** to map minerals and detect earthquakes.
 
 ::: {layout-ncol=1 .text-center}
-![*Hydrophone under water.*](images/hydrophone.png){width="80%"}
+![*Artistic vuew of a hydrophone under water.*](images/hydrophone.png){width="80%"}
 :::
-
-From **national defense** using SOSUS (sound surveillance system) to identify vessels and nuclear testing, to **resource exploration** using seismic surveys to map minerals, acoustics drive the blue economy.
-These sensors can also be used to monitor **vessel traffic**, which for example is increasing in the Arctic as sea ice melts unveiling new shipping routes.
-
-
-Hydrophones are also used to **track marine mammals** distribution and abundance.
-Beyond biology, hydrophones can be used to detect as **earthquakes** and **seismic activity**, and even the sound of **wind** and **rain**
 
 
 # Goals and future direction for passive acoustics
