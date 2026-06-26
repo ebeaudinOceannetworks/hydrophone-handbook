@@ -1,5 +1,5 @@
 ---
-title: "How do hydrophones work?"
+title: "How do Hydrophones Work?"
 ---
 
 ::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
@@ -50,7 +50,7 @@ The piezoelectric material is often made of ceramics, more specifically Lead-Zir
 The transducer is often shaped as a cylinder or a sphere, which is ideal for listening to signal from all direction.
 
 # Sensitivity
-The sensitivity of the hydrophone refers to how efficient the hydrophone converts undewater sound pressure into electrical signal.
+The sensitivity of the hydrophone refers to how efficient the hydrophone converts underwater sound pressure into an electrical signal.
 Quantitatively, it is the ratio of sound pressure signal and the output voltage signal:
 $$
 M_\nu = \frac{V_h}{P_h} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
@@ -64,11 +64,11 @@ What affects hydrophone sensitivity:
 
 Knowing the sensitivity is essential to choose the right hydrophone for the right application.
 
-Hydrophones can be separated into three categories:
+Hydrophones can be separated into three categories with overlapping ranges:
 
-- Low-Frequency (Infrasonic): ...
-- Mid-Frequency (): 
-- High-Frequency (Ultrasonic)
+- Low-Frequency (Infrasonic): 1 Hz - 1 kHz
+- Audio-Frequency: 10 Hz - 10 kHz
+- High-Frequency (Ultrasonic): 10 Hz - 200 kHz
 
 ![Sensitivity curve of a high-frequency piezoelectric hydrophone.](../images/sensitivity-curve.png)
 
