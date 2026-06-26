@@ -13,6 +13,7 @@ ONC commits to share and preserve data long-term.
 
 ![Diagram of a Hydrophone life cycle at Ocean Networks Canada.](../images/Hydrophone-Life-Cycle.png)
 
+<!-- link to canva where the hydrophone life cycle image was created: https://canva.link/erzgms3fvn7dyz6 -->
 
 # 1. Planning and Governance
 
@@ -83,7 +84,7 @@ To make our data globally compatible, we follow strict international standards:
 
 
 # 7. Access & Analysis
-* Teams involved: Science, DSO, End-Users*
+*Teams involved: Science, DSO, Software, End-Users*
 
 * **Discovery**: Users find data via Oceans 3.0 using Data Search, the Hydrophone Viewer (5-minute spectrogram previews), or the API.
 * **Identification**: Each dataset is assigned a **DOI** (Digital Object Identifier) to ensure researchers can cite the specific data they used in their papers.
