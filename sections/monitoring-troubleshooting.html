@@ -232,10 +232,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#validation" id="toc-validation" class="nav-link active" data-scroll-target="#validation">Validation</a></li>
   <li><a href="#commissioning" id="toc-commissioning" class="nav-link" data-scroll-target="#commissioning">Commissioning</a></li>
-  <li><a href="#list-of-common-issues-and-potential-root-causes" id="toc-list-of-common-issues-and-potential-root-causes" class="nav-link" data-scroll-target="#list-of-common-issues-and-potential-root-causes">List of common issues and potential root causes:</a></li>
+  <li><a href="#list-of-common-issues-potential-root-causes-and-how-to-report-it" id="toc-list-of-common-issues-potential-root-causes-and-how-to-report-it" class="nav-link" data-scroll-target="#list-of-common-issues-potential-root-causes-and-how-to-report-it">List of common issues, potential root causes, and how to report it:</a></li>
   <li><a href="#how-to-report-an-instrument-issue" id="toc-how-to-report-an-instrument-issue" class="nav-link" data-scroll-target="#how-to-report-an-instrument-issue">How to report an instrument issue</a></li>
   <li><a href="#using-data-to-assess-system-problems" id="toc-using-data-to-assess-system-problems" class="nav-link" data-scroll-target="#using-data-to-assess-system-problems">Using data to assess system problems</a></li>
-  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies">Case Studies</a></li>
   </ul>
 </nav>
     </div>
@@ -293,33 +292,26 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>https://internal.oceannetworks.ca/spaces/ONCData/pages/9344555/Data+Commissioning</p>
 </section>
-<section id="list-of-common-issues-and-potential-root-causes" class="level1">
-<h1>List of common issues and potential root causes:</h1>
+<section id="list-of-common-issues-potential-root-causes-and-how-to-report-it" class="level1">
+<h1>List of common issues, potential root causes, and how to report it:</h1>
 <ul>
-<li>No audio data stream -&gt; Junction Box down, network down</li>
-<li>Audio data archived but no .mat/.png -&gt; check with DSO, this might be related to sensitivity curve not updated. This is an internal software system-related problem.</li>
-<li>Very bad data -&gt; instrument health (temp, humidity, battery), biofouling (very hard to detect, happens over the course of several months), interference that’s masking data significantly (from nearby instruments)</li>
-<li>clock synchronization (onc Links &amp; icLinks)</li>
+<li><p>No data stream -&gt; Junction Box down, network down Looking at the data availability plot in the <a href="https://hydrophone-dashboard.oncs.ca">Hydrophone Dashboard</a> under an individual hydrophone, if there is incoming data missing for .flac/.wav, this needs to be report as an INSTR ticket. If the missing data is the derived .mat file instead, this could be related to somethign else, check next issue.</p></li>
+<li><p>Audio data archived but no .mat/.png -&gt; check with DSO, this might be related to sensitivity curve not updated. This is an internal software system-related problem.</p></li>
+<li><p>Very bad data -&gt; instrument health (temp, humidity, battery), biofouling (very hard to detect, happens over the course of several months), interference that’s masking data significantly (from nearby instruments)</p></li>
+<li><p>clock synchronization (onc Links &amp; icLinks)</p></li>
 </ul>
 </section>
 <section id="how-to-report-an-instrument-issue" class="level1">
 <h1>How to report an instrument issue</h1>
-<ul>
-<li>is it related to the instrument itself/data quality? INSTR ticket</li>
-<li>is it related to data stream? DSO or DMAS ticket (make sure missing data for the instrument only, otherwise it could be the network down in that case this is not isolated)</li>
-<li>is it related to</li>
-</ul>
+<p>Create a JIRA INSTR ticket, making sure to add device Code, device ID, location in the title with the name of the issue. Attach any supporting figures necessary, such as time series, a spectrogram that clearly shows the issue if it’s data quality related, etc. * is it related to the instrument itself/data quality? INSTR ticket * is it related to data stream? DSO or DMAS ticket (make sure missing data for the instrument only, otherwise it could be the network down in that case this is not isolated) * is it related to</p>
 </section>
 <section id="using-data-to-assess-system-problems" class="level1">
 <h1>Using data to assess system problems</h1>
 <ul>
-<li>wav/flac:</li>
+<li>wav/flac: if while listening something sounds awry, but this might not be obvious if the issue lies outside the range of audible frequencies.</li>
 <li>spectrogram: useful for detecting clipping, interference, instrument failure (totally black)</li>
 <li>spd plots: useful for detecting ambient noise, anomalies, power supply interference (electrical noise, mechanical noise)</li>
 </ul>
-</section>
-<section id="case-studies" class="level1">
-<h1>Case Studies</h1>
 
 
 </section>
