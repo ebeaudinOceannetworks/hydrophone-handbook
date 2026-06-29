@@ -36,25 +36,25 @@ data commissioning:
 https://internal.oceannetworks.ca/spaces/ONCData/pages/9344555/Data+Commissioning
 
 
-# List of common issues and potential root causes:
+# List of common issues, potential root causes, and how to report it:
 
-* No audio data stream -> Junction Box down, network down
+* No data stream -> Junction Box down, network down
+Looking at the data availability plot in the [Hydrophone Dashboard](https://hydrophone-dashboard.oncs.ca) under an individual hydrophone, if there is incoming data missing for .flac/.wav, this needs to be report as an INSTR ticket. If the missing data is the derived .mat file instead, this could be related to somethign else, check next issue.
+
 * Audio data archived but no .mat/.png -> check with DSO, this might be related to sensitivity curve not updated. This is an internal software system-related problem.
 * Very bad data -> instrument health (temp, humidity, battery), biofouling (very hard to detect, happens over the course of several months), interference that's masking data significantly (from nearby instruments)
 * clock synchronization (onc Links & icLinks)
 
 # How to report an instrument issue
 
+Create a JIRA INSTR ticket, making sure to add device Code, device ID, location in the title with the name of the issue. Attach any supporting figures necessary, such as time series, a spectrogram that clearly shows the issue if it's data quality related, etc.
 * is it related to the instrument itself/data quality? INSTR ticket
 * is it related to data stream? DSO or DMAS ticket (make sure missing data for the instrument only, otherwise it could be the network down in that case this is not isolated)
 * is it related to 
 
 
 # Using data to assess system problems
-* wav/flac: 
+* wav/flac: if while listening something sounds awry, but this might not be obvious if the issue lies outside the range of audible frequencies.
 * spectrogram: useful for detecting clipping, interference, instrument failure (totally black)
 * spd plots: useful for detecting ambient noise, anomalies, power supply interference (electrical noise, mechanical noise)
 
-
-
-# Case Studies
