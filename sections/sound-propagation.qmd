@@ -74,7 +74,7 @@ An approximate change of sound speed per change in property:
 
 The change of sound speed with depth is called a sound speed profile:
 
-![Typical sound speed profile at mid-latitude.](../images/sound-speed-profile-seasons.png)
+![Typical sound speed profile at in the Northeast Pacific.](../images/ssp_seasonal_modified.png){width=80%}
 
 
 In general,

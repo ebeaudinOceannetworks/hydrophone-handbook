@@ -1,18 +1,80 @@
-<div class="quarto-title-banner" style="
-  background-image: linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.8)), url('images/orcas.png'); 
-  background-size: cover; 
-  background-position: center; 
-  height: 65vh; 
-  color: white; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  text-align: center;
-  margin-bottom: 30px;
-  border-bottom: 5px solid #f39200;"> <h1 style="font-size: 4.5em; font-weight: 800; color: white; margin-bottom: 0;">Hydrophone Handbook</h1>
-  <p style="font-size: 1.8em; font-style: italic; opacity: 0.9;">from the whale to the user</p>
-  <div style="margin-top: 20px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">
-    Data Analytics & Quality | Ocean Networks Canada
+<style>
+  .handbook-orca-banner {
+    background-size: cover !important;
+    background-position: center !important;
+    height: 65vh !important;
+    color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 0 30px 0 !important;
+    border-bottom: 5px solid #f39200 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .handbook-orca-banner h1 {
+    font-size: 4.5em !important;
+    font-weight: 800 !important;
+    color: white !important;
+    margin: 0 !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    width: auto !important;
+  }
+  .handbook-orca-banner .handbook-banner-tagline {
+    font-size: 1.8em !important;
+    font-style: italic !important;
+    opacity: 0.9;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-org {
+    margin-top: 20px !important;
+    font-weight: bold !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-date {
+    margin-top: 12px !important;
+    font-size: 0.95em !important;
+    letter-spacing: 0.04em;
+    opacity: 0.9;
+    text-align: center !important;
+  }
+</style>
+<div class="handbook-orca-banner" id="handbook-banner">
+  <h1>Hydrophone Handbook</h1>
+  <p class="handbook-banner-tagline">from the whale to the user</p>
+  <div class="handbook-banner-org">
+    Data Analytics &amp; Quality | Ocean Networks Canada
   </div>
+  <p class="handbook-banner-date" id="handbook-compile-date"></p>
 </div>
+<script>
+(function () {
+  var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+  var offset = offsetMeta ? offsetMeta.getAttribute("content") : "./";
+  var banner = document.getElementById("handbook-banner");
+  if (banner) {
+    banner.style.backgroundImage =
+      "linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.8)), url('" + offset + "images/orcas.png')";
+  }
+
+  var el = document.getElementById("handbook-compile-date");
+  if (!el) return;
+  var meta = document.querySelector('meta[name="dcterms.date"]') ||
+             document.querySelector('meta[name="date"]');
+  var raw = meta && meta.getAttribute("content");
+  var d = raw ? new Date(raw.length <= 10 ? raw + "T00:00:00" : raw) : new Date();
+  if (isNaN(d.getTime())) d = new Date();
+  el.textContent = "Compiled on " + d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+})();
+</script>

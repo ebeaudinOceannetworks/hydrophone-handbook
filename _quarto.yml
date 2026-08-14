@@ -18,6 +18,8 @@ jupyter: python3
 
 book:
   title: "Hydrophone Handbook"
+  date: today
+  date-format: "MMMM D, YYYY"
 
   
   chapters:

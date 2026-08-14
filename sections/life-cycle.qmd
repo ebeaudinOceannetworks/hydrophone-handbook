@@ -3,7 +3,7 @@ title: Hydrophone Life Cycle
 ---
 
 This section outlines the end-to-end journey of a hydrophone at ONC, from the initial purchase and contract to long-term data analysis.
-Thie life cycle is based on Aghaei et al., 2024: **Best Practices for Managing Passive Acoustics Data at Ocean Networks Canada**.
+The life cycle is based on [Aghaei et al. (2024)](https://doi.org/10.1109/oceans55160.2024.10754545), *Best Practices for Managing Passive Acoustics Data at Ocean Networks Canada*.
 
 Hydrophones have been in use at ONC since 2006, totalling more than 700 TB of archived data.
 

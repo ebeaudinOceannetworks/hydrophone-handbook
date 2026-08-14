@@ -54,10 +54,10 @@ Unlike several oceanic instruments, hydrophones use *passive acoustics*, hence a
 * **Ship traffic monitoring** to identify areas of increase activity such as the Arctic in the recent years as sea ice melt unveils new shipping routes.
 * **National defense**: SOSUS (sound surveillance system) to identify vessels and nuclear testing
 * **Resource exploration**
-* **Seimic Survey** to map minerals and detect earthquakes.
+* **Seismic Survey** to map minerals and detect earthquakes.
 
 ::: {layout-ncol=1 .text-center}
-![*Artistic vuew of a hydrophone under water.*](images/hydrophone.png){width="80%"}
+![*Artistic view of a hydrophone under water.*](images/hydrophone.png){width="80%"}
 :::
 
 
