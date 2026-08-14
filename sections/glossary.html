@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -40,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7c5304d383dc86a4e3567b9563221f92.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-161edfb7a70b26d872e447acae9cbff0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,27 +75,89 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-</head><body class="nav-sidebar docked quarto-light"><div class="quarto-title-banner" style="
-  background-image: linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.8)), url('images/orcas.png'); 
-  background-size: cover; 
-  background-position: center; 
-  height: 65vh; 
-  color: white; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  text-align: center;
-  margin-bottom: 30px;
-  border-bottom: 5px solid #f39200;"> <h1 style="font-size: 4.5em; font-weight: 800; color: white; margin-bottom: 0;">Hydrophone Handbook</h1>
-  <p style="font-size: 1.8em; font-style: italic; opacity: 0.9;">from the whale to the user</p>
-  <div style="margin-top: 20px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">
+<style>
+  .handbook-orca-banner {
+    background-size: cover !important;
+    background-position: center !important;
+    height: 65vh !important;
+    color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 0 30px 0 !important;
+    border-bottom: 5px solid #f39200 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .handbook-orca-banner h1 {
+    font-size: 4.5em !important;
+    font-weight: 800 !important;
+    color: white !important;
+    margin: 0 !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    width: auto !important;
+  }
+  .handbook-orca-banner .handbook-banner-tagline {
+    font-size: 1.8em !important;
+    font-style: italic !important;
+    opacity: 0.9;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-org {
+    margin-top: 20px !important;
+    font-weight: bold !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-date {
+    margin-top: 12px !important;
+    font-size: 0.95em !important;
+    letter-spacing: 0.04em;
+    opacity: 0.9;
+    text-align: center !important;
+  }
+</style>
+</head><body class="nav-sidebar docked quarto-light"><div class="handbook-orca-banner" id="handbook-banner">
+  <h1>Hydrophone Handbook</h1>
+  <p class="handbook-banner-tagline">from the whale to the user</p>
+  <div class="handbook-banner-org">
     Data Analytics &amp; Quality | Ocean Networks Canada
   </div>
+  <p class="handbook-banner-date" id="handbook-compile-date"></p>
 </div>
+<script>
+(function () {
+  var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+  var offset = offsetMeta ? offsetMeta.getAttribute("content") : "./";
+  var banner = document.getElementById("handbook-banner");
+  if (banner) {
+    banner.style.backgroundImage =
+      "linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.8)), url('" + offset + "images/orcas.png')";
+  }
+
+  var el = document.getElementById("handbook-compile-date");
+  if (!el) return;
+  var meta = document.querySelector('meta[name="dcterms.date"]') ||
+             document.querySelector('meta[name="date"]');
+  var raw = meta && meta.getAttribute("content");
+  var d = raw ? new Date(raw.length <= 10 ? raw + "T00:00:00" : raw) : new Date();
+  if (isNaN(d.getTime())) d = new Date();
+  el.textContent = "Compiled on " + d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+})();
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -76,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7c5304d383dc86a4e3567b9563221f92.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-161edfb7a70b26d872e447acae9cbff0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,24 +111,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-</head><body class="nav-sidebar docked quarto-light"><div class="quarto-title-banner" style="
-  background-image: linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.8)), url('images/orcas.png'); 
-  background-size: cover; 
-  background-position: center; 
-  height: 65vh; 
-  color: white; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  text-align: center;
-  margin-bottom: 30px;
-  border-bottom: 5px solid #f39200;"> <h1 style="font-size: 4.5em; font-weight: 800; color: white; margin-bottom: 0;">Hydrophone Handbook</h1>
-  <p style="font-size: 1.8em; font-style: italic; opacity: 0.9;">from the whale to the user</p>
-  <div style="margin-top: 20px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">
+<style>
+  .handbook-orca-banner {
+    background-size: cover !important;
+    background-position: center !important;
+    height: 65vh !important;
+    color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 0 30px 0 !important;
+    border-bottom: 5px solid #f39200 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .handbook-orca-banner h1 {
+    font-size: 4.5em !important;
+    font-weight: 800 !important;
+    color: white !important;
+    margin: 0 !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    width: auto !important;
+  }
+  .handbook-orca-banner .handbook-banner-tagline {
+    font-size: 1.8em !important;
+    font-style: italic !important;
+    opacity: 0.9;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-org {
+    margin-top: 20px !important;
+    font-weight: bold !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-date {
+    margin-top: 12px !important;
+    font-size: 0.95em !important;
+    letter-spacing: 0.04em;
+    opacity: 0.9;
+    text-align: center !important;
+  }
+</style>
+</head><body class="nav-sidebar docked quarto-light"><div class="handbook-orca-banner" id="handbook-banner">
+  <h1>Hydrophone Handbook</h1>
+  <p class="handbook-banner-tagline">from the whale to the user</p>
+  <div class="handbook-banner-org">
     Data Analytics &amp; Quality | Ocean Networks Canada
   </div>
+  <p class="handbook-banner-date" id="handbook-compile-date"></p>
 </div>
+<script>
+(function () {
+  var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+  var offset = offsetMeta ? offsetMeta.getAttribute("content") : "./";
+  var banner = document.getElementById("handbook-banner");
+  if (banner) {
+    banner.style.backgroundImage =
+      "linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.8)), url('" + offset + "images/orcas.png')";
+  }
+
+  var el = document.getElementById("handbook-compile-date");
+  if (!el) return;
+  var meta = document.querySelector('meta[name="dcterms.date"]') ||
+             document.querySelector('meta[name="date"]');
+  var raw = meta && meta.getAttribute("content");
+  var d = raw ? new Date(raw.length <= 10 ? raw + "T00:00:00" : raw) : new Date();
+  if (isNaN(d.getTime())) d = new Date();
+  el.textContent = "Compiled on " + d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+})();
+</script>
 <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
@@ -319,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Ocean Networks Canada uses hydrophones from several manufacturers and distributors: the main ones being <em>Ocean Sonics</em> and <em>JASCO Applied Sciences</em>.</p>
 <p>Most hydrophones are Ocean Sonics icListen smart hydrophones: icListen HF (High Frequency; 10 Hz to 200k Hz), and icListen AF (Audio Frequency; 10 Hz to 12 kHz). JASCO provides Geospectrum-manufactured hydrophones for multi-element directional arrays, great for localizing sources.</p>
-<div id="92cbdcbe" class="cell" data-execution_count="1">
+<div id="8bb94307" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <script type="ojs-define">{"contents": [{"name": "specs_data", "value": [{"Manufacturer": "Device", "JASCO": "GeoSpectrum M36-V35-100", "JASCO.1": "GeoSpectrum M8E-51-C35", "Ocean Sonics": "Ocean Sonics icListen LF", "Ocean Sonics.1": "Ocean Sonics icListen HF", "Ocean Sonics.2": "Ocean Sonics icListen AF", "Naxys": "Naxys 01428 High Gain", "Naxys.1": "Naxys Ethernet", "Wildlife Acoustics": "Song Meter SM2M", "Burn Electronics": "Burns CR-100-27", "High Tech, Inc.": "HighTech-99-HF", "Teledyne Marine": "Reson 4032T"}, {"Manufacturer": "Type", "JASCO": "Wide-band, omnidirectional, piezoelectric, AMAR", "JASCO.1": "High-Frequency,\nelement/array, piezoelectric", "Ocean Sonics": "Low-frequency, omnidirectional, piezoelectric", "Ocean Sonics.1": "High-Frequency, omnidirectional, piezoelectric", "Ocean Sonics.2": "Low-frequency, omnidirectional, piezoelectric", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "External links", "JASCO": "Confluence page\nGeospectrum guide\nJASCO report", "JASCO.1": "M8E-51-C35 specs sheet", "Ocean Sonics": "icListen HF User Guide", "Ocean Sonics.1": "Ocean Sonics hydrophone page", "Ocean Sonics.2": "icListen AF User Guide", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Length (with connector) [mm]", "JASCO": "198 mm", "JASCO.1": "88 mm", "Ocean Sonics": "230 mm", "Ocean Sonics.1": "258 mm", "Ocean Sonics.2": "256 mm", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Diameter [mm]", "JASCO": "33 mm", "JASCO.1": "22 mm", "Ocean Sonics": "45 mm", "Ocean Sonics.1": "48 mm", "Ocean Sonics.2": "48 mm", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Weight [in air/in seawater]", "JASCO": "--", "JASCO.1": "--", "Ocean Sonics": "--", "Ocean Sonics.1": "--", "Ocean Sonics.2": "1045/686 g", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Battery life (approx.)", "JASCO": "--", "JASCO.1": "--", "Ocean Sonics": "8 h", "Ocean Sonics.1": "8 h", "Ocean Sonics.2": "8 h", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Sampling Rate", "JASCO": "16 - 250 kS/s", "JASCO.1": "128 kS/s", "Ocean Sonics": "250 - 4000 S/s", "Ocean Sonics.1": "1 - 512 kS/s", "Ocean Sonics.2": "1 - 32 kS/s", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Sensitivity (w/ pre-amp)", "JASCO": "-165 +/- 1", "JASCO.1": "-165 +/- 1.5", "Ocean Sonics": "--", "Ocean Sonics.1": -173, "Ocean Sonics.2": -169, "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Depth rating", "JASCO": "2500 m", "JASCO.1": "200 - 1500 m", "Ocean Sonics": "3500 m", "Ocean Sonics.1": "3500 m", "Ocean Sonics.2": "900, 3500 m", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Frequency Range", "JASCO": "1 Hz - 200 KHz", "JASCO.1": "10 kHz - 200 kHz", "Ocean Sonics": "1 - 1600 Hz (infrasound)", "Ocean Sonics.1": "10 Hz - 200 kHz (effective up to 128 kHz)", "Ocean Sonics.2": "10 Hz - 10 kHz", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Operating Temperatures", "JASCO": "0\u00b0C to +35\u00b0C", "JASCO.1": "-40 to +70 \u00b0C", "Ocean Sonics": "-5 to +35\u00b0C", "Ocean Sonics.1": "-5 to +35\u00b0C", "Ocean Sonics.2": "-5 to +35\u00b0C", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Max Humidity", "JASCO": "--", "JASCO.1": "--", "Ocean Sonics": 0.5, "Ocean Sonics.1": 0.5, "Ocean Sonics.2": 0.5, "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Storage Capacity", "JASCO": "--", "JASCO.1": "--", "Ocean Sonics": "1 TB", "Ocean Sonics.1": "1 TB", "Ocean Sonics.2": "1 TB", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Current Draw", "JASCO": "1.3 mA (at 6.8 VDC)\n4.2 mA with current signalling pre-amp", "JASCO.1": "1/3 mA at 6.8 VDC\n4.2 mA with currency signalling mode", "Ocean Sonics": "--", "Ocean Sonics.1": "--", "Ocean Sonics.2": "--", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Input Voltage", "JASCO": "6.8 VDC nominal\n4.5-30 V operational", "JASCO.1": "6.8 VDC nominal\n4.5-30 V operational", "Ocean Sonics": "12-24 VDC", "Ocean Sonics.1": "48V (36 V recommended)", "Ocean Sonics.2": "48V (36 V recommended)", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Power (min, typical, max)", "JASCO": "--", "JASCO.1": "--", "Ocean Sonics": "(1.83, 2.26, 3.75)", "Ocean Sonics.1": "(1.83, 2.26, 3.75)", "Ocean Sonics.2": "(1.83, 2.26, 3.75)", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Communication Interface", "JASCO": "Ethernet", "JASCO.1": "Ethernet", "Ocean Sonics": "Ethernet", "Ocean Sonics.1": "Ethernet", "Ocean Sonics.2": "Ethernet", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}, {"Manufacturer": "Connector Type", "JASCO": "Subconn MCBH8-M", "JASCO.1": "SubConn MCOM8-M", "Ocean Sonics": "SubConn MCBH8-M", "Ocean Sonics.1": "Subconn MCBH8-M", "Ocean Sonics.2": "Subconn MCBH8-M", "Naxys": "--", "Naxys.1": "--", "Wildlife Acoustics": "--", "Burn Electronics": "--", "High Tech, Inc.": "--", "Teledyne Marine": "--"}]}]}</script>
 </div>

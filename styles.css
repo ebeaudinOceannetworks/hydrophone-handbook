@@ -2,14 +2,37 @@
 
 $dark-blue: #003366;
 
-/* taller and darker banner */
-.quarto-title-banner {
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-blend-mode: multiply;
-  background-color: rgba(0, 51, 102, 0.4); /* ONC Blue tint */
+/* Hide Quarto's default date block; compile date lives in the banner. */
+#title-block-header .quarto-title-meta {
+  display: none !important;
+}
+
+/* Give Notes the majority of the hydrophone-types table. */
+.hydrophone-types-table table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.hydrophone-types-table th,
+.hydrophone-types-table td {
+  white-space: normal;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+.hydrophone-types-table th:nth-child(1),
+.hydrophone-types-table td:nth-child(1) {
+  width: 18%;
+}
+
+.hydrophone-types-table th:nth-child(2),
+.hydrophone-types-table td:nth-child(2) {
+  width: 32%;
+}
+
+.hydrophone-types-table th:nth-child(3),
+.hydrophone-types-table td:nth-child(3) {
+  width: 50%;
 }
 
 /* Style the Main Title */
