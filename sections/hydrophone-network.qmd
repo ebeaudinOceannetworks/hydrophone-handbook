@@ -4,7 +4,7 @@ title: ONC Hydrophone Network
 
 Ocean Networks Canada operates a massive spatial array of underwater acoustics monitoring across the country.
 Each hydrophone has a designated **Device Code** (ex: ICLISTENHF6016) and is located at a designated **Location code** (ex: CSQH.H1).
-The **Location Code** is used by the database, but they also have a **Colloquial Name** (ex: Clayoquot Slope), used by humans.
+The **Location Code** is used by the database, but they also have a **Colloquial Name** (ex: Clayoquot Slope).
 In addition, there are two **observatories** VENUS and NEPTUNE, which regroup several sites.
 
 Most locations have a single hydrophone, while some sites have *hydrophone arrays*, which constitutes several hydrophones mounted together on a platform.
@@ -15,7 +15,7 @@ The hydrophone arrays naming convention has .H1, .H2, etc., added to the locatio
 * **Arctic:** Cambridge Bay, Gascoyne Inlet, NU.
 * **Atlantic:** Conception Bay, Holyrood, NL.
 
-# Map
+# Map of all hydrophone deployments
 
 ```{python}
 #| echo: false
@@ -47,17 +47,30 @@ depl = depl.merge(names_df, on='locationCode', how='left')
 depl['locationName'] = depl['locationName'].fillna(depl['locationCode'])
 depl['siteCode'] = depl['locationCode'].str.split('.').str[0]
 
-# 2. Group by the SITE code instead of the specific location code
-df_plot = depl.groupby(['siteCode', 'lat', 'lon']).agg({
-    'locationName': 'first', # Usually the name is consistent across instruments
-    'depth': 'last',
-    'deviceCode': lambda x: list(x),
-    'end': lambda x: [pd.isna(i) for i in x],
-    'locationCode': lambda x: list(x) # Keep the full codes for the popup list
-}).reset_index()
+def _fmt_date(value):
+    if pd.isna(value) or value is None:
+        return None
+    return pd.to_datetime(value, utc=True).strftime('%Y-%m-%d')
 
-# 3. Determine if the site has at least one active sensor
-df_plot['any_active'] = df_plot['end'].apply(any)
+site_rows = []
+for site_code, group in depl.groupby('siteCode'):
+    group = group.sort_values('begin', na_position='last')
+    active = group[group['end'].isna()]
+    current = active.iloc[-1] if len(active) else group.iloc[-1]
+    site_rows.append({
+        'siteCode': site_code,
+        'locationName': current['locationName'],
+        'lat': current['lat'],
+        'lon': current['lon'],
+        'depth': current['depth'],
+        'any_active': len(active) > 0,
+        'deviceCode': group['deviceCode'].tolist(),
+        'locationCode': group['locationCode'].tolist(),
+        'begin': [_fmt_date(v) for v in group['begin']],
+        'end': [_fmt_date(v) for v in group['end']],
+    })
+
+df_plot = pd.DataFrame(site_rows)
 
 # 4. Pass to OJS
 cable_geojson = json.loads(onc_cable.to_json())
@@ -86,13 +99,9 @@ yield container;
     maxZoom: 13
   }).addTo(map);
 
-  // 1. Initialize Layer Groups
-  const cableLayer = L.layerGroup().addTo(map);
   const inactiveLayer = L.layerGroup();
   const activeLayer = L.layerGroup().addTo(map);
-  
 
-  // 2. Add Cable Data to its group
   if (cable_data) {
     L.geoJSON(cable_data, {
       style: {
@@ -100,21 +109,50 @@ yield container;
         weight: 1,
         opacity: 0.7
       }
-    }).addTo(cableLayer);
+    }).addTo(map);
   }
 
-  // 3. Loop and assign markers to groups
-  status_data.locationCode.forEach((code, i) => {
+  function dateCell(value) {
+    return value ? value : "—";
+  }
+
+  function deploymentTable(rows, includeEnd) {
+    if (!rows.length) return "";
+    const head = includeEnd
+      ? "<tr><th>Device</th><th>From</th><th>To</th></tr>"
+      : "<tr><th>Device</th><th>From</th></tr>";
+    const body = rows.map(r => includeEnd
+      ? `<tr><td>${r.device}</td><td>${dateCell(r.begin)}</td><td>${dateCell(r.end)}</td></tr>`
+      : `<tr><td>${r.device}</td><td>${dateCell(r.begin)}</td></tr>`
+    ).join("");
+    return `<table class="hydro-popup-table">${head}${body}</table>`;
+  }
+
+  status_data.siteCode.forEach((code, i) => {
     const isActive = status_data.any_active[i];
     const color = isActive ? "#28a745" : "#6c757d";
     const cleanName = status_data.locationName[i].replace(/Hydrophone [A-Z]/g, "Hydrophone Array");
 
-    const deviceList = status_data.deviceCode[i].map((dev, idx) => {
-      const status = status_data.end[i][idx] ? 
-        '<span style="color:green;">Active</span>' : 
-        '<span style="color:red;">Inactive</span>';
-      return `<li><b>${dev}</b>: ${status}</li>`;
-    }).join("");
+    const deployments = status_data.deviceCode[i].map((dev, idx) => ({
+      device: dev,
+      location: status_data.locationCode[i][idx],
+      begin: status_data.begin[i][idx],
+      end: status_data.end[i][idx]
+    }));
+
+    const activeRows = deployments.filter(d => !d.end);
+    const previousRows = deployments.filter(d => d.end).sort((a, b) => (b.end || "").localeCompare(a.end || ""));
+
+    const activeBlock = activeRows.length
+      ? `<p class="hydro-popup-heading hydro-popup-current">Current deployments</p>${deploymentTable(activeRows, false)}`
+      : `<p class="hydro-popup-heading hydro-popup-previous">No current deployments</p>`;
+
+    const previousBlock = previousRows.length
+      ? `<p class="hydro-popup-heading hydro-popup-previous">Previous deployments</p>${deploymentTable(previousRows, true)}`
+      : "";
+
+    const depthVal = status_data.depth[i];
+    const depth = (depthVal == null || Number.isNaN(Number(depthVal))) ? "—" : `${depthVal} m`;
 
     const marker = L.circleMarker([status_data.lat[i], status_data.lon[i]], {
       radius: 8,
@@ -124,19 +162,16 @@ yield container;
       fillOpacity: 0.9
     })
     .bindPopup(`
-      <div style="font-family: sans-serif; min-width: 200px;">
+      <div style="font-family: sans-serif; min-width: 360px;">
         <b style="font-size: 1.1em;">${cleanName}</b><br>
         <span style="color: #666; font-size: 0.9em;">${code}</span>
         <hr style="margin: 5px 0;">
-        <p style="margin: 5px 0 0 0;"><b>Depth:</b> ${status_data.depth[i]} m</p>
-        <p style="margin: 5px 0 0 0;"><b>Instruments at this site:</b></p>
-        <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.9em;">
-          ${deviceList}
-        </ul>
+        <p style="margin: 5px 0 0 0;"><b>Depth:</b> ${depth}</p>
+        ${activeBlock}
+        ${previousBlock}
       </div>
-    `);
+    `, { minWidth: 360, maxWidth: 480, maxHeight: 340 });
 
-    // Add marker to the appropriate group
     if (isActive) {
       marker.addTo(activeLayer);
     } else {
@@ -144,14 +179,11 @@ yield container;
     }
   });
 
-  // 4. Create the Overlay Toggle Menu
   const overlays = {
-    "<span style='color: #28a745; font-weight: bold;'>● Active Sites</span>": activeLayer,
-    "<span style='color: #6c757d; font-weight: bold;'>○ Inactive Sites</span>": inactiveLayer,
-    "Cables": cableLayer
+    "<span style='color: #28a745; font-weight: bold;'>● Current Sites</span>": activeLayer,
+    "<span style='color: #6c757d; font-weight: bold;'>○ Inactive Sites</span>": inactiveLayer
   };
 
-  // Add the control box to the top right
   L.control.layers(null, overlays, { collapsed: false }).addTo(map);
 }
 ```
@@ -159,6 +191,7 @@ yield container;
 
 # List of all deployment sites
 Here is a list of sites per **location code** and their associated location name, latitude, longitude, depth, and current status.
+Click a column header to sort.
 
 ```{python}
 #| echo: false
@@ -186,5 +219,72 @@ df_full_table.columns = ['Location Code', 'Location Name', 'Latitude', 'Longitud
 df_full_table['Status'] = df_full_table['Status'].map({True: "🟢", False: "⚪"})
 
 # 6. Display as a clean HTML table
-display(HTML(df_full_table.to_html(index=False, classes='table table-striped table-hover')))
+display(HTML(df_full_table.to_html(
+    index=False,
+    classes='table table-striped table-hover',
+    table_id='hydrophone-deployments'
+)))
+```
+
+```{=html}
+<script>
+(function () {
+  function numericValue(text) {
+    const cleaned = text.replace(/[🟢⚪]/g, "").trim();
+    if (cleaned === "") return null;
+    const n = parseFloat(cleaned);
+    return Number.isNaN(n) ? null : n;
+  }
+
+  function initSortableTable(table) {
+    if (!table || table.dataset.sortable === "1") return;
+    table.dataset.sortable = "1";
+    const headerRow = table.tHead ? table.tHead.rows[0] : table.rows[0];
+    const headers = Array.from(headerRow.cells);
+    headers.forEach(function (th, col) {
+      th.style.cursor = "pointer";
+      th.title = "Click to sort";
+      th.addEventListener("click", function () {
+        const asc = th.dataset.sort !== "asc";
+        headers.forEach(function (h) {
+          h.dataset.sort = "";
+          const old = h.querySelector(".sort-ind");
+          if (old) old.remove();
+        });
+        th.dataset.sort = asc ? "asc" : "desc";
+        const ind = document.createElement("span");
+        ind.className = "sort-ind";
+        ind.textContent = asc ? " ▲" : " ▼";
+        th.appendChild(ind);
+
+        const tbody = table.tBodies[0];
+        const rows = Array.from(tbody.rows);
+        rows.sort(function (a, b) {
+          const A = a.cells[col].textContent.trim();
+          const B = b.cells[col].textContent.trim();
+          const nA = numericValue(A);
+          const nB = numericValue(B);
+          let cmp;
+          if (nA !== null && nB !== null) {
+            cmp = nA - nB;
+          } else {
+            cmp = A.localeCompare(B, undefined, { numeric: true, sensitivity: "base" });
+          }
+          return asc ? cmp : -cmp;
+        });
+        rows.forEach(function (row) { tbody.appendChild(row); });
+      });
+    });
+  }
+
+  function ready() {
+    initSortableTable(document.getElementById("hydrophone-deployments"));
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", ready);
+  } else {
+    ready();
+  }
+})();
+</script>
 ```

@@ -2,6 +2,14 @@
 title: Calibration (HydroCal)
 ---
 
+::: {.callout-note}
+## In progress
+
+This chapter is under construction. Topics: HydroCal, sensitivity curves, and tank-test, validation.
+:::
+
+<!-- handbook-draft: to publish this text, delete the opening HTML comment on this line and the matching closer at the end of the file.
+
 ::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
 ## Improvements for this page
 * not complete
@@ -54,7 +62,6 @@ Test tanking is a crucial validation step before a hydrophone goes in the ocean.
 # Validation
 
 We will be adding an additional validation method for hydrophones to meet the new ISO standard 7605, by using pistonphone to check calibration right before deployment, ideally on the ship.
-
 
 
 
@@ -124,3 +131,5 @@ paper:
   </ul>
 </div>
 ```
+
+-->

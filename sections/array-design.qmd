@@ -2,14 +2,6 @@
 title: Hydrophone Array Design
 ---
 
-::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
-## Improvements for this page
-* include a diagram of platform/array including OIM, JB, SIIM, SCU
-* complete holyrood interference paragraph + link report
-* add shroud photo
-* deployment section
-:::
-
 When mounting hydrophones, the scientific goals of ocean monitoring will dictate how the infrasctructure is built.
 There exists several ways that hydrophones can be arranged depending on the application.
 For example, while a single hydrophone can capture sound, several hydrophones together can provide direction, range, and help with separation of overlapping noises. 
@@ -29,27 +21,32 @@ In addition, we always want to minimize the risk of damage to the instrument.
 This section touches on all these elements.
 
 
-# Array Design
+# Array design
 
-A typical hydrophone array at Ocean Networks Canada might include and **Ocean Instrument Module (OIM)**, a **Junction Box (JB)**, a **Subsea Instrument Interface Module (SIIM)**, a **Subsea Control Unit (SCU)**, and the hydrophone(s).
-All nearby instruments or platform elements can and will generate interference in the acoustic data, so they all have to individually be tested for noise frequencies and levels.
+ONC deploys hydrophones in two ways.
+
+**Cabled arrays** sit on the observatory. Two or four hydrophones are mounted on a frame and wired to an **ONC Link** (ONC’s version of Ocean Sonics’ icLink).
+The Link time-synchronizes the channels and combines their data streams.
+The ONC Link is connected to a **Junction Box (JB)** which itself receives power from the seafloor cable.
+The advantage of cabled sites is that the data comes in in near real time.
+
+**Autonomous arrays** are not cabled. They run on batteries and record onboard until recovery. The JASCO AMARs in Strait of Georgia East is a good example of this.
+Unfortunately, the data is only available once the hydrophones have been recovered, so there is no way to know in real time if there is an issue with the hydrophones until then.
+Moreover, if the memory is full, the hydrophone stops recording and we are effectively losing new data.
+
+In both cases the hydrophones share a structure with other instruments. Those neighbours radiate noise, so each piece of hardware should be tested for level and frequency before it sits next to a hydrophone.
 
 The image below shows a **box-type** hydrophone array, mounted at the MTC (Marine Technology Centre).
-On this array, there are four hydrophones at locations A, B, C, D, distanced about 1 m from one another.
+On this array, there are four hydrophones at locations A, B, C, D, distanced about 1-meter from one another.
 
 ![A Box-Type Hydrophone Array with four hydrophones, waiting to be deployed in the Strait of Georgia.](../images/MTC_hydrophone_array_annotated.png){width=60%}
 
-The distance between hydrophones is for purposes of **beamforming**, which allows to pinpoint the location of the noise source, and determining the direction of arrival.
-However, 1 m distance is unfortunately not enough for ONC's scientific applications, such as locating whales. 
-Also found on the array is the ONC Link, ONC's housemade version of the icLink, which connects all the hydrophones to the main cabled observatory.
-
-ONC Link: combines hydrophone data stream for hydrophone array, converts the voltage, sets timing.
+The distance between hydrophones is chosen for **beamforming**: estimating direction of arrival. But, 1 meter is too small for whale-localization (see below).
 
 ![Box-Type Array Configuration for Hydrophones.](../images/box-array.png)
 
 
-## All possible configurations
-Hydrophones can be deployed in several configurations: 
+## Hydrophones can be deployed in several configurations: 
 
 * **Single Hydrophone**: Baseline monitoring.
 * **Line Arrays**: Arranged in a straight line for vertical profiling.
@@ -61,23 +58,20 @@ Hydrophones can be deployed in several configurations:
 <!--![Box-Type Array Configuration - Front View. Hydrophone A is at the top.](../images/HydrophoneArray_front_new.png) -->
 
 
-# Mitigating Noise and Instrument Damage
+# Mitigating noise and instrument damage
 
 ## Interference
 When adding hydrophones to a multi-instrument platform, all nearby infrastructure should ideally be evaluated for noise, although this is a hardeous task and we generally know after the facts if there is interference and to what internsity.
 Proximity interference will show up clearly as persistent lines or bursts in the spectrogram.
 
-In this example from 2023, interference noise from instruments on the same platform at the Holyrood site was intense enough to fully mask natural ambient sound, biological vocalizations, and other signals of scientific interestes.
+In this example from 2023, interference noise from instruments on the same platform at the Holyrood site was intense enough to fully mask natural ambient sound, biological vocalizations, and other signals of scientific interests.
 
 
-![Example of instrument interference at Holyrood, Conception Bay, NL.](../images/ICLISTENHF2098_20240109T030502.000Z-spect.png){width=60%}
+![Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL.](../images/ICLISTENHF2098_20240109T030502.000Z-spect.png){width=60%}
 
-A full investigation for interference signal origin went on, in order to mitigate interference in future data.
-Brendan Smith at ONC did a full *Interference Characterization* in this Ocean Networks Canada: Holyrood Acoustic Testing Summary, and identified 
-The suspected noises included the ADCP, pCO2 sensor, and Seabird Microcat.
-Following this investigation, ...
+After the 2023 Holyrood recordings, ONC ran a dedicated interference investigation (Holyrood Acoustic Testing Summary, Brendan Smith) to find which platform instruments were contaminating the hydrophone. The likely sources were the ADCP, the pCO₂ sensor, and the SeaBird Microcat. That work is the template for later sites: identify the noisy neighbour, then increase separation or change the duty cycle before the next deployment.
 
-To prevent acoustic contamination, the following "Rules of Thumb" separation distances between the hydrophone array and the systems:
+In general, in order to prevent acoustic contamination, the following "Rules of Thumb" separation distances between the hydrophone array and the systems:
 
 * Small Pumps (e.g., CTD pump): > 100 m
 * Large Pumps: > 2 km
@@ -98,8 +92,6 @@ Because hydrophones are pressure sensors, they are susceptible to pressure waves
 Wave pressure can easily saturate the hydrophone's dynamic range.
 Hydrophones should generally be moored at least 20 meters deep, and significantly deeper in areas known for large swells (e.g., Folger Passage).
 
-![Spectrograms for good vs bad mounting.](spectrogram-good-bad-mounting.png)
-
 Here is a list of mounting material and their advantages or disadvantages:
 
 * Shock Cord/Bungee: Excellent (decouples vibration)
@@ -107,18 +99,18 @@ Here is a list of mounting material and their advantages or disadvantages:
 * Rubber in a plastic clamp: Poor (transfers some vibration)
 * Rubber in a tight metal clamp: Bad (transfers heavy vibration)
 
-### The Shroud (mechanical protection)
+### Hydrophone guards
 
-Hydrophones are often protected by a cage (shroud), a semi-rigid housing that surrounds the hydrophone.
+Hydrophones are often protected by a cage (guard or shroud), a semi-rigid housing that surrounds the hydrophone.
 The main purpose to prevent debris, sea life, or cables from striking the sensor.
 It can also help break turbulent flow (see Karman vortices) around the sensor, which can create low-frequency noise in the data.
 
-![Shrouds prevent debris, sea life, and more, from hitting the sensor.](../images/hydrophone-shrouds.png)
+![Hydrophone guards prevent debris, sea life, and more, from hitting the sensor.](../images/hydrophone-guards.jpg){width=60%}
 
-Shrouds are *acoustically transparent*, designed so that they don't reflect the sound waves.
+Those guards are *acoustically transparent*, designed so that they don't reflect the sound waves.
 
 In high sediments areas, platform parts can become covered by sediments which leads to corrosion and wear.
-Shrouds can prevent sediments to accumulate on hydrophone.
+Guards can prevent sediments to accumulate on hydrophone.
 
 ## Biofouling
 
@@ -129,37 +121,29 @@ The "sock method": we use a simple *sock* (graciously made by a local seamstress
 It greatly extends lifetime of all hydrophones by preventing microorganisms to directly attach on the sensor.
 It can also prevent fine sediments (e.g., silt) from settling into the small gaps.
 
-![The sock method prevents biofouling.](../images/hydrophone-sock.png)
+![The sock method helps to prevent biofouling.](../images/hydrophone-sock.png)
 
 While no method is absolutely full proof, the sock-method has shown to be great success.
 Biofouling shows up in the data as sa slow decay of sensitivity over time.
 
-# Sound Direction & Beamforming
+# Sound direction & beamforming
 
-For directional analysis (not to be confused with triangulation), two or more hydrophones must be deployed at a precise distance apart.
+A single hydrophone measures *level*. An array can also estimate *direction*. That is **beamforming**, not triangulation: triangulation needs several widely separated sites to get range; beamforming uses the small time differences across hydrophones on one frame.
 
-* **Spacing**: The required distance depends heavilty on the sampling frequency of the hydrophone and the target frequency of the sound source.
-* **Calculation**: Direction is calculated using the angle and the time difference of arrival (TDOA) between hydrophone 1 and hydrophone 2.
-* **Accuracy**: For the highest directional accuracy, the time synchronoization accuracy from hydrophone 1 to hydrophone 2 must be less than the sampling period.
+Sound from one direction reaches hydrophone A slightly before hydrophone B. That **time difference of arrival (TDOA)** and the known spacing give the angle. In practice we delay each channel so a chosen steering direction lines up, then add the channels:
 
-Beamforming allows an array to focus on specific directional signals while tuning out ambient noise. Note that for coherent signals, we add ~$N$, while for incoherent signals, ~$1/\sqrt N$.
+* Energy from that direction adds **coherently** (gain scales about as $N$, the number of hydrophones).
+* Uncorrelated noise adds more slowly (about $1/\sqrt{N}$).
 
+Three design rules matter:
 
-# Full infrastructure diagram 
-[INSERT DIAGRAM HERE]
-
-* OIM
-* Junction Box
-* SIIM
-* SCU
-* Hydrophone
-
-
+* **Spacing vs frequency.** To avoid spatial aliasing, spacing should be on the order of half a wavelength, $d \approx \lambda/2 = c/(2f)$. At $c \approx 1500$ m/s, a **1 m** box is only well matched near **~750 Hz**. This frequency overlaps with Humpback whales vocalization, but it is too short for low-frequency whale calls (tens of Hz).
+* **Timing.** Channel-to-channel sync must be better than one sample period. That is the job of the ONC Link (cabled) or the recorder’s common clock on autonomous devices.
+* **Geometry.** A line array is directional in one plane; a box or tetrahedral array gives a 3-D arrival angle, still without range.
 
 # Deployment
 
-At ONC, most hydrophones are deployed using an Remotely Operated Vehicles (ROV)
-ROV definition: tethered, unoccupied underwater robots used to explore, inspect, and work in too deep or dangerous ocean environments.
+At ONC, most hydrophones are deployed using an Remotely Operated Vehicles (ROV); which is a tethered, unoccupied underwater robots used to explore, inspect, and work in too deep or dangerous ocean environments.
 
 
 # Useful links

@@ -2,6 +2,8 @@
 title: Data Products
 ---
 
+This page describes **what** each hydrophone data product contains. To download files, use the [Data Access](data-access.qmd) request builder or Hydrophone Viewer.
+
 ::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
 ## Improvements for this page
 * add figures

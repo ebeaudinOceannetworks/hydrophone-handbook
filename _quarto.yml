@@ -4,6 +4,7 @@ project:
   resources:
     - images/
     - banner.html
+    - scripts/
 
 # --- to publish the website on github ---
 
@@ -26,7 +27,7 @@ book:
     - index.qmd
     - sections/life-cycle.qmd
     - sections/how-hydrophones-work.qmd 
-    - sections/sound-propagation.qmd
+    - sections/sound-in-the-ocean.qmd
     - sections/ocean-soundscape-taxonomy.qmd
     - sections/sound-examples.qmd
     - sections/hydrophone-network.qmd

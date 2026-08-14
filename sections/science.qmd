@@ -18,7 +18,7 @@ The program has known quite a bit of success, as thousands of ships have volunta
 
 Since then, ONC has kept expanding its hydrophone network which has turned into more partnerships with BC in 2017, to study ship traffic in Haro Strait ([read story here](https://www.oceannetworks.ca/news-and-stories/stories/monitoring-canadas-ocean-coasts-and-killer-whales-through-technology-and-data/) to specifically monitor southern residents killer whales.
 
-Whale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behavior, and their seasonal presence. 
+Whale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behavior, and their seasonal presence.
 
 
 # Fin whale autodetector
@@ -29,7 +29,7 @@ The model is able to do in a few minutes what humans typically would do in sever
 
 
 # Acoustic modelling
-Hydrophones are useful for understanding the ocean soundscape, meaning the types of sounds that can be heard underwater. One might be interested however in how the environment affects sound propagation. Temperature, depth, seamounts, seafloor sediments are all properties of the ocean that can impact how sound travels, and thus how *far* can sound travel. This information can be useful to characterize the detection range of a hydrophone, to understand how far a whale might be. In addition, knowing the detection range is important when wanting to deploy new hydrophones and make sure we are covering as much as possible, and the hydrophone is not located in  *deaf zone* for sounds of interest. Note that the detection range depends on the sound frequency, and thus on the whale species and call type. Lower frequencies travel farther.
+Hydrophones record the soundscape; modelling asks how the environment shapes that sound. Temperature, depth, seamounts, and seafloor sediments control how *far* a call travels, and therefore the detection range of a hydrophone. That range depends on frequency — and so on species and call type — with lower frequencies travelling farther. Modelling is used to place new instruments outside *deaf zones*. The underlying physics is in [Sound in the Ocean](sound-in-the-ocean.qmd).
 
 Lanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.
 

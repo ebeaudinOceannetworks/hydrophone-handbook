@@ -1,10 +1,9 @@
 ---
-title: "Sound Propagation in the Ocean"
+title: "Sound in the Ocean"
 ---
 
 ::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
 ## Improvements for this page
-* seasonal sound profiles wrong
 * point to more outside resources (keep it to essentials)
 :::
 
@@ -82,6 +81,8 @@ In general,
 * sound speed decreases with temperature, which we can see near the surface where temperatures change by a lot within a few meters
 * sound speed increases with pressure, which we can see at depth where temperature is nearly constant but pressure keeps increasing
 * salinity has small impact on sound speed since it doesn't vary much, except in estuaries where salinity varies greatly
+
+Empirical formulae that estimate $c$ from temperature, salinity, and pressure — including Mackenzie (1981) and Del Grosso (1974) — are in [Useful Equations](useful-equations.qmd#sound-speed).
 
 # Ocean acoustic wave guides
 
@@ -312,22 +313,6 @@ To make these values easier to read and analyze, we convert the PSD to a logarit
 The resulting **Spectrum Level** measures the acoustic intensity contained within a 1 Hz bandwidth:
 
 ![$\text{Spectrum Level Unit: dB re } 1\ \mu\text{Pa}^2/\text{Hz}$](../images/ICLISTENHF6328_20240306T084000.000Z-spect.png){width=60%}
-
-# Empirical equations for sound speed
-
-Several empirical equations have been developed to accurately capture the speed of sound from these variables as a function of depth.
-
-Mackenzie:
-$$
-c(T,S,z) = a_1 + a_2 T + a_3 T^2 + a_4 T^3 + a_5(S-35) + a_6 z + a_7 z^2 + a_8 T (S-35) + a_9 T z^3
-$$
-
-Del Grosso 1974:
-
-$$
-c(T,S,p) = c_{000} + \Delta c_T + \Delta c_S + \Delta c_P + \Delta c_{STp}
-$$
-
 
 # References
 * Principles of Undewater Acoustics, Urick

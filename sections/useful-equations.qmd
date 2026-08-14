@@ -2,6 +2,56 @@
 title: Useful Equations
 ---
 
+## Sound speed {#sound-speed}
+
+Sound speed in seawater is estimated from temperature $T$, salinity $S$, and depth $z$ or pressure $p$. These formulae support sound-speed profiles in [Sound in the Ocean](sound-in-the-ocean.qmd).
+
+### Mackenzie (1981)
+
+A nine-term fit, convenient for a first estimate of $c$ from a CTD cast:
+
+$$
+c(T,S,z) = a_1 + a_2 T + a_3 T^2 + a_4 T^3 + a_5(S-35) + a_6 z + a_7 z^2 + a_8 T (S-35) + a_9 T z^3
+$$
+
+where $T$ is temperature (°C), $S$ is salinity (psu), $z$ is depth (m), and $c$ is sound speed (m/s). Coefficients $a_1 \ldots a_9$ are given in Mackenzie (1981). Typical range of validity: $T$ 0–30 °C, $S$ 30–40 psu, $z$ 0–8000 m.
+
+### Del Grosso (1974)
+
+Often preferred when a more accurate oceanographic sound speed is needed. It is a function of temperature, salinity, and pressure:
+
+$$
+c(T,S,p) = c_{000} + \Delta c_T + \Delta c_S + \Delta c_P + \Delta c_{STp}
+$$
+
+where $c_{000}$ is a reference sound speed and the $\Delta c$ terms are polynomial corrections for temperature, salinity, pressure, and their cross terms. Full coefficients are given in Del Grosso (1974).
+
+## Snell's law {#snells-law}
+
+A sound ray bends toward slower speed. If $c_1$ and $c_2$ are sound speed on either side of an interface (or of a gradual gradient) and $\theta_1$, $\theta_2$ are the angles from the vertical:
+
+$$
+\frac{\sin{\theta_1}}{\sin{\theta_2}} = \frac{c_1}{c_2}
+$$
+
+Frequency is unchanged; wavelength adjusts so that $c = f\lambda$. This is the geometry behind the SOFAR channel and surface ducts in [Sound in the Ocean](sound-in-the-ocean.qmd).
+
+## Acoustic wave equation {#wave-equation}
+
+$$
+\nabla^2 p - \frac{1}{c^2} \frac{\partial^2 p}{\partial t^2} = 0
+$$
+
+where $p$ is acoustic pressure (deviation from ambient), $c$ is sound speed ($\approx 1500$ m/s in seawater), and $t$ is time. Numerical models such as BELLHOP are discrete solutions of this equation for a given environment.
+
+## Sound pressure level {#spl}
+
+$$
+\mathrm{SPL} = 20 \log_{10} \left(\frac{p}{p_{\mathrm{ref}}}\right)~\text{dB re 1}~\mu\text{Pa}
+$$
+
+with $p_{\mathrm{ref}} = 1~\mu\mathrm{Pa}$ underwater (20 µPa in air). A pressure $10^6$ times the reference is $120$ dB re 1 µPa.
+
 ## Average Sound Pressure Level
 
 $$

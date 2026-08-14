@@ -73,7 +73,55 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-</head><body class="nav-sidebar docked quarto-light"><div class="quarto-title-banner">
+<style>
+  .handbook-orca-banner {
+    background-size: cover !important;
+    background-position: center !important;
+    height: 65vh !important;
+    color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 0 30px 0 !important;
+    border-bottom: 5px solid #f39200 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .handbook-orca-banner h1 {
+    font-size: 4.5em !important;
+    font-weight: 800 !important;
+    color: white !important;
+    margin: 0 !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    width: auto !important;
+  }
+  .handbook-orca-banner .handbook-banner-tagline {
+    font-size: 1.8em !important;
+    font-style: italic !important;
+    opacity: 0.9;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-org {
+    margin-top: 20px !important;
+    font-weight: bold !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-date {
+    margin-top: 12px !important;
+    font-size: 0.95em !important;
+    letter-spacing: 0.04em;
+    opacity: 0.9;
+    text-align: center !important;
+  }
+</style>
+</head><body class="nav-sidebar docked quarto-light"><div class="handbook-orca-banner" id="handbook-banner">
   <h1>Hydrophone Handbook</h1>
   <p class="handbook-banner-tagline">from the whale to the user</p>
   <div class="handbook-banner-org">
@@ -83,6 +131,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <script>
 (function () {
+  var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+  var offset = offsetMeta ? offsetMeta.getAttribute("content") : "./";
+  var banner = document.getElementById("handbook-banner");
+  if (banner) {
+    banner.style.backgroundImage =
+      "linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.8)), url('" + offset + "images/orcas.png')";
+  }
+
   var el = document.getElementById("handbook-compile-date");
   if (!el) return;
   var meta = document.querySelector('meta[name="dcterms.date"]') ||
@@ -90,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
   var raw = meta && meta.getAttribute("content");
   var d = raw ? new Date(raw.length <= 10 ? raw + "T00:00:00" : raw) : new Date();
   if (isNaN(d.getTime())) d = new Date();
-  el.textContent = "Compiled " + d.toLocaleDateString("en-US", {
+  el.textContent = "Compiled on " + d.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric"
@@ -153,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/sound-propagation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sound Propagation in the Ocean</span></a>
+  <a href="../sections/sound-in-the-ocean.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sound in the Ocean</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -285,7 +341,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="acoustic-modelling" class="level1">
 <h1>Acoustic modelling</h1>
-<p>Hydrophones are useful for understanding the ocean soundscape, meaning the types of sounds that can be heard underwater. One might be interested however in how the environment affects sound propagation. Temperature, depth, seamounts, seafloor sediments are all properties of the ocean that can impact how sound travels, and thus how <em>far</em> can sound travel. This information can be useful to characterize the detection range of a hydrophone, to understand how far a whale might be. In addition, knowing the detection range is important when wanting to deploy new hydrophones and make sure we are covering as much as possible, and the hydrophone is not located in <em>deaf zone</em> for sounds of interest. Note that the detection range depends on the sound frequency, and thus on the whale species and call type. Lower frequencies travel farther.</p>
+<p>Hydrophones record the soundscape; modelling asks how the environment shapes that sound. Temperature, depth, seamounts, and seafloor sediments control how <em>far</em> a call travels, and therefore the detection range of a hydrophone. That range depends on frequency — and so on species and call type — with lower frequencies travelling farther. Modelling is used to place new instruments outside <em>deaf zones</em>. The underlying physics is in <a href="../sections/sound-in-the-ocean.html">Sound in the Ocean</a>.</p>
 <p>Lanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.</p>
 </section>
 <section id="earthquake-detection" class="level1">
