@@ -241,7 +241,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/sound-propagation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sound Propagation in the Ocean</span></a>
+  <a href="../sections/sound-in-the-ocean.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sound in the Ocean</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -324,7 +324,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#average-sound-pressure-level" id="toc-average-sound-pressure-level" class="nav-link active" data-scroll-target="#average-sound-pressure-level">Average Sound Pressure Level</a></li>
+  <li><a href="#sound-speed" id="toc-sound-speed" class="nav-link active" data-scroll-target="#sound-speed">Sound speed</a></li>
+  <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law">Snell’s law</a></li>
+  <li><a href="#wave-equation" id="toc-wave-equation" class="nav-link" data-scroll-target="#wave-equation">Acoustic wave equation</a></li>
+  <li><a href="#spl" id="toc-spl" class="nav-link" data-scroll-target="#spl">Sound pressure level</a></li>
+  <li><a href="#average-sound-pressure-level" id="toc-average-sound-pressure-level" class="nav-link" data-scroll-target="#average-sound-pressure-level">Average Sound Pressure Level</a></li>
   </ul>
 </nav>
     </div>
@@ -350,6 +354,48 @@ window.Quarto = {
 </header>
 
 
+<section id="sound-speed" class="level2">
+<h2 class="anchored" data-anchor-id="sound-speed">Sound speed</h2>
+<p>Sound speed in seawater is estimated from temperature <span class="math inline">\(T\)</span>, salinity <span class="math inline">\(S\)</span>, and depth <span class="math inline">\(z\)</span> or pressure <span class="math inline">\(p\)</span>. These formulae support sound-speed profiles in <a href="../sections/sound-in-the-ocean.html">Sound in the Ocean</a>.</p>
+<section id="mackenzie-1981" class="level3">
+<h3 class="anchored" data-anchor-id="mackenzie-1981">Mackenzie (1981)</h3>
+<p>A nine-term fit, convenient for a first estimate of <span class="math inline">\(c\)</span> from a CTD cast:</p>
+<p><span class="math display">\[
+c(T,S,z) = a_1 + a_2 T + a_3 T^2 + a_4 T^3 + a_5(S-35) + a_6 z + a_7 z^2 + a_8 T (S-35) + a_9 T z^3
+\]</span></p>
+<p>where <span class="math inline">\(T\)</span> is temperature (°C), <span class="math inline">\(S\)</span> is salinity (psu), <span class="math inline">\(z\)</span> is depth (m), and <span class="math inline">\(c\)</span> is sound speed (m/s). Coefficients <span class="math inline">\(a_1 \ldots a_9\)</span> are given in Mackenzie (1981). Typical range of validity: <span class="math inline">\(T\)</span> 0–30 °C, <span class="math inline">\(S\)</span> 30–40 psu, <span class="math inline">\(z\)</span> 0–8000 m.</p>
+</section>
+<section id="del-grosso-1974" class="level3">
+<h3 class="anchored" data-anchor-id="del-grosso-1974">Del Grosso (1974)</h3>
+<p>Often preferred when a more accurate oceanographic sound speed is needed. It is a function of temperature, salinity, and pressure:</p>
+<p><span class="math display">\[
+c(T,S,p) = c_{000} + \Delta c_T + \Delta c_S + \Delta c_P + \Delta c_{STp}
+\]</span></p>
+<p>where <span class="math inline">\(c_{000}\)</span> is a reference sound speed and the <span class="math inline">\(\Delta c\)</span> terms are polynomial corrections for temperature, salinity, pressure, and their cross terms. Full coefficients are given in Del Grosso (1974).</p>
+</section>
+</section>
+<section id="snells-law" class="level2">
+<h2 class="anchored" data-anchor-id="snells-law">Snell’s law</h2>
+<p>A sound ray bends toward slower speed. If <span class="math inline">\(c_1\)</span> and <span class="math inline">\(c_2\)</span> are sound speed on either side of an interface (or of a gradual gradient) and <span class="math inline">\(\theta_1\)</span>, <span class="math inline">\(\theta_2\)</span> are the angles from the vertical:</p>
+<p><span class="math display">\[
+\frac{\sin{\theta_1}}{\sin{\theta_2}} = \frac{c_1}{c_2}
+\]</span></p>
+<p>Frequency is unchanged; wavelength adjusts so that <span class="math inline">\(c = f\lambda\)</span>. This is the geometry behind the SOFAR channel and surface ducts in <a href="../sections/sound-in-the-ocean.html">Sound in the Ocean</a>.</p>
+</section>
+<section id="wave-equation" class="level2">
+<h2 class="anchored" data-anchor-id="wave-equation">Acoustic wave equation</h2>
+<p><span class="math display">\[
+\nabla^2 p - \frac{1}{c^2} \frac{\partial^2 p}{\partial t^2} = 0
+\]</span></p>
+<p>where <span class="math inline">\(p\)</span> is acoustic pressure (deviation from ambient), <span class="math inline">\(c\)</span> is sound speed (<span class="math inline">\(\approx 1500\)</span> m/s in seawater), and <span class="math inline">\(t\)</span> is time. Numerical models such as BELLHOP are discrete solutions of this equation for a given environment.</p>
+</section>
+<section id="spl" class="level2">
+<h2 class="anchored" data-anchor-id="spl">Sound pressure level</h2>
+<p><span class="math display">\[
+\mathrm{SPL} = 20 \log_{10} \left(\frac{p}{p_{\mathrm{ref}}}\right)~\text{dB re 1}~\mu\text{Pa}
+\]</span></p>
+<p>with <span class="math inline">\(p_{\mathrm{ref}} = 1~\mu\mathrm{Pa}\)</span> underwater (20 µPa in air). A pressure <span class="math inline">\(10^6\)</span> times the reference is <span class="math inline">\(120\)</span> dB re 1 µPa.</p>
+</section>
 <section id="average-sound-pressure-level" class="level2">
 <h2 class="anchored" data-anchor-id="average-sound-pressure-level">Average Sound Pressure Level</h2>
 <p><span class="math display">\[

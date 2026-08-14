@@ -241,7 +241,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/sound-propagation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sound Propagation in the Ocean</span></a>
+  <a href="../sections/sound-in-the-ocean.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sound in the Ocean</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -324,11 +324,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#acoustic-interference-from-nearby-instruments" id="toc-acoustic-interference-from-nearby-instruments" class="nav-link active" data-scroll-target="#acoustic-interference-from-nearby-instruments">Acoustic Interference from Nearby Instruments</a></li>
+  <li><a href="#interference-from-nearby-instruments" id="toc-interference-from-nearby-instruments" class="nav-link active" data-scroll-target="#interference-from-nearby-instruments">Interference from nearby instruments</a></li>
   <li><a href="#sonar" id="toc-sonar" class="nav-link" data-scroll-target="#sonar">SONAR</a></li>
   <li><a href="#airplane" id="toc-airplane" class="nav-link" data-scroll-target="#airplane">Airplane</a></li>
   <li><a href="#tonals" id="toc-tonals" class="nav-link" data-scroll-target="#tonals">Tonals</a></li>
+  <li><a href="#whales" id="toc-whales" class="nav-link" data-scroll-target="#whales">Whales</a></li>
   <li><a href="#snowmobile" id="toc-snowmobile" class="nav-link" data-scroll-target="#snowmobile">Snowmobile</a></li>
+  <li><a href="#helicopter" id="toc-helicopter" class="nav-link" data-scroll-target="#helicopter">Helicopter</a></li>
   <li><a href="#earthquake-at-endeavour" id="toc-earthquake-at-endeavour" class="nav-link" data-scroll-target="#earthquake-at-endeavour">Earthquake at Endeavour</a></li>
   <li><a href="#pump-contamination" id="toc-pump-contamination" class="nav-link" data-scroll-target="#pump-contamination">Pump contamination</a></li>
   <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful Links</a></li>
@@ -359,7 +361,7 @@ window.Quarto = {
 
 <p>Explore acoustic signatures captured across our monitoring stations. Examples shown here are include marine mammals, interference from nearby instruments, weather events.</p>
 <p>Go to <a href="https://soundcloud.com/oceannetworkscanada">ONC’s soundcloud page</a> to get the full list of sounds discovered from the hydrophone data.</p>
-<p>More examples on <a href="https://voicesinthesea.ucsd.edu/index.html">Voices in the Sea</a></p>
+<p>More examples on <a href="https://voicesinthesea.ucsd.edu/index.html">Voices in the Sea</a>.</p>
 <!--
 ---
 
@@ -367,11 +369,12 @@ window.Quarto = {
 # Template
 
 ::: {layout="[[35, 65]]"}
-::: {#metadata}
-**Location:** Strait of Georgia East, BC  
+::: {.sound-meta}
+**Location:** Strait of Georgia East, BC
+
 **Sounds:** Tonal
 
-**Analysis:** Constant
+**Explanation:** Constant
 
 :::
 
@@ -379,22 +382,17 @@ window.Quarto = {
 :::
 
 -->
-<section id="acoustic-interference-from-nearby-instruments" class="level1">
-<h1>Acoustic Interference from Nearby Instruments</h1>
+<section id="interference-from-nearby-instruments" class="level1">
+<h1>Interference from nearby instruments</h1>
 <div class="quarto-layout-panel" data-layout="[[35, 65]]">
 <div class="quarto-layout-row">
-<div id="metadata" class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
-<p><strong>Location:</strong> Strait of Georgia East, BC<br>
-<strong>Sounds:</strong> Tonal, Interference</p>
+<div class="sound-meta quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><strong>Location:</strong> Strait of Georgia East, BC</p>
+<p><strong>Sounds:</strong> Tonal, Interference</p>
 <p><strong>Explanation:</strong> An ADCP is located very close to the hydrophone, resulting in a strong signal between 35 and 40 kHz. A tonal line is seen around 22 kHz.</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png" class="img-fluid figure-img"></p>
-<figcaption><strong>Spectrogram</strong></figcaption>
-</figure>
-</div>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<p><img src="../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -403,16 +401,12 @@ window.Quarto = {
 <h1>SONAR</h1>
 <div class="quarto-layout-panel" data-layout="[[35, 65]]">
 <div class="quarto-layout-row">
-<div id="metadata" class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
-<p><strong>Location:</strong> Clayoquot Slope, BC <strong>Sounds:</strong> SONAR at 2 kHz and 7 kHz.</p>
+<div class="sound-meta quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><strong>Location:</strong> Clayoquot Slope, BC</p>
+<p><strong>Sounds:</strong> SONAR at 2 kHz and 7 kHz.</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/ICLISTENHF6013_20260602T091500.000Z-spect.png" class="img-fluid figure-img"></p>
-<figcaption><strong>Spectrogram</strong></figcaption>
-</figure>
-</div>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<p><img src="../images/ICLISTENHF6013_20260602T091500.000Z-spect.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -421,16 +415,12 @@ window.Quarto = {
 <h1>Airplane</h1>
 <div class="quarto-layout-panel" data-layout="[[35, 65]]">
 <div class="quarto-layout-row">
-<div id="metadata" class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
-<p><strong>Location:</strong> Cambridge Bay, NU <strong>Sounds:</strong> Airplane flying over.</p>
+<div class="sound-meta quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><strong>Location:</strong> Cambridge Bay, NU</p>
+<p><strong>Sounds:</strong> Airplane flying over.</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/ICLISTENHF1951_20230808T043007.000Z-spect.png" class="img-fluid figure-img"></p>
-<figcaption><strong>Spectrogram</strong></figcaption>
-</figure>
-</div>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<p><img src="../images/ICLISTENHF7079_20260803T232001.000Z-spect.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -439,18 +429,28 @@ window.Quarto = {
 <h1>Tonals</h1>
 <div class="quarto-layout-panel" data-layout="[[35, 65]]">
 <div class="quarto-layout-row">
-<div id="metadata" class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
-<p><strong>Location:</strong> Strait of Georgia East, BC<br>
-<strong>Sounds:</strong> Tonal</p>
-<p><strong>Explanation:</strong> Stationary signal at a single frequency that often results from power-related issues within the system. These may not be related to the hydrophone itself and therefore may remain even when a hydrophone is replaced with a new one.</p>
+<div class="sound-meta quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><strong>Location:</strong> China Creek, BC</p>
+<p><strong>Sounds:</strong> Tonal</p>
+<p><strong>Explanation:</strong> A stationary signal at a single frequency that often results from nearby instruments, ship propellers from vessels on standby, or land-based mechanical sources when the hydrophone is shallow enough.</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/.png" class="img-fluid figure-img"></p>
-<figcaption><strong>Spectrogram</strong> .</figcaption>
-</figure>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<p><img src="../images/ICLISTENHF6405_20250605T140009.000Z-spect.png" class="img-fluid"></p>
 </div>
+</div>
+</div>
+</section>
+<section id="whales" class="level1">
+<h1>Whales</h1>
+<div class="quarto-layout-panel" data-layout="[[35, 65]]">
+<div class="quarto-layout-row">
+<div class="sound-meta quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><strong>Location:</strong> Digby Island, BC</p>
+<p><strong>Sounds:</strong> Whales, Tonal</p>
+<p><strong>Explanation:</strong> Different whales vocalize at different frequencies with distinct patterns. In this example, whale vocalizations are seen below 1 kHz. A tonal at 8 kHz is also present.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<p><img src="../images/ICLISTENHF1252_20260627T072506.000Z-spect.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -459,35 +459,29 @@ window.Quarto = {
 <h1>Snowmobile</h1>
 <div class="quarto-layout-panel" data-layout="[[35, 65]]">
 <div class="quarto-layout-row">
-<div id="metadata" class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
-<p><strong>Location:</strong> Cambridge Bay, NU<br>
-<strong>Sounds:</strong> Snowmobile Transit, Tonals</p>
+<div class="sound-meta quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><strong>Location:</strong> Cambridge Bay, NU</p>
+<p><strong>Sounds:</strong> Snowmobile Transit, Tonals</p>
 <p><strong>Explanation:</strong> The soundscape is dominated by surface-coupled noise. In winter, snowmobiles create distinct harmonic bands (<span class="math inline">\(10^2\)</span> to <span class="math inline">\(10^3\)</span> Hz). These overlap with ringed seal vocalizations, creating a high risk of <strong>acoustic masking</strong> in shallow ice-covered leads.</p>
 <p>Link to the article: <a href="https://www.nature.com/articles/s44384-025-00038-1">Marine soundscapes of the Arctic and human impacts: going beyond the “shipping bands”</a></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/snowmobile.png" class="img-fluid figure-img"></p>
-<figcaption><strong>Spectrogram:</strong> Snowmobile passing on sea ice above a hydrophone in Cambridge Bay.</figcaption>
-</figure>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<p><img src="../images/snowmobile.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
-</div>
+</section>
+<section id="helicopter" class="level1">
+<h1>Helicopter</h1>
 <div class="quarto-layout-panel" data-layout="[[35, 65]]">
 <div class="quarto-layout-row">
-<div id="metadata" class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
-<p><strong>Location:</strong> Cambridge Bay, NU<br>
-<strong>Sound:</strong> Snowmobile Transit</p>
+<div class="sound-meta quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><strong>Location:</strong> Cambridge Bay, NU</p>
+<p><strong>Sounds:</strong> Helicopter transit</p>
+<p><strong>Explanation:</strong> The hydrophone in Cambridge Bay is shallow enough (10 m deep) that it can detect helicopters flying above the surface [17:55:00 - 17:55:30].</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/ICLISTENHF1951_20260129T110012.000Z-spect.png" class="img-fluid figure-img"></p>
-<figcaption><strong>Spectrogram:</strong> Snowmobile passing on sea ice above a hydrophone in Cambridge Bay.</figcaption>
-</figure>
-</div>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<p><img src="../images/ICLISTENHF1951_20230807T175509.000Z-spect.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -496,18 +490,13 @@ window.Quarto = {
 <h1>Earthquake at Endeavour</h1>
 <div class="quarto-layout-panel" data-layout="[[35, 65]]">
 <div class="quarto-layout-row">
-<div id="metadata" class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<div class="sound-meta quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
 <p><strong>Location:</strong> Endeavour, Pacific Ocean</p>
 <p><strong>Sounds:</strong> Earthquake</p>
 <p><strong>Explanation:</strong> Earthquake soudns are mostly detectable at low frequency. Find more information about this event on this <a href="https://www.google.com/url?sa=j&amp;url=https%3A%2F%2Fwww.oceannetworks.ca%2Fnews-and-stories%2Fstories%2Fendeavour-site-records-the-highest-level-of-earthquake-activity-in-20-years%2F&amp;uct=1776699136&amp;usg=oaC1vpRu1MP3K32B5P4u88gMRrw.&amp;opi=73833047&amp;source=chat">ONC Storymap</a>.</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/ICLISTENHF6328_20240306T084000.000Z-spect.png" class="img-fluid figure-img"></p>
-<figcaption><strong>Spectrogram:</strong> Earthquake at Endeavour.</figcaption>
-</figure>
-</div>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<p><img src="../images/ICLISTENHF6328_20240306T084000.000Z-spect.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
@@ -516,17 +505,13 @@ window.Quarto = {
 <h1>Pump contamination</h1>
 <div class="quarto-layout-panel" data-layout="[[35, 65]]">
 <div class="quarto-layout-row">
-<div id="metadata" class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
-<p><strong>Location:</strong> Cambridge Bay, NU <strong>Sounds:</strong> Pump</p>
-<p><strong>Analysis:</strong> At that time, the hydrophone was too close to a plafform with other noisy instruments which included a pump.</p>
+<div class="sound-meta quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<p><strong>Location:</strong> Cambridge Bay, NU</p>
+<p><strong>Sounds:</strong> Pump</p>
+<p><strong>Explanation:</strong> At that time, the hydrophone was too close to a plafform with other noisy instruments which included a pump.</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png" class="img-fluid figure-img"></p>
-<figcaption><strong>Spectrogram:</strong> Caption</figcaption>
-</figure>
-</div>
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
+<p><img src="../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png" class="img-fluid"></p>
 </div>
 </div>
 </div>

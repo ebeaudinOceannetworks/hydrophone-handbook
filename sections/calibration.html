@@ -212,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/sound-propagation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sound Propagation in the Ocean</span></a>
+  <a href="../sections/sound-in-the-ocean.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sound in the Ocean</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -290,25 +290,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul class="collapse">
-  <li><a href="#hydrocal" id="toc-hydrocal" class="nav-link active" data-scroll-target="#hydrocal">HydroCal</a>
-  <ul class="collapse">
-  <li><a href="#ocean-sonics-devices" id="toc-ocean-sonics-devices" class="nav-link" data-scroll-target="#ocean-sonics-devices">Ocean Sonics devices</a></li>
-  <li><a href="#geospectrum-devices" id="toc-geospectrum-devices" class="nav-link" data-scroll-target="#geospectrum-devices">Geospectrum devices</a></li>
-  </ul></li>
-  <li><a href="#sensitivity-curve" id="toc-sensitivity-curve" class="nav-link" data-scroll-target="#sensitivity-curve">Sensitivity Curve</a>
-  <ul class="collapse">
-  <li><a href="#past-issues" id="toc-past-issues" class="nav-link" data-scroll-target="#past-issues">Past issues</a></li>
-  </ul></li>
-  <li><a href="#tank-test" id="toc-tank-test" class="nav-link" data-scroll-target="#tank-test">Tank Test</a></li>
-  <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -332,79 +315,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-simple callout-important callout-titled" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Improvements for this page
+<span class="screen-reader-only">Note</span>In progress
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>not complete</li>
-<li>annotate the first photo</li>
-<li>there are cool images with annotations in the hydrocal pdf</li>
-</ul>
+<p>This chapter is under construction. Topics: HydroCal, sensitivity curves, and tank-test, validation.</p>
 </div>
 </div>
-<p>A hydrophone does not “hear” all frequencies equally. It might be increadibly sensitive at 10 kHz and deafen by 100 kHz, or vice-versa. This is why we have LF and HF hydrophones.</p>
-<section id="hydrocal" class="level1">
-<h1>HydroCal</h1>
-<p><a href="https://internal.oceannetworks.ca/pages/viewpage.action?pageId=216205588&amp;spaceKey=MO&amp;title=Hydrocal%2B-%2BHydrophone%2BCalibration%2BSystem&amp;preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf">HydroCal User Manual</a></p>
-<p>Ocean Networks Canada Hydrophone Calibration System, known as <strong>ONC HydroCal</strong>, is designed to perform two types of hydrophone calibrations: very low frequency (VLF) calibrations and high frequency (HF) calibrations.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/MTC_hydrocal.png" class="img-fluid figure-img"></p>
-<figcaption>Hydrophone calibration performed at the MTC, using in-house calibration system HydroCal.</figcaption>
-</figure>
-</div>
-<section id="ocean-sonics-devices" class="level2">
-<h2 class="anchored" data-anchor-id="ocean-sonics-devices">Ocean Sonics devices</h2>
-<p>Ocean Sonics calibrates their hydrophones at high frequencies (10 to 200 kHz), as well as at a single low-frequency point 26 Hz. HydroCal was developped to also calibrate ONC’s devices at low-frequencies (0.1 to 700 Hz), measure in-house by engineers at the MTC. The LF calibration is validated against Ocean Sonic’s 26 Hz.</p>
-<p>The mid-range frequencies (700 Hz to 10 kHz) are not calibrated, but the curve is interpolated in between.</p>
-</section>
-<section id="geospectrum-devices" class="level2">
-<h2 class="anchored" data-anchor-id="geospectrum-devices">Geospectrum devices</h2>
-<p>??</p>
-</section>
-</section>
-<section id="sensitivity-curve" class="level1">
-<h1>Sensitivity Curve</h1>
-<p>The hydrophone sensitivity curve is what is used to correct the measured sound levels by adding an offset.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/hydrophone-calibration.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Hydrophone sensitivity curve from calibration.</figcaption>
-</figure>
-</div>
-<p>Along with downloading hydrophone data, a .txt file containing the sensitivity calibration curve is made readily available.</p>
-<section id="past-issues" class="level2">
-<h2 class="anchored" data-anchor-id="past-issues">Past issues</h2>
-<p>The ONC calibration curve was errounously calculated at very low frequencies. Therefore, the LF data seemed louder than it actually was. ONC is currently working towards implementing the new corrected calibration curve, and will have to re-generate all the previously archived data products.</p>
-</section>
-</section>
-<section id="tank-test" class="level1">
-<h1>Tank Test</h1>
-<p>Test tanking is a crucial validation step before a hydrophone goes in the ocean.</p>
-<ul>
-<li>Examine for anything loose to prevent leaks, vibrations, things getting away</li>
-</ul>
-</section>
-<section id="validation" class="level1">
-<h1>Validation</h1>
-<p>We will be adding an additional validation method for hydrophones to meet the new ISO standard 7605, by using pistonphone to check calibration right before deployment, ideally on the ship.</p>
-<p>paper:</p>
-<ul>
-<li>https://ieeexplore.ieee.org/abstract/document/6964377</li>
-<li>https://ieeexplore.ieee.org/abstract/document/7404600</li>
-<li>https://ieeexplore.ieee.org/abstract/document/8084773</li>
-<li>https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10754545</li>
-</ul>
-</section>
-<section id="useful-links" class="level1">
-<h1>Useful links</h1>
+<!-- handbook-draft: to publish this text, delete the opening HTML comment on this line and the matching closer at the end of the file.
+
+::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
+## Improvements for this page
+* not complete
+* annotate the first photo
+* there are cool images with annotations in the hydrocal pdf
+:::
+
+A hydrophone does not "hear" all frequencies equally.
+It might be increadibly sensitive at 10 kHz and deafen by 100 kHz, or vice-versa.
+This is why we have LF and HF hydrophones.
+
+
+# HydroCal
+
+[HydroCal User Manual](https://internal.oceannetworks.ca/pages/viewpage.action?pageId=216205588&spaceKey=MO&title=Hydrocal%2B-%2BHydrophone%2BCalibration%2BSystem&preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf)
+
+Ocean Networks Canada Hydrophone Calibration System, known as **ONC HydroCal**, is designed to perform two types of hydrophone calibrations: very low frequency (VLF) calibrations and high frequency (HF) calibrations.
+
+![Hydrophone calibration performed at the MTC, using in-house calibration system HydroCal.](../images/MTC_hydrocal.png)
+
+## Ocean Sonics devices
+Ocean Sonics calibrates their hydrophones at high frequencies (10 to 200 kHz), as well as at a single low-frequency point 26 Hz.
+HydroCal was developped to also calibrate ONC's devices at low-frequencies (0.1 to 700 Hz), measure in-house by engineers at the MTC.
+The LF  calibration is validated against Ocean Sonic's 26 Hz.
+
+The mid-range frequencies (700 Hz to 10 kHz) are not calibrated, but the curve is interpolated in between.
+
+## Geospectrum devices
+??
+
+# Sensitivity Curve
+The hydrophone sensitivity curve is what is used to correct the measured sound levels by adding an offset.
+
+![Hydrophone sensitivity curve from calibration.](../images/hydrophone-calibration.png){width=70%}
+
+Along with downloading hydrophone data, a .txt file containing the sensitivity calibration curve is made readily available.
+
+## Past issues
+The ONC calibration curve was errounously calculated at very low frequencies. 
+Therefore, the LF data seemed louder than it actually was.
+ONC is currently working towards implementing the new corrected calibration curve, and will have to re-generate all the previously archived data products.
+
+# Tank Test
+
+Test tanking is a crucial validation step before a hydrophone goes in the ocean.
+
+* Examine for anything loose to prevent leaks, vibrations, things getting away
+
+
+# Validation
+
+We will be adding an additional validation method for hydrophones to meet the new ISO standard 7605, by using pistonphone to check calibration right before deployment, ideally on the ship.
+
+
+
+paper:
+
+* https://ieeexplore.ieee.org/abstract/document/6964377
+* https://ieeexplore.ieee.org/abstract/document/7404600
+* https://ieeexplore.ieee.org/abstract/document/8084773
+* https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10754545
+
+# Useful links
+
+```{=html}
 <div style="border: 1px solid rgba(255, 255, 255, 0.2); 
             border-radius: 8px; 
             padding: 16px; 
@@ -424,13 +414,17 @@ ul.task-list li input[type="checkbox"] {
     
 
     <li style="margin-bottom: 10px;">
-      <a href="https://internal.oceannetworks.ca/spaces/MO/pages/216205588/Hydrocal+-+Hydrophone+Calibration+System?preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+      <a href="https://internal.oceannetworks.ca/spaces/MO/pages/216205588/Hydrocal+-+Hydrophone+Calibration+System?preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
          HydroCal User Manual
       </a>
     </li>
 
   </ul>
 </div>
+```
+
+```{=html}
 <div style="border: 1px solid rgba(255, 255, 255, 0.2); 
             border-radius: 8px; 
             padding: 16px; 
@@ -448,16 +442,19 @@ ul.task-list li input[type="checkbox"] {
 
   <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
     <li style="margin-bottom: 10px;">
-      <a href="https://docs.oceannetworks.ca/share/page/site/corporate-docs/document-details?nodeRef=workspace://SpacesStore/300293c5-17bc-4709-a7e8-459106e15529" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+      <a href="https://docs.oceannetworks.ca/share/page/site/corporate-docs/document-details?nodeRef=workspace://SpacesStore/300293c5-17bc-4709-a7e8-459106e15529" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
          Hydrophone Calibration System
       </a>
     </li>
 
   </ul>
 </div>
+```
+
+-->
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
