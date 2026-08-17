@@ -2,45 +2,131 @@
   const API_BASE = "https://data.oceannetworks.ca/api";
   const TOKEN_PLACEHOLDER = "YOUR_TOKEN";
 
-  const ARCHIVE_LABELS = {
-    flac: "lossless audio",
-    wav: "uncompressed audio",
-    mp3: "compressed audio",
-    fft: "proprietary spectral",
-    mat: "MATLAB / spectral",
-    png: "plot / spectrogram",
-    pdf: "PDF plot",
-    txt: "logs / calibration",
-    acc: "acceleration",
-    hyd: "array raw (retired)",
-    oct: "octave spectral",
-    csv: "scalar table",
-    json: "JSON",
-    an: "annotation",
-    qaqc: "QAQC results",
-    vtt: "captions"
+  const ARCHIVE_ORDER = ["flac", "wav", "fft", "mat", "png", "oct", "hyd", "txt"];
+  const ARCHIVE_BY_FAMILY = {
+    "ocean-sonics": [
+      { value: "flac", label: "flac — lossless audio" },
+      { value: "wav", label: "wav — uncompressed audio (older)" },
+      { value: "fft", label: "fft — Ocean Sonics spectral" },
+      { value: "mat", label: "mat — calibrated spectral" },
+      { value: "png", label: "png — spectrogram" },
+      { value: "txt", label: "txt — logs / calibration" }
+    ],
+    jasco: [
+      { value: "flac", label: "flac — lossless audio" },
+      { value: "wav", label: "wav — uncompressed audio" },
+      { value: "oct", label: "oct — 1/3-octave spectral" },
+      { value: "mat", label: "mat — calibrated spectral" },
+      { value: "png", label: "png — spectrogram" },
+      { value: "txt", label: "txt — logs / calibration" }
+    ],
+    ios: [
+      { value: "hyd", label: "hyd — array raw (retired IOS)" },
+      { value: "wav", label: "wav — uncompressed audio" },
+      { value: "txt", label: "txt — logs / calibration" }
+    ],
+    other: [
+      { value: "flac", label: "flac — lossless audio" },
+      { value: "wav", label: "wav — uncompressed audio" },
+      { value: "txt", label: "txt — logs / calibration" }
+    ]
   };
 
+  function deviceFamily(deviceCode) {
+    const code = String(deviceCode || "").toUpperCase();
+    if (code.indexOf("IOS3HYD") === 0) return "ios";
+    if (code.indexOf("JASCO") === 0 || code.indexOf("NAXYS") === 0) return "jasco";
+    if (code.indexOf("ICLISTEN") === 0 || code.indexOf("ICHYDROPHONE") === 0 || code.indexOf("SONGMETER") === 0) {
+      return "ocean-sonics";
+    }
+    return "other";
+  }
+
+  function parseTime(value) {
+    if (!value) return null;
+    const ms = Date.parse(value);
+    return isNaN(ms) ? null : ms;
+  }
+
+  function deploymentOverlaps(dep, dateFrom, dateTo) {
+    const begin = parseTime(dep.begin) || 0;
+    const end = parseTime(dep.end);
+    const from = parseTime(dateFrom);
+    const to = parseTime(dateTo);
+    if (from != null && end != null && end <= from) return false;
+    if (to != null && begin >= to) return false;
+    return true;
+  }
+
+  function familiesForSelection(catalog) {
+    const lookup = (document.querySelector('input[name="api-lookup"]:checked') || {}).value || "location";
+    const locationCode = (($("api-location") || {}).value || "").trim();
+    const deviceCode = (($("api-device") || {}).value || "").trim();
+    const dateFrom = toOncIso(($("api-date-from") || {}).value);
+    const dateTo = toOncIso(($("api-date-to") || {}).value);
+    function matchesSelection(dep, useDates) {
+      if (lookup === "device") {
+        if (!deviceCode || dep.deviceCode !== deviceCode) return false;
+      } else if (!locationCode || dep.locationCode !== locationCode) {
+        return false;
+      }
+      return !useDates || deploymentOverlaps(dep, dateFrom, dateTo);
+    }
+    let usedDates = true;
+    let matches = (catalog.deployments || []).filter(function (dep) {
+      return matchesSelection(dep, true);
+    });
+    if (!matches.length) {
+      usedDates = false;
+      matches = (catalog.deployments || []).filter(function (dep) {
+        return matchesSelection(dep, false);
+      });
+    }
+    const families = [];
+    matches.forEach(function (dep) {
+      const family = deviceFamily(dep.deviceCode);
+      if (families.indexOf(family) === -1) families.push(family);
+    });
+    if (!families.length) {
+      if (lookup === "device" && deviceCode) families.push(deviceFamily(deviceCode));
+      else families.push("ocean-sonics");
+    }
+    return { families: families, usedDates: usedDates };
+  }
+
   function archiveExtensions(catalog) {
-    const found = [];
-    (catalog.products || []).forEach(function (p) {
-      (p.formats || []).forEach(function (f) {
-        if (f.extension && found.indexOf(f.extension) === -1) found.push(f.extension);
+    const seen = {};
+    familiesForSelection(catalog).families.forEach(function (family) {
+      (ARCHIVE_BY_FAMILY[family] || ARCHIVE_BY_FAMILY.other).forEach(function (item) {
+        seen[item.value] = item;
       });
     });
-    ["flac", "wav", "mp3", "fft", "mat", "png", "txt"].forEach(function (ext) {
-      if (found.indexOf(ext) === -1) found.push(ext);
+    return ARCHIVE_ORDER.filter(function (ext) { return seen[ext]; }).map(function (ext) {
+      return seen[ext];
     });
-    const preferred = ["flac", "wav", "mp3", "fft", "mat", "png", "txt"];
-    found.sort(function (a, b) {
-      const ia = preferred.indexOf(a);
-      const ib = preferred.indexOf(b);
-      if (ia === -1 && ib === -1) return a.localeCompare(b);
-      if (ia === -1) return 1;
-      if (ib === -1) return -1;
-      return ia - ib;
-    });
-    return found;
+  }
+
+  function syncArchiveExtensions(catalog) {
+    const sel = $("api-archive-ext");
+    if (!sel) return;
+    const options = archiveExtensions(catalog);
+    const current = sel.value;
+    sel.innerHTML = options.map(function (item) {
+      return "<option value='" + escapeHtml(item.value) + "'>" + escapeHtml(item.label) + "</option>";
+    }).join("");
+    const keep = options.some(function (item) { return item.value === current; });
+    sel.value = keep ? current : (options[0] ? options[0].value : "flac");
+    const hint = $("api-archive-hint");
+    if (hint) {
+      const info = familiesForSelection(catalog);
+      if (info.families.indexOf("ios") === -1) {
+        hint.textContent = "Listed extensions match this hydrophone family and time range. .hyd appears only for retired IOS arrays.";
+      } else if (info.usedDates) {
+        hint.textContent = "This time range includes a retired IOS array, so .hyd is listed.";
+      } else {
+        hint.textContent = "This location has retired IOS array files (.hyd). They may not exist in the selected dates.";
+      }
+    }
   }
 
   function $(id) {
@@ -109,8 +195,86 @@
     }).join("");
   }
 
+  const PRODUCT_ORDER = ["AD", "HSD", "HSPD", "SHV", "LF", "HCF", "HACC", "HARD", "TSSD"];
+  const PRODUCT_LABELS = {
+    AD: "AD — Audio Data",
+    HSD: "HSD — Hydrophone Spectral Data",
+    HSPD: "HSPD — Spectral Probability Density",
+    SHV: "SHV — Spectrogram for Hydrophone Viewer",
+    LF: "LF — log / auxiliary file",
+    HCF: "HCF — calibration files",
+    HACC: "HACC — acceleration (ancillary)",
+    HARD: "HARD — array raw (retired IOS)",
+    TSSD: "TSSD — ancillary scalar (humidity, temperature, battery)"
+  };
+  const PRODUCT_FAMILIES = {
+    AD: null,
+    HSD: null,
+    HSPD: ["ocean-sonics", "jasco", "other"],
+    SHV: ["ocean-sonics", "jasco", "other"],
+    LF: ["ocean-sonics", "other"],
+    HCF: null,
+    HACC: ["ocean-sonics"],
+    HARD: ["ios"],
+    TSSD: ["ocean-sonics", "other"]
+  };
+  const FORMAT_FAMILIES = {
+    fft: ["ocean-sonics"],
+    oct: ["jasco"],
+    hyd: ["ios"]
+  };
+
   function productByCode(catalog, code) {
     return (catalog.products || []).find(function (p) { return p.code === code; });
+  }
+
+  function productsForSelection(catalog) {
+    const families = familiesForSelection(catalog).families;
+    return PRODUCT_ORDER.filter(function (code) {
+      if (!(catalog.products || []).some(function (p) { return p.code === code; })) return false;
+      const allowed = PRODUCT_FAMILIES[code];
+      return !allowed || families.some(function (family) { return allowed.indexOf(family) !== -1; });
+    }).map(function (code) {
+      const product = productByCode(catalog, code);
+      return {
+        code: code,
+        name: PRODUCT_LABELS[code] || (product.code + " — " + product.name),
+        product: product
+      };
+    });
+  }
+
+  function formatsForSelection(catalog, product) {
+    const families = familiesForSelection(catalog).families;
+    const formats = (product && product.formats) || [];
+    return formats.filter(function (f) {
+      const allowed = FORMAT_FAMILIES[f.extension];
+      return !allowed || families.some(function (family) { return allowed.indexOf(family) !== -1; });
+    });
+  }
+
+  function syncProducts(catalog) {
+    const sel = $("api-product");
+    if (!sel) return;
+    const options = productsForSelection(catalog);
+    const current = sel.value;
+    sel.innerHTML = options.map(function (item) {
+      return "<option value='" + escapeHtml(item.code) + "'>" + escapeHtml(item.name) + "</option>";
+    }).join("");
+    const keep = options.some(function (item) { return item.code === current; });
+    sel.value = keep ? current : (options[0] ? options[0].code : "AD");
+    const hint = $("api-product-hint");
+    if (hint) {
+      const families = familiesForSelection(catalog).families;
+      if (families.indexOf("ios") !== -1 && families.length === 1) {
+        hint.textContent = "Retired IOS arrays: HARD (.hyd) is the raw product. QAQC, captions, and annotations are omitted.";
+      } else if (families.indexOf("ios") !== -1) {
+        hint.textContent = "This selection includes a retired IOS array, so HARD (.hyd) is listed. Time-series is ancillary instrument data.";
+      } else {
+        hint.textContent = "Hydrophone products only. Time-series here is ancillary instrument data, not acoustic samples.";
+      }
+    }
+    syncProductFormats(catalog);
   }
 
   function formatForProduct(product, extension) {
@@ -281,6 +445,64 @@
     return lines.join("\n");
   }
 
+  const DPO_HELP = {
+    dpo_audioDownsample: "Output sample rate in Hz. −1 keeps the hydrophone’s sampling rate.",
+    dpo_audioFormatConversion: "Whether to convert the archived audio format (0 = keep as archived, 1 = convert).",
+    dpo_hydrophoneAcquisitionMode: "Duty-cycle filter. LF is the low sample-rate segments (~16 kHz), HF is the high-rate segments (≥128 kHz), All returns both.",
+    dpo_hydrophoneChannel: "Channel on a multi-hydrophone array file (H1, H2, H3, or All).",
+    dpo_hydrophoneDataDiversionMode: "OD is original (non-diverted) data. LPF/HPF are filtered diverted files. All includes overlapping diverted and original files.",
+    dpo_spectrogramSource: "MIX prefers audio and fills gaps with FFT. WAVFLAC is audio only. FFT uses proprietary spectral files only.",
+    dpo_spectrogramConcatenation: "How plots or MAT files are grouped. None is one file per source clip. Concatenate accumulates until size limits. Daily/Weekly collate averages. Adjacent stitches clips for searches of 5 minutes or less.",
+    dpo_spectralDataDownsample: "MAT resolution. 1 is the pre-generated one-minute average. 2 matches spectrogram plot resolution. 0 is full resolution and is slow to generate.",
+    dpo_spectrogramColourPalette: "Spectrogram colour map. 0 is the ONC rainbow default; 1–5 are perceptually balanced palettes.",
+    dpo_lowerColourLimit: "Lower colour-scale limit in dB. −1000 uses the device calibration default.",
+    dpo_upperColourLimit: "Upper colour-scale limit in dB. −1000 uses the device calibration default.",
+    dpo_spectrogramFrequencyUpperLimit: "Upper frequency shown on the spectrogram. −1 uses the calibration / sample-rate limit.",
+    dpo_filePlotBreaks: "How often HSPD files or plots break. Weekly (2) is the default and breaks at Sunday midnight UTC. Daily (1) breaks at midnight. None (0) only breaks on a configuration change.",
+    dpo_spectralProbabilityDensityColourAxisUpperLimit: "Upper limit of the SPD probability colour axis. 0 uses the default scale.",
+    dpo_spectralProbabilityDensityPSDRange: "PSD dB range on the SPD plot. 0 uses the default range; other values set explicit limits such as 40–160 dB."
+  };
+
+  const DPO_VALUE_LABELS = {
+    dpo_filePlotBreaks: { "0": "None", "1": "Daily", "2": "Weekly", "3": "Hourly", "4": "Monthly", "5": "Yearly" },
+    dpo_hydrophoneAcquisitionMode: { All: "all modes", LF: "low frequency", HF: "high frequency" },
+    dpo_hydrophoneChannel: { All: "all channels", H1: "channel H1", H2: "channel H2", H3: "channel H3" },
+    dpo_hydrophoneDataDiversionMode: { All: "all data", OD: "original data", LPF: "low-pass filtered", HPF: "high-pass filtered" },
+    dpo_spectrogramSource: { MIX: "audio preferred, FFT fills gaps", WAVFLAC: "audio only", FFT: "FFT only", WAV: "audio only" },
+    dpo_spectrogramConcatenation: {
+      None: "one file per source clip",
+      Concatenate: "until size limit",
+      Daily: "daily",
+      Weekly: "weekly",
+      Adjacent: "adjacent clips (≤5 min)"
+    },
+    dpo_spectralDataDownsample: { "0": "full resolution", "1": "one-minute", "2": "spectrogram resolution" },
+    dpo_spectrogramColourPalette: {
+      "0": "ONC rainbow",
+      "1": "blue–purple",
+      "2": "grayscale",
+      "3": "blue–red",
+      "4": "burgundy–beige",
+      "5": "fuchsia–chartreuse"
+    },
+    dpo_audioFormatConversion: { "0": "no conversion", "1": "convert format" },
+    dpo_audioDownsample: { "-1": "sampling rate" },
+    dpo_lowerColourLimit: { "-1000": "use calibration" },
+    dpo_upperColourLimit: { "-1000": "use calibration" },
+    dpo_spectrogramFrequencyUpperLimit: { "-1": "use calibration / sample rate", "1000": "1000 Hz", "10000": "10 000 Hz" },
+    dpo_spectralProbabilityDensityColourAxisUpperLimit: { "0": "default scale" },
+    dpo_spectralProbabilityDensityPSDRange: { "0": "default range", "40_160": "40–160 dB", "40_140": "40–140 dB", "20_140": "20–140 dB" }
+  };
+
+  function dpoOptionLabel(option, value, isDefault) {
+    const labels = DPO_VALUE_LABELS[option] || {};
+    const note = labels[String(value)];
+    let text = String(value);
+    if (note) text += " — " + note;
+    if (isDefault) text += " (default)";
+    return text;
+  }
+
   function renderDpoFields(format) {
     const box = $("api-dpo-fields");
     if (!box) return;
@@ -294,12 +516,14 @@
       const values = opt.allowableValues || [];
       const range = opt.allowableRange;
       const def = opt.defaultValue == null ? "" : String(opt.defaultValue);
+      const help = DPO_HELP[opt.option] || "Oceans 3.0 data product option for this format.";
       let control;
       if (values.length) {
         control = "<select id='" + id + "' data-dpo='" + escapeHtml(opt.option) + "'>" +
           values.map(function (v) {
             const selected = String(v) === def ? " selected" : "";
-            return "<option value='" + escapeHtml(v) + "'" + selected + ">" + escapeHtml(v) + "</option>";
+            return "<option value='" + escapeHtml(v) + "'" + selected + ">" +
+              escapeHtml(dpoOptionLabel(opt.option, v, String(v) === def)) + "</option>";
           }).join("") +
           "</select>";
       } else if (range) {
@@ -310,7 +534,12 @@
       } else {
         control = "<input type='text' id='" + id + "' data-dpo='" + escapeHtml(opt.option) + "' value='" + escapeHtml(def) + "'>";
       }
-      return "<label class='api-field'><span>" + escapeHtml(opt.option) + "</span>" + control + "</label>";
+      const defaultNote = (!values.length && def !== "")
+        ? " Default value: " + def + "."
+        : "";
+      return "<label class='api-field api-dpo-field'><span>" + escapeHtml(opt.option) + "</span>" +
+        control +
+        "<small class='api-dpo-help'>" + escapeHtml(help + defaultNote) + "</small></label>";
     }).join("");
   }
 
@@ -318,12 +547,13 @@
     const product = productByCode(catalog, ($("api-product") || {}).value);
     const extSel = $("api-order-ext");
     if (!extSel) return;
-    const formats = (product && product.formats) || [{ extension: "flac" }];
+    const formats = formatsForSelection(catalog, product);
+    const safeFormats = formats.length ? formats : [{ extension: "flac" }];
     const current = extSel.value;
-    extSel.innerHTML = formats.map(function (f) {
+    extSel.innerHTML = safeFormats.map(function (f) {
       return "<option value='" + escapeHtml(f.extension) + "'>" + escapeHtml(f.extension) + "</option>";
     }).join("");
-    const keep = formats.some(function (f) { return f.extension === current; });
+    const keep = safeFormats.some(function (f) { return f.extension === current; });
     if (keep) extSel.value = current;
     renderDpoFields(formatForProduct(product, extSel.value));
   }
@@ -344,9 +574,6 @@
   function updateCode(catalog) {
     const state = currentState(catalog);
     const params = filters(state);
-    const endpoint = API_BASE + restPath(state);
-    const urlEl = $("api-rest-url");
-    if (urlEl) urlEl.textContent = endpoint + "?" + queryString(params, state.token);
 
     $("api-code-python").textContent = pythonCode(state, params);
     $("api-code-matlab").textContent = matlabCode(state, params);
@@ -420,25 +647,9 @@
       return { value: dev.deviceCode, label: dev.deviceCode };
     }));
 
-    const productSel = $("api-product");
-    if (productSel) {
-      productSel.innerHTML = (catalog.products || []).map(function (p) {
-        return "<option value='" + escapeHtml(p.code) + "'>" +
-          escapeHtml(p.code) + " — " + escapeHtml(p.name) + "</option>";
-      }).join("");
-    }
-
-    const archSel = $("api-archive-ext");
-    if (archSel) {
-      archSel.innerHTML = archiveExtensions(catalog).map(function (ext) {
-        const note = ARCHIVE_LABELS[ext] ? " — " + ARCHIVE_LABELS[ext] : "";
-        return "<option value='" + escapeHtml(ext) + "'>" + escapeHtml(ext) + note + "</option>";
-      }).join("");
-      archSel.value = "flac";
-    }
-
     initDefaults();
-    syncProductFormats(catalog);
+    syncArchiveExtensions(catalog);
+    syncProducts(catalog);
     syncPanels();
     setTab("python");
     updateCode(catalog);
@@ -451,6 +662,12 @@
           syncProductFormats(catalog);
         }
         if (target.name === "api-method" || target.name === "api-lookup") syncPanels();
+        if (target.id === "api-location" || target.id === "api-device" ||
+            target.id === "api-date-from" || target.id === "api-date-to" ||
+            target.name === "api-lookup") {
+          syncArchiveExtensions(catalog);
+          syncProducts(catalog);
+        }
         updateCode(catalog);
       });
       form.addEventListener("change", function (evt) {
@@ -458,6 +675,12 @@
         syncPanels();
         if (target.id === "api-product" || target.id === "api-order-ext") {
           syncProductFormats(catalog);
+        }
+        if (target.id === "api-location" || target.id === "api-device" ||
+            target.id === "api-date-from" || target.id === "api-date-to" ||
+            target.name === "api-lookup") {
+          syncArchiveExtensions(catalog);
+          syncProducts(catalog);
         }
         updateCode(catalog);
       });
@@ -480,8 +703,10 @@
         });
         if (match && $("api-device") && !$("api-device").value) {
           $("api-device").value = match.deviceCode;
-          updateCode(catalog);
         }
+        syncArchiveExtensions(catalog);
+        syncProducts(catalog);
+        updateCode(catalog);
       });
     }
   }
