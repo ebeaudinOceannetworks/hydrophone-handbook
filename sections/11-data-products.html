@@ -298,32 +298,22 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/14-monitoring-and-troubleshooting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Monitoring &amp; Troubleshooting</span></a>
+  <a href="../sections/14-science-and-applications-at-onc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/15-science-and-applications-at-onc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Science and Applications at ONC</span></a>
+  <a href="../sections/15-useful-equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Useful Equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/16-useful-equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Useful Equations</span></a>
+  <a href="../sections/16-hydrophone-specs-and-manufacturers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Hydrophone Specs &amp; Manufacturers</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/17-hydrophone-specs-and-manufacturers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Hydrophone Specs &amp; Manufacturers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sections/18-list-of-onc-publications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. List of ONC publications</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sections/19-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. Glossary</span></a>
+  <a href="../sections/17-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Glossary</span></a>
   </div>
 </li>
     </ul>
@@ -337,15 +327,7 @@ window.Quarto = {
    
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#audio-data-ad" id="toc-audio-data-ad" class="nav-link" data-scroll-target="#audio-data-ad">Audio Data (AD)</a></li>
-  <li><a href="#hydrophone-spectral-data-hsd" id="toc-hydrophone-spectral-data-hsd" class="nav-link" data-scroll-target="#hydrophone-spectral-data-hsd">Hydrophone Spectral Data (HSD)</a>
-  <ul class="collapse">
-  <li><a href="#proprietary-spectral-data-.fft" id="toc-proprietary-spectral-data-.fft" class="nav-link" data-scroll-target="#proprietary-spectral-data-.fft">Proprietary Spectral Data (.fft)</a></li>
-  <li><a href="#processed-spectral-data-.mat" id="toc-processed-spectral-data-.mat" class="nav-link" data-scroll-target="#processed-spectral-data-.mat">Processed Spectral Data (.mat)</a></li>
-  <li><a href="#spectrogram-.png" id="toc-spectrogram-.png" class="nav-link" data-scroll-target="#spectrogram-.png">Spectrogram (.png)</a></li>
-  </ul></li>
-  <li><a href="#hydrophone-spectral-probability-density-hspd" id="toc-hydrophone-spectral-probability-density-hspd" class="nav-link" data-scroll-target="#hydrophone-spectral-probability-density-hspd">Hydrophone Spectral Probability Density (HSPD)</a></li>
-  <li><a href="#auxiliary-data" id="toc-auxiliary-data" class="nav-link" data-scroll-target="#auxiliary-data">Auxiliary data</a></li>
+  <li><a href="#data-products" id="toc-data-products" class="nav-link" data-scroll-target="#data-products">Data products</a></li>
   <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
   </ul>
 </nav>
@@ -373,22 +355,6 @@ window.Quarto = {
 
 
 <p>This page describes <strong>what</strong> each hydrophone data product contains. To download files, use the <a href="../sections/12-data-access.html">Data Access</a> request builder or Hydrophone Viewer.</p>
-<div class="callout callout-style-simple callout-important callout-titled" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Improvements for this page
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>add figures</li>
-<li>verify equations</li>
-</ul>
-</div>
-</div>
 <section id="overview" class="level1">
 <h1>Overview</h1>
 <p>Hydrophone data is archived several formats, ranging from raw acoustic recordings to processed spectral products.</p>
@@ -458,217 +424,260 @@ window.Quarto = {
 <td>51</td>
 <td>.png, .pdf, .mat</td>
 </tr>
+<tr class="even">
+<td>Log / auxiliary file</td>
+<td>LF</td>
+<td>4</td>
+<td>.txt</td>
+</tr>
+<tr class="odd">
+<td>Hydrophone Acceleration Data</td>
+<td>HACC</td>
+<td>128</td>
+<td>.acc</td>
+</tr>
 </tbody>
 </table>
 <p><br>
 </p>
-<p>Note that both <strong>Data Product Code</strong> and <strong>File Extension</strong> are needed when downloading data through the API. Each data product (dataProductCode) has a set of data product options (dpo) that can be use to narrow down the request.</p>
+<p>Note that both <strong>Data Product Code</strong> and <strong>File Extension</strong> are needed when downloading data through the API. Each data product (<code>dataProductCode</code>) has a set of data product options (<code>dpo_*</code>) that can be used to narrow down the request. Open a product tab below for its options.</p>
+</section>
+<section id="data-products" class="level1">
+<h1>Data products</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset access-tabs">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Audio Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Hydrophone Spectral Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Spectral Probability Density</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Auxiliary Data</a></li></ul>
+<div class="tab-content access-tabs">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="dp-panel">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> AD / 7</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .flac, .wav, .mp3</span>
+</div>
+<p>Audio data is the raw recording of the acoustic environment. Use it when you need the time series itself (listening, custom processing, or publication-quality archives).</p>
+<p>Older files were stored as <code>.wav</code>; ONC now archives lossless <code>.flac</code>. <code>.mp3</code> is smaller but lossy, and is not recommended for scientific work. Retired IOS arrays used HARD / 38 (<code>.hyd</code>) instead of AD. MP3 discards frequency content to shrink the file. That is fine for a quick listen, not for calibrated analysis. If you need a different container, request AD as <code>.wav</code> or set <code>dpo_audioFormatConversion</code> rather than transcoding a lossy copy.</p>
+<p>FLAC (Free Lossless Audio Codec) is the preferred archive because of:</p>
+<ul>
+<li><strong>Lossless compression</strong>: unlike MP3, FLAC keeps 100% of the original samples.</li>
+<li><strong>Storage efficiency</strong>: files are substantially smaller than <code>.wav</code> at the same quality.</li>
+<li><strong>Metadata</strong>: FLAC can store deployment and device tags inside the file.</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>API Request Example
+<span class="screen-reader-only">Note</span>Expand for API options
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre style="font-family: 'Courier New', Courier, monospace; background: transparent; border: none; color: inherit;">params = {
-    'dateFrom': '2026-04-14T10:00:00.000Z',
-    'dateTo': '2026-04-14T11:00:00.000Z',
-    'deviceCode': 'ICLISTENHF6016', # Clayoquot Slope Hydrophone A
-    'dataProductCode': 'HSD',        # Hydrophone Spectral Data
-    'extension': 'mat',             # MATLAB file extension
-    'dpo_spectralDataDownsample': '1',  # one-minute average (default, pre-generated)
-}
-request = onc.orderDataProduct(params)
-</pre>
+<ul>
+<li><code>dpo_audioDownsample</code>: <code>"-1"</code> (default, native rate), <code>"256"</code>, <code>"512"</code>, <code>"2000"</code>, <code>"4000"</code>, <code>"8000"</code>, <code>"16000"</code>, <code>"44100"</code>, <code>"48000"</code></li>
+<li><code>dpo_audioFormatConversion</code>: <code>"0"</code> (default), <code>"1"</code></li>
+<li><code>dpo_hydrophoneAcquisitionMode</code>: <code>"All"</code> (default), <code>"LF"</code>, <code>"HF"</code></li>
+<li><code>dpo_hydrophoneChannel</code>: <code>"H1"</code> (default), <code>"H2"</code>, <code>"H3"</code>, <code>"All"</code></li>
+<li><code>dpo_hydrophoneDataDiversionMode</code>: <code>"OD"</code> (default, original data), <code>"LPF"</code>, <code>"HPF"</code>, <code>"All"</code></li>
+</ul>
 </div>
 </div>
-</section>
-<section id="audio-data-ad" class="level1">
-<h1>Audio Data (AD)</h1>
-<p>Formats: .flac/.wav/.mp3</p>
-<p>Available API data product options (<a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758104/7">wiki: Audio Data / 7</a>):</p>
-<ul>
-<li>dpo_audioDownsample: “-1” (default, native rate), “256”, “512”, “2000”, “4000”, “8000”, “16000”, “44100”, “48000”</li>
-<li>dpo_audioFormatConversion: “0” (default), “1”</li>
-<li>dpo_hydrophoneAcquisitionMode: “All” (default), “LF”, “HF”</li>
-<li>dpo_hydrophoneChannel: “H1” (default), “H2”, “H3”, “All”</li>
-<li>dpo_hydrophoneDataDiversionMode: “OD” (default, original data), “LPF”, “HPF”, “All”</li>
-</ul>
-<p>The audio data is what is being recorded from the acoustic environment, it is the raw data. Older data was stored in .wav format, but ONC has now fully transitioned to FLAC (Free Lossless Audio Codec), which allow for metadata to also be stored within the file. It is possible to request the data in mp3 format, which has a much smaller file size, although not recommended for scientific research since it is a compressed format with several frequencies being lost.</p>
-<p>Here a few advantages of the FLAC format:</p>
-<ul>
-<li><strong>Lossless Compression</strong>: Unlike MP3s, FLAC retains 100% of the original information.</li>
-<li><strong>Storage Efficiency</strong>: FLAC files are significantly smaller than .wav files and maintain the same quality.</li>
-<li><strong>Metadata Support</strong>: FLAC files support metadata tagging for deployment and device information.</li>
-</ul>
-</section>
-<section id="hydrophone-spectral-data-hsd" class="level1">
-<h1>Hydrophone Spectral Data (HSD)</h1>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="dp-panel">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD / 45</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .fft, .mat, .png, .pdf, .oct</span>
+</div>
+<p>Spectral products turn audio files into frequency vs time data. The Hydrophone Viewer presents has spectrograms for each 5-min of audio file for each devices. This product is a useful way to monitor and research when you do not want to process terabytes of raw audio.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/ICLISTENHF1252_20260814T210509.000Z-spect.png" class="img-fluid figure-img"></p>
-<figcaption>5-min spectrogram of a boat passing by a hydrophone at Digdby Island.</figcaption>
+<figcaption>5-min spectrogram of a boat passing by a hydrophone at Digby Island.</figcaption>
 </figure>
 </div>
-<p>Available extensions: .fft / .mat / .png / .pdf / .oct</p>
-<p>Available API data product options (<a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45">wiki: Hydrophone Spectral Data / 45</a>):</p>
+<p><strong><code>.fft</code> — proprietary spectral data (Ocean Sonics only).</strong> Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and best for a functional check. Ocean Sonics <em>Lucy</em> can read them; they can also be opened in Python or MATLAB.</p>
+<p><strong><code>.mat</code> — processed spectral data.</strong> 1-minute averaged calibrated spectral data which comes with the device-specific sensitivity curve. Contains a <code>SpectData</code> structure with frequency bins (Hz) and power spectral density.</p>
+<p><strong><code>.png</code> / <code>.pdf</code> — spectrogram.</strong> A 2D heatmap of sound: time on the x-axis, frequency (Hz) on the y-axis, colour as sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand for API options
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ul>
-<li>dpo_hydrophoneAcquisitionMode: “All” (default), “LF”, “HF”</li>
-<li>dpo_hydrophoneChannel: “H1” (default), “H2”, “H3”, “All”</li>
-<li>dpo_hydrophoneDataDiversionMode: “OD” (default, original data), “LPF”, “HPF”, “All”</li>
-<li>dpo_spectrogramSource (PNG/PDF): “MIX” (default, audio preferred, FFT fills gaps), “WAVFLAC”, “FFT”</li>
-<li>dpo_spectrogramConcatenation: “None” (default for PNG/PDF), “Concatenate” (default for MAT), “Daily”, “Weekly”, “Adjacent” (PNG/PDF, searches of 5 minutes or less)</li>
-<li>dpo_spectralDataDownsample (MAT): “1” (default, one-minute, pre-generated), “2” (spectrogram resolution), “0” (full resolution)</li>
-<li>dpo_spectrogramColourPalette (PNG/PDF): “0” (default), “1”, “2”, “3”, “4”, “5”</li>
-<li>dpo_lowerColourLimit / dpo_upperColourLimit (PNG/PDF): “-1000” (default, use device calibration); otherwise -160 to 140</li>
-<li>dpo_spectrogramFrequencyUpperLimit (PNG/PDF): “-1” (default, use calibration / sample rate); otherwise 100 to 500000 Hz</li>
+<li><code>dpo_hydrophoneAcquisitionMode</code>: <code>"All"</code> (default), <code>"LF"</code>, <code>"HF"</code></li>
+<li><code>dpo_hydrophoneChannel</code>: <code>"H1"</code> (default), <code>"H2"</code>, <code>"H3"</code>, <code>"All"</code></li>
+<li><code>dpo_hydrophoneDataDiversionMode</code>: <code>"OD"</code> (default, original data), <code>"LPF"</code>, <code>"HPF"</code>, <code>"All"</code></li>
+<li><code>dpo_spectrogramSource</code> (PNG/PDF): <code>"MIX"</code> (default, audio preferred, FFT fills gaps), <code>"WAVFLAC"</code>, <code>"FFT"</code></li>
+<li><code>dpo_spectrogramConcatenation</code>: <code>"None"</code> (default for PNG/PDF), <code>"Concatenate"</code> (default for MAT), <code>"Daily"</code>, <code>"Weekly"</code>, <code>"Adjacent"</code> (PNG/PDF, searches of 5 minutes or less)</li>
+<li><code>dpo_spectralDataDownsample</code> (MAT): <code>"1"</code> (default, one-minute, pre-generated), <code>"2"</code> (spectrogram resolution), <code>"0"</code> (full resolution)</li>
+<li><code>dpo_spectrogramColourPalette</code> (PNG/PDF): <code>"0"</code> (default), <code>"1"</code>, <code>"2"</code>, <code>"3"</code>, <code>"4"</code>, <code>"5"</code></li>
+<li><code>dpo_lowerColourLimit</code> / <code>dpo_upperColourLimit</code> (PNG/PDF): <code>"-1000"</code> (default, use device calibration); otherwise −160 to 140</li>
+<li><code>dpo_spectrogramFrequencyUpperLimit</code> (PNG/PDF): <code>"-1"</code> (default, use calibration / sample rate); otherwise 100 to 500000 Hz</li>
 </ul>
-<p>Spectral products are advantageous for research of monitoring, because they allow for analyzing data without having to process terabytes of raw audio.</p>
-<section id="proprietary-spectral-data-.fft" class="level2">
-<h2 class="anchored" data-anchor-id="proprietary-spectral-data-.fft">Proprietary Spectral Data (.fft)</h2>
-<p>The Fast Fourier Transform files (.fft) are broadband spectrogram, and somewhat a raw version of the actual spectrogram. They are unique to Ocean Sonics hydrophones.</p>
-<p>Technical warning: the .fft files are usually considered “preliminary” and not suitable for scientific research, because a single broadband sensitivity value (around -165 to -170 dB) was used rather than a ferquency-dependent calibration curve. They are best used for a “quick-look” to verify the hydrophone is functional.</p>
-<p>Ocean Sonics has they in-house software <em>Lucy</em> to read the files, but it is also possible to read them with in python or MATLAB.</p>
-</section>
-<section id="processed-spectral-data-.mat" class="level2">
-<h2 class="anchored" data-anchor-id="processed-spectral-data-.mat">Processed Spectral Data (.mat)</h2>
-<p>The MATLAB files contain the true scientific data where the <strong>frequency-dependent sensitivity curve</strong> has been applied.</p>
-<ul>
-<li><strong>Calibration</strong>: Unlike .fft files, .mat spectral products are corrected using the specific hydrophone’s calibration data.</li>
-<li><strong>Structure</strong>: The data contain a SpectData MATLAB structure with frequency bins (Hz) and power spectral density.</li>
-</ul>
-</section>
-<section id="spectrogram-.png" class="level2">
-<h2 class="anchored" data-anchor-id="spectrogram-.png">Spectrogram (.png)</h2>
-<p>A spectrogram is a 2D <em>heat map</em> of sound, visualizing how the <strong>Power Spectral Density</strong> of an acoustic signal evolves over time.</p>
-<ul>
-<li>X-axis: Time</li>
-<li>Y-axis: Frequency (Hz)</li>
-<li>Color/intensity: Sound Level expressed in <span class="math inline">\(\text{dB}~\text{re}~1~\mu Pa^2 / Hz\)</span>.</li>
-</ul>
-<p>Here is how a spectrogram is generated:</p>
-<p>To transform raw audio into a visual spectrogram, the data undergoes several steps:</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Expand to learn more about the method
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A spectrogram is built from short Fourier transforms of the audio:</p>
 <ol type="1">
-<li><strong>Time Windowing</strong>: Raw audio is divided into short, finite segments using a time window (e.g., Hann Window), to prevent spectral leakage.</li>
-<li><strong>FFT Calculation</strong>: A Fast Fourier Transform (FFT) is applied to each segment, converting the signal from the <em>time domain</em> to the <em>frequency domain</em>.</li>
-<li><strong>Averaging</strong>: Successive windows are overlapped (typically by 50%) to ensure a smooth transition and prevent data loss at the window edges.</li>
-<li><strong>Calibration</strong>: The values are converted to physical units (<span class="math inline">\(\mu\)</span> Pa) by applying the device-specific frequency-dependent <strong>calibration curve</strong> (this step is critical!).</li>
+<li><strong>Time windowing</strong>: raw audio is split into finite segments with a window (ONC uses a Hann window) to limit spectral leakage.</li>
+<li><strong>FFT</strong>: each segment is transformed from the time domain to the frequency domain.</li>
+<li><strong>Overlap / averaging</strong>: successive windows overlap (typically 50%) so energy at the edges is not lost.</li>
+<li><strong>Calibration</strong>: values are converted to micropascals with the device-specific <strong>frequency-dependent calibration curve</strong>. Using the wrong curve has caused errors in the past (<a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/255101693/1.+Power+spectral+density+vs.+power+spectrum.">internal note</a>).</li>
 </ol>
-<p>[!IMPORTANT] There has been some issues in the past from using the wrong calibration curve: https://internal.oceannetworks.ca/spaces/ONCData/pages/255101693/1.+Power+spectral+density+vs.+power+spectrum.)</p>
-<p><strong>Why use Windows?</strong></p>
-<p>Fourier transforms assume a signal in <em>infinite</em>. By analyzing finite segments, at the edges of each segment there is a discontinuity that causes <strong>spectral leakage</strong>, where a signal energy <em>leaks</em> into neighboring frequency bins. <strong>Windowing</strong> (or <em>tapering</em>) solves this by multiplying the data segment by a specific mathematical shape (see examples below) that smooths the edges to zero. Mathematically, this is what is called a <strong>convolution</strong>. The Fourier transform of the convolution is the product of the individual Fourier transforms of the signal and the window.</p>
-<p><strong>The Stationary Assumption</strong></p>
-<p>Fourier transforms assume a signal is and <em>stationary</em>. The Heisenberg Uncertainty Principe dictates that you cannot have perfect resolution in both time and frequency simultaneously.</p>
+<p>Fourier transforms assume an infinite, stationary signal. A finite cut creates edge discontinuities and <strong>spectral leakage</strong> into neighbouring bins. Windowing (tapering) multiplies the segment by a shape that goes to zero at the edges; that multiplication is a convolution, so the spectrum is the product of the signal transform and the window transform.</p>
+<p>Choosing the right window is not easy due to the Heisenberg uncertainty principle: you cannot have perfect time and frequency resolution at once.</p>
 <ul>
-<li><strong>Narrow window</strong>: excellent <strong>time resolution</strong> (you see exactly when a whale click happened), but poor frequency resolution (the pitch is blurry).</li>
-<li><strong>Wide window</strong>: excellent <strong>frequency resolution</strong> (you see the exact harmonics of a whale call), but poor time resolution (start and end times are blurry).</li>
+<li><strong>Narrow window</strong>: good time resolution (when a click happened), poor frequency resolution.</li>
+<li><strong>Wide window</strong>: good frequency resolution (harmonics of a call), poor time resolution.</li>
+<li>Wavelengths longer than the window are lost.</li>
 </ul>
-<p>Time windowing: <em>Windowing</em> is used to reduce spectral leakage when analyzing signals with a fourier transform. Multiplying a spectral segment by a window smooths the segment edges and recues discontinuities that cause leakage. Effectivemely, a segment is created by multiplying the data by a window of finitie length and a specific shape. This is called a <em>convolution</em>. The window that multiplies the function is called the window function (or sometimes tapering function). The Fourier transform of the convolution is the product of th eindividual Fourier transforms. There’s an implicit assumption that the signal frequency is invariant within the window, since it can only characterize stationay signals. Therefore, the signal is decomposed into finite segments (each segment is assumed <em>stationary</em>), and for each time window the Fourier transform is applied. If one slides the time-filtering window, then the signal is assumed to be decomposed with both information in frequency and time. Narrow window leads to goop time resolution, wide window leads to good frequency resolution. Can’t have both: Heisenberg Unertainty Principle. A drawback is that any signal with a wavelength longer than the window width is completely lost. In contrast, longer windows retain more frequency components, but at the expense of losing the time resolution of the signal.</p>
-<p>I found a similar past issue here: DSO-598</p>
-<p>Examples of windows:</p>
-<p>In this example, the information of the spectrogram is as follows:</p>
+<p>ONC spectrogram settings in the example above:</p>
 <ul>
-<li>Hann window with 50% overlap at ONC</li>
-<li>128000 samples per FFT window</li>
+<li>Hann window with 50% overlap</li>
+<li>6400 samples per FFT window</li>
 <li>Temporal resolution: 0.05 s</li>
-<li>Spectral resolution: 10 Hz</li>
+<li>Sample rate: 64000 Hz</li>
 </ul>
-</section>
-</section>
-<section id="hydrophone-spectral-probability-density-hspd" class="level1">
-<h1>Hydrophone Spectral Probability Density (HSPD)</h1>
-<p><img src="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="img-fluid"></p>
-<p>Formats: .png / .pdf / .mat</p>
-<p>Available API data product options (<a href="https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51">wiki: HSPD / 51</a>, values from OpenAPI <code>getDataProducts</code>):</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="dp-panel">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSPD / 51</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .png, .pdf, .mat</span>
+</div>
+<p>HSPD is a statistical view of long-term ambient noise, originally proposed by <a href="https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient">Merchant et al.&nbsp;(2013)</a>. It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="img-fluid figure-img"></p>
+<figcaption>Hydrophone spectral probability density plot.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand for API options
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ul>
-<li>dpo_filePlotBreaks: “0” None (configuration changes only), “1” Daily, “2” Weekly (default), “3” Hourly, “4” Monthly, “5” Yearly</li>
-<li>dpo_hydrophoneAcquisitionMode: “All” (default), “LF”, “HF”</li>
-<li>dpo_hydrophoneChannel: “H1” (default), “H2”, “H3”, “All”</li>
-<li>dpo_hydrophoneDataDiversionMode: “OD” (default, original data), “LPF”, “HPF”, “All”</li>
-<li>dpo_spectralProbabilityDensityColourAxisUpperLimit: “0” (default), “0.05”, “0.1”, “0.12”, “0.25”, “0.5”, “1.0”</li>
-<li>dpo_spectralProbabilityDensityPSDRange: “0” (default), “40_160”, “40_140”, “20_140”</li>
+<li><code>dpo_filePlotBreaks</code>: <code>"0"</code> None (configuration changes only), <code>"1"</code> Daily, <code>"2"</code> Weekly (default), <code>"3"</code> Hourly, <code>"4"</code> Monthly, <code>"5"</code> Yearly</li>
+<li><code>dpo_hydrophoneAcquisitionMode</code>: <code>"All"</code> (default), <code>"LF"</code>, <code>"HF"</code></li>
+<li><code>dpo_hydrophoneChannel</code>: <code>"H1"</code> (default), <code>"H2"</code>, <code>"H3"</code>, <code>"All"</code></li>
+<li><code>dpo_hydrophoneDataDiversionMode</code>: <code>"OD"</code> (default, original data), <code>"LPF"</code>, <code>"HPF"</code>, <code>"All"</code></li>
+<li><code>dpo_spectralProbabilityDensityColourAxisUpperLimit</code>: <code>"0"</code> (default), <code>"0.05"</code>, <code>"0.1"</code>, <code>"0.12"</code>, <code>"0.25"</code>, <code>"0.5"</code>, <code>"1.0"</code></li>
+<li><code>dpo_spectralProbabilityDensityPSDRange</code>: <code>"0"</code> (default), <code>"40_160"</code>, <code>"40_140"</code>, <code>"20_140"</code></li>
 </ul>
-<p>HSPD <code>dpo_filePlotBreaks</code> values are from <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/48694668/File+or+Plot+Breaks">File or Plot Breaks</a>. Weekly (<code>2</code>) is the default and breaks at Sunday midnight UTC.</p>
-<p>This data product is a sophisticated statistical tool used for long-term ambient noise analysis. It was originally proposed by <a href="https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient">Merchant et al., (2013)</a>. It calculates how frequently a specific dB level occurs at each frequency bin. The result is a heatmap showing the persistent ambiant noise floor</p>
-<p>Derivation:</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Expand to learn more about the method
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>The mean square value in frequency range <span class="math inline">\((f, \Delta f)\)</span> is:</p>
 <p><span class="math display">\[
 \Psi^2_x(f,\Delta f) = \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt
 \]</span></p>
-<p>The power spectral density is approximately <span class="math inline">\(\Psi^2_x(f,\Delta f) \approx G_x(f) \Delta f\)</span>.</p>
+<p>Power spectral density is approximately <span class="math inline">\(\Psi^2_x(f,\Delta f) \approx G_x(f) \Delta f\)</span>:</p>
 <p><span class="math display">\[
 G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \lim_{\Delta f\rightarrow 0} \frac{1}{\Delta f} \left[ \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt \right]
 \]</span></p>
-</section>
-<section id="auxiliary-data" class="level1">
-<h1>Auxiliary data</h1>
-<p>Ocean Sonics devices provide a .txt file with <em>auxiliary</em> or <em>anscillary</em> data, which are data related to the instrument itself, not the passive acoustics. For example, internal humidity, temperature, battery charge, etc., are contained within this product. Although the auxiliary data does not give any information regarding the ocean soudscape, it can be useful to diagnose potential issues, such as water leakage within the hydrophone (&gt;50% humidity), overheating, or dead sensor (dead battery). There are many more variables like magnetic flux and acceleration which can be used to determine the hydrophone direction and strong currents.</p>
+<p>HSPD then histograms those levels per frequency bin over a long window, so the colour is occupancy (how often that level occurs), not a single spectrogram frame.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div class="dp-panel">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> LF / 4 · HACC / 128</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .txt, .acc</span>
+</div>
+<p>Auxiliary (ancillary) files are about the instrument, not the soundscape: internal humidity, temperature, battery, voltage, and related engineering scalars. Use them to diagnose leakage (humidity above about 50%), overheating, or a dying battery. Magnetic flux and acceleration can also indicate orientation and strong currents. These products are available mainly on Ocean Sonics icListen devices.</p>
+<p>These data are only available for Ocean Sonics hydrophones.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/aux-data.png" class="img-fluid figure-img"></p>
+<figcaption>Example of auxiliary data for Ocean Sonics icListen HF Hydrophone 1252. Top to bottom: Board voltage, Internal Humidity, and Internal Temperature.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand for API options
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>LF (<code>.txt</code>) and HACC (<code>.acc</code>) have no extra <code>dpo_*</code> options. There is no single <code>AUX</code> code: order <strong>LF</strong> for the engineering log and <strong>HACC</strong> for acceleration. Calibration files use <strong>HCF</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="useful-links" class="level1">
 <h1>Useful links</h1>
-<div style="border: 1px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 8px; 
-            padding: 16px; 
-            background: rgba(255, 255, 255, 0.05); 
-            margin-top: 15px;
-            backdrop-filter: blur(5px);
-            color: white;">
-
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="../images/confluence_logo_no_bckg.png" width="24" style="object-fit: contain;">
-    <span style="font-weight: bold; font-size: 1.1em; letter-spacing: 0.3px;">
-      Confluence Documentation
-    </span>
+<div class="docs-card">
+  <div class="docs-card-title">
+    <img src="../images/confluence_logo_no_bckg.png" width="24" alt="">
+    <span>Confluence Documentation</span>
   </div>
-
-  <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
-    
-
-    <li style="margin-bottom: 10px;">
-      <a href="https://internal.oceannetworks.ca/spaces/DS/pages/7639165/Hydrophone+Matlab+Postprocess+Jobs" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Hydrophone MATLAB Post-process Jobs
-      </a>
-    </li>
-    
-    <li style="margin-bottom: 10px;">
-      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758104/7" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Data Product: Audio Data (7)
-      </a>
-    </li>
-
-    <li style="margin-bottom: 10px;">
-      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Data Product: Hydrophone Spectral Probability Density (51)
-      </a>
-    </li>
-
-    <li style="margin-bottom: 10px;">
-      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Data Product: Spectrogram For Hydrophone Viewer (146)
-      </a>
-    </li>
-
-    <li style="margin-bottom: 10px;">
-      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Data Product: Hydrophone Acceleration Data (128)
-      </a>
-    </li>
-
-    <li style="margin-bottom: 10px;">
-      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Data Product: Hydrophone Spectral Data (45)
-      </a>
-    </li>
-
-    <li style="margin-bottom: 10px;">
-      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758026/4" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Data Product: Log File (4)
-      </a>
-    </li>
-
+  <ul class="docs-card-list">
+    <li><a href="https://internal.oceannetworks.ca/spaces/DS/pages/7639165/Hydrophone+Matlab+Postprocess+Jobs">Hydrophone MATLAB Post-process Jobs</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758104/7">Data Product: Audio Data (7)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45">Data Product: Hydrophone Spectral Data (45)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51">Data Product: Hydrophone Spectral Probability Density (51)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146">Data Product: Spectrogram For Hydrophone Viewer (146)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128">Data Product: Hydrophone Acceleration Data (128)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758026/4">Data Product: Log File (4)</a></li>
+    <li><a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/216205790/Passive+acoustics">Passive acoustics data products (internal)</a></li>
   </ul>
 </div>
 
