@@ -29,15 +29,19 @@ Hydrophone Acceleration Data | HACC | 128 | .acc
 \
 
 Note that both **Data Product Code** and **File Extension** are needed when downloading data through the API.
-Each data product (`dataProductCode`) has a set of data product options (`dpo_*`) that can be used to narrow down the request. Open a product tab below for its options.
+Each data product (`dataProductCode`) has a set of data product options (`dpo_*`) that can be used to narrow down the request.
 
-# Data products
-
-::: {.panel-tabset .access-tabs}
-
-## Audio Data
+# Audio Data
 
 ::: {.dp-panel}
+
+::: {.dp-split}
+
+::: {.dp-visual}
+![Amplitude and frequency of an acoustic signal.](../images/Amplitude-Frequency.png)
+:::
+
+::: {.dp-copy}
 
 ```{=html}
 <div class="dp-meta">
@@ -49,15 +53,16 @@ Each data product (`dataProductCode`) has a set of data product options (`dpo_*`
 Audio data is the raw recording of the acoustic environment. Use it when you need the time series itself (listening, custom processing, or publication-quality archives).
 
 Older files were stored as `.wav`; ONC now archives lossless `.flac`. `.mp3` is smaller but lossy, and is not recommended for scientific work. Retired IOS arrays used HARD / 38 (`.hyd`) instead of AD.
-MP3 discards frequency content to shrink the file. That is fine for a quick listen, not for calibrated analysis. If you need a different container, request AD as `.wav` or set `dpo_audioFormatConversion` rather than transcoding a lossy copy.
 
-FLAC (Free Lossless Audio Codec) is the preferred archive because of:
+FLAC is the preferred format because it has:
 
 * **Lossless compression**: unlike MP3, FLAC keeps 100% of the original samples.
 * **Storage efficiency**: files are substantially smaller than `.wav` at the same quality.
 * **Metadata**: FLAC can store deployment and device tags inside the file.
 
+:::
 
+:::
 
 ::: {.callout-note collapse="true"}
 ## Expand for API options
@@ -69,12 +74,19 @@ FLAC (Free Lossless Audio Codec) is the preferred archive because of:
 * `dpo_hydrophoneDataDiversionMode`: `"OD"` (default, original data), `"LPF"`, `"HPF"`, `"All"`
 :::
 
-
 :::
 
-## Hydrophone Spectral Data
+# Hydrophone Spectral Data
 
 ::: {.dp-panel}
+
+::: {.dp-split}
+
+::: {.dp-visual}
+![5-min spectrogram of a boat passing by a hydrophone at Digby Island.](../images/ICLISTENHF1252_20260814T210509.000Z-spect.png)
+:::
+
+::: {.dp-copy}
 
 ```{=html}
 <div class="dp-meta">
@@ -83,31 +95,18 @@ FLAC (Free Lossless Audio Codec) is the preferred archive because of:
 </div>
 ```
 
-Spectral products turn audio files into frequency vs time data.
-The Hydrophone Viewer presents has spectrograms for each 5-min of audio file for each devices.
-This product is a useful way to monitor and research when you do not want to process terabytes of raw audio.
+Spectral products turn audio files into frequency vs time data. The Hydrophone Viewer presents spectrograms for each 5-min audio file. This is the practical way to monitor and research without processing terabytes of raw audio.
 
-![5-min spectrogram of a boat passing by a hydrophone at Digby Island.](../images/ICLISTENHF1252_20260814T210509.000Z-spect.png)
+**`.fft` — proprietary spectral data (Ocean Sonics only).** Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and best for a functional check.
 
-**`.fft` — proprietary spectral data (Ocean Sonics only).** Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and best for a functional check. Ocean Sonics *Lucy* can read them; they can also be opened in Python or MATLAB.
-
-**`.mat` — processed spectral data.** 1-minute averaged calibrated spectral data which comes with the device-specific sensitivity curve. Contains a `SpectData` structure with frequency bins (Hz) and power spectral density.
+**`.mat` — processed spectral data.** 1-minute averaged calibrated spectral data with the device-specific sensitivity curve. Contains a `SpectData` structure with frequency bins (Hz) and power spectral density.
 
 **`.png` / `.pdf` — spectrogram.** A 2D heatmap of sound: time on the x-axis, frequency (Hz) on the y-axis, colour as sound level in $\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}$.
 
-::: {.callout-note collapse="true"}
-## Expand for API options
-
-* `dpo_hydrophoneAcquisitionMode`: `"All"` (default), `"LF"`, `"HF"`
-* `dpo_hydrophoneChannel`: `"H1"` (default), `"H2"`, `"H3"`, `"All"`
-* `dpo_hydrophoneDataDiversionMode`: `"OD"` (default, original data), `"LPF"`, `"HPF"`, `"All"`
-* `dpo_spectrogramSource` (PNG/PDF): `"MIX"` (default, audio preferred, FFT fills gaps), `"WAVFLAC"`, `"FFT"`
-* `dpo_spectrogramConcatenation`: `"None"` (default for PNG/PDF), `"Concatenate"` (default for MAT), `"Daily"`, `"Weekly"`, `"Adjacent"` (PNG/PDF, searches of 5 minutes or less)
-* `dpo_spectralDataDownsample` (MAT): `"1"` (default, one-minute, pre-generated), `"2"` (spectrogram resolution), `"0"` (full resolution)
-* `dpo_spectrogramColourPalette` (PNG/PDF): `"0"` (default), `"1"`, `"2"`, `"3"`, `"4"`, `"5"`
-* `dpo_lowerColourLimit` / `dpo_upperColourLimit` (PNG/PDF): `"-1000"` (default, use device calibration); otherwise −160 to 140
-* `dpo_spectrogramFrequencyUpperLimit` (PNG/PDF): `"-1"` (default, use calibration / sample rate); otherwise 100 to 500000 Hz
 :::
+
+:::
+
 
 ::: {.callout-tip collapse="true"}
 ## Expand to learn more about the method
@@ -119,7 +118,7 @@ A spectrogram is built from short Fourier transforms of the audio:
 3. **Overlap / averaging**: successive windows overlap (typically 50%) so energy at the edges is not lost.
 4. **Calibration**: values are converted to micropascals with the device-specific **frequency-dependent calibration curve**. Using the wrong curve has caused errors in the past ([internal note](https://internal.oceannetworks.ca/spaces/ONCData/pages/255101693/1.+Power+spectral+density+vs.+power+spectrum.)).
 
-Fourier transforms assume an infinite, stationary signal. A finite cut creates edge discontinuities and **spectral leakage** into neighbouring bins. Windowing (tapering) multiplies the segment by a shape that goes to zero at the edges; that multiplication is a convolution, so the spectrum is the product of the signal transform and the window transform.
+Fourier transforms assume an infinite, stationary signal. A finite cut creates edge discontinuities and **spectral leakage** into neighbouring bins. Windowing (tapering) multiplies the segment by a shape that goes to zero at the edges.
 
 Choosing the right window is not easy due to the Heisenberg uncertainty principle: you cannot have perfect time and frequency resolution at once.
 
@@ -135,11 +134,33 @@ ONC spectrogram settings in the example above:
 * Sample rate: 64000 Hz
 :::
 
+::: {.callout-note collapse="true"}
+## Expand for API options
+
+* `dpo_hydrophoneAcquisitionMode`: `"All"` (default), `"LF"`, `"HF"`
+* `dpo_hydrophoneChannel`: `"H1"` (default), `"H2"`, `"H3"`, `"All"`
+* `dpo_hydrophoneDataDiversionMode`: `"OD"` (default, original data), `"LPF"`, `"HPF"`, `"All"`
+* `dpo_spectrogramSource` (PNG/PDF): `"MIX"` (default, audio preferred, FFT fills gaps), `"WAVFLAC"`, `"FFT"`
+* `dpo_spectrogramConcatenation`: `"None"` (default for PNG/PDF), `"Concatenate"` (default for MAT), `"Daily"`, `"Weekly"`, `"Adjacent"` (PNG/PDF, searches of 5 minutes or less)
+* `dpo_spectralDataDownsample` (MAT): `"1"` (default, one-minute, pre-generated), `"2"` (spectrogram resolution), `"0"` (full resolution)
+* `dpo_spectrogramColourPalette` (PNG/PDF): `"0"` (default), `"1"`, `"2"`, `"3"`, `"4"`, `"5"`
+* `dpo_lowerColourLimit` / `dpo_upperColourLimit` (PNG/PDF): `"-1000"` (default, use device calibration); otherwise −160 to 140
+* `dpo_spectrogramFrequencyUpperLimit` (PNG/PDF): `"-1"` (default, use calibration / sample rate); otherwise 100 to 500000 Hz
 :::
 
-## Spectral Probability Density
+:::
+
+# Spectral Probability Density
 
 ::: {.dp-panel}
+
+::: {.dp-split}
+
+::: {.dp-visual}
+![Hydrophone spectral probability density plot.](../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png)
+:::
+
+::: {.dp-copy}
 
 ```{=html}
 <div class="dp-meta">
@@ -150,17 +171,8 @@ ONC spectrogram settings in the example above:
 
 HSPD is a statistical view of long-term ambient noise, originally proposed by [Merchant et al. (2013)](https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient). It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.
 
-![Hydrophone spectral probability density plot.](../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png)
+:::
 
-::: {.callout-note collapse="true"}
-## Expand for API options
-
-* `dpo_filePlotBreaks`: `"0"` None (configuration changes only), `"1"` Daily, `"2"` Weekly (default), `"3"` Hourly, `"4"` Monthly, `"5"` Yearly
-* `dpo_hydrophoneAcquisitionMode`: `"All"` (default), `"LF"`, `"HF"`
-* `dpo_hydrophoneChannel`: `"H1"` (default), `"H2"`, `"H3"`, `"All"`
-* `dpo_hydrophoneDataDiversionMode`: `"OD"` (default, original data), `"LPF"`, `"HPF"`, `"All"`
-* `dpo_spectralProbabilityDensityColourAxisUpperLimit`: `"0"` (default), `"0.05"`, `"0.1"`, `"0.12"`, `"0.25"`, `"0.5"`, `"1.0"`
-* `dpo_spectralProbabilityDensityPSDRange`: `"0"` (default), `"40_160"`, `"40_140"`, `"20_140"`
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -181,11 +193,30 @@ $$
 HSPD then histograms those levels per frequency bin over a long window, so the colour is occupancy (how often that level occurs), not a single spectrogram frame.
 :::
 
+::: {.callout-note collapse="true"}
+## Expand for API options
+
+* `dpo_filePlotBreaks`: `"0"` None (configuration changes only), `"1"` Daily, `"2"` Weekly (default), `"3"` Hourly, `"4"` Monthly, `"5"` Yearly
+* `dpo_hydrophoneAcquisitionMode`: `"All"` (default), `"LF"`, `"HF"`
+* `dpo_hydrophoneChannel`: `"H1"` (default), `"H2"`, `"H3"`, `"All"`
+* `dpo_hydrophoneDataDiversionMode`: `"OD"` (default, original data), `"LPF"`, `"HPF"`, `"All"`
+* `dpo_spectralProbabilityDensityColourAxisUpperLimit`: `"0"` (default), `"0.05"`, `"0.1"`, `"0.12"`, `"0.25"`, `"0.5"`, `"1.0"`
+* `dpo_spectralProbabilityDensityPSDRange`: `"0"` (default), `"40_160"`, `"40_140"`, `"20_140"`
 :::
 
-## Auxiliary Data
+:::
+
+# Auxiliary Data
 
 ::: {.dp-panel}
+
+::: {.dp-split}
+
+::: {.dp-visual}
+![Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature.](../images/aux-data.png)
+:::
+
+::: {.dp-copy}
 
 ```{=html}
 <div class="dp-meta">
@@ -194,20 +225,18 @@ HSPD then histograms those levels per frequency bin over a long window, so the c
 </div>
 ```
 
-Auxiliary (ancillary) files are about the instrument, not the soundscape: internal humidity, temperature, battery, voltage, and related engineering scalars. Use them to diagnose leakage (humidity above about 50%), overheating, or a dying battery. Magnetic flux and acceleration can also indicate orientation and strong currents. These products are available mainly on Ocean Sonics icListen devices.
+Auxiliary (ancillary) files are about the instrument, not the soundscape: internal humidity, temperature, battery, voltage, and related engineering scalars. Use them to diagnose leakage (humidity above about 50%), overheating, or a dying battery. Magnetic flux and acceleration can also indicate orientation and strong currents.
 
 These data are only available for Ocean Sonics hydrophones.
 
+:::
 
-![Example of auxiliary data for Ocean Sonics icListen HF Hydrophone 1252. Top to bottom: Board voltage, Internal Humidity, and Internal Temperature.](../images/aux-data.png)
+:::
 
 ::: {.callout-note collapse="true"}
 ## Expand for API options
 
 LF (`.txt`) and HACC (`.acc`) have no extra `dpo_*` options. There is no single `AUX` code: order **LF** for the engineering log and **HACC** for acceleration. Calibration files use **HCF**.
-:::
-
-
 :::
 
 :::
