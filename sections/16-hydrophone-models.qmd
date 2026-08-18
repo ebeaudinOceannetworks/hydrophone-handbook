@@ -11,7 +11,7 @@ JASCO provides Geospectrum-manufactured hydrophones for multi-element directiona
 
 # Model comparison
 
-Scroll sideways to see every model. The first column stays in place.
+The table shows the technical specs for hydrophone models ONC uses most.
 
 ```{python}
 #| echo: false
@@ -32,6 +32,16 @@ for i, col in enumerate(df_raw.columns):
         clean_columns.append(name)
 
 df_raw.columns = clean_columns
+
+keep = [
+    df_raw.columns[0],
+    "JASCO",
+    "JASCO.1",
+    "Ocean Sonics",
+    "Ocean Sonics.1",
+    "Ocean Sonics.2",
+]
+df_raw = df_raw[[c for c in keep if c in df_raw.columns]]
 ojs_define(specs_data = df_raw.to_dict(orient='records'))
 ```
 
@@ -42,7 +52,7 @@ all_cols = specs_data.length > 0 ? Object.keys(specs_data[0]) : []
 label_col = all_cols[0] || ""
 model_cols = all_cols.slice(1)
 deviceRow = specs_data[0] || {}
-specRows = specs_data.slice(1)
+specRows = specs_data.slice(1).filter(row => row[label_col] && row[label_col] !== "--")
 
 html`
 <div class="specs-table-wrap">
@@ -75,6 +85,8 @@ html`
 
 
 # Vendors
+
+::: {.vendor-grid}
 
 ::: {.vendor}
 [![](../images/jasco-logo.png)](https://www.jasco.com/)
@@ -115,4 +127,6 @@ A US-based private company based in Maynar, MA specialized provider of bioacoust
 Their primary focus is on designing autonomous underwater recorders and sound analysis software for ecosystem biodiversity monitoring, environmental assessments, and wildlife presence/absence surveys.
 
 Their hydrophone Song Meter SM2M, released in 2011, is designed for long-term autonomous deployments.
+:::
+
 :::

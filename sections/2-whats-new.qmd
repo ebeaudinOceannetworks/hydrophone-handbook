@@ -2,24 +2,8 @@
 title: "2. What's New"
 ---
 
-Newest handbook updates are at the top. Add a dated entry here whenever a page changes in a way readers should notice.
+Newest hydrophone-related updates.
 
 # August 2026
 
-## August 18, 2026
-
-* **Monitoring & Troubleshooting** is parked in `under_construction/` until it is ready. Later pages are renumbered 14–18.
-* **Publications** is now a titled list (duplicate Aghaei et al. 2024 removed).
-* **Hydrophone Models** (was Specs & Manufacturers): comparison table of all models, no picker buttons; simpler vendor blocks.
-
-## August 17, 2026
-
-* Added this **What's New** page.
-* Numbered every handbook page in the left-hand table of contents, in the page titles, and in the source filenames.
-
-## Mid-August 2026
-
-* **Data Access:** Hydrophone Viewer walkthrough with screenshots, plus an in-page API request builder (Python / MATLAB / R / URL).
-* **Data Products:** clearer product descriptions and cross-links to Data Access.
-* New orca banner and compile date on every page.
-* Hydrophone network map, life-cycle, and how-hydrophones-work text cleanups.
+* Hydrophone handbook release
