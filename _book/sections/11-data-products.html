@@ -342,11 +342,7 @@ window.Quarto = {
   <li><a href="#spectrogram-.png" id="toc-spectrogram-.png" class="nav-link" data-scroll-target="#spectrogram-.png">Spectrogram (.png)</a></li>
   </ul></li>
   <li><a href="#hydrophone-spectral-probability-density-hspd" id="toc-hydrophone-spectral-probability-density-hspd" class="nav-link" data-scroll-target="#hydrophone-spectral-probability-density-hspd">Hydrophone Spectral Probability Density (HSPD)</a></li>
-  <li><a href="#metadata-log-files" id="toc-metadata-log-files" class="nav-link" data-scroll-target="#metadata-log-files">Metadata &amp; Log Files</a>
-  <ul class="collapse">
-  <li><a href="#oceans3.0-hydrophone-auxiliary-data" id="toc-oceans3.0-hydrophone-auxiliary-data" class="nav-link" data-scroll-target="#oceans3.0-hydrophone-auxiliary-data">Oceans3.0: Hydrophone Auxiliary Data</a></li>
-  </ul></li>
-  <li><a href="#future-data-products" id="toc-future-data-products" class="nav-link" data-scroll-target="#future-data-products">Future Data Products</a></li>
+  <li><a href="#auxiliary-data" id="toc-auxiliary-data" class="nav-link" data-scroll-target="#auxiliary-data">Auxiliary data</a></li>
   <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
   </ul>
 </nav>
@@ -508,6 +504,12 @@ request = onc.orderDataProduct(params)
 </section>
 <section id="hydrophone-spectral-data-hsd" class="level1">
 <h1>Hydrophone Spectral Data (HSD)</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/ICLISTENHF1252_20260814T210509.000Z-spect.png" class="img-fluid figure-img"></p>
+<figcaption>5-min spectrogram of a boat passing by a hydrophone at Digdby Island.</figcaption>
+</figure>
+</div>
 <p>Available extensions: .fft / .mat / .png / .pdf / .oct</p>
 <p>Available API data product options (<a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45">wiki: Hydrophone Spectral Data / 45</a>):</p>
 <ul>
@@ -575,6 +577,7 @@ request = onc.orderDataProduct(params)
 </section>
 <section id="hydrophone-spectral-probability-density-hspd" class="level1">
 <h1>Hydrophone Spectral Probability Density (HSPD)</h1>
+<p><img src="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="img-fluid"></p>
 <p>Formats: .png / .pdf / .mat</p>
 <p>Available API data product options (<a href="https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51">wiki: HSPD / 51</a>, values from OpenAPI <code>getDataProducts</code>):</p>
 <ul>
@@ -597,18 +600,9 @@ request = onc.orderDataProduct(params)
 G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \lim_{\Delta f\rightarrow 0} \frac{1}{\Delta f} \left[ \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt \right]
 \]</span></p>
 </section>
-<section id="metadata-log-files" class="level1">
-<h1>Metadata &amp; Log Files</h1>
-<section id="oceans3.0-hydrophone-auxiliary-data" class="level2">
-<h2 class="anchored" data-anchor-id="oceans3.0-hydrophone-auxiliary-data">Oceans3.0: Hydrophone Auxiliary Data</h2>
-<p>Ocean Sonics devices provide a .txt file with <em>auxiliary</em> data, which are all the data related to the instrument itself, not the passive acoustics. For example, information about internal humidity, temperature, battery charge, etc., are contained within this product. Although the auxiliary data does not give any information regarding the ocean soudscape, it can be useful to diagnose potential issues, such as water leakage within the hydrophone (&gt;50% humidity), overheating, or dead sensor (dead battery). There are many more variables like magnetic flux and acceleration which can be used to determine the hydrophone direction and strong currents.</p>
-<p>More information here: [insert link].</p>
-</section>
-</section>
-<section id="future-data-products" class="level1">
-<h1>Future Data Products</h1>
-<p>Visit the Passive Acoustics Data Products confluence page to find out ideas for future development of data products at ONC, and even add your own! https://internal.oceannetworks.ca/spaces/ONCData/pages/216205790/Passive+acoustics</p>
-<p>Read this for Spectral probability density as a tool for ambient noise analysis : https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient</p>
+<section id="auxiliary-data" class="level1">
+<h1>Auxiliary data</h1>
+<p>Ocean Sonics devices provide a .txt file with <em>auxiliary</em> or <em>anscillary</em> data, which are data related to the instrument itself, not the passive acoustics. For example, internal humidity, temperature, battery charge, etc., are contained within this product. Although the auxiliary data does not give any information regarding the ocean soudscape, it can be useful to diagnose potential issues, such as water leakage within the hydrophone (&gt;50% humidity), overheating, or dead sensor (dead battery). There are many more variables like magnetic flux and acceleration which can be used to determine the hydrophone direction and strong currents.</p>
 </section>
 <section id="useful-links" class="level1">
 <h1>Useful links</h1>

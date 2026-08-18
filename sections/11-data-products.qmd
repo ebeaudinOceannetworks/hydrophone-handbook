@@ -77,6 +77,8 @@ Here a few advantages of the FLAC format:
 
 # Hydrophone Spectral Data (HSD)
 
+![5-min spectrogram of a boat passing by a hydrophone at Digdby Island.](../images/ICLISTENHF1252_20260814T210509.000Z-spect.png)
+
 Available extensions: .fft / .mat / .png / .pdf / .oct
 
 Available API data product options ([wiki: Hydrophone Spectral Data / 45](https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45)):
@@ -175,6 +177,8 @@ In this example, the information of the spectrogram is as follows:
 
 # Hydrophone Spectral Probability Density (HSPD)
 
+![](../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png)
+
 Formats: .png / .pdf / .mat
 
 Available API data product options ([wiki: HSPD / 51](https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51), values from OpenAPI `getDataProducts`):
@@ -207,22 +211,13 @@ $$
 G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \lim_{\Delta f\rightarrow 0} \frac{1}{\Delta f} \left[ \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt \right]
 $$
 
-# Metadata & Log Files
+# Auxiliary data
 
-## Oceans3.0: Hydrophone Auxiliary Data
-Ocean Sonics devices provide a .txt file with *auxiliary* data, which are all the data related to the instrument itself, not the passive acoustics.
-For example, information about internal humidity, temperature, battery charge, etc., are contained within this product.
+Ocean Sonics devices provide a .txt file with *auxiliary* or *anscillary* data, which are data related to the instrument itself, not the passive acoustics.
+For example, internal humidity, temperature, battery charge, etc., are contained within this product.
 Although the auxiliary data does not give any information regarding the ocean soudscape, it can be useful to diagnose potential issues, such as water leakage within the hydrophone (>50% humidity), overheating, or dead sensor (dead battery).
 There are many more variables like magnetic flux and acceleration which can be used to determine the hydrophone direction and strong currents.
 
-More information here: [insert link].
-
-# Future Data Products
-
-Visit the Passive Acoustics Data Products confluence page to find out ideas for future development of data products at ONC, and even add your own!
-https://internal.oceannetworks.ca/spaces/ONCData/pages/216205790/Passive+acoustics
-
-Read this for Spectral probability density as a tool for ambient noise analysis : https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient
 
 # Useful links
 
