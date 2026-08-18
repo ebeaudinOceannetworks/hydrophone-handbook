@@ -452,7 +452,7 @@ window.Quarto = {
 <div class="dp-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/Amplitude-Frequency.png" class="img-fluid figure-img"></p>
+<p><img src="../images/AD.png" class="img-fluid figure-img"></p>
 <figcaption>Amplitude and frequency of an acoustic signal.</figcaption>
 </figure>
 </div>
@@ -462,9 +462,9 @@ window.Quarto = {
   <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> AD / 7</span>
   <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .flac, .wav, .mp3</span>
 </div>
-<p>Audio data is the raw recording of the acoustic environment. Use it when you need the time series itself (listening, custom processing, or publication-quality archives).</p>
-<p>Older files were stored as <code>.wav</code>; ONC now archives lossless <code>.flac</code>. <code>.mp3</code> is smaller but lossy, and is not recommended for scientific work. Retired IOS arrays used HARD / 38 (<code>.hyd</code>) instead of AD.</p>
-<p>FLAC is the preferred format because it has:</p>
+<p>Audio data is the raw recording of the acoustic environment.</p>
+<p>Older files were stored as <code>.wav</code>, but ONC now archives lossless <code>.flac</code>. The <code>.mp3</code> format is smaller but lossy, and is not recommended for scientific work. Retired IOS arrays used HARD / 38 (<code>.hyd</code>) instead of AD.</p>
+<p>Why FLAC is the preferred format?</p>
 <ul>
 <li><strong>Lossless compression</strong>: unlike MP3, FLAC keeps 100% of the original samples.</li>
 <li><strong>Storage efficiency</strong>: files are substantially smaller than <code>.wav</code> at the same quality.</li>
@@ -511,12 +511,12 @@ window.Quarto = {
 <div class="dp-copy">
 <div class="dp-meta">
   <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD / 45</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .fft, .mat, .png, .pdf, .oct</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .png, .pdf, .fft</span>
 </div>
-<p>Spectral products turn audio files into frequency vs time data. The Hydrophone Viewer presents spectrograms for each 5-min audio file. This is the practical way to monitor and research without processing terabytes of raw audio.</p>
-<p><strong><code>.fft</code> — proprietary spectral data (Ocean Sonics only).</strong> Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and best for a functional check.</p>
-<p><strong><code>.mat</code> — processed spectral data.</strong> 1-minute averaged calibrated spectral data with the device-specific sensitivity curve. Contains a <code>SpectData</code> structure with frequency bins (Hz) and power spectral density.</p>
+<p>Spectral products turn audio files into frequency vs time data. To access the data, one can go to the Hydrophone Viewer where each 5-min audio file was turned into a spectrogram (.png). This data product is a practical way for quick-checks without processing terabytes of raw audio. It comes in several formats:</p>
+<p><strong><code>.mat</code> — processed spectral data.</strong> MATLAB data format of 1-minute averaged calibrated spectral data with the device-specific sensitivity curve. Contains a <code>SpectData</code> structure with frequency bins (Hz) and power spectral density.</p>
 <p><strong><code>.png</code> / <code>.pdf</code> — spectrogram.</strong> A 2D heatmap of sound: time on the x-axis, frequency (Hz) on the y-axis, colour as sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span>.</p>
+<p><strong><code>.fft</code> — proprietary spectral data (Ocean Sonics only).</strong> Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and unfit for scientific research.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -600,7 +600,7 @@ window.Quarto = {
   <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSPD / 51</span>
   <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .png, .pdf, .mat</span>
 </div>
-<p>HSPD is a statistical view of long-term ambient noise, originally proposed by <a href="https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient">Merchant et al.&nbsp;(2013)</a>. It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.</p>
+<p>The Spectral Probability Density is a statistical view of long-term ambient noise, originally proposed by <a href="https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient">Merchant et al.&nbsp;(2013)</a>. It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
