@@ -158,24 +158,123 @@ header h1.title, .quarto-title h1.title,
   width: 50%;
 }
 
-/* Manufacturer logo + copy grid on the specs page */
-.manufacturer-block {
-  align-items: start;
-  margin: 1.6rem 0;
+.specs-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.35);
+  margin: 0.75rem 0 1.5rem;
 }
 
-.manufacturer-block .manufacturer-logo {
+.specs-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: max-content;
+  min-width: 100%;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.specs-table th {
+  background: #334155;
+  color: #f8fafc;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.specs-table .spec-device {
   display: block;
-  max-width: 140px;
-  width: 100%;
+}
+
+.specs-table .spec-brand {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.72);
+}
+
+.specs-table td {
+  text-align: center;
+  color: #e2e8f0;
+  background: #1e293b;
+  min-width: 150px;
+}
+
+.specs-table tr:nth-child(even) td:not(:first-child) {
+  background: #243044;
+}
+
+.specs-table th:first-child,
+.specs-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  text-align: left;
+  background: #334155;
+  color: #f8fafc;
+  font-weight: 600;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  min-width: 200px;
+}
+
+.specs-table th:first-child {
+  z-index: 3;
+}
+
+.specs-table .spec-empty {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.vendor {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  column-gap: 1.5rem;
+  row-gap: 0.35rem;
+  align-items: start;
+  margin: 0;
+  padding: 1.35rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vendor:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vendor > :first-child {
+  grid-column: 1;
+  grid-row: 1 / 50;
+  margin: 0;
+}
+
+.vendor > :not(:first-child) {
+  grid-column: 2;
+}
+
+.vendor img {
+  display: block;
+  width: 132px;
   height: auto;
   background: #fff;
   border-radius: 8px;
   padding: 8px;
 }
 
-.manufacturer-block a:hover .manufacturer-logo {
+.vendor a:hover img {
   box-shadow: 0 0 0 2px #e67e5f;
+}
+
+.vendor h3 {
+  margin-top: 0 !important;
 }
 
 /* Style the Main Title */

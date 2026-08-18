@@ -10,6 +10,7 @@ Newest handbook updates are at the top. Add a dated entry here whenever a page c
 
 * **Monitoring & Troubleshooting** is parked in `under_construction/` until it is ready. Later pages are renumbered 14–18.
 * **Publications** is now a titled list (duplicate Aghaei et al. 2024 removed).
+* **Hydrophone Models** (was Specs & Manufacturers): comparison table of all models, no picker buttons; simpler vendor blocks.
 
 ## August 17, 2026
 
