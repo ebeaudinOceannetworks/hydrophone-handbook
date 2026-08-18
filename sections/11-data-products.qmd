@@ -38,7 +38,7 @@ Each data product (`dataProductCode`) has a set of data product options (`dpo_*`
 ::: {.dp-split}
 
 ::: {.dp-visual}
-![Amplitude and frequency of an acoustic signal.](../images/Amplitude-Frequency.png)
+![Amplitude and frequency of an acoustic signal.](../images/AD.png)
 :::
 
 ::: {.dp-copy}
@@ -50,11 +50,12 @@ Each data product (`dataProductCode`) has a set of data product options (`dpo_*`
 </div>
 ```
 
-Audio data is the raw recording of the acoustic environment. Use it when you need the time series itself (listening, custom processing, or publication-quality archives).
+Audio data is the raw recording of the acoustic environment.
 
-Older files were stored as `.wav`; ONC now archives lossless `.flac`. `.mp3` is smaller but lossy, and is not recommended for scientific work. Retired IOS arrays used HARD / 38 (`.hyd`) instead of AD.
+Older files were stored as `.wav`, but ONC now archives lossless `.flac`. The `.mp3` format is smaller but lossy, and is not recommended for scientific work.
+Retired IOS arrays used HARD / 38 (`.hyd`) instead of AD.
 
-FLAC is the preferred format because it has:
+Why FLAC is the preferred format?
 
 * **Lossless compression**: unlike MP3, FLAC keeps 100% of the original samples.
 * **Storage efficiency**: files are substantially smaller than `.wav` at the same quality.
@@ -91,17 +92,18 @@ FLAC is the preferred format because it has:
 ```{=html}
 <div class="dp-meta">
   <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD / 45</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .fft, .mat, .png, .pdf, .oct</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .png, .pdf, .fft</span>
 </div>
 ```
 
-Spectral products turn audio files into frequency vs time data. The Hydrophone Viewer presents spectrograms for each 5-min audio file. This is the practical way to monitor and research without processing terabytes of raw audio.
+Spectral products turn audio files into frequency vs time data. To access the data, one can go to the Hydrophone Viewer where each 5-min audio file was turned into a spectrogram (.png).
+This data product is a practical way for quick-checks without processing terabytes of raw audio. It comes in several formats:
 
-**`.fft` — proprietary spectral data (Ocean Sonics only).** Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and best for a functional check.
-
-**`.mat` — processed spectral data.** 1-minute averaged calibrated spectral data with the device-specific sensitivity curve. Contains a `SpectData` structure with frequency bins (Hz) and power spectral density.
+**`.mat` — processed spectral data.** MATLAB data format of 1-minute averaged calibrated spectral data with the device-specific sensitivity curve. Contains a `SpectData` structure with frequency bins (Hz) and power spectral density.
 
 **`.png` / `.pdf` — spectrogram.** A 2D heatmap of sound: time on the x-axis, frequency (Hz) on the y-axis, colour as sound level in $\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}$.
+
+**`.fft` — proprietary spectral data (Ocean Sonics only).** Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and unfit for scientific research.
 
 :::
 
@@ -169,7 +171,7 @@ ONC spectrogram settings in the example above:
 </div>
 ```
 
-HSPD is a statistical view of long-term ambient noise, originally proposed by [Merchant et al. (2013)](https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient). It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.
+The Spectral Probability Density is a statistical view of long-term ambient noise, originally proposed by [Merchant et al. (2013)](https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient). It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.
 
 :::
 
