@@ -2,39 +2,54 @@
 title: "13. Data Diversion"
 ---
 
-https://wiki.oceannetworks.ca/spaces/DP/pages/42174740/Diversion+of+Tier+1+data
+# Tier 1 Instruments
+Underwater acoustics data may reveal sensitive information that poses national security concerns.
+Hydrophones, alongside Accelerometers, Seismometers, Tiltmeters, and Magnetometers, are classified as **Tier 1** instruments.
 
-Underwater acoustics data may reveal sensitive information regarding national defense.
-Therefore, several hydrophone arrays are equipped with a "driver" in which there is a switch which allows for data diversion.
+Therefore, the passive acoustic data stream may be re-routed through a Data Diversion System (DDS) controlled by the Royal Canadian Navy (RCN) and US Navy (USN) to screen for sensitive maritime activity.
+These divert periods can range from minutes to days or even weeks.
 
-Data diversion means the recorded and stored data is not streamed to Ocean Networks Canada archives, but is rather *diverted* to other instances, such as the Navy or the Departrment of National Defense.oceannetworks
-During diversion, at ONC, we annotated DDS (Data Diversion System).
-We should receive an email during planned diversion.
-Often, the data will come back to use either untoucher or low-passed filtered (cutoff usually around ???).
-In case of low-passed filtered, the data is then archived with the suffix LPF (ex: ICLISTENHF6016-20260423-...-LPF.flac).
-The .fft format is however not LPF, but it is not possible to recover the spectrogram from fft only since .fft does not contain the phase information (to verifiy).
-
-"Hydrophones at ONC are categorized Tier1 instruments (instruments that are of concern to the Royal Canadian Navy (RCN) and US Navy (USN)). Therefore, the raw acoustic data may be subject to diversion before they are returned to the ONC archive."
+During diversion, full-band audio files (WAV/FLAC) are diverted directly to naval screening facilities, and the data is released back later to ONC either untouched, high-passed-filtered (HPF), or low-passed-filtered (LPF).
+"HPF-" and "LPF-" suffixes are then incorporated into the file name (ex: ICLISTENHF6016_20250317T000500.000Z-LPF.flac).
 
 
+![Example of Low-Passed-Filtered spectrogram at Clayoquot Slope. Notice the file header "Data Diversion Mode".](../images/ICLISTENHF6016_20250317T000500.000Z-LPF-spect.png){width=60%}
 
-from DSO confluence page:
+Notifications regarding planned or active diversions are managed via a restricted mailing list reserved strictly for cleared personnel.
 
-Diversions
-Some notes about Data Diversion (DDS) from Trident Data Service by Dave regarding High Security devices: 
-Normally data is “bypassed” directly to ONC (with no diversion), but there are times when the data is “diverted” to a US Navy screening facility to allow for processing to determine if the data is too sensitive for public release.
-The DDS’ primary role is to allow for data “screening” during times specified by the Canadian and US Navies.
-After screening, the data is either released or withheld, depending on sensitivity.
-The screening process occurs on a file basis.
-After screening, the shorter the file size, the more data that is potentially released.
-These divert periods are controlled by the Canadian and US Navies. They may happen at any time and may last for minutes to days.
-Whenever there is a diversion mode change, the current files are stopped, and new files are generated.
-This method optimizes the amount of data released.
-Example (assuming files are 1/2 hour long)
-New file starts 10:00:00.
-At 10:11:37 the DDS is commanded to enter a divert mode.
-There will be a “bypass” file from 10:00:00 to 10:11:36, with a new “divert” file starting at 10:11:37.
-Another new file will then begin at 10:30:00, closing the file from 10:11:37 to 10:29:59. This and subsequent files will be diverted until the mode changes, and the reverse happens.
-Audio data (WAV, FLAC) files may be subject to military diversion.
-Summary page for external users - http://wiki.neptunecanada.ca/display/DP/Diversion+of+Hydrophone+and+Seismometer+data. The military doesn't give us filtered data anymore. We either receive full band data back or none at all if it's sensitive.
-There is an e-mail list (divert@lists.uvic.ca), but only people with appropriate security clearance (ie. not hydrophone data stewards) are added to this list. See Tools Admin#Emailgroups
+
+
+
+# Useful links
+
+```{=html}
+<div style="border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 8px; 
+            padding: 16px; 
+            background: rgba(255, 255, 255, 0.05); 
+            margin-top: 15px;
+            backdrop-filter: blur(5px);
+            color: white;">
+
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+    <img src="../images/confluence_logo_no_bckg.png" width="24" style="object-fit: contain;">
+    <span style="font-weight: bold; font-size: 1.1em; letter-spacing: 0.3px;">
+      Confluence Documentation
+    </span>
+  </div>
+
+  <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
+    
+    <li style="margin-bottom: 10px;">
+      <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174740/Diversion+of+Tier+1+data" 
+         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
+         Diversion of Tier 1 data
+      </a>
+	</li>
+
+  </ul>
+</div>
+```
+
+
+

@@ -2,11 +2,8 @@
 title: "16. Useful Equations"
 ---
 
-## Sound speed {#sound-speed}
 
-Sound speed in seawater is estimated from temperature $T$, salinity $S$, and depth $z$ or pressure $p$. These formulae support sound-speed profiles in [Sound in the Ocean](5-sound-in-the-ocean.qmd).
-
-### Mackenzie (1981)
+### Speed of Sound in Seawater (Mackenzie, 1981)
 
 A nine-term fit, convenient for a first estimate of $c$ from a CTD cast:
 
@@ -16,7 +13,7 @@ $$
 
 where $T$ is temperature (°C), $S$ is salinity (psu), $z$ is depth (m), and $c$ is sound speed (m/s). Coefficients $a_1 \ldots a_9$ are given in Mackenzie (1981). Typical range of validity: $T$ 0–30 °C, $S$ 30–40 psu, $z$ 0–8000 m.
 
-### Del Grosso (1974)
+### Speed of Sound in Seawater (Del Grosso, 1974)
 
 Often preferred when a more accurate oceanographic sound speed is needed. It is a function of temperature, salinity, and pressure:
 

@@ -1,7 +1,7 @@
 ---
 title: "5. Sound in the Ocean"
 ---
-*For deeper dive into the physics of sound, see [DOSITS: Science of Sound](https://dosits.org/science/sound/what-is-sound/).*
+*For deeper dive into the physics of sound, visit [DOSITS: Science of Sound](https://dosits.org/science/sound/what-is-sound/).*
 
 
 In the ocean, light attenuates within tens of metres, while sound can travel thousands of kilometres. That is why marine mammals and underwater systems use sound as their primary sense for communication and navigation.

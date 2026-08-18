@@ -5,6 +5,7 @@ project:
     - images/
     - banner.html
     - scripts/
+    - fonts/
 
 # --- to publish the website on github ---
 

@@ -2,11 +2,6 @@
 title: "17. Hydrophone Specs & Manufacturers"
 ---
 
-::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
-## Improvements for this page
-* Fill remaining Hydrophone specs
-:::
-
 
 Ocean Networks Canada uses hydrophones from several manufacturers and distributors: the main ones being *Ocean Sonics* and *JASCO Applied Sciences*.
 
@@ -63,12 +58,11 @@ model_cols = all_cols.length > 0 ? all_cols.slice(1) : []
 deviceRow = specs_data.length > 0 ? specs_data[0] : {}
 specRows = specs_data.length > 1 ? specs_data.slice(1) : []
 
-// 3. Map manufacturers to colors (Fixed naming mismatch to match file logic)
 brandColors = ({
-  "JASCO": "darkblue",         // Warm Amber
-  "Ocean Sonics": "orange",  // Marine Deep Blue
-  "Naxys": "purple",         // Deep Indigo/Purple
-  "Feature": "darkgrey"        // Charcoal Slate for parameters
+  "JASCO": "#D97706",
+  "Ocean Sonics": "#0284C7",
+  "Naxys": "#6D28D9",
+  "Feature": "#334155"
 })
 
 // Helper function to dynamically check column string headers
@@ -79,120 +73,145 @@ function getBrandColor(m) {
   return "#475569";
 }
 
-// 4. IMPROVEMENT: Inline pill/tag selection UI that removes bulky checkboxes
-viewof selectedModels = Inputs.checkbox(
-  model_cols, 
-  { 
-    label: html`<span style="font-size: 1.1rem; color: #1e293b; font-weight: 700; margin-bottom: 8px; display: block;">Select Models to Compare:</span>`, 
-    value: [model_cols[0], model_cols[3], model_cols[4]], // Default layout
-    format: x => deviceRow[x] && deviceRow[x] !== "--" ? deviceRow[x] : x.split('.')[0]
-  }
-)
+viewof selectedModels = {
+  const picker = Inputs.checkbox(
+    model_cols,
+    {
+      label: "Select Models to Compare:",
+      value: [model_cols[0], model_cols[3], model_cols[4]],
+      format: x => deviceRow[x] && deviceRow[x] !== "--" ? deviceRow[x] : x.split('.')[0]
+    }
+  );
+  picker.classList.add("specs-model-picker");
+  return picker;
+}
 
-// 5. Render the styled table!
 html`
 <style>
-  /* Modernizing the Observable default checkboxes into a horizontal button bar */
-  div.oi-3a0a3a {
+  .specs-model-picker {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    color: #f8fafc;
+  }
+
+  .specs-model-picker,
+  .specs-model-picker label,
+  .specs-model-picker span,
+  .specs-model-picker div {
+    color: #f8fafc !important;
+  }
+
+  .specs-model-picker :has(> label > input[type="checkbox"]) {
     display: flex !important;
     flex-wrap: wrap !important;
+    flex-direction: row !important;
     gap: 8px !important;
-    padding: 12px 16px;
-    background: #f8fafc;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    margin-bottom: 20px;
-  }
-  div.oi-3a0a3a label {
-    display: flex;
     align-items: center;
-    background: white;
+  }
+
+  .specs-model-picker label:has(> input[type="checkbox"]) {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    margin: 0 !important;
     padding: 6px 14px !important;
-    border-radius: 20px !important;
-    border: 1px solid #cbd5e1 !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    background: rgba(255, 255, 255, 0.06);
     font-size: 0.875rem !important;
     font-weight: 500 !important;
-    color: #475569 !important;
+    color: #f8fafc !important;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .specs-model-picker label:has(> input[type="checkbox"]):hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.28) !important;
+  }
+
+  .specs-model-picker label:has(> input[type="checkbox"]:checked) {
+    background: rgba(2, 132, 199, 0.28);
+    border-color: rgba(2, 132, 199, 0.7) !important;
+  }
+
+  .specs-model-picker input[type="checkbox"] {
     margin: 0 !important;
+    accent-color: #38bdf8;
   }
-  div.oi-3a0a3a label:hover {
-    background: #f1f5f9;
-    border-color: #94a3b8 !important;
-  }
-  div.oi-3a0a3a input[type="checkbox"] {
-    margin-right: 8px !important;
-    accent-color: #0284C7;
-  }
-  
-  /* Table Container */
+
   .table-responsive {
-    overflow-x: auto; 
+    overflow-x: auto;
     overflow-y: auto;
     max-height: 600px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+    background: rgba(15, 23, 42, 0.35);
   }
-  
+
   .branded-table {
     border-collapse: separate;
     border-spacing: 0;
     width: 100%;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: "Open Sans", ui-sans-serif, system-ui, sans-serif;
   }
-  
-  /* Fixed Headers styling */
+
   .branded-table th {
     padding: 16px 12px;
-    color: white;
+    color: #f8fafc;
     font-weight: 600;
     font-size: 0.95rem;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 10;
-    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.1);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
   }
-  
-  /* Parameters row header sticky to the left side */
-  .branded-table td:first-child, .branded-table th:first-child {
+
+  .branded-table td:first-child,
+  .branded-table th:first-child {
     position: sticky;
     left: 0;
     z-index: 5;
-    background-color: #f1f5f9;
+    background-color: #334155;
+    color: #f8fafc;
     font-weight: 600;
     text-align: left;
-    border-right: 2px solid #e2e8f0;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
     min-width: 220px;
   }
-  
+
   .branded-table th:first-child {
-    z-index: 15; /* Top-left corner stays above everything */
+    z-index: 15;
+    background-color: #334155;
   }
 
   .branded-table td {
     padding: 12px 16px;
     text-align: center;
     font-size: 0.9rem;
-    color: #334155;
-    border-bottom: 1px solid #e2e8f0;
-    background-color: #ffffff;
-    min-width: 160px; 
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #1e293b;
+    min-width: 160px;
   }
-  
-  /* Alternating Row Tint */
+
   .branded-table tr:nth-child(even) td:not(:first-child) {
-    background-color: #f8fafc;
+    background-color: #243044;
   }
-  
-  /* Custom highlights for Manufacturer Row */
+
   .mfg-row td {
     font-weight: 700 !important;
-    color: #1e293b !important;
-    background-color: #ecf1f6 !important;
-    border-bottom: 2px solid #cbd5e1;
+    color: #f8fafc !important;
+    background-color: #334155 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .mfg-row td:first-child {
+    background-color: #334155 !important;
   }
 </style>
 
@@ -232,28 +251,56 @@ html`
 
 # Information about suppliers and manufacturers
 
-## JASCO Applied Sciences [{{< fa link >}}](https://www.jasco.com/)
+::: {.grid .manufacturer-block}
+::: {.g-col-3}
+[![](../images/jasco-logo.png){.manufacturer-logo}](https://www.jasco.com/)
+:::
+::: {.g-col-9}
+### JASCO Applied Sciences {.unlisted .unnumbered}
 A scientific consulting firm and equipment supplier specializing in underwater acoustics.
 Founded by Joseph Arnold Scrimger in Victoria, British Columbia, in 1981, the company now has its largest primary operations office in Halifax, Nova Scotia, Canada.
 
 JASCO operates globally across national defense, marine environmental stewardship, oil and gas asset monitoring, and academic research.
 They also perform acoustic modeling, field data collection, and advanced analysis suites.
 
-Their *Autonomous Multichannel Acoustic Recorder (AMAR)* provides passive acoustic data acquisition with high bandwidth and low noise. 
+Their *Autonomous Multichannel Acoustic Recorder (AMAR)* provides passive acoustic data acquisition with high bandwidth and low noise.
 
 Their hydrophones are manufactured by GeoSpectrum Technologies Inc.
+:::
+:::
 
-## GeoSpectrum Technologies Inc. (GTI) [{{< fa link >}}](https://www.geospectrum.ca/)
+::: {.grid .manufacturer-block}
+::: {.g-col-3}
+[![](../images/geospectrum-logo.png){.manufacturer-logo}](https://www.geospectrum.ca/)
+:::
+::: {.g-col-9}
+### GeoSpectrum Technologies Inc. (GTI) {.unlisted .unnumbered}
 A specialized Canadian aerospace and defense company, based in Halifax, NS, that focuses on the design, engineering, and manufacturing of underwater acoustic transducers and specialized systems.
 GeoSpectrum hydrophones are high-performance, and frequently deployed as part of hydrophone arrays managed by JASCO.
+:::
+:::
 
-## Ocean Sonics [{{< fa link >}}](https://oceansonicsinc.com/)
+::: {.grid .manufacturer-block}
+::: {.g-col-3}
+[![](../images/oceansonics-logo.png){.manufacturer-logo}](https://oceansonicsinc.com/)
+:::
+::: {.g-col-9}
+### Ocean Sonics {.unlisted .unnumbered}
 Ocean Sonics is a canadian, Nova Scotia-based pioneer in the development of smart digital hydrophones, found in 2005.
 They have developed both low-frequency (icListenLF/AF) and high-frequency (icListenHF) hydrophones.
+:::
+:::
 
-## Wildlife Acoustics [{{< fa link >}}](https://www.wildlifeacoustics.com/)
+::: {.grid .manufacturer-block}
+::: {.g-col-3}
+[![](../images/wildlife-acoustics-logo.png){.manufacturer-logo}](https://www.wildlifeacoustics.com/)
+:::
+::: {.g-col-9}
+### Wildlife Acoustics {.unlisted .unnumbered}
 A US-based private company based in Maynar, MA specialized provider of bioacoustics monitoring technology founded in 2003 by Ian Agranat.
 Their primary focus is on designing autonomous underwater recorders and sound analysis software for ecosystem biodiversity monitoring, environmental assessments, and wildlife presence/absence surveys.
 
 Their hydrophone Song Meter SM2M, released in 2011, is designed for long-term autonomous deployments.
+:::
+:::
 

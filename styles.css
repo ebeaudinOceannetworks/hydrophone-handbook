@@ -1,6 +1,80 @@
 /* styles.css is for overriding the theme, visual polishing, etc */
 
-$dark-blue: #003366;
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/opensans-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/opensans-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/opensans-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/opensans-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Rajdhani";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/rajdhani-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Rajdhani";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/rajdhani-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Rajdhani";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/rajdhani-700.woff2") format("woff2");
+}
+
+:root {
+  --onc-font-heading: "Rajdhani", sans-serif;
+  --onc-font-body: "Open Sans", sans-serif;
+  --bs-body-font-family: "Open Sans", sans-serif;
+  --bs-font-sans-serif: "Open Sans", sans-serif;
+}
+
+html, body,
+#quarto-content, #quarto-document-content,
+p, li, td, th, label, input, select, textarea, button,
+.nav-link, .quarto-title-meta, figcaption, .callout,
+.toc-active, #TOC, .breadcrumb, .chapter-title {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+header h1.title, .quarto-title h1.title,
+.sidebar-title, .sidebar-title a,
+#title-block-header .title,
+#quarto-sidebar .sidebar-item-text,
+#quarto-sidebar .sidebar-link,
+#quarto-content h1, #quarto-content h2, #quarto-content h3,
+#quarto-content h4, #quarto-content h5, #quarto-content h6 {
+  font-family: "Rajdhani", sans-serif !important;
+}
 
 /* Hide Quarto's default date block; compile date lives in the banner. */
 #title-block-header .quarto-title-meta {
@@ -84,10 +158,31 @@ $dark-blue: #003366;
   width: 50%;
 }
 
+/* Manufacturer logo + copy grid on the specs page */
+.manufacturer-block {
+  align-items: start;
+  margin: 1.6rem 0;
+}
+
+.manufacturer-block .manufacturer-logo {
+  display: block;
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.manufacturer-block a:hover .manufacturer-logo {
+  box-shadow: 0 0 0 2px #e67e5f;
+}
+
 /* Style the Main Title */
 header h1.title {
+  font-family: var(--onc-font-heading) !important;
   font-size: 2.5rem !important;
-  font-weight: 800;
+  font-weight: 700;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 

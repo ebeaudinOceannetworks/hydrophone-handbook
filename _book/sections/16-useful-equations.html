@@ -73,6 +73,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   .handbook-orca-banner {
     background-size: cover !important;
@@ -90,8 +93,9 @@ ul.task-list li input[type="checkbox"] {
     box-sizing: border-box !important;
   }
   .handbook-orca-banner h1 {
+    font-family: "Rajdhani", sans-serif !important;
     font-size: 4.5em !important;
-    font-weight: 800 !important;
+    font-weight: 700 !important;
     color: white !important;
     margin: 0 !important;
     text-align: center !important;
@@ -100,6 +104,7 @@ ul.task-list li input[type="checkbox"] {
     width: auto !important;
   }
   .handbook-orca-banner .handbook-banner-tagline {
+    font-family: "Open Sans", sans-serif !important;
     font-size: 1.8em !important;
     font-style: italic !important;
     opacity: 0.9;
@@ -107,13 +112,15 @@ ul.task-list li input[type="checkbox"] {
     text-align: center !important;
   }
   .handbook-orca-banner .handbook-banner-org {
+    font-family: "Rajdhani", sans-serif !important;
     margin-top: 20px !important;
-    font-weight: bold !important;
+    font-weight: 600 !important;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: center !important;
   }
   .handbook-orca-banner .handbook-banner-date {
+    font-family: "Open Sans", sans-serif !important;
     margin-top: 12px !important;
     font-size: 0.95em !important;
     letter-spacing: 0.04em;
@@ -326,8 +333,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#sound-speed" id="toc-sound-speed" class="nav-link active" data-scroll-target="#sound-speed">Sound speed</a></li>
-  <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law">Snell’s law</a></li>
+  <li><a href="#snells-law" id="toc-snells-law" class="nav-link active" data-scroll-target="#snells-law">Snell’s law</a></li>
   <li><a href="#wave-equation" id="toc-wave-equation" class="nav-link" data-scroll-target="#wave-equation">Acoustic wave equation</a></li>
   <li><a href="#spl" id="toc-spl" class="nav-link" data-scroll-target="#spl">Sound pressure level</a></li>
   <li><a href="#average-sound-pressure-level" id="toc-average-sound-pressure-level" class="nav-link" data-scroll-target="#average-sound-pressure-level">Average Sound Pressure Level</a></li>
@@ -356,25 +362,21 @@ window.Quarto = {
 </header>
 
 
-<section id="sound-speed" class="level2">
-<h2 class="anchored" data-anchor-id="sound-speed">Sound speed</h2>
-<p>Sound speed in seawater is estimated from temperature <span class="math inline">\(T\)</span>, salinity <span class="math inline">\(S\)</span>, and depth <span class="math inline">\(z\)</span> or pressure <span class="math inline">\(p\)</span>. These formulae support sound-speed profiles in <a href="../sections/5-sound-in-the-ocean.html">Sound in the Ocean</a>.</p>
-<section id="mackenzie-1981" class="level3">
-<h3 class="anchored" data-anchor-id="mackenzie-1981">Mackenzie (1981)</h3>
+<section id="speed-of-sound-in-seawater-mackenzie-1981" class="level3">
+<h3 class="anchored" data-anchor-id="speed-of-sound-in-seawater-mackenzie-1981">Speed of Sound in Seawater (Mackenzie, 1981)</h3>
 <p>A nine-term fit, convenient for a first estimate of <span class="math inline">\(c\)</span> from a CTD cast:</p>
 <p><span class="math display">\[
 c(T,S,z) = a_1 + a_2 T + a_3 T^2 + a_4 T^3 + a_5(S-35) + a_6 z + a_7 z^2 + a_8 T (S-35) + a_9 T z^3
 \]</span></p>
 <p>where <span class="math inline">\(T\)</span> is temperature (°C), <span class="math inline">\(S\)</span> is salinity (psu), <span class="math inline">\(z\)</span> is depth (m), and <span class="math inline">\(c\)</span> is sound speed (m/s). Coefficients <span class="math inline">\(a_1 \ldots a_9\)</span> are given in Mackenzie (1981). Typical range of validity: <span class="math inline">\(T\)</span> 0–30 °C, <span class="math inline">\(S\)</span> 30–40 psu, <span class="math inline">\(z\)</span> 0–8000 m.</p>
 </section>
-<section id="del-grosso-1974" class="level3">
-<h3 class="anchored" data-anchor-id="del-grosso-1974">Del Grosso (1974)</h3>
+<section id="speed-of-sound-in-seawater-del-grosso-1974" class="level3">
+<h3 class="anchored" data-anchor-id="speed-of-sound-in-seawater-del-grosso-1974">Speed of Sound in Seawater (Del Grosso, 1974)</h3>
 <p>Often preferred when a more accurate oceanographic sound speed is needed. It is a function of temperature, salinity, and pressure:</p>
 <p><span class="math display">\[
 c(T,S,p) = c_{000} + \Delta c_T + \Delta c_S + \Delta c_P + \Delta c_{STp}
 \]</span></p>
 <p>where <span class="math inline">\(c_{000}\)</span> is a reference sound speed and the <span class="math inline">\(\Delta c\)</span> terms are polynomial corrections for temperature, salinity, pressure, and their cross terms. Full coefficients are given in Del Grosso (1974).</p>
-</section>
 </section>
 <section id="snells-law" class="level2">
 <h2 class="anchored" data-anchor-id="snells-law">Snell’s law</h2>
