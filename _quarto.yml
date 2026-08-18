@@ -38,12 +38,10 @@ book:
     - sections/11-data-products.qmd
     - sections/12-data-access.qmd
     - sections/13-data-diversion.qmd
-    - sections/14-monitoring-and-troubleshooting.qmd
-    - sections/15-science-and-applications-at-onc.qmd
-    - sections/16-useful-equations.qmd
-    - sections/17-hydrophone-specs-and-manufacturers.qmd
-    - sections/18-list-of-onc-publications.qmd
-    - sections/19-glossary.qmd
+    - sections/14-science-and-applications-at-onc.qmd
+    - sections/15-useful-equations.qmd
+    - sections/16-hydrophone-specs-and-manufacturers.qmd
+    - sections/17-glossary.qmd
 
   sidebar:
     style: "docked"

@@ -65,7 +65,7 @@ Surface swells also create pressure fluctuations that decay with depth. At expos
 
 ## SOFAR channel
 
-Around 1000 m in the deep ocean, the decrease of temperature and the increase of pressure produce a **minimum** in sound speed: the SOFAR channel (SOund Fixing And Ranging). Sound always bends toward slower speed (**refraction**; [Snell's law](16-useful-equations.qmd#snells-law)). Rays that leave this layer upward or downward are refracted back into it, so energy is trapped and can travel basin-scale distances.
+Around 1000 m in the deep ocean, the decrease of temperature and the increase of pressure produce a **minimum** in sound speed: the SOFAR channel (SOund Fixing And Ranging). Sound always bends toward slower speed (**refraction**; [Snell's law](15-useful-equations.qmd#snells-law)). Rays that leave this layer upward or downward are refracted back into it, so energy is trapped and can travel basin-scale distances.
 
 ::: {.aside}
 **SOFAR channel**: the depth of minimum sound speed, typically near 1000 m in mid-latitudes.
@@ -93,7 +93,7 @@ The processes that change sound travel path and sound level:
 |---------|--------------|--------------------------------|
 | **Absorption / attenuation** | Molecular friction converts acoustic energy to heat; intensity also falls as the wavefront spreads ($\sim 1/r^2$ in open water). High frequencies are absorbed much faster than low frequencies. | Dolphin clicks vanish nearby; whale calls and ship rumble can cross a basin. |
 | **Reflection** | Energy bounces from the sea surface or seafloor. Hard bedrock reflects better than watery sand. | Echoes and extra arrivals on the same hydrophone. |
-| **Refraction** | The ray bends toward slower sound speed as $T$, $S$, or pressure change ([Snell's law](16-useful-equations.qmd#snells-law)). | SOFAR and surface ducts; shadow zones. |
+| **Refraction** | The ray bends toward slower sound speed as $T$, $S$, or pressure change ([Snell's law](15-useful-equations.qmd#snells-law)). | SOFAR and surface ducts; shadow zones. |
 | **Scattering** | A rough boundary or a cluttered medium (bubbles, ice, fish, sediment) sends energy in many directions. | Rapid loss of coherent signal; strong under sea ice. |
 | **Interference** | Multipath arrivals overlap. Peaks aligning are louder (constructive); peak meeting trough can cancel (destructive). | Tonal lines, fading, and “holes” in a spectrogram that are not instrument faults. |
 | **Diffraction** | Energy bends around an obstacle (seamount, ridge) into the geometric shadow. | Some signal still reaches a hydrophone “behind” bathymetry. |
@@ -158,7 +158,7 @@ This is the scientific motivation behind programs such as [ECHO](https://www.por
 
 # Sound propagation modelling
 
-Ray tracing is used at ONC to locate sources, estimate detection range, plan new sites, and avoid “deaf zones.” The underlying [wave equation](16-useful-equations.qmd#wave-equation) is in Useful Equations.
+Ray tracing is used at ONC to locate sources, estimate detection range, plan new sites, and avoid “deaf zones.” The underlying [wave equation](15-useful-equations.qmd#wave-equation) is in Useful Equations.
 
 **BELLHOP** (Michael B. Porter) is one of the many sound propagation models that traces beams at a chosen frequency. It needs bathymetry along the path, a sound-speed profile (from $T$, $S$, $p$), and a bottom type (e.g. clay). The output is the transmission loss along a path.
 

@@ -622,3 +622,137 @@ body {
   border: 0;
   padding: 0;
 }
+
+.dp-panel {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.dp-panel p,
+.dp-panel li,
+.dp-panel td,
+.dp-panel th,
+.dp-panel figcaption {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.dp-title {
+  margin: 0 0 12px 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dp-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0 0 12px 0;
+}
+
+.dp-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.dp-pill-k {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.access-tabs .callout {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  margin-top: 12px !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.access-tabs .callout-header {
+  background: transparent !important;
+  color: #fff !important;
+  border-bottom: 0 !important;
+  font-weight: 600 !important;
+}
+
+.access-tabs .callout-title-container,
+.access-tabs .callout-body,
+.access-tabs .callout-body p,
+.access-tabs .callout-body li,
+.access-tabs .callout-body strong {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.access-tabs .callout-icon-container {
+  display: none;
+}
+
+.access-tabs .callout code,
+.dp-panel code {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.access-tabs .callout a,
+.dp-panel a {
+  color: #9ad4ff;
+}
+
+@media (max-width: 640px) {
+  .dp-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+.docs-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  margin-top: 8px;
+}
+
+.docs-card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.docs-card-title img {
+  object-fit: contain;
+}
+
+.docs-card-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 36px;
+}
+
+.docs-card-list li {
+  margin-bottom: 10px;
+}
+
+.docs-card-list a {
+  color: #82caff;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(130, 202, 255, 0.3);
+}

@@ -1,14 +1,10 @@
 ---
-title: "15. Science and Applications at ONC"
+title: "14. Science and Publications"
 ---
 
-This page illustrates a few ways data analysis can be done on acoustic data, and some sample codes (Python and MATLAB).
+# Science
 
-https://pubs.aip.org/asa/jasa/article/158/2/1113/3358979/Receptions-of-Kauai-Beacon-transmissions-by-ocean
-
-* https://www.sciencedirect.com/science/article/pii/S0195925515300202?via%3Dihub
-
-# Marine mammals monitoring
+## Marine mammals monitoring
 
 Underwater sound monitoring is used at ONC for monitoring whale activity and behavior. In 2015, ONC joined the Enhancing Cetacean and Habitat Observation ([ECHO](https://www.portvancouver.com/environment/healthy-ecosystem/echo)) Program which aim at investigating ways to reduce shipping traffic impacts on whale activity in the Straight of Georgia. As part of the program, hydrophone arrays from *JASCO Applied Science* were deployed and the data ingested in ONC’s servers.
 
@@ -21,20 +17,35 @@ Since then, ONC has kept expanding its hydrophone network which has turned into 
 Whale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behavior, and their seasonal presence.
 
 
-# Fin whale autodetector
+## Fin whale autodetector
 
 Historically, whale identification in hydrophone data is done by listening to the audio file. This method, while proof, is extremely time-consuming. At ONC, Spencer Bialek has developed a Machine Learning tool able to detect several whale species and differentiate several calls. The first iteration of this model was applied to fin whales, which are extremely common in BC and we have tons of recordings. The model is able to identify 3 distinct call types: 20 Hz, 40 Hz, and song. Each of these are associated with different behaviors such as mating, grazing, communication and navigation (read more about fin whales on [DOSIT](https://dosits.org/galleries/audio-gallery/marine-mammals/baleen-whales/fin-whale/)).
 
 The model is able to do in a few minutes what humans typically would do in several weeks or months, which allows for building long-term time series of whale presence. However, humans are needed to guide the model, detect false alarms (misidentified whale call), and inject more data. Moreover, the model is not able to detect *new* call types which humans are able to detect. Humans will always be needed together with this model, but so far it is bringing a lot of hopes analyzing terabytes of audio files.
 
 
-# Acoustic modelling
+## Acoustic modelling
 Hydrophones record the soundscape; modelling asks how the environment shapes that sound. Temperature, depth, seamounts, and seafloor sediments control how *far* a call travels, and therefore the detection range of a hydrophone. That range depends on frequency — and so on species and call type — with lower frequencies travelling farther. Modelling is used to place new instruments outside *deaf zones*. The underlying physics is in [Sound in the Ocean](5-sound-in-the-ocean.qmd).
 
 Lanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.
 
 
-# Earthquake detection
+## Earthquake detection
 Seismic waves from earthquakes travel with typical frequencies between 5-50 Hz, making them detectable on low-frequency hydrophones which have high sensitivity down to 10 Hz. However, hydrophones are not the primary sensors used for earthquake detection, since ONC has several Ocean-Bottom seismometers (OBS).
 
 Interesting to note that conversely, seismometers can also be used to detect whale calls. OBS have been deployed around Endeavour hydrothermal vent, starting with eight in early 2000s and more since then. Fin whale calls are relatively low frequency (20 Hz), and overlap with the detection bandwidth of these seismometers. Numerous studies have used them to track fin whales ([Weirathmueller et al., 2007](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0186127),[Wilcock 2012](https://faculty.washington.edu/wilcock/files/PaperPDFs/wilcock_JASA_2012.pdf), [Soule & Wilcock, 2013](https://pubmed.ncbi.nlm.nih.gov/23464044/)).
+
+# Publications
+A short list of papers from ONC or using ONC hydrophone data. For the full catalogue, see [Scientific Output](https://internal.oceannetworks.ca/spaces/OS/pages/249300119/Scientific+Output) on Confluence.
+
+- Aghaei, O., Lam, A., Wolf, M., Muzi, L., Baillie, G. J., Biffard, B., Dorocicz, J., Snauffer, D., Bedard, J., and Foloni-Neto, H. (2024). [Best Practices for Managing Passive Acoustics Data at Ocean Networks Canada](https://doi.org/10.1109/oceans55160.2024.10754545). *OCEANS 2024 Halifax*.
+
+- Sattar, F., Driessen, P. F., Tzanetakis, G., and Page, W. H. (2019). [A new event detection method for noisy hydrophone data](https://doi.org/10.1016/j.apacoust.2019.107056). *Applied Acoustics*.
+
+- Mouy, X., Rountree, R. A., Juanes, F., and Dosso, S. E. (2017). [Passive acoustic localization of fish using a compact hydrophone array](https://doi.org/10.1121/1.4988630). *The Journal of the Acoustical Society of America*, 141(5), 3863.
+
+- Cotter, E. D., McVey, J. R., Weicht, L. E., and Haxel, J. (2024). [Performance of three hydrophone flow shields in a tidal channel](https://doi.org/10.1121/10.0024333). *JASA Express Letters*, 4(1), 016001.
+
+- Merchant, N. D., Dakin, D. T., Dorocicz, J., and Blondel, P. (2013). [Remote performance assessment of cabled observatory hydrophone systems](https://doi.org/10.1121/1.4830476). *The Journal of the Acoustical Society of America*, 134(5), 3973.
+
+- Engida, Z., Foloni-Neto, H., Slonimer, A., Bedard, J., Alam, F. S., and Snauffer, A. (2022). [Anomaly detection in complex data: a practical application when outliers are few](https://doi.org/10.1109/oceans47191.2022.9977351). *OCEANS 2022 Hampton Roads*.

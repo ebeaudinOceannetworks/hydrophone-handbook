@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>15. Science and Applications at ONC – Hydrophone Handbook</title>
+<title>17. Glossary – Hydrophone Handbook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/16-useful-equations.html" rel="next">
-<link href="../sections/14-monitoring-and-troubleshooting.html" rel="prev">
+<link href="../sections/16-hydrophone-specs-and-manufacturers.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -161,6 +160,35 @@ ul.task-list li input[type="checkbox"] {
 })();
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 
@@ -174,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/15-science-and-applications-at-onc.html"><span class="chapter-title">15. Science and Applications at ONC</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/17-glossary.html"><span class="chapter-title">17. Glossary</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -266,32 +294,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/14-monitoring-and-troubleshooting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Monitoring &amp; Troubleshooting</span></a>
+  <a href="../sections/14-science-and-applications-at-onc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/15-science-and-applications-at-onc.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">15. Science and Applications at ONC</span></a>
+  <a href="../sections/15-useful-equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Useful Equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/16-useful-equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Useful Equations</span></a>
+  <a href="../sections/16-hydrophone-specs-and-manufacturers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">16. Hydrophone Specs &amp; Manufacturers</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/17-hydrophone-specs-and-manufacturers.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">17. Hydrophone Specs &amp; Manufacturers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sections/18-list-of-onc-publications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. List of ONC publications</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../sections/19-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">19. Glossary</span></a>
+  <a href="../sections/17-glossary.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">17. Glossary</span></a>
   </div>
 </li>
     </ul>
@@ -304,10 +322,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#marine-mammals-monitoring" id="toc-marine-mammals-monitoring" class="nav-link active" data-scroll-target="#marine-mammals-monitoring">Marine mammals monitoring</a></li>
-  <li><a href="#fin-whale-autodetector" id="toc-fin-whale-autodetector" class="nav-link" data-scroll-target="#fin-whale-autodetector">Fin whale autodetector</a></li>
-  <li><a href="#acoustic-modelling" id="toc-acoustic-modelling" class="nav-link" data-scroll-target="#acoustic-modelling">Acoustic modelling</a></li>
-  <li><a href="#earthquake-detection" id="toc-earthquake-detection" class="nav-link" data-scroll-target="#earthquake-detection">Earthquake detection</a></li>
+  <li><a href="#table-of-quantities-and-units" id="toc-table-of-quantities-and-units" class="nav-link active" data-scroll-target="#table-of-quantities-and-units">Table of quantities and units</a></li>
+  <li><a href="#definition-of-acousitc-metrics-and-terms" id="toc-definition-of-acousitc-metrics-and-terms" class="nav-link" data-scroll-target="#definition-of-acousitc-metrics-and-terms">Definition of acousitc metrics and terms</a></li>
+  <li><a href="#acronyms" id="toc-acronyms" class="nav-link" data-scroll-target="#acronyms">Acronyms</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -316,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">15. Science and Applications at ONC</span></h1>
+<h1 class="title"><span class="chapter-title">17. Glossary</span></h1>
 </div>
 
 
@@ -333,33 +351,136 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page illustrates a few ways data analysis can be done on acoustic data, and some sample codes (Python and MATLAB).</p>
-<p>https://pubs.aip.org/asa/jasa/article/158/2/1113/3358979/Receptions-of-Kauai-Beacon-transmissions-by-ocean</p>
+<section id="table-of-quantities-and-units" class="level2">
+<h2 class="anchored" data-anchor-id="table-of-quantities-and-units">Table of quantities and units</h2>
+<p>[insert table here]</p>
+</section>
+<section id="definition-of-acousitc-metrics-and-terms" class="level2">
+<h2 class="anchored" data-anchor-id="definition-of-acousitc-metrics-and-terms">Definition of acousitc metrics and terms</h2>
+<section id="absorption" class="level3">
+<h3 class="anchored" data-anchor-id="absorption">Absorption</h3>
+<p>Reduction of acoustic pressure amplitude due to acoustic particle motion energy converting to heat in the propagation medium.</p>
+</section>
+<section id="ambiant-soundnoise" class="level3">
+<h3 class="anchored" data-anchor-id="ambiant-soundnoise">Ambiant sound/noise</h3>
+<p>Sound that would be present in the absence of a specified activity. It is location-specific and time-specific. def 2: all-encompassing sound at a given place, usually a composite of sound from many sources near and far (e.g.&nbsp;shipping vessels, seismic activity, precipitation, sea ice, wave, biological activity).</p>
+</section>
+<section id="attenuation" class="level3">
+<h3 class="anchored" data-anchor-id="attenuation">Attenuation</h3>
+<p>Gradual loss of acoustic energy from absorption and scattering as sound propagates through a medium.</p>
+</section>
+<section id="background-noise" class="level3">
+<h3 class="anchored" data-anchor-id="background-noise">Background noise</h3>
+<p>All sound recorded by the hydrophone in the absence of the pile driving signal for a specified pile driving acoustic signal beaing measured. ### Propagation loss</p>
+</section>
+<section id="cetacean" class="level3">
+<h3 class="anchored" data-anchor-id="cetacean">Cetacean</h3>
+<p>Any anumal in the order Cetacea. These are aquatic, mostly maine mammals and include whales, dolphins, and porpoises.</p>
+</section>
+<section id="compressional-wave" class="level3">
+<h3 class="anchored" data-anchor-id="compressional-wave">Compressional wave</h3>
+<p>A mechanical vibration wave in which the direction of particle motion is parallel to the direction of the propagation. Also called primary wave, or P-wave.</p>
+</section>
+<section id="decibel-db" class="level3">
+<h3 class="anchored" data-anchor-id="decibel-db">Decibel (dB)</h3>
+<p>Relative unit of measurement equal to one-tenth of a bel, measuring the level when the base of the logarithm is the tenth root of ten, and the quantities concerned are proportional to power.</p>
+</section>
+<section id="ensonified" class="level3">
+<h3 class="anchored" data-anchor-id="ensonified">Ensonified</h3>
+<p>Exposed to sound.</p>
+</section>
+<section id="fast-fourier-transform-fft" class="level3">
+<h3 class="anchored" data-anchor-id="fast-fourier-transform-fft">Fast Fourier Transform (FFT)</h3>
+<p>A computationally efficiently algorithm for computing the Discrete Fourier Transform (DFT). A DFT requires <span class="math inline">\(O(n^2)\)</span> computations, while an FFT requires <span class="math inline">\(O(n log n)\)</span>. A Fourier transform converts a signal from its original domain (time/space) to a representation in the frequency domain.</p>
+</section>
+<section id="frequency" class="level3">
+<h3 class="anchored" data-anchor-id="frequency">Frequency</h3>
+<p>The rate of oscillation of a periodic function measured in cycles-per-unit-time. Symbol: <span class="math inline">\(f\)</span>. Unit: Hertz (Hz), is equal to 1 cycle per second.</p>
+</section>
+<section id="intensity" class="level3">
+<h3 class="anchored" data-anchor-id="intensity">Intensity</h3>
+<p>The intensity (<span class="math inline">\(I\)</span>) of a sound wave is defined as the energy transmitted through a unit area, per unit time, in the direction in which the sound wave is traveling. It is a vector quantity having both a magnitude and direction.</p>
+<p><span class="math display">\[
+\vec{I} = p \vec{u}
+\]</span></p>
+<p>where <span class="math inline">\(p\)</span> is pressure, and <span class="math inline">\(u\)</span> the particle velocity.</p>
+</section>
+<section id="impedance" class="level3">
+<h3 class="anchored" data-anchor-id="impedance">Impedance</h3>
+<p>Impedance of water is much greater than that of air.</p>
+</section>
+<section id="power-spectrum-density" class="level3">
+<h3 class="anchored" data-anchor-id="power-spectrum-density">Power Spectrum Density</h3>
+<p>The acoustic signal power per unit frequency as measured at a single frequency. Unit: <span class="math inline">\(\micro Pa^2\cdot s\)</span></p>
+</section>
+<section id="pressure" class="level3">
+<h3 class="anchored" data-anchor-id="pressure">Pressure</h3>
+<p>Unit: Pa</p>
 <ul>
-<li>https://www.sciencedirect.com/science/article/pii/S0195925515300202?via%3Dihub</li>
+<li>acoustic: deviation from the ambient hydrostatic pressure caused by a sound wave.</li>
+<li>hydrostatic: pressure at any given depth in a static liquid that is the result of the weight of the liquid acting on a unit area at that depth, plus any pressure acting on the surface of the liquid.</li>
 </ul>
-<section id="marine-mammals-monitoring" class="level1">
-<h1>Marine mammals monitoring</h1>
-<p>Underwater sound monitoring is used at ONC for monitoring whale activity and behavior. In 2015, ONC joined the Enhancing Cetacean and Habitat Observation (<a href="https://www.portvancouver.com/environment/healthy-ecosystem/echo">ECHO</a>) Program which aim at investigating ways to reduce shipping traffic impacts on whale activity in the Straight of Georgia. As part of the program, hydrophone arrays from <em>JASCO Applied Science</em> were deployed and the data ingested in ONC’s servers.</p>
-<p>The program has known quite a bit of success, as thousands of ships have voluntarily reduced speed or distanced themselves from whales.</p>
-<p><em>Read ONC’s story <a href="https://www.oceannetworks.ca/news-and-stories/stories/listening-to-deep-ocean-whales/">here</a>.</em></p>
-<p>Since then, ONC has kept expanding its hydrophone network which has turned into more partnerships with BC in 2017, to study ship traffic in Haro Strait (<a href="https://www.oceannetworks.ca/news-and-stories/stories/monitoring-canadas-ocean-coasts-and-killer-whales-through-technology-and-data/">read story here</a> to specifically monitor southern residents killer whales.</p>
-<p>Whale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behavior, and their seasonal presence.</p>
 </section>
-<section id="fin-whale-autodetector" class="level1">
-<h1>Fin whale autodetector</h1>
-<p>Historically, whale identification in hydrophone data is done by listening to the audio file. This method, while proof, is extremely time-consuming. At ONC, Spencer Bialek has developed a Machine Learning tool able to detect several whale species and differentiate several calls. The first iteration of this model was applied to fin whales, which are extremely common in BC and we have tons of recordings. The model is able to identify 3 distinct call types: 20 Hz, 40 Hz, and song. Each of these are associated with different behaviors such as mating, grazing, communication and navigation (read more about fin whales on <a href="https://dosits.org/galleries/audio-gallery/marine-mammals/baleen-whales/fin-whale/">DOSIT</a>).</p>
-<p>The model is able to do in a few minutes what humans typically would do in several weeks or months, which allows for building long-term time series of whale presence. However, humans are needed to guide the model, detect false alarms (misidentified whale call), and inject more data. Moreover, the model is not able to detect <em>new</em> call types which humans are able to detect. Humans will always be needed together with this model, but so far it is bringing a lot of hopes analyzing terabytes of audio files.</p>
+<section id="reverberation" class="level3">
+<h3 class="anchored" data-anchor-id="reverberation">Reverberation</h3>
+<p>Sound resulting from cumulative scattering of sound by an aggregation, or ensemble, of scatterers.</p>
 </section>
-<section id="acoustic-modelling" class="level1">
-<h1>Acoustic modelling</h1>
-<p>Hydrophones record the soundscape; modelling asks how the environment shapes that sound. Temperature, depth, seamounts, and seafloor sediments control how <em>far</em> a call travels, and therefore the detection range of a hydrophone. That range depends on frequency — and so on species and call type — with lower frequencies travelling farther. Modelling is used to place new instruments outside <em>deaf zones</em>. The underlying physics is in <a href="../sections/5-sound-in-the-ocean.html">Sound in the Ocean</a>.</p>
-<p>Lanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.</p>
+<section id="root-mean-square-sound-pressure-level-spl-l_prms" class="level3">
+<h3 class="anchored" data-anchor-id="root-mean-square-sound-pressure-level-spl-l_prms">Root-mean-square sound pressure level (SPL) <span class="math inline">\(L_{p,rms}\)</span></h3>
+<p>The Root Mean Square (RMS) of the sound pressure taken over a time interval <span class="math inline">\(\Delta t = t_2-t_1\)</span> [s]. Starting from the Mean Square average sound pressure <span class="math inline">\(p_{ms}\)</span>, [Pa$^2] the RMS pressure <span class="math inline">\(p_{rms}\)</span> [Pa] is:</p>
+<p><span class="math display">\[
+p_{ms} = \bar p^2 = \frac{1}{\Delta t} \int_{t_1}^{t_2} p^2 (t) dt
+\]</span></p>
+<p>… there is more…</p>
 </section>
-<section id="earthquake-detection" class="level1">
-<h1>Earthquake detection</h1>
-<p>Seismic waves from earthquakes travel with typical frequencies between 5-50 Hz, making them detectable on low-frequency hydrophones which have high sensitivity down to 10 Hz. However, hydrophones are not the primary sensors used for earthquake detection, since ONC has several Ocean-Bottom seismometers (OBS).</p>
-<p>Interesting to note that conversely, seismometers can also be used to detect whale calls. OBS have been deployed around Endeavour hydrothermal vent, starting with eight in early 2000s and more since then. Fin whale calls are relatively low frequency (20 Hz), and overlap with the detection bandwidth of these seismometers. Numerous studies have used them to track fin whales (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0186127">Weirathmueller et al., 2007</a>,<a href="https://faculty.washington.edu/wilcock/files/PaperPDFs/wilcock_JASA_2012.pdf">Wilcock 2012</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/23464044/">Soule &amp; Wilcock, 2013</a>).</p>
+<section id="soundscape" class="level3">
+<h3 class="anchored" data-anchor-id="soundscape">Soundscape</h3>
+<p>Underwater acoustics characterization of the <em>ambient sound</em> in terms of its spatial, temporal and frequency attributes, and the types of sources contributing to the sound field. ### Pulse duration The pulse duration is the percentage energy signal duration over the acoustic pulse, defined in ISO 18406, assuming an energy percentage for the pulse duration of 90%.</p>
+</section>
+<section id="sound-pressure-p" class="level3">
+<h3 class="anchored" data-anchor-id="sound-pressure-p">Sound pressure (<span class="math inline">\(p\)</span>)</h3>
+<p>Contribution to total pressure caused by the action of sound. Sound pressure is a function of time: <span class="math inline">\(p=p(t)\)</span>, and expressed in pascals (Pa).</p>
+</section>
+<section id="sound-pressure-spectrum-p" class="level3">
+<h3 class="anchored" data-anchor-id="sound-pressure-spectrum-p">Sound pressure spectrum (<span class="math inline">\(P\)</span>)</h3>
+<p>Fourier transform of the sound pressure. Sound pressure spectrum is a function of frequency: <span class="math inline">\(P=P(f)\)</span>, and expressed in pascals per hertz (Pa Hz-1). The formula form is:</p>
+<p><span class="math display">\[
+P(f) = \int_\infty^\infty exp\left(-2\pi i f t \right) p(t) dt
+\]</span></p>
+</section>
+<section id="sound-exposure-level-sel" class="level3">
+<h3 class="anchored" data-anchor-id="sound-exposure-level-sel">Sound Exposure Level (SEL)</h3>
+</section>
+<section id="source-level-sl_e" class="level3">
+<h3 class="anchored" data-anchor-id="source-level-sl_e">Source level (SL<span class="math inline">\(_E\)</span>)</h3>
+</section>
+<section id="sound-speed-profile" class="level3">
+<h3 class="anchored" data-anchor-id="sound-speed-profile">Sound speed profile</h3>
+<p>Speed of sound in the water column as a function of depth below the water surface.</p>
+</section>
+<section id="spectrogram" class="level3">
+<h3 class="anchored" data-anchor-id="spectrogram">Spectrogram</h3>
+<p>A visual representation of acoustic amplitude compared with time and frequency.</p>
+</section>
+<section id="transmission-loss" class="level3">
+<h3 class="anchored" data-anchor-id="transmission-loss">Transmission loss</h3>
+</section>
+<section id="wavelength" class="level3">
+<h3 class="anchored" data-anchor-id="wavelength">Wavelength</h3>
+<p>Distance over which a wave completes one scillation cycle. Unit: meter (m). Symbol: <span class="math inline">\(\lambda\)</span>.</p>
+</section>
+</section>
+<section id="acronyms" class="level2">
+<h2 class="anchored" data-anchor-id="acronyms">Acronyms</h2>
+<p>IPP: Information Point Person</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>PNNL report.</li>
+<li>ISO 18405 - Underwater acoustics. Link: https://cdn.standards.iteh.ai/samples/62406/d4e330b42f944401bf8522761712519b/ISO-18405-2017.pdf</li>
+<li>2017 JASCO report: Underwater Sound Propagation Assessment report: Nexen Energy ULC Flemish Pass Exploration Drilling Project</li>
+</ul>
 
 
 </section>
@@ -767,14 +888,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/14-monitoring-and-troubleshooting.html" class="pagination-link" aria-label="14. Monitoring &amp; Troubleshooting">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">14. Monitoring &amp; Troubleshooting</span></span>
+      <a href="../sections/16-hydrophone-specs-and-manufacturers.html" class="pagination-link" aria-label="16. Hydrophone Specs &amp; Manufacturers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">16. Hydrophone Specs &amp; Manufacturers</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/16-useful-equations.html" class="pagination-link" aria-label="16. Useful Equations">
-        <span class="nav-page-text"><span class="chapter-title">16. Useful Equations</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

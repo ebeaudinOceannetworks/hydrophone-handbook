@@ -6,6 +6,11 @@ Newest handbook updates are at the top. Add a dated entry here whenever a page c
 
 # August 2026
 
+## August 18, 2026
+
+* **Monitoring & Troubleshooting** is parked in `under_construction/` until it is ready. Later pages are renumbered 14–18.
+* **Publications** is now a titled list (duplicate Aghaei et al. 2024 removed).
+
 ## August 17, 2026
 
 * Added this **What's New** page.

@@ -1,5 +1,5 @@
 ---
-title: "14. Monitoring & Troubleshooting"
+title: "Monitoring & Troubleshooting"
 ---
 
 Procedure for addressing common failures (e.g. files not streaming: make INSTR ticket and tag Systems (@nvops) to request power cycle)
