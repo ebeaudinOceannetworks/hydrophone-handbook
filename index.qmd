@@ -155,6 +155,6 @@ Map minerals, detect earthquakes, and support resource exploration.
 ::: {.intro-territory}
 ::: {.callout-tip appearance="minimal"}
 ## Territory acknowledgment
-We recognize that marine research in the Victoria region takes place on the traditional lands of the Lək̓ʷəŋən (Lekwungen) people, known today as the Songhees and Esquimalt Nations, as well as the Xwsepsum (Esquimalt) and W̱SÁNEĆ peoples.
+We recognize that Ocean Networks Canada conducts its activities on the traditional lands of the Lək̓ʷəŋən (Lekwungen) people, known today as the Songhees and Esquimalt Nations, as well as the Xwsepsum (Esquimalt) and W̱SÁNEĆ peoples.
 :::
 :::
