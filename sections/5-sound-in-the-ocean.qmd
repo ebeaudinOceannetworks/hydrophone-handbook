@@ -6,7 +6,9 @@ title: "5. Sound in the Ocean"
 
 In the ocean, light attenuates within tens of metres, while sound can travel thousands of kilometres. That is why marine mammals and underwater systems use sound as their primary sense for communication and navigation.
 
+::: {.fig-full}
 ![A variety of sounds can be heard in the ocean. Credit: NOAA Fisheries.](../images/1500x1000-Passive-Acoustics-Soundscape-infographic-NEFSC.png){lightbox=true}
+:::
 
 # What is sound?
 
