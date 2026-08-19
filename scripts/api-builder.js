@@ -119,12 +119,14 @@
     const hint = $("api-archive-hint");
     if (hint) {
       const info = familiesForSelection(catalog);
+      const base = "The list covers what this instrument can produce, not what exists in this exact window. " +
+        "If a download comes back empty, list the files first.";
       if (info.families.indexOf("ios") === -1) {
-        hint.textContent = "Listed extensions match this hydrophone family and time range. .hyd appears only for retired IOS arrays.";
+        hint.textContent = base;
       } else if (info.usedDates) {
-        hint.textContent = "This time range includes a retired IOS array, so .hyd is listed.";
+        hint.textContent = "This time range covers a retired IOS array, so .hyd is offered. " + base;
       } else {
-        hint.textContent = "This location has retired IOS array files (.hyd). They may not exist in the selected dates.";
+        hint.textContent = "This location hosted a retired IOS array (.hyd), possibly outside the dates you picked. " + base;
       }
     }
   }
@@ -152,20 +154,30 @@
     return String(n).padStart(2, "0");
   }
 
-  function toLocalInput(date) {
+  // YYYY-MM-DD HH:MM[:SS], 24-hour, always read as UTC. A "T" separator is
+  // accepted so timestamps can be pasted straight from filenames or the API.
+  const UTC_INPUT = /^(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})(?::(\d{2}))?Z?$/;
+
+  function toUtcInput(date) {
     return (
-      date.getFullYear() +
-      "-" + pad(date.getMonth() + 1) +
-      "-" + pad(date.getDate()) +
-      "T" + pad(date.getHours()) +
-      ":" + pad(date.getMinutes())
+      date.getUTCFullYear() +
+      "-" + pad(date.getUTCMonth() + 1) +
+      "-" + pad(date.getUTCDate()) +
+      " " + pad(date.getUTCHours()) +
+      ":" + pad(date.getUTCMinutes())
     );
   }
 
-  function toOncIso(localValue) {
-    if (!localValue) return "";
-    const date = new Date(localValue);
-    if (Number.isNaN(date.getTime())) return "";
+  function toOncIso(value) {
+    const m = UTC_INPUT.exec(String(value == null ? "" : value).trim());
+    if (!m) return "";
+    const year = +m[1], month = +m[2], day = +m[3];
+    const hour = +m[4], minute = +m[5], second = +(m[6] || 0);
+    if (month < 1 || month > 12 || day < 1 || day > 31) return "";
+    if (hour > 23 || minute > 59 || second > 59) return "";
+    const date = new Date(Date.UTC(year, month - 1, day, hour, minute, second));
+    // Rejects dates that rolled over, e.g. 2023-02-30.
+    if (date.getUTCMonth() !== month - 1 || date.getUTCDate() !== day) return "";
     return date.toISOString().replace(/\.\d{3}Z$/, ".000Z");
   }
 
@@ -195,12 +207,13 @@
     }).join("");
   }
 
-  const PRODUCT_ORDER = ["AD", "HSD", "HSPD", "SHV", "LF", "HCF", "HACC", "HARD", "TSSD"];
+  // SHV is generated for the Hydrophone Viewer and is not orderable through
+  // dataProductDelivery, so it is deliberately absent here.
+  const PRODUCT_ORDER = ["AD", "HSD", "HSPD", "LF", "HCF", "HACC", "HARD", "TSSD"];
   const PRODUCT_LABELS = {
     AD: "AD — Audio Data",
     HSD: "HSD — Hydrophone Spectral Data",
     HSPD: "HSPD — Spectral Probability Density",
-    SHV: "SHV — Spectrogram for Hydrophone Viewer",
     LF: "LF — log / auxiliary file",
     HCF: "HCF — calibration files",
     HACC: "HACC — acceleration (ancillary)",
@@ -210,17 +223,18 @@
   const PRODUCT_FAMILIES = {
     AD: null,
     HSD: null,
-    HSPD: ["ocean-sonics", "jasco", "other"],
-    SHV: ["ocean-sonics", "jasco", "other"],
+    HSPD: null,
     LF: ["ocean-sonics", "other"],
     HCF: null,
     HACC: ["ocean-sonics"],
     HARD: ["ios"],
     TSSD: ["ocean-sonics", "other"]
   };
+  // Extensions the catalog advertises for the whole HYDROPHONE category but
+  // that no hydrophone actually delivers as a data product (.oct is archive-only).
+  const ORDER_EXCLUDED_FORMATS = ["oct"];
   const FORMAT_FAMILIES = {
     fft: ["ocean-sonics"],
-    oct: ["jasco"],
     hyd: ["ios"]
   };
 
@@ -248,6 +262,7 @@
     const families = familiesForSelection(catalog).families;
     const formats = (product && product.formats) || [];
     return formats.filter(function (f) {
+      if (ORDER_EXCLUDED_FORMATS.indexOf(f.extension) !== -1) return false;
       const allowed = FORMAT_FAMILIES[f.extension];
       return !allowed || families.some(function (family) { return allowed.indexOf(family) !== -1; });
     });
@@ -266,13 +281,11 @@
     const hint = $("api-product-hint");
     if (hint) {
       const families = familiesForSelection(catalog).families;
-      if (families.indexOf("ios") !== -1 && families.length === 1) {
-        hint.textContent = "Retired IOS arrays: HARD (.hyd) is the raw product. QAQC, captions, and annotations are omitted.";
-      } else if (families.indexOf("ios") !== -1) {
-        hint.textContent = "This selection includes a retired IOS array, so HARD (.hyd) is listed. Time-series is ancillary instrument data.";
-      } else {
-        hint.textContent = "Hydrophone products only. Time-series here is ancillary instrument data, not acoustic samples.";
-      }
+      const base = "AD is the acoustic data; HSD and HSPD are spectral. HACC and TSSD are ancillary " +
+        "instrument readings, not sound.";
+      hint.textContent = families.indexOf("ios") === -1
+        ? base
+        : "This selection covers a retired IOS array, so HARD (.hyd) is offered as the raw product. " + base;
     }
     syncProductFormats(catalog);
   }
@@ -287,7 +300,7 @@
   function currentState(catalog) {
     const lookup = (document.querySelector('input[name="api-lookup"]:checked') || {}).value || "location";
     const method = (document.querySelector('input[name="api-method"]:checked') || {}).value || "archive";
-    const archiveAction = (document.querySelector('input[name="api-archive-action"]:checked') || {}).value || "download";
+    const archiveAction = ($("api-archive-action") || {}).value || "download";
     const locationCode = ($("api-location") || {}).value.trim();
     const deviceCode = ($("api-device") || {}).value.trim();
     const dateFrom = toOncIso(($("api-date-from") || {}).value);
@@ -300,13 +313,19 @@
 
     const product = productByCode(catalog, productCode);
     const format = formatForProduct(product, orderExt);
+    // Only send options the user actually changed. Some devices reject the
+    // catalog-wide default (IOS arrays only accept dpo_audioFormatConversion=1),
+    // and Oceans 3.0 applies the per-device default for anything omitted.
     const dpos = {};
     if (method === "order" && format) {
       (format.options || []).forEach(function (opt) {
         const input = document.querySelector('[data-dpo="' + opt.option + '"]');
         if (!input) return;
         const value = input.value;
-        if (value !== "" && value != null) dpos[opt.option] = value;
+        if (value === "" || value == null) return;
+        const fallback = opt.defaultValue == null ? "" : String(opt.defaultValue);
+        if (value === fallback) return;
+        dpos[opt.option] = value;
       });
     }
 
@@ -337,12 +356,15 @@
     }
     if (state.dateFrom) params.dateFrom = state.dateFrom;
     if (state.dateTo) params.dateTo = state.dateTo;
-    if (state.extension) params.extension = state.extension;
     if (state.method === "order") {
+      if (state.extension) params.extension = state.extension;
       params.dataProductCode = state.productCode || "AD";
       Object.keys(state.dpos).forEach(function (key) {
         params[key] = state.dpos[key];
       });
+    } else if (state.extension) {
+      // /archivefile/* names this filter fileExtension; "extension" is rejected.
+      params.fileExtension = state.extension;
     }
     return params;
   }
@@ -420,7 +442,10 @@
           : "result = onc.getDirectFiles(params);");
       }
     } else {
-      lines.push("result = onc.orderDataProduct(params);");
+      // Signature: orderDataProduct(filters, maxRetries, downloadResultsOnly, includeMetadataFile)
+      lines.push(state.includeMeta
+        ? "result = onc.orderDataProduct(params);"
+        : "result = onc.orderDataProduct(params, 0, false, false);");
     }
     return lines.join("\n");
   }
@@ -433,14 +458,16 @@
     ];
     if (state.method === "order") {
       lines.push("");
-      lines.push("# orderDataProduct wraps request → run → download.");
-      lines.push("# After this request returns dpRequestId, run:");
+      lines.push("# This only places the order and returns a dpRequestId. Then:");
       lines.push("#   GET " + API_BASE + "/dataProductDelivery/run?dpRequestId=<id>&token=" + state.token);
-      lines.push("# then download with /dataProductDelivery/download");
-    } else if (state.archiveAction === "download") {
+      lines.push("#   GET " + API_BASE + "/dataProductDelivery/download?dpRunId=<id>&index=1&token=" + state.token);
+      if (state.includeMeta) {
+        lines.push("# The metadata file is served at index=meta.");
+      }
+    } else {
       lines.push("");
-      lines.push("# This lists matching archive files. To download one file:");
-      lines.push("# curl -L -o FILE.flac \"" + API_BASE + "/archivefile/download?filename=FILE.flac&token=" + state.token + "\"");
+      lines.push("# curl can only list archive files. To download one of them:");
+      lines.push("# curl -L -O -J \"" + API_BASE + "/archivefile/download?filename=<filename>&token=" + state.token + "\"");
     }
     return lines.join("\n");
   }
@@ -508,7 +535,8 @@
     if (!box) return;
     const options = (format && format.options) || [];
     if (!options.length) {
-      box.innerHTML = "<p class='api-hint'>No extra data-product options for this format.</p>";
+      box.innerHTML = "<p class='api-hint'>This product has no options to set.</p>";
+      updateDpoSummary();
       return;
     }
     box.innerHTML = options.map(function (opt) {
@@ -516,10 +544,12 @@
       const values = opt.allowableValues || [];
       const range = opt.allowableRange;
       const def = opt.defaultValue == null ? "" : String(opt.defaultValue);
+      const attrs = " id='" + id + "' data-dpo='" + escapeHtml(opt.option) +
+        "' data-dpo-default='" + escapeHtml(def) + "'";
       const help = DPO_HELP[opt.option] || "Oceans 3.0 data product option for this format.";
       let control;
       if (values.length) {
-        control = "<select id='" + id + "' data-dpo='" + escapeHtml(opt.option) + "'>" +
+        control = "<select" + attrs + ">" +
           values.map(function (v) {
             const selected = String(v) === def ? " selected" : "";
             return "<option value='" + escapeHtml(v) + "'" + selected + ">" +
@@ -529,10 +559,9 @@
       } else if (range) {
         const min = range.lowerBound != null ? " min='" + escapeHtml(range.lowerBound) + "'" : "";
         const max = range.upperBound != null ? " max='" + escapeHtml(range.upperBound) + "'" : "";
-        control = "<input type='number' id='" + id + "' data-dpo='" + escapeHtml(opt.option) + "'" +
-          min + max + " value='" + escapeHtml(def) + "'>";
+        control = "<input type='number'" + attrs + min + max + " value='" + escapeHtml(def) + "'>";
       } else {
-        control = "<input type='text' id='" + id + "' data-dpo='" + escapeHtml(opt.option) + "' value='" + escapeHtml(def) + "'>";
+        control = "<input type='text'" + attrs + " value='" + escapeHtml(def) + "'>";
       }
       const defaultNote = (!values.length && def !== "")
         ? " Default value: " + def + "."
@@ -541,6 +570,20 @@
         control +
         "<small class='api-dpo-help'>" + escapeHtml(help + defaultNote) + "</small></label>";
     }).join("");
+    updateDpoSummary();
+  }
+
+  function changedDpoFields() {
+    return Array.from(document.querySelectorAll("[data-dpo]")).filter(function (el) {
+      return el.value !== el.getAttribute("data-dpo-default");
+    });
+  }
+
+  function updateDpoSummary() {
+    const label = $("api-dpo-summary");
+    if (!label) return;
+    const n = changedDpoFields().length;
+    label.textContent = n ? "Advanced options (" + n + " changed)" : "Advanced options";
   }
 
   function syncProductFormats(catalog) {
@@ -562,19 +605,19 @@
     const method = (document.querySelector('input[name="api-method"]:checked') || {}).value || "archive";
     const lookup = (document.querySelector('input[name="api-lookup"]:checked') || {}).value || "location";
     document.querySelectorAll("[data-panel]").forEach(function (el) {
-      const show = el.getAttribute("data-panel") === method;
-      el.hidden = !show;
+      el.hidden = el.getAttribute("data-panel") !== method;
     });
-    const locWrap = $("api-location-wrap");
-    const devWrap = $("api-device-wrap");
-    if (locWrap) locWrap.classList.toggle("api-required", lookup === "location");
-    if (devWrap) devWrap.classList.toggle("api-required", lookup === "device");
+    const loc = $("api-location");
+    const dev = $("api-device");
+    if (loc) loc.hidden = lookup !== "location";
+    if (dev) dev.hidden = lookup !== "device";
   }
 
   function updateCode(catalog) {
     const state = currentState(catalog);
     const params = filters(state);
 
+    updateDpoSummary();
     $("api-code-python").textContent = pythonCode(state, params);
     $("api-code-matlab").textContent = matlabCode(state, params);
     $("api-code-curl").textContent = curlCode(state, params);
@@ -623,8 +666,30 @@
     const from = new Date(to.getTime() - 5 * 60 * 1000);
     const fromEl = $("api-date-from");
     const toEl = $("api-date-to");
-    if (fromEl && !fromEl.value) fromEl.value = toLocalInput(from);
-    if (toEl && !toEl.value) toEl.value = toLocalInput(to);
+    if (fromEl && !fromEl.value) fromEl.value = toUtcInput(from);
+    if (toEl && !toEl.value) toEl.value = toUtcInput(to);
+  }
+
+  function syncDates() {
+    const fromEl = $("api-date-from");
+    const toEl = $("api-date-to");
+    const hint = $("api-date-hint");
+    let message = "";
+    [fromEl, toEl].forEach(function (el) {
+      if (!el) return;
+      const bad = el.value.trim() !== "" && !toOncIso(el.value);
+      el.classList.toggle("api-invalid", bad);
+      if (bad) message = "Use YYYY-MM-DD HH:MM on a 24-hour clock, in UTC.";
+    });
+    if (!message && fromEl && toEl) {
+      const from = toOncIso(fromEl.value);
+      const to = toOncIso(toEl.value);
+      if (from && to && Date.parse(from) >= Date.parse(to)) {
+        message = "The end of the range is not after the start.";
+        toEl.classList.add("api-invalid");
+      }
+    }
+    if (hint) hint.textContent = message;
   }
 
   function init() {
@@ -648,42 +713,35 @@
     }));
 
     initDefaults();
+    syncDates();
     syncArchiveExtensions(catalog);
     syncProducts(catalog);
     syncPanels();
     setTab("python");
     updateCode(catalog);
 
+    function onFormChange(evt) {
+      const target = evt.target || {};
+      syncPanels();
+      if (target.id === "api-product" || target.id === "api-order-ext") {
+        syncProductFormats(catalog);
+      }
+      if (target.id === "api-date-from" || target.id === "api-date-to") {
+        syncDates();
+      }
+      if (target.id === "api-location" || target.id === "api-device" ||
+          target.id === "api-date-from" || target.id === "api-date-to" ||
+          target.name === "api-lookup") {
+        syncArchiveExtensions(catalog);
+        syncProducts(catalog);
+      }
+      updateCode(catalog);
+    }
+
     const form = $("api-builder");
     if (form) {
-      form.addEventListener("input", function (evt) {
-        const target = evt.target || {};
-        if (target.id === "api-product" || target.id === "api-order-ext") {
-          syncProductFormats(catalog);
-        }
-        if (target.name === "api-method" || target.name === "api-lookup") syncPanels();
-        if (target.id === "api-location" || target.id === "api-device" ||
-            target.id === "api-date-from" || target.id === "api-date-to" ||
-            target.name === "api-lookup") {
-          syncArchiveExtensions(catalog);
-          syncProducts(catalog);
-        }
-        updateCode(catalog);
-      });
-      form.addEventListener("change", function (evt) {
-        const target = evt.target || {};
-        syncPanels();
-        if (target.id === "api-product" || target.id === "api-order-ext") {
-          syncProductFormats(catalog);
-        }
-        if (target.id === "api-location" || target.id === "api-device" ||
-            target.id === "api-date-from" || target.id === "api-date-to" ||
-            target.name === "api-lookup") {
-          syncArchiveExtensions(catalog);
-          syncProducts(catalog);
-        }
-        updateCode(catalog);
-      });
+      form.addEventListener("input", onFormChange);
+      form.addEventListener("change", onFormChange);
     }
 
     document.querySelectorAll(".api-tab").forEach(function (btn) {

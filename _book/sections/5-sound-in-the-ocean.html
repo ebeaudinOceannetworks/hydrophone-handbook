@@ -369,11 +369,13 @@ window.Quarto = {
 
 <p><em>For deeper dive into the physics of sound, visit <a href="https://dosits.org/science/sound/what-is-sound/">DOSITS: Science of Sound</a>.</em></p>
 <p>In the ocean, light attenuates within tens of metres, while sound can travel thousands of kilometres. That is why marine mammals and underwater systems use sound as their primary sense for communication and navigation.</p>
+<div class="fig-full">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="../images/1500x1000-Passive-Acoustics-Soundscape-infographic-NEFSC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A variety of sounds can be heard in the ocean. Credit: NOAA Fisheries."><img src="../images/1500x1000-Passive-Acoustics-Soundscape-infographic-NEFSC.png" class="img-fluid figure-img" data-lightbox="true" alt="A variety of sounds can be heard in the ocean. Credit: NOAA Fisheries."></a></p>
 <figcaption>A variety of sounds can be heard in the ocean. Credit: NOAA Fisheries.</figcaption>
 </figure>
+</div>
 </div>
 <section id="what-is-sound" class="level1">
 <h1>What is sound?</h1>
@@ -396,8 +398,8 @@ p(t) = A \sin{(2\pi f t + \phi)}
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/Amplitude-Frequency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds."><img src="../images/Amplitude-Frequency.png" class="img-fluid figure-img" data-lightbox="true" alt="Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds."></a></p>
-<figcaption>Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds.</figcaption>
+<p><a href="../images/Amplitude-Frequency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds. Credits: Aline Design for NOAA"><img src="../images/Amplitude-Frequency.png" class="img-fluid figure-img" data-lightbox="true" alt="Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds. Credits: Aline Design for NOAA"></a></p>
+<figcaption>Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds. Credits: Aline Design for NOAA</figcaption>
 </figure>
 </div>
 <section id="why-sound-is-faster-in-water-than-in-air" class="level2">
@@ -485,11 +487,13 @@ v = \sqrt{B/\rho}
 <section id="how-sound-travels" class="level1">
 <h1>How sound travels</h1>
 <p>A ray almost never goes in a straight line. The sound-speed profile refracts it; the sea surface and seafloor reflect it; the result can be echoes, multipath, and <strong>shadow zones</strong> where little energy arrives.</p>
+<div class="fig-full">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="../images/sound-propagation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Acoustic sound paths in the ocean. Credit: National Academy of Sciences."><img src="../images/sound-propagation.png" class="img-fluid figure-img" data-lightbox="true" alt="Acoustic sound paths in the ocean. Credit: National Academy of Sciences."></a></p>
 <figcaption>Acoustic sound paths in the ocean. Credit: National Academy of Sciences.</figcaption>
 </figure>
+</div>
 </div>
 <p>The processes that change sound travel path and sound level:</p>
 <table class="caption-top table">
@@ -538,32 +542,22 @@ v = \sqrt{B/\rho}
 </tr>
 </tbody>
 </table>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/refraction.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Example of refracted ray paths. Credit: Kessel and Hollett, 2006."><img src="../images/refraction.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of refracted ray paths. Credit: Kessel and Hollett, 2006."></a></p>
-<figcaption>Example of refracted ray paths. Credit: Kessel and Hollett, 2006.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/interference.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Constructive and destructive interference."><img src="../images/interference.png" class="img-fluid figure-img" data-lightbox="true" alt="Constructive and destructive interference."></a></p>
-<figcaption>Constructive and destructive interference.</figcaption>
-</figure>
-</div>
+<!-- [Example of refracted ray paths. Credit: Kessel and Hollett, 2006.](../images/refraction.png){lightbox=true} -->
+<!-- ![Constructive and destructive interference.](../images/interference.png){lightbox=true} -->
 </section>
 <section id="transmission-loss" class="level1">
 <h1>Transmission loss</h1>
-<p>From a source (a whale) to a receiver (a hydrophone), level drops. That drop is <strong>transmission loss (TL)</strong>, also called propagation loss:</p>
+<p>From a source (a whale) to a receiver (a hydrophone), the sound level (SL) can drop significantly. That drop is due to <strong>transmission loss (TL)</strong>, or propagation loss. The received sound level (RL) becomes:</p>
 <p><span class="math display">\[
 RL = SL - TL
 \]</span></p>
-<p><strong>RL</strong> is received level at the hydrophone; <strong>SL</strong> is source level. TL splits into geometric spreading (GS) and everything else (excess attenuation, EA):</p>
+<p>TL splits into geometric spreading (GS) and everything else (excess attenuation, EA):</p>
 <p><span class="math display">\[
 TL = GS + EA
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/SCM4_fig11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Model output of transmission loss of an acoustic sound wave."><img src="../images/SCM4_fig11.png" class="img-fluid figure-img" data-lightbox="true" alt="Model output of transmission loss of an acoustic sound wave."></a></p>
+<p><a href="../images/SCM4_fig11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Model output of transmission loss of an acoustic sound wave."><img src="../images/SCM4_fig11.png" class="img-fluid figure-img" data-lightbox="true" alt="Model output of transmission loss of an acoustic sound wave."></a></p>
 <figcaption>Model output of transmission loss of an acoustic sound wave.</figcaption>
 </figure>
 </div>
@@ -587,7 +581,7 @@ EA = \text{Loss}_{\text{absorption}} + \text{Loss}_{\text{reflection}} + \text{L
 <p>Under global warming, sea ice declines, that winter scattering has weakened and higher frequencies can now propagate farther than they used to, which also means more underwater noise (including vessels) reaching the hydrophone.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/arctic-sound-speed-profile.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Typical sound speed profile in the Arctic."><img src="../images/arctic-sound-speed-profile.png" class="img-fluid figure-img" data-lightbox="true" alt="Typical sound speed profile in the Arctic."></a></p>
+<p><a href="../images/arctic-sound-speed-profile.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Typical sound speed profile in the Arctic."><img src="../images/arctic-sound-speed-profile.png" class="img-fluid figure-img" data-lightbox="true" alt="Typical sound speed profile in the Arctic."></a></p>
 <figcaption>Typical sound speed profile in the Arctic.</figcaption>
 </figure>
 </div>
@@ -609,7 +603,7 @@ EA = \text{Loss}_{\text{absorption}} + \text{Loss}_{\text{reflection}} + \text{L
 <p><strong>BELLHOP</strong> (Michael B. Porter) is one of the many sound propagation models that traces beams at a chosen frequency. It needs bathymetry along the path, a sound-speed profile (from <span class="math inline">\(T\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(p\)</span>), and a bottom type (e.g.&nbsp;clay). The output is the transmission loss along a path.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/Bellhop-ray-tracing-right-box-for-a-standard-sound-speed-profile-left-box-indicating.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left)."><img src="../images/Bellhop-ray-tracing-right-box-for-a-standard-sound-speed-profile-left-box-indicating.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left)."></a></p>
+<p><a href="../images/Bellhop-ray-tracing-right-box-for-a-standard-sound-speed-profile-left-box-indicating.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left)."><img src="../images/Bellhop-ray-tracing-right-box-for-a-standard-sound-speed-profile-left-box-indicating.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left)."></a></p>
 <figcaption>Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left).</figcaption>
 </figure>
 </div>

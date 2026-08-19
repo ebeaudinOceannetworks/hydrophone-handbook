@@ -550,38 +550,48 @@ body {
 
 /* Data Access API request builder */
 .api-builder {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  margin: 1rem 0 1.25rem 0;
+  margin: 1.25rem 0;
 }
 
-.api-section {
+.api-row {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 4px 24px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.api-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.api-row[hidden] {
+  display: none;
+}
+
+.api-row-label label,
+.api-row-label > span {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.api-row-label .api-hint {
+  margin-top: 3px;
+}
+
+.api-row-body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 0 0 18px 0;
-  padding: 0;
-  border: 0;
+  gap: 8px;
+  min-width: 0;
 }
 
-.api-section:last-child {
-  margin-bottom: 0;
-}
-
-.api-section-title {
-  margin: 0;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.api-grid {
+.api-row-body-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 12px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 8px;
 }
 
 .api-field {
@@ -594,11 +604,6 @@ body {
 .api-field > span {
   font-weight: 600;
   color: rgba(255, 255, 255, 0.88);
-}
-
-.api-required > span::after {
-  content: " *";
-  color: #e67e5f;
 }
 
 .api-builder input[type="text"],
@@ -680,14 +685,76 @@ body {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
+.api-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 8px;
+}
+
+.api-choice {
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  padding: 11px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.api-choice:hover {
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.api-choice input {
+  margin: 2px 0 0 0;
+  flex: none;
+  accent-color: #e67e5f;
+}
+
+.api-choice-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.api-choice-body strong {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.api-choice-body small {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.api-choice:has(input:checked) {
+  border-color: rgba(230, 126, 95, 0.75);
+  background: rgba(230, 126, 95, 0.1);
+}
+
+.api-choice:has(input:checked) .api-choice-body strong {
+  color: #fff;
+}
+
+.api-choice:has(input:checked) .api-choice-body small {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .api-check {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
   margin: 0;
   font-size: 0.82rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.api-check input {
+  accent-color: #e67e5f;
 }
 
 .api-details {
@@ -701,6 +768,10 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.api-details[open] summary {
+  margin-bottom: 8px;
+}
+
 .api-hint,
 .api-dpo-help {
   margin: 0;
@@ -710,15 +781,39 @@ body {
   color: rgba(255, 255, 255, 0.55);
 }
 
+.api-hint code {
+  padding: 0;
+  background: none;
+  font-size: inherit;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.api-error:empty {
+  display: none;
+}
+
+.api-error {
+  color: #f0a087;
+}
+
+.api-builder input.api-invalid {
+  border-color: rgba(230, 126, 95, 0.8);
+  background: rgba(230, 126, 95, 0.1);
+}
+
 .api-output {
   margin-top: 8px;
 }
 
 .api-dpo-list {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
   margin-top: 10px;
+}
+
+.api-builder [hidden] {
+  display: none !important;
 }
 
 .api-toolbar {
@@ -765,9 +860,10 @@ body {
   overflow-x: auto;
 }
 
-@media (max-width: 640px) {
-  .api-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 720px) {
+  .api-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
   }
 }
 
