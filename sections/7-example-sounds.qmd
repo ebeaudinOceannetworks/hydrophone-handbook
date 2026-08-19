@@ -1,5 +1,5 @@
 ---
-title: "7. Examples of Sounds"
+title: "7. Example Sounds"
 format:
   html:
     lightbox: true

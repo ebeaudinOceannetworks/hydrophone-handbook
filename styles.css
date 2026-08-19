@@ -127,7 +127,11 @@ figcaption i {
 .sound-card-visual figure,
 .fig-full,
 .fig-full figure,
-#quarto-document-content .fig-full .quarto-figure {
+#quarto-document-content .fig-full .quarto-figure,
+#quarto-document-content .intro-map .quarto-figure,
+#quarto-document-content .intro-hero .quarto-figure,
+.intro-map .quarto-figure,
+.intro-hero .quarto-figure {
   width: 100% !important;
   max-width: 100% !important;
   margin-left: 0;
@@ -429,7 +433,7 @@ body {
 #quarto-sidebar .sidebar-link {
     color: rgba(255, 255, 255, 0.75) !important;
     font-weight: 500 !important;
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
     line-height: 1.3;
     display: block;
     padding: 0.42rem 0.75rem !important;

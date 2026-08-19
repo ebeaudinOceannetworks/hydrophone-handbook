@@ -32,7 +32,7 @@ Pick the site, and the device under the site. The deployment window of each devi
 ![](../images/Hydrophone-Viewer-step-3-4.png){lightbox=true}
 
 For hydrophone arrays, hydrophones are under Hydrophone A, B, C or D.
-Navigate to the [hydrophone network](8-onc-hydrophone-network.qmd) page to find past and current deployments.
+Navigate to the [hydrophone network](8-hydrophone-network.qmd) page to find past and current deployments.
 
 ### 4. Set the date
 The date format has to be like 01-Jan-2026.
@@ -371,7 +371,7 @@ display(HTML(f'<p class="api-hint">Catalog source: {source}.</p>'))
         <datalist id="api-device-list"></datalist>
       </label>
     </div>
-    <p class="api-hint">Visit "ONC Hydrophone Network" to find a location or a device.</p>
+    <p class="api-hint">Visit "Hydrophone Network" to find a location or a device.</p>
   </section>
 
   <section class="api-section">

@@ -1,5 +1,5 @@
 ---
-title: "9. Hydrophone Array Design"
+title: "9. Array Design"
 ---
 
 When mounting hydrophones, the scientific goals of ocean monitoring will dictate how the infrasctructure is built.

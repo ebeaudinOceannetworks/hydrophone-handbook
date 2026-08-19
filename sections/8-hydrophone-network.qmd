@@ -1,5 +1,5 @@
 ---
-title: "8. ONC Hydrophone Network"
+title: "8. Hydrophone Network"
 ---
 
 Ocean Networks Canada operates a massive spatial array of underwater acoustics monitoring across the country.

@@ -34,6 +34,9 @@ Before a hydrophone is deployed in the water, the following legal and technical 
 
 * **Hardware**: We primarily use **Ocean Sonics** (HF/AF) and **GeoSpectrum** (from JASCO distributor) instruments, deployed as single units or four-element arrays.
 * **Calibration (HydroCal)**: Instruments undergo rigorous pre-deployment and post-recovery calibration to ensure accuracy. If sensors drift, they are returned to the manufacturer.
+* **Validation**: Hydrophones undergo validation by engineers to verify that recorded frequencies and amplitudes are accurate before the instrument is deployed.
+During testing, instruments are placed in a test tank to collect ~2 minutes of auxiliary, .fft, and .wav data. The resulting spectrograms are then evaluated against expected baseline values.
+For hydrophone arrays, all individual sensors are compared with one another to ensure clock synchronization, and that they record the same sound levels.
 * **Data Diversion**: Hydrophones are "Tier 1" instruments, meaning that the data streams are subject to diversion by the Royal Canadian Navy and US Navy before reaching the ONC archive.
 * **Data Transmission**:
 	* Acoustic Data: Transferred as raw audio (.wav or .flac).

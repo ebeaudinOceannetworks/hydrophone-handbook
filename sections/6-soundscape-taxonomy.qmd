@@ -1,5 +1,5 @@
 ---
-title: "6. Ocean Soundscape & Taxonomy"
+title: "6. Soundscape Taxonomy"
 format:
   html:
     mermaid:

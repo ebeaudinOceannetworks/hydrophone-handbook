@@ -1,5 +1,5 @@
 ---
-title: "15. Useful Equations"
+title: "15. Acoustic Equations"
 ---
 
 

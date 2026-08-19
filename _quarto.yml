@@ -32,18 +32,18 @@ book:
     - index.qmd
     - sections/2-whats-new.qmd
     - sections/3-hydrophone-life-cycle.qmd
-    - sections/4-how-do-hydrophones-work.qmd
+    - sections/4-how-hydrophones-work.qmd
     - sections/5-sound-in-the-ocean.qmd
-    - sections/6-ocean-soundscape-and-taxonomy.qmd
-    - sections/7-examples-of-sounds.qmd
-    - sections/8-onc-hydrophone-network.qmd
-    - sections/9-hydrophone-array-design.qmd
+    - sections/6-soundscape-taxonomy.qmd
+    - sections/7-example-sounds.qmd
+    - sections/8-hydrophone-network.qmd
+    - sections/9-array-design.qmd
     - sections/10-calibration-hydrocal.qmd
     - sections/11-data-products.qmd
     - sections/12-data-access.qmd
     - sections/13-data-diversion.qmd
     - sections/14-science-and-publications.qmd
-    - sections/15-useful-equations.qmd
+    - sections/15-acoustic-equations.qmd
     - sections/16-hydrophone-models.qmd
     - sections/17-glossary.qmd
 

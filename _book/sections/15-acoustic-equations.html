@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6. Ocean Soundscape &amp; Taxonomy – Hydrophone Handbook</title>
+<title>15. Acoustic Equations – Hydrophone Handbook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/7-examples-of-sounds.html" rel="next">
-<link href="../sections/5-sound-in-the-ocean.html" rel="prev">
+<link href="../sections/16-hydrophone-models.html" rel="next">
+<link href="../sections/14-science-and-publications.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -161,6 +161,35 @@ ul.task-list li input[type="checkbox"] {
 })();
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 
@@ -174,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/6-ocean-soundscape-and-taxonomy.html"><span class="chapter-title">6. Ocean Soundscape &amp; Taxonomy</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/15-acoustic-equations.html"><span class="chapter-title">15. Acoustic Equations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -216,7 +245,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/4-how-do-hydrophones-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. How do Hydrophones Work?</span></a>
+  <a href="../sections/4-how-hydrophones-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. How Hydrophones Work</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -226,22 +255,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/6-ocean-soundscape-and-taxonomy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">6. Ocean Soundscape &amp; Taxonomy</span></a>
+  <a href="../sections/6-soundscape-taxonomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Soundscape Taxonomy</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/7-examples-of-sounds.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Examples of Sounds</span></a>
+  <a href="../sections/7-example-sounds.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Example Sounds</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/8-onc-hydrophone-network.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. ONC Hydrophone Network</span></a>
+  <a href="../sections/8-hydrophone-network.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Hydrophone Network</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/9-hydrophone-array-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Hydrophone Array Design</span></a>
+  <a href="../sections/9-array-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Array Design</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -271,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/15-useful-equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Useful Equations</span></a>
+  <a href="../sections/15-acoustic-equations.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">15. Acoustic Equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -294,8 +323,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#taxonomy" id="toc-taxonomy" class="nav-link active" data-scroll-target="#taxonomy">Taxonomy</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#speed-of-sound-in-seawater" id="toc-speed-of-sound-in-seawater" class="nav-link active" data-scroll-target="#speed-of-sound-in-seawater">Speed of sound in seawater</a>
+  <ul class="collapse">
+  <li><a href="#mackenzie-1981" id="toc-mackenzie-1981" class="nav-link" data-scroll-target="#mackenzie-1981">Mackenzie, 1981</a></li>
+  <li><a href="#del-grosso-1974" id="toc-del-grosso-1974" class="nav-link" data-scroll-target="#del-grosso-1974">Del Grosso, 1974</a></li>
+  </ul></li>
+  <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law">Snell’s law</a></li>
+  <li><a href="#wave-equation" id="toc-wave-equation" class="nav-link" data-scroll-target="#wave-equation">Acoustic wave equation</a></li>
+  <li><a href="#spl" id="toc-spl" class="nav-link" data-scroll-target="#spl">Sound pressure level</a></li>
+  <li><a href="#average-sound-pressure-level" id="toc-average-sound-pressure-level" class="nav-link" data-scroll-target="#average-sound-pressure-level">Average sound pressure level</a></li>
   </ul>
 </nav>
     </div>
@@ -304,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">6. Ocean Soundscape &amp; Taxonomy</span></h1>
+<h1 class="title"><span class="chapter-title">15. Acoustic Equations</span></h1>
 </div>
 
 
@@ -321,154 +357,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="taxonomy" class="level1">
-<h1>Taxonomy</h1>
-<p>A list of sound labels has been compiled under a <strong>Taxonomy for Passive Acoustic Data Classification</strong>. This taxonomy serves as the foundational label set for our ML anomaly autodetector to automate soundscape classification.</p>
-<style>
-.taxonomy-tree ul {
-  list-style-type: none;
-  position: relative;
-  padding-left: 1.5em;
-}
-.taxonomy-tree ul ul::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0.75em;
-  border-left: 1px solid #ccc;
-  height: 100%;
-}
-.taxonomy-tree li {
-  position: relative;
-  margin: 0;
-  padding: 0.5em 0 0.5em 1.5em;
-}
-.taxonomy-tree li::before {
-  content: "";
-  position: absolute;
-  top: 1.2em; left: 0.75em;
-  width: 0.75em;
-  border-top: 1px solid #ccc;
-}
-.category-header {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #00000;
-  border-bottom: 2px solid #3498db;
-  display: inline-block;
-  margin-bottom: 5px;
-}
-</style>
-<div class="taxonomy-tree">
-<ul>
-<li><span class="category-header">Anthropophony</span>
-<ul>
-<li><strong>In-Air Source</strong> (Aircraft, Snowmobile)</li>
-<li><strong>Industrial Activity</strong> (Dredging, Mining, Pile driving)</li>
-<li><strong>Sonar</strong> (Fisheries, Naval)</li>
-<li><strong>Submersible</strong> (Human-occupied vehicle, Remotely operated vehicle)</li>
-<li><strong>Surveying</strong> (Airgun, Explosive)</li>
-<li><strong>Vessel</strong> (Cargo, Fishing, Icebreaker, Military, Passenger, Pleasure, Sailing, Research, Tanker, Tug)</li>
-<li><strong>Unknown Anthropophony</strong></li>
-</ul></li>
-<li><span class="category-header">Biophony</span>
-<ul>
-<li><strong>Crustacean</strong> (Crab, Lobster, Shrimp/Snapping shrimp)</li>
-<li><strong>Fish</strong> (Vent fish, Fish chorus)</li>
-<li><strong>Marine Mammal</strong>
-<ul>
-<li><em>Cetacean</em>
-<ul>
-<li>Baleen Whales (Bowhead, Blue, Fin, Gray, Humpback, Minke, North Atlantic Right, North Pacific Right, Sei)</li>
-<li>Toothed Whales
-<ul>
-<li>Beaked (Baird’s, Cuvier’s)</li>
-<li>Beluga</li>
-<li>Dolphin (Atlantic Spotted, Common Bottlenose, Common, Northern Right Whale, PAcific White-Sided, Risso’s, Striped)</li>
-<li>False Killer Whale</li>
-<li>Killer Whale/Orcas (Bigg’s, Northern Resident, Southern Resident, Offshore)</li>
-<li>Narwhal</li>
-<li>Pospoise (Dall’s, Harbour)</li>
-<li>Sperm</li>
-</ul></li>
-</ul></li>
-<li><em>Pinniped</em> (Seal, Walrus)</li>
-</ul></li>
-<li><strong>Unknown Biophony</strong> (Bioacoustic communication signal, Echolocation click, Click train, Drumming, Grinding, Snapping, Stridulation, Vocalization)</li>
-<li><strong>Attributes:</strong> Song, Moan, Upsweep, Downsweep</li>
-</ul></li>
-<li><span class="category-header">Geophony</span>
-<ul>
-<li><strong>Environmental</strong> (Flow noise, Ice cracking, Iceberg collision, Tsunami)</li>
-<li><strong>Geology</strong>
-<ul>
-<li>Bubbling (Methane seep)</li>
-<li>Earthquake</li>
-<li>Hydrothermal vent (Chimney collapse, Magma)</li>
-<li>Sedimentation</li>
-<li>Turbidity current</li>
-</ul></li>
-<li><strong>Weather</strong>
-<ul>
-<li>Lightning</li>
-<li>Precipitation (Rain, Snow, Hail)</li>
-<li>Wind</li>
-<li>Waves<br>
-</li>
-</ul></li>
-<li><strong>Attributes:</strong> Continuous vs Impulsive</li>
-</ul></li>
-<li><span class="category-header">Instrumentation</span>
-<ul>
-<li><strong>Hydrophone Contact</strong></li>
-<li><strong>Malfunction</strong> (Clipping, Data Gap, Frequency dropout, Sensitivity change, Time dropout)</li>
-<li><strong>Other ONC Equipment</strong> (ADCP, Camera, Mooring noise/Chain noise)</li>
-<li><strong>Self-Noise</strong> (Acoustic, Non-Acoustic/Tonal)</li>
-<li><strong>Unknown Instrumentation</strong></li>
-</ul></li>
-</ul>
-</div>
+<section id="speed-of-sound-in-seawater" class="level1">
+<h1>Speed of sound in seawater</h1>
+<section id="mackenzie-1981" class="level2">
+<h2 class="anchored" data-anchor-id="mackenzie-1981">Mackenzie, 1981</h2>
+<p>A nine-term fit, convenient for a first estimate of <span class="math inline">\(c\)</span> from a CTD cast:</p>
+<p><span class="math display">\[
+c(T,S,z) = a_1 + a_2 T + a_3 T^2 + a_4 T^3 + a_5(S-35) + a_6 z + a_7 z^2 + a_8 T (S-35) + a_9 T z^3
+\]</span></p>
+<p>where <span class="math inline">\(T\)</span> is temperature (°C), <span class="math inline">\(S\)</span> is salinity (psu), <span class="math inline">\(z\)</span> is depth (m), and <span class="math inline">\(c\)</span> is sound speed (m/s). Coefficients <span class="math inline">\(a_1 \ldots a_9\)</span> are given in Mackenzie (1981). Typical range of validity: <span class="math inline">\(T\)</span> 0–30 °C, <span class="math inline">\(S\)</span> 30–40 psu, <span class="math inline">\(z\)</span> 0–8000 m.</p>
 </section>
-<section id="resources" class="level1">
-<h1>Resources</h1>
-<p>This hierarchical format was inspired by <a href="https://research.google.com/audioset/ontology/index.html">Google’s AudioSet</a>.</p>
-<p>Literature review references which informed this taxonomy:</p>
-<ul>
-<li>Ainslie, M.A., C.A.F. de Jong, S.B. Martin, J.L. Miksis-Olds, J.D. Warren, K.D. Heaney, C.A. Hillis, and A.O. MacGillivray. (2020). Project Dictionary: Terminology Standard. Document 02075, Version 1.0. Technical report by JASCO Applied Sciences for ADEON.</li>
-<li>Ainslie, M. A., Halvorsen, M. B., &amp; Robinson, S. P. (2022). A Terminology Standard for Underwater Acoustics and the Benefits of International Standardization. IEEE Journal of Oceanic Engineering, 47(1), 179–200. https://doi.org/10.1109/joe.2021.3085947</li>
-<li>Aslam, M. A., Zhang, L., Liu, X., Irfan, M., Xu, Y., Li, N., Zhang, P., Jiangbin, Z., &amp; Yaan, L. (2024). Underwater sound classification using learning based methods: A review. Expert Systems with Applications, 255, 124498. https://doi.org/10.1016/j.eswa.2024.124498</li>
-<li>Irfan, M., Jiangbin, Z., Ali, S., Iqbal, M., Masood, Z., &amp; Hamid, U. (2021). DeepShip: An underwater acoustic benchmark dataset and a separable convolution based autoencoder for classification. Expert Systems with Applications, 183, 115270. https://doi.org/10.1016/j.eswa.2021.115270</li>
-<li>Krause, B. (2008). Anatomy of the Soundscape: Evolving Perspectives. Journal of the Audio Engineering Society, 56, 73–80.</li>
-<li>Parsons, M. J. G., Lin, T.-H., Mooney, T. A., Erbe, C., Juanes, F., Lammers, M., Li, S., Linke, S., Looby, A., Nedelec, S. L., Van Opzeeland, I., Radford, C., Rice, A. N., Sayigh, L., Stanley, J., Urban, E., &amp; Di Iorio, L. (2022). Sounding the Call for a Global Library of Underwater Biological Sounds. Frontiers in Ecology and Evolution, 10. https://doi.org/10.3389/fevo.2022.810156</li>
-<li>Recommendation ITU-R M.1371-5 (2014): “Technical characteristics for an automatic identification system using time-division multiple access in the VHF maritime mobile band”.</li>
-<li>Santos-Domínguez, D., Torres-Guijarro, S., Cardenal-López, A., &amp; Pena-Gimenez, A. (2016). ShipsEar: An underwater vessel noise database. Applied Acoustics, 113, 64–69. https://doi.org/10.1016/j.apacoust.2016.06.008</li>
-<li>Underwater Acoustics – Terminology, ISO 18405:2017, 2017. [Online]. Available: https://www.iso.org/standard/62406.html</li>
-<li>Z. Li, S. Xiang, T. Yu, J. Gao, J. Ruan, Y. Hu, T. Liu, &amp; Y. Fu. (2024). Oceanship: A Large-Scale Dataset for Underwater Audio Target Recognition. In Lecture Notes in Computer Science (pp.&nbsp;475–486). Springer Nature Singapore. https://doi.org/10.1007/978-981-97-5591-2_40</li>
-</ul>
-<div style="border: 1px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 8px; 
-            padding: 16px; 
-            background: rgba(255, 255, 255, 0.05); 
-            margin-top: 15px;
-            backdrop-filter: blur(5px);
-            color: white;">
-
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="../images/confluence_logo_no_bckg.png" width="24" style="object-fit: contain;">
-    <span style="font-weight: bold; font-size: 1.1em; letter-spacing: 0.3px;">
-      Confluence Documentation
-    </span>
-  </div>
-
-  <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
-    <li style="margin-bottom: 10px;">
-      <a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/216208967/Taxonomy+for+passive+acoustic+data+classification" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Taxonomy for passive acoustic data classification
-      </a>
-
-
-  </li></ul>
-</div>
+<section id="del-grosso-1974" class="level2">
+<h2 class="anchored" data-anchor-id="del-grosso-1974">Del Grosso, 1974</h2>
+<p>Often preferred when a more accurate oceanographic sound speed is needed. It is a function of temperature, salinity, and pressure:</p>
+<p><span class="math display">\[
+c(T,S,p) = c_{000} + \Delta c_T + \Delta c_S + \Delta c_P + \Delta c_{STp}
+\]</span></p>
+<p>where <span class="math inline">\(c_{000}\)</span> is a reference sound speed and the <span class="math inline">\(\Delta c\)</span> terms are polynomial corrections for temperature, salinity, pressure, and their cross terms. Full coefficients are given in Del Grosso (1974).</p>
+</section>
+</section>
+<section id="snells-law" class="level1">
+<h1>Snell’s law</h1>
+<p>A sound ray bends toward slower speed. If <span class="math inline">\(c_1\)</span> and <span class="math inline">\(c_2\)</span> are sound speed on either side of an interface (or of a gradual gradient) and <span class="math inline">\(\theta_1\)</span>, <span class="math inline">\(\theta_2\)</span> are the angles from the vertical:</p>
+<p><span class="math display">\[
+\frac{\sin{\theta_1}}{\sin{\theta_2}} = \frac{c_1}{c_2}
+\]</span></p>
+<p>Frequency is unchanged; wavelength adjusts so that <span class="math inline">\(c = f\lambda\)</span>. This is the geometry behind the SOFAR channel and surface ducts in <a href="../sections/5-sound-in-the-ocean.html">Sound in the Ocean</a>.</p>
+</section>
+<section id="wave-equation" class="level1">
+<h1>Acoustic wave equation</h1>
+<p><span class="math display">\[
+\nabla^2 p - \frac{1}{c^2} \frac{\partial^2 p}{\partial t^2} = 0
+\]</span></p>
+<p>where <span class="math inline">\(p\)</span> is acoustic pressure (deviation from ambient), <span class="math inline">\(c\)</span> is sound speed (<span class="math inline">\(\approx 1500\)</span> m/s in seawater), and <span class="math inline">\(t\)</span> is time. Numerical models such as BELLHOP are discrete solutions of this equation for a given environment.</p>
+</section>
+<section id="spl" class="level1">
+<h1>Sound pressure level</h1>
+<p><span class="math display">\[
+\mathrm{SPL} = 20 \log_{10} \left(\frac{p}{p_{\mathrm{ref}}}\right)~\text{dB re 1}~\mu\text{Pa}
+\]</span></p>
+<p>with <span class="math inline">\(p_{\mathrm{ref}} = 1~\mu\mathrm{Pa}\)</span> underwater (20 µPa in air). A pressure <span class="math inline">\(10^6\)</span> times the reference is <span class="math inline">\(120\)</span> dB re 1 µPa.</p>
+</section>
+<section id="average-sound-pressure-level" class="level1">
+<h1>Average sound pressure level</h1>
+<p><span class="math display">\[
+L_a = 10\cdot log\left(\frac{1}{n} ( 10^{0.1L_1} + 10^{0.1L_2} + ... + 10^{0.1L_n} )\right)
+\]</span></p>
+<p>where</p>
+<p><span class="math inline">\(L_a\)</span> = average sound pressure level (dB)</p>
+<p><span class="math inline">\(L_1..L_n\)</span> = sound pressure level source 1..n (dB)</p>
+<p><span class="math inline">\(n\)</span> = number of sources</p>
 
 
 </section>
@@ -876,13 +814,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/5-sound-in-the-ocean.html" class="pagination-link" aria-label="5. Sound in the Ocean">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">5. Sound in the Ocean</span></span>
+      <a href="../sections/14-science-and-publications.html" class="pagination-link" aria-label="14. Science and Publications">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">14. Science and Publications</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/7-examples-of-sounds.html" class="pagination-link" aria-label="7. Examples of Sounds">
-        <span class="nav-page-text"><span class="chapter-title">7. Examples of Sounds</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../sections/16-hydrophone-models.html" class="pagination-link" aria-label="16. Hydrophone Models">
+        <span class="nav-page-text"><span class="chapter-title">16. Hydrophone Models</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

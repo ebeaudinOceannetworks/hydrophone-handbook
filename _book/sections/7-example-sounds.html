@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4. How do Hydrophones Work? – Hydrophone Handbook</title>
+<title>7. Example Sounds – Hydrophone Handbook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/5-sound-in-the-ocean.html" rel="next">
-<link href="../sections/3-hydrophone-life-cycle.html" rel="prev">
+<link href="../sections/8-hydrophone-network.html" rel="next">
+<link href="../sections/6-soundscape-taxonomy.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -206,7 +206,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/4-how-do-hydrophones-work.html"><span class="chapter-title">4. How do Hydrophones Work?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/7-example-sounds.html"><span class="chapter-title">7. Example Sounds</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -248,7 +248,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/4-how-do-hydrophones-work.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">4. How do Hydrophones Work?</span></a>
+  <a href="../sections/4-how-hydrophones-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. How Hydrophones Work</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -258,22 +258,22 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/6-ocean-soundscape-and-taxonomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Ocean Soundscape &amp; Taxonomy</span></a>
+  <a href="../sections/6-soundscape-taxonomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Soundscape Taxonomy</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/7-examples-of-sounds.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Examples of Sounds</span></a>
+  <a href="../sections/7-example-sounds.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">7. Example Sounds</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/8-onc-hydrophone-network.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. ONC Hydrophone Network</span></a>
+  <a href="../sections/8-hydrophone-network.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Hydrophone Network</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/9-hydrophone-array-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Hydrophone Array Design</span></a>
+  <a href="../sections/9-array-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Array Design</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -303,7 +303,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/15-useful-equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Useful Equations</span></a>
+  <a href="../sections/15-acoustic-equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Acoustic Equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -326,17 +326,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">General</a></li>
-  <li><a href="#from-pressure-to-voltage" id="toc-from-pressure-to-voltage" class="nav-link" data-scroll-target="#from-pressure-to-voltage">From pressure to voltage</a></li>
-  <li><a href="#sensitivity" id="toc-sensitivity" class="nav-link" data-scroll-target="#sensitivity">Sensitivity</a></li>
-  <li><a href="#signal-processing-methods" id="toc-signal-processing-methods" class="nav-link" data-scroll-target="#signal-processing-methods">Signal processing methods</a>
-  <ul class="collapse">
-  <li><a href="#signal-to-noise-ratio" id="toc-signal-to-noise-ratio" class="nav-link" data-scroll-target="#signal-to-noise-ratio">Signal to noise ratio</a></li>
-  </ul></li>
-  <li><a href="#other-hydrophone-types" id="toc-other-hydrophone-types" class="nav-link" data-scroll-target="#other-hydrophone-types">Other hydrophone types</a></li>
-  <li><a href="#passive-acoustics-applications" id="toc-passive-acoustics-applications" class="nav-link" data-scroll-target="#passive-acoustics-applications">Passive acoustics applications</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
+  <li><a href="#interference-from-nearby-instruments" id="toc-interference-from-nearby-instruments" class="nav-link active" data-scroll-target="#interference-from-nearby-instruments">Interference from nearby instruments</a></li>
+  <li><a href="#sonar" id="toc-sonar" class="nav-link" data-scroll-target="#sonar">SONAR</a></li>
+  <li><a href="#airplane" id="toc-airplane" class="nav-link" data-scroll-target="#airplane">Airplane</a></li>
+  <li><a href="#tonals" id="toc-tonals" class="nav-link" data-scroll-target="#tonals">Tonals</a></li>
+  <li><a href="#whales" id="toc-whales" class="nav-link" data-scroll-target="#whales">Whales</a></li>
+  <li><a href="#snowmobile" id="toc-snowmobile" class="nav-link" data-scroll-target="#snowmobile">Snowmobile</a></li>
+  <li><a href="#helicopter" id="toc-helicopter" class="nav-link" data-scroll-target="#helicopter">Helicopter</a></li>
+  <li><a href="#earthquake-at-endeavour" id="toc-earthquake-at-endeavour" class="nav-link" data-scroll-target="#earthquake-at-endeavour">Earthquake at Endeavour</a></li>
+  <li><a href="#pump-contamination" id="toc-pump-contamination" class="nav-link" data-scroll-target="#pump-contamination">Pump contamination</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -345,7 +344,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">4. How do Hydrophones Work?</span></h1>
+<h1 class="title"><span class="chapter-title">7. Example Sounds</span></h1>
 </div>
 
 
@@ -362,317 +361,215 @@ window.Quarto = {
 </header>
 
 
-<section id="general" class="level1">
-<h1>General</h1>
-<p>A hydrophone is a device that passively detects acoustic signal underwater. The word <em>hydrophone</em> comes from the Greek <em>hydro</em> (water), and <em>phone</em> (voice).</p>
-<p>Acoustic data are recorded in the form of a time-amplitude signal, at a specified sampling rate.</p>
-<p>Several types of hydrophones exist depending on the applications, with different frequency range. Some of the most common applications of <strong>passive acoustics</strong> are:</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Passive acoustics
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Action of listening to sound without emitting a signal, whereas in active acoustics the emitted signal is then analysed.</p>
-</div>
-</div>
-<ul>
-<li>marine mammal monitoring</li>
-<li>ambient noise characterization</li>
-<li>earthquakes detection</li>
-</ul>
-</section>
-<section id="from-pressure-to-voltage" class="level1">
-<h1>From pressure to voltage</h1>
-<p>Hydrophones contain a key element, a <strong>piezoelectric</strong> material, which “feels” the pressure changes of a passing sound wave, and convert them into electric signals. In such, hydrophones are essentially <strong>transducers</strong>, as they simply convert potential energy into electrical energy.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Piezoelectric
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Material that generates an electric charge in response to applied mechanical stress. As a wave passes, it compresses the ceramic, which creates a proportional electrical voltage.</p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Transducer
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A device that converts energy from one form (acoustic pressure) to another (electrical voltage).</p>
-</div>
-</div>
-<p>The relationship between the pressure (p) and the voltage (V) is determined by the sensitivity of the hydrophone, usually expressed in dB re 1V/μPa.</p>
+<p>Explore acoustic signatures captured across our monitoring stations. Examples shown here include marine mammals, interference from nearby instruments, and weather events. Click a spectrogram to enlarge it.</p>
+<p>Go to <a href="https://soundcloud.com/oceannetworkscanada">ONC’s SoundCloud page</a> for more sounds from the hydrophone data, and <a href="https://voicesinthesea.ucsd.edu/index.html">Voices in the Sea</a> for additional examples.</p>
+<section id="interference-from-nearby-instruments" class="level1">
+<h1>Interference from nearby instruments</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/hydrophone-signal-schematic.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Conversion of sound signal to electric signal."><img src="../images/hydrophone-signal-schematic.png" class="img-fluid figure-img" data-lightbox="true" alt="Conversion of sound signal to electric signal."></a></p>
-<figcaption>Conversion of sound signal to electric signal.</figcaption>
-</figure>
-</div>
-<p>The piezoelectric material is often made of ceramics, more specifically Lead-Zirconate-Titanate (PZT) compounds, which are relatively low cost, and have an excellent piezoelectric coefficient. It also has high sensitivity and can operate at wide range of temperatures.</p>
-<p>The transducer is often shaped as a cylinder or a sphere, which is ideal for listening to signal from all direction.</p>
-</section>
-<section id="sensitivity" class="level1">
-<h1>Sensitivity</h1>
-<p>The sensitivity of the hydrophone refers to how efficient the hydrophone converts underwater sound pressure into an electrical signal. Quantitatively, it is the ratio of sound pressure signal and the output voltage signal: <span class="math display">\[
-M_\nu = \frac{V_h}{P_h} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
-\]</span></p>
-<p>What affects hydrophone sensitivity:</p>
-<ul>
-<li><strong>Hydrophone type</strong>: size, design and choice of material (e.g.&nbsp;piezoelectric compound);</li>
-<li><strong>Frequency</strong>: piezoelectric hydrophones have a resonance frequency which depends on the piezoelectric material. Sensitivity is usually good below the resonance frequency and drops rapidly above.</li>
-<li><strong>Environmental conditions</strong>: water temperature, salinity and pressure can substantially impact hydrophone sensitivity. It is important to calibrate the instrument relative to those conditions.</li>
-</ul>
-<p>Knowing the sensitivity is essential to choose the right hydrophone for the right application.</p>
-<p>Hydrophones can be separated into three categories with overlapping ranges:</p>
-<ul>
-<li>Low-Frequency (Infrasonic): 1 Hz - 1 kHz</li>
-<li>Audio-Frequency: 10 Hz - 10 kHz</li>
-<li>High-Frequency (Ultrasonic): 10 Hz - 200 kHz</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/sensitivity-curve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Sensitivity curve of a high-frequency piezoelectric hydrophone."><img src="../images/sensitivity-curve.png" class="img-fluid figure-img" data-lightbox="true" alt="Sensitivity curve of a high-frequency piezoelectric hydrophone."></a></p>
-<figcaption>Sensitivity curve of a high-frequency piezoelectric hydrophone.</figcaption>
-</figure>
-</div>
-</section>
-<section id="signal-processing-methods" class="level1">
-<h1>Signal processing methods</h1>
-<p>Several methods are used to convert the recorded electric signal in data we can analyse. One method is <strong>Fourier Analysis</strong>, where the total signal is decomposed into a set individual frequencies with associated phase and amplitudes.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Fourier analysis
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Signal decomposition method where a complex signal is expressed as superimposition of simple sine and cosine waves of different frequencies.</p>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/fourier-transform.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Fourier analysis for signal decomposition. Credit: Medium."><img src="../images/fourier-transform.png" class="img-fluid figure-img" data-lightbox="true" alt="Fourier analysis for signal decomposition. Credit: Medium."></a></p>
-<figcaption>Fourier analysis for signal decomposition. Credit: Medium.</figcaption>
-</figure>
-</div>
-<p>This way, a time-domain signal is converted into a frequency-domain signal which makes it easier to capture at which frequency most of the energy is. For long periods of sound recording, the signal can be divided into shorter segments of equal lengths, specified by a <em>time-window</em>. The result shows how the spectra changes with time, the <strong>spectrogram</strong>.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Spectrogram
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A visual, three-dimensional representation of a signal’s frequency spectrum as it changes over time.</p>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/spectrogram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level."><img src="../images/spectrogram.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level."></a></p>
-<figcaption>Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level.</figcaption>
-</figure>
-</div>
-<p>The x-axis is time, the y-axis represents the frequencies in Hz (per second), while the colours represent the level, expressed in logarithm of the signal power in dB.</p>
-<p>Note on choosing the window: it’s impossible to have a good resolution in time and frequency at the same time (Heisenberg’s uncertainty principle).</p>
-<ul>
-<li>Short window = good time resolution, poor frequency resolution</li>
-<li>Long window = good frequency resolution, poor time resolution</li>
-</ul>
-<p>Hydrophones can be put into three categories, infrasonic, ultrasonic, and ??</p>
-<section id="signal-to-noise-ratio" class="level2">
-<h2 class="anchored" data-anchor-id="signal-to-noise-ratio">Signal to noise ratio</h2>
-<p>Signal to Noise ratio is an important element to consider for hydrophones.</p>
-<p>A bigger element increases sensitivity, but also can lower SNR.</p>
-<p>A rule of thumb is to ensure the measured amplitude is at least 5 times larger than the noise equavalent pressure (NEP) of the hydrophone to maximize the signal to noise ratio (SNR).</p>
-<p><span class="math display">\[
-NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}] \times \text{Pre-amp Gain}} \times 1000
-\]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/snr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland."><img src="../images/snr.png" class="img-fluid figure-img" data-lightbox="true" alt="Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland."></a></p>
-<figcaption>Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland.</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="other-hydrophone-types" class="level1">
-<h1>Other hydrophone types</h1>
-<p>Several transducer designs can record underwater sound. <strong>Ocean Networks Canada uses piezoelectric hydrophones</strong> (Ocean Sonics icListen and GeoSpectrum elements supplied by JASCO). The rest of this handbook refers to piezoelectric hydrophones unless noted otherwise.</p>
-<div class="hydrophone-types-table" data-tbl-colwidths="[18,32,50]">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 32%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Type</th>
-<th>Operating principle</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Piezoelectric</strong></td>
-<td>A ceramic element (typically PZT) produces a voltage proportional to acoustic pressure.</td>
-<td>Used throughout the ONC network. Sensitive over a wide band; omnidirectional when the element is a cylinder or sphere.</td>
-</tr>
-<tr class="even">
-<td><strong>Fiber-optic</strong></td>
-<td>Acoustic pressure modulates light travelling in an optical fibre (interferometry).</td>
-<td>Immune to electromagnetic interference; used in some long-range or high-EMI applications. Not used at ONC.</td>
-</tr>
-<tr class="odd">
-<td><strong>Accelerometer / inertial</strong></td>
-<td>Measures particle acceleration or velocity rather than pressure.</td>
-<td>Useful as a vector sensor for directionality. Not used as ONC’s primary hydrophones.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="passive-acoustics-applications" class="level1">
-<h1>Passive acoustics applications</h1>
-<p>Passive acoustic monitoring is often associated with underwater soundscapes, but the same instruments support a wider set of ocean applications, from seismology and tsunami detection to marine mammal monitoring and vessel tracking. The table below groups those applications by frequency band.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>Applications</th>
-<th>Frequency Range</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span style="color: darkorange;"><strong>Seismic &amp; Geophysics</strong></span></td>
-<td>Earthquakes, Tsunami detection, Oil &amp; Gas exploration, Seabed mapping, Subsea leakage.</td>
-<td><strong>Sub Hz - 100 Hz</strong></td>
-</tr>
-<tr class="even">
-<td><span style="color: green;"><strong>Biological</strong></span></td>
-<td>Marine mammal vocalization, Ecosystem studies</td>
-<td><strong>10 Hz - ~200 kHz</strong></td>
-</tr>
-<tr class="odd">
-<td><span style="color: skyblue;"><strong>Natural Ambient</strong></span></td>
-<td>Ambient noise monitoring.</td>
-<td><strong>10 Hz - 1000 Hz</strong></td>
-</tr>
-<tr class="even">
-<td><span style="color: red;"><strong>Naval &amp; Surveillance</strong></span></td>
-<td>Submarine/Vessel detection, harbour surveillance.</td>
-<td><strong>3 kHz – 300 kHz</strong></td>
-</tr>
-<tr class="odd">
-<td><span style="color: gold;"><strong>Communication</strong></span></td>
-<td>Submarine communication, navigation.</td>
-<td><strong>3 Hz – 300 kHz</strong></td>
-</tr>
-</tbody>
-</table>
-<div id="cell-map-output" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="4-how-do-hydrophones-work_files/figure-html/map-output-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Comparison of frequency ranges across multidisciplinary hydrophone applications."><img src="4-how-do-hydrophones-work_files/figure-html/map-output-output-1.png" width="690" height="389" alt="Comparison of frequency ranges across multidisciplinary hydrophone applications." class="figure-img"></a></p>
-<figcaption>Comparison of frequency ranges across multidisciplinary hydrophone applications.</figcaption>
+<p><a href="../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of ADCP interference at Strait of Georgia East."><img src="../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of ADCP interference at Strait of Georgia East."></a></p>
+<figcaption>Spectrogram of ADCP interference at Strait of Georgia East.</figcaption>
 </figure>
 </div>
 </div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Strait of Georgia East, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Tonal, Interference</span>
+</div>
+<p>An ADCP is located very close to the hydrophone, resulting in a strong signal between 35 and 40 kHz. A tonal line is seen around 22 kHz.</p>
+</div>
+</div>
 </div>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
-<ul>
-<li>Suedel et al., 2019. Evaluating Effects of Dredging-Induced Underwater Sound on Aquatic Species: A Literature Review. Technical Report. <a href="https://erdc-library.erdc.dren.mil/server/api/core/bitstreams/3ac0905e-e622-4b9d-851d-5d9d7c2911e5/content">[pdf]</a></li>
-</ul>
+<section id="sonar" class="level1">
+<h1>SONAR</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF6013_20260602T091500.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of sonar at Clayoquot Slope."><img src="../images/ICLISTENHF6013_20260602T091500.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of sonar at Clayoquot Slope."></a></p>
+<figcaption>Spectrogram of sonar at Clayoquot Slope.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Clayoquot Slope, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> SONAR at 2 kHz and 7 kHz</span>
+</div>
+<p>SONARs are used to measure distances, help navigate or detect objects by sending a sound wave into the water. Two SONARs signals here at 2 and 7 kHz are potentially coming from a nearby NAVY ship, and could be from different sources.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="useful-links" class="level1">
-<h1>Useful links</h1>
-<div style="border: 1px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 8px; 
-            padding: 16px; 
-            background: rgba(255, 255, 255, 0.05); 
-            margin-top: 15px;
-            backdrop-filter: blur(5px);
-            color: white;">
-
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="../images/confluence_logo_no_bckg.png" width="24" style="object-fit: contain;">
-    <span style="font-weight: bold; font-size: 1.1em; letter-spacing: 0.3px;">
-      Confluence Documentation
-    </span>
+<section id="airplane" class="level1">
+<h1>Airplane</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF7079_20260803T232001.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of an airplane over Cambridge Bay."><img src="../images/ICLISTENHF7079_20260803T232001.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of an airplane over Cambridge Bay."></a></p>
+<figcaption>Spectrogram of an airplane over Cambridge Bay.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Airplane flying over</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tonals" class="level1">
+<h1>Tonals</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF6405_20250605T140009.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of tonal noise at China Creek."><img src="../images/ICLISTENHF6405_20250605T140009.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of tonal noise at China Creek."></a></p>
+<figcaption>Spectrogram of tonal noise at China Creek.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> China Creek, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Tonal</span>
+</div>
+<p>A stationary signal at a single frequency that often results from nearby instruments, ship propellers from vessels on standby, or land-based mechanical sources when the hydrophone is shallow enough.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="whales" class="level1">
+<h1>Whales</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1252_20260627T072506.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of whale vocalizations at Digby Island."><img src="../images/ICLISTENHF1252_20260627T072506.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of whale vocalizations at Digby Island."></a></p>
+<figcaption>Spectrogram of whale vocalizations at Digby Island.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Digby Island, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Whales, Tonal</span>
+</div>
+<p>Different whales vocalize at different frequencies with distinct patterns. In this example, whale vocalizations are seen below 1 kHz. A tonal at 8 kHz is also present.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="snowmobile" class="level1">
+<h1>Snowmobile</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/snowmobile.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of snowmobile noise at Cambridge Bay."><img src="../images/snowmobile.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of snowmobile noise at Cambridge Bay."></a></p>
+<figcaption>Spectrogram of snowmobile noise at Cambridge Bay.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Snowmobile transit, Tonals</span>
+</div>
+<p>The soundscape is dominated by surface-coupled noise. In winter, snowmobiles create distinct harmonic bands (<span class="math inline">\(10^2\)</span> to <span class="math inline">\(10^3\)</span> Hz). These overlap with ringed seal vocalizations, creating a high risk of <strong>acoustic masking</strong> in shallow ice-covered leads.</p>
+<p><a href="https://www.nature.com/articles/s44384-025-00038-1">Marine soundscapes of the Arctic and human impacts: going beyond the “shipping bands”</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="helicopter" class="level1">
+<h1>Helicopter</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1951_20230807T175509.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of a helicopter over Cambridge Bay."><img src="../images/ICLISTENHF1951_20230807T175509.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of a helicopter over Cambridge Bay."></a></p>
+<figcaption>Spectrogram of a helicopter over Cambridge Bay.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Helicopter transit</span>
+</div>
+<p>The hydrophone in Cambridge Bay is shallow enough (10 m deep) that it can detect helicopters flying above the surface [17:55:00 - 17:55:30].</p>
+</div>
+</div>
+</div>
+</section>
+<section id="earthquake-at-endeavour" class="level1">
+<h1>Earthquake at Endeavour</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF6328_20240306T084000.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of an earthquake at Endeavour."><img src="../images/ICLISTENHF6328_20240306T084000.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of an earthquake at Endeavour."></a></p>
+<figcaption>Spectrogram of an earthquake at Endeavour.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Endeavour, Pacific Ocean</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Earthquake</span>
+</div>
+<p>Earthquake sounds are mostly detectable at low frequency. Find more information about this event in this <a href="https://www.oceannetworks.ca/news-and-stories/stories/endeavour-site-records-the-highest-level-of-earthquake-activity-in-20-years/">ONC story</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="pump-contamination" class="level1">
+<h1>Pump contamination</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of pump contamination at Cambridge Bay."><img src="../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of pump contamination at Cambridge Bay."></a></p>
+<figcaption>Spectrogram of pump contamination at Cambridge Bay.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Pump</span>
+</div>
+<p>At that time, the hydrophone was too close to a platform with other noisy instruments which included a pump.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="resources" class="level1">
+<h1>Resources</h1>
+<div class="docs-card">
+  <div class="docs-card-title">
+    <img src="../images/confluence_logo_no_bckg.png" width="24" alt="">
+    <span>Confluence Documentation</span>
   </div>
-
-  <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
-    <li style="margin-bottom: 10px;">
-      <a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/255101696/2.+Sensitivity+curve+interpolation" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Sensitivity Curve Interpolation
-      </a>
-
-    </li>
-    <li style="margin-bottom: 10px;">
-      <a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/216205790/Passive+acoustics" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Passive Acoustics
-      </a>
-    </li>
-
-  </ul>
-</div>
-<div style="border: 1px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 8px; 
-            padding: 16px; 
-            background: rgba(255, 255, 255, 0.05); 
-            margin-top: 15px;
-            backdrop-filter: blur(5px);
-            color: white;">
-
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="../images/alfresco-logo.svg" width="24" style="object-fit: contain;">
-    <span style="font-weight: bold; font-size: 1.1em; letter-spacing: 0.3px;">
-      Alfresco Documentation
-    </span>
-  </div>
-
-  <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
-    <li style="margin-bottom: 10px;">
-      <a href="https://docs.oceannetworks.ca/share/page/site/corporate-docs/document-details?nodeRef=workspace://SpacesStore/300293c5-17bc-4709-a7e8-459106e15529" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Hydrophone Calibration System
-      </a>
-
-    </li>
-    <li style="margin-bottom: 10px;">
-      <a href="https://docs.oceannetworks.ca/share/page/site/operations-docs/document-details?nodeRef=workspace://SpacesStore/e2ccb4a3-7a26-4811-acc7-6073ff1e49cd" style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Hydrophone System
-      </a>
-    </li>
-
+  <ul class="docs-card-list">
+    <li><a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/13648503/Hydrophone+daily+checks">Hydrophone Daily Checks</a></li>
   </ul>
 </div>
 
@@ -1082,13 +979,13 @@ NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}]
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/3-hydrophone-life-cycle.html" class="pagination-link" aria-label="3. Hydrophone Life Cycle">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">3. Hydrophone Life Cycle</span></span>
+      <a href="../sections/6-soundscape-taxonomy.html" class="pagination-link" aria-label="6. Soundscape Taxonomy">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">6. Soundscape Taxonomy</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/5-sound-in-the-ocean.html" class="pagination-link" aria-label="5. Sound in the Ocean">
-        <span class="nav-page-text"><span class="chapter-title">5. Sound in the Ocean</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../sections/8-hydrophone-network.html" class="pagination-link" aria-label="8. Hydrophone Network">
+        <span class="nav-page-text"><span class="chapter-title">8. Hydrophone Network</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

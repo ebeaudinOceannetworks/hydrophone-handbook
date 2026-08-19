@@ -1,5 +1,5 @@
 ---
-title: "4. How do Hydrophones Work?"
+title: "4. How Hydrophones Work"
 ---
 
 # General
