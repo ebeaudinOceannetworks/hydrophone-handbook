@@ -1,201 +1,277 @@
 ---
 title: "7. Examples of Sounds"
+format:
+  html:
+    lightbox: true
 ---
 
 Explore acoustic signatures captured across our monitoring stations.
-Examples shown here are include marine mammals, interference from nearby instruments, weather events.
+Examples shown here include marine mammals, interference from nearby instruments, and weather events.
+Click a spectrogram to enlarge it.
 
-Go to [ONC's soundcloud page](https://soundcloud.com/oceannetworkscanada) to get the full list of sounds discovered from the hydrophone data.
+Go to [ONC's SoundCloud page](https://soundcloud.com/oceannetworkscanada) for more sounds from the hydrophone data, and [Voices in the Sea](https://voicesinthesea.ucsd.edu/index.html) for additional examples.
 
-More examples on [Voices in the Sea](https://voicesinthesea.ucsd.edu/index.html).
-
-<!--
----
-
-
-# Template
-
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** Strait of Georgia East, BC
-
-**Sounds:** Tonal
-
-**Explanation:** Constant
-
-:::
-
-![**Spectrogram:** Caption](../images/linktoimage.png){}
-:::
-
--->
 
 # Interference from nearby instruments
 
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** Strait of Georgia East, BC
+::: {.dp-panel .sound-example}
 
-**Sounds:** Tonal, Interference
+::: {.dp-split}
 
-**Explanation:** An ADCP is located very close to the hydrophone, resulting in a strong signal between 35 and 40 kHz. A tonal line is seen around 22 kHz.
+::: {.dp-visual}
+![Spectrogram of ADCP interference at Strait of Georgia East.](../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png){lightbox=true group="sound-examples"}
+:::
+
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Strait of Georgia East, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Tonal, Interference</span>
+</div>
+```
+
+An ADCP is located very close to the hydrophone, resulting in a strong signal between 35 and 40 kHz. A tonal line is seen around 22 kHz.
 
 :::
 
-![](../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png){}
+:::
+
 :::
 
 
 # SONAR
 
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** Clayoquot Slope, BC
+::: {.dp-panel .sound-example}
 
-**Sounds:** SONAR at 2 kHz and 7 kHz.
+::: {.dp-split}
+
+::: {.dp-visual}
+![Spectrogram of sonar at Clayoquot Slope.](../images/ICLISTENHF6013_20260602T091500.000Z-spect.png){lightbox=true group="sound-examples"}
+:::
+
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Clayoquot Slope, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> SONAR at 2 kHz and 7 kHz</span>
+</div>
+```
 
 :::
 
-![](../images/ICLISTENHF6013_20260602T091500.000Z-spect.png){}
+:::
+
 :::
 
 
 # Airplane
 
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** Cambridge Bay, NU
+::: {.dp-panel .sound-example}
 
-**Sounds:** Airplane flying over.
+::: {.dp-split}
+
+::: {.dp-visual}
+![Spectrogram of an airplane over Cambridge Bay.](../images/ICLISTENHF7079_20260803T232001.000Z-spect.png){lightbox=true group="sound-examples"}
+:::
+
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Airplane flying over</span>
+</div>
+```
 
 :::
 
-![](../images/ICLISTENHF7079_20260803T232001.000Z-spect.png){}
+:::
+
 :::
 
 
 # Tonals
 
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** China Creek, BC
+::: {.dp-panel .sound-example}
 
-**Sounds:** Tonal
+::: {.dp-split}
 
-**Explanation:** A stationary signal at a single frequency that often results from nearby instruments, ship propellers from vessels on standby, or land-based mechanical sources when the hydrophone is shallow enough.
+::: {.dp-visual}
+![Spectrogram of tonal noise at China Creek.](../images/ICLISTENHF6405_20250605T140009.000Z-spect.png){lightbox=true group="sound-examples"}
+:::
+
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> China Creek, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Tonal</span>
+</div>
+```
+
+A stationary signal at a single frequency that often results from nearby instruments, ship propellers from vessels on standby, or land-based mechanical sources when the hydrophone is shallow enough.
 
 :::
 
-![](../images/ICLISTENHF6405_20250605T140009.000Z-spect.png){}
 :::
+
+:::
+
 
 # Whales
 
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** Digby Island, BC
+::: {.dp-panel .sound-example}
 
-**Sounds:** Whales, Tonal
+::: {.dp-split}
 
-**Explanation:** Different whales vocalize at different frequencies with distinct patterns. In this example, whale vocalizations are seen below 1 kHz. A tonal at 8 kHz is also present.
+::: {.dp-visual}
+![Spectrogram of whale vocalizations at Digby Island.](../images/ICLISTENHF1252_20260627T072506.000Z-spect.png){lightbox=true group="sound-examples"}
+:::
+
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Digby Island, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Whales, Tonal</span>
+</div>
+```
+
+Different whales vocalize at different frequencies with distinct patterns. In this example, whale vocalizations are seen below 1 kHz. A tonal at 8 kHz is also present.
 
 :::
 
-![](../images/ICLISTENHF1252_20260627T072506.000Z-spect.png){}
 :::
+
+:::
+
 
 # Snowmobile
 
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** Cambridge Bay, NU
+::: {.dp-panel .sound-example}
 
-**Sounds:** Snowmobile Transit, Tonals
+::: {.dp-split}
 
-**Explanation:** The soundscape is dominated by surface-coupled noise. In winter, snowmobiles create distinct harmonic bands ($10^2$ to $10^3$ Hz). These overlap with ringed seal vocalizations, creating a high risk of **acoustic masking** in shallow ice-covered leads.
+::: {.dp-visual}
+![Spectrogram of snowmobile noise at Cambridge Bay.](../images/snowmobile.png){lightbox=true group="sound-examples"}
+:::
 
-Link to the article: [Marine soundscapes of the Arctic and human impacts: going beyond the "shipping bands"](https://www.nature.com/articles/s44384-025-00038-1)
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Snowmobile transit, Tonals</span>
+</div>
+```
+
+The soundscape is dominated by surface-coupled noise. In winter, snowmobiles create distinct harmonic bands ($10^2$ to $10^3$ Hz). These overlap with ringed seal vocalizations, creating a high risk of **acoustic masking** in shallow ice-covered leads.
+
+[Marine soundscapes of the Arctic and human impacts: going beyond the "shipping bands"](https://www.nature.com/articles/s44384-025-00038-1)
 
 :::
 
-![](../images/snowmobile.png){}
+:::
+
 :::
 
 
 # Helicopter
 
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** Cambridge Bay, NU
+::: {.dp-panel .sound-example}
 
-**Sounds:** Helicopter transit
+::: {.dp-split}
 
-**Explanation:** The hydrophone in Cambridge Bay is shallow enough (10 m deep) that it can detect helicopters flying above the surface [17:55:00 - 17:55:30].
+::: {.dp-visual}
+![Spectrogram of a helicopter over Cambridge Bay.](../images/ICLISTENHF1951_20230807T175509.000Z-spect.png){lightbox=true group="sound-examples"}
+:::
+
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Helicopter transit</span>
+</div>
+```
+
+The hydrophone in Cambridge Bay is shallow enough (10 m deep) that it can detect helicopters flying above the surface [17:55:00 - 17:55:30].
 
 :::
 
-![](../images/ICLISTENHF1951_20230807T175509.000Z-spect.png){}
+:::
+
 :::
 
 
 # Earthquake at Endeavour
 
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** Endeavour, Pacific Ocean
+::: {.dp-panel .sound-example}
 
-**Sounds:** Earthquake
+::: {.dp-split}
 
-**Explanation:** Earthquake soudns are mostly detectable at low frequency. Find more information about this event on this [ONC Storymap](https://www.google.com/url?sa=j&url=https%3A%2F%2Fwww.oceannetworks.ca%2Fnews-and-stories%2Fstories%2Fendeavour-site-records-the-highest-level-of-earthquake-activity-in-20-years%2F&uct=1776699136&usg=oaC1vpRu1MP3K32B5P4u88gMRrw.&opi=73833047&source=chat).
+::: {.dp-visual}
+![Spectrogram of an earthquake at Endeavour.](../images/ICLISTENHF6328_20240306T084000.000Z-spect.png){lightbox=true group="sound-examples"}
+:::
+
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Endeavour, Pacific Ocean</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Earthquake</span>
+</div>
+```
+
+Earthquake sounds are mostly detectable at low frequency. Find more information about this event in this [ONC story](https://www.oceannetworks.ca/news-and-stories/stories/endeavour-site-records-the-highest-level-of-earthquake-activity-in-20-years/).
 
 :::
 
-![](../images/ICLISTENHF6328_20240306T084000.000Z-spect.png){}
+:::
+
 :::
 
 
 # Pump contamination
 
-::: {layout="[[35, 65]]"}
-::: {.sound-meta}
-**Location:** Cambridge Bay, NU
+::: {.dp-panel .sound-example}
 
-**Sounds:** Pump
+::: {.dp-split}
 
-**Explanation:** At that time, the hydrophone was too close to a plafform with other noisy instruments which included a pump.
+::: {.dp-visual}
+![Spectrogram of pump contamination at Cambridge Bay.](../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png){lightbox=true group="sound-examples"}
+:::
+
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Pump</span>
+</div>
+```
+
+At that time, the hydrophone was too close to a platform with other noisy instruments which included a pump.
 
 :::
 
-![](../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png){}
 :::
 
----
+:::
+
 
 # Useful Links
 
 ```{=html}
-<div style="border: 1px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 8px; 
-            padding: 16px; 
-            background: rgba(255, 255, 255, 0.05); 
-            margin-top: 15px;
-            backdrop-filter: blur(5px);
-            color: white;">
-
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="../images/confluence_logo_no_bckg.png" width="24" style="object-fit: contain;">
-    <span style="font-weight: bold; font-size: 1.1em; letter-spacing: 0.3px;">
-      Confluence Documentation
-    </span>
+<div class="docs-card">
+  <div class="docs-card-title">
+    <img src="../images/confluence_logo_no_bckg.png" width="24" alt="">
+    <span>Confluence Documentation</span>
   </div>
-
-  <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
-    <li style="margin-bottom: 10px;">
-      <a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/13648503/Hydrophone+daily+checks" 
-         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Hydrophone Daily Checks
-      </a>
-
+  <ul class="docs-card-list">
+    <li><a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/13648503/Hydrophone+daily+checks">Hydrophone Daily Checks</a></li>
   </ul>
 </div>
 ```

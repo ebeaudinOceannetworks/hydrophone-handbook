@@ -75,7 +75,7 @@ Several methods are used to convert the recorded electric signal in data we can 
 **Fourier Analysis**: Signal decomposition method where a complex signal is expressed as superimposition of simple sine and cosine waves of different frequencies.
 :::
 
-![Fourier Analysis for signal decomposition method. Source: medium](../images/fourier-transform.png)
+![Fourier analysis for signal decomposition. Credit: Medium.](../images/fourier-transform.png)
 
 This way, a time-domain signal is converted into a frequency-domain signal which makes it easier to capture at which frequency most of the energy is.
 For long periods of sound recording, the signal can be divided into shorter segments of equal lengths, specified by a *time-window*. The result shows how the spectra changes with time, the **spectrogram**.
@@ -84,7 +84,7 @@ For long periods of sound recording, the signal can be divided into shorter segm
 **Spectrogram**: A visual, three-dimensional representation of a signal's frequency spectrum as it changes over time
 :::
 
-![Example of a spectrogram. The x-axis is time, the y-axis is frequency in Hz, and the colors are the levels.](../images/spectrogram.png)
+![Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level.](../images/spectrogram.png)
 
 The x-axis is time, the y-axis represents the frequencies in Hz (per second), while the colors represent the level, expressed in logarithm of the signal power in dB.
 
@@ -107,7 +107,7 @@ $$
 NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}] \times \text{Pre-amp Gain}} \times 1000
 $$
 
-![Signal to noise ratio measures the desired signal against the background noises. Source: hollyland](../images/snr.png)
+![Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland.](../images/snr.png)
 
 
 # Other hydrophone types

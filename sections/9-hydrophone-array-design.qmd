@@ -39,11 +39,11 @@ In both cases the hydrophones share a structure with other instruments. Those ne
 The image below shows a **box-type** hydrophone array, mounted at the MTC (Marine Technology Centre).
 On this array, there are four hydrophones at locations A, B, C, D, distanced about 1-meter from one another.
 
-![A Box-Type Hydrophone Array with four hydrophones, waiting to be deployed in the Strait of Georgia.](../images/MTC_hydrophone_array_annotated.png){width=60%}
+![A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia.](../images/MTC_hydrophone_array_annotated.png){width=60%}
 
 The distance between hydrophones is chosen for **beamforming**: estimating direction of arrival. But, 1 meter is too small for whale-localization (see below).
 
-![Box-Type Array Configuration for Hydrophones.](../images/box-array.png)
+![Box-type array configuration for hydrophones.](../images/box-array.png)
 
 
 ## Hydrophones can be deployed in several configurations: 

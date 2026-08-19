@@ -12,7 +12,7 @@ In the ocean, light attenuates within tens of metres, while sound can travel tho
 
 Sound is created by a vibrating object. Compression and expansion produce a pressure difference, which launches a **longitudinal** wave: particle motion is parallel to the direction of travel. Underwater, that motion is a small back-and-forth of water molecules; the tighter the molecular bonds, the faster the energy is passed along. A sound wave is omnidirectional: it spreads in all directions.
 
-![Sound is a longitudinal wave where the particle displacement is parallel to the direction of the wave propagation. Credit: @2015, Dan Russell](../images/Lwave-Red-2.gif)
+![Sound is a longitudinal wave whose particle displacement is parallel to the direction of travel. Credit: Dan Russell, 2015.](../images/Lwave-Red-2.gif)
 
 Measurable properties:
 
@@ -25,7 +25,7 @@ $$
 p(t) = A \sin{(2\pi f t + \phi)}
 $$
 
-![Bigger objects make low-frequency sounds while smaller objects make high frequency sounds.](../images/Amplitude-Frequency.png){width=80%}
+![Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds.](../images/Amplitude-Frequency.png){width=80%}
 
 ## Why sound is faster in water than in air
 
@@ -71,7 +71,7 @@ Around 1000 m in the deep ocean, the decrease of temperature and the increase of
 **SOFAR channel**: the depth of minimum sound speed, typically near 1000 m in mid-latitudes.
 :::
 
-![](../images/sofar.png)
+![The SOFAR channel at the depth of minimum sound speed.](../images/sofar.png)
 
 Low-frequency whale calls use this channel for long-range communication. In WWII it was used to locate downed aviators from small explosions set off in the channel.
 
@@ -79,7 +79,7 @@ Low-frequency whale calls use this channel for long-range communication. In WWII
 
 A **surface duct** traps sound in the mixed layer, typically the upper tens of metres. When sound speed *increases* with depth just below the surface, rays refract upward, reflect from the sea surface, and stay in that shallow layer (the opposite geometry of SOFAR). Ducts are common in wind-mixed coastal waters and fade when the surface warms and stratifies.
 
-![Model simulation of sound trapped in a surface duct. Figure from Lynch et al., 2018; Fig. 5.](../images/surface-duct.png)
+![Model simulation of sound trapped in a surface duct. Credit: Lynch et al., 2018, Fig. 5.](../images/surface-duct.png)
 
 # How sound travels
 
@@ -99,7 +99,7 @@ The processes that change sound travel path and sound level:
 | **Diffraction** | Energy bends around an obstacle (seamount, ridge) into the geometric shadow. | Some signal still reaches a hydrophone “behind” bathymetry. |
 | **Reverberation** | Scattered sound that lingers after the source stops. Strongest in shallow water. | Raises the noise floor and can mask a target. |
 
-![Example of refracted ray paths. Credits: Kessel & Hollett, 2006](../images/refraction.png){width=70%}
+![Example of refracted ray paths. Credit: Kessel and Hollett, 2006.](../images/refraction.png){width=70%}
 
 ![Constructive and destructive interference.](../images/interference.png){width=40%}
 

@@ -11,7 +11,7 @@ The life cycle workflow ensures that data is not just collected, but are **FAIR*
 ONC commits to share and preserve data long-term. 
 
 
-![Diagram of a Hydrophone life cycle at Ocean Networks Canada.](../images/Hydrophone-Life-Cycle.png)
+![Diagram of a hydrophone life cycle at Ocean Networks Canada.](../images/Hydrophone-Life-Cycle.png)
 
 <!-- link to canva where the hydrophone life cycle image was created: https://canva.link/erzgms3fvn7dyz6 -->
 

@@ -13,7 +13,7 @@ During diversion, full-band audio files (WAV/FLAC) are diverted directly to nava
 "HPF-" and "LPF-" suffixes are then incorporated into the file name (ex: ICLISTENHF6016_20250317T000500.000Z-LPF.flac).
 
 
-![Example of Low-Passed-Filtered spectrogram at Clayoquot Slope. Notice the file header "Data Diversion Mode".](../images/ICLISTENHF6016_20250317T000500.000Z-LPF-spect.png)
+![Example of a low-pass-filtered spectrogram at Clayoquot Slope. The file header shows Data Diversion Mode.](../images/ICLISTENHF6016_20250317T000500.000Z-LPF-spect.png)
 
 Notifications regarding planned or active diversions are managed via a restricted mailing list reserved strictly for cleared personnel.
 
