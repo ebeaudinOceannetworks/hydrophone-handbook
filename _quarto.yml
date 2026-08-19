@@ -4,6 +4,7 @@ project:
   resources:
     - images/
     - audio/
+    - sounds/
     - banner.html
     - scripts/
     - fonts/

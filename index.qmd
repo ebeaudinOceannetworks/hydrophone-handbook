@@ -61,17 +61,44 @@ print(f'<p class="kpi-value">{nh}</p>')
 
 
 
-::: {.listen-box}
+::: {.listen-section}
 ### Listen to the ocean soundscape
 
-Killer whale calls and echolocation recorded on a hydrophone from ONC.
+::: {.grid .sound-card-grid}
 
+::: {.g-col-12 .g-col-md-6}
+::: {.sound-card}
+::: {.sound-card-visual}
+![](images/killer-whale-call-card.png){lightbox=true group="intro-sounds" fig-alt="Spectrogram of a killer whale call." width="100%"}
+:::
+<p class="sound-card-title">Killer whale</p>
+<p class="sound-card-caption">Calls and echolocation</p>
 ```{=html}
 <audio class="listen-audio" controls preload="metadata">
   <source src="sounds/ICLISTENHF6325_20260712T020000.000Z_normalized.flac" type="audio/flac">
   Your browser does not support the audio player.
 </audio>
 ```
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.sound-card}
+::: {.sound-card-visual}
+![](images/sonar-card.png){lightbox=true group="intro-sounds" fig-alt="Spectrogram of sonar pings." width="100%"}
+:::
+<p class="sound-card-title">SONAR</p>
+<p class="sound-card-caption">Active pings</p>
+```{=html}
+<audio class="listen-audio" controls preload="metadata">
+  <source src="sounds/ICLISTENHF6016_20260602T091500.000Z_normalized.flac" type="audio/flac">
+  Your browser does not support the audio player.
+</audio>
+```
+:::
+:::
+
+:::
 
 More recordings are on [ONC's SoundCloud](https://soundcloud.com/oceannetworkscanada).
 :::
