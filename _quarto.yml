@@ -3,6 +3,7 @@ project:
   output-dir: _book
   resources:
     - images/
+    - audio/
     - banner.html
     - scripts/
     - fonts/

@@ -944,3 +944,125 @@ body {
   font-weight: 500;
   border-bottom: 1px solid rgba(130, 202, 255, 0.3);
 }
+
+.kpi-grid,
+.feature-grid {
+  margin: 1.25rem 0 1.5rem 0;
+}
+
+.kpi-card,
+.feature-card,
+.listen-box,
+.map-tile {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.kpi-card {
+  text-align: center;
+  padding: 1.35rem 1rem 1.2rem;
+  height: 100%;
+}
+
+.kpi-value {
+  font-family: "Rajdhani", sans-serif !important;
+  font-size: 2.55rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 0.35rem 0;
+}
+
+.kpi-label {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.listen-box {
+  padding: 1.15rem 1.25rem 1.2rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.listen-box h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.listen-box h3::before {
+  content: "🎧 ";
+}
+
+.listen-audio {
+  display: block;
+  width: 100%;
+  margin: 0.75rem 0;
+  height: 40px;
+}
+
+.feature-card {
+  padding: 1.05rem 1.15rem 1.15rem;
+  height: 100%;
+}
+
+.feature-card h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.45rem !important;
+  font-size: 1.2rem !important;
+}
+
+.feature-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.map-tile {
+  padding: 0.7rem 0.7rem 0.4rem;
+  overflow: hidden;
+  margin: 0 0 1.5rem 0;
+}
+
+.map-tile figure,
+.intro-hero figure {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.map-tile img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: zoom-in;
+}
+
+.intro-hero {
+  width: 100%;
+  max-width: 100%;
+  margin: 0.5rem 0 1.75rem;
+}
+
+.intro-hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.intro-territory .callout {
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-radius: 12px !important;
+}
+
+@media (max-width: 800px) {
+  .kpi-value {
+    font-size: 2.1rem;
+  }
+}
