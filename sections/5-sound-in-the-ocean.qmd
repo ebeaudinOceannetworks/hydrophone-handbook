@@ -89,7 +89,9 @@ A **surface duct** traps sound in the mixed layer, typically the upper tens of m
 
 A ray almost never goes in a straight line. The sound-speed profile refracts it; the sea surface and seafloor reflect it; the result can be echoes, multipath, and **shadow zones** where little energy arrives.
 
+::: {.fig-full}
 ![Acoustic sound paths in the ocean. Credit: National Academy of Sciences.](../images/sound-propagation.png){lightbox=true}
+:::
 
 The processes that change sound travel path and sound level:
 
@@ -103,19 +105,19 @@ The processes that change sound travel path and sound level:
 | **Diffraction** | Energy bends around an obstacle (seamount, ridge) into the geometric shadow. | Some signal still reaches a hydrophone “behind” bathymetry. |
 | **Reverberation** | Scattered sound that lingers after the source stops. Strongest in shallow water. | Raises the noise floor and can mask a target. |
 
-![Example of refracted ray paths. Credit: Kessel and Hollett, 2006.](../images/refraction.png){lightbox=true}
+<!-- [Example of refracted ray paths. Credit: Kessel and Hollett, 2006.](../images/refraction.png){lightbox=true} -->
 
-![Constructive and destructive interference.](../images/interference.png){lightbox=true}
+<!-- ![Constructive and destructive interference.](../images/interference.png){lightbox=true} -->
 
 # Transmission loss
 
-From a source (a whale) to a receiver (a hydrophone), level drops. That drop is **transmission loss (TL)**, also called propagation loss:
+From a source (a whale) to a receiver (a hydrophone), the sound level (SL) can drop significantly. That drop is due to **transmission loss (TL)**, or propagation loss. The received sound level (RL) becomes:
 
 $$
 RL = SL - TL
 $$
 
-**RL** is received level at the hydrophone; **SL** is source level. TL splits into geometric spreading (GS) and everything else (excess attenuation, EA):
+TL splits into geometric spreading (GS) and everything else (excess attenuation, EA):
 
 $$
 TL = GS + EA
