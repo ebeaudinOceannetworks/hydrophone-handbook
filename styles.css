@@ -952,7 +952,7 @@ body {
 
 .kpi-card,
 .feature-card,
-.listen-box,
+.sound-card,
 .map-tile {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
@@ -986,25 +986,77 @@ body {
   color: rgba(255, 255, 255, 0.72);
 }
 
-.listen-box {
-  padding: 1.15rem 1.25rem 1.2rem;
+.listen-section {
   margin: 0 0 1.5rem 0;
 }
 
-.listen-box h3 {
-  margin-top: 0 !important;
-  margin-bottom: 0.4rem !important;
+.listen-section h3,
+section.listen-section > h3 {
+  margin-top: 0.15rem !important;
+  margin-bottom: 0.15rem !important;
 }
 
-.listen-box h3::before {
-  content: "🎧 ";
+.listen-section h3::before,
+section.listen-section > h3::before {
+  content: "🎧";
+  font-size: 0.65rem;
+  margin-right: 0.35rem;
+  vertical-align: 0.1em;
+}
+
+.sound-card-grid {
+  margin: 0.85rem 0 0.85rem 0;
+}
+
+.sound-card {
+  padding: 0.7rem 0.7rem 0.8rem;
+  height: 100%;
+}
+
+.sound-card-visual {
+  margin: 0 0 0.55rem 0;
+}
+
+.sound-card-visual figure {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.sound-card-visual figcaption {
+  display: none;
+}
+
+.sound-card-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: zoom-in;
+}
+
+.sound-card-title {
+  margin: 0 0 0.15rem 0;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.sound-card-caption {
+  margin: 0 0 0.45rem 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .listen-audio {
   display: block;
   width: 100%;
-  margin: 0.75rem 0;
-  height: 40px;
+  margin: 0.15rem 0 0 0;
+  height: 36px;
 }
 
 .feature-card {
