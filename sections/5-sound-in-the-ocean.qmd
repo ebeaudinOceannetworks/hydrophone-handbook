@@ -27,7 +27,7 @@ $$
 p(t) = A \sin{(2\pi f t + \phi)}
 $$
 
-![Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds.](../images/Amplitude-Frequency.png){lightbox=true}
+![Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds. Credits: Aline Design for NOAA](../images/Amplitude-Frequency.png){lightbox=true}
 
 ## Why sound is faster in water than in air
 

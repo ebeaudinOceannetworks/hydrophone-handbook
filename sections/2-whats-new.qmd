@@ -5,7 +5,7 @@ title: "2. What's New"
 
 
 ::: {.intro-hero}
-![Artistic view of a hydrophone underwater.](../images/hydrophone.png){lightbox=true width="100%"}
+![Artistic view of a hydrophone underwater. Credit: Co.L.Mar](../images/hydrophone.png){lightbox=true width="100%"}
 :::
 
 

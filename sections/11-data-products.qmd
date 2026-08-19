@@ -2,7 +2,7 @@
 title: "11. Data Products"
 ---
 
-This page describes **what** each hydrophone data product contains. To download files, use the [Data Access](12-data-access.qmd) request builder or Hydrophone Viewer.
+*This page describes each hydrophone data product. To learn how to download files, go to the [Data Access](12-data-access.qmd).*
 
 # Overview
 
