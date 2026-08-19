@@ -44,7 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-70a503e8bdd0f44e0108b11b5e14c42b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c269cdfbc77a96d07ba23f79956d61ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -128,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
     text-align: center !important;
   }
 </style>
-</head><body class="nav-sidebar docked slimcontent quarto-light"><div class="handbook-orca-banner" id="handbook-banner">
+</head><body class="nav-sidebar docked quarto-light"><div class="handbook-orca-banner" id="handbook-banner">
   <h1>Hydrophone Handbook</h1>
   <p class="handbook-banner-tagline">from the whale to the user</p>
   <div class="handbook-banner-org">
@@ -295,7 +298,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/14-science-and-applications-at-onc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
+  <a href="../sections/14-science-and-publications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -338,12 +341,12 @@ window.Quarto = {
   <li><a href="#arctic-sound-cambridge-bay" id="toc-arctic-sound-cambridge-bay" class="nav-link" data-scroll-target="#arctic-sound-cambridge-bay">Arctic sound (Cambridge Bay)</a></li>
   <li><a href="#acoustic-masking" id="toc-acoustic-masking" class="nav-link" data-scroll-target="#acoustic-masking">Acoustic masking</a></li>
   <li><a href="#sound-propagation-modelling" id="toc-sound-propagation-modelling" class="nav-link" data-scroll-target="#sound-propagation-modelling">Sound propagation modelling</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -368,16 +371,16 @@ window.Quarto = {
 <p>In the ocean, light attenuates within tens of metres, while sound can travel thousands of kilometres. That is why marine mammals and underwater systems use sound as their primary sense for communication and navigation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/1500x1000-Passive-Acoustics-Soundscape-infographic-NEFSC.png" class="img-fluid figure-img"></p>
+<p><a href="../images/1500x1000-Passive-Acoustics-Soundscape-infographic-NEFSC.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A variety of sounds can be heard in the ocean. Credit: NOAA Fisheries."><img src="../images/1500x1000-Passive-Acoustics-Soundscape-infographic-NEFSC.png" class="img-fluid figure-img" data-lightbox="true" alt="A variety of sounds can be heard in the ocean. Credit: NOAA Fisheries."></a></p>
 <figcaption>A variety of sounds can be heard in the ocean. Credit: NOAA Fisheries.</figcaption>
 </figure>
 </div>
-<section id="what-is-sound" class="level1 page-columns page-full">
+<section id="what-is-sound" class="level1">
 <h1>What is sound?</h1>
 <p>Sound is created by a vibrating object. Compression and expansion produce a pressure difference, which launches a <strong>longitudinal</strong> wave: particle motion is parallel to the direction of travel. Underwater, that motion is a small back-and-forth of water molecules; the tighter the molecular bonds, the faster the energy is passed along. A sound wave is omnidirectional: it spreads in all directions.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/Lwave-Red-2.gif" class="img-fluid figure-img"></p>
+<p><a href="../images/Lwave-Red-2.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Sound is a longitudinal wave whose particle displacement is parallel to the direction of travel. Credit: Dan Russell, 2015."><img src="../images/Lwave-Red-2.gif" class="img-fluid figure-img" data-lightbox="true" alt="Sound is a longitudinal wave whose particle displacement is parallel to the direction of travel. Credit: Dan Russell, 2015."></a></p>
 <figcaption>Sound is a longitudinal wave whose particle displacement is parallel to the direction of travel. Credit: Dan Russell, 2015.</figcaption>
 </figure>
 </div>
@@ -393,17 +396,27 @@ p(t) = A \sin{(2\pi f t + \phi)}
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/Amplitude-Frequency.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><a href="../images/Amplitude-Frequency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds."><img src="../images/Amplitude-Frequency.png" class="img-fluid figure-img" data-lightbox="true" alt="Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds."></a></p>
 <figcaption>Bigger objects make low-frequency sounds, while smaller objects make high-frequency sounds.</figcaption>
 </figure>
 </div>
-<section id="why-sound-is-faster-in-water-than-in-air" class="level2 page-columns page-full">
+<section id="why-sound-is-faster-in-water-than-in-air" class="level2">
 <h2 class="anchored" data-anchor-id="why-sound-is-faster-in-water-than-in-air">Why sound is faster in water than in air</h2>
 <p>Sound travels about <strong>4.3 times faster</strong> in water than in air (<span class="math inline">\(\approx 1500\)</span> m/s vs <span class="math inline">\(340\)</span> m/s). Speed is set by bulk modulus <span class="math inline">\(B\)</span> (stiffness) and density <span class="math inline">\(\rho\)</span>:</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><strong>Bulk modulus</strong>: resistance to compression, <span class="math inline">\(B=\rho \,\partial P / \partial \rho\)</span>.</p>
-</div></div><p><span class="math display">\[
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Bulk modulus
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Resistance to compression, <span class="math inline">\(B=\rho \,\partial P / \partial \rho\)</span>.</p>
+</div>
+</div>
+<p><span class="math display">\[
 v = \sqrt{B/\rho}
 \]</span></p>
 <p>Water is about 800 times denser than air, but about 20,000 times <em>less</em> compressible. That stiffness wins: energy transfers more efficiently between molecules, so sound is faster underwater.</p>
@@ -420,7 +433,7 @@ v = \sqrt{B/\rho}
 <p>The resulting curve of <span class="math inline">\(c\)</span> versus depth is the <strong>sound speed profile</strong>. Off British Columbia, a typical Northeast Pacific profile has a seasonal surface layer, a sound-speed minimum at depth, then an increase with pressure:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/ssp_seasonal_modified.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><a href="../images/ssp_seasonal_modified.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Typical seasonal sound speed profile in the Northeast Pacific, including waters off British Columbia."><img src="../images/ssp_seasonal_modified.png" class="img-fluid figure-img" data-lightbox="true" alt="Typical seasonal sound speed profile in the Northeast Pacific, including waters off British Columbia."></a></p>
 <figcaption>Typical seasonal sound speed profile in the Northeast Pacific, including waters off British Columbia.</figcaption>
 </figure>
 </div>
@@ -432,17 +445,27 @@ v = \sqrt{B/\rho}
 </ul>
 <p>Surface swells also create pressure fluctuations that decay with depth. At exposed sites such as <strong>Folger Passage</strong>, hydrophones are moored well below 20 m so swell does not saturate the sensor.</p>
 </section>
-<section id="waveguides" class="level1 page-columns page-full">
+<section id="waveguides" class="level1">
 <h1>Waveguides</h1>
-<section id="sofar-channel" class="level2 page-columns page-full">
+<section id="sofar-channel" class="level2">
 <h2 class="anchored" data-anchor-id="sofar-channel">SOFAR channel</h2>
 <p>Around 1000 m in the deep ocean, the decrease of temperature and the increase of pressure produce a <strong>minimum</strong> in sound speed: the SOFAR channel (SOund Fixing And Ranging). Sound always bends toward slower speed (<strong>refraction</strong>; <a href="../sections/15-useful-equations.html#snells-law">Snell’s law</a>). Rays that leave this layer upward or downward are refracted back into it, so energy is trapped and can travel basin-scale distances.</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><strong>SOFAR channel</strong>: the depth of minimum sound speed, typically near 1000 m in mid-latitudes.</p>
-</div></div><div class="quarto-figure quarto-figure-center">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>SOFAR channel
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The depth of minimum sound speed, typically near 1000 m in mid-latitudes.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/sofar.png" class="img-fluid figure-img"></p>
+<p><a href="../images/sofar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="The SOFAR channel at the depth of minimum sound speed."><img src="../images/sofar.png" class="img-fluid figure-img" data-lightbox="true" alt="The SOFAR channel at the depth of minimum sound speed."></a></p>
 <figcaption>The SOFAR channel at the depth of minimum sound speed.</figcaption>
 </figure>
 </div>
@@ -453,7 +476,7 @@ v = \sqrt{B/\rho}
 <p>A <strong>surface duct</strong> traps sound in the mixed layer, typically the upper tens of metres. When sound speed <em>increases</em> with depth just below the surface, rays refract upward, reflect from the sea surface, and stay in that shallow layer (the opposite geometry of SOFAR). Ducts are common in wind-mixed coastal waters and fade when the surface warms and stratifies.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/surface-duct.png" class="img-fluid figure-img"></p>
+<p><a href="../images/surface-duct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Model simulation of sound trapped in a surface duct. Credit: Lynch et al., 2018, Fig. 5."><img src="../images/surface-duct.png" class="img-fluid figure-img" data-lightbox="true" alt="Model simulation of sound trapped in a surface duct. Credit: Lynch et al., 2018, Fig. 5."></a></p>
 <figcaption>Model simulation of sound trapped in a surface duct. Credit: Lynch et al., 2018, Fig. 5.</figcaption>
 </figure>
 </div>
@@ -464,7 +487,7 @@ v = \sqrt{B/\rho}
 <p>A ray almost never goes in a straight line. The sound-speed profile refracts it; the sea surface and seafloor reflect it; the result can be echoes, multipath, and <strong>shadow zones</strong> where little energy arrives.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/sound-propagation.png" class="img-fluid figure-img"></p>
+<p><a href="../images/sound-propagation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Acoustic sound paths in the ocean. Credit: National Academy of Sciences."><img src="../images/sound-propagation.png" class="img-fluid figure-img" data-lightbox="true" alt="Acoustic sound paths in the ocean. Credit: National Academy of Sciences."></a></p>
 <figcaption>Acoustic sound paths in the ocean. Credit: National Academy of Sciences.</figcaption>
 </figure>
 </div>
@@ -517,13 +540,13 @@ v = \sqrt{B/\rho}
 </table>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/refraction.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><a href="../images/refraction.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Example of refracted ray paths. Credit: Kessel and Hollett, 2006."><img src="../images/refraction.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of refracted ray paths. Credit: Kessel and Hollett, 2006."></a></p>
 <figcaption>Example of refracted ray paths. Credit: Kessel and Hollett, 2006.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/interference.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<p><a href="../images/interference.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Constructive and destructive interference."><img src="../images/interference.png" class="img-fluid figure-img" data-lightbox="true" alt="Constructive and destructive interference."></a></p>
 <figcaption>Constructive and destructive interference.</figcaption>
 </figure>
 </div>
@@ -540,7 +563,7 @@ TL = GS + EA
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/SCM4_fig11.png" class="img-fluid figure-img"></p>
+<p><a href="../images/SCM4_fig11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Model output of transmission loss of an acoustic sound wave."><img src="../images/SCM4_fig11.png" class="img-fluid figure-img" data-lightbox="true" alt="Model output of transmission loss of an acoustic sound wave."></a></p>
 <figcaption>Model output of transmission loss of an acoustic sound wave.</figcaption>
 </figure>
 </div>
@@ -564,7 +587,7 @@ EA = \text{Loss}_{\text{absorption}} + \text{Loss}_{\text{reflection}} + \text{L
 <p>Under global warming, sea ice declines, that winter scattering has weakened and higher frequencies can now propagate farther than they used to, which also means more underwater noise (including vessels) reaching the hydrophone.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/arctic-sound-speed-profile.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><a href="../images/arctic-sound-speed-profile.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Typical sound speed profile in the Arctic."><img src="../images/arctic-sound-speed-profile.png" class="img-fluid figure-img" data-lightbox="true" alt="Typical sound speed profile in the Arctic."></a></p>
 <figcaption>Typical sound speed profile in the Arctic.</figcaption>
 </figure>
 </div>
@@ -576,7 +599,7 @@ EA = \text{Loss}_{\text{absorption}} + \text{Loss}_{\text{reflection}} + \text{L
 <p>Sound masking has led to impacting:</p>
 <ul>
 <li>physical health: some sounds can be so loud that they can destroy hearing sensitivity temporarily, and in extreme cases permanently damaging hearing.</li>
-<li>behavior: marine mammals can get lost, and reduce or no longer mate.</li>
+<li>behaviour: marine mammals can get lost, and reduce or no longer mate.</li>
 </ul>
 <p>This is the scientific motivation behind programs such as <a href="https://www.portvancouver.com/environment/healthy-ecosystem/echo">ECHO</a> in the Strait of Georgia: reducing ship noise so whale signals remain usable.</p>
 </section>
@@ -586,13 +609,13 @@ EA = \text{Loss}_{\text{absorption}} + \text{Loss}_{\text{reflection}} + \text{L
 <p><strong>BELLHOP</strong> (Michael B. Porter) is one of the many sound propagation models that traces beams at a chosen frequency. It needs bathymetry along the path, a sound-speed profile (from <span class="math inline">\(T\)</span>, <span class="math inline">\(S\)</span>, <span class="math inline">\(p\)</span>), and a bottom type (e.g.&nbsp;clay). The output is the transmission loss along a path.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/Bellhop-ray-tracing-right-box-for-a-standard-sound-speed-profile-left-box-indicating.png" class="img-fluid figure-img"></p>
+<p><a href="../images/Bellhop-ray-tracing-right-box-for-a-standard-sound-speed-profile-left-box-indicating.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left)."><img src="../images/Bellhop-ray-tracing-right-box-for-a-standard-sound-speed-profile-left-box-indicating.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left)."></a></p>
 <figcaption>Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left).</figcaption>
 </figure>
 </div>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+<section id="resources" class="level1">
+<h1>Resources</h1>
 <ul>
 <li>Urick, <em>Principles of Underwater Acoustics</em></li>
 <li>Hodges, <em>Underwater Acoustics</em></li>
@@ -1019,6 +1042,38 @@ EA = \text{Loss}_{\text{absorption}} + \text{Loss}_{\text{reflection}} + \text{L
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

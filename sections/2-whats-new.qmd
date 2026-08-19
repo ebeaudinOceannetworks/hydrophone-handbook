@@ -2,8 +2,18 @@
 title: "2. What's New"
 ---
 
-Newest hydrophone-related updates.
+
+
+::: {.intro-hero}
+![Artistic view of a hydrophone underwater.](../images/hydrophone.png){lightbox=true width="100%"}
+:::
+
 
 # August 2026
 
 * Hydrophone handbook release
+
+#
+
+
+

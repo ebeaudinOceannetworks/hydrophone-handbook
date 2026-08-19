@@ -13,8 +13,9 @@ Several types of hydrophones exist depending on the applications, with different
 
 
 
-::: {.aside}
-**Passive acoustics**: Action of listening to sound without emitting a signal, whereas in active acoustics the emitted signal is then analysed.
+::: {.callout-note appearance="minimal"}
+## Passive acoustics
+Action of listening to sound without emitting a signal, whereas in active acoustics the emitted signal is then analysed.
 :::
 
 - marine mammal monitoring
@@ -22,22 +23,24 @@ Several types of hydrophones exist depending on the applications, with different
 - earthquakes detection 
 
 
-# From Pressure to Voltage
+# From pressure to voltage
 
 Hydrophones contain a key element, a **piezoelectric** material, which "feels" the pressure changes of a passing sound wave, and convert them into electric signals.
 In such, hydrophones are essentially **transducers**, as they simply convert potential energy into electrical energy.
 
-::: {.aside}
-**Piezoelectric**: Material that generates an electric charge in response to applied mechanical stress. As a wave passes, it compresses the ceramic, which creates a proportional electrical voltage.
+::: {.callout-note appearance="minimal"}
+## Piezoelectric
+Material that generates an electric charge in response to applied mechanical stress. As a wave passes, it compresses the ceramic, which creates a proportional electrical voltage.
 :::
 
-::: {.aside}
-**Transducer**: A device that converts energy from one form (acoustic pressure) to another (electrical voltage).
+::: {.callout-note appearance="minimal"}
+## Transducer
+A device that converts energy from one form (acoustic pressure) to another (electrical voltage).
 :::
 
 The relationship between the pressure (p) and the voltage (V) is determined by the sensitivity of the hydrophone, usually expressed in dB re 1V/μPa.
 
-![Conversion of sound signal to electric signal.](../images/hydrophone-signal-schematic.png)
+![Conversion of sound signal to electric signal.](../images/hydrophone-signal-schematic.png){lightbox=true}
 
 The piezoelectric material is often made of ceramics, more specifically Lead-Zirconate-Titanate (PZT) compounds, which are relatively low cost, and have an excellent piezoelectric coefficient. It also has high sensitivity and can operate at wide range of temperatures.
 
@@ -64,29 +67,31 @@ Hydrophones can be separated into three categories with overlapping ranges:
 - Audio-Frequency: 10 Hz - 10 kHz
 - High-Frequency (Ultrasonic): 10 Hz - 200 kHz
 
-![Sensitivity curve of a high-frequency piezoelectric hydrophone.](../images/sensitivity-curve.png)
+![Sensitivity curve of a high-frequency piezoelectric hydrophone.](../images/sensitivity-curve.png){lightbox=true}
 
 
-# Signal Processing Methods
+# Signal processing methods
 
-Several methods are used to convert the recorded electric signal in data we can analyze. One method is **Fourier Analysis**, where the total signal is decomposed into a set individual frequencies with associated phase and amplitudes.
+Several methods are used to convert the recorded electric signal in data we can analyse. One method is **Fourier Analysis**, where the total signal is decomposed into a set individual frequencies with associated phase and amplitudes.
 
-::: {.aside}
-**Fourier Analysis**: Signal decomposition method where a complex signal is expressed as superimposition of simple sine and cosine waves of different frequencies.
+::: {.callout-note appearance="minimal"}
+## Fourier analysis
+Signal decomposition method where a complex signal is expressed as superimposition of simple sine and cosine waves of different frequencies.
 :::
 
-![Fourier analysis for signal decomposition. Credit: Medium.](../images/fourier-transform.png)
+![Fourier analysis for signal decomposition. Credit: Medium.](../images/fourier-transform.png){lightbox=true}
 
 This way, a time-domain signal is converted into a frequency-domain signal which makes it easier to capture at which frequency most of the energy is.
 For long periods of sound recording, the signal can be divided into shorter segments of equal lengths, specified by a *time-window*. The result shows how the spectra changes with time, the **spectrogram**.
 
-::: {.aside}
-**Spectrogram**: A visual, three-dimensional representation of a signal's frequency spectrum as it changes over time
+::: {.callout-note appearance="minimal"}
+## Spectrogram
+A visual, three-dimensional representation of a signal's frequency spectrum as it changes over time.
 :::
 
-![Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level.](../images/spectrogram.png)
+![Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level.](../images/spectrogram.png){lightbox=true}
 
-The x-axis is time, the y-axis represents the frequencies in Hz (per second), while the colors represent the level, expressed in logarithm of the signal power in dB.
+The x-axis is time, the y-axis represents the frequencies in Hz (per second), while the colours represent the level, expressed in logarithm of the signal power in dB.
 
 Note on choosing the window: it’s impossible to have a good resolution in time and frequency at the same time (Heisenberg’s uncertainty principle).
 
@@ -96,7 +101,7 @@ Note on choosing the window: it’s impossible to have a good resolution in time
 
 Hydrophones can be put into three categories, infrasonic, ultrasonic, and ??
 
-## Signal to Noise ratio
+## Signal to noise ratio
 Signal to Noise ratio is an important element to consider for hydrophones.
 
 A bigger element increases sensitivity, but also can lower SNR.
@@ -107,7 +112,7 @@ $$
 NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}] \times \text{Pre-amp Gain}} \times 1000
 $$
 
-![Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland.](../images/snr.png)
+![Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland.](../images/snr.png){lightbox=true}
 
 
 # Other hydrophone types
@@ -132,13 +137,14 @@ Passive acoustic monitoring is often associated with underwater soundscapes, but
 | <span style="color: darkorange;">**Seismic & Geophysics**</span> | Earthquakes, Tsunami detection, Oil & Gas exploration, Seabed mapping, Subsea leakage.   | **Sub Hz - 100 Hz** |
 | <span style="color: green;">**Biological**</span>  | Marine mammal vocalization, Ecosystem studies  | **10 Hz - ~200 kHz** |   
 | <span style="color: skyblue;">**Natural Ambient**</span>  | Ambient noise monitoring.  | **10 Hz - 1000 Hz** |   
-| <span style="color: red;">**Naval & Surveillance**</span>  | Submarine/Vessel detection, harbor surveillance.  | **3 kHz – 300 kHz** |   
+| <span style="color: red;">**Naval & Surveillance**</span>  | Submarine/Vessel detection, harbour surveillance.  | **3 kHz – 300 kHz** |   
 | <span style="color: gold;">**Communication**</span> | Submarine communication, navigation. | **3 Hz – 300 kHz** |
 
 
 ```{python}
 #| label: map-output
 #| fig-cap: "Comparison of frequency ranges across multidisciplinary hydrophone applications."
+#| lightbox: true
 #| echo: false
 
 import matplotlib.pyplot as plt
@@ -219,11 +225,8 @@ plt.tight_layout()
 plt.show()
 ```
 
-# References
+# Resources
 - Suedel et al., 2019. Evaluating Effects of Dredging-Induced Underwater Sound on Aquatic Species: A Literature Review. Technical Report. [[pdf]](https://erdc-library.erdc.dren.mil/server/api/core/bitstreams/3ac0905e-e622-4b9d-851d-5d9d7c2911e5/content)
-
-
-# Useful links
 
 
 ```{=html}

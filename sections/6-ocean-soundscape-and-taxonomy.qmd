@@ -103,7 +103,7 @@ This taxonomy serves as the foundational label set for our ML anomaly autodetect
 
 </div>
 
-# References
+# Resources
 This hierarchical format was inspired by [Google's AudioSet](https://research.google.com/audioset/ontology/index.html).
 
 Literature review references which informed this taxonomy:
@@ -120,7 +120,7 @@ Literature review references which informed this taxonomy:
 - Z. Li, S. Xiang, T. Yu, J. Gao, J. Ruan, Y. Hu, T. Liu, & Y. Fu. (2024). Oceanship: A Large-Scale Dataset for Underwater Audio Target Recognition. In Lecture Notes in Computer Science (pp. 475–486). Springer Nature Singapore. https://doi.org/10.1007/978-981-97-5591-2_40
 
 
-# Useful Links
+
 
 ```{=html}
 <div style="border: 1px solid rgba(255, 255, 255, 0.2); 

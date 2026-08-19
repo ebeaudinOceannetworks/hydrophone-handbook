@@ -55,7 +55,7 @@ where $p$ is pressure, and $u$ the particle velocity.
 ### Impedance
 Impedance of water is much greater than that of air.
 
-### Power Spectrum Density
+### Power spectrum density
 The acoustic signal power per unit frequency as measured at a single frequency. Unit: $\micro Pa^2\cdot s$
 
 ### Pressure
@@ -95,7 +95,7 @@ $$
 P(f) = \int_\infty^\infty exp\left(-2\pi i f t \right) p(t) dt
 $$
 
-### Sound Exposure Level (SEL)
+### Sound exposure level (SEL)
 
 ### Source level (SL$_E$)
 
@@ -108,14 +108,14 @@ A visual representation of acoustic amplitude compared with time and frequency.
 ### Transmission loss
 
 ### Wavelength
-Distance over which a wave completes one scillation cycle. Unit: meter (m). Symbol: $\lambda$.
+Distance over which a wave completes one scillation cycle. Unit: metre (m). Symbol: $\lambda$.
 
 ## Acronyms
 
 IPP: Information Point Person
 
 
-## References
+## Resources
 
 * PNNL report.
 * ISO 18405 - Underwater acoustics. Link: https://cdn.standards.iteh.ai/samples/62406/d4e330b42f944401bf8522761712519b/ISO-18405-2017.pdf

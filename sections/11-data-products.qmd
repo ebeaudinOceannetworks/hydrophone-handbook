@@ -31,14 +31,14 @@ Hydrophone Acceleration Data | HACC | 128 | .acc
 Note that both **Data Product Code** and **File Extension** are needed when downloading data through the API.
 Each data product (`dataProductCode`) has a set of data product options (`dpo_*`) that can be used to narrow down the request.
 
-# Audio Data
+# Audio data
 
 ::: {.dp-panel}
 
 ::: {.dp-split}
 
 ::: {.dp-visual}
-![Amplitude and frequency of an acoustic signal.](../images/AD.png)
+![Amplitude and frequency of an acoustic signal.](../images/AD.png){lightbox=true}
 :::
 
 ::: {.dp-copy}
@@ -77,14 +77,14 @@ Why FLAC is the preferred format?
 
 :::
 
-# Hydrophone Spectral Data
+# Hydrophone spectral data
 
 ::: {.dp-panel}
 
 ::: {.dp-split}
 
 ::: {.dp-visual}
-![5-min spectrogram of a boat passing by a hydrophone at Digby Island.](../images/ICLISTENHF1252_20260814T210509.000Z-spect.png)
+![5-min spectrogram of a boat passing by a hydrophone at Digby Island.](../images/ICLISTENHF1252_20260814T210509.000Z-spect.png){lightbox=true}
 :::
 
 ::: {.dp-copy}
@@ -110,7 +110,7 @@ This data product is a practical way for quick-checks without processing terabyt
 :::
 
 
-::: {.callout-tip collapse="true"}
+::: {.callout-note collapse="true"}
 ## Expand to learn more about the method
 
 A spectrogram is built from short Fourier transforms of the audio:
@@ -152,14 +152,14 @@ ONC spectrogram settings in the example above:
 
 :::
 
-# Spectral Probability Density
+# Spectral probability density
 
 ::: {.dp-panel}
 
 ::: {.dp-split}
 
 ::: {.dp-visual}
-![Hydrophone spectral probability density plot.](../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png)
+![Hydrophone spectral probability density plot.](../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png){lightbox=true}
 :::
 
 ::: {.dp-copy}
@@ -177,7 +177,7 @@ The Spectral Probability Density is a statistical view of long-term ambient nois
 
 :::
 
-::: {.callout-tip collapse="true"}
+::: {.callout-note collapse="true"}
 ## Expand to learn more about the method
 
 The mean square value in frequency range $(f, \Delta f)$ is:
@@ -208,14 +208,14 @@ HSPD then histograms those levels per frequency bin over a long window, so the c
 
 :::
 
-# Auxiliary Data
+# Auxiliary data
 
 ::: {.dp-panel}
 
 ::: {.dp-split}
 
 ::: {.dp-visual}
-![Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature.](../images/aux-data.png)
+![Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature.](../images/aux-data.png){lightbox=true}
 :::
 
 ::: {.dp-copy}
@@ -243,7 +243,7 @@ LF (`.txt`) and HACC (`.acc`) have no extra `dpo_*` options. There is no single 
 
 :::
 
-# Useful links
+# Resources
 
 ```{=html}
 <div class="docs-card">

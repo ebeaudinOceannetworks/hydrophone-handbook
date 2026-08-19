@@ -59,7 +59,8 @@ An ADCP is located very close to the hydrophone, resulting in a strong signal be
 </div>
 ```
 
-SONARs are used to measure distances, help navigate or detect objects by sending a sound wave into the water. Two SONARs here emit sounds at 7kHz and ~3 kHz.
+SONARs are used to measure distances, help navigate or detect objects by sending a sound wave into the water.
+Two SONARs signals here at 2 and 7 kHz are potentially coming from a nearby NAVY ship, and could be from different sources.
 
 :::
 
@@ -264,7 +265,7 @@ At that time, the hydrophone was too close to a platform with other noisy instru
 :::
 
 
-# Useful Links
+# Resources
 
 ```{=html}
 <div class="docs-card">

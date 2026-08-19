@@ -97,6 +97,54 @@ figcaption i {
   font-weight: inherit;
 }
 
+.quarto-figure img,
+.figure img,
+.dp-visual img,
+.intro-map img,
+.intro-hero img,
+.sound-card-visual img {
+  cursor: zoom-in;
+}
+
+#quarto-document-content .quarto-figure,
+#quarto-document-content figure.figure {
+  width: 80%;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#quarto-document-content .quarto-figure img,
+#quarto-document-content figure.figure img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.intro-map figure,
+.intro-hero figure,
+.dp-visual figure,
+.sound-card-visual figure,
+.fig-full,
+.fig-full figure,
+#quarto-document-content .fig-full .quarto-figure {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.fig-full img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vendor img {
+  cursor: pointer;
+}
+
 /* Hide Quarto's default date block; compile date lives in the banner. */
 #title-block-header .quarto-title-meta {
   display: none !important;
@@ -373,30 +421,48 @@ body {
 }
 
 /* 1. Target all sidebar links (Active and Inactive) */
-#quarto-sidebar .sidebar-item-text, 
+#quarto-sidebar .sidebar-item {
+    margin: 0.18rem 0.4rem;
+}
+
+#quarto-sidebar .sidebar-item-text,
 #quarto-sidebar .sidebar-link {
-    color: #ffffff !important;   /* Force White */
-    font-weight: 700 !important; /* Force Bold */
-    opacity: 1 !important;      /* Ensure they aren't faded */
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.3;
+    display: block;
+    padding: 0.42rem 0.75rem !important;
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+    background-color: transparent;
+}
+
+#quarto-sidebar .sidebar-link .chapter-title {
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
 }
 
 /* 2. Target internal subsections (TOC items in sidebar) */
-/* If you want the subsections slightly different but still white */
 #quarto-sidebar .sidebar-section-items .sidebar-link {
-    font-weight: 500 !important;
-    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 400 !important;
+    font-size: 0.82rem !important;
+    color: rgba(255, 255, 255, 0.7) !important;
     padding-left: 1.25rem !important;
 }
 
 /* 3. Handle the Hover state */
 #quarto-sidebar .sidebar-link:hover {
-    color: #e67e5f !important; /* ONC Orange on hover for clarity */
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 /* 4. The Active page indicator */
 #quarto-sidebar .sidebar-link.active {
-    border-left: 3px solid #e67e5f !important; /* Orange bar on the left */
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-left: 3px solid #f97316;
 }
 
 
@@ -414,6 +480,25 @@ body {
   color: #2d4a77 !important; /* Canva Dark Blue */
   font-weight: 800 !important;
   border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.callout.callout-note.callout-style-simple {
+  margin-top: 1rem !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-left: 3px solid #e67e5f !important;
+  border-radius: 8px;
+}
+
+.callout.callout-note.callout-style-simple .callout-header {
+  background: transparent !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  border-bottom: none;
+}
+
+.callout.callout-note.callout-style-simple .callout-body,
+.callout.callout-note.callout-style-simple .callout-body p {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* PDF button */
@@ -443,6 +528,12 @@ body {
 
 #quarto-content > * {
     padding-top: 0px !important;
+}
+
+@media (min-width: 992px) {
+  body.docked #quarto-document-content {
+    padding-left: 1.25rem;
+  }
 }
 
 @media print {
@@ -762,12 +853,19 @@ body {
 }
 
 .dp-panel {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.92);
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 3rem 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.dp-panel.sound-example {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  margin-bottom: 3rem;
 }
 
 .dp-split {
@@ -952,8 +1050,7 @@ body {
 
 .kpi-card,
 .feature-card,
-.sound-card,
-.map-tile {
+.sound-card {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.03));
@@ -1075,20 +1172,19 @@ section.listen-section > h3::before {
   color: rgba(255, 255, 255, 0.86);
 }
 
-.map-tile {
-  padding: 0.7rem 0.7rem 0.4rem;
-  overflow: hidden;
+.intro-map {
   margin: 0 0 1.5rem 0;
 }
 
-.map-tile figure,
+.intro-map figure,
 .intro-hero figure {
   margin: 0;
   width: 100%;
   max-width: 100%;
 }
 
-.map-tile img {
+.intro-map img {
+  display: block;
   width: 100%;
   height: auto;
   border-radius: 10px;

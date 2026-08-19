@@ -55,7 +55,7 @@ print(f'<p class="kpi-value">{nh}</p>')
 
 
 
-::: {.map-tile}
+::: {.intro-map}
 ![Hydrophone network at Ocean Networks Canada, from the Pacific to the Arctic and Atlantic coasts.](images/onc-hydrophone-canada.jpeg){lightbox=true width="100%"}
 :::
 
@@ -127,7 +127,7 @@ Identify areas of increasing activity, including Arctic routes opened by sea-ice
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.feature-card}
-### 🛡️ National defense
+### 🛡️ National defence
 SOSUS (sound surveillance system) to identify vessels and nuclear testing.
 :::
 :::
@@ -141,10 +141,6 @@ Map minerals, detect earthquakes, and support resource exploration.
 
 :::
 
-::: {.intro-hero}
-![Artistic view of a hydrophone underwater.](images/hydrophone.png){lightbox=true width="100%"}
-:::
-
 
 # Goals and future direction for passive acoustics
 
@@ -153,7 +149,7 @@ Map minerals, detect earthquakes, and support resource exploration.
 * Becoming leaders in Arctic hydrophone array deployments.
 
 ::: {.intro-territory}
-::: {.callout-tip appearance="minimal"}
+::: {.callout-note appearance="minimal"}
 ## Territory acknowledgment
 We recognize that Ocean Networks Canada conducts its activities on the traditional lands of the Lək̓ʷəŋən (Lekwungen) people, known today as the Songhees and Esquimalt Nations, as well as the Xwsepsum (Esquimalt) and W̱SÁNEĆ peoples.
 :::

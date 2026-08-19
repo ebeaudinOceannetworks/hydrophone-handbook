@@ -44,7 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-70a503e8bdd0f44e0108b11b5e14c42b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c269cdfbc77a96d07ba23f79956d61ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -266,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/14-science-and-applications-at-onc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
+  <a href="../sections/14-science-and-publications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -294,14 +297,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#planning-and-governance" id="toc-planning-and-governance" class="nav-link active" data-scroll-target="#planning-and-governance">1. Planning and Governance</a></li>
-  <li><a href="#data-collection-signal-chain" id="toc-data-collection-signal-chain" class="nav-link" data-scroll-target="#data-collection-signal-chain">2. Data Collection &amp; Signal Chain</a></li>
+  <li><a href="#planning-and-governance" id="toc-planning-and-governance" class="nav-link active" data-scroll-target="#planning-and-governance">1. Planning and governance</a></li>
+  <li><a href="#data-collection-signal-chain" id="toc-data-collection-signal-chain" class="nav-link" data-scroll-target="#data-collection-signal-chain">2. Data collection &amp; signal chain</a></li>
   <li><a href="#commissioning" id="toc-commissioning" class="nav-link" data-scroll-target="#commissioning">3. Commissioning</a></li>
-  <li><a href="#data-quality-assurance" id="toc-data-quality-assurance" class="nav-link" data-scroll-target="#data-quality-assurance">4. Data Quality &amp; Assurance</a></li>
-  <li><a href="#metadata-standardization" id="toc-metadata-standardization" class="nav-link" data-scroll-target="#metadata-standardization">5. Metadata &amp; Standardization</a></li>
-  <li><a href="#preservation-storage" id="toc-preservation-storage" class="nav-link" data-scroll-target="#preservation-storage">6. Preservation &amp; Storage</a></li>
-  <li><a href="#access-analysis" id="toc-access-analysis" class="nav-link" data-scroll-target="#access-analysis">7. Access &amp; Analysis</a></li>
-  <li><a href="#recovery-decommissioning" id="toc-recovery-decommissioning" class="nav-link" data-scroll-target="#recovery-decommissioning">8. Recovery &amp; Decommissioning</a></li>
+  <li><a href="#data-quality-assurance" id="toc-data-quality-assurance" class="nav-link" data-scroll-target="#data-quality-assurance">4. Data quality &amp; assurance</a></li>
+  <li><a href="#metadata-standardization" id="toc-metadata-standardization" class="nav-link" data-scroll-target="#metadata-standardization">5. Metadata &amp; standardization</a></li>
+  <li><a href="#preservation-storage" id="toc-preservation-storage" class="nav-link" data-scroll-target="#preservation-storage">6. Preservation &amp; storage</a></li>
+  <li><a href="#access-analysis" id="toc-access-analysis" class="nav-link" data-scroll-target="#access-analysis">7. Access &amp; analysis</a></li>
+  <li><a href="#recovery-decommissioning" id="toc-recovery-decommissioning" class="nav-link" data-scroll-target="#recovery-decommissioning">8. Recovery &amp; decommissioning</a></li>
   </ul>
 </nav>
     </div>
@@ -330,15 +333,17 @@ ul.task-list li input[type="checkbox"] {
 <p>This section outlines the end-to-end journey of a hydrophone at ONC, from the initial purchase and contract to long-term data analysis. The life cycle is based on <a href="https://doi.org/10.1109/oceans55160.2024.10754545">Aghaei et al.&nbsp;(2024)</a>, <em>Best Practices for Managing Passive Acoustics Data at Ocean Networks Canada</em>.</p>
 <p>Hydrophones have been in use at ONC since 2006, totalling more than 700 TB of archived data.</p>
 <p>The life cycle workflow ensures that data is not just collected, but are <strong>FAIR</strong> (Findable, Accessible, Interoperable, and Reusable). ONC commits to share and preserve data long-term.</p>
+<div class="fig-full">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/Hydrophone-Life-Cycle.png" class="img-fluid figure-img"></p>
+<p><a href="../images/Hydrophone-Life-Cycle.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Diagram of a hydrophone life cycle at Ocean Networks Canada."><img src="../images/Hydrophone-Life-Cycle.png" class="img-fluid figure-img" data-lightbox="true" alt="Diagram of a hydrophone life cycle at Ocean Networks Canada."></a></p>
 <figcaption>Diagram of a hydrophone life cycle at Ocean Networks Canada.</figcaption>
 </figure>
 </div>
+</div>
 <!-- link to canva where the hydrophone life cycle image was created: https://canva.link/erzgms3fvn7dyz6 -->
 <section id="planning-and-governance" class="level1">
-<h1>1. Planning and Governance</h1>
+<h1>1. Planning and governance</h1>
 <p><em>Teams involved: Science, DAQ, DSO, Engineers</em></p>
 <p>Before a hydrophone is deployed in the water, the following legal and technical steps must be taken:</p>
 <ul>
@@ -348,7 +353,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="data-collection-signal-chain" class="level1">
-<h1>2. Data Collection &amp; Signal Chain</h1>
+<h1>2. Data collection &amp; signal chain</h1>
 <p><em>Teams involved: DAQ, DSO, Systems, Marine Ops, Engineers</em></p>
 <ul>
 <li><strong>Hardware</strong>: We primarily use <strong>Ocean Sonics</strong> (HF/AF) and <strong>GeoSpectrum</strong> (from JASCO distributor) instruments, deployed as single units or four-element arrays.</li>
@@ -369,13 +374,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Once a hydrophone is deployed and recording data, the commissioning of the device starts. This process is designed to catch technical issues early and ensures the data is “science-ready”.</p>
 <ul>
 <li><strong>Immediate Post-Deployment</strong>: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming. A JIRA ticket is created which consolidates all relevant information.</li>
-<li><strong>1-2 Months Post-Deployment</strong>: A detailed analysis of data stream is performed, and several elements are analyzed including the presence of noise, saturation, array consistency (for 4 elements arrays), auxiliary data.</li>
+<li><strong>1-2 Months Post-Deployment</strong>: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4 elements arrays), auxiliary data.</li>
 </ul>
 <p>The commissioning ticket is closed once the data is confirmed found in the Hydrophone Data Viewer, accessible through ONC API, and that the data products are generated correctly.</p>
 <p>For the complete procedure: <a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/272761113/Hydrophone+commissioning+procedure">Hydrophone Commissioning Procedure</a></p>
 </section>
 <section id="data-quality-assurance" class="level1">
-<h1>4. Data Quality &amp; Assurance</h1>
+<h1>4. Data quality &amp; assurance</h1>
 <p><em>Teams involved: DAQ, Science, Systems</em></p>
 <p>Because hydrophone data is classified as <em>complex</em> data (unlike <em>scalar</em> data), standard automated QAQC (like those for temperature or salinity) does not yet exist.</p>
 <ul>
@@ -384,7 +389,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="metadata-standardization" class="level1">
-<h1>5. Metadata &amp; Standardization</h1>
+<h1>5. Metadata &amp; standardization</h1>
 <p><em>Teams involved: DSO</em></p>
 <p>To make our data globally compatible, we follow strict international standards:</p>
 <ul>
@@ -395,15 +400,15 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="preservation-storage" class="level1">
-<h1>6. Preservation &amp; Storage</h1>
+<h1>6. Preservation &amp; storage</h1>
 <p><em>Teams involved: Software, DSO, Systems</em></p>
 <ul>
-<li><strong>Primary Storage</strong>: Terabytes of data are stored locally at the University of Victoria data center.</li>
+<li><strong>Primary Storage</strong>: Terabytes of data are stored locally at the University of Victoria data centre.</li>
 <li><strong>Redundancy</strong>: A complete offsite backup is maintained to prevent data loss, and also shares data processing load.</li>
 </ul>
 </section>
 <section id="access-analysis" class="level1">
-<h1>7. Access &amp; Analysis</h1>
+<h1>7. Access &amp; analysis</h1>
 <p><em>Teams involved: Science, DSO, Software, End-Users</em></p>
 <ul>
 <li><strong>Discovery</strong>: Users find data via Oceans 3.0 using Data Search, the Hydrophone Viewer (5-minute spectrogram previews), or the API.</li>
@@ -411,7 +416,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="recovery-decommissioning" class="level1">
-<h1>8. Recovery &amp; Decommissioning</h1>
+<h1>8. Recovery &amp; decommissioning</h1>
 <p><em>Teams involved: DSO, Marine Ops, Systems</em></p>
 <p>The end of a deployement does not mean the end of a instrument’s use. Hydrophones are often re-deployed during the ONC maintenance cruises, or returning to MTC of the manufacturer for maintenance.</p>
 <ul>
@@ -837,6 +842,38 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

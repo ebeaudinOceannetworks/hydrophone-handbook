@@ -44,7 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-70a503e8bdd0f44e0108b11b5e14c42b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c269cdfbc77a96d07ba23f79956d61ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -295,7 +298,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/14-science-and-applications-at-onc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
+  <a href="../sections/14-science-and-publications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -324,11 +327,11 @@ window.Quarto = {
    
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#audio-data" id="toc-audio-data" class="nav-link" data-scroll-target="#audio-data">Audio Data</a></li>
-  <li><a href="#hydrophone-spectral-data" id="toc-hydrophone-spectral-data" class="nav-link" data-scroll-target="#hydrophone-spectral-data">Hydrophone Spectral Data</a></li>
-  <li><a href="#spectral-probability-density" id="toc-spectral-probability-density" class="nav-link" data-scroll-target="#spectral-probability-density">Spectral Probability Density</a></li>
-  <li><a href="#auxiliary-data" id="toc-auxiliary-data" class="nav-link" data-scroll-target="#auxiliary-data">Auxiliary Data</a></li>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
+  <li><a href="#audio-data" id="toc-audio-data" class="nav-link" data-scroll-target="#audio-data">Audio data</a></li>
+  <li><a href="#hydrophone-spectral-data" id="toc-hydrophone-spectral-data" class="nav-link" data-scroll-target="#hydrophone-spectral-data">Hydrophone spectral data</a></li>
+  <li><a href="#spectral-probability-density" id="toc-spectral-probability-density" class="nav-link" data-scroll-target="#spectral-probability-density">Spectral probability density</a></li>
+  <li><a href="#auxiliary-data" id="toc-auxiliary-data" class="nav-link" data-scroll-target="#auxiliary-data">Auxiliary data</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -443,13 +446,13 @@ window.Quarto = {
 <p>Note that both <strong>Data Product Code</strong> and <strong>File Extension</strong> are needed when downloading data through the API. Each data product (<code>dataProductCode</code>) has a set of data product options (<code>dpo_*</code>) that can be used to narrow down the request.</p>
 </section>
 <section id="audio-data" class="level1">
-<h1>Audio Data</h1>
+<h1>Audio data</h1>
 <div class="dp-panel">
 <div class="dp-split">
 <div class="dp-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/AD.png" class="img-fluid figure-img"></p>
+<p><a href="../images/AD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Amplitude and frequency of an acoustic signal."><img src="../images/AD.png" class="img-fluid figure-img" data-lightbox="true" alt="Amplitude and frequency of an acoustic signal."></a></p>
 <figcaption>Amplitude and frequency of an acoustic signal.</figcaption>
 </figure>
 </div>
@@ -494,13 +497,13 @@ window.Quarto = {
 </div>
 </section>
 <section id="hydrophone-spectral-data" class="level1">
-<h1>Hydrophone Spectral Data</h1>
+<h1>Hydrophone spectral data</h1>
 <div class="dp-panel">
 <div class="dp-split">
 <div class="dp-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/ICLISTENHF1252_20260814T210509.000Z-spect.png" class="img-fluid figure-img"></p>
+<p><a href="../images/ICLISTENHF1252_20260814T210509.000Z-spect.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="5-min spectrogram of a boat passing by a hydrophone at Digby Island."><img src="../images/ICLISTENHF1252_20260814T210509.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="5-min spectrogram of a boat passing by a hydrophone at Digby Island."></a></p>
 <figcaption>5-min spectrogram of a boat passing by a hydrophone at Digby Island.</figcaption>
 </figure>
 </div>
@@ -516,13 +519,13 @@ window.Quarto = {
 <p><strong><code>.fft</code> — proprietary spectral data (Ocean Sonics only).</strong> Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and unfit for scientific research.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Expand to learn more about the method
+<span class="screen-reader-only">Note</span>Expand to learn more about the method
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -581,13 +584,13 @@ window.Quarto = {
 </div>
 </section>
 <section id="spectral-probability-density" class="level1">
-<h1>Spectral Probability Density</h1>
+<h1>Spectral probability density</h1>
 <div class="dp-panel">
 <div class="dp-split">
 <div class="dp-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="img-fluid figure-img"></p>
+<p><a href="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Hydrophone spectral probability density plot."><img src="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="img-fluid figure-img" data-lightbox="true" alt="Hydrophone spectral probability density plot."></a></p>
 <figcaption>Hydrophone spectral probability density plot.</figcaption>
 </figure>
 </div>
@@ -600,13 +603,13 @@ window.Quarto = {
 <p>The Spectral Probability Density is a statistical view of long-term ambient noise, originally proposed by <a href="https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient">Merchant et al.&nbsp;(2013)</a>. It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Expand to learn more about the method
+<span class="screen-reader-only">Note</span>Expand to learn more about the method
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -650,13 +653,13 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 </section>
 <section id="auxiliary-data" class="level1">
-<h1>Auxiliary Data</h1>
+<h1>Auxiliary data</h1>
 <div class="dp-panel">
 <div class="dp-split">
 <div class="dp-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/aux-data.png" class="img-fluid figure-img"></p>
+<p><a href="../images/aux-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."><img src="../images/aux-data.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."></a></p>
 <figcaption>Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature.</figcaption>
 </figure>
 </div>
@@ -688,8 +691,8 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 </div>
 </section>
-<section id="useful-links" class="level1">
-<h1>Useful links</h1>
+<section id="resources" class="level1">
+<h1>Resources</h1>
 <div class="docs-card">
   <div class="docs-card-title">
     <img src="../images/confluence_logo_no_bckg.png" width="24" alt="">
@@ -1124,6 +1127,38 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

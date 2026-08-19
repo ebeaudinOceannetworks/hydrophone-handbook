@@ -44,7 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-70a503e8bdd0f44e0108b11b5e14c42b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c269cdfbc77a96d07ba23f79956d61ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -295,7 +298,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/14-science-and-applications-at-onc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
+  <a href="../sections/14-science-and-publications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -336,7 +339,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#sound-direction-beamforming" id="toc-sound-direction-beamforming" class="nav-link" data-scroll-target="#sound-direction-beamforming">Sound direction &amp; beamforming</a></li>
   <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a></li>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -379,17 +382,17 @@ window.Quarto = {
 <p><strong>Cabled arrays</strong> sit on the observatory. Two or four hydrophones are mounted on a frame and wired to an <strong>ONC Link</strong> (ONC’s version of Ocean Sonics’ icLink). The Link time-synchronizes the channels and combines their data streams. The ONC Link is connected to a <strong>Junction Box (JB)</strong> which itself receives power from the seafloor cable. The advantage of cabled sites is that the data comes in in near real time.</p>
 <p><strong>Autonomous arrays</strong> are not cabled. They run on batteries and record onboard until recovery. The JASCO AMARs in Strait of Georgia East is a good example of this. Unfortunately, the data is only available once the hydrophones have been recovered, so there is no way to know in real time if there is an issue with the hydrophones until then. Moreover, if the memory is full, the hydrophone stops recording and we are effectively losing new data.</p>
 <p>In both cases the hydrophones share a structure with other instruments. Those neighbours radiate noise, so each piece of hardware should be tested for level and frequency before it sits next to a hydrophone.</p>
-<p>The image below shows a <strong>box-type</strong> hydrophone array, mounted at the MTC (Marine Technology Centre). On this array, there are four hydrophones at locations A, B, C, D, distanced about 1-meter from one another.</p>
+<p>The image below shows a <strong>box-type</strong> hydrophone array, mounted at the MTC (Marine Technology Centre). On this array, there are four hydrophones at locations A, B, C, D, distanced about 1-metre from one another.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/MTC_hydrophone_array_annotated.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><a href="../images/MTC_hydrophone_array_annotated.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia."><img src="../images/MTC_hydrophone_array_annotated.png" class="img-fluid figure-img" data-lightbox="true" alt="A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia."></a></p>
 <figcaption>A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia.</figcaption>
 </figure>
 </div>
-<p>The distance between hydrophones is chosen for <strong>beamforming</strong>: estimating direction of arrival. But, 1 meter is too small for whale-localization (see below).</p>
+<p>The distance between hydrophones is chosen for <strong>beamforming</strong>: estimating direction of arrival. But, 1 metre is too small for whale-localization (see below).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/box-array.png" class="img-fluid figure-img"></p>
+<p><a href="../images/box-array.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Box-type array configuration for hydrophones."><img src="../images/box-array.png" class="img-fluid figure-img" data-lightbox="true" alt="Box-type array configuration for hydrophones."></a></p>
 <figcaption>Box-type array configuration for hydrophones.</figcaption>
 </figure>
 </div>
@@ -412,7 +415,7 @@ window.Quarto = {
 <p>In this example from 2023, interference noise from instruments on the same platform at the Holyrood site was intense enough to fully mask natural ambient sound, biological vocalizations, and other signals of scientific interests.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/ICLISTENHF2098_20240109T030502.000Z-spect.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><a href="../images/ICLISTENHF2098_20240109T030502.000Z-spect.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL."><img src="../images/ICLISTENHF2098_20240109T030502.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL."></a></p>
 <figcaption>Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL.</figcaption>
 </figure>
 </div>
@@ -430,7 +433,7 @@ window.Quarto = {
 <section id="infrastructure-and-flow-noise" class="level2">
 <h2 class="anchored" data-anchor-id="infrastructure-and-flow-noise">Infrastructure and flow noise</h2>
 <p>How a hydrophone is physically attached to the infrastructure makes a massive difference in data quality. Things like loose parts, rigid attachments, or using the wrong ties may affect data quality and show up as interference, or completely mask the data. Protective mounting hardwares are designed to minimize structural interference and flow noise.</p>
-<p>Because hydrophones are pressure sensors, they are susceptible to pressure waves generated by surface swells (which decay exponentially with depth). Wave pressure can easily saturate the hydrophone’s dynamic range. Hydrophones should generally be moored at least 20 meters deep, and significantly deeper in areas known for large swells (e.g., Folger Passage).</p>
+<p>Because hydrophones are pressure sensors, they are susceptible to pressure waves generated by surface swells (which decay exponentially with depth). Wave pressure can easily saturate the hydrophone’s dynamic range. Hydrophones should generally be moored at least 20 metres deep, and significantly deeper in areas known for large swells (e.g., Folger Passage).</p>
 <p>Here is a list of mounting material and their advantages or disadvantages:</p>
 <ul>
 <li>Shock Cord/Bungee: Excellent (decouples vibration)</li>
@@ -443,7 +446,7 @@ window.Quarto = {
 <p>Hydrophones are often protected by a cage (guard or shroud), a semi-rigid housing that surrounds the hydrophone. The main purpose to prevent debris, sea life, or cables from striking the sensor. It can also help break turbulent flow (see Karman vortices) around the sensor, which can create low-frequency noise in the data.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/hydrophone-guards.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+<p><a href="../images/hydrophone-guards.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Hydrophone guards prevent debris, sea life, and more, from hitting the sensor."><img src="../images/hydrophone-guards.jpg" class="img-fluid figure-img" data-lightbox="true" alt="Hydrophone guards prevent debris, sea life, and more, from hitting the sensor."></a></p>
 <figcaption>Hydrophone guards prevent debris, sea life, and more, from hitting the sensor.</figcaption>
 </figure>
 </div>
@@ -457,7 +460,7 @@ window.Quarto = {
 <p>The “sock method”: we use a simple <em>sock</em> (graciously made by a local seamstress), which is a soft and flexible cover that fit snug over the hydrophone shroud. It greatly extends lifetime of all hydrophones by preventing microorganisms to directly attach on the sensor. It can also prevent fine sediments (e.g., silt) from settling into the small gaps.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/hydrophone-sock.png" class="img-fluid figure-img"></p>
+<p><a href="../images/hydrophone-sock.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="The sock method helps to prevent biofouling."><img src="../images/hydrophone-sock.png" class="img-fluid figure-img" data-lightbox="true" alt="The sock method helps to prevent biofouling."></a></p>
 <figcaption>The sock method helps to prevent biofouling.</figcaption>
 </figure>
 </div>
@@ -483,8 +486,8 @@ window.Quarto = {
 <h1>Deployment</h1>
 <p>At ONC, most hydrophones are deployed using an Remotely Operated Vehicles (ROV); which is a tethered, unoccupied underwater robots used to explore, inspect, and work in too deep or dangerous ocean environments.</p>
 </section>
-<section id="useful-links" class="level1">
-<h1>Useful links</h1>
+<section id="resources" class="level1">
+<h1>Resources</h1>
 <div style="border: 1px solid rgba(255, 255, 255, 0.2); 
             border-radius: 8px; 
             padding: 16px; 
@@ -964,6 +967,38 @@ window.Quarto = {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

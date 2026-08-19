@@ -44,7 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-70a503e8bdd0f44e0108b11b5e14c42b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c269cdfbc77a96d07ba23f79956d61ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -128,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
     text-align: center !important;
   }
 </style>
-</head><body class="nav-sidebar docked slimcontent quarto-light"><div class="handbook-orca-banner" id="handbook-banner">
+</head><body class="nav-sidebar docked quarto-light"><div class="handbook-orca-banner" id="handbook-banner">
   <h1>Hydrophone Handbook</h1>
   <p class="handbook-banner-tagline">from the whale to the user</p>
   <div class="handbook-banner-org">
@@ -295,7 +298,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/14-science-and-applications-at-onc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
+  <a href="../sections/14-science-and-publications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Science and Publications</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -324,11 +327,11 @@ window.Quarto = {
    
   <ul class="collapse">
   <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general">General</a></li>
-  <li><a href="#from-pressure-to-voltage" id="toc-from-pressure-to-voltage" class="nav-link" data-scroll-target="#from-pressure-to-voltage">From Pressure to Voltage</a></li>
+  <li><a href="#from-pressure-to-voltage" id="toc-from-pressure-to-voltage" class="nav-link" data-scroll-target="#from-pressure-to-voltage">From pressure to voltage</a></li>
   <li><a href="#sensitivity" id="toc-sensitivity" class="nav-link" data-scroll-target="#sensitivity">Sensitivity</a></li>
-  <li><a href="#signal-processing-methods" id="toc-signal-processing-methods" class="nav-link" data-scroll-target="#signal-processing-methods">Signal Processing Methods</a>
+  <li><a href="#signal-processing-methods" id="toc-signal-processing-methods" class="nav-link" data-scroll-target="#signal-processing-methods">Signal processing methods</a>
   <ul class="collapse">
-  <li><a href="#signal-to-noise-ratio" id="toc-signal-to-noise-ratio" class="nav-link" data-scroll-target="#signal-to-noise-ratio">Signal to Noise ratio</a></li>
+  <li><a href="#signal-to-noise-ratio" id="toc-signal-to-noise-ratio" class="nav-link" data-scroll-target="#signal-to-noise-ratio">Signal to noise ratio</a></li>
   </ul></li>
   <li><a href="#other-hydrophone-types" id="toc-other-hydrophone-types" class="nav-link" data-scroll-target="#other-hydrophone-types">Other hydrophone types</a></li>
   <li><a href="#passive-acoustics-applications" id="toc-passive-acoustics-applications" class="nav-link" data-scroll-target="#passive-acoustics-applications">Passive acoustics applications</a></li>
@@ -338,7 +341,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -359,33 +362,63 @@ window.Quarto = {
 </header>
 
 
-<section id="general" class="level1 page-columns page-full">
+<section id="general" class="level1">
 <h1>General</h1>
 <p>A hydrophone is a device that passively detects acoustic signal underwater. The word <em>hydrophone</em> comes from the Greek <em>hydro</em> (water), and <em>phone</em> (voice).</p>
 <p>Acoustic data are recorded in the form of a time-amplitude signal, at a specified sampling rate.</p>
 <p>Several types of hydrophones exist depending on the applications, with different frequency range. Some of the most common applications of <strong>passive acoustics</strong> are:</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><strong>Passive acoustics</strong>: Action of listening to sound without emitting a signal, whereas in active acoustics the emitted signal is then analysed.</p>
-</div></div><ul>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Passive acoustics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Action of listening to sound without emitting a signal, whereas in active acoustics the emitted signal is then analysed.</p>
+</div>
+</div>
+<ul>
 <li>marine mammal monitoring</li>
 <li>ambient noise characterization</li>
 <li>earthquakes detection</li>
 </ul>
 </section>
-<section id="from-pressure-to-voltage" class="level1 page-columns page-full">
-<h1>From Pressure to Voltage</h1>
+<section id="from-pressure-to-voltage" class="level1">
+<h1>From pressure to voltage</h1>
 <p>Hydrophones contain a key element, a <strong>piezoelectric</strong> material, which “feels” the pressure changes of a passing sound wave, and convert them into electric signals. In such, hydrophones are essentially <strong>transducers</strong>, as they simply convert potential energy into electrical energy.</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><strong>Piezoelectric</strong>: Material that generates an electric charge in response to applied mechanical stress. As a wave passes, it compresses the ceramic, which creates a proportional electrical voltage.</p>
-</div><div class="margin-aside">
-<p><strong>Transducer</strong>: A device that converts energy from one form (acoustic pressure) to another (electrical voltage).</p>
-</div></div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Piezoelectric
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Material that generates an electric charge in response to applied mechanical stress. As a wave passes, it compresses the ceramic, which creates a proportional electrical voltage.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Transducer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A device that converts energy from one form (acoustic pressure) to another (electrical voltage).</p>
+</div>
+</div>
 <p>The relationship between the pressure (p) and the voltage (V) is determined by the sensitivity of the hydrophone, usually expressed in dB re 1V/μPa.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/hydrophone-signal-schematic.png" class="img-fluid figure-img"></p>
+<p><a href="../images/hydrophone-signal-schematic.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Conversion of sound signal to electric signal."><img src="../images/hydrophone-signal-schematic.png" class="img-fluid figure-img" data-lightbox="true" alt="Conversion of sound signal to electric signal."></a></p>
 <figcaption>Conversion of sound signal to electric signal.</figcaption>
 </figure>
 </div>
@@ -412,34 +445,54 @@ M_\nu = \frac{V_h}{P_h} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/sensitivity-curve.png" class="img-fluid figure-img"></p>
+<p><a href="../images/sensitivity-curve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Sensitivity curve of a high-frequency piezoelectric hydrophone."><img src="../images/sensitivity-curve.png" class="img-fluid figure-img" data-lightbox="true" alt="Sensitivity curve of a high-frequency piezoelectric hydrophone."></a></p>
 <figcaption>Sensitivity curve of a high-frequency piezoelectric hydrophone.</figcaption>
 </figure>
 </div>
 </section>
-<section id="signal-processing-methods" class="level1 page-columns page-full">
-<h1>Signal Processing Methods</h1>
-<p>Several methods are used to convert the recorded electric signal in data we can analyze. One method is <strong>Fourier Analysis</strong>, where the total signal is decomposed into a set individual frequencies with associated phase and amplitudes.</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><strong>Fourier Analysis</strong>: Signal decomposition method where a complex signal is expressed as superimposition of simple sine and cosine waves of different frequencies.</p>
-</div></div><div class="quarto-figure quarto-figure-center">
+<section id="signal-processing-methods" class="level1">
+<h1>Signal processing methods</h1>
+<p>Several methods are used to convert the recorded electric signal in data we can analyse. One method is <strong>Fourier Analysis</strong>, where the total signal is decomposed into a set individual frequencies with associated phase and amplitudes.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Fourier analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Signal decomposition method where a complex signal is expressed as superimposition of simple sine and cosine waves of different frequencies.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/fourier-transform.png" class="img-fluid figure-img"></p>
-<figcaption>Fourier Analysis for signal decomposition method. Source: medium</figcaption>
+<p><a href="../images/fourier-transform.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Fourier analysis for signal decomposition. Credit: Medium."><img src="../images/fourier-transform.png" class="img-fluid figure-img" data-lightbox="true" alt="Fourier analysis for signal decomposition. Credit: Medium."></a></p>
+<figcaption>Fourier analysis for signal decomposition. Credit: Medium.</figcaption>
 </figure>
 </div>
 <p>This way, a time-domain signal is converted into a frequency-domain signal which makes it easier to capture at which frequency most of the energy is. For long periods of sound recording, the signal can be divided into shorter segments of equal lengths, specified by a <em>time-window</em>. The result shows how the spectra changes with time, the <strong>spectrogram</strong>.</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><strong>Spectrogram</strong>: A visual, three-dimensional representation of a signal’s frequency spectrum as it changes over time</p>
-</div></div><div class="quarto-figure quarto-figure-center">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Spectrogram
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A visual, three-dimensional representation of a signal’s frequency spectrum as it changes over time.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/spectrogram.png" class="img-fluid figure-img"></p>
-<figcaption>Example of a spectrogram. The x-axis is time, the y-axis is frequency in Hz, and the colors are the levels.</figcaption>
+<p><a href="../images/spectrogram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level."><img src="../images/spectrogram.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level."></a></p>
+<figcaption>Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level.</figcaption>
 </figure>
 </div>
-<p>The x-axis is time, the y-axis represents the frequencies in Hz (per second), while the colors represent the level, expressed in logarithm of the signal power in dB.</p>
+<p>The x-axis is time, the y-axis represents the frequencies in Hz (per second), while the colours represent the level, expressed in logarithm of the signal power in dB.</p>
 <p>Note on choosing the window: it’s impossible to have a good resolution in time and frequency at the same time (Heisenberg’s uncertainty principle).</p>
 <ul>
 <li>Short window = good time resolution, poor frequency resolution</li>
@@ -447,7 +500,7 @@ M_\nu = \frac{V_h}{P_h} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
 </ul>
 <p>Hydrophones can be put into three categories, infrasonic, ultrasonic, and ??</p>
 <section id="signal-to-noise-ratio" class="level2">
-<h2 class="anchored" data-anchor-id="signal-to-noise-ratio">Signal to Noise ratio</h2>
+<h2 class="anchored" data-anchor-id="signal-to-noise-ratio">Signal to noise ratio</h2>
 <p>Signal to Noise ratio is an important element to consider for hydrophones.</p>
 <p>A bigger element increases sensitivity, but also can lower SNR.</p>
 <p>A rule of thumb is to ensure the measured amplitude is at least 5 times larger than the noise equavalent pressure (NEP) of the hydrophone to maximize the signal to noise ratio (SNR).</p>
@@ -456,8 +509,8 @@ NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}]
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/snr.png" class="img-fluid figure-img"></p>
-<figcaption>Signal to noise ratio measures the desired signal against the background noises. Source: hollyland</figcaption>
+<p><a href="../images/snr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland."><img src="../images/snr.png" class="img-fluid figure-img" data-lightbox="true" alt="Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland."></a></p>
+<figcaption>Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland.</figcaption>
 </figure>
 </div>
 </section>
@@ -533,7 +586,7 @@ NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}]
 </tr>
 <tr class="even">
 <td><span style="color: red;"><strong>Naval &amp; Surveillance</strong></span></td>
-<td>Submarine/Vessel detection, harbor surveillance.</td>
+<td>Submarine/Vessel detection, harbour surveillance.</td>
 <td><strong>3 kHz – 300 kHz</strong></td>
 </tr>
 <tr class="odd">
@@ -545,9 +598,9 @@ NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}]
 </table>
 <div id="cell-map-output" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
-<div id="map-output" class="quarto-figure quarto-figure-center anchored">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="4-how-do-hydrophones-work_files/figure-html/map-output-output-1.png" width="690" height="389" class="figure-img"></p>
+<p><a href="4-how-do-hydrophones-work_files/figure-html/map-output-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Comparison of frequency ranges across multidisciplinary hydrophone applications."><img src="4-how-do-hydrophones-work_files/figure-html/map-output-output-1.png" width="690" height="389" alt="Comparison of frequency ranges across multidisciplinary hydrophone applications." class="figure-img"></a></p>
 <figcaption>Comparison of frequency ranges across multidisciplinary hydrophone applications.</figcaption>
 </figure>
 </div>
@@ -1040,6 +1093,38 @@ NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}]
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

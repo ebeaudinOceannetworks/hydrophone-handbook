@@ -11,11 +11,13 @@ The life cycle workflow ensures that data is not just collected, but are **FAIR*
 ONC commits to share and preserve data long-term. 
 
 
-![Diagram of a hydrophone life cycle at Ocean Networks Canada.](../images/Hydrophone-Life-Cycle.png)
+::: {.fig-full}
+![Diagram of a hydrophone life cycle at Ocean Networks Canada.](../images/Hydrophone-Life-Cycle.png){lightbox=true}
+:::
 
 <!-- link to canva where the hydrophone life cycle image was created: https://canva.link/erzgms3fvn7dyz6 -->
 
-# 1. Planning and Governance
+# 1. Planning and governance
 
 *Teams involved: Science, DAQ, DSO, Engineers*
 
@@ -26,7 +28,7 @@ Before a hydrophone is deployed in the water, the following legal and technical 
 * **Product Definition**: We identify new data products the community might need.
 
 
-# 2. Data Collection & Signal Chain
+# 2. Data collection & signal chain
 
 *Teams involved: DAQ, DSO, Systems, Marine Ops, Engineers*
 
@@ -47,13 +49,13 @@ Once a hydrophone is deployed and recording data, the commissioning of the devic
 This process is designed to catch technical issues early and ensures the data is "science-ready".
 
 * **Immediate Post-Deployment**: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming. A JIRA ticket is created which consolidates all relevant information.
-* **1-2 Months Post-Deployment**: A detailed analysis of data stream is performed, and several elements are analyzed including the presence of noise, saturation, array consistency (for 4 elements arrays), auxiliary data.
+* **1-2 Months Post-Deployment**: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4 elements arrays), auxiliary data.
 
 The commissioning ticket is closed once the data is confirmed found in the Hydrophone Data Viewer, accessible through ONC API, and that the data products are generated correctly.
 
 For the complete procedure: [Hydrophone Commissioning Procedure](https://internal.oceannetworks.ca/spaces/ONCData/pages/272761113/Hydrophone+commissioning+procedure)
 
-# 4. Data Quality & Assurance
+# 4. Data quality & assurance
 
 *Teams involved: DAQ, Science, Systems*
 
@@ -63,7 +65,7 @@ Because hydrophone data is classified as *complex* data (unlike *scalar* data), 
 * **Annotations**: Any unusual events or data gaps (caused by network maintenance, instrument failure, communication down) are recorded as annotations in Oceans 3.0 so researchers know why data might be missing.
 
 
-# 5. Metadata & Standardization
+# 5. Metadata & standardization
 
 *Teams involved: DSO*
 
@@ -74,22 +76,22 @@ To make our data globally compatible, we follow strict international standards:
 * **FAIR Principles**: Ensuring every byte of data is Findable, Accessible, Interoperable, and Reusable.
 * **Device Action**: Every event in a hydrophone life cycle, from deplyoment, calibrations, to recovery, is recorded as a permanent action in the database.
 
-# 6. Preservation & Storage
+# 6. Preservation & storage
 
 *Teams involved: Software, DSO, Systems*
 
-* **Primary Storage**: Terabytes of data are stored locally at the University of Victoria data center.
+* **Primary Storage**: Terabytes of data are stored locally at the University of Victoria data centre.
 * **Redundancy**: A complete offsite backup is maintained to prevent data loss, and also shares data processing load.
 
 
-# 7. Access & Analysis
+# 7. Access & analysis
 *Teams involved: Science, DSO, Software, End-Users*
 
 * **Discovery**: Users find data via Oceans 3.0 using Data Search, the Hydrophone Viewer (5-minute spectrogram previews), or the API.
 * **Identification**: Each dataset is assigned a **DOI** (Digital Object Identifier) to ensure researchers can cite the specific data they used in their papers.
 
 
-# 8. Recovery & Decommissioning
+# 8. Recovery & decommissioning
 
 *Teams involved: DSO, Marine Ops, Systems*
 

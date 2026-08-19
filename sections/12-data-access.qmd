@@ -21,7 +21,7 @@ Open [https://data.oceannetworks.ca](https://data.oceannetworks.ca/) and sign in
 
 ### 2. Select Hydrophone Viewer
 
-![](../images/Hydrophone-Viewer-step-1-2.png)
+![](../images/Hydrophone-Viewer-step-1-2.png){lightbox=true}
 
 ### 3. Choose a location or hydrophone
 
@@ -29,7 +29,7 @@ From **Hydrophone Viewer**, a list of location will appear on the left panel, un
 
 Pick the site, and the device under the site. The deployment window of each device is listed under.
 
-![](../images/Hydrophone-Viewer-step-3-4.png)
+![](../images/Hydrophone-Viewer-step-3-4.png){lightbox=true}
 
 For hydrophone arrays, hydrophones are under Hydrophone A, B, C or D.
 Navigate to the [hydrophone network](8-onc-hydrophone-network.qmd) page to find past and current deployments.
@@ -45,7 +45,7 @@ If a box pops up saying No Data, it either means the selected date is outside of
 
 Each spectrogram is a visual representation of the soundspace over a 5-min time window. You can click on a spectrogram and it will size up.
 
-![](../images/Hydrophone-Viewer-step-5.png)
+![](../images/Hydrophone-Viewer-step-5.png){lightbox=true}
 
 
 ### 6. Data download
@@ -57,7 +57,7 @@ Once the request has been completed, "Processing Request" becomes a Download tha
 
 You can request multiple files at once.
 
-![](../images/Hydrophone-Viewer-step-6-7.png)
+![](../images/Hydrophone-Viewer-step-6-7.png){lightbox=true}
 
 
 ## API (advanced)

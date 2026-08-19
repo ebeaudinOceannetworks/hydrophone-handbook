@@ -89,14 +89,14 @@ html`
 ::: {.vendor-grid}
 
 ::: {.vendor}
-[![](../images/jasco-logo.png)](https://www.jasco.com/)
+[![](../images/jasco-logo.png){lightbox=false}](https://www.jasco.com/)
 
 ### JASCO Applied Sciences {.unlisted .unnumbered}
 A scientific consulting firm and equipment supplier specializing in underwater acoustics.
 Founded by Joseph Arnold Scrimger in Victoria, British Columbia, in 1981, the company now has its largest primary operations office in Halifax, Nova Scotia, Canada.
 
-JASCO operates globally across national defense, marine environmental stewardship, oil and gas asset monitoring, and academic research.
-They also perform acoustic modeling, field data collection, and advanced analysis suites.
+JASCO operates globally across national defence, marine environmental stewardship, oil and gas asset monitoring, and academic research.
+They also perform acoustic modelling, field data collection, and advanced analysis suites.
 
 Their *Autonomous Multichannel Acoustic Recorder (AMAR)* provides passive acoustic data acquisition with high bandwidth and low noise.
 
@@ -104,15 +104,15 @@ Their hydrophones are manufactured by GeoSpectrum Technologies Inc.
 :::
 
 ::: {.vendor}
-[![](../images/geospectrum-logo.png)](https://www.geospectrum.ca/)
+[![](../images/geospectrum-logo.png){lightbox=false}](https://www.geospectrum.ca/)
 
 ### GeoSpectrum Technologies Inc. (GTI) {.unlisted .unnumbered}
-A specialized Canadian aerospace and defense company, based in Halifax, NS, that focuses on the design, engineering, and manufacturing of underwater acoustic transducers and specialized systems.
+A specialized Canadian aerospace and defence company, based in Halifax, NS, that focuses on the design, engineering, and manufacturing of underwater acoustic transducers and specialized systems.
 GeoSpectrum hydrophones are high-performance, and frequently deployed as part of hydrophone arrays managed by JASCO.
 :::
 
 ::: {.vendor}
-[![](../images/oceansonics-logo.png)](https://oceansonicsinc.com/)
+[![](../images/oceansonics-logo.png){lightbox=false}](https://oceansonicsinc.com/)
 
 ### Ocean Sonics {.unlisted .unnumbered}
 Ocean Sonics is a canadian, Nova Scotia-based pioneer in the development of smart digital hydrophones, found in 2005.
@@ -120,7 +120,7 @@ They have developed both low-frequency (icListenLF/AF) and high-frequency (icLis
 :::
 
 ::: {.vendor}
-[![](../images/wildlife-acoustics-logo.png)](https://www.wildlifeacoustics.com/)
+[![](../images/wildlife-acoustics-logo.png){lightbox=false}](https://www.wildlifeacoustics.com/)
 
 ### Wildlife Acoustics {.unlisted .unnumbered}
 A US-based private company based in Maynar, MA specialized provider of bioacoustics monitoring technology founded in 2003 by Ian Agranat.

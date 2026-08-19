@@ -6,7 +6,7 @@ title: "14. Science and Publications"
 
 ## Marine mammals monitoring
 
-Underwater sound monitoring is used at ONC for monitoring whale activity and behavior. In 2015, ONC joined the Enhancing Cetacean and Habitat Observation ([ECHO](https://www.portvancouver.com/environment/healthy-ecosystem/echo)) Program which aim at investigating ways to reduce shipping traffic impacts on whale activity in the Straight of Georgia. As part of the program, hydrophone arrays from *JASCO Applied Science* were deployed and the data ingested in ONC’s servers.
+Underwater sound monitoring is used at ONC for monitoring whale activity and behaviour. In 2015, ONC joined the Enhancing Cetacean and Habitat Observation ([ECHO](https://www.portvancouver.com/environment/healthy-ecosystem/echo)) Program which aim at investigating ways to reduce shipping traffic impacts on whale activity in the Straight of Georgia. As part of the program, hydrophone arrays from *JASCO Applied Science* were deployed and the data ingested in ONC’s servers.
 
 The program has known quite a bit of success, as thousands of ships have voluntarily reduced speed or distanced themselves from whales.
 
@@ -14,12 +14,12 @@ The program has known quite a bit of success, as thousands of ships have volunta
 
 Since then, ONC has kept expanding its hydrophone network which has turned into more partnerships with BC in 2017, to study ship traffic in Haro Strait ([read story here](https://www.oceannetworks.ca/news-and-stories/stories/monitoring-canadas-ocean-coasts-and-killer-whales-through-technology-and-data/) to specifically monitor southern residents killer whales.
 
-Whale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behavior, and their seasonal presence.
+Whale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behaviour, and their seasonal presence.
 
 
 ## Fin whale autodetector
 
-Historically, whale identification in hydrophone data is done by listening to the audio file. This method, while proof, is extremely time-consuming. At ONC, Spencer Bialek has developed a Machine Learning tool able to detect several whale species and differentiate several calls. The first iteration of this model was applied to fin whales, which are extremely common in BC and we have tons of recordings. The model is able to identify 3 distinct call types: 20 Hz, 40 Hz, and song. Each of these are associated with different behaviors such as mating, grazing, communication and navigation (read more about fin whales on [DOSIT](https://dosits.org/galleries/audio-gallery/marine-mammals/baleen-whales/fin-whale/)).
+Historically, whale identification in hydrophone data is done by listening to the audio file. This method, while proof, is extremely time-consuming. At ONC, Spencer Bialek has developed a Machine Learning tool able to detect several whale species and differentiate several calls. The first iteration of this model was applied to fin whales, which are extremely common in BC and we have tons of recordings. The model is able to identify 3 distinct call types: 20 Hz, 40 Hz, and song. Each of these are associated with different behaviours such as mating, grazing, communication and navigation (read more about fin whales on [DOSIT](https://dosits.org/galleries/audio-gallery/marine-mammals/baleen-whales/fin-whale/)).
 
 The model is able to do in a few minutes what humans typically would do in several weeks or months, which allows for building long-term time series of whale presence. However, humans are needed to guide the model, detect false alarms (misidentified whale call), and inject more data. Moreover, the model is not able to detect *new* call types which humans are able to detect. Humans will always be needed together with this model, but so far it is bringing a lot of hopes analyzing terabytes of audio files.
 

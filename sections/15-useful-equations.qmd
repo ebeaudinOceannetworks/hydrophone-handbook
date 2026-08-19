@@ -3,7 +3,7 @@ title: "15. Useful Equations"
 ---
 
 
-# Speed of Sound in Seawater
+# Speed of sound in seawater
 
 ## Mackenzie, 1981
 
@@ -51,7 +51,7 @@ $$
 
 with $p_{\mathrm{ref}} = 1~\mu\mathrm{Pa}$ underwater (20 µPa in air). A pressure $10^6$ times the reference is $120$ dB re 1 µPa.
 
-# Average Sound Pressure Level
+# Average sound pressure level
 
 $$
 L_a = 10\cdot log\left(\frac{1}{n} ( 10^{0.1L_1} + 10^{0.1L_2} + ... + 10^{0.1L_n} )\right)
