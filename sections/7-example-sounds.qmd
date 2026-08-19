@@ -278,7 +278,7 @@ At that time, the hydrophone was too close to a platform with other noisy instru
 <p class="sound-card-caption">Calls and echolocation</p>
 ```{=html}
 <audio class="listen-audio" controls preload="metadata">
-  <source src="sounds/ICLISTENHF6325_20260712T020000.000Z_normalized.flac" type="audio/flac">
+  <source src="../sounds/ICLISTENHF6325_20260712T020000.000Z_normalized.flac" type="audio/flac">
   Your browser does not support the audio player.
 </audio>
 ```
@@ -294,7 +294,7 @@ At that time, the hydrophone was too close to a platform with other noisy instru
 <p class="sound-card-caption">Active pings</p>
 ```{=html}
 <audio class="listen-audio" controls preload="metadata">
-  <source src="sounds/ICLISTENHF6016_20260602T091500.000Z_normalized.flac" type="audio/flac">
+  <source src="../sounds/ICLISTENHF6016_20260602T091500.000Z_normalized.flac" type="audio/flac">
   Your browser does not support the audio player.
 </audio>
 ```
