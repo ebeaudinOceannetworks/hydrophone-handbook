@@ -8,27 +8,27 @@
       { value: "flac", label: "flac — lossless audio" },
       { value: "wav", label: "wav — uncompressed audio (older)" },
       { value: "fft", label: "fft — Ocean Sonics spectral" },
-      { value: "mat", label: "mat — calibrated spectral" },
+      { value: "mat", label: "mat — calibrated spectral data (1-min averaged)" },
       { value: "png", label: "png — spectrogram" },
-      { value: "txt", label: "txt — logs / calibration" }
+      { value: "txt", label: "txt — logs / auxiliary data" }
     ],
     jasco: [
       { value: "flac", label: "flac — lossless audio" },
       { value: "wav", label: "wav — uncompressed audio" },
       { value: "oct", label: "oct — 1/3-octave spectral" },
-      { value: "mat", label: "mat — calibrated spectral" },
+      { value: "mat", label: "mat — calibrated spectral data (1-min averaged)" },
       { value: "png", label: "png — spectrogram" },
-      { value: "txt", label: "txt — logs / calibration" }
+      { value: "txt", label: "txt — logs / auxiliary data" }
     ],
     ios: [
       { value: "hyd", label: "hyd — array raw (retired IOS)" },
       { value: "wav", label: "wav — uncompressed audio" },
-      { value: "txt", label: "txt — logs / calibration" }
+      { value: "txt", label: "txt — logs / auxiliary data" }
     ],
     other: [
       { value: "flac", label: "flac — lossless audio" },
       { value: "wav", label: "wav — uncompressed audio" },
-      { value: "txt", label: "txt — logs / calibration" }
+      { value: "txt", label: "txt — logs / auxiliary data" }
     ]
   };
 
