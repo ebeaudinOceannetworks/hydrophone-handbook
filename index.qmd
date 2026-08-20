@@ -58,49 +58,32 @@ print(f'<p class="kpi-value">{nh}</p>')
 :::
 
 
-# Why listening to the ocean?
+# Why listen to the ocean?
 
 Sound is the primary way we "see" in the ocean.
 Because light travels poorly in water, acoustic signals are essential for navigation, communication, and monitoring the health of marine ecosystems.
-Unlike several oceanic instruments, hydrophones use *passive acoustics*, hence are a non-disruptive form of monitoring the ocean soundscape.
 
-::: {.grid .feature-grid}
+Unlike several oceanic instruments, hydrophones use *passive* acoustic devices, hence they are a non-disruptive form of monitoring the ocean soundscape.
+Here are a few applications:
 
-::: {.g-col-12 .g-col-md-6}
-::: {.feature-card}
-### 🐋 Whale monitoring
-Track migration, distribution, abundance, and behaviour.
-:::
-:::
+#### 🐋 Whale Monitoring
+*Tracking population distribution and abundance, seasonal migration corridors, and vocalization behaviours.*
 
-::: {.g-col-12 .g-col-md-6}
-::: {.feature-card}
-### 🚢 Ship traffic monitoring
-Identify areas of increasing activity, including Arctic routes opened by sea-ice melt.
-:::
-:::
+#### 🚢 Ship Traffic Monitoring
+*Quantifying commercial and recreational ship noise to inform vessel slow down initiatives and monitor newly-open Arctic shipping routes due to sea ice melting.*
 
-::: {.g-col-12 .g-col-md-6}
-::: {.feature-card}
-### 🛡️ National defence
-SOSUS (sound surveillance system) to identify vessels and nuclear testing.
-:::
-:::
+#### 🌋 Geophysics & Seismic Activity
+*Mapping minerals, detecting underwater earthquakes and submarine volcanic activity, to inform resource exploration and support regional seismic early-warning systems.*
 
-::: {.g-col-12 .g-col-md-6}
-::: {.feature-card}
-### 🌋 Seismic & geophysics
-Map minerals, detect earthquakes, and support resource exploration.
-:::
-:::
+#### 🛡️ National Defence & Security
+*Supporting national defense to survey martitime domain, identifying vessel signatures and or nuclear testing.*
 
-:::
 
 
 # Goals and future direction for passive acoustics
 
 * Delivering science-ready and trusted hydrophone data and data products;
-* Becoming a reference in terms of passive acoustics data quality assessment and calibration;
+* Becoming a reference for passive acoustics data quality assessment and calibration;
 * Becoming leaders in Arctic hydrophone array deployments.
 
 ::: {.intro-territory}
