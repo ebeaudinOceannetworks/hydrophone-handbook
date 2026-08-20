@@ -12,7 +12,7 @@ ONC commits to share and preserve data long-term.
 
 
 ::: {.fig-full}
-![Diagram of a hydrophone life cycle at Ocean Networks Canada.](../images/Hydrophone-Life-Cycle.png){lightbox=true}
+![Diagram of a hydrophone life cycle at Ocean Networks Canada.](../images/hydrophone-life-cycle.png){lightbox=true}
 :::
 
 <!-- link to canva where the hydrophone life cycle image was created: https://canva.link/erzgms3fvn7dyz6 -->

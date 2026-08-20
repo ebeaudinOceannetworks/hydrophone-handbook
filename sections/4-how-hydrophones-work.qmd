@@ -2,14 +2,13 @@
 title: "4. How Hydrophones Work"
 ---
 
-# General
+# Overview
 
-A hydrophone is a device that passively detects acoustic signal underwater. The word *hydrophone* comes from the Greek *hydro* (water), and *phone* (voice).
+Hydrophones, derived from the Greek *hydro* (water) and *phone* (voice), are specialized devices designed to *passively* detect acoustic signals underwater.
 
 Acoustic data are recorded in the form of a time-amplitude signal, at a specified sampling rate.
 
 Several types of hydrophones exist depending on the applications, with different frequency range. Some of the most common applications of **passive acoustics** are:
-
 
 
 
