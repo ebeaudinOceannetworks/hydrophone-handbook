@@ -502,6 +502,11 @@ L_a = 10\cdot log\left(\frac{1}{n} ( 10^{0.1L_1} + 10^{0.1L_2} + ... + 10^{0.1L_
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
