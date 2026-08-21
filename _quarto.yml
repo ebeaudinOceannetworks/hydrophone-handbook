@@ -75,3 +75,4 @@ format:
     sticky-sidebar: true
     page-layout: article
     self-contained: false
+    link-external-newwindow: true

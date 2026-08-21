@@ -14,6 +14,7 @@ Use this when you want to *see* the soundscape before you download files.
 
 Use the API when you need more than a handful of files, or a data product with specific settings.
 
+Use [this link](https://hydrophone-data-availability.streamlit.app) to find hydrophone data availability.
 
 ::: {.panel-tabset .access-tabs}
 
@@ -492,5 +493,5 @@ display(HTML(f'<p class="api-hint">Catalog source: {source}.</p>'))
 
 OpenAPI reference: [https://data.oceannetworks.ca/OpenAPI](https://data.oceannetworks.ca/OpenAPI). Client docs: [Python](https://oceannetworkscanada.github.io/api-python-client/) · [MATLAB](https://github.com/OceanNetworksCanada/api-matlab-client).
 
-
 :::
+
