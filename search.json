@@ -34,7 +34,37 @@
     "href": "sections/4-how-hydrophones-work.html",
     "title": "4. How Hydrophones Work",
     "section": "",
-    "text": "Overview\nHydrophones, derived from the Greek hydro (water) and phone (voice), are specialized devices designed to passively detect acoustic signals underwater.\nAcoustic data are recorded in the form of a time-amplitude signal, at a specified sampling rate.\nSeveral types of hydrophones exist depending on the applications, with different frequency range. Some of the most common applications of passive acoustics are:",
+    "text": "Overview\nHydrophones, derived from the Greek hydro (water) and phone (voice), are specialized devices designed to passively detect acoustic signals underwater. Hence, it is referred to as passive acoustics.\nSeveral types of hydrophones exist depending on the applications, with different frequency range. Some of the most common applications are:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>4. How Hydrophones Work</span>"
+    ]
+  },
+  {
+    "objectID": "sections/4-how-hydrophones-work.html#defining-sensitivity",
+    "href": "sections/4-how-hydrophones-work.html#defining-sensitivity",
+    "title": "4. How Hydrophones Work",
+    "section": "Defining Sensitivity",
+    "text": "Defining Sensitivity\nHydrophone sensitivity (\\(M_\\nu\\)) measures how efficient the transducer converts underwater sound pressure variations into an electrical output signal.\nQuantitatively, sensitivity is defined as the ratio of output voltage (\\(V\\)) to input sound pressure (\\(p\\)): \\[\nM_\\nu = \\frac{V_{\\text{output}}}{p_{\\text{input}}} \\ \\ ; \\ \\ \\text{units:} \\left[ \\frac{V}{\\mu Pa} \\right]\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>4. How Hydrophones Work</span>"
+    ]
+  },
+  {
+    "objectID": "sections/4-how-hydrophones-work.html#key-factors-influencing-sensitivity",
+    "href": "sections/4-how-hydrophones-work.html#key-factors-influencing-sensitivity",
+    "title": "4. How Hydrophones Work",
+    "section": "Key factors influencing sensitivity:",
+    "text": "Key factors influencing sensitivity:\n\nHydrophone type: size, design and choice of material (e.g., piezoelectric compound);\nAcoustic frequency: piezoelectric hydrophones have a resonance frequency which depends on the piezoelectric material. Sensitivity is usually good below the resonance frequency and drops rapidly above.\nEnvironmental conditions: water temperature, salinity and pressure can substantially impact hydrophone sensitivity. It is important to calibrate the instrument relative to those conditions.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>4. How Hydrophones Work</span>"
+    ]
+  },
+  {
+    "objectID": "sections/4-how-hydrophones-work.html#frequency-sensitivity-curve",
+    "href": "sections/4-how-hydrophones-work.html#frequency-sensitivity-curve",
+    "title": "4. How Hydrophones Work",
+    "section": "Frequency sensitivity curve",
+    "text": "Frequency sensitivity curve\nAs demonstrated in the Ocean Sonics high-frequency hydrophone, sensitivity is non-uniform across frequencies. This hydrophone is most efficient at mid-frequencies, and its sensitivity drops below 30 Hz and above 50 kHz.\n\n\n\nSensitivity curve of an icListenHF high-frequency hydrophone showing empirical HydroCal low-frequency check, Ocean Sonics high-frequency check.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>4. How Hydrophones Work</span>"
     ]
