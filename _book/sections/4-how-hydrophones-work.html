@@ -328,7 +328,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#from-pressure-to-voltage" id="toc-from-pressure-to-voltage" class="nav-link" data-scroll-target="#from-pressure-to-voltage">From pressure to voltage</a></li>
-  <li><a href="#sensitivity" id="toc-sensitivity" class="nav-link" data-scroll-target="#sensitivity">Sensitivity</a></li>
+  <li><a href="#sensitivity" id="toc-sensitivity" class="nav-link" data-scroll-target="#sensitivity">Sensitivity</a>
+  <ul class="collapse">
+  <li><a href="#defining-sensitivity" id="toc-defining-sensitivity" class="nav-link" data-scroll-target="#defining-sensitivity">Defining Sensitivity</a></li>
+  <li><a href="#key-factors-influencing-sensitivity" id="toc-key-factors-influencing-sensitivity" class="nav-link" data-scroll-target="#key-factors-influencing-sensitivity">Key factors influencing sensitivity:</a></li>
+  <li><a href="#frequency-sensitivity-curve" id="toc-frequency-sensitivity-curve" class="nav-link" data-scroll-target="#frequency-sensitivity-curve">Frequency sensitivity curve</a></li>
+  </ul></li>
   <li><a href="#signal-processing-methods" id="toc-signal-processing-methods" class="nav-link" data-scroll-target="#signal-processing-methods">Signal processing methods</a>
   <ul class="collapse">
   <li><a href="#signal-to-noise-ratio" id="toc-signal-to-noise-ratio" class="nav-link" data-scroll-target="#signal-to-noise-ratio">Signal to noise ratio</a></li>
@@ -363,9 +368,7 @@ window.Quarto = {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>Hydrophones, derived from the Greek <em>hydro</em> (water) and <em>phone</em> (voice), are specialized devices designed to <em>passively</em> detect acoustic signals underwater.</p>
-<p>Acoustic data are recorded in the form of a time-amplitude signal, at a specified sampling rate.</p>
-<p>Several types of hydrophones exist depending on the applications, with different frequency range. Some of the most common applications of <strong>passive acoustics</strong> are:</p>
+<p>Hydrophones, derived from the Greek <em>hydro</em> (water) and <em>phone</em> (voice), are specialized devices designed to <em>passively</em> detect acoustic signals underwater. Hence, it is referred to as <strong>passive acoustics</strong>.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -376,18 +379,33 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Action of listening to sound without emitting a signal, whereas in active acoustics the emitted signal is then analysed.</p>
+<p>Action of listening to underwater sounds without emitting a signal. This is a non-invasive method to monitor marine wildlife.</p>
 </div>
 </div>
+<p>Several types of hydrophones exist depending on the applications, with different frequency range. Some of the most common applications are:</p>
 <ul>
-<li>marine mammal monitoring</li>
-<li>ambient noise characterization</li>
-<li>earthquakes detection</li>
+<li>Marine mammal monitoring, which require high frequency hydrophones</li>
+<li>Earthquakes detection, which require low frequency hydrophones</li>
+<li>Ambient noise characterization, which require both low and high frequency hydrophones</li>
 </ul>
+<div class="fig-full">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/how-hydrophones-work.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="From the whale to the user."><img src="../images/how-hydrophones-work.png" class="img-fluid figure-img" alt="From the whale to the user."></a></p>
+<figcaption>From the whale to the user.</figcaption>
+</figure>
+</div>
+</div>
 </section>
 <section id="from-pressure-to-voltage" class="level1">
 <h1>From pressure to voltage</h1>
-<p>Hydrophones contain a key element, a <strong>piezoelectric</strong> material, which “feels” the pressure changes of a passing sound wave, and convert them into electric signals. In such, hydrophones are essentially <strong>transducers</strong>, as they simply convert potential energy into electrical energy.</p>
+<p>Hydrophones contain a key element, a <strong>piezoelectric</strong> material, which “feels” the pressure change of an incoming sound wave, and converts it into an electric signal. In such, hydrophones are essentially <strong>transducers</strong>, as they simply convert potential energy into electrical energy.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/hydrophone-signal-schematic.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Conversion of sound signal to electric signal."><img src="../images/hydrophone-signal-schematic.png" class="img-fluid figure-img" data-lightbox="true" alt="Conversion of sound signal to electric signal."></a></p>
+<figcaption>Conversion of sound signal to electric signal.</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -414,40 +432,73 @@ window.Quarto = {
 <p>A device that converts energy from one form (acoustic pressure) to another (electrical voltage).</p>
 </div>
 </div>
-<p>The relationship between the pressure (p) and the voltage (V) is determined by the sensitivity of the hydrophone, usually expressed in dB re 1V/μPa.</p>
+<p>The piezoelectric material is often made of ceramics, more specifically Lead-Zirconate-Titanate (PZT) compounds, which are relatively low cost and very effective. It also has high sensitivity and can operate at wide range of temperatures.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/hydrophone-signal-schematic.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Conversion of sound signal to electric signal."><img src="../images/hydrophone-signal-schematic.png" class="img-fluid figure-img" data-lightbox="true" alt="Conversion of sound signal to electric signal."></a></p>
-<figcaption>Conversion of sound signal to electric signal.</figcaption>
+<p><a href="../images/piezo-ceramic.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Piezoelectric ceramic plate. Credits: PZT"><img src="../images/piezo-ceramic.png" class="img-fluid figure-img" style="width:60.0%" alt="Piezoelectric ceramic plate. Credits: PZT"></a></p>
+<figcaption>Piezoelectric ceramic plate. Credits: PZT</figcaption>
 </figure>
 </div>
-<p>The piezoelectric material is often made of ceramics, more specifically Lead-Zirconate-Titanate (PZT) compounds, which are relatively low cost, and have an excellent piezoelectric coefficient. It also has high sensitivity and can operate at wide range of temperatures.</p>
-<p>The transducer is often shaped as a cylinder or a sphere, which is ideal for listening to signal from all direction.</p>
 </section>
 <section id="sensitivity" class="level1">
 <h1>Sensitivity</h1>
-<p>The sensitivity of the hydrophone refers to how efficient the hydrophone converts underwater sound pressure into an electrical signal. Quantitatively, it is the ratio of sound pressure signal and the output voltage signal: <span class="math display">\[
-M_\nu = \frac{V_h}{P_h} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
+<p>Hydrophones are categorized by their operational frequency bandwidth, which dictates their intended monitoring application:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Frequency Range</th>
+<th style="text-align: left;">Target Applications</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Low-Frequency (Infrasonic)</strong></td>
+<td style="text-align: left;"><span class="math inline">\(1\text{ Hz} - 1\text{ kHz}\)</span></td>
+<td style="text-align: left;">Geophysics, earthquakes, large baleen whales (e.g., Blue, Fin)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Audio-Frequency</strong></td>
+<td style="text-align: left;"><span class="math inline">\(10\text{ Hz} - 10\text{ kHz}\)</span></td>
+<td style="text-align: left;">Commercial shipping noise, fish vocalizations, general soundscape</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>High-Frequency (Ultrasonic)</strong></td>
+<td style="text-align: left;"><span class="math inline">\(10\text{ Hz} - 200\text{ kHz}\)</span></td>
+<td style="text-align: left;">Odontocete echolocation (e.g., Orca, Porpoise), acoustic harassment devices</td>
+</tr>
+</tbody>
+</table>
+<section id="defining-sensitivity" class="level2">
+<h2 class="anchored" data-anchor-id="defining-sensitivity">Defining Sensitivity</h2>
+<p>Hydrophone sensitivity (<span class="math inline">\(M_\nu\)</span>) measures how efficient the transducer converts underwater sound pressure variations into an electrical output signal.</p>
+<p>Quantitatively, sensitivity is defined as the ratio of output voltage (<span class="math inline">\(V\)</span>) to input sound pressure (<span class="math inline">\(p\)</span>): <span class="math display">\[
+M_\nu = \frac{V_{\text{output}}}{p_{\text{input}}} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
 \]</span></p>
-<p>What affects hydrophone sensitivity:</p>
+</section>
+<section id="key-factors-influencing-sensitivity" class="level2">
+<h2 class="anchored" data-anchor-id="key-factors-influencing-sensitivity">Key factors influencing sensitivity:</h2>
 <ul>
-<li><strong>Hydrophone type</strong>: size, design and choice of material (e.g.&nbsp;piezoelectric compound);</li>
-<li><strong>Frequency</strong>: piezoelectric hydrophones have a resonance frequency which depends on the piezoelectric material. Sensitivity is usually good below the resonance frequency and drops rapidly above.</li>
+<li><strong>Hydrophone type</strong>: size, design and choice of material (e.g., piezoelectric compound);</li>
+<li><strong>Acoustic frequency</strong>: piezoelectric hydrophones have a resonance frequency which depends on the piezoelectric material. Sensitivity is usually good below the resonance frequency and drops rapidly above.</li>
 <li><strong>Environmental conditions</strong>: water temperature, salinity and pressure can substantially impact hydrophone sensitivity. It is important to calibrate the instrument relative to those conditions.</li>
 </ul>
-<p>Knowing the sensitivity is essential to choose the right hydrophone for the right application.</p>
-<p>Hydrophones can be separated into three categories with overlapping ranges:</p>
-<ul>
-<li>Low-Frequency (Infrasonic): 1 Hz - 1 kHz</li>
-<li>Audio-Frequency: 10 Hz - 10 kHz</li>
-<li>High-Frequency (Ultrasonic): 10 Hz - 200 kHz</li>
-</ul>
+</section>
+<section id="frequency-sensitivity-curve" class="level2">
+<h2 class="anchored" data-anchor-id="frequency-sensitivity-curve">Frequency sensitivity curve</h2>
+<p>As demonstrated in the Ocean Sonics high-frequency hydrophone, sensitivity is non-uniform across frequencies. This hydrophone is most efficient at mid-frequencies, and its sensitivity drops below 30 Hz and above 50 kHz.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/sensitivity-curve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Sensitivity curve of a high-frequency piezoelectric hydrophone."><img src="../images/sensitivity-curve.png" class="img-fluid figure-img" data-lightbox="true" alt="Sensitivity curve of a high-frequency piezoelectric hydrophone."></a></p>
-<figcaption>Sensitivity curve of a high-frequency piezoelectric hydrophone.</figcaption>
+<p><a href="../images/sensitivity-curve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Sensitivity curve of an icListenHF high-frequency hydrophone showing empirical HydroCal low-frequency check, Ocean Sonics high-frequency check."><img src="../images/sensitivity-curve.png" class="img-fluid figure-img" data-lightbox="true" alt="Sensitivity curve of an icListenHF high-frequency hydrophone showing empirical HydroCal low-frequency check, Ocean Sonics high-frequency check."></a></p>
+<figcaption>Sensitivity curve of an icListenHF high-frequency hydrophone showing empirical HydroCal low-frequency check, Ocean Sonics high-frequency check.</figcaption>
 </figure>
 </div>
+</section>
 </section>
 <section id="signal-processing-methods" class="level1">
 <h1>Signal processing methods</h1>
@@ -467,7 +518,7 @@ M_\nu = \frac{V_h}{P_h} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/fourier-transform.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Fourier analysis for signal decomposition. Credit: Medium."><img src="../images/fourier-transform.png" class="img-fluid figure-img" data-lightbox="true" alt="Fourier analysis for signal decomposition. Credit: Medium."></a></p>
+<p><a href="../images/fourier-transform.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Fourier analysis for signal decomposition. Credit: Medium."><img src="../images/fourier-transform.png" class="img-fluid figure-img" data-lightbox="true" alt="Fourier analysis for signal decomposition. Credit: Medium."></a></p>
 <figcaption>Fourier analysis for signal decomposition. Credit: Medium.</figcaption>
 </figure>
 </div>
@@ -487,7 +538,7 @@ M_\nu = \frac{V_h}{P_h} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/spectrogram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level."><img src="../images/spectrogram.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level."></a></p>
+<p><a href="../images/spectrogram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level."><img src="../images/spectrogram.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level."></a></p>
 <figcaption>Example of a spectrogram: time on the x-axis, frequency in Hz on the y-axis, and colour for sound level.</figcaption>
 </figure>
 </div>
@@ -508,7 +559,7 @@ NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}]
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/snr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland."><img src="../images/snr.png" class="img-fluid figure-img" data-lightbox="true" alt="Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland."></a></p>
+<p><a href="../images/snr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland."><img src="../images/snr.png" class="img-fluid figure-img" data-lightbox="true" alt="Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland."></a></p>
 <figcaption>Signal-to-noise ratio measures the desired signal against background noise. Credit: Hollyland.</figcaption>
 </figure>
 </div>
@@ -599,7 +650,7 @@ NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}]
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="4-how-hydrophones-work_files/figure-html/map-output-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Comparison of frequency ranges across multidisciplinary hydrophone applications."><img src="4-how-hydrophones-work_files/figure-html/map-output-output-1.png" width="690" height="389" alt="Comparison of frequency ranges across multidisciplinary hydrophone applications." class="figure-img"></a></p>
+<p><a href="4-how-hydrophones-work_files/figure-html/map-output-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Comparison of frequency ranges across multidisciplinary hydrophone applications."><img src="4-how-hydrophones-work_files/figure-html/map-output-output-1.png" width="690" height="389" alt="Comparison of frequency ranges across multidisciplinary hydrophone applications." class="figure-img"></a></p>
 <figcaption>Comparison of frequency ranges across multidisciplinary hydrophone applications.</figcaption>
 </figure>
 </div>
@@ -763,6 +814,11 @@ NEP [Pa] = \frac{\text{Pre-amp Noise} ~[\mu V]}{\text{Sensitivity} ~[nV~Pa^{-1}]
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -5,68 +5,81 @@ title: "4. How Hydrophones Work"
 # Overview
 
 Hydrophones, derived from the Greek *hydro* (water) and *phone* (voice), are specialized devices designed to *passively* detect acoustic signals underwater.
-
-Acoustic data are recorded in the form of a time-amplitude signal, at a specified sampling rate.
-
-Several types of hydrophones exist depending on the applications, with different frequency range. Some of the most common applications of **passive acoustics** are:
-
-
+Hence, it is referred to as **passive acoustics**.
 
 ::: {.callout-note appearance="minimal"}
 ## Passive acoustics
-Action of listening to sound without emitting a signal, whereas in active acoustics the emitted signal is then analysed.
+Action of listening to underwater sounds without emitting a signal. This is a non-invasive method to monitor marine wildlife.
 :::
 
-- marine mammal monitoring
-- ambient noise characterization
-- earthquakes detection 
+Several types of hydrophones exist depending on the applications, with different frequency range.
+Some of the most common applications are:
 
+- Marine mammal monitoring, which require high frequency hydrophones
+- Earthquakes detection, which require low frequency hydrophones
+- Ambient noise characterization, which require both low and high frequency hydrophones
+
+::: {.fig-full}
+![From the whale to the user.](../images/how-hydrophones-work.png)
+:::
 
 # From pressure to voltage
 
-Hydrophones contain a key element, a **piezoelectric** material, which "feels" the pressure changes of a passing sound wave, and convert them into electric signals.
+Hydrophones contain a key element, a **piezoelectric** material, which "feels" the pressure change of an incoming sound wave, and converts it into an electric signal.
 In such, hydrophones are essentially **transducers**, as they simply convert potential energy into electrical energy.
+
+![Conversion of sound signal to electric signal.](../images/hydrophone-signal-schematic.png){lightbox=true}
+
 
 ::: {.callout-note appearance="minimal"}
 ## Piezoelectric
 Material that generates an electric charge in response to applied mechanical stress. As a wave passes, it compresses the ceramic, which creates a proportional electrical voltage.
 :::
 
+
 ::: {.callout-note appearance="minimal"}
 ## Transducer
 A device that converts energy from one form (acoustic pressure) to another (electrical voltage).
 :::
 
-The relationship between the pressure (p) and the voltage (V) is determined by the sensitivity of the hydrophone, usually expressed in dB re 1V/μPa.
+The piezoelectric material is often made of ceramics, more specifically Lead-Zirconate-Titanate (PZT) compounds, which are relatively low cost and very effective.
+It also has high sensitivity and can operate at wide range of temperatures.
 
-![Conversion of sound signal to electric signal.](../images/hydrophone-signal-schematic.png){lightbox=true}
-
-The piezoelectric material is often made of ceramics, more specifically Lead-Zirconate-Titanate (PZT) compounds, which are relatively low cost, and have an excellent piezoelectric coefficient. It also has high sensitivity and can operate at wide range of temperatures.
-
-The transducer is often shaped as a cylinder or a sphere, which is ideal for listening to signal from all direction.
+![Piezoelectric ceramic plate. Credits: PZT](../images/piezo-ceramic.png){width=60%}
 
 # Sensitivity
-The sensitivity of the hydrophone refers to how efficient the hydrophone converts underwater sound pressure into an electrical signal.
-Quantitatively, it is the ratio of sound pressure signal and the output voltage signal:
+
+Hydrophones are categorized by their operational frequency bandwidth, which dictates their intended monitoring application: 
+
+| Category | Frequency Range | Target Applications |
+| :--- | :--- | :--- |
+| **Low-Frequency (Infrasonic)** | $1\text{ Hz} - 1\text{ kHz}$ | Geophysics, earthquakes, large baleen whales (e.g., Blue, Fin) |
+| **Audio-Frequency** | $10\text{ Hz} - 10\text{ kHz}$ | Commercial shipping noise, fish vocalizations, general soundscape |
+| **High-Frequency (Ultrasonic)** | $10\text{ Hz} - 200\text{ kHz}$ | Odontocete echolocation (e.g., Orca, Porpoise), acoustic harassment devices |
+
+
+## Defining Sensitivity
+
+Hydrophone sensitivity ($M_\nu$) measures how efficient the transducer converts underwater sound pressure variations into an electrical output signal.
+
+Quantitatively, sensitivity is defined as the ratio of output voltage ($V$) to input sound pressure ($p$):
 $$
-M_\nu = \frac{V_h}{P_h} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
+M_\nu = \frac{V_{\text{output}}}{p_{\text{input}}} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
 $$
 
-What affects hydrophone sensitivity:
+## Key factors influencing sensitivity:
 
-- **Hydrophone type**: size, design and choice of material (e.g. piezoelectric compound);
-- **Frequency**: piezoelectric hydrophones have a resonance frequency which depends on the piezoelectric material. Sensitivity is usually good below the resonance frequency and drops rapidly above. 
+- **Hydrophone type**: size, design and choice of material (e.g., piezoelectric compound);
+- **Acoustic frequency**: piezoelectric hydrophones have a resonance frequency which depends on the piezoelectric material. Sensitivity is usually good below the resonance frequency and drops rapidly above. 
 - **Environmental conditions**: water temperature, salinity and pressure can substantially impact hydrophone sensitivity. It is important to calibrate the instrument relative to those conditions.
 
-Knowing the sensitivity is essential to choose the right hydrophone for the right application.
+## Frequency sensitivity curve
 
-Hydrophones can be separated into three categories with overlapping ranges:
+As demonstrated in the Ocean Sonics high-frequency hydrophone, sensitivity is non-uniform across frequencies.
+This hydrophone is most efficient at mid-frequencies, and its sensitivity drops below 30 Hz and above 50 kHz.
 
-- Low-Frequency (Infrasonic): 1 Hz - 1 kHz
-- Audio-Frequency: 10 Hz - 10 kHz
-- High-Frequency (Ultrasonic): 10 Hz - 200 kHz
+![Sensitivity curve of an icListenHF high-frequency hydrophone showing empirical HydroCal low-frequency check, Ocean Sonics high-frequency check.](../images/sensitivity-curve.png){lightbox=true}
 
-![Sensitivity curve of a high-frequency piezoelectric hydrophone.](../images/sensitivity-curve.png){lightbox=true}
 
 
 # Signal processing methods
