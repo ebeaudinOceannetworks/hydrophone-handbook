@@ -431,6 +431,16 @@ body {
   display: none !important;
 }
 
+/* Previous / next chapter tabs: black on the lighter blue page background. */
+.page-navigation a.pagination-link,
+.page-navigation a.pagination-link:hover,
+.page-navigation a.pagination-link:focus,
+.page-navigation a.pagination-link .nav-page-text,
+.page-navigation a.pagination-link .chapter-title,
+.page-navigation a.pagination-link i {
+  color: #A9A9A9 !important;
+}
+
 /* 1. Target all sidebar links (Active and Inactive) */
 #quarto-sidebar .sidebar-item {
     margin: 0.18rem 0.4rem;
