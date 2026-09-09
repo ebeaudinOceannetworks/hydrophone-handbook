@@ -6,30 +6,19 @@ title: "11. Data Products"
 
 # Overview
 
-Hydrophone data is archived several formats, ranging from raw acoustic recordings to processed spectral products.
+Hydrophone data files are generated in 5-minute intervals, categorized as either **raw sensor recordings** (direct acoustic pressure measurements) or **derived products** (downstream spectral transformations).
 
-Each device has a collection of files for every 5 minutes of recording:
 
-| Description |  Data Product Code | Data Product ID | File Extension |
-|---------|-----|---|---|
-Raw Audio Data (lossless) |  AD | 7 | .flac
-Raw Audio Data (lossless)| AD | 7 | .wav 
-Raw Audio Data (with loss) | AD | 7 | .mp3
-Hydrophone Array Raw Data (IOS arrays, retired) | HARD | 38 | .hyd
-Proprietary Spectral Data (Ocean Sonics only) | HSD  | 45 | .fft
-Processed Spectral Data  | HSD | 45 | .mat
-Spectrogram | HSD | 45 | .png, .pdf
-1/3-octave spectral data (JASCO / GeoSpectrum) | HSD | 45 | .oct
-Spectral Probability Density | HSPD | 51 | .png, .pdf, .mat
-Log / auxiliary file | LF | 4 | .txt
-Hydrophone Acceleration Data | HACC | 128 | .acc
+| Data Type | Product Name | Code / ID | Extensions |
+| :--- | :--- | :---: | :---: |
+| **Raw** | Audio Data | `AD` (7) | `.flac`, `.wav`, `.mp3` |
+| **Raw** | Array Data *(Retired)* | `HARD` (38) | `.hyd` |
+| **Raw** | Acceleration Data | `HACC` (128) | `.acc` |
+| **Raw** | Auxiliary Log File | `LF` (4) | `.txt` |
+| **Derived** | Hydrophone Spectral Data | `HSD` (45) | `.fft`, `.mat`, `.png`, `.pdf`, `.oct` |
+| **Derived** | Spectral Probability Density | `HSPD` (51) | `.mat`, `.png`, `.pdf` |
 
-: Archived formats for hydrophone data.
-
-\
-
-Note that both **Data Product Code** and **File Extension** are needed when downloading data through the API.
-Each data product (`dataProductCode`) has a set of data product options (`dpo_*`) that can be used to narrow down the request.
+: Quick lookup matrix for ONC hydrophone file types. {tbl-colwidths="[15,40,15,30]"}
 
 # Audio data
 
