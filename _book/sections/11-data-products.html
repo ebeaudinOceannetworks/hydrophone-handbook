@@ -587,15 +587,16 @@ window.Quarto = {
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The mean square value in frequency range <span class="math inline">\((f, \Delta f)\)</span> is:</p>
+<p>For a band-pass filtered signal <span class="math inline">\(x(t, f, \Delta f)\)</span>, the mean square acoustic pressure within bandwidth <span class="math inline">\(\Delta f\)</span> over observation period <span class="math inline">\(T\)</span> is given by:</p>
 <p><span class="math display">\[
 \Psi^2_x(f,\Delta f) = \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt
 \]</span></p>
-<p>Power spectral density is approximately <span class="math inline">\(\Psi^2_x(f,\Delta f) \approx G_x(f) \Delta f\)</span>:</p>
+<p>The single-sided Power Spectral Density (PSD), <span class="math inline">\(G_x(f)\)</span>, defines the mean square value per bandwidth as <span class="math inline">\(\Delta f\)</span> approaches zero:</p>
 <p><span class="math display">\[
 G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \lim_{\Delta f\rightarrow 0} \frac{1}{\Delta f} \left[ \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt \right]
 \]</span></p>
-<p>HSPD then histograms those levels per frequency bin over a long window, so the colour is occupancy (how often that level occurs), not a single spectrogram frame.</p>
+<p>Consequently, acoustic power within a narrow band is approximated by <span class="math inline">\(\Psi^2_x(f,\Delta f)\approx G_x(f)\Delta f\)</span>.</p>
+<p>The Hydrophone Spectral Probability Density (HSPD) evaluates bins individual PSD into a statistical histogram. The color on the plot represents a probability density (occupancy frequency), or the percentage of time the noise level at that frequency <span class="math inline">\(f\)</span> was measured at intensity level <span class="math inline">\(L\)</span>.</p>
 </div>
 </div>
 </div>

@@ -169,19 +169,22 @@ The Spectral Probability Density is a statistical view of long-term ambient nois
 ::: {.callout-note collapse="true"}
 ## Expand to learn more about the method
 
-The mean square value in frequency range $(f, \Delta f)$ is:
+For a band-pass filtered signal $x(t, f, \Delta f)$, the mean square acoustic pressure within bandwidth $\Delta f$ over observation period $T$ is given by:
 
 $$
 \Psi^2_x(f,\Delta f) = \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt
 $$
 
-Power spectral density is approximately $\Psi^2_x(f,\Delta f) \approx G_x(f) \Delta f$:
+The single-sided Power Spectral Density (PSD), $G_x(f)$, defines the mean square value per bandwidth as $\Delta f$ approaches zero:
 
 $$
 G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \lim_{\Delta f\rightarrow 0} \frac{1}{\Delta f} \left[ \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt \right]
 $$
 
-HSPD then histograms those levels per frequency bin over a long window, so the colour is occupancy (how often that level occurs), not a single spectrogram frame.
+Consequently, acoustic power within a narrow band is approximated by $\Psi^2_x(f,\Delta f)\approx G_x(f)\Delta f$.
+
+The Hydrophone Spectral Probability Density (HSPD) evaluates bins individual PSD into a statistical histogram.
+The color on the plot represents a probability density (occupancy frequency), or the percentage of time the noise level at that frequency $f$ was measured at intensity level $L$.
 :::
 
 ::: {.callout-note collapse="true"}
