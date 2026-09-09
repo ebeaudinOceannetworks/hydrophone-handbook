@@ -116,6 +116,9 @@ For each data product, several format are available, such as pdf, .mat, .txt, et
 Most order of data product can also be customized through the *Data Product Options* panel below.
 
 ### 7. Add to cart
+
+![](../images/Data-Search-add-to-cart.png){lightbox=true}
+
 When you are satisfied with your order, do not forget to **Add to Cart**.
 This simply add the product to the cart, which you can find in View Cart in the top right.
 
