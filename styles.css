@@ -557,6 +557,34 @@ body {
   }
 }
 
+/* On wide monitors, split leftover space on both sides so the
+   sidebar + article + TOC sit in the center instead of the left. */
+@media (min-width: 1600px) {
+  body.docked #quarto-content.page-columns {
+    grid-template-columns:
+      [screen-start] minmax(2em, 1fr)
+      [screen-start-inset] 2em
+      [page-start] minmax(56px, 112px)
+      [page-start-inset] 56px
+      [body-start-outset] 56px
+      [body-start] 2em
+      [body-content-start] minmax(500px, calc(1000px - 4em))
+      [body-content-end] 2em
+      [body-end] 50px
+      [body-end-outset] minmax(50px, 100px)
+      [page-end-inset] 50px
+      [page-end] minmax(2em, 1fr)
+      [screen-end-inset] 0
+      [screen-end];
+  }
+
+  body.docked #quarto-sidebar.sidebar-navigation {
+    grid-column: screen-start-inset / body-start;
+    background-color: transparent !important;
+    border-right: none !important;
+  }
+}
+
 @media print {
   body {
     background-color: #003366 !important;
