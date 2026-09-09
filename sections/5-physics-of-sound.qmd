@@ -1,5 +1,5 @@
 ---
-title: "5. Sound in the Ocean"
+title: "5. Physics of Sound"
 ---
 *For deeper dive into the physics of sound, visit [DOSITS: Science of Sound](https://dosits.org/science/sound/what-is-sound/).*
 

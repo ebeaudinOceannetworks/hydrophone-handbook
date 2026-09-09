@@ -33,7 +33,7 @@ $$
 \frac{\sin{\theta_1}}{\sin{\theta_2}} = \frac{c_1}{c_2}
 $$
 
-Frequency is unchanged; wavelength adjusts so that $c = f\lambda$. This is the geometry behind the SOFAR channel and surface ducts in [Sound in the Ocean](5-sound-in-the-ocean.qmd).
+Frequency is unchanged; wavelength adjusts so that $c = f\lambda$. This is the geometry behind the SOFAR channel and surface ducts in [Physics of Sound](5-physics-of-sound.qmd).
 
 # Acoustic wave equation {#wave-equation}
 

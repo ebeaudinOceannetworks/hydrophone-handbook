@@ -250,7 +250,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/5-sound-in-the-ocean.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Sound in the Ocean</span></a>
+  <a href="../sections/5-physics-of-sound.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Physics of Sound</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -382,7 +382,7 @@ c(T,S,p) = c_{000} + \Delta c_T + \Delta c_S + \Delta c_P + \Delta c_{STp}
 <p><span class="math display">\[
 \frac{\sin{\theta_1}}{\sin{\theta_2}} = \frac{c_1}{c_2}
 \]</span></p>
-<p>Frequency is unchanged; wavelength adjusts so that <span class="math inline">\(c = f\lambda\)</span>. This is the geometry behind the SOFAR channel and surface ducts in <a href="../sections/5-sound-in-the-ocean.html">Sound in the Ocean</a>.</p>
+<p>Frequency is unchanged; wavelength adjusts so that <span class="math inline">\(c = f\lambda\)</span>. This is the geometry behind the SOFAR channel and surface ducts in <a href="../sections/5-physics-of-sound.html">Physics of Sound</a>.</p>
 </section>
 <section id="wave-equation" class="level1">
 <h1>Acoustic wave equation</h1>
@@ -499,6 +499,11 @@ L_a = 10\cdot log\left(\frac{1}{n} ( 10^{0.1L_1} + 10^{0.1L_2} + ... + 10^{0.1L_
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

@@ -25,7 +25,7 @@ The model is able to do in a few minutes what humans typically would do in sever
 
 
 ## Acoustic modelling
-Hydrophones record the soundscape; modelling asks how the environment shapes that sound. Temperature, depth, seamounts, and seafloor sediments control how *far* a call travels, and therefore the detection range of a hydrophone. That range depends on frequency — and so on species and call type — with lower frequencies travelling farther. Modelling is used to place new instruments outside *deaf zones*. The underlying physics is in [Sound in the Ocean](5-sound-in-the-ocean.qmd).
+Hydrophones record the soundscape; modelling asks how the environment shapes that sound. Temperature, depth, seamounts, and seafloor sediments control how *far* a call travels, and therefore the detection range of a hydrophone. That range depends on frequency — and so on species and call type — with lower frequencies travelling farther. Modelling is used to place new instruments outside *deaf zones*. The underlying physics is in [Physics of Sound](5-physics-of-sound.qmd).
 
 Lanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.
 
