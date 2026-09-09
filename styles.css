@@ -55,6 +55,13 @@
   --onc-font-body: "Open Sans", sans-serif;
   --bs-body-font-family: "Open Sans", sans-serif;
   --bs-font-sans-serif: "Open Sans", sans-serif;
+  --bs-code-color: #ffd966;
+}
+
+/* Inline code: yellow on the navy background (theme default is a dark purple). */
+:not(pre) > code {
+  color: #ffd966 !important;
+  background-color: rgba(0, 0, 0, 0.28);
 }
 
 html, body,
@@ -785,7 +792,7 @@ body {
   padding: 0;
   background: none;
   font-size: inherit;
-  color: rgba(255, 255, 255, 0.75);
+  color: #ffd966;
 }
 
 .api-error:empty {
@@ -807,9 +814,20 @@ body {
 
 .api-dpo-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 16px 24px;
   margin-top: 10px;
+}
+
+.api-dpo-field {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.api-dpo-field > span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.35;
 }
 
 .api-builder [hidden] {
@@ -1075,7 +1093,7 @@ body {
 
 .access-tabs .callout code,
 .dp-panel code {
-  color: #fff;
+  color: #ffd966;
   background: rgba(0, 0, 0, 0.28);
 }
 

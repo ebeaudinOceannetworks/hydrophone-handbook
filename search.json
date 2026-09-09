@@ -80,43 +80,43 @@
     ]
   },
   {
-    "objectID": "sections/5-sound-in-the-ocean.html",
-    "href": "sections/5-sound-in-the-ocean.html",
-    "title": "5. Sound in the Ocean",
+    "objectID": "sections/5-physics-of-sound.html",
+    "href": "sections/5-physics-of-sound.html",
+    "title": "5. Physics of Sound",
     "section": "",
     "text": "What is sound?\nFor deeper dive into the physics of sound, visit DOSITS: Science of Sound.\nIn the ocean, light attenuates within tens of metres, while sound can travel thousands of kilometres. That is why marine mammals and underwater systems use sound as their primary sense for communication and navigation.\nSound is created by a vibrating object. Compression and expansion produce a pressure difference, which launches a longitudinal wave: particle motion is parallel to the direction of travel. Underwater, that motion is a small back-and-forth of water molecules; the tighter the molecular bonds, the faster the energy is passed along. A sound wave is omnidirectional: it spreads in all directions.\nMeasurable properties:\n\\[\np(t) = A \\sin{(2\\pi f t + \\phi)}\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>5. Sound in the Ocean</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>5. Physics of Sound</span>"
     ]
   },
   {
-    "objectID": "sections/5-sound-in-the-ocean.html#why-sound-is-faster-in-water-than-in-air",
-    "href": "sections/5-sound-in-the-ocean.html#why-sound-is-faster-in-water-than-in-air",
-    "title": "5. Sound in the Ocean",
+    "objectID": "sections/5-physics-of-sound.html#why-sound-is-faster-in-water-than-in-air",
+    "href": "sections/5-physics-of-sound.html#why-sound-is-faster-in-water-than-in-air",
+    "title": "5. Physics of Sound",
     "section": "Why sound is faster in water than in air",
     "text": "Why sound is faster in water than in air\nSound travels about 4.3 times faster in water than in air (\\(\\approx 1500\\) m/s vs \\(340\\) m/s). Speed is set by bulk modulus \\(B\\) (stiffness) and density \\(\\rho\\):\n\n\n\n\n\n\nNoteBulk modulus\n\n\n\nResistance to compression, \\(B=\\rho \\,\\partial P / \\partial \\rho\\).\n\n\n\\[\nv = \\sqrt{B/\\rho}\n\\]\nWater is about 800 times denser than air, but about 20,000 times less compressible. That stiffness wins: energy transfers more efficiently between molecules, so sound is faster underwater.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>5. Sound in the Ocean</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>5. Physics of Sound</span>"
     ]
   },
   {
-    "objectID": "sections/5-sound-in-the-ocean.html#sofar-channel",
-    "href": "sections/5-sound-in-the-ocean.html#sofar-channel",
-    "title": "5. Sound in the Ocean",
+    "objectID": "sections/5-physics-of-sound.html#sofar-channel",
+    "href": "sections/5-physics-of-sound.html#sofar-channel",
+    "title": "5. Physics of Sound",
     "section": "SOFAR channel",
     "text": "SOFAR channel\nAround 1000 m in the deep ocean, the decrease of temperature and the increase of pressure produce a minimum in sound speed: the SOFAR channel (SOund Fixing And Ranging). Sound always bends toward slower speed (refraction; Snell’s law). Rays that leave this layer upward or downward are refracted back into it, so energy is trapped and can travel basin-scale distances.\n\n\n\n\n\n\nNoteSOFAR channel\n\n\n\nThe depth of minimum sound speed, typically near 1000 m in mid-latitudes.\n\n\n\n\n\nThe SOFAR channel at the depth of minimum sound speed.\n\n\nLow-frequency whale calls use this channel for long-range communication. In WWII it was used to locate downed aviators from small explosions set off in the channel.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>5. Sound in the Ocean</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>5. Physics of Sound</span>"
     ]
   },
   {
-    "objectID": "sections/5-sound-in-the-ocean.html#surface-duct",
-    "href": "sections/5-sound-in-the-ocean.html#surface-duct",
-    "title": "5. Sound in the Ocean",
+    "objectID": "sections/5-physics-of-sound.html#surface-duct",
+    "href": "sections/5-physics-of-sound.html#surface-duct",
+    "title": "5. Physics of Sound",
     "section": "Surface duct",
     "text": "Surface duct\nA surface duct traps sound in the mixed layer, typically the upper tens of metres. When sound speed increases with depth just below the surface, rays refract upward, reflect from the sea surface, and stay in that shallow layer (the opposite geometry of SOFAR). Ducts are common in wind-mixed coastal waters and fade when the surface warms and stratifies.\n\n\n\nModel simulation of sound trapped in a surface duct. Credit: Lynch et al., 2018, Fig. 5.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>5. Sound in the Ocean</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>5. Physics of Sound</span>"
     ]
   },
   {
@@ -274,7 +274,7 @@
     "href": "sections/14-science-and-publications.html#acoustic-modelling",
     "title": "14. Science and Publications",
     "section": "Acoustic modelling",
-    "text": "Acoustic modelling\nHydrophones record the soundscape; modelling asks how the environment shapes that sound. Temperature, depth, seamounts, and seafloor sediments control how far a call travels, and therefore the detection range of a hydrophone. That range depends on frequency — and so on species and call type — with lower frequencies travelling farther. Modelling is used to place new instruments outside deaf zones. The underlying physics is in Sound in the Ocean.\nLanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.",
+    "text": "Acoustic modelling\nHydrophones record the soundscape; modelling asks how the environment shapes that sound. Temperature, depth, seamounts, and seafloor sediments control how far a call travels, and therefore the detection range of a hydrophone. That range depends on frequency — and so on species and call type — with lower frequencies travelling farther. Modelling is used to place new instruments outside deaf zones. The underlying physics is in Physics of Sound.\nLanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.",
     "crumbs": [
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
     ]
