@@ -5,16 +5,20 @@ title: "12. Data Access"
 *This page is about **how to get hydrophone data**. For what each file type contains, see [Data Products](11-data-products.qmd).*
 
 # Which method to use?
-There are 2 ways to get the data: from ONC data portal [Oceans3.0](https://data.oceannetworks.ca), or using the ONC API.
+There are 3 ways to get the data: from ONC data portal [Oceans3.0](https://data.oceannetworks.ca), or using the ONC API.
 
 
-The Hydrophone Viewer is for browsing the pre-generated 5-min spectrograms, and quick downloads to any format including audio.
+The **Hydrophone Viewer** is for browsing the pre-generated 5-min spectrograms, and quick downloads to any format including audio.
 It is best for a first look, or sound hunting through visualizing the data.
 Use this when you want to *see* the soundscape before you download files.
 
-Use the API when you need more than a handful of files, or a data product with specific settings.
+**Data Search** is useful for when you want to download more than a few files at a time, whereas the Hydrophone Viewer allows for a single file at a time.
+Whether it is a few hours, or even 1 day of data from a particular location.
+There are a lot more user options that can be set through that interface.
 
-Use [this link](https://hydrophone-data-availability.streamlit.app) to find hydrophone data availability.
+Use the **ONC API** when you need more than a handful of files, or a data product with specific settings.
+
+<!--Use [this link](https://hydrophone-data-availability.streamlit.app) to find hydrophone data availability.-->
 
 ::: {.panel-tabset .access-tabs}
 
@@ -31,7 +35,7 @@ Visit [https://data.oceannetworks.ca](https://data.oceannetworks.ca/) and sign i
 
 ### 3. Choose a location or a hydrophone
 
-From **Hydrophone Viewer**, a list of location will appear on the left panel, under Hydrophone Data Search. 
+From **Hydrophone Viewer**, a list of locations will appear on the left panel, under Hydrophone Data Search. 
 
 Pick a location. Go down the tree until you can select a device.
 Note that each hydrophone has a dedicated *device name*, which are often a combination of their manufacturer/supplier and a serial number (*ex: Ocean Sonics icListen HF Hydrophone 1251*).
@@ -71,7 +75,54 @@ You can request multiple files at once.
 ![](../images/Hydrophone-Viewer-step-6-7.png){lightbox=true}
 
 
-## API (advanced)
+## Data Search
+
+### 1. Log in to Oceans 3.0
+
+Visit [https://data.oceannetworks.ca](https://data.oceannetworks.ca/) and sign in with your ONC account.
+
+### 2. Select Data Search
+
+![](../images/Data-Search-step-1-2.png){lightbox=true}
+
+### 3. Choose a location or a hydrophone
+
+From **Data Search**, a list of locations will appear on the left panel, under Data Source Selection.
+If you already know the device code (ex: Ocean Sonics icListen HF Hydrophone 1352), there is also the option to Sort by: Instruments by Category and jump to Hydrophone.
+
+Pick a location, or a hydrophone.
+
+![](../images/Data-Search-step-3-4.png){lightbox=true}
+
+### 4. Go to data source
+
+The window pops up showing all information related to the hydrophone(s) at that location.
+Click on Select This Data Source.
+
+### 5. Select the data product
+
+This page is where to select the data products needed from this location.
+Set a **Date From** and **Date To** in the upper left.
+Use the visual green overlay to the right to know about data availability for this specific location.
+
+Certain hydrophone (mostly Ocean Sonics) have *anscillary data*, such as acceleration, internal humidity, temperature, etc.
+Most likely, the data you are interested in rather lies in the audio format or derived spectral data.
+You can select a data product by simply checking the box underneath.
+For each data product, several format are available, such as pdf, .mat, .txt, etc.  
+
+![](../images/Data-Search-step-5-6-7.png){lightbox=true}
+
+### 6. Select the product options
+Most order of data product can also be customized through the *Data Product Options* panel below.
+
+### 7. Add to cart
+When you are satisfied with your order, do not forget to **Add to Cart**.
+This simply add the product to the cart, which you can find in View Cart in the top right.
+
+Go to Cart to trigger the creation of the order, which may take from seconds to minutes depending on the amount of data requested.
+
+
+## ONC API (advanced)
 
 ### 1. Get an Oceans 3.0 API Token
 Visit [Oceans 3.0 profile](https://data.oceannetworks.ca/Profile) (Web Services API tab).
