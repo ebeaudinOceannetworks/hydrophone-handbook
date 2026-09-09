@@ -8,7 +8,7 @@ The life cycle is based on [Aghaei et al. (2024)](https://doi.org/10.1109/oceans
 Hydrophones have been in use at ONC since 2006, totalling more than 700 TB of archived data.
 
 The life cycle workflow ensures that data is not just collected, but are **FAIR** (Findable, Accessible, Interoperable, and Reusable).
-ONC commits to share and preserve data long-term. 
+ONC commits to share and preserve data long-term.
 
 
 ::: {.fig-full}
@@ -17,9 +17,10 @@ ONC commits to share and preserve data long-term.
 
 <!-- link to canva where the hydrophone life cycle image was created: https://canva.link/erzgms3fvn7dyz6 -->
 
+
 # 1. Planning and governance
 
-*Teams involved: Science, DAQ, DSO, Engineers*
+*Teams involved: SCI, DAQ, DSO, OPO*
 
 Before a hydrophone is deployed in the water, the following legal and technical steps must be taken: 
 
@@ -30,7 +31,7 @@ Before a hydrophone is deployed in the water, the following legal and technical 
 
 # 2. Data collection & signal chain
 
-*Teams involved: DAQ, DSO, Systems, Marine Ops, Engineers*
+*Teams involved: SCI, SYS, DAQ, DSO, OPO*
 
 * **Hardware**: We primarily use **Ocean Sonics** (HF/AF) and **GeoSpectrum** (from JASCO distributor) instruments, deployed as single units or four-element arrays.
 * **Calibration (HydroCal)**: Instruments undergo rigorous pre-deployment and post-recovery calibration to ensure accuracy. If sensors drift, they are returned to the manufacturer.
@@ -46,12 +47,12 @@ For hydrophone arrays, all individual sensors are compared with one another to e
 
 # 3. Commissioning
 
-*Teams involved: DAQ, DSO*
+*Teams involved: DAQ, DSO, SYS*
 
 Once a hydrophone is deployed and recording data, the commissioning of the device starts.
 This process is designed to catch technical issues early and ensures the data is "science-ready".
 
-* **Immediate Post-Deployment**: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming. A JIRA ticket is created which consolidates all relevant information.
+* **Immediate Post-Deployment**: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming.
 * **1-2 Months Post-Deployment**: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4 elements arrays), auxiliary data.
 
 The commissioning ticket is closed once the data is confirmed found in the Hydrophone Data Viewer, accessible through ONC API, and that the data products are generated correctly.
@@ -60,7 +61,7 @@ For the complete procedure: [Hydrophone Commissioning Procedure](https://interna
 
 # 4. Data quality & assurance
 
-*Teams involved: DAQ, Science, Systems*
+*Teams involved: DAQ, SCI, SYS*
 
 Because hydrophone data is classified as *complex* data (unlike *scalar* data), standard automated QAQC (like those for temperature or salinity) does not yet exist.
 
@@ -81,14 +82,14 @@ To make our data globally compatible, we follow strict international standards:
 
 # 6. Preservation & storage
 
-*Teams involved: Software, DSO, Systems*
+*Teams involved: DSO, SYS, Software*
 
 * **Primary Storage**: Terabytes of data are stored locally at the University of Victoria data centre.
 * **Redundancy**: A complete offsite backup is maintained to prevent data loss, and also shares data processing load.
 
 
 # 7. Access & analysis
-*Teams involved: Science, DSO, Software, End-Users*
+*Teams involved: SCI, DAQ, Software, End-Users*
 
 * **Discovery**: Users find data via Oceans 3.0 using Data Search, the Hydrophone Viewer (5-minute spectrogram previews), or the API.
 * **Identification**: Each dataset is assigned a **DOI** (Digital Object Identifier) to ensure researchers can cite the specific data they used in their papers.
@@ -96,7 +97,7 @@ To make our data globally compatible, we follow strict international standards:
 
 # 8. Recovery & decommissioning
 
-*Teams involved: DSO, Marine Ops, Systems*
+*Teams involved: OPO, SYS, DAQ, DSO*
 
 The end of a deployement does not mean the end of a instrument's use.
 Hydrophones are often re-deployed during the ONC maintenance cruises, or returning to MTC of the manufacturer for maintenance.
