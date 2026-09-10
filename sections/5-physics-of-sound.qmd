@@ -54,7 +54,7 @@ Sound speed is not constant. It varies with temperature, salinity, and pressure 
 
 The resulting curve of $c$ versus depth is the **sound speed profile**. Off British Columbia, a typical Northeast Pacific profile has a seasonal surface layer, a sound-speed minimum at depth, then an increase with pressure:
 
-![Typical seasonal sound speed profile in the Northeast Pacific, including waters off British Columbia.](../images/ssp_seasonal_modified.png){lightbox=true}
+![Typical seasonal sound speed profile in the Northeast Pacific, including waters off British Columbia.](../images/ssp_seasonal.png){lightbox=true}
 
 In general:
 
@@ -111,7 +111,8 @@ The processes that change sound travel path and sound level:
 
 # Transmission loss
 
-From a source (a whale) to a receiver (a hydrophone), the sound level (SL) can drop significantly. That drop is due to **transmission loss (TL)**, or propagation loss. The received sound level (RL) becomes:
+From a source (a whale) to a receiver (a hydrophone), the source level (SL), measured in decibels (dB), can drop significantly.
+That drop is due to **transmission loss (TL)**, or propagation loss. The received sound level (RL) becomes:
 
 $$
 RL = SL - TL
@@ -164,9 +165,13 @@ This is the scientific motivation behind programs such as [ECHO](https://www.por
 
 # Sound propagation modelling
 
-Ray tracing is used at ONC to locate sources, estimate detection range, plan new sites, and avoid “deaf zones.” The underlying [wave equation](15-acoustic-equations.qmd#wave-equation) is in Acoustic Equations.
+Ray tracing is used at ONC to locate sources, estimate detection range of our hydrophones, plan new deployment sites, and avoid “deaf zones.”
 
-**BELLHOP** (Michael B. Porter) is one of the many sound propagation models that traces beams at a chosen frequency. It needs bathymetry along the path, a sound-speed profile (from $T$, $S$, $p$), and a bottom type (e.g. clay). The output is the transmission loss along a path.
+There are multiple sound propagation models, each with different accuracies depending on the frequency of the emitting sound, and the complexity of the environment the sound is propagating into (e.g., rugged terrain, canyons, highly stratified waters).
+Each model essentially *solves* the [wave equation](15-acoustic-equations.qmd#wave-equation) to compute the transmission loss along the propagation path.
+
+**BELLHOP** (Michael B. Porter) is one of the many sound propagation models that traces beams at a chosen frequency.
+The required parameters include the bathymetry along the path, a sound-speed profile (from $T$, $S$, $p$), and a bottom type (e.g. clay).
 
 ![Example of ray tracing (right) using BELLHOP with a specific sound speed profile (left).](../images/Bellhop-ray-tracing-right-box-for-a-standard-sound-speed-profile-left-box-indicating.png){lightbox=true}
 

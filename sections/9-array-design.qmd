@@ -2,14 +2,15 @@
 title: "9. Array Design"
 ---
 
-When mounting hydrophones, the scientific goals of ocean monitoring will dictate how the infrasctructure is built.
-There exists several ways that hydrophones can be arranged depending on the application.
-For example, while a single hydrophone can capture sound, several hydrophones together can provide direction, range, and help with separation of overlapping noises. 
+The hydrophone configuration is dictated primarily by the scientific objectives of ocean monitoring.
+At Ocean Networks Canada, passive acoustic infrastructure falls into two deployment configurations:
 
-At Ocean Networks Canada, we use two types of arrays:
+* **Single Hydrophone Nodes:** Simpler and least expensive method for long-term soudscape monitoring
+* **Synchronized Multi-Element Arrays:** Structure mounting 2 to 4 *synchronized* hydrophones to estimate sound direction or even perform sound localization
 
-* Single Hydrophone
-* Hydrophone Array
+::: {.fig-full}
+![A 4-element hydrophone array at the Main Endeavour Field (2,200 m depth), captured by the ROV camera.](../images/MEF-hydrophone-array.png){lightbox=true}
+:::
 
 # Challenges
 
@@ -21,7 +22,7 @@ In addition, we always want to minimize the risk of damage to the instrument.
 This section touches on all these elements.
 
 
-# Array design
+# Geometry and mounting
 
 ONC deploys hydrophones in two ways.
 
@@ -41,7 +42,9 @@ On this array, there are four hydrophones at locations A, B, C, D, distanced abo
 
 ![A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia.](../images/MTC_hydrophone_array_annotated.png){lightbox=true}
 
-The distance between hydrophones is chosen for **beamforming**: estimating direction of arrival. But, 1 metre is too small for whale-localization (see below).
+The distance between hydrophones is chosen for **beamforming**: estimating direction of arrival.
+At 1 metre between the elements, it is possible to localize sounds emitted roughly between 100-750 Hz, for example Humback Whales.
+For high-frequency marine mammals (e.g., dolphin whistles, sperm whale clicks), an even smaller spacing is required (see @sec-beamforming for a more detailed explanation).
 
 ![Box-type array configuration for hydrophones.](../images/box-array.png){lightbox=true}
 
@@ -58,10 +61,10 @@ The distance between hydrophones is chosen for **beamforming**: estimating direc
 # Mitigating noise and instrument damage
 
 ## Interference
-When adding hydrophones to a multi-instrument platform, all nearby infrastructure should ideally be evaluated for noise, although this is a hardeous task and we generally know after the facts if there is interference and to what internsity.
+When adding hydrophones to a multi-instrument platform, all nearby infrastructure should ideally be evaluated for noise, although this is a arduous task and we generally know after the fact if there is interference and to what intensity.
 Proximity interference will show up clearly as persistent lines or bursts in the spectrogram.
 
-In this example from 2023, interference noise from instruments on the same platform at the Holyrood site was intense enough to fully mask natural ambient sound, biological vocalizations, and other signals of scientific interests.
+In this example from 2023, interference noise from instruments on the same platform at the Holyrood site was intense enough to fully mask natural ambient sound, biological vocalizations, and other signals of scientific interest.
 
 
 ![Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL.](../images/ICLISTENHF2098_20240109T030502.000Z-spect.png){lightbox=true}
@@ -123,20 +126,37 @@ It can also prevent fine sediments (e.g., silt) from settling into the small gap
 While no method is absolutely full proof, the sock-method has shown to be great success.
 Biofouling shows up in the data as sa slow decay of sensitivity over time.
 
-# Sound direction & beamforming
+# Sound direction & beamforming {#sec-beamforming}
 
-A single hydrophone measures *level*. An array can also estimate *direction*. That is **beamforming**, not triangulation: triangulation needs several widely separated sites to get range; beamforming uses the small time differences across hydrophones on one frame.
+A single hydrophone measures *sound level*, regardless of where the sound originated from.
+To derive any spatial information (where the sound is coming from), multiple hydrophones must be deployed in a synchronized array:
 
-Sound from one direction reaches hydrophone A slightly before hydrophone B. That **time difference of arrival (TDOA)** and the known spacing give the angle. In practice we delay each channel so a chosen steering direction lines up, then add the channels:
+* **Beamforming (Direction of Arrival)**: Uses arrival-time differences across closely-spaced hydrophones on a time-synchronized hydrophone array to calculate the bearing ($\theta$) or direction of a sound source.
+* **Trilateration (Position & Range):** Uses measurements across multiple widely-separated hydrophones to calculate the the spatial coordinates ($lat,lon$) of a sound.
+
+::: {.callout-warning appearance="simple"}
+**Common Misnomer:** Do not confuse **triangulation** with **trilateration**.
+What people usually refer to as triangulation is actually trilateration.
+Triangulation rather uses known angles to estimate distances and not to locate a specific geographical location.
+:::
+
+Sound from a given direction reaches one hydrophone slightly before the others.
+That **time difference of arrival** (TDOA) and the known element spacing give the angle ($\theta$) of arrival.
+In practice we apply phase shifts to each channel in the frequency domain corresponding to a given steering direction and sum the channels.
+
+<!--
+Sound from one direction reaches hydrophone A slightly before hydrophone B. That **time difference of arrival (TDOA)** and the known spacing give the angle.
+In practice we delay each channel so a chosen steering direction lines up, then add the channels:
 
 * Energy from that direction adds **coherently** (gain scales about as $N$, the number of hydrophones).
 * Uncorrelated noise adds more slowly (about $1/\sqrt{N}$).
+--> 
 
 Three design rules matter:
 
-* **Spacing vs frequency.** To avoid spatial aliasing, spacing should be on the order of half a wavelength, $d \approx \lambda/2 = c/(2f)$. At $c \approx 1500$ m/s, a **1 m** box is only well matched near **~750 Hz**. This frequency overlaps with Humpback whales vocalization, but it is too short for low-frequency whale calls (tens of Hz).
-* **Timing.** Channel-to-channel sync must be better than one sample period. That is the job of the ONC Link (cabled) or the recorder’s common clock on autonomous devices.
-* **Geometry.** A line array is directional in one plane; a box or tetrahedral array gives a 3-D arrival angle, still without range.
+* **Spacing vs frequency:** To avoid spatial aliasing, spacing between elements should satisfy $d \leq \lambda/2 = c/(2f)$. A **1 m** aperture sets an upper limit of **~750 Hz** for sound directionality, which is well suited for low-frequency sources like humpback whales, fin whales and earthquakes.
+* **Timing:** Channel-to-channel synchronization must be *better than* one sample period. That is the job of the ONC Link (cabled) or the recorder’s common clock on autonomous devices.
+* **Geometry:** A line array is directional in one plane; a box or tetrahedral array gives a 3-D arrival angle, still without range.
 
 # Deployment
 

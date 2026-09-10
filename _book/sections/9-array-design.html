@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
   <h1>Hydrophone Handbook</h1>
   <p class="handbook-banner-tagline">from the whale to the user</p>
   <div class="handbook-banner-org">
-    Data Analytics &amp; Quality | Ocean Networks Canada
+    Ocean Networks Canada
   </div>
   <p class="handbook-banner-date" id="handbook-compile-date"></p>
 </div>
@@ -327,7 +327,7 @@ window.Quarto = {
    
   <ul class="collapse">
   <li><a href="#challenges" id="toc-challenges" class="nav-link active" data-scroll-target="#challenges">Challenges</a></li>
-  <li><a href="#array-design" id="toc-array-design" class="nav-link" data-scroll-target="#array-design">Array design</a>
+  <li><a href="#geometry-and-mounting" id="toc-geometry-and-mounting" class="nav-link" data-scroll-target="#geometry-and-mounting">Geometry and mounting</a>
   <ul class="collapse">
   <li><a href="#hydrophones-can-be-deployed-in-several-configurations" id="toc-hydrophones-can-be-deployed-in-several-configurations" class="nav-link" data-scroll-target="#hydrophones-can-be-deployed-in-several-configurations">Hydrophones can be deployed in several configurations:</a></li>
   </ul></li>
@@ -337,7 +337,7 @@ window.Quarto = {
   <li><a href="#infrastructure-and-flow-noise" id="toc-infrastructure-and-flow-noise" class="nav-link" data-scroll-target="#infrastructure-and-flow-noise">Infrastructure and flow noise</a></li>
   <li><a href="#biofouling" id="toc-biofouling" class="nav-link" data-scroll-target="#biofouling">Biofouling</a></li>
   </ul></li>
-  <li><a href="#sound-direction-beamforming" id="toc-sound-direction-beamforming" class="nav-link" data-scroll-target="#sound-direction-beamforming">Sound direction &amp; beamforming</a></li>
+  <li><a href="#sec-beamforming" id="toc-sec-beamforming" class="nav-link" data-scroll-target="#sec-beamforming">Sound direction &amp; beamforming</a></li>
   <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
@@ -365,19 +365,26 @@ window.Quarto = {
 </header>
 
 
-<p>When mounting hydrophones, the scientific goals of ocean monitoring will dictate how the infrasctructure is built. There exists several ways that hydrophones can be arranged depending on the application. For example, while a single hydrophone can capture sound, several hydrophones together can provide direction, range, and help with separation of overlapping noises.</p>
-<p>At Ocean Networks Canada, we use two types of arrays:</p>
+<p>The hydrophone configuration is dictated primarily by the scientific objectives of ocean monitoring. At Ocean Networks Canada, passive acoustic infrastructure falls into two deployment configurations:</p>
 <ul>
-<li>Single Hydrophone</li>
-<li>Hydrophone Array</li>
+<li><strong>Single Hydrophone Nodes:</strong> Simpler and least expensive method for long-term soudscape monitoring</li>
+<li><strong>Synchronized Multi-Element Arrays:</strong> Structure mounting 2 to 4 <em>synchronized</em> hydrophones to estimate sound direction or even perform sound localization</li>
 </ul>
+<div class="fig-full">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/MEF-hydrophone-array.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A 4-element hydrophone array at the Main Endeavour Field (2,200 m depth), captured by the ROV camera."><img src="../images/MEF-hydrophone-array.png" class="img-fluid figure-img" data-lightbox="true" alt="A 4-element hydrophone array at the Main Endeavour Field (2,200 m depth), captured by the ROV camera."></a></p>
+<figcaption>A 4-element hydrophone array at the Main Endeavour Field (2,200 m depth), captured by the ROV camera.</figcaption>
+</figure>
+</div>
+</div>
 <section id="challenges" class="level1">
 <h1>Challenges</h1>
 <p>The ultimate goal for acoustics data collection is to capture high-quality soundscape while reducing unwanted noise (high Signal to Noise ratio). Noise can originate from nearby instruments, cable vibration, debris hitting the sensor, or even strong ocean currents.</p>
 <p>While it is no small feat (or rather impossible) to eliminate noise entirely, careful infrastructure design, engineering, and testing can drastically improve data quality. In addition, we always want to minimize the risk of damage to the instrument. This section touches on all these elements.</p>
 </section>
-<section id="array-design" class="level1">
-<h1>Array design</h1>
+<section id="geometry-and-mounting" class="level1">
+<h1>Geometry and mounting</h1>
 <p>ONC deploys hydrophones in two ways.</p>
 <p><strong>Cabled arrays</strong> sit on the observatory. Two or four hydrophones are mounted on a frame and wired to an <strong>ONC Link</strong> (ONC’s version of Ocean Sonics’ icLink). The Link time-synchronizes the channels and combines their data streams. The ONC Link is connected to a <strong>Junction Box (JB)</strong> which itself receives power from the seafloor cable. The advantage of cabled sites is that the data comes in in near real time.</p>
 <p><strong>Autonomous arrays</strong> are not cabled. They run on batteries and record onboard until recovery. The JASCO AMARs in Strait of Georgia East is a good example of this. Unfortunately, the data is only available once the hydrophones have been recovered, so there is no way to know in real time if there is an issue with the hydrophones until then. Moreover, if the memory is full, the hydrophone stops recording and we are effectively losing new data.</p>
@@ -385,14 +392,14 @@ window.Quarto = {
 <p>The image below shows a <strong>box-type</strong> hydrophone array, mounted at the MTC (Marine Technology Centre). On this array, there are four hydrophones at locations A, B, C, D, distanced about 1-metre from one another.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/MTC_hydrophone_array_annotated.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia."><img src="../images/MTC_hydrophone_array_annotated.png" class="img-fluid figure-img" data-lightbox="true" alt="A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia."></a></p>
+<p><a href="../images/MTC_hydrophone_array_annotated.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia."><img src="../images/MTC_hydrophone_array_annotated.png" class="img-fluid figure-img" data-lightbox="true" alt="A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia."></a></p>
 <figcaption>A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia.</figcaption>
 </figure>
 </div>
-<p>The distance between hydrophones is chosen for <strong>beamforming</strong>: estimating direction of arrival. But, 1 metre is too small for whale-localization (see below).</p>
+<p>The distance between hydrophones is chosen for <strong>beamforming</strong>: estimating direction of arrival. At 1 metre between the elements, it is possible to localize sounds emitted roughly between 100-750 Hz, for example Humback Whales. For high-frequency marine mammals (e.g., dolphin whistles, sperm whale clicks), an even smaller spacing is required (see <a href="#sec-beamforming" class="quarto-xref"><span>Sound direction &amp; beamforming</span></a> for a more detailed explanation).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/box-array.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Box-type array configuration for hydrophones."><img src="../images/box-array.png" class="img-fluid figure-img" data-lightbox="true" alt="Box-type array configuration for hydrophones."></a></p>
+<p><a href="../images/box-array.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Box-type array configuration for hydrophones."><img src="../images/box-array.png" class="img-fluid figure-img" data-lightbox="true" alt="Box-type array configuration for hydrophones."></a></p>
 <figcaption>Box-type array configuration for hydrophones.</figcaption>
 </figure>
 </div>
@@ -411,11 +418,11 @@ window.Quarto = {
 <h1>Mitigating noise and instrument damage</h1>
 <section id="interference" class="level2">
 <h2 class="anchored" data-anchor-id="interference">Interference</h2>
-<p>When adding hydrophones to a multi-instrument platform, all nearby infrastructure should ideally be evaluated for noise, although this is a hardeous task and we generally know after the facts if there is interference and to what internsity. Proximity interference will show up clearly as persistent lines or bursts in the spectrogram.</p>
-<p>In this example from 2023, interference noise from instruments on the same platform at the Holyrood site was intense enough to fully mask natural ambient sound, biological vocalizations, and other signals of scientific interests.</p>
+<p>When adding hydrophones to a multi-instrument platform, all nearby infrastructure should ideally be evaluated for noise, although this is a arduous task and we generally know after the fact if there is interference and to what intensity. Proximity interference will show up clearly as persistent lines or bursts in the spectrogram.</p>
+<p>In this example from 2023, interference noise from instruments on the same platform at the Holyrood site was intense enough to fully mask natural ambient sound, biological vocalizations, and other signals of scientific interest.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/ICLISTENHF2098_20240109T030502.000Z-spect.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL."><img src="../images/ICLISTENHF2098_20240109T030502.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL."></a></p>
+<p><a href="../images/ICLISTENHF2098_20240109T030502.000Z-spect.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL."><img src="../images/ICLISTENHF2098_20240109T030502.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL."></a></p>
 <figcaption>Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL.</figcaption>
 </figure>
 </div>
@@ -446,7 +453,7 @@ window.Quarto = {
 <p>Hydrophones are often protected by a cage (guard or shroud), a semi-rigid housing that surrounds the hydrophone. The main purpose to prevent debris, sea life, or cables from striking the sensor. It can also help break turbulent flow (see Karman vortices) around the sensor, which can create low-frequency noise in the data.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/hydrophone-guards.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Hydrophone guards prevent debris, sea life, and more, from hitting the sensor."><img src="../images/hydrophone-guards.jpg" class="img-fluid figure-img" data-lightbox="true" alt="Hydrophone guards prevent debris, sea life, and more, from hitting the sensor."></a></p>
+<p><a href="../images/hydrophone-guards.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Hydrophone guards prevent debris, sea life, and more, from hitting the sensor."><img src="../images/hydrophone-guards.jpg" class="img-fluid figure-img" data-lightbox="true" alt="Hydrophone guards prevent debris, sea life, and more, from hitting the sensor."></a></p>
 <figcaption>Hydrophone guards prevent debris, sea life, and more, from hitting the sensor.</figcaption>
 </figure>
 </div>
@@ -460,26 +467,43 @@ window.Quarto = {
 <p>The “sock method”: we use a simple <em>sock</em> (graciously made by a local seamstress), which is a soft and flexible cover that fit snug over the hydrophone shroud. It greatly extends lifetime of all hydrophones by preventing microorganisms to directly attach on the sensor. It can also prevent fine sediments (e.g., silt) from settling into the small gaps.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/hydrophone-sock.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="The sock method helps to prevent biofouling."><img src="../images/hydrophone-sock.png" class="img-fluid figure-img" data-lightbox="true" alt="The sock method helps to prevent biofouling."></a></p>
+<p><a href="../images/hydrophone-sock.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="The sock method helps to prevent biofouling."><img src="../images/hydrophone-sock.png" class="img-fluid figure-img" data-lightbox="true" alt="The sock method helps to prevent biofouling."></a></p>
 <figcaption>The sock method helps to prevent biofouling.</figcaption>
 </figure>
 </div>
 <p>While no method is absolutely full proof, the sock-method has shown to be great success. Biofouling shows up in the data as sa slow decay of sensitivity over time.</p>
 </section>
 </section>
-<section id="sound-direction-beamforming" class="level1">
+<section id="sec-beamforming" class="level1">
 <h1>Sound direction &amp; beamforming</h1>
-<p>A single hydrophone measures <em>level</em>. An array can also estimate <em>direction</em>. That is <strong>beamforming</strong>, not triangulation: triangulation needs several widely separated sites to get range; beamforming uses the small time differences across hydrophones on one frame.</p>
-<p>Sound from one direction reaches hydrophone A slightly before hydrophone B. That <strong>time difference of arrival (TDOA)</strong> and the known spacing give the angle. In practice we delay each channel so a chosen steering direction lines up, then add the channels:</p>
+<p>A single hydrophone measures <em>sound level</em>, regardless of where the sound originated from. To derive any spatial information (where the sound is coming from), multiple hydrophones must be deployed in a synchronized array:</p>
 <ul>
-<li>Energy from that direction adds <strong>coherently</strong> (gain scales about as <span class="math inline">\(N\)</span>, the number of hydrophones).</li>
-<li>Uncorrelated noise adds more slowly (about <span class="math inline">\(1/\sqrt{N}\)</span>).</li>
+<li><strong>Beamforming (Direction of Arrival)</strong>: Uses arrival-time differences across closely-spaced hydrophones on a time-synchronized hydrophone array to calculate the bearing (<span class="math inline">\(\theta\)</span>) or direction of a sound source.</li>
+<li><strong>Trilateration (Position &amp; Range):</strong> Uses measurements across multiple widely-separated hydrophones to calculate the the spatial coordinates (<span class="math inline">\(lat,lon\)</span>) of a sound.</li>
 </ul>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Common Misnomer:</strong> Do not confuse <strong>triangulation</strong> with <strong>trilateration</strong>. What people usually refer to as triangulation is actually trilateration. Triangulation rather uses known angles to estimate distances and not to locate a specific geographical location.</p>
+</div>
+</div>
+</div>
+<p>Sound from a given direction reaches one hydrophone slightly before the others. That <strong>time difference of arrival</strong> (TDOA) and the known element spacing give the angle (<span class="math inline">\(\theta\)</span>) of arrival. In practice we apply phase shifts to each channel in the frequency domain corresponding to a given steering direction and sum the channels.</p>
+<!--
+Sound from one direction reaches hydrophone A slightly before hydrophone B. That **time difference of arrival (TDOA)** and the known spacing give the angle.
+In practice we delay each channel so a chosen steering direction lines up, then add the channels:
+
+* Energy from that direction adds **coherently** (gain scales about as $N$, the number of hydrophones).
+* Uncorrelated noise adds more slowly (about $1/\sqrt{N}$).
+-->
 <p>Three design rules matter:</p>
 <ul>
-<li><strong>Spacing vs frequency.</strong> To avoid spatial aliasing, spacing should be on the order of half a wavelength, <span class="math inline">\(d \approx \lambda/2 = c/(2f)\)</span>. At <span class="math inline">\(c \approx 1500\)</span> m/s, a <strong>1 m</strong> box is only well matched near <strong>~750 Hz</strong>. This frequency overlaps with Humpback whales vocalization, but it is too short for low-frequency whale calls (tens of Hz).</li>
-<li><strong>Timing.</strong> Channel-to-channel sync must be better than one sample period. That is the job of the ONC Link (cabled) or the recorder’s common clock on autonomous devices.</li>
-<li><strong>Geometry.</strong> A line array is directional in one plane; a box or tetrahedral array gives a 3-D arrival angle, still without range.</li>
+<li><strong>Spacing vs frequency:</strong> To avoid spatial aliasing, spacing between elements should satisfy <span class="math inline">\(d \leq \lambda/2 = c/(2f)\)</span>. A <strong>1 m</strong> aperture sets an upper limit of <strong>~750 Hz</strong> for sound directionality, which is well suited for low-frequency sources like humpback whales, fin whales and earthquakes.</li>
+<li><strong>Timing:</strong> Channel-to-channel synchronization must be <em>better than</em> one sample period. That is the job of the ONC Link (cabled) or the recorder’s common clock on autonomous devices.</li>
+<li><strong>Geometry:</strong> A line array is directional in one plane; a box or tetrahedral array gives a 3-D arrival angle, still without range.</li>
 </ul>
 </section>
 <section id="deployment" class="level1">

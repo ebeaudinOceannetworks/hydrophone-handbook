@@ -53,9 +53,9 @@ Hydrophones are categorized by their operational frequency bandwidth, which dict
 
 | Category | Frequency Range | Target Applications |
 | :--- | :--- | :--- |
-| **Low-Frequency (Infrasonic)** | $1\text{ Hz} - 1\text{ kHz}$ | Geophysics, earthquakes, large baleen whales (e.g., Blue, Fin) |
+| **Low-Frequency** | $1\text{ Hz} - 1\text{ kHz}$ | Geophysics, earthquakes, large baleen whales (e.g., Blue, Fin) |
 | **Audio-Frequency** | $10\text{ Hz} - 10\text{ kHz}$ | Commercial shipping noise, fish vocalizations, general soundscape |
-| **High-Frequency (Ultrasonic)** | $10\text{ Hz} - 200\text{ kHz}$ | Odontocete echolocation (e.g., Orca, Porpoise), acoustic harassment devices |
+| **High-Frequency (or broadband)** | $10\text{ Hz} - 200\text{ kHz}$ | Odontocete echolocation (e.g., Orca, Porpoise), acoustic harassment devices |
 
 
 ## Defining Sensitivity
@@ -111,8 +111,6 @@ Note on choosing the window: it’s impossible to have a good resolution in time
 - Long window = good frequency resolution, poor time resolution
 
 
-Hydrophones can be put into three categories, infrasonic, ultrasonic, and ??
-
 ## Signal to noise ratio
 Signal to Noise ratio is an important element to consider for hydrophones.
 
@@ -148,8 +146,8 @@ Passive acoustic monitoring is often associated with underwater soundscapes, but
 |--------|--------|--------|
 | <span style="color: darkorange;">**Seismic & Geophysics**</span> | Earthquakes, Tsunami detection, Oil & Gas exploration, Seabed mapping, Subsea leakage.   | **Sub Hz - 100 Hz** |
 | <span style="color: green;">**Biological**</span>  | Marine mammal vocalization, Ecosystem studies  | **10 Hz - ~200 kHz** |   
-| <span style="color: skyblue;">**Natural Ambient**</span>  | Ambient noise monitoring.  | **10 Hz - 1000 Hz** |   
-| <span style="color: red;">**Naval & Surveillance**</span>  | Submarine/Vessel detection, harbour surveillance.  | **3 kHz – 300 kHz** |   
+| <span style="color: skyblue;">**Natural Ambient**</span>  | Ambient noise monitoring.  | **10 Hz - 50 kHz** |   
+| <span style="color: red;">**Naval & Surveillance**</span>  | Submarine/Vessel detection, harbour surveillance.  | **10 Hz – 300 kHz** |   
 | <span style="color: gold;">**Communication**</span> | Submarine communication, navigation. | **3 Hz – 300 kHz** |
 
 
@@ -167,15 +165,15 @@ import matplotlib.ticker as ticker
 data = [
     {"cat": "Seismic & Geophysics", "low": 0.1, "high": 100, "color": "darkorange"},
     {"cat": "Biological", "low": 10, "high": 200000, "color": "green"},
-    {"cat": "Natural Ambient", "low": 1, "high": 1000, "color": "skyblue"},
-    {"cat": "Naval & Surveillance", "low": 3000, "high": 300000, "color": "red"},
+    {"cat": "Natural Ambient", "low": 1, "high": 50000, "color": "skyblue"},
+    {"cat": "Naval & Surveillance", "low": 10, "high": 300000, "color": "red"},
     {"cat": "Communication", "low": 3, "high": 300000, "color": "gold"},
 ]
 
 freq_bands = [
     {'cat': 'Infrasound', 'low': 0.1, 'high': 20, 'color': '#e74c3c'},
     {'cat': 'Audible', 'low': 20, 'high': 20000, 'color': '#f1c40f'},
-    {'cat': 'Ultrasound', 'low': 20000, 'high': 300000, 'color': '#2980b9'},
+    {'cat': 'Ultrasound', 'low': 20000, 'high': 500000, 'color': '#2980b9'},
     #{'cat': 'Hypersound', 'low': 5e8, 'high': 1e10, 'color': '#95a5a6'},
 ]
 
