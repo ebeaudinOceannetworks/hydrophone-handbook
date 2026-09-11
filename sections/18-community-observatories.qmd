@@ -1,0 +1,106 @@
+---
+title: "18. Coastal Observatories"
+---
+
+Coastal community observatories enable community members to conduct year-round continuous monitoring of their local ocean environments, collecting valuable baseline and time-series data for tracking the changing ocean conditions.
+
+ONC collaborates with community partners to custom-design each observatory to meet local needs.
+This partnership recognises the value of place-based knowledge and pairs it with oceanographic instruments, high-tech design, training, and scientific support. 
+The observatory data can be used by researchers, community members, Indigenous leaders, governments and others to inform decision-making for a sustainable ocean future.
+
+---
+
+## Coastal Observatory hydrophone data use cases
+
+Click on a marker to view projects using data from a Coastal Observatory hydrophone.
+
+```{python}
+#| echo: false
+#| message: false
+#| warning: false
+
+import pandas as pd
+import folium
+
+# 1. Coordinate lookup dictionary (renamed keys to 'lat' and 'lon')
+coords = {
+    "Cambridge Bay":    {"lat": 69.1125, "lon": -105.0632},
+    "Campbell River":   {"lat": 49.8450, "lon": -125.0059},
+    "China Creek":      {"lat": 49.1534, "lon": -124.7936},
+    "Digby Island":     {"lat": 54.2588, "lon": -130.4307},
+    "Hartley Bay":      {"lat": 53.4225, "lon": -129.2475},
+    "Kitamaat Village": {"lat": 53.9800, "lon": -128.6500},
+    "Burrard Inlet":    {"lat": 49.2982, "lon": -123.0033}
+}
+
+# 2. Read Excel sheet & clean up
+df = pd.read_excel('../docs/Coastal Observatory hydrophone use cases.xlsx')
+df = df.rename(columns={'CCO': 'location'})
+
+if 'Sensor type' in df.columns:
+    df = df[df['Sensor type'].str.contains('Hydrophone', case=False, na=False)]
+
+# Map coordinates
+df['lat'] = df['location'].map(lambda x: coords.get(x, {}).get('lat'))
+df['lon'] = df['location'].map(lambda x: coords.get(x, {}).get('lon'))
+
+# 3. Initialize Map with PUBLIC ACCESS tiles (No API Key Required)
+m = folium.Map(
+    location=[62.0, -110.0], 
+    zoom_start=4, 
+    tiles="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    attr="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors &copy; <a href='https://carto.com/attributions'>CARTO</a>"
+)
+
+# 4. Group by location and construct scrollable popups
+grouped = df.groupby(['location', 'lat', 'lon'])
+
+for (loc_name, lat, lon), group in grouped:
+    project_blocks = ""
+    
+    n=0
+    for _, row in group.iterrows():
+        title = row.get('Title/ summary', 'Community Project')
+        category = row.get('Use case category', 'General')
+
+        if category == 'In progress study':
+            continue # we don't display in progress projects to protect privacy
+        else:
+
+            project_blocks += f"""
+            <div style="margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;">
+                <span style="background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">
+                    {category}
+                </span>
+                <div style="font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;">{title}</div>
+            </div>
+            """
+            n+=1
+
+    if n>0: # only add the ones with completed projects
+        # Scrollable popup wrapper (max-height triggers vertical scrollbar when needed)
+        popup_content = f"""
+        <div style="font-family: system-ui, -apple-system, sans-serif; line-height: 1.3;">
+            <h3 style="margin: 0 0 8px 0; font-size: 15px; color: #111; border-bottom: 2px solid #005A9C; padding-bottom: 4px;">
+                📍 {loc_name} <span style='font-size: 11px; font-weight: normal; color: #666;'>
+                <!-- ({n} project{'s' if n != 1 else ''})</span> -->
+            </h3>
+            <div style="max-height: 250px; overflow-y: auto; padding-right: 6px;">
+                {project_blocks}
+            </div>
+        </div>
+        """
+
+        folium.Marker(
+            location=[lat, lon],
+            popup=folium.Popup(popup_content, max_width=360),
+            icon=folium.Icon(color="blue", icon="info-sign")
+        ).add_to(m)
+
+m
+```
+---
+
+## What is a Coastal Observatory?
+
+Learn about the Cambridge Bay Coastal Community Observatory in this interactive [ArcGIS StoryMap](https://storymaps.arcgis.com/stories/66c475c8a7c64d0792fc495e8f6e95f8).

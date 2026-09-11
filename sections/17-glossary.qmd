@@ -55,8 +55,8 @@ where $p$ is pressure, and $u$ the particle velocity.
 ### Impedance
 Impedance of water is much greater than that of air.
 
-### Power spectrum density
-The acoustic signal power per unit frequency as measured at a single frequency. Unit: $\micro Pa^2\cdot s$
+### Power spectral density
+The acoustic signal power per unit frequency as measured at a single frequency. Unit: $dB~re~1~\micro Pa^2/Hz$
 
 ### Pressure
 Unit: Pa

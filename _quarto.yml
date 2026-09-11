@@ -46,6 +46,7 @@ book:
     - sections/15-acoustic-equations.qmd
     - sections/16-hydrophone-models.qmd
     - sections/17-glossary.qmd
+    - sections/18-community-observatories.qmd
 
   sidebar:
     style: "docked"
@@ -63,7 +64,7 @@ format:
     lightbox:
       match: auto
     grid:
-      sidebar-width: 280px
+      sidebar-width: 320px
       gutter-width: 2em
     navigation:
       full-logo: true
