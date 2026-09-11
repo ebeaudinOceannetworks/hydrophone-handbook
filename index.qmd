@@ -21,15 +21,14 @@ depl = pd.DataFrame(onc.getDeployments({"deviceCategoryCode": "HYDROPHONE"}))
 nh = int(depl[depl['end'].isna()].shape[0])
 ```
 
-*This handbook covers the entire passive acoustics program at ONC, including:
-Hardware & Deployments, Data Processing & Access, Operations & Quality Control, and Scientific applications.*
+*This handbook covers the entire passive acoustics program at ONC, including how and where the instruments deployed, how the data is processed, how to access the data, and examples of data use cases.*
 
 # Listening to the ocean since 2006
 
 Ocean Networks Canada has been recording the underwater soundscape since the first installation of the VENUS node in Saanich Inlet in 2006.
 What started as a single location has expanded into a pan-Canadian array monitoring the Pacific, Atlantic, and Arctic coasts.
 
-With over 1 petabyte of archived recordings, spectrograms, and derived acoustic data products, the passive acoustic program of ONC helps scientists and ocean stewards get a better understanding of the canadian ocean soundscape.
+With over 1 petabyte of archived recordings, spectrograms, and derived acoustic data products, the passive acoustic program of ONC helps scientists and ocean stewards get a better understanding of the Canadian ocean soundscape.
 
 ::: {.grid .kpi-grid}
 
@@ -76,7 +75,7 @@ Here are a few applications:
 *Mapping minerals, detecting underwater earthquakes and submarine volcanic activity, to inform resource exploration and support regional seismic early-warning systems.*
 
 #### 🛡️ National Defence & Security
-*Supporting national defense to survey martitime domain, identifying vessel signatures and or nuclear testing.*
+*Supporting national defense to survey maritime domain, identifying vessel signatures and or nuclear testing.*
 
 
 

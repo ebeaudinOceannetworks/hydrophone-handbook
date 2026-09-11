@@ -44,7 +44,7 @@ if 'Sensor type' in df.columns:
 df['lat'] = df['location'].map(lambda x: coords.get(x, {}).get('lat'))
 df['lon'] = df['location'].map(lambda x: coords.get(x, {}).get('lon'))
 
-# 3. Initialize Map with PUBLIC ACCESS tiles (No API Key Required)
+# 3. Initialize Map
 m = folium.Map(
     location=[62.0, -110.0], 
     zoom_start=4, 
