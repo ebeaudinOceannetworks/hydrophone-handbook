@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>15. Acoustic Equations – Hydrophone Handbook</title>
+<title>7. Sound Gallery – Hydrophone Handbook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/16-hydrophone-models.html" rel="next">
-<link href="../sections/14-science-and-publications.html" rel="prev">
+<link href="../sections/8-hydrophone-network.html" rel="next">
+<link href="../sections/6-soundscape-taxonomy.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -48,6 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-9fcb8d5e0c41499167cbab7fb937d956.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -206,7 +209,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/15-acoustic-equations.html"><span class="chapter-title">15. Acoustic Equations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/7-sound-gallery.html"><span class="chapter-title">7. Sound Gallery</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -253,7 +256,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/7-sound-gallery.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Sound Gallery</span></a>
+  <a href="../sections/7-sound-gallery.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">7. Sound Gallery</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -293,7 +296,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/15-acoustic-equations.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">15. Acoustic Equations</span></a>
+  <a href="../sections/15-acoustic-equations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">15. Acoustic Equations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -321,15 +324,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#speed-of-sound-in-seawater" id="toc-speed-of-sound-in-seawater" class="nav-link active" data-scroll-target="#speed-of-sound-in-seawater">Speed of sound in seawater</a>
-  <ul class="collapse">
-  <li><a href="#mackenzie-1981" id="toc-mackenzie-1981" class="nav-link" data-scroll-target="#mackenzie-1981">Mackenzie, 1981</a></li>
-  <li><a href="#del-grosso-1974" id="toc-del-grosso-1974" class="nav-link" data-scroll-target="#del-grosso-1974">Del Grosso, 1974</a></li>
-  </ul></li>
-  <li><a href="#snells-law" id="toc-snells-law" class="nav-link" data-scroll-target="#snells-law">Snell’s law</a></li>
-  <li><a href="#wave-equation" id="toc-wave-equation" class="nav-link" data-scroll-target="#wave-equation">Acoustic wave equation</a></li>
-  <li><a href="#spl" id="toc-spl" class="nav-link" data-scroll-target="#spl">Sound pressure level</a></li>
-  <li><a href="#average-sound-pressure-level" id="toc-average-sound-pressure-level" class="nav-link" data-scroll-target="#average-sound-pressure-level">Average sound pressure level</a></li>
+  <li><a href="#interference-from-nearby-instruments" id="toc-interference-from-nearby-instruments" class="nav-link active" data-scroll-target="#interference-from-nearby-instruments">Interference from nearby instruments</a></li>
+  <li><a href="#sonar" id="toc-sonar" class="nav-link" data-scroll-target="#sonar">SONAR</a></li>
+  <li><a href="#airplane" id="toc-airplane" class="nav-link" data-scroll-target="#airplane">Airplane</a></li>
+  <li><a href="#tonals" id="toc-tonals" class="nav-link" data-scroll-target="#tonals">Tonals</a></li>
+  <li><a href="#whales" id="toc-whales" class="nav-link" data-scroll-target="#whales">Whales</a></li>
+  <li><a href="#snowmobile" id="toc-snowmobile" class="nav-link" data-scroll-target="#snowmobile">Snowmobile</a></li>
+  <li><a href="#helicopter" id="toc-helicopter" class="nav-link" data-scroll-target="#helicopter">Helicopter</a></li>
+  <li><a href="#earthquake-at-endeavour" id="toc-earthquake-at-endeavour" class="nav-link" data-scroll-target="#earthquake-at-endeavour">Earthquake at Endeavour</a></li>
+  <li><a href="#pump-contamination" id="toc-pump-contamination" class="nav-link" data-scroll-target="#pump-contamination">Pump contamination</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -338,7 +342,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">15. Acoustic Equations</span></h1>
+<h1 class="title"><span class="chapter-title">7. Sound Gallery</span></h1>
 </div>
 
 
@@ -355,56 +359,257 @@ window.Quarto = {
 </header>
 
 
-<section id="speed-of-sound-in-seawater" class="level1">
-<h1>Speed of sound in seawater</h1>
-<section id="mackenzie-1981" class="level2">
-<h2 class="anchored" data-anchor-id="mackenzie-1981">Mackenzie, 1981</h2>
-<p>A nine-term fit, convenient for a first estimate of <span class="math inline">\(c\)</span> from a CTD cast:</p>
-<p><span class="math display">\[
-c(T,S,z) = a_1 + a_2 T + a_3 T^2 + a_4 T^3 + a_5(S-35) + a_6 z + a_7 z^2 + a_8 T (S-35) + a_9 T z^3
-\]</span></p>
-<p>where <span class="math inline">\(T\)</span> is temperature (°C), <span class="math inline">\(S\)</span> is salinity (psu), <span class="math inline">\(z\)</span> is depth (m), and <span class="math inline">\(c\)</span> is sound speed (m/s). Coefficients <span class="math inline">\(a_1 \ldots a_9\)</span> are given in Mackenzie (1981). Typical range of validity: <span class="math inline">\(T\)</span> 0–30 °C, <span class="math inline">\(S\)</span> 30–40 psu, <span class="math inline">\(z\)</span> 0–8000 m.</p>
+<p>Explore acoustic signatures captured across our monitoring stations. Examples shown here include marine mammals, interference from nearby instruments, and weather events. Click a spectrogram to enlarge it.</p>
+<p>Go to <a href="https://soundcloud.com/oceannetworkscanada">ONC’s SoundCloud page</a> for more sounds from the hydrophone data, and <a href="https://voicesinthesea.ucsd.edu/index.html">Voices in the Sea</a> for additional examples.</p>
+<section id="interference-from-nearby-instruments" class="level1">
+<h1>Interference from nearby instruments</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of ADCP interference at Strait of Georgia East."><img src="../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of ADCP interference at Strait of Georgia East."></a></p>
+<figcaption>Spectrogram of ADCP interference at Strait of Georgia East.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Strait of Georgia East, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Tonal, Interference</span>
+</div>
+<p>An ADCP is located very close to the hydrophone, resulting in a strong signal between 35 and 40 kHz. A tonal line is seen around 22 kHz.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="del-grosso-1974" class="level2">
-<h2 class="anchored" data-anchor-id="del-grosso-1974">Del Grosso, 1974</h2>
-<p>Often preferred when a more accurate oceanographic sound speed is needed. It is a function of temperature, salinity, and pressure:</p>
-<p><span class="math display">\[
-c(T,S,p) = c_{000} + \Delta c_T + \Delta c_S + \Delta c_P + \Delta c_{STp}
-\]</span></p>
-<p>where <span class="math inline">\(c_{000}\)</span> is a reference sound speed and the <span class="math inline">\(\Delta c\)</span> terms are polynomial corrections for temperature, salinity, pressure, and their cross terms. Full coefficients are given in Del Grosso (1974).</p>
+<section id="sonar" class="level1">
+<h1>SONAR</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF6013_20260602T091500.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of sonar at Clayoquot Slope."><img src="../images/ICLISTENHF6013_20260602T091500.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of sonar at Clayoquot Slope."></a></p>
+<figcaption>Spectrogram of sonar at Clayoquot Slope.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Clayoquot Slope, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> SONAR at 2 kHz and 7 kHz</span>
+</div>
+<p>SONARs are used to measure distances, help navigate or detect objects by sending a sound wave into the water. Two SONARs signals here at 2 and 7 kHz are potentially coming from a nearby NAVY ship, and could be from different sources.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="airplane" class="level1">
+<h1>Airplane</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF7079_20260803T232001.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of an airplane over Cambridge Bay."><img src="../images/ICLISTENHF7079_20260803T232001.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of an airplane over Cambridge Bay."></a></p>
+<figcaption>Spectrogram of an airplane over Cambridge Bay.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Airplane flying over</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tonals" class="level1">
+<h1>Tonals</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF6405_20250605T140009.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of tonal noise at China Creek."><img src="../images/ICLISTENHF6405_20250605T140009.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of tonal noise at China Creek."></a></p>
+<figcaption>Spectrogram of tonal noise at China Creek.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> China Creek, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Tonal</span>
+</div>
+<p>A stationary signal at a single frequency that often results from nearby instruments, ship propellers from vessels on standby, or land-based mechanical sources when the hydrophone is shallow enough.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="whales" class="level1">
+<h1>Whales</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1252_20260627T072506.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of whale vocalizations at Digby Island."><img src="../images/ICLISTENHF1252_20260627T072506.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of whale vocalizations at Digby Island."></a></p>
+<figcaption>Spectrogram of whale vocalizations at Digby Island.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Digby Island, BC</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Whales, Tonal</span>
+</div>
+<p>Different whales vocalize at different frequencies with distinct patterns. In this example, whale vocalizations are seen below 1 kHz. A tonal at 8 kHz is also present.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="snowmobile" class="level1">
+<h1>Snowmobile</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/snowmobile.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of snowmobile noise at Cambridge Bay."><img src="../images/snowmobile.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of snowmobile noise at Cambridge Bay."></a></p>
+<figcaption>Spectrogram of snowmobile noise at Cambridge Bay.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Snowmobile transit, Tonals</span>
+</div>
+<p>The soundscape is dominated by surface-coupled noise. In winter, snowmobiles create distinct harmonic bands (<span class="math inline">\(10^2\)</span> to <span class="math inline">\(10^3\)</span> Hz). These overlap with ringed seal vocalizations, creating a high risk of <strong>acoustic masking</strong> in shallow ice-covered leads.</p>
+<p><a href="https://www.nature.com/articles/s44384-025-00038-1">Marine soundscapes of the Arctic and human impacts: going beyond the “shipping bands”</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="helicopter" class="level1">
+<h1>Helicopter</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1951_20230807T175509.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of a helicopter over Cambridge Bay."><img src="../images/ICLISTENHF1951_20230807T175509.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of a helicopter over Cambridge Bay."></a></p>
+<figcaption>Spectrogram of a helicopter over Cambridge Bay.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Helicopter transit</span>
+</div>
+<p>The hydrophone in Cambridge Bay is shallow enough (10 m deep) that it can detect helicopters flying above the surface [17:55:00 - 17:55:30].</p>
+</div>
+</div>
+</div>
+</section>
+<section id="earthquake-at-endeavour" class="level1">
+<h1>Earthquake at Endeavour</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF6328_20240306T084000.000Z-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of an earthquake at Endeavour."><img src="../images/ICLISTENHF6328_20240306T084000.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of an earthquake at Endeavour."></a></p>
+<figcaption>Spectrogram of an earthquake at Endeavour.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Endeavour, Pacific Ocean</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Earthquake</span>
+</div>
+<p>Earthquake sounds are mostly detectable at low frequency. Find more information about this event in this <a href="https://www.oceannetworks.ca/news-and-stories/stories/endeavour-site-records-the-highest-level-of-earthquake-activity-in-20-years/">ONC story</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="pump-contamination" class="level1">
+<h1>Pump contamination</h1>
+<div class="dp-panel sound-example">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png" class="lightbox" data-gallery="sound-examples" title="Spectrogram of pump contamination at Cambridge Bay."><img src="../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of pump contamination at Cambridge Bay."></a></p>
+<figcaption>Spectrogram of pump contamination at Cambridge Bay.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Location</span> Cambridge Bay, NU</span>
+  <span class="dp-pill"><span class="dp-pill-k">Sounds</span> Pump</span>
+</div>
+<p>At that time, the hydrophone was too close to a platform with other noisy instruments which included a pump.</p>
+</div>
+</div>
+</div>
+<section id="listen-to-the-ocean-soundscape" class="level3 listen-section">
+<h3 class="anchored" data-anchor-id="listen-to-the-ocean-soundscape">Listen to the ocean soundscape</h3>
+<div class="grid sound-card-grid">
+<div class="g-col-12 g-col-md-6">
+<div class="sound-card">
+<div class="sound-card-visual">
+<p><a href="../images/killer-whale-call-card.png" class="lightbox" data-gallery="intro-sounds"><img src="../images/killer-whale-call-card.png" class="img-fluid" style="width:100.0%" data-lightbox="true" alt="Spectrogram of a killer whale call."></a></p>
+</div>
+<p class="sound-card-title">
+Killer whale
+</p>
+<p class="sound-card-caption">
+Calls and echolocation
+</p>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF6325_20260712T020000.000Z_normalized.flac" type="audio/flac">
+  Your browser does not support the audio player.
+</audio>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<div class="sound-card">
+<div class="sound-card-visual">
+<p><a href="../images/sonar-card.png" class="lightbox" data-gallery="intro-sounds"><img src="../images/sonar-card.png" class="img-fluid" style="width:100.0%" data-lightbox="true" alt="Spectrogram of sonar pings."></a></p>
+</div>
+<p class="sound-card-title">
+SONAR
+</p>
+<p class="sound-card-caption">
+Active pings
+</p>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF6016_20260602T091500.000Z_normalized.flac" type="audio/flac">
+  Your browser does not support the audio player.
+</audio>
+</div>
+</div>
+</div>
+<p>More recordings are on <a href="https://soundcloud.com/oceannetworkscanada">ONC’s SoundCloud</a>.</p>
 </section>
 </section>
-<section id="snells-law" class="level1">
-<h1>Snell’s law</h1>
-<p>A sound ray bends toward slower speed. If <span class="math inline">\(c_1\)</span> and <span class="math inline">\(c_2\)</span> are sound speed on either side of an interface (or of a gradual gradient) and <span class="math inline">\(\theta_1\)</span>, <span class="math inline">\(\theta_2\)</span> are the angles from the vertical:</p>
-<p><span class="math display">\[
-\frac{\sin{\theta_1}}{\sin{\theta_2}} = \frac{c_1}{c_2}
-\]</span></p>
-<p>Frequency is unchanged; wavelength adjusts so that <span class="math inline">\(c = f\lambda\)</span>. This is the geometry behind the SOFAR channel and surface ducts in <a href="5-physics-of-sound.qmd">Physics of Sound</a>.</p>
-</section>
-<section id="wave-equation" class="level1">
-<h1>Acoustic wave equation</h1>
-<p><span class="math display">\[
-\nabla^2 p - \frac{1}{c^2} \frac{\partial^2 p}{\partial t^2} = 0
-\]</span></p>
-<p>where <span class="math inline">\(p\)</span> is acoustic pressure (deviation from ambient), <span class="math inline">\(c\)</span> is sound speed (<span class="math inline">\(\approx 1500\)</span> m/s in seawater), and <span class="math inline">\(t\)</span> is time. Numerical models such as BELLHOP are discrete solutions of this equation for a given environment.</p>
-</section>
-<section id="spl" class="level1">
-<h1>Sound pressure level</h1>
-<p><span class="math display">\[
-\mathrm{SPL} = 20 \log_{10} \left(\frac{p}{p_{\mathrm{ref}}}\right)~\text{dB re 1}~\mu\text{Pa}
-\]</span></p>
-<p>with <span class="math inline">\(p_{\mathrm{ref}} = 1~\mu\mathrm{Pa}\)</span> underwater (20 µPa in air). A pressure <span class="math inline">\(10^6\)</span> times the reference is <span class="math inline">\(120\)</span> dB re 1 µPa.</p>
-</section>
-<section id="average-sound-pressure-level" class="level1">
-<h1>Average sound pressure level</h1>
-<p><span class="math display">\[
-L_a = 10\cdot log\left(\frac{1}{n} ( 10^{0.1L_1} + 10^{0.1L_2} + ... + 10^{0.1L_n} )\right)
-\]</span></p>
-<p>where</p>
-<p><span class="math inline">\(L_a\)</span> = average sound pressure level (dB)</p>
-<p><span class="math inline">\(L_1..L_n\)</span> = sound pressure level source 1..n (dB)</p>
-<p><span class="math inline">\(n\)</span> = number of sources</p>
+<section id="resources" class="level1">
+<h1>Resources</h1>
+<div class="docs-card">
+  <div class="docs-card-title">
+    <img src="../images/confluence_logo_no_bckg.png" width="24" alt="">
+    <span>Confluence Documentation</span>
+  </div>
+  <ul class="docs-card-list">
+    <li><a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/13648503/Hydrophone+daily+checks">Hydrophone Daily Checks</a></li>
+  </ul>
+</div>
 
 
 </section>
@@ -817,17 +1022,49 @@ L_a = 10\cdot log\left(\frac{1}{n} ( 10^{0.1L_1} + 10^{0.1L_2} + ... + 10^{0.1L_
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../sections/14-science-and-publications.html" class="pagination-link" aria-label="14. Science and Publications">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">14. Science and Publications</span></span>
+      <a href="../sections/6-soundscape-taxonomy.html" class="pagination-link" aria-label="6. Soundscape Taxonomy">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">6. Soundscape Taxonomy</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/16-hydrophone-models.html" class="pagination-link" aria-label="16. Hydrophone Models">
-        <span class="nav-page-text"><span class="chapter-title">16. Hydrophone Models</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../sections/8-hydrophone-network.html" class="pagination-link" aria-label="8. Hydrophone Network">
+        <span class="nav-page-text"><span class="chapter-title">8. Hydrophone Network</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

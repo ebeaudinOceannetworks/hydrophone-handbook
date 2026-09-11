@@ -256,7 +256,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/7-example-sounds.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Example Sounds</span></a>
+  <a href="../sections/7-sound-gallery.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Sound Gallery</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -495,11 +495,40 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Expand to learn more about the method
+<span class="screen-reader-only">Note</span>Expand to learn how to read a spectrogram
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>ONC spectrograms (Hydrophone Viewer and the <code>.png</code> / <code>.pdf</code> HSD product) are usually <strong>5-minute</strong> files. They use the same axes every time:</p>
+<ul>
+<li><strong>x-axis</strong>: time</li>
+<li><strong>y-axis</strong>: frequency (Hz)</li>
+<li><strong>colour</strong>: sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span></li>
+</ul>
+<p>How to read features on the plot:</p>
+<ul>
+<li>A <strong>thin horizontal line</strong> is a tonal — often a nearby instrument, a propeller, or electrical noise.</li>
+<li>A <strong>vertical smear</strong> or filled band is broadband — ships, earthquakes, weather, or a passing animal.</li>
+<li>A <strong>flat-topped</strong> burst or hard colour ceiling is often clipping or saturation.</li>
+<li><strong>Holes or fading</strong> can be multipath or a quiet moment, not automatically a failed hydrophone.</li>
+</ul>
+<p>If the filename includes <strong>LPF</strong> or <strong>HPF</strong>, the band is incomplete after naval screening. See <a href="../sections/13-data-diversion.html">Data Diversion</a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand to learn more about the method
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A spectrogram is built from short Fourier transforms of the audio:</p>
 <ol type="1">
@@ -526,7 +555,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -535,7 +564,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><code>dpo_hydrophoneAcquisitionMode</code>: <code>"All"</code> (default), <code>"LF"</code>, <code>"HF"</code></li>
@@ -574,7 +603,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -583,7 +612,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For a band-pass filtered signal <span class="math inline">\(x(t, f, \Delta f)\)</span>, the mean square acoustic pressure within bandwidth <span class="math inline">\(\Delta f\)</span> over observation period <span class="math inline">\(T\)</span> is given by:</p>
 <p><span class="math display">\[
@@ -599,7 +628,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -608,7 +637,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><code>dpo_filePlotBreaks</code>: <code>"0"</code> None (configuration changes only), <code>"1"</code> Daily, <code>"2"</code> Weekly (default), <code>"3"</code> Hourly, <code>"4"</code> Monthly, <code>"5"</code> Yearly</li>
@@ -645,7 +674,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -654,7 +683,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>LF (<code>.txt</code>) and HACC (<code>.acc</code>) have no extra <code>dpo_*</code> options. There is no single <code>AUX</code> code: order <strong>LF</strong> for the engineering log and <strong>HACC</strong> for acceleration. Calibration files use <strong>HCF</strong>.</p>
 </div>
