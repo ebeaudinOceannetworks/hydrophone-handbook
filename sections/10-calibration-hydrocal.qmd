@@ -10,6 +10,46 @@ This chapter is under construction. Topics: HydroCal, sensitivity curves, and ta
 
 <!-- handbook-draft: to publish this text, delete the opening HTML comment on this line and the matching closer at the end of the file.
 
+
+We calibrate because sensitivity is not flat
+
+# Sensitivity
+
+Hydrophones are categorized by their operational frequency bandwidth, which dictates their intended monitoring application: 
+
+| Category | Frequency Range | Target Applications |
+| :--- | :--- | :--- |
+| **Low-Frequency** | $1\text{ Hz} - 1\text{ kHz}$ | Geophysics, earthquakes, large baleen whales (e.g., Blue, Fin) |
+| **Audio-Frequency** | $10\text{ Hz} - 10\text{ kHz}$ | Commercial shipping noise, fish vocalizations, general soundscape |
+| **High-Frequency (or broadband)** | $10\text{ Hz} - 200\text{ kHz}$ | Odontocete echolocation (e.g., Orca, Porpoise), acoustic harassment devices |
+
+
+## Defining Sensitivity
+
+Hydrophone sensitivity ($M_\nu$) measures how efficient the transducer converts underwater sound pressure variations into an electrical output signal.
+
+Quantitatively, sensitivity is defined as the ratio of output voltage ($V$) to input sound pressure ($p$):
+$$
+M_\nu = \frac{V_{\text{output}}}{p_{\text{input}}} \ \ ; \ \ \text{units:} \left[ \frac{V}{\mu Pa} \right]
+$$
+
+## Key factors influencing sensitivity:
+
+- **Hydrophone type**: size, design and choice of material (e.g., piezoelectric compound);
+- **Acoustic frequency**: piezoelectric hydrophones have a resonance frequency which depends on the piezoelectric material. Sensitivity is usually good below the resonance frequency and drops rapidly above. 
+- **Environmental conditions**: water temperature, salinity and pressure can substantially impact hydrophone sensitivity. It is important to calibrate the instrument relative to those conditions.
+
+## Frequency sensitivity curve
+
+As demonstrated in the Ocean Sonics high-frequency hydrophone, sensitivity is non-uniform across frequencies.
+This hydrophone is most efficient at mid-frequencies, and its sensitivity drops below 30 Hz and above 50 kHz.
+
+![Sensitivity curve of an icListenHF high-frequency hydrophone showing empirical HydroCal low-frequency check, Ocean Sonics high-frequency check.](../images/sensitivity-curve.png){lightbox=true}
+
+
+
+
+
 ::: {.callout-important appearance="simple" style="color: #d32f2f; border-left-color: #d32f2f; background-color: #ffebee;"}
 ## Improvements for this page
 * not complete
@@ -20,6 +60,7 @@ This chapter is under construction. Topics: HydroCal, sensitivity curves, and ta
 A hydrophone does not "hear" all frequencies equally.
 It might be increadibly sensitive at 10 kHz and deafen by 100 kHz, or vice-versa.
 This is why we have LF and HF hydrophones.
+
 
 
 # HydroCal

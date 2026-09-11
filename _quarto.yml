@@ -32,7 +32,6 @@ book:
     - index.qmd
     - sections/2-whats-new.qmd
     - sections/3-hydrophone-life-cycle.qmd
-    - sections/4-how-hydrophones-work.qmd
     - sections/5-physics-of-sound.qmd
     - sections/6-soundscape-taxonomy.qmd
     - sections/7-example-sounds.qmd

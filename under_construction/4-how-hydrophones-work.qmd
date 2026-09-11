@@ -127,7 +127,8 @@ $$
 
 # Other hydrophone types
 
-Several transducer designs can record underwater sound. **Ocean Networks Canada uses piezoelectric hydrophones** (Ocean Sonics icListen and GeoSpectrum elements supplied by JASCO). The rest of this handbook refers to piezoelectric hydrophones unless noted otherwise.
+Several transducer designs can record underwater sound.
+**Ocean Networks Canada uses piezoelectric hydrophones** (Ocean Sonics icListen and GeoSpectrum elements supplied by JASCO). The rest of this handbook refers to piezoelectric hydrophones unless noted otherwise.
 
 ::: {.hydrophone-types-table tbl-colwidths="[18,32,50]"}
 | Type | Operating principle | Notes |

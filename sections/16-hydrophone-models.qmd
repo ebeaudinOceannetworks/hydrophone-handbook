@@ -3,13 +3,112 @@ title: "16. Hydrophone Models"
 ---
 
 
-Ocean Networks Canada uses hydrophones from several manufacturers and distributors: the main ones being *Ocean Sonics* and *JASCO Applied Sciences*.
+Ocean Networks Canada uses piezoelectric hydrophones from several manufacturers and distributors: the main ones being *Ocean Sonics* and *JASCO Applied Sciences*.
 
 Most hydrophones are Ocean Sonics icListen smart hydrophones: icListen HF (High Frequency; 10 Hz to 200k Hz), and icListen AF (Audio Frequency; 10 Hz to 12 kHz).
 JASCO provides Geospectrum-manufactured hydrophones for multi-element directional arrays, great for localizing sources.
 
+````{=html}
+<div style="
+  background: rgba(15, 23, 42, 0.65); 
+  backdrop-filter: blur(12px); 
+  border: 1px solid rgba(255, 255, 255, 0.12); 
+  border-radius: 12px; 
+  padding: 24px 28px; 
+  color: #f8fafc; 
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  max-width: 850px;
+  margin: 20px auto;
+">
 
-# Model comparison
+  <!-- Header & Subtitle -->
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px;">
+    <div>
+      <span style="text-transform: uppercase; tracking-spacing: 0.05em; font-size: 11px; font-weight: 700; color: #38bdf8; display: block; margin-bottom: 2px;">Instrument Bandwidth Spectrum</span>
+      <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #fff; border: none;">ONC Hydrophones Frequency Coverage</h3>
+    </div>
+    <span style="font-size: 11px; color: #94a3b8; font-weight: 500;">0.1 Hz &mdash; 200 kHz Range</span>
+  </div>
+
+  <!-- Spectrum Bars List -->
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+
+    <!-- Item 1 -->
+    <div style="display: grid; grid-template-columns: 220px 1fr 110px; align-items: center; gap: 16px;">
+      <div style="font-size: 13px; font-weight: 600; color: #f1f5f9;">
+        icListen HF <span style="font-size: 11px; font-weight: 400; color: #94a3b8; display: block;">Ocean Sonics</span>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); height: 10px; border-radius: 99px; position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 15%; right: 0%; height: 100%; background: linear-gradient(90deg, #0284c7, #38bdf8); border-radius: 99px; box-shadow: 0 0 10px rgba(56,189,248,0.4);"></div>
+      </div>
+      <div style="font-size: 12px; font-weight: 600; color: #38bdf8; text-align: right; font-mono: true;">10 Hz &ndash; 200 kHz</div>
+    </div>
+
+    <!-- Item 2 -->
+    <div style="display: grid; grid-template-columns: 220px 1fr 110px; align-items: center; gap: 16px;">
+      <div style="font-size: 13px; font-weight: 600; color: #f1f5f9;">
+        icListen AF <span style="font-size: 11px; font-weight: 400; color: #94a3b8; display: block;">Ocean Sonics</span>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); height: 10px; border-radius: 99px; position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 15%; right: 35%; height: 100%; background: linear-gradient(90deg, #0284c7, #38bdf8); border-radius: 99px;"></div>
+      </div>
+      <div style="font-size: 12px; font-weight: 600; color: #38bdf8; text-align: right;">10 Hz &ndash; 12 kHz</div>
+    </div>
+
+    <!-- Item 3 -->
+    <div style="display: grid; grid-template-columns: 220px 1fr 110px; align-items: center; gap: 16px;">
+      <div style="font-size: 13px; font-weight: 600; color: #f1f5f9;">
+        icListen LF <span style="font-size: 11px; font-weight: 400; color: #94a3b8; display: block;">Ocean Sonics</span>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); height: 10px; border-radius: 99px; position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 0%; right: 55%; height: 100%; background: linear-gradient(90deg, #0284c7, #38bdf8); border-radius: 99px;"></div>
+      </div>
+      <div style="font-size: 12px; font-weight: 600; color: #38bdf8; text-align: right;">0.1 Hz &ndash; 1.6 kHz</div>
+    </div>
+
+    <!-- Item 4 -->
+    <div style="display: grid; grid-template-columns: 220px 1fr 110px; align-items: center; gap: 16px;">
+      <div style="font-size: 13px; font-weight: 600; color: #f1f5f9;">
+        M36-V35-100 <span style="font-size: 11px; font-weight: 400; color: #94a3b8; display: block;">GeoSpectrum / JASCO</span>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); height: 10px; border-radius: 99px; position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 15%; right: 15%; height: 100%; background: linear-gradient(90deg, #6366f1, #818cf8); border-radius: 99px;"></div>
+      </div>
+      <div style="font-size: 12px; font-weight: 600; color: #818cf8; text-align: right;">1 Hz &ndash; 200 kHz</div>
+    </div>
+
+    <!-- Item 5 -->
+    <div style="display: grid; grid-template-columns: 220px 1fr 110px; align-items: center; gap: 16px;">
+      <div style="font-size: 13px; font-weight: 600; color: #f1f5f9;">
+        M8E-51-C35 <span style="font-size: 11px; font-weight: 400; color: #94a3b8; display: block;">GeoSpectrum / JASCO</span>
+      </div>
+      <div style="background: rgba(255,255,255,0.06); height: 10px; border-radius: 99px; position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 8%; right: 25%; height: 100%; background: linear-gradient(90deg, #6366f1, #818cf8); border-radius: 99px;"></div>
+      </div>
+      <div style="font-size: 12px; font-weight: 600; color: #818cf8; text-align: right;">10 kHz &ndash; 200 kHz</div>
+    </div>
+
+  </div>
+
+  <!-- Legend & Footer -->
+  <div style="display: flex; gap: 20px; margin-top: 20px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; color: #94a3b8;">
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span style="width: 8px; height: 8px; background: #38bdf8; border-radius: 50%; display: inline-block;"></span>
+      Ocean Sonics
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span style="width: 8px; height: 8px; background: #818cf8; border-radius: 50%; display: inline-block;"></span>
+      GeoSpectrum / JASCO
+    </div>
+  </div>
+
+</div>
+````
+
+
+
+# Model technical specs
 
 The table shows the technical specs for hydrophone models ONC uses most.
 
@@ -59,7 +158,7 @@ html`
   <table class="specs-table">
     <thead>
       <tr>
-        <th>Specification</th>
+        <th>Model\n / Distributor</th>
         ${model_cols.map(m => {
           const deviceName = deviceRow[m] && deviceRow[m] !== "--" ? deviceRow[m] : m.split(".")[0];
           const brand = m.split(".")[0];
