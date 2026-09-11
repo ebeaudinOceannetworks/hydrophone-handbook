@@ -1260,16 +1260,23 @@ section.listen-section > h3::before {
 }
 
 .sound-card-grid {
-  margin: 0.85rem 0 0.85rem 0;
+  margin: 1.25rem 0 0.5rem 0;
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-y: 1.25rem;
 }
 
 .sound-card {
-  padding: 0.7rem 0.7rem 0.8rem;
+  padding: 0;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .sound-card-visual {
-  margin: 0 0 0.55rem 0;
+  margin: 0;
+  background: #f7f7f7;
+  border-radius: 0;
 }
 
 .sound-card-visual figure {
@@ -1285,26 +1292,65 @@ section.listen-section > h3::before {
 .sound-card-visual img {
   display: block;
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 10px;
+  height: auto;
+  aspect-ratio: unset;
+  object-fit: unset;
+  border-radius: 0;
   cursor: zoom-in;
 }
 
+.sound-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem 1.15rem 1.15rem;
+}
+
 .sound-card-title {
-  margin: 0 0 0.15rem 0;
+  margin: 0 0 0.2rem 0;
   font-family: "Rajdhani", sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: #fff;
 }
 
 .sound-card-caption {
+  margin: 0 0 0.65rem 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.sound-card-note {
+  margin: 0 0 0.85rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.sound-card-note p {
   margin: 0 0 0.45rem 0;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.72);
+}
+
+.sound-card-note p:last-child {
+  margin-bottom: 0;
+}
+
+.sound-card-note a {
+  color: #9ad4ff;
+}
+
+.sound-card .listen-audio {
+  margin-top: auto;
+  color-scheme: dark;
+}
+
+.sound-card .listen-audio:not(:has(source)) {
+  display: none;
 }
 
 .listen-audio {
