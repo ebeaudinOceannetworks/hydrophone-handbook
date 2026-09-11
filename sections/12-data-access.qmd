@@ -5,7 +5,7 @@ title: "12. Data Access"
 *This page is about **how to get hydrophone data**. For what each file type contains, see [Data Products](11-data-products.qmd).*
 
 # Which method to use?
-There are 3 ways to get the data: from ONC data portal [Oceans3.0](https://data.oceannetworks.ca), or using the ONC API.
+There are threee ways to get the data: two of them inside ONC data portal [Oceans3.0](https://data.oceannetworks.ca), plus one using ONC API.
 
 
 The **Hydrophone Viewer** is for browsing the pre-generated 5-min spectrograms, and quick downloads to any format including audio.
@@ -38,7 +38,7 @@ Visit [https://data.oceannetworks.ca](https://data.oceannetworks.ca/) and sign i
 From **Hydrophone Viewer**, a list of locations will appear on the left panel, under Hydrophone Data Search. 
 
 Pick a location. Go down the tree until you can select a device.
-Note that each hydrophone has a dedicated *device name*, which are often a combination of their manufacturer/supplier and a serial number (*ex: Ocean Sonics icListen HF Hydrophone 1251*).
+Note that each hydrophone has a dedicated *device code*, which are often a combination of their manufacturer/supplier and a serial number (*ex: Ocean Sonics icListen HF Hydrophone 1251*).
 
 The deployment window of each device is listed at the bottom.
 This information is important, as you will not be able to find data outside of the deployment window.
@@ -47,18 +47,18 @@ The most recent hydrophone in the water at this site is the last one of the list
 
 For hydrophone arrays, hydrophones are under Hydrophone A, B, C or D.
 
-Navigate to the [Map](8-hydrophone-network.qmd) page to find past and current deployments.
+Navigate to [Hydrophone Map](8-hydrophone-network.qmd) page to find past and current deployments.
 
 ![](../images/Hydrophone-Viewer-step-3-4.png){lightbox=true}
 
 ### 4. Choose a date
-The date has in the following format: 01-Jan-2026.
+The date is in the following format: 01-Jan-2026.
 If a message pops up saying No Data, it either means the selected date is outside the deployment window, or the hydrophone did not record that day due to some issues.
 
 
 ### 5. Inspect the spectrogram
 
-Each spectrogram is a visual representation of the soundspace over a 5-min time window. You can click on a spectrogram and it will size up.
+Each spectrogram is a visual representation of the soundscape over a 5-min time window. You can click on a spectrogram and it will size up.
 
 ![](../images/Hydrophone-Viewer-step-5.png){lightbox=true}
 
@@ -105,22 +105,22 @@ This page is where to select the data products needed from this location.
 Set a **Date From** and **Date To** in the upper left.
 Use the visual green overlay to the right to know about data availability for this specific location.
 
-Certain hydrophone (mostly Ocean Sonics) have *anscillary data*, such as acceleration, internal humidity, temperature, etc.
+Certain hydrophones (mostly Ocean Sonics) have *ancillary data*, such as acceleration, internal humidity, temperature, etc.
 Most likely, the data you are interested in rather lies in the audio format or derived spectral data.
 You can select a data product by simply checking the box underneath.
-For each data product, several format are available, such as pdf, .mat, .txt, etc.  
+For each data product, several formats are available, such as pdf, .mat, .txt, etc.  
 
 ![](../images/Data-Search-step-5-6-7.png){lightbox=true}
 
 ### 6. Select the product options
-Most order of data product can also be customized through the *Data Product Options* panel below.
+Most data product orders can also be customized through the *Data Product Options* panel below.
 
 ### 7. Add to cart
 
 ![](../images/Data-Search-add-to-cart.png){lightbox=true}
 
 When you are satisfied with your order, do not forget to **Add to Cart**.
-This simply add the product to the cart, which you can find in View Cart in the top right.
+This simply adds the product to the cart, which you can find in View Cart in the top right.
 
 Go to Cart to trigger the creation of the order, which may take from seconds to minutes depending on the amount of data requested.
 
