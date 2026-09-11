@@ -6,7 +6,7 @@ title: "11. Data Products"
 
 # Overview
 
-Hydrophone data files are generated in 5-minute intervals, categorized as either **raw sensor recordings** (direct acoustic pressure measurements) or **derived products** (downstream spectral transformations).
+Hydrophone data files are generated in 5-minute intervals, categorized as either **raw sensor recordings** (direct sound recording) or **derived products** (post-processing of audio data).
 
 
 | Data Type | Product Name | Code / ID | Extensions |
@@ -15,10 +15,10 @@ Hydrophone data files are generated in 5-minute intervals, categorized as either
 | **Raw** | Array Data *(Retired)* | `HARD` (38) | `.hyd` |
 | **Raw** | Acceleration Data | `HACC` (128) | `.acc` |
 | **Raw** | Auxiliary Log File | `LF` (4) | `.txt` |
-| **Derived** | Hydrophone Spectral Data | `HSD` (45) | `.fft`, `.mat`, `.png`, `.pdf`, `.oct` |
+| **Derived** | Hydrophone Spectral Data | `HSD` (45, 146) | `.fft`, `.mat`, `.png`, `.pdf`, `.oct` |
 | **Derived** | Spectral Probability Density | `HSPD` (51) | `.mat`, `.png`, `.pdf` |
 
-: Quick lookup matrix for ONC hydrophone file types. {tbl-colwidths="[15,40,15,30]"}
+: Hydrophone Data Products {tbl-colwidths="[15,40,15,30]"}
 
 # Audio data
 
@@ -80,8 +80,8 @@ Why FLAC is the preferred format?
 
 ```{=html}
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD / 45</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .png, .pdf, .fft</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD / 45, 146</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .fft, .png, .pdf </span>
 </div>
 ```
 
@@ -90,9 +90,9 @@ This data product is a practical way for quick-checks without processing terabyt
 
 **`.mat` — processed spectral data.** MATLAB data format of 1-minute averaged calibrated spectral data with the device-specific sensitivity curve. Contains a `SpectData` structure with frequency bins (Hz) and power spectral density.
 
-**`.png` / `.pdf` — spectrogram.** A 2D heatmap of sound: time on the x-axis, frequency (Hz) on the y-axis, colour as sound level in $\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}$.
-
 **`.fft` — proprietary spectral data (Ocean Sonics only).** Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and unfit for scientific research.
+
+**`.png` / `.pdf` — spectrogram.** A 2D heatmap of sound: time on the x-axis, frequency (Hz) on the y-axis, colour as sound level in $\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}$.
 
 :::
 
@@ -130,7 +130,7 @@ A spectrogram is built from short Fourier transforms of the audio:
 
 Fourier transforms assume an infinite, stationary signal. A finite cut creates edge discontinuities and **spectral leakage** into neighbouring bins. Windowing (tapering) multiplies the segment by a shape that goes to zero at the edges.
 
-Choosing the right window is not easy due to the Heisenberg uncertainty principle: you cannot have perfect time and frequency resolution at once.
+Choosing the right window requires a trade-off between resolution in time or frequency.
 
 * **Narrow window**: good time resolution (when a click happened), poor frequency resolution.
 * **Wide window**: good frequency resolution (harmonics of a call), poor time resolution.
@@ -260,17 +260,17 @@ LF (`.txt`) and HACC (`.acc`) have no extra `dpo_*` options. There is no single 
 <div class="docs-card">
   <div class="docs-card-title">
     <img src="../images/confluence_logo_no_bckg.png" width="24" alt="">
-    <span>Confluence Documentation</span>
+    <span>Documentation</span>
   </div>
   <ul class="docs-card-list">
-    <li><a href="https://internal.oceannetworks.ca/spaces/DS/pages/7639165/Hydrophone+Matlab+Postprocess+Jobs">Hydrophone MATLAB Post-process Jobs</a></li>
+    <!-- <li><a href="https://internal.oceannetworks.ca/spaces/DS/pages/7639165/Hydrophone+Matlab+Postprocess+Jobs">Hydrophone MATLAB Post-process Jobs</a></li> -->
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758104/7">Data Product: Audio Data (7)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45">Data Product: Hydrophone Spectral Data (45)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51">Data Product: Hydrophone Spectral Probability Density (51)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146">Data Product: Spectrogram For Hydrophone Viewer (146)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128">Data Product: Hydrophone Acceleration Data (128)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758026/4">Data Product: Log File (4)</a></li>
-    <li><a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/216205790/Passive+acoustics">Passive acoustics data products (internal)</a></li>
+    <!-- <li><a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/216205790/Passive+acoustics">Passive acoustics data products (internal)</a></li> -->
   </ul>
 </div>
 ```
