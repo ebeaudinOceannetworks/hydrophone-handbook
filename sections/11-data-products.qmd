@@ -100,6 +100,25 @@ This data product is a practical way for quick-checks without processing terabyt
 
 
 ::: {.callout-note collapse="true"}
+## Expand to learn how to read a spectrogram
+
+ONC spectrograms (Hydrophone Viewer and the `.png` / `.pdf` HSD product) are usually **5-minute** files. They use the same axes every time:
+
+* **x-axis**: time
+* **y-axis**: frequency (Hz)
+* **colour**: sound level in $\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}$
+
+How to read features on the plot:
+
+* A **thin horizontal line** is a tonal — often a nearby instrument, a propeller, or electrical noise.
+* A **vertical smear** or filled band is broadband — ships, earthquakes, weather, or a passing animal.
+* A **flat-topped** burst or hard colour ceiling is often clipping or saturation.
+* **Holes or fading** can be multipath or a quiet moment, not automatically a failed hydrophone.
+
+If the filename includes **LPF** or **HPF**, the band is incomplete after naval screening. See [Data Diversion](13-data-diversion.qmd).
+:::
+
+::: {.callout-note collapse="true"}
 ## Expand to learn more about the method
 
 A spectrogram is built from short Fourier transforms of the audio:

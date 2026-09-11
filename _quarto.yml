@@ -33,7 +33,7 @@ book:
     - sections/2-whats-new.qmd
     - sections/3-hydrophone-life-cycle.qmd
     - sections/6-soundscape-taxonomy.qmd
-    - sections/7-example-sounds.qmd
+    - sections/7-sound-gallery.qmd
     - sections/8-hydrophone-network.qmd
     - sections/9-array-design.qmd
     - sections/10-calibration-hydrocal.qmd
