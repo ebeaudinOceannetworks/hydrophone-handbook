@@ -47,7 +47,7 @@ The most recent hydrophone in the water at this site is the last one of the list
 
 For hydrophone arrays, hydrophones are under Hydrophone A, B, C or D.
 
-Navigate to the [hydrophone network](8-hydrophone-network.qmd) page to find past and current deployments.
+Navigate to the [Map](8-hydrophone-network.qmd) page to find past and current deployments.
 
 ![](../images/Hydrophone-Viewer-step-3-4.png){lightbox=true}
 
@@ -148,7 +148,7 @@ A simple rule: **if an existing file would do, use Archive.**
 ### 4. Select a location or a device
 Requests are filtered **by location** (`locationCode`, always with `deviceCategoryCode = HYDROPHONE`) or **by device** (`deviceCode`). Location follows whichever instrument was deployed there; device follows one specific instrument across its deployments.
 
-Visit the [Hydrophone Network](8-hydrophone-network.qmd) page to find location or device codes of past and current deployments.
+Visit the [Map](8-hydrophone-network.qmd) page to find location or device codes of past and current deployments.
 
 ### The API helper
 
@@ -425,7 +425,7 @@ display(HTML(f'<p class="api-hint">Catalog source: {source}.</p>'))
   <div class="api-row">
     <div class="api-row-label">
       <label for="api-location">What to query</label>
-      <p class="api-hint">Find location or device codes on the Hydrophone Network page.</p>
+      <p class="api-hint">Find location or device codes on the Map page.</p>
     </div>
     <div class="api-row-body">
       <div class="api-segment" role="group" aria-label="Query by">

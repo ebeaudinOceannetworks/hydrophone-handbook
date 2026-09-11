@@ -1,21 +1,11 @@
 ---
-title: "8. Hydrophone Network"
+title: "8. Hydrophone Map"
 ---
 
-Ocean Networks Canada operates a massive spatial array of underwater acoustics monitoring across the country.
-Each hydrophone has a designated **Device Code** (ex: ICLISTENHF6016) and is located at a designated **Location code** (ex: CSQH.H1).
-The **Location Code** is used by the database, but they also have a **Colloquial Name** (ex: Clayoquot Slope).
-In addition, there are two **observatories** VENUS and NEPTUNE, which regroup several sites.
-
-Most locations have a single hydrophone, while some sites have *hydrophone arrays*, which constitutes several hydrophones mounted together on a platform.
-The hydrophone arrays naming convention has .H1, .H2, etc., added to the location code, to denote the position of the hydrophone within the array.
-
-### Main locations
-* **Pacific:** NEPTUNE (offshore) and VENUS (coastal) observatories.
-* **Arctic:** Cambridge Bay, Gascoyne Inlet, NU.
-* **Atlantic:** Conception Bay, Holyrood, NL.
 
 # Map of all hydrophone deployments
+*Click a site for devices info and deployment dates. Active deployments shown, use the toggle to reveal inactive sites.*
+
 
 ```{python}
 #| echo: false
@@ -187,6 +177,19 @@ yield container;
   L.control.layers(null, overlays, { collapsed: false }).addTo(map);
 }
 ```
+
+Ocean Networks Canada operates a massive spatial array of underwater acoustics monitoring across the country.
+Each hydrophone has a designated **Device Code** (ex: ICLISTENHF6016) and is located at a designated **Location code** (ex: CSQH.H1).
+The **Location Code** is used by the database, but they also have a **Colloquial Name** (ex: Clayoquot Slope).
+In addition, there are two **observatories** VENUS and NEPTUNE, which regroup several sites.
+
+Most locations have a single hydrophone, while some sites have *hydrophone arrays*, which consists of several hydrophones mounted together on a platform.
+The hydrophone arrays naming convention has .H1, .H2, etc., added to the location code, to denote the position of the hydrophone within the array.
+
+### Main locations
+* **Pacific:** NEPTUNE (offshore) and VENUS (coastal) observatories.
+* **Arctic:** Cambridge Bay, Gascoyne Inlet, NU.
+* **Atlantic:** Conception Bay, Holyrood, NL.
 
 
 # List of all deployment sites
