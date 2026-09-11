@@ -450,25 +450,27 @@ body {
 #quarto-sidebar .sidebar-link {
     color: rgba(255, 255, 255, 0.75) !important;
     font-weight: 500 !important;
-    font-size: 0.8rem !important;
+    font-size: 0.92rem !important;
     line-height: 1.3;
     display: block;
-    padding: 0.42rem 0.75rem !important;
+    padding: 0.42rem 0.7rem !important;
     border-radius: 8px;
     border-left: 3px solid transparent;
     background-color: transparent;
+    white-space: nowrap;
 }
 
 #quarto-sidebar .sidebar-link .chapter-title {
     font-weight: inherit;
     font-size: inherit;
     font-family: inherit;
+    white-space: nowrap;
 }
 
 /* 2. Target internal subsections (TOC items in sidebar) */
 #quarto-sidebar .sidebar-section-items .sidebar-link {
     font-weight: 400 !important;
-    font-size: 0.82rem !important;
+    font-size: 0.75rem !important;
     color: rgba(255, 255, 255, 0.7) !important;
     padding-left: 1.25rem !important;
 }
@@ -564,9 +566,9 @@ body {
     grid-template-columns:
       [screen-start] minmax(2em, 1fr)
       [screen-start-inset] 2em
-      [page-start] minmax(56px, 112px)
-      [page-start-inset] 56px
-      [body-start-outset] 56px
+      [page-start] minmax(64px, 128px)
+      [page-start-inset] 64px
+      [body-start-outset] 64px
       [body-start] 2em
       [body-content-start] minmax(500px, calc(1000px - 4em))
       [body-content-end] 2em

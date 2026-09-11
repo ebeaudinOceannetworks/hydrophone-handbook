@@ -254,7 +254,7 @@
     "href": "sections/14-science-and-publications.html#marine-mammals-monitoring",
     "title": "14. Science and Publications",
     "section": "Marine mammals monitoring",
-    "text": "Marine mammals monitoring\nUnderwater sound monitoring is used at ONC for monitoring whale activity and behaviour. In 2015, ONC joined the Enhancing Cetacean and Habitat Observation (ECHO) Program which aim at investigating ways to reduce shipping traffic impacts on whale activity in the Straight of Georgia. As part of the program, hydrophone arrays from JASCO Applied Science were deployed and the data ingested in ONC’s servers.\nThe program has known quite a bit of success, as thousands of ships have voluntarily reduced speed or distanced themselves from whales.\nRead ONC’s story here.\nSince then, ONC has kept expanding its hydrophone network which has turned into more partnerships with BC in 2017, to study ship traffic in Haro Strait (read story here to specifically monitor southern residents killer whales.\nWhale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behaviour, and their seasonal presence.",
+    "text": "Marine mammals monitoring\n\n\n\nHumpback Song with Sperm Whale Clicks\n\n\nIn 2015, ONC joined the Enhancing Cetacean and Habitat Observation (ECHO) Program which aim at investigating ways to reduce shipping traffic impacts on whale activity in the Straight of Georgia. As part of the program, hydrophone arrays from JASCO Applied Science were deployed and the data ingested in ONC’s servers.\nThe program has known quite a bit of success, as thousands of ships have voluntarily reduced speed or distanced themselves from whales.\nRead ONC’s story here.\nSince then, ONC has kept expanding its hydrophone network which has turned into more partnerships with BC in 2017, to study ship traffic in Haro Strait (read story here to specifically monitor southern residents killer whales.\nWhale monitoring is continuously undergoing, thanks to in-house bio acoustician Lynn Rannankari, who helps identify species as well as differentiate different calls that a single species makes and relates to their behaviour, and their seasonal presence.",
     "crumbs": [
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
     ]
@@ -264,17 +264,7 @@
     "href": "sections/14-science-and-publications.html#fin-whale-autodetector",
     "title": "14. Science and Publications",
     "section": "Fin whale autodetector",
-    "text": "Fin whale autodetector\nHistorically, whale identification in hydrophone data is done by listening to the audio file. This method, while proof, is extremely time-consuming. At ONC, Spencer Bialek has developed a Machine Learning tool able to detect several whale species and differentiate several calls. The first iteration of this model was applied to fin whales, which are extremely common in BC and we have tons of recordings. The model is able to identify 3 distinct call types: 20 Hz, 40 Hz, and song. Each of these are associated with different behaviours such as mating, grazing, communication and navigation (read more about fin whales on DOSIT).\nThe model is able to do in a few minutes what humans typically would do in several weeks or months, which allows for building long-term time series of whale presence. However, humans are needed to guide the model, detect false alarms (misidentified whale call), and inject more data. Moreover, the model is not able to detect new call types which humans are able to detect. Humans will always be needed together with this model, but so far it is bringing a lot of hopes analyzing terabytes of audio files.",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-science-and-publications.html#acoustic-modelling",
-    "href": "sections/14-science-and-publications.html#acoustic-modelling",
-    "title": "14. Science and Publications",
-    "section": "Acoustic modelling",
-    "text": "Acoustic modelling\nHydrophones record the soundscape; modelling asks how the environment shapes that sound. Temperature, depth, seamounts, and seafloor sediments control how far a call travels, and therefore the detection range of a hydrophone. That range depends on frequency — and so on species and call type — with lower frequencies travelling farther. Modelling is used to place new instruments outside deaf zones. The underlying physics is in Physics of Sound.\nLanfranco Muzi, underwater acoustician at ONC, has used acoustic modelling to characterize soundscape changes during COVID, when shipping was significantly reduced.",
+    "text": "Fin whale autodetector\nHistorically, whale identification in hydrophone data is done by listening to the audio file, which can be extremely time-consuming for terabytes of audio files. At ONC, Spencer Bialek has developed a Machine Learning tool able to detect several whale species and differentiate several calls. The model is able to do in a few minutes what humans typically would do in several weeks or months, which allows for building long-term time series of whale presence.\nThe first iteration of this model was applied to fin whales, which are extremely common in BC and we have tons of recordings. The model is currently able to identify 3 distinct call types: 20 Hz, 40 Hz, and song. Each of these are associated with different behaviours such as mating, grazing, communication and navigation.",
     "crumbs": [
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
     ]
@@ -284,7 +274,87 @@
     "href": "sections/14-science-and-publications.html#earthquake-detection",
     "title": "14. Science and Publications",
     "section": "Earthquake detection",
-    "text": "Earthquake detection\nSeismic waves from earthquakes travel with typical frequencies between 5-50 Hz, making them detectable on low-frequency hydrophones which have high sensitivity down to 10 Hz. However, hydrophones are not the primary sensors used for earthquake detection, since ONC has several Ocean-Bottom seismometers (OBS).\nInteresting to note that conversely, seismometers can also be used to detect whale calls. OBS have been deployed around Endeavour hydrothermal vent, starting with eight in early 2000s and more since then. Fin whale calls are relatively low frequency (20 Hz), and overlap with the detection bandwidth of these seismometers. Numerous studies have used them to track fin whales (Weirathmueller et al., 2007,Wilcock 2012, Soule & Wilcock, 2013).",
+    "text": "Earthquake detection\nSeismic waves from earthquakes travel with typical frequencies between 5-50 Hz, making them detectable on low-frequency hydrophones which have high sensitivity down to 10 Hz. Hydrophones as well as Ocean-Bottom seismometers (OBS) are used daily at ONC for earthquake detection.\nSeismometers can also be used to detect whale calls. OBS have been deployed around Endeavour hydrothermal vent, starting with eight in early 2000s and more since then. Fin whale calls are relatively low frequency (20 Hz), and overlap with the detection bandwidth of these seismometers. Numerous studies have used them to track fin whales (Weirathmueller et al., 2007,Wilcock 2012, Soule & Wilcock, 2013).",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
+    ]
+  },
+  {
+    "objectID": "sections/14-science-and-publications.html#baynes-sound",
+    "href": "sections/14-science-and-publications.html#baynes-sound",
+    "title": "14. Science and Publications",
+    "section": "Baynes Sound",
+    "text": "Baynes Sound",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
+    ]
+  },
+  {
+    "objectID": "sections/14-science-and-publications.html#burrard-inlet-tsleil-waututh",
+    "href": "sections/14-science-and-publications.html#burrard-inlet-tsleil-waututh",
+    "title": "14. Science and Publications",
+    "section": "Burrard Inlet (Tsleil-Waututh)",
+    "text": "Burrard Inlet (Tsleil-Waututh)",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
+    ]
+  },
+  {
+    "objectID": "sections/14-science-and-publications.html#cambridge-bay",
+    "href": "sections/14-science-and-publications.html#cambridge-bay",
+    "title": "14. Science and Publications",
+    "section": "Cambridge Bay",
+    "text": "Cambridge Bay",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
+    ]
+  },
+  {
+    "objectID": "sections/14-science-and-publications.html#china-creek",
+    "href": "sections/14-science-and-publications.html#china-creek",
+    "title": "14. Science and Publications",
+    "section": "China Creek",
+    "text": "China Creek",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
+    ]
+  },
+  {
+    "objectID": "sections/14-science-and-publications.html#hartley-bay-gitgaat-first-nation",
+    "href": "sections/14-science-and-publications.html#hartley-bay-gitgaat-first-nation",
+    "title": "14. Science and Publications",
+    "section": "Hartley Bay (Gitga’at First Nation)",
+    "text": "Hartley Bay (Gitga’at First Nation)",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
+    ]
+  },
+  {
+    "objectID": "sections/14-science-and-publications.html#kitamaat-village",
+    "href": "sections/14-science-and-publications.html#kitamaat-village",
+    "title": "14. Science and Publications",
+    "section": "Kitamaat Village",
+    "text": "Kitamaat Village",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
+    ]
+  },
+  {
+    "objectID": "sections/14-science-and-publications.html#prince-rupert-atlin-terminal-digby-siland-ridley-island",
+    "href": "sections/14-science-and-publications.html#prince-rupert-atlin-terminal-digby-siland-ridley-island",
+    "title": "14. Science and Publications",
+    "section": "Prince Rupert (Atlin Terminal, Digby Siland & Ridley Island)",
+    "text": "Prince Rupert (Atlin Terminal, Digby Siland & Ridley Island)",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
+    ]
+  },
+  {
+    "objectID": "sections/14-science-and-publications.html#holyrood",
+    "href": "sections/14-science-and-publications.html#holyrood",
+    "title": "14. Science and Publications",
+    "section": "Holyrood",
+    "text": "Holyrood",
     "crumbs": [
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
     ]
@@ -344,7 +414,7 @@
     "href": "sections/17-glossary.html#definition-of-acousitc-metrics-and-terms",
     "title": "17. Glossary",
     "section": "Definition of acousitc metrics and terms",
-    "text": "Definition of acousitc metrics and terms\n\nAbsorption\nReduction of acoustic pressure amplitude due to acoustic particle motion energy converting to heat in the propagation medium.\n\n\nAmbiant sound/noise\nSound that would be present in the absence of a specified activity. It is location-specific and time-specific. def 2: all-encompassing sound at a given place, usually a composite of sound from many sources near and far (e.g. shipping vessels, seismic activity, precipitation, sea ice, wave, biological activity).\n\n\nAttenuation\nGradual loss of acoustic energy from absorption and scattering as sound propagates through a medium.\n\n\nBackground noise\nAll sound recorded by the hydrophone in the absence of the pile driving signal for a specified pile driving acoustic signal beaing measured. ### Propagation loss\n\n\nCetacean\nAny anumal in the order Cetacea. These are aquatic, mostly maine mammals and include whales, dolphins, and porpoises.\n\n\nCompressional wave\nA mechanical vibration wave in which the direction of particle motion is parallel to the direction of the propagation. Also called primary wave, or P-wave.\n\n\nDecibel (dB)\nRelative unit of measurement equal to one-tenth of a bel, measuring the level when the base of the logarithm is the tenth root of ten, and the quantities concerned are proportional to power.\n\n\nEnsonified\nExposed to sound.\n\n\nFast Fourier Transform (FFT)\nA computationally efficiently algorithm for computing the Discrete Fourier Transform (DFT). A DFT requires \\(O(n^2)\\) computations, while an FFT requires \\(O(n log n)\\). A Fourier transform converts a signal from its original domain (time/space) to a representation in the frequency domain.\n\n\nFrequency\nThe rate of oscillation of a periodic function measured in cycles-per-unit-time. Symbol: \\(f\\). Unit: Hertz (Hz), is equal to 1 cycle per second.\n\n\nIntensity\nThe intensity (\\(I\\)) of a sound wave is defined as the energy transmitted through a unit area, per unit time, in the direction in which the sound wave is traveling. It is a vector quantity having both a magnitude and direction.\n\\[\n\\vec{I} = p \\vec{u}\n\\]\nwhere \\(p\\) is pressure, and \\(u\\) the particle velocity.\n\n\nImpedance\nImpedance of water is much greater than that of air.\n\n\nPower spectrum density\nThe acoustic signal power per unit frequency as measured at a single frequency. Unit: \\(\\micro Pa^2\\cdot s\\)\n\n\nPressure\nUnit: Pa\n\nacoustic: deviation from the ambient hydrostatic pressure caused by a sound wave.\nhydrostatic: pressure at any given depth in a static liquid that is the result of the weight of the liquid acting on a unit area at that depth, plus any pressure acting on the surface of the liquid.\n\n\n\nReverberation\nSound resulting from cumulative scattering of sound by an aggregation, or ensemble, of scatterers.\n\n\nRoot-mean-square sound pressure level (SPL) \\(L_{p,rms}\\)\nThe Root Mean Square (RMS) of the sound pressure taken over a time interval \\(\\Delta t = t_2-t_1\\) [s]. Starting from the Mean Square average sound pressure \\(p_{ms}\\), [Pa$^2] the RMS pressure \\(p_{rms}\\) [Pa] is:\n\\[\np_{ms} = \\bar p^2 = \\frac{1}{\\Delta t} \\int_{t_1}^{t_2} p^2 (t) dt\n\\]\n… there is more…\n\n\nSoundscape\nUnderwater acoustics characterization of the ambient sound in terms of its spatial, temporal and frequency attributes, and the types of sources contributing to the sound field. ### Pulse duration The pulse duration is the percentage energy signal duration over the acoustic pulse, defined in ISO 18406, assuming an energy percentage for the pulse duration of 90%.\n\n\nSound pressure (\\(p\\))\nContribution to total pressure caused by the action of sound. Sound pressure is a function of time: \\(p=p(t)\\), and expressed in pascals (Pa).\n\n\nSound pressure spectrum (\\(P\\))\nFourier transform of the sound pressure. Sound pressure spectrum is a function of frequency: \\(P=P(f)\\), and expressed in pascals per hertz (Pa Hz-1). The formula form is:\n\\[\nP(f) = \\int_\\infty^\\infty exp\\left(-2\\pi i f t \\right) p(t) dt\n\\]\n\n\nSound exposure level (SEL)\n\n\nSource level (SL\\(_E\\))\n\n\nSound speed profile\nSpeed of sound in the water column as a function of depth below the water surface.\n\n\nSpectrogram\nA visual representation of acoustic amplitude compared with time and frequency.\n\n\nTransmission loss\n\n\nWavelength\nDistance over which a wave completes one scillation cycle. Unit: metre (m). Symbol: \\(\\lambda\\).",
+    "text": "Definition of acousitc metrics and terms\n\nAbsorption\nReduction of acoustic pressure amplitude due to acoustic particle motion energy converting to heat in the propagation medium.\n\n\nAmbiant sound/noise\nSound that would be present in the absence of a specified activity. It is location-specific and time-specific. def 2: all-encompassing sound at a given place, usually a composite of sound from many sources near and far (e.g. shipping vessels, seismic activity, precipitation, sea ice, wave, biological activity).\n\n\nAttenuation\nGradual loss of acoustic energy from absorption and scattering as sound propagates through a medium.\n\n\nBackground noise\nAll sound recorded by the hydrophone in the absence of the pile driving signal for a specified pile driving acoustic signal beaing measured. ### Propagation loss\n\n\nCetacean\nAny anumal in the order Cetacea. These are aquatic, mostly maine mammals and include whales, dolphins, and porpoises.\n\n\nCompressional wave\nA mechanical vibration wave in which the direction of particle motion is parallel to the direction of the propagation. Also called primary wave, or P-wave.\n\n\nDecibel (dB)\nRelative unit of measurement equal to one-tenth of a bel, measuring the level when the base of the logarithm is the tenth root of ten, and the quantities concerned are proportional to power.\n\n\nEnsonified\nExposed to sound.\n\n\nFast Fourier Transform (FFT)\nA computationally efficiently algorithm for computing the Discrete Fourier Transform (DFT). A DFT requires \\(O(n^2)\\) computations, while an FFT requires \\(O(n log n)\\). A Fourier transform converts a signal from its original domain (time/space) to a representation in the frequency domain.\n\n\nFrequency\nThe rate of oscillation of a periodic function measured in cycles-per-unit-time. Symbol: \\(f\\). Unit: Hertz (Hz), is equal to 1 cycle per second.\n\n\nIntensity\nThe intensity (\\(I\\)) of a sound wave is defined as the energy transmitted through a unit area, per unit time, in the direction in which the sound wave is traveling. It is a vector quantity having both a magnitude and direction.\n\\[\n\\vec{I} = p \\vec{u}\n\\]\nwhere \\(p\\) is pressure, and \\(u\\) the particle velocity.\n\n\nImpedance\nImpedance of water is much greater than that of air.\n\n\nPower spectral density\nThe acoustic signal power per unit frequency as measured at a single frequency. Unit: \\(dB~re~1~\\micro Pa^2/Hz\\)\n\n\nPressure\nUnit: Pa\n\nacoustic: deviation from the ambient hydrostatic pressure caused by a sound wave.\nhydrostatic: pressure at any given depth in a static liquid that is the result of the weight of the liquid acting on a unit area at that depth, plus any pressure acting on the surface of the liquid.\n\n\n\nReverberation\nSound resulting from cumulative scattering of sound by an aggregation, or ensemble, of scatterers.\n\n\nRoot-mean-square sound pressure level (SPL) \\(L_{p,rms}\\)\nThe Root Mean Square (RMS) of the sound pressure taken over a time interval \\(\\Delta t = t_2-t_1\\) [s]. Starting from the Mean Square average sound pressure \\(p_{ms}\\), [Pa$^2] the RMS pressure \\(p_{rms}\\) [Pa] is:\n\\[\np_{ms} = \\bar p^2 = \\frac{1}{\\Delta t} \\int_{t_1}^{t_2} p^2 (t) dt\n\\]\n… there is more…\n\n\nSoundscape\nUnderwater acoustics characterization of the ambient sound in terms of its spatial, temporal and frequency attributes, and the types of sources contributing to the sound field. ### Pulse duration The pulse duration is the percentage energy signal duration over the acoustic pulse, defined in ISO 18406, assuming an energy percentage for the pulse duration of 90%.\n\n\nSound pressure (\\(p\\))\nContribution to total pressure caused by the action of sound. Sound pressure is a function of time: \\(p=p(t)\\), and expressed in pascals (Pa).\n\n\nSound pressure spectrum (\\(P\\))\nFourier transform of the sound pressure. Sound pressure spectrum is a function of frequency: \\(P=P(f)\\), and expressed in pascals per hertz (Pa Hz-1). The formula form is:\n\\[\nP(f) = \\int_\\infty^\\infty exp\\left(-2\\pi i f t \\right) p(t) dt\n\\]\n\n\nSound exposure level (SEL)\n\n\nSource level (SL\\(_E\\))\n\n\nSound speed profile\nSpeed of sound in the water column as a function of depth below the water surface.\n\n\nSpectrogram\nA visual representation of acoustic amplitude compared with time and frequency.\n\n\nTransmission loss\n\n\nWavelength\nDistance over which a wave completes one scillation cycle. Unit: metre (m). Symbol: \\(\\lambda\\).",
     "crumbs": [
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>17. Glossary</span>"
     ]
@@ -367,6 +437,26 @@
     "text": "Resources\n\nPNNL report.\nISO 18405 - Underwater acoustics. Link: https://cdn.standards.iteh.ai/samples/62406/d4e330b42f944401bf8522761712519b/ISO-18405-2017.pdf\n2017 JASCO report: Underwater Sound Propagation Assessment report: Nexen Energy ULC Flemish Pass Exploration Drilling Project",
     "crumbs": [
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>17. Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "sections/18-community-observatories.html",
+    "href": "sections/18-community-observatories.html",
+    "title": "18. Coastal Observatories",
+    "section": "",
+    "text": "Coastal Observatory hydrophone data use cases\nCoastal community observatories enable community members to conduct year-round continuous monitoring of their local ocean environments, collecting valuable baseline and time-series data for tracking the changing ocean conditions.\nONC collaborates with community partners to custom-design each observatory to meet local needs. This partnership recognises the value of place-based knowledge and pairs it with oceanographic instruments, high-tech design, training, and scientific support. The observatory data can be used by researchers, community members, Indigenous leaders, governments and others to inform decision-making for a sustainable ocean future.\nClick on a marker to view projects using data from a Coastal Observatory hydrophone.\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>18. Coastal Observatories</span>"
+    ]
+  },
+  {
+    "objectID": "sections/18-community-observatories.html#what-is-a-coastal-observatory",
+    "href": "sections/18-community-observatories.html#what-is-a-coastal-observatory",
+    "title": "18. Coastal Observatories",
+    "section": "What is a Coastal Observatory?",
+    "text": "What is a Coastal Observatory?\nLearn about the Cambridge Bay Coastal Community Observatory in this interactive ArcGIS StoryMap.",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>18. Coastal Observatories</span>"
     ]
   }
 ]
