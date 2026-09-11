@@ -1,11 +1,10 @@
 ---
-title: "9. Array Design"
+title: "9. Array Engineering"
 ---
 
-The hydrophone configuration is dictated primarily by the scientific objectives of ocean monitoring.
 At Ocean Networks Canada, passive acoustic infrastructure falls into two deployment configurations:
 
-* **Single Hydrophone Nodes:** Simpler and least expensive method for long-term soudscape monitoring
+* **Single Hydrophone Nodes:** Simpler and least expensive method for long-term soundscape monitoring
 * **Synchronized Multi-Element Arrays:** Structure mounting 2 to 4 *synchronized* hydrophones to estimate sound direction or even perform sound localization
 
 ::: {.fig-full}
@@ -31,7 +30,8 @@ The Link time-synchronizes the channels and combines their data streams.
 The ONC Link is connected to a **Junction Box (JB)** which itself receives power from the seafloor cable.
 The advantage of cabled sites is that the data comes in in near real time.
 
-**Autonomous arrays** are not cabled. They run on batteries and record onboard until recovery. The JASCO AMARs in Strait of Georgia East is a good example of this.
+**Autonomous arrays** are not cabled, they run on batteries and record onboard until recovery.
+The JASCO AMAR hydrophones in the Strait of Georgia East are a good example of this.
 Unfortunately, the data is only available once the hydrophones have been recovered, so there is no way to know in real time if there is an issue with the hydrophones until then.
 Moreover, if the memory is full, the hydrophone stops recording and we are effectively losing new data.
 
@@ -43,12 +43,16 @@ On this array, there are four hydrophones at locations A, B, C, D, distanced abo
 ![A box-type hydrophone array with four hydrophones, waiting to be deployed in the Strait of Georgia.](../images/MTC_hydrophone_array_annotated.png){lightbox=true}
 
 The distance between hydrophones is chosen for **beamforming**: estimating direction of arrival.
-At 1 metre between the elements, it is possible to localize sounds emitted roughly between 100-750 Hz, for example Humback Whales.
+At 1 metre between the elements, it is possible to localize sounds emitted roughly between 100-750 Hz, for example Humpback Whales.
 For high-frequency marine mammals (e.g., dolphin whistles, sperm whale clicks), an even smaller spacing is required (see @sec-beamforming for a more detailed explanation).
 
 ![Box-type array configuration for hydrophones.](../images/box-array.png){lightbox=true}
 
 
+There are many more possible configurations for hydrophones, depending on the scientific objectives of ocean monitoring (e.g., line arrays, USBL, SBL, LBL).
+
+
+<!--
 ## Hydrophones can be deployed in several configurations: 
 
 * **Single Hydrophone**: Baseline monitoring.
@@ -56,12 +60,12 @@ For high-frequency marine mammals (e.g., dolphin whistles, sperm whale clicks), 
 * **USBL (Ultra-Short Base Line)**: Used for precise underwater positioning.
 * **SBL (Short Baseline)**: Examples include 3-element horizontal arrays, 4-element tetrahedral arrays, or 4-element box-type arrays.
 * **LBL (Long Base Line)**: Used for tracking over wide areas.
-
+-->
 
 # Mitigating noise and instrument damage
 
 ## Interference
-When adding hydrophones to a multi-instrument platform, all nearby infrastructure should ideally be evaluated for noise, although this is a arduous task and we generally know after the fact if there is interference and to what intensity.
+When adding hydrophones to a multi-instrument platform, all nearby infrastructure should ideally be evaluated for noise, although this is an arduous task and we generally know after the fact if there is interference and to what intensity.
 Proximity interference will show up clearly as persistent lines or bursts in the spectrogram.
 
 In this example from 2023, interference noise from instruments on the same platform at the Holyrood site was intense enough to fully mask natural ambient sound, biological vocalizations, and other signals of scientific interest.
@@ -79,7 +83,7 @@ In general, in order to prevent acoustic contamination, the following "Rules of 
 * Shackles/Hardware > 500 m
 * Active acoustics (e.g., ADCP) > 3 x the local water depth
 
-Diagnosing interference before deployment: Acoustic modelling software (e.g., BELLHOP) can help diagnose potential interference if you know the source level, radiated frequencies, beam pattern, and beamwidth of neighboring instruments.
+Diagnosing interference before deployment: using underwater sound propagation models (e.g., BELLHOP) can help diagnose potential sources of interference.
 
 
 ## Infrastructure and flow noise
@@ -102,7 +106,7 @@ Here is a list of mounting material and their advantages or disadvantages:
 ### Hydrophone guards
 
 Hydrophones are often protected by a cage (guard or shroud), a semi-rigid housing that surrounds the hydrophone.
-The main purpose to prevent debris, sea life, or cables from striking the sensor.
+The main purpose is to prevent debris, sea life, or cables from striking the sensor.
 It can also help break turbulent flow (see Karman vortices) around the sensor, which can create low-frequency noise in the data.
 
 ![Hydrophone guards prevent debris, sea life, and more, from hitting the sensor.](../images/hydrophone-guards.jpg){lightbox=true}
@@ -110,12 +114,14 @@ It can also help break turbulent flow (see Karman vortices) around the sensor, w
 Those guards are *acoustically transparent*, designed so that they don't reflect the sound waves.
 
 In high sediments areas, platform parts can become covered by sediments which leads to corrosion and wear.
-Guards can prevent sediments to accumulate on hydrophone.
+Guards can prevent sediments from accumulating on the hydrophone.
 
 ## Biofouling
 
 Biofouling is when marine life accumulates on the instrument.
 This can degrade the materials or significantly reduce data quality.
+In the data, it shows up as a slow decay of sensitivity over time.
+While no method is absolutely foolproof to prevent biofouling, ONC has adopted the "sock-method", which has shown to be great success.
 
 The "sock method": we use a simple *sock* (graciously made by a local seamstress), which is a soft and flexible cover that fit snug over the hydrophone shroud.
 It greatly extends lifetime of all hydrophones by preventing microorganisms to directly attach on the sensor.
@@ -123,8 +129,7 @@ It can also prevent fine sediments (e.g., silt) from settling into the small gap
 
 ![The sock method helps to prevent biofouling.](../images/hydrophone-sock.png){lightbox=true}
 
-While no method is absolutely full proof, the sock-method has shown to be great success.
-Biofouling shows up in the data as sa slow decay of sensitivity over time.
+
 
 # Sound direction & beamforming {#sec-beamforming}
 
@@ -132,7 +137,7 @@ A single hydrophone measures *sound level*, regardless of where the sound origin
 To derive any spatial information (where the sound is coming from), multiple hydrophones must be deployed in a synchronized array:
 
 * **Beamforming (Direction of Arrival)**: Uses arrival-time differences across closely-spaced hydrophones on a time-synchronized hydrophone array to calculate the bearing ($\theta$) or direction of a sound source.
-* **Trilateration (Position & Range):** Uses measurements across multiple widely-separated hydrophones to calculate the the spatial coordinates ($lat,lon$) of a sound.
+* **Trilateration (Position & Range):** Uses measurements across multiple widely-separated hydrophones to calculate the spatial coordinates ($lat,lon$) of a sound.
 
 ::: {.callout-warning appearance="simple"}
 **Common Misnomer:** Do not confuse **triangulation** with **trilateration**.
@@ -160,8 +165,9 @@ Three design rules matter:
 
 # Deployment
 
-At ONC, most hydrophones are deployed using an Remotely Operated Vehicles (ROV); which is a tethered, unoccupied underwater robots used to explore, inspect, and work in too deep or dangerous ocean environments.
+At ONC, most hydrophones are deployed using a Remotely Operated Vehicles (ROV); which is a tethered, unoccupied underwater robots used to explore, inspect, and work in too deep or dangerous ocean environments.
 
+<!--
 
 # Resources
 
@@ -238,3 +244,5 @@ At ONC, most hydrophones are deployed using an Remotely Operated Vehicles (ROV);
   </ul>
 </div>
 ```
+
+-->
