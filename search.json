@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Hydrophone Handbook",
     "section": "",
-    "text": "This handbook covers the entire passive acoustics program at ONC, including: Hardware & Deployments, Data Processing & Access, Operations & Quality Control, and Scientific applications.\n\nListening to the ocean since 2006\nOcean Networks Canada has been recording the underwater soundscape since the first installation of the VENUS node in Saanich Inlet in 2006. What started as a single location has expanded into a pan-Canadian array monitoring the Pacific, Atlantic, and Arctic coasts.\nWith over 1 petabyte of archived recordings, spectrograms, and derived acoustic data products, the passive acoustic program of ONC helps scientists and ocean stewards get a better understanding of the canadian ocean soundscape.\n\n\n\n\n36\n\n\nActive Hydrophones\n\n\n\n\n\n\n3 Coasts\n\n\nPacific, Atlantic & Arctic\n\n\n\n\n\n\n\n\nHydrophone network at Ocean Networks Canada, from the Pacific to the Arctic and Atlantic coasts.\n\n\n\n\n\nWhy listen to the ocean?\nSound is the primary way we “see” in the ocean. Because light travels poorly in water, acoustic signals are essential for navigation, communication, and monitoring the health of marine ecosystems.\nUnlike several oceanic instruments, hydrophones use passive acoustic devices, hence they are a non-disruptive form of monitoring the ocean soundscape. Here are a few applications:\n\n🐋 Whale Monitoring\nTracking population distribution and abundance, seasonal migration corridors, and vocalization behaviours.\n\n\n🚢 Ship Traffic Monitoring\nQuantifying commercial and recreational ship noise to inform vessel slow down initiatives and monitor newly-open Arctic shipping routes due to sea ice melting.\n\n\n🌋 Geophysics & Seismic Activity\nMapping minerals, detecting underwater earthquakes and submarine volcanic activity, to inform resource exploration and support regional seismic early-warning systems.\n\n\n🛡️ National Defence & Security\nSupporting national defense to survey martitime domain, identifying vessel signatures and or nuclear testing.\n\n\n\nGoals and future direction for passive acoustics\n\nDelivering science-ready and trusted hydrophone data and data products;\nBecoming a reference for passive acoustics data quality assessment and calibration;\nBecoming leaders in Arctic hydrophone array deployments.\n\n\n\n\n\n\n\n\nNoteTerritory acknowledgment\n\n\n\nWe recognize that Ocean Networks Canada conducts its activities on the traditional lands of the Lək̓ʷəŋən (Lekwungen) people, known today as the Songhees and Esquimalt Nations, as well as the Xwsepsum (Esquimalt) and W̱SÁNEĆ peoples.",
+    "text": "This handbook covers the entire passive acoustics program at ONC, including how and where the instruments deployed, how the data is processed, how to access the data, and examples of data use cases.\n\nListening to the ocean since 2006\nOcean Networks Canada has been recording the underwater soundscape since the first installation of the VENUS node in Saanich Inlet in 2006. What started as a single location has expanded into a pan-Canadian array monitoring the Pacific, Atlantic, and Arctic coasts.\nWith over 1 petabyte of archived recordings, spectrograms, and derived acoustic data products, the passive acoustic program of ONC helps scientists and ocean stewards get a better understanding of the Canadian ocean soundscape.\n\n\n\n\n36\n\n\nActive Hydrophones\n\n\n\n\n\n\n3 Coasts\n\n\nPacific, Atlantic & Arctic\n\n\n\n\n\n\n\n\nHydrophone network at Ocean Networks Canada, from the Pacific to the Arctic and Atlantic coasts.\n\n\n\n\n\nWhy listen to the ocean?\nSound is the primary way we “see” in the ocean. Because light travels poorly in water, acoustic signals are essential for navigation, communication, and monitoring the health of marine ecosystems.\nUnlike several oceanic instruments, hydrophones use passive acoustic devices, hence they are a non-disruptive form of monitoring the ocean soundscape. Here are a few applications:\n\n🐋 Whale Monitoring\nTracking population distribution and abundance, seasonal migration corridors, and vocalization behaviours.\n\n\n🚢 Ship Traffic Monitoring\nQuantifying commercial and recreational ship noise to inform vessel slow down initiatives and monitor newly-open Arctic shipping routes due to sea ice melting.\n\n\n🌋 Geophysics & Seismic Activity\nMapping minerals, detecting underwater earthquakes and submarine volcanic activity, to inform resource exploration and support regional seismic early-warning systems.\n\n\n🛡️ National Defence & Security\nSupporting national defense to survey maritime domain, identifying vessel signatures and or nuclear testing.\n\n\n\nGoals and future direction for passive acoustics\n\nDelivering science-ready and trusted hydrophone data and data products;\nBecoming a reference for passive acoustics data quality assessment and calibration;\nBecoming leaders in Arctic hydrophone array deployments.\n\n\n\n\n\n\n\n\nNoteTerritory acknowledgment\n\n\n\nWe recognize that Ocean Networks Canada conducts its activities on the traditional lands of the Lək̓ʷəŋən (Lekwungen) people, known today as the Songhees and Esquimalt Nations, as well as the Xwsepsum (Esquimalt) and W̱SÁNEĆ peoples.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>1. Introduction</span>"
     ]
@@ -275,86 +275,6 @@
     "title": "14. Science and Publications",
     "section": "Earthquake detection",
     "text": "Earthquake detection\nSeismic waves from earthquakes travel with typical frequencies between 5-50 Hz, making them detectable on low-frequency hydrophones which have high sensitivity down to 10 Hz. Hydrophones as well as Ocean-Bottom seismometers (OBS) are used daily at ONC for earthquake detection.\nSeismometers can also be used to detect whale calls. OBS have been deployed around Endeavour hydrothermal vent, starting with eight in early 2000s and more since then. Fin whale calls are relatively low frequency (20 Hz), and overlap with the detection bandwidth of these seismometers. Numerous studies have used them to track fin whales (Weirathmueller et al., 2007,Wilcock 2012, Soule & Wilcock, 2013).",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-science-and-publications.html#baynes-sound",
-    "href": "sections/14-science-and-publications.html#baynes-sound",
-    "title": "14. Science and Publications",
-    "section": "Baynes Sound",
-    "text": "Baynes Sound",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-science-and-publications.html#burrard-inlet-tsleil-waututh",
-    "href": "sections/14-science-and-publications.html#burrard-inlet-tsleil-waututh",
-    "title": "14. Science and Publications",
-    "section": "Burrard Inlet (Tsleil-Waututh)",
-    "text": "Burrard Inlet (Tsleil-Waututh)",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-science-and-publications.html#cambridge-bay",
-    "href": "sections/14-science-and-publications.html#cambridge-bay",
-    "title": "14. Science and Publications",
-    "section": "Cambridge Bay",
-    "text": "Cambridge Bay",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-science-and-publications.html#china-creek",
-    "href": "sections/14-science-and-publications.html#china-creek",
-    "title": "14. Science and Publications",
-    "section": "China Creek",
-    "text": "China Creek",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-science-and-publications.html#hartley-bay-gitgaat-first-nation",
-    "href": "sections/14-science-and-publications.html#hartley-bay-gitgaat-first-nation",
-    "title": "14. Science and Publications",
-    "section": "Hartley Bay (Gitga’at First Nation)",
-    "text": "Hartley Bay (Gitga’at First Nation)",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-science-and-publications.html#kitamaat-village",
-    "href": "sections/14-science-and-publications.html#kitamaat-village",
-    "title": "14. Science and Publications",
-    "section": "Kitamaat Village",
-    "text": "Kitamaat Village",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-science-and-publications.html#prince-rupert-atlin-terminal-digby-siland-ridley-island",
-    "href": "sections/14-science-and-publications.html#prince-rupert-atlin-terminal-digby-siland-ridley-island",
-    "title": "14. Science and Publications",
-    "section": "Prince Rupert (Atlin Terminal, Digby Siland & Ridley Island)",
-    "text": "Prince Rupert (Atlin Terminal, Digby Siland & Ridley Island)",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-science-and-publications.html#holyrood",
-    "href": "sections/14-science-and-publications.html#holyrood",
-    "title": "14. Science and Publications",
-    "section": "Holyrood",
-    "text": "Holyrood",
     "crumbs": [
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Science and Publications</span>"
     ]
