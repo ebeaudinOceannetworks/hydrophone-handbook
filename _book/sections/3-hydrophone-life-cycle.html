@@ -336,8 +336,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This section outlines the end-to-end journey of a hydrophone at ONC, from the initial purchase and contract to long-term data analysis. The life cycle is based on <a href="https://doi.org/10.1109/oceans55160.2024.10754545">Aghaei et al.&nbsp;(2024)</a>, <em>Best Practices for Managing Passive Acoustics Data at Ocean Networks Canada</em>.</p>
-<p>Hydrophones have been in use at ONC since 2006, totalling more than 700 TB of archived data.</p>
-<p>The life cycle workflow ensures that data is not just collected, but are <strong>FAIR</strong> (Findable, Accessible, Interoperable, and Reusable). ONC commits to share and preserve data long-term.</p>
+<p>Hydrophones have been in use at ONC since 2006, totalling over a petabyte of archived data.</p>
+<p>The life cycle workflow ensures that data is not just collected, but is <strong>FAIR</strong> (Findable, Accessible, Interoperable, and Reusable). ONC commits to share and preserve data long-term.</p>
 <div class="fig-full">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -368,9 +368,9 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Data Transmission</strong>:
 <ul>
 <li>Acoustic Data: Transferred as raw audio (.wav or .flac).</li>
-<li>Ancillary Data: Instrument “health” (temperature, humidity, clock drift) is transmitted without diversion to minitor device’s status (only for Ocean Sonics). Also referred to as auxiliary data.</li>
+<li>Ancillary Data: Instrument “health” (temperature, humidity, clock drift) is transmitted without diversion to monitor device’s status (only for Ocean Sonics). Also referred to as auxiliary data.</li>
 </ul></li>
-<li><strong>Data Processing</strong>: Performed to generate Spectral Data (HSD) in MAT format, and Spectral Density Plots (HSDP) the raw audio files, and archived.</li>
+<li><strong>Data Processing</strong>: Performed to generate Hydrophone Spectral Data (HSD) in MAT format, and Hydrophone Spectral Density Plots (HSPD) from the raw audio files, and archived.</li>
 <li><strong>Data Availability</strong>: Data is made readily available (within a few minutes) to end-users through Oceans 3.0.</li>
 </ul>
 </section>
@@ -380,10 +380,9 @@ ul.task-list li input[type="checkbox"] {
 <p>Once a hydrophone is deployed and recording data, the commissioning of the device starts. This process is designed to catch technical issues early and ensures the data is “science-ready”.</p>
 <ul>
 <li><strong>Immediate Post-Deployment</strong>: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming.</li>
-<li><strong>1-2 Months Post-Deployment</strong>: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4 elements arrays), auxiliary data.</li>
+<li><strong>1-2 Months Post-Deployment</strong>: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4-element arrays), auxiliary data.</li>
 </ul>
-<p>The commissioning ticket is closed once the data is confirmed found in the Hydrophone Data Viewer, accessible through ONC API, and that the data products are generated correctly.</p>
-<p>For the complete procedure: <a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/272761113/Hydrophone+commissioning+procedure">Hydrophone Commissioning Procedure</a></p>
+<p>Commissioning is complete once the data is verified, accessible via all data access streams, and that data products generate successfully.</p>
 </section>
 <section id="data-quality-assurance" class="level1">
 <h1>4. Data quality &amp; assurance</h1>
@@ -402,7 +401,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>ISO 19115</strong>: Governs our high-level metadata records</li>
 <li><strong>Global Catalogues</strong>: We align with IOOS, SeaDataNet and SeaVox device categories.</li>
 <li><strong>FAIR Principles</strong>: Ensuring every byte of data is Findable, Accessible, Interoperable, and Reusable.</li>
-<li><strong>Device Action</strong>: Every event in a hydrophone life cycle, from deplyoment, calibrations, to recovery, is recorded as a permanent action in the database.</li>
+<li><strong>Device Action</strong>: Every event in a hydrophone life cycle, from deployment, calibrations, to recovery, is recorded as a permanent action in the database.</li>
 </ul>
 </section>
 <section id="preservation-storage" class="level1">
@@ -417,14 +416,14 @@ ul.task-list li input[type="checkbox"] {
 <h1>7. Access &amp; analysis</h1>
 <p><em>Teams involved: SCI, DAQ, Software, End-Users</em></p>
 <ul>
-<li><strong>Discovery</strong>: Users find data via Oceans 3.0 using Data Search, the Hydrophone Viewer (5-minute spectrogram previews), or the API.</li>
+<li><strong>Discovery</strong>: Users find data via Oceans 3.0 using Data Search, the Hydrophone Viewer (5-minute spectrogram previews), or the ONC API.</li>
 <li><strong>Identification</strong>: Each dataset is assigned a <strong>DOI</strong> (Digital Object Identifier) to ensure researchers can cite the specific data they used in their papers.</li>
 </ul>
 </section>
 <section id="recovery-decommissioning" class="level1">
 <h1>8. Recovery &amp; decommissioning</h1>
 <p><em>Teams involved: OPO, SYS, DAQ, DSO</em></p>
-<p>The end of a deployement does not mean the end of a instrument’s use. Hydrophones are often re-deployed during the ONC maintenance cruises, or returning to MTC of the manufacturer for maintenance.</p>
+<p>The end of a deployment does not mean the end of a instrument’s use. Hydrophones are often re-deployed during the ONC maintenance cruises, or returned to the manufacturer for maintenance.</p>
 <ul>
 <li><strong>Post-Recovery Calibration</strong>: Once a hydrophone is pulled out of the water, calibration is performed to check if sensitivity shifted dramatically while underwater. If the before and after are very different, the instrument is often sent back to the manufacturer.</li>
 <li><strong>Re-Deployment</strong>: Hydrophones are often re-deployed at the same location, or at a new site. If moved to a different site, the instrument keeps its device code, but the device id will be re-assigned.</li>
