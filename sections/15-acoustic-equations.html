@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,13 +12,10 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -44,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9fcb8d5e0c41499167cbab7fb937d956.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-285f8096acd7c926f9e067843adf601e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -165,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -248,22 +245,32 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../sections/4-how-hydrophones-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. How Hydrophones Work</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/5-physics-of-sound.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Physics of Sound</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../sections/6-soundscape-taxonomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Soundscape Taxonomy</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/7-sound-gallery.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Sound Gallery</span></a>
+  <a href="../sections/7-example-sounds.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Example Sounds</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/8-hydrophone-map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Hydrophone Map</span></a>
+  <a href="../sections/8-hydrophone-network.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8. Hydrophone Network</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/9-array-engineering.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Array Engineering</span></a>
+  <a href="../sections/9-array-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Array Design</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -308,7 +315,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/18-community-observatories.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Coastal Observatories</span></a>
+  <a href="../sections/18-community-observatories.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">18. Coastal Community Observatories</span></a>
   </div>
 </li>
     </ul>
@@ -380,7 +387,7 @@ c(T,S,p) = c_{000} + \Delta c_T + \Delta c_S + \Delta c_P + \Delta c_{STp}
 <p><span class="math display">\[
 \frac{\sin{\theta_1}}{\sin{\theta_2}} = \frac{c_1}{c_2}
 \]</span></p>
-<p>Frequency is unchanged; wavelength adjusts so that <span class="math inline">\(c = f\lambda\)</span>. This is the geometry behind the SOFAR channel and surface ducts in <a href="5-physics-of-sound.qmd">Physics of Sound</a>.</p>
+<p>Frequency is unchanged; wavelength adjusts so that <span class="math inline">\(c = f\lambda\)</span>. This is the geometry behind the SOFAR channel and surface ducts in <a href="../sections/5-physics-of-sound.html">Physics of Sound</a>.</p>
 </section>
 <section id="wave-equation" class="level1">
 <h1>Acoustic wave equation</h1>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2. What’s New – Hydrophone Handbook</title>
+<title>6. Hydrophone Life Cycle – Hydrophone Handbook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../sections/3-hydrophone-map.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../sections/7-calibration-hydrocal.html" rel="next">
+<link href="../sections/5-array-engineering.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -180,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/2-whats-new.html"><span class="chapter-title">2. What’s New</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/6-hydrophone-life-cycle.html"><span class="chapter-title">6. Hydrophone Life Cycle</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -212,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/2-whats-new.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">2. What’s New</span></a>
+  <a href="../sections/2-whats-new.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. What’s New</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -232,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../sections/6-hydrophone-life-cycle.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Hydrophone Life Cycle</span></a>
+  <a href="../sections/6-hydrophone-life-cycle.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">6. Hydrophone Life Cycle</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -285,8 +285,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#august-2026" id="toc-august-2026" class="nav-link active" data-scroll-target="#august-2026">August 2026</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#planning-and-governance" id="toc-planning-and-governance" class="nav-link active" data-scroll-target="#planning-and-governance">1. Planning and governance</a></li>
+  <li><a href="#data-collection-signal-chain" id="toc-data-collection-signal-chain" class="nav-link" data-scroll-target="#data-collection-signal-chain">2. Data collection &amp; signal chain</a></li>
+  <li><a href="#commissioning" id="toc-commissioning" class="nav-link" data-scroll-target="#commissioning">3. Commissioning</a></li>
+  <li><a href="#data-quality-assurance" id="toc-data-quality-assurance" class="nav-link" data-scroll-target="#data-quality-assurance">4. Data quality &amp; assurance</a></li>
+  <li><a href="#metadata-standardization" id="toc-metadata-standardization" class="nav-link" data-scroll-target="#metadata-standardization">5. Metadata &amp; standardization</a></li>
+  <li><a href="#preservation-storage" id="toc-preservation-storage" class="nav-link" data-scroll-target="#preservation-storage">6. Preservation &amp; storage</a></li>
+  <li><a href="#access-analysis" id="toc-access-analysis" class="nav-link" data-scroll-target="#access-analysis">7. Access &amp; analysis</a></li>
+  <li><a href="#recovery-decommissioning" id="toc-recovery-decommissioning" class="nav-link" data-scroll-target="#recovery-decommissioning">8. Recovery &amp; decommissioning</a></li>
   </ul>
 </nav>
     </div>
@@ -295,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">2. What’s New</span></h1>
+<h1 class="title"><span class="chapter-title">6. Hydrophone Life Cycle</span></h1>
 </div>
 
 
@@ -312,22 +318,100 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="intro-hero">
+<p>This section outlines the end-to-end journey of a hydrophone at ONC, from the initial purchase and contract to long-term data analysis. The life cycle is based on <a href="https://doi.org/10.1109/oceans55160.2024.10754545">Aghaei et al.&nbsp;(2024)</a>, <em>Best Practices for Managing Passive Acoustics Data at Ocean Networks Canada</em>.</p>
+<p>Hydrophones have been in use at ONC since 2006, totalling over a petabyte of archived data.</p>
+<p>The life cycle workflow ensures that data is not just collected, but is <strong>FAIR</strong> (Findable, Accessible, Interoperable, and Reusable). ONC commits to share and preserve data long-term.</p>
+<div class="fig-full">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/hydrophone.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Artistic view of a hydrophone underwater. Credit: Co.L.Mar"><img src="../images/hydrophone.png" class="img-fluid figure-img" style="width:100.0%" data-lightbox="true" alt="Artistic view of a hydrophone underwater. Credit: Co.L.Mar"></a></p>
-<figcaption>Artistic view of a hydrophone underwater. Credit: Co.L.Mar</figcaption>
+<p><a href="../images/hydrophone-life-cycle.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Diagram of a hydrophone life cycle at Ocean Networks Canada."><img src="../images/hydrophone-life-cycle.png" class="img-fluid figure-img" data-lightbox="true" alt="Diagram of a hydrophone life cycle at Ocean Networks Canada."></a></p>
+<figcaption>Diagram of a hydrophone life cycle at Ocean Networks Canada.</figcaption>
 </figure>
 </div>
 </div>
-<section id="august-2026" class="level1">
-<h1>August 2026</h1>
+<!-- link to canva where the hydrophone life cycle image was created: https://canva.link/erzgms3fvn7dyz6 -->
+<section id="planning-and-governance" class="level1">
+<h1>1. Planning and governance</h1>
+<p><em>Teams involved: SCI, DAQ, DSO, OPO</em></p>
+<p>Before a hydrophone is deployed in the water, the following legal and technical steps must be taken:</p>
 <ul>
-<li>Hydrophone handbook release</li>
+<li><strong>Data Agreements</strong>: ONC establishes legal agreements to define data ownership, usage restrictions, and attribution.</li>
+<li><strong>Stewardship</strong>: Data Stewards (DSO) apply standardized metadata and attributions to ensure the sensor is <em>discoverable</em>.</li>
+<li><strong>Product Definition</strong>: We identify new data products the community might need.</li>
 </ul>
 </section>
-<section id="section" class="level1">
-<h1></h1>
+<section id="data-collection-signal-chain" class="level1">
+<h1>2. Data collection &amp; signal chain</h1>
+<p><em>Teams involved: SCI, SYS, DAQ, DSO, OPO</em></p>
+<ul>
+<li><strong>Hardware</strong>: We primarily use <strong>Ocean Sonics</strong> (HF/AF) and <strong>GeoSpectrum</strong> (from JASCO distributor) instruments, deployed as single units or four-element arrays.</li>
+<li><strong>Calibration (HydroCal)</strong>: Instruments undergo rigorous pre-deployment and post-recovery calibration to ensure accuracy. If sensors drift, they are returned to the manufacturer.</li>
+<li><strong>Validation</strong>: Hydrophones undergo validation by engineers to verify that recorded frequencies and amplitudes are accurate before the instrument is deployed. During testing, instruments are placed in a test tank to collect ~2 minutes of auxiliary, .fft, and .wav data. The resulting spectrograms are then evaluated against expected baseline values. For hydrophone arrays, all individual sensors are compared with one another to ensure clock synchronization, and that they record the same sound levels.</li>
+<li><strong>Data Diversion</strong>: Hydrophones are “Tier 1” instruments, meaning that the data streams are subject to diversion by the Royal Canadian Navy and US Navy before reaching the ONC archive.</li>
+<li><strong>Data Transmission</strong>:
+<ul>
+<li>Acoustic Data: Transferred as raw audio (.wav or .flac).</li>
+<li>Ancillary Data: Instrument “health” (temperature, humidity, clock drift) is transmitted without diversion to monitor device’s status (only for Ocean Sonics). Also referred to as auxiliary data.</li>
+</ul></li>
+<li><strong>Data Processing</strong>: Performed to generate Hydrophone Spectral Data (HSD) in MAT format, and Hydrophone Spectral Density Plots (HSPD) from the raw audio files, and archived.</li>
+<li><strong>Data Availability</strong>: Data is made readily available (within a few minutes) to end-users through Oceans 3.0.</li>
+</ul>
+</section>
+<section id="commissioning" class="level1">
+<h1>3. Commissioning</h1>
+<p><em>Teams involved: DAQ, DSO, SYS</em></p>
+<p>Once a hydrophone is deployed and recording data, the commissioning of the device starts. This process is designed to catch technical issues early and ensures the data is “science-ready”.</p>
+<ul>
+<li><strong>Immediate Post-Deployment</strong>: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming.</li>
+<li><strong>1-2 Months Post-Deployment</strong>: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4-element arrays), auxiliary data.</li>
+</ul>
+<p>Commissioning is complete once the data is verified, accessible via all data access streams, and that data products generate successfully.</p>
+</section>
+<section id="data-quality-assurance" class="level1">
+<h1>4. Data quality &amp; assurance</h1>
+<p><em>Teams involved: DAQ, SCI, SYS</em></p>
+<p>Because hydrophone data is classified as <em>complex</em> data (unlike <em>scalar</em> data), standard automated QAQC (like those for temperature or salinity) does not yet exist.</p>
+<ul>
+<li><strong>Manual Inspection</strong>: The DAQ team performs daily visual checks for issues like clipping, electronic interference, energy spikes, sensitivity drifts.</li>
+<li><strong>Annotations</strong>: Any unusual events or data gaps (caused by network maintenance, instrument failure, communication down) are recorded as annotations in Oceans 3.0 so researchers know why data might be missing.</li>
+</ul>
+</section>
+<section id="metadata-standardization" class="level1">
+<h1>5. Metadata &amp; standardization</h1>
+<p><em>Teams involved: DSO</em></p>
+<p>To make our data globally compatible, we follow strict international standards:</p>
+<ul>
+<li><strong>ISO 19115</strong>: Governs our high-level metadata records</li>
+<li><strong>Global Catalogues</strong>: We align with IOOS, SeaDataNet and SeaVox device categories.</li>
+<li><strong>FAIR Principles</strong>: Ensuring every byte of data is Findable, Accessible, Interoperable, and Reusable.</li>
+<li><strong>Device Action</strong>: Every event in a hydrophone life cycle, from deployment, calibrations, to recovery, is recorded as a permanent action in the database.</li>
+</ul>
+</section>
+<section id="preservation-storage" class="level1">
+<h1>6. Preservation &amp; storage</h1>
+<p><em>Teams involved: DSO, SYS, Software</em></p>
+<ul>
+<li><strong>Primary Storage</strong>: Terabytes of data are stored locally at the University of Victoria data centre.</li>
+<li><strong>Redundancy</strong>: A complete offsite backup is maintained to prevent data loss, and also shares data processing load.</li>
+</ul>
+</section>
+<section id="access-analysis" class="level1">
+<h1>7. Access &amp; analysis</h1>
+<p><em>Teams involved: SCI, DAQ, Software, End-Users</em></p>
+<ul>
+<li><strong>Discovery</strong>: Users find data via Oceans 3.0 using Data Search, the Hydrophone Viewer (5-minute spectrogram previews), or the ONC API.</li>
+<li><strong>Identification</strong>: Each dataset is assigned a <strong>DOI</strong> (Digital Object Identifier) to ensure researchers can cite the specific data they used in their papers.</li>
+</ul>
+</section>
+<section id="recovery-decommissioning" class="level1">
+<h1>8. Recovery &amp; decommissioning</h1>
+<p><em>Teams involved: OPO, SYS, DAQ, DSO</em></p>
+<p>The end of a deployment does not mean the end of a instrument’s use. Hydrophones are often re-deployed during the ONC maintenance cruises, or returned to the manufacturer for maintenance.</p>
+<ul>
+<li><strong>Post-Recovery Calibration</strong>: Once a hydrophone is pulled out of the water, calibration is performed to check if sensitivity shifted dramatically while underwater. If the before and after are very different, the instrument is often sent back to the manufacturer.</li>
+<li><strong>Re-Deployment</strong>: Hydrophones are often re-deployed at the same location, or at a new site. If moved to a different site, the instrument keeps its device code, but the device id will be re-assigned.</li>
+<li><strong>Permanent Decommissioning (Goodbye)</strong>: When an instrument reaches the end of its functional life or can no longer be repaired, it is officially <em>decommissioned</em> in the database.</li>
+</ul>
 
 
 </section>
@@ -740,13 +824,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="1. Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">1. Introduction</span></span>
+      <a href="../sections/5-array-engineering.html" class="pagination-link" aria-label="5. Array Engineering">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">5. Array Engineering</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../sections/3-hydrophone-map.html" class="pagination-link" aria-label="3. Hydrophone Map">
-        <span class="nav-page-text"><span class="chapter-title">3. Hydrophone Map</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../sections/7-calibration-hydrocal.html" class="pagination-link" aria-label="7. Calibration (HydroCal)">
+        <span class="nav-page-text"><span class="chapter-title">7. Calibration (HydroCal)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
