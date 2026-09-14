@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8. Data Products – Hydrophone Handbook</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../sections/9-data-access.html" rel="next">
+<link href="../sections/7-calibration-hydrocal.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-285f8096acd7c926f9e067843adf601e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  .handbook-orca-banner {
+    background-size: cover !important;
+    background-position: center !important;
+    height: 65vh !important;
+    color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 0 30px 0 !important;
+    border-bottom: 5px solid #f39200 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .handbook-orca-banner h1 {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 4.5em !important;
+    font-weight: 700 !important;
+    color: white !important;
+    margin: 0 !important;
+    text-align: center !important;
+    border-bottom: none !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    width: auto !important;
+  }
+  .handbook-orca-banner .handbook-banner-tagline {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 1.8em !important;
+    font-style: italic !important;
+    opacity: 0.9;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-org {
+    font-family: "Rajdhani", sans-serif !important;
+    margin-top: 20px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center !important;
+  }
+  .handbook-orca-banner .handbook-banner-date {
+    font-family: "Open Sans", sans-serif !important;
+    margin-top: 12px !important;
+    font-size: 0.95em !important;
+    letter-spacing: 0.04em;
+    opacity: 0.9;
+    text-align: center !important;
+  }
+</style>
+</head><body class="nav-sidebar docked quarto-light"><div class="handbook-orca-banner" id="handbook-banner">
+  <h1>Hydrophone Handbook</h1>
+  <p class="handbook-banner-tagline">from the whale to the user</p>
+  <div class="handbook-banner-org">
+    Ocean Networks Canada
+  </div>
+  <p class="handbook-banner-date" id="handbook-compile-date"></p>
+</div>
+<script>
+(function () {
+  var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+  var offset = offsetMeta ? offsetMeta.getAttribute("content") : "./";
+  var banner = document.getElementById("handbook-banner");
+  if (banner) {
+    banner.style.backgroundImage =
+      "linear-gradient(rgba(0, 51, 102, 0.4), rgba(0, 51, 102, 0.8)), url('" + offset + "images/orcas.png')";
+  }
+
+  var el = document.getElementById("handbook-compile-date");
+  if (!el) return;
+  var meta = document.querySelector('meta[name="dcterms.date"]') ||
+             document.querySelector('meta[name="date"]');
+  var raw = meta && meta.getAttribute("content");
+  var d = raw ? new Date(raw.length <= 10 ? raw + "T00:00:00" : raw) : new Date();
+  if (isNaN(d.getTime())) d = new Date();
+  el.textContent = "Compiled on " + d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+})();
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../sections/8-data-products.html"><span class="chapter-title">8. Data Products</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Hydrophone Handbook</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1. Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/2-whats-new.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2. What’s New</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/3-hydrophone-map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3. Hydrophone Map</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/4-hydrophone-models.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4. Hydrophone Models</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/5-array-engineering.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5. Array Engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/6-hydrophone-life-cycle.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6. Hydrophone Life Cycle</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/7-calibration-hydrocal.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7. Calibration (HydroCal)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/8-data-products.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">8. Data Products</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/9-data-access.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9. Data Access</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/10-data-diversion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10. Data Diversion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/11-sound-gallery.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11. Sound Gallery</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/12-soundscape-taxonomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12. Soundscape Taxonomy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/13-science-and-publications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13. Science and Publications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../sections/14-community-observatories.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14. Coastal Observatories</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#audio-data" id="toc-audio-data" class="nav-link" data-scroll-target="#audio-data">Audio data</a></li>
+  <li><a href="#hydrophone-spectral-data" id="toc-hydrophone-spectral-data" class="nav-link" data-scroll-target="#hydrophone-spectral-data">Hydrophone spectral data</a></li>
+  <li><a href="#spectral-probability-density" id="toc-spectral-probability-density" class="nav-link" data-scroll-target="#spectral-probability-density">Spectral probability density</a></li>
+  <li><a href="#auxiliary-data" id="toc-auxiliary-data" class="nav-link" data-scroll-target="#auxiliary-data">Auxiliary data</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">8. Data Products</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>This page describes each hydrophone data product. To learn how to download files, go to the <a href="../sections/9-data-access.html">Data Access</a>.</em></p>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>Hydrophone data files are generated in 5-minute intervals, categorized as either <strong>raw sensor recordings</strong> (direct sound recording) or <strong>derived products</strong> (post-processing of audio data).</p>
+<table class="caption-top table">
+<caption>Hydrophone Data Products</caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 40%">
+<col style="width: 15%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Data Type</th>
+<th style="text-align: left;">Product Name</th>
+<th style="text-align: center;">Code / ID</th>
+<th style="text-align: center;">Extensions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Raw</strong></td>
+<td style="text-align: left;">Audio Data</td>
+<td style="text-align: center;"><code>AD</code> (7)</td>
+<td style="text-align: center;"><code>.flac</code>, <code>.wav</code>, <code>.mp3</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Raw</strong></td>
+<td style="text-align: left;">Array Data <em>(Retired)</em></td>
+<td style="text-align: center;"><code>HARD</code> (38)</td>
+<td style="text-align: center;"><code>.hyd</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Raw</strong></td>
+<td style="text-align: left;">Acceleration Data</td>
+<td style="text-align: center;"><code>HACC</code> (128)</td>
+<td style="text-align: center;"><code>.acc</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Raw</strong></td>
+<td style="text-align: left;">Auxiliary Log File</td>
+<td style="text-align: center;"><code>LF</code> (4)</td>
+<td style="text-align: center;"><code>.txt</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Derived</strong></td>
+<td style="text-align: left;">Hydrophone Spectral Data</td>
+<td style="text-align: center;"><code>HSD</code> (45, 146)</td>
+<td style="text-align: center;"><code>.fft</code>, <code>.mat</code>, <code>.png</code>, <code>.pdf</code>, <code>.oct</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Derived</strong></td>
+<td style="text-align: left;">Spectral Probability Density</td>
+<td style="text-align: center;"><code>HSPD</code> (51)</td>
+<td style="text-align: center;"><code>.mat</code>, <code>.png</code>, <code>.pdf</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="audio-data" class="level1">
+<h1>Audio data</h1>
+<div class="dp-panel">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/AD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Amplitude and frequency of an acoustic signal."><img src="../images/AD.png" class="img-fluid figure-img" data-lightbox="true" alt="Amplitude and frequency of an acoustic signal."></a></p>
+<figcaption>Amplitude and frequency of an acoustic signal.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> AD / 7</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .flac, .wav, .mp3</span>
+</div>
+<p>Audio data is the raw recording of the acoustic environment.</p>
+<p>Older files were stored as <code>.wav</code>, but ONC now archives lossless <code>.flac</code>. The <code>.mp3</code> format is smaller but lossy, and is not recommended for scientific work. Retired IOS arrays used HARD / 38 (<code>.hyd</code>) instead of AD.</p>
+<p>Why FLAC is the preferred format?</p>
+<ul>
+<li><strong>Lossless compression</strong>: unlike MP3, FLAC keeps 100% of the original samples.</li>
+<li><strong>Storage efficiency</strong>: files are substantially smaller than <code>.wav</code> at the same quality.</li>
+<li><strong>Metadata</strong>: FLAC can store deployment and device tags inside the file.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand for API options
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>dpo_audioDownsample</code>: <code>"-1"</code> (default, native rate), <code>"256"</code>, <code>"512"</code>, <code>"2000"</code>, <code>"4000"</code>, <code>"8000"</code>, <code>"16000"</code>, <code>"44100"</code>, <code>"48000"</code></li>
+<li><code>dpo_audioFormatConversion</code>: <code>"0"</code> (default), <code>"1"</code></li>
+<li><code>dpo_hydrophoneAcquisitionMode</code>: <code>"All"</code> (default), <code>"LF"</code>, <code>"HF"</code></li>
+<li><code>dpo_hydrophoneChannel</code>: <code>"H1"</code> (default), <code>"H2"</code>, <code>"H3"</code>, <code>"All"</code></li>
+<li><code>dpo_hydrophoneDataDiversionMode</code>: <code>"OD"</code> (default, original data), <code>"LPF"</code>, <code>"HPF"</code>, <code>"All"</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="hydrophone-spectral-data" class="level1">
+<h1>Hydrophone spectral data</h1>
+<div class="dp-panel">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1252_20260814T210509.000Z-spect.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="5-min spectrogram of a boat passing by a hydrophone at Digby Island."><img src="../images/ICLISTENHF1252_20260814T210509.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="5-min spectrogram of a boat passing by a hydrophone at Digby Island."></a></p>
+<figcaption>5-min spectrogram of a boat passing by a hydrophone at Digby Island.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD / 45, 146</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .fft, .png, .pdf </span>
+</div>
+<p>Spectral products turn audio files into frequency vs time data. To access the data, one can go to the Hydrophone Viewer where each 5-min audio file was turned into a spectrogram (.png). This data product is a practical way for quick-checks without processing terabytes of raw audio. It comes in several formats:</p>
+<p><strong><code>.mat</code> — processed spectral data.</strong> MATLAB data format of 1-minute averaged calibrated spectral data with the device-specific sensitivity curve. Contains a <code>SpectData</code> structure with frequency bins (Hz) and power spectral density.</p>
+<p><strong><code>.fft</code> — proprietary spectral data (Ocean Sonics only).</strong> Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and unfit for scientific research.</p>
+<p><strong><code>.png</code> / <code>.pdf</code> — spectrogram.</strong> A 2D heatmap of sound: time on the x-axis, frequency (Hz) on the y-axis, colour as sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand to learn how to read a spectrogram
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>ONC spectrograms (Hydrophone Viewer and the <code>.png</code> / <code>.pdf</code> HSD product) are usually <strong>5-minute</strong> files. They use the same axes every time:</p>
+<ul>
+<li><strong>x-axis</strong>: time</li>
+<li><strong>y-axis</strong>: frequency (Hz)</li>
+<li><strong>colour</strong>: sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span></li>
+</ul>
+<p>How to read features on the plot:</p>
+<ul>
+<li>A <strong>thin horizontal line</strong> is a tonal — often a nearby instrument, a propeller, or electrical noise.</li>
+<li>A <strong>vertical smear</strong> or filled band is broadband — ships, earthquakes, weather, or a passing animal.</li>
+<li>A <strong>flat-topped</strong> burst or hard colour ceiling is often clipping or saturation.</li>
+<li><strong>Holes or fading</strong> can be multipath or a quiet moment, not automatically a failed hydrophone.</li>
+</ul>
+<p>If the filename includes <strong>LPF</strong> or <strong>HPF</strong>, the band is incomplete after naval screening. See <a href="../sections/10-data-diversion.html">Data Diversion</a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand to learn more about the method
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A spectrogram is built from short Fourier transforms of the audio:</p>
+<ol type="1">
+<li><strong>Time windowing</strong>: raw audio is split into finite segments with a window (ONC uses a Hann window) to limit spectral leakage.</li>
+<li><strong>FFT</strong>: each segment is transformed from the time domain to the frequency domain.</li>
+<li><strong>Overlap / averaging</strong>: successive windows overlap (typically 50%) so energy at the edges is not lost.</li>
+<li><strong>Calibration</strong>: values are converted to micropascals with the device-specific <strong>frequency-dependent calibration curve</strong>. Using the wrong curve has caused errors in the past (<a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/255101693/1.+Power+spectral+density+vs.+power+spectrum.">internal note</a>).</li>
+</ol>
+<p>Fourier transforms assume an infinite, stationary signal. A finite cut creates edge discontinuities and <strong>spectral leakage</strong> into neighbouring bins. Windowing (tapering) multiplies the segment by a shape that goes to zero at the edges.</p>
+<p>Choosing the right window requires a trade-off between resolution in time or frequency.</p>
+<ul>
+<li><strong>Narrow window</strong>: good time resolution (when a click happened), poor frequency resolution.</li>
+<li><strong>Wide window</strong>: good frequency resolution (harmonics of a call), poor time resolution.</li>
+<li>Wavelengths longer than the window are lost.</li>
+</ul>
+<p>ONC spectrogram settings in the example above:</p>
+<ul>
+<li>Hann window with 50% overlap</li>
+<li>6400 samples per FFT window</li>
+<li>Temporal resolution: 0.05 s</li>
+<li>Sample rate: 64000 Hz</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand for API options
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>dpo_hydrophoneAcquisitionMode</code>: <code>"All"</code> (default), <code>"LF"</code>, <code>"HF"</code></li>
+<li><code>dpo_hydrophoneChannel</code>: <code>"H1"</code> (default), <code>"H2"</code>, <code>"H3"</code>, <code>"All"</code></li>
+<li><code>dpo_hydrophoneDataDiversionMode</code>: <code>"OD"</code> (default, original data), <code>"LPF"</code>, <code>"HPF"</code>, <code>"All"</code></li>
+<li><code>dpo_spectrogramSource</code> (PNG/PDF): <code>"MIX"</code> (default, audio preferred, FFT fills gaps), <code>"WAVFLAC"</code>, <code>"FFT"</code></li>
+<li><code>dpo_spectrogramConcatenation</code>: <code>"None"</code> (default for PNG/PDF), <code>"Concatenate"</code> (default for MAT), <code>"Daily"</code>, <code>"Weekly"</code>, <code>"Adjacent"</code> (PNG/PDF, searches of 5 minutes or less)</li>
+<li><code>dpo_spectralDataDownsample</code> (MAT): <code>"1"</code> (default, one-minute, pre-generated), <code>"2"</code> (spectrogram resolution), <code>"0"</code> (full resolution)</li>
+<li><code>dpo_spectrogramColourPalette</code> (PNG/PDF): <code>"0"</code> (default), <code>"1"</code>, <code>"2"</code>, <code>"3"</code>, <code>"4"</code>, <code>"5"</code></li>
+<li><code>dpo_lowerColourLimit</code> / <code>dpo_upperColourLimit</code> (PNG/PDF): <code>"-1000"</code> (default, use device calibration); otherwise −160 to 140</li>
+<li><code>dpo_spectrogramFrequencyUpperLimit</code> (PNG/PDF): <code>"-1"</code> (default, use calibration / sample rate); otherwise 100 to 500000 Hz</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="spectral-probability-density" class="level1">
+<h1>Spectral probability density</h1>
+<div class="dp-panel">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Hydrophone spectral probability density plot."><img src="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="img-fluid figure-img" data-lightbox="true" alt="Hydrophone spectral probability density plot."></a></p>
+<figcaption>Hydrophone spectral probability density plot.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSPD / 51</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .png, .pdf, .mat</span>
+</div>
+<p>The Spectral Probability Density is a statistical view of long-term ambient noise, originally proposed by <a href="https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient">Merchant et al.&nbsp;(2013)</a>. It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand to learn more about the method
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For a band-pass filtered signal <span class="math inline">\(x(t, f, \Delta f)\)</span>, the mean square acoustic pressure within bandwidth <span class="math inline">\(\Delta f\)</span> over observation period <span class="math inline">\(T\)</span> is given by:</p>
+<p><span class="math display">\[
+\Psi^2_x(f,\Delta f) = \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt
+\]</span></p>
+<p>The single-sided Power Spectral Density (PSD), <span class="math inline">\(G_x(f)\)</span>, defines the mean square value per bandwidth as <span class="math inline">\(\Delta f\)</span> approaches zero:</p>
+<p><span class="math display">\[
+G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \lim_{\Delta f\rightarrow 0} \frac{1}{\Delta f} \left[ \lim_{T\rightarrow \infty} \frac{1}{T} \int_0^T x(t,f,\Delta f)^2 dt \right]
+\]</span></p>
+<p>Consequently, acoustic power within a narrow band is approximated by <span class="math inline">\(\Psi^2_x(f,\Delta f)\approx G_x(f)\Delta f\)</span>.</p>
+<p>The Hydrophone Spectral Probability Density (HSPD) evaluates bins individual PSD into a statistical histogram. The color on the plot represents a probability density (occupancy frequency), or the percentage of time the noise level at that frequency <span class="math inline">\(f\)</span> was measured at intensity level <span class="math inline">\(L\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand for API options
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>dpo_filePlotBreaks</code>: <code>"0"</code> None (configuration changes only), <code>"1"</code> Daily, <code>"2"</code> Weekly (default), <code>"3"</code> Hourly, <code>"4"</code> Monthly, <code>"5"</code> Yearly</li>
+<li><code>dpo_hydrophoneAcquisitionMode</code>: <code>"All"</code> (default), <code>"LF"</code>, <code>"HF"</code></li>
+<li><code>dpo_hydrophoneChannel</code>: <code>"H1"</code> (default), <code>"H2"</code>, <code>"H3"</code>, <code>"All"</code></li>
+<li><code>dpo_hydrophoneDataDiversionMode</code>: <code>"OD"</code> (default, original data), <code>"LPF"</code>, <code>"HPF"</code>, <code>"All"</code></li>
+<li><code>dpo_spectralProbabilityDensityColourAxisUpperLimit</code>: <code>"0"</code> (default), <code>"0.05"</code>, <code>"0.1"</code>, <code>"0.12"</code>, <code>"0.25"</code>, <code>"0.5"</code>, <code>"1.0"</code></li>
+<li><code>dpo_spectralProbabilityDensityPSDRange</code>: <code>"0"</code> (default), <code>"40_160"</code>, <code>"40_140"</code>, <code>"20_140"</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="auxiliary-data" class="level1">
+<h1>Auxiliary data</h1>
+<div class="dp-panel">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/aux-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."><img src="../images/aux-data.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."></a></p>
+<figcaption>Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> LF / 4 · HACC / 128</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .txt, .acc</span>
+</div>
+<p>Auxiliary (ancillary) files are about the instrument, not the soundscape: internal humidity, temperature, battery, voltage, and related engineering scalars. Use them to diagnose leakage (humidity above about 50%), overheating, or a dying battery. Magnetic flux and acceleration can also indicate orientation and strong currents.</p>
+<p>These data are only available for Ocean Sonics hydrophones.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand for API options
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>LF (<code>.txt</code>) and HACC (<code>.acc</code>) have no extra <code>dpo_*</code> options. There is no single <code>AUX</code> code: order <strong>LF</strong> for the engineering log and <strong>HACC</strong> for acceleration. Calibration files use <strong>HCF</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="resources" class="level1">
+<h1>Resources</h1>
+<div class="docs-card">
+  <div class="docs-card-title">
+    <img src="../images/confluence_logo_no_bckg.png" width="24" alt="">
+    <span>Documentation</span>
+  </div>
+  <ul class="docs-card-list">
+    <!-- <li><a href="https://internal.oceannetworks.ca/spaces/DS/pages/7639165/Hydrophone+Matlab+Postprocess+Jobs">Hydrophone MATLAB Post-process Jobs</a></li> -->
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758104/7">Data Product: Audio Data (7)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45">Data Product: Hydrophone Spectral Data (45)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51">Data Product: Hydrophone Spectral Probability Density (51)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146">Data Product: Spectrogram For Hydrophone Viewer (146)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128">Data Product: Hydrophone Acceleration Data (128)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758026/4">Data Product: Log File (4)</a></li>
+    <!-- <li><a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/216205790/Passive+acoustics">Passive acoustics data products (internal)</a></li> -->
+  </ul>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../sections/7-calibration-hydrocal.html" class="pagination-link" aria-label="7. Calibration (HydroCal)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">7. Calibration (HydroCal)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../sections/9-data-access.html" class="pagination-link" aria-label="9. Data Access">
+        <span class="nav-page-text"><span class="chapter-title">9. Data Access</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

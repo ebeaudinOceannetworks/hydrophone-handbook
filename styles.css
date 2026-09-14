@@ -137,6 +137,7 @@ figcaption i {
 #quarto-document-content .fig-full .quarto-figure,
 #quarto-document-content .intro-map .quarto-figure,
 #quarto-document-content .intro-hero .quarto-figure,
+#quarto-document-content .sound-card-visual .quarto-figure,
 .intro-map .quarto-figure,
 .intro-hero .quarto-figure {
   width: 100% !important;
@@ -236,6 +237,153 @@ figcaption i {
 .hydrophone-types-table th:nth-child(3),
 .hydrophone-types-table td:nth-child(3) {
   width: 50%;
+}
+
+.bandwidth-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 20px auto 1.5rem;
+  max-width: 850px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.bandwidth-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bandwidth-kicker {
+  display: block;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.bandwidth-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.bandwidth-axis {
+  font-size: 11px;
+  font-weight: 500;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.bandwidth-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bandwidth-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 120px;
+  align-items: center;
+  gap: 16px;
+}
+
+.bandwidth-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.bandwidth-name span {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.bandwidth-track {
+  position: relative;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.bandwidth-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 99px;
+}
+
+.bandwidth-row.is-os .bandwidth-bar {
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+}
+
+.bandwidth-row.is-jasco .bandwidth-bar {
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+}
+
+.bandwidth-range {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: right;
+  color: #38bdf8;
+}
+
+.bandwidth-row.is-jasco .bandwidth-range {
+  color: #818cf8;
+}
+
+.bandwidth-legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.bandwidth-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bandwidth-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.bandwidth-legend i.is-os {
+  background: #38bdf8;
+}
+
+.bandwidth-legend i.is-jasco {
+  background: #818cf8;
+}
+
+@media (max-width: 700px) {
+  .bandwidth-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .bandwidth-range {
+    text-align: left;
+  }
 }
 
 .specs-table-wrap {
@@ -1275,28 +1423,37 @@ section.listen-section > h3::before {
 
 .sound-card-visual {
   margin: 0;
-  background: #f7f7f7;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: transparent;
   border-radius: 0;
 }
 
-.sound-card-visual figure {
-  margin: 0;
-  width: 100%;
-  max-width: 100%;
+.sound-card-visual figure,
+#quarto-document-content .sound-card-visual .quarto-figure {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100%;
+  margin: 0 !important;
+  overflow: hidden;
 }
 
 .sound-card-visual figcaption {
   display: none;
 }
 
-.sound-card-visual img {
+.sound-card-visual img,
+#quarto-document-content .sound-card-visual img,
+#quarto-document-content .sound-card-visual .quarto-figure img {
   display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: unset;
-  object-fit: unset;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover;
+  object-position: center 55%;
   border-radius: 0;
   cursor: zoom-in;
+  transform: none;
 }
 
 .sound-card-body {

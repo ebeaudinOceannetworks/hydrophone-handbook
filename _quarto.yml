@@ -31,20 +31,18 @@ book:
   chapters:
     - index.qmd
     - sections/2-whats-new.qmd
-    - sections/3-hydrophone-life-cycle.qmd
-    - sections/6-soundscape-taxonomy.qmd
-    - sections/7-sound-gallery.qmd
-    - sections/8-hydrophone-map.qmd
-    - sections/9-array-engineering.qmd
-    - sections/10-calibration-hydrocal.qmd
-    - sections/11-data-products.qmd
-    - sections/12-data-access.qmd
-    - sections/13-data-diversion.qmd
-    - sections/14-science-and-publications.qmd
-    - sections/15-acoustic-equations.qmd
-    - sections/16-hydrophone-models.qmd
-    - sections/17-glossary.qmd
-    - sections/18-community-observatories.qmd
+    - sections/3-hydrophone-map.qmd
+    - sections/4-hydrophone-models.qmd
+    - sections/5-array-engineering.qmd
+    - sections/6-hydrophone-life-cycle.qmd
+    - sections/7-calibration-hydrocal.qmd
+    - sections/8-data-products.qmd
+    - sections/9-data-access.qmd
+    - sections/10-data-diversion.qmd
+    - sections/11-sound-gallery.qmd
+    - sections/12-soundscape-taxonomy.qmd
+    - sections/13-science-and-publications.qmd
+    - sections/14-community-observatories.qmd
 
   sidebar:
     style: "docked"
