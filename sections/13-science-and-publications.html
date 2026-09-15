@@ -48,9 +48,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-9fcb8d5e0c41499167cbab7fb937d956.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -321,12 +318,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Science</h1>
 <section id="marine-mammals-monitoring" class="level2">
 <h2 class="anchored" data-anchor-id="marine-mammals-monitoring">Marine mammals monitoring</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/science-marine-mammals-monitoring.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Humpback Song with Sperm Whale Clicks"><img src="../images/science-marine-mammals-monitoring.png" class="img-fluid figure-img" alt="Humpback Song with Sperm Whale Clicks"></a></p>
-<figcaption>Humpback Song with Sperm Whale Clicks</figcaption>
-</figure>
-</div>
+<!-- ![Humpback Song with Sperm Whale Clicks](../images/science-marine-mammals-monitoring.png) -->
 <p>In 2015, ONC joined the Enhancing Cetacean and Habitat Observation (<a href="https://www.portvancouver.com/environment/healthy-ecosystem/echo">ECHO</a>) Program aims at investigating ways to reduce shipping traffic impacts on whale activity in the Strait of Georgia. As part of the program, hydrophone arrays from <em>JASCO Applied Sciences</em> were deployed and the data ingested in ONC’s servers.</p>
 <p>The program has had quite a bit of success, as thousands of ships have voluntarily reduced speed or distanced themselves from whales.</p>
 <p><em>Read ONC’s story <a href="https://www.oceannetworks.ca/news-and-stories/stories/listening-to-deep-ocean-whales/">here</a>.</em></p>
@@ -778,38 +770,6 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
