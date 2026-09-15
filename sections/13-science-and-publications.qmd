@@ -6,7 +6,7 @@ title: "13. Science and Publications"
 
 ## Marine mammals monitoring
 
-![Humpback Song with Sperm Whale Clicks](../images/science-marine-mammals-monitoring.png)
+<!-- ![Humpback Song with Sperm Whale Clicks](../images/science-marine-mammals-monitoring.png) -->
 
 In 2015, ONC joined the Enhancing Cetacean and Habitat Observation ([ECHO](https://www.portvancouver.com/environment/healthy-ecosystem/echo)) Program aims at investigating ways to reduce shipping traffic impacts on whale activity in the Strait of Georgia.
 As part of the program, hydrophone arrays from *JASCO Applied Sciences* were deployed and the data ingested in ONC’s servers.
