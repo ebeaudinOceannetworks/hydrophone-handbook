@@ -42,7 +42,6 @@ book:
     - sections/11-sound-gallery.qmd
     - sections/12-soundscape-taxonomy.qmd
     - sections/13-science-and-publications.qmd
-    #- sections/14-community-observatories.qmd
 
   sidebar:
     style: "docked"

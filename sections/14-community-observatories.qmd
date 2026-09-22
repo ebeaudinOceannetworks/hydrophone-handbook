@@ -12,7 +12,7 @@ The observatory data can be used by researchers, community members, Indigenous l
 
 ## Coastal Observatory hydrophone data use cases
 
-Click on a marker to view projects using data from a Coastal Observatory hydrophone.
+*Click on a marker to view projects using data from a Coastal Observatory hydrophone.*
 
 ```{python}
 #| echo: false
