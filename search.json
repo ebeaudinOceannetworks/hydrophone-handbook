@@ -188,25 +188,5 @@
     "crumbs": [
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>13. Science and Publications</span>"
     ]
-  },
-  {
-    "objectID": "sections/14-community-observatories.html",
-    "href": "sections/14-community-observatories.html",
-    "title": "14. Coastal Observatories",
-    "section": "",
-    "text": "Coastal Observatory hydrophone data use cases\nCoastal community observatories enable community members to conduct year-round continuous monitoring of their local ocean environments, collecting valuable baseline and time-series data for tracking the changing ocean conditions.\nONC collaborates with community partners to custom-design each observatory to meet local needs. This partnership recognises the value of place-based knowledge and pairs it with oceanographic instruments, high-tech design, training, and scientific support. The observatory data can be used by researchers, community members, Indigenous leaders, governments and others to inform decision-making for a sustainable ocean future.\nClick on a marker to view projects using data from a Coastal Observatory hydrophone.\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Coastal Observatories</span>"
-    ]
-  },
-  {
-    "objectID": "sections/14-community-observatories.html#what-is-a-coastal-observatory",
-    "href": "sections/14-community-observatories.html#what-is-a-coastal-observatory",
-    "title": "14. Coastal Observatories",
-    "section": "What is a Coastal Observatory?",
-    "text": "What is a Coastal Observatory?\nLearn about the Cambridge Bay Coastal Community Observatory in this interactive ArcGIS StoryMap.",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>14. Coastal Observatories</span>"
-    ]
   }
 ]
