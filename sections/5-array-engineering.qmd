@@ -159,13 +159,13 @@ In practice we delay each channel so a chosen steering direction lines up, then 
 
 Three design rules matter:
 
-* **Spacing vs frequency:** To avoid spatial aliasing, spacing between elements should satisfy $d \leq \lambda/2 = c/(2f)$. A **1 m** aperture sets an upper limit of **~750 Hz** for sound directionality, which is well suited for low-frequency sources like humpback whales, fin whales and earthquakes.
+* **Spacing vs frequency:** To avoid spatial aliasing, spacing between elements ($d$) should satisfy $d \leq \lambda/2 = c/(2f)$, where $\lambda$ the wavelength, $f$ is the frequency, and $c$ is the sound speed. A **1-m** aperture sets an upper limit of **~750 Hz** for sound directionality, which is well suited for low-frequency sources like humpback whales, fin whales and earthquakes.
 * **Timing:** Channel-to-channel synchronization must be *better than* one sample period. That is the job of the ONC Link (cabled) or the recorder’s common clock on autonomous devices.
 * **Geometry:** A line array is directional in one plane; a box or tetrahedral array gives a 3-D arrival angle, still without range.
 
 # Deployment
 
-At ONC, most hydrophones are deployed using a Remotely Operated Vehicles (ROV); which is a tethered, unoccupied underwater robots used to explore, inspect, and work in too deep or dangerous ocean environments.
+At ONC, most hydrophones are deployed using a Remotely Operated Vehicles (ROV); which is a tethered, unoccupied underwater robots used to work in too deep or difficult to access ocean environments.
 
 <!--
 

@@ -88,6 +88,7 @@ Here are a few applications:
 ::: {.intro-territory}
 ::: {.callout-note appearance="minimal"}
 ## Territory acknowledgment
-We recognize that Ocean Networks Canada conducts its activities on the traditional lands of the Lək̓ʷəŋən (Lekwungen) people, known today as the Songhees and Esquimalt Nations, as well as the Xwsepsum (Esquimalt) and W̱SÁNEĆ peoples.
+We acknowledge and respect the Lək̓ʷəŋən (Songhees and Xʷsepsəm/Esquimalt) Peoples on whose territory the university stands, and the Lək̓ʷəŋən and W̱SÁNEĆ Peoples whose historical relationships with the land and sea continue to this day.
+We also acknowledge the Indigenous communities with whom we have the honour to partner on coastal monitoring and data management solutions.
 :::
 :::
