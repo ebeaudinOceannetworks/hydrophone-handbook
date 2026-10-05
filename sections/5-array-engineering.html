@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9fcb8d5e0c41499167cbab7fb937d956.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ae6d7d5b5c3d2dd4f83031b3c4beec79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -479,14 +479,14 @@ In practice we delay each channel so a chosen steering direction lines up, then 
 -->
 <p>Three design rules matter:</p>
 <ul>
-<li><strong>Spacing vs frequency:</strong> To avoid spatial aliasing, spacing between elements should satisfy <span class="math inline">\(d \leq \lambda/2 = c/(2f)\)</span>. A <strong>1 m</strong> aperture sets an upper limit of <strong>~750 Hz</strong> for sound directionality, which is well suited for low-frequency sources like humpback whales, fin whales and earthquakes.</li>
+<li><strong>Spacing vs frequency:</strong> To avoid spatial aliasing, spacing between elements (<span class="math inline">\(d\)</span>) should satisfy <span class="math inline">\(d \leq \lambda/2 = c/(2f)\)</span>, where <span class="math inline">\(\lambda\)</span> the wavelength, <span class="math inline">\(f\)</span> is the frequency, and <span class="math inline">\(c\)</span> is the sound speed. A <strong>1-m</strong> aperture sets an upper limit of <strong>~750 Hz</strong> for sound directionality, which is well suited for low-frequency sources like humpback whales, fin whales and earthquakes.</li>
 <li><strong>Timing:</strong> Channel-to-channel synchronization must be <em>better than</em> one sample period. That is the job of the ONC Link (cabled) or the recorder’s common clock on autonomous devices.</li>
 <li><strong>Geometry:</strong> A line array is directional in one plane; a box or tetrahedral array gives a 3-D arrival angle, still without range.</li>
 </ul>
 </section>
 <section id="deployment" class="level1">
 <h1>Deployment</h1>
-<p>At ONC, most hydrophones are deployed using a Remotely Operated Vehicles (ROV); which is a tethered, unoccupied underwater robots used to explore, inspect, and work in too deep or dangerous ocean environments.</p>
+<p>At ONC, most hydrophones are deployed using a Remotely Operated Vehicles (ROV); which is a tethered, unoccupied underwater robots used to work in too deep or difficult to access ocean environments.</p>
 <!--
 
 # Resources
