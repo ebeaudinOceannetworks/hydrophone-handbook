@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-ae6d7d5b5c3d2dd4f83031b3c4beec79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -312,6 +312,7 @@ window.Quarto = {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#audio-data" id="toc-audio-data" class="nav-link" data-scroll-target="#audio-data">Audio data</a></li>
   <li><a href="#hydrophone-spectral-data" id="toc-hydrophone-spectral-data" class="nav-link" data-scroll-target="#hydrophone-spectral-data">Hydrophone spectral data</a></li>
+  <li><a href="#hydrophone-spectral-data-2" id="toc-hydrophone-spectral-data-2" class="nav-link" data-scroll-target="#hydrophone-spectral-data-2">Hydrophone spectral data 2</a></li>
   <li><a href="#spectral-probability-density" id="toc-spectral-probability-density" class="nav-link" data-scroll-target="#spectral-probability-density">Spectral probability density</a></li>
   <li><a href="#auxiliary-data" id="toc-auxiliary-data" class="nav-link" data-scroll-target="#auxiliary-data">Auxiliary data</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
@@ -393,6 +394,12 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Derived</strong></td>
+<td style="text-align: left;">Hydrophone Spectral Data 2</td>
+<td style="text-align: center;"><code>HSD2</code> (204)</td>
+<td style="text-align: center;"><code>.mat</code>, <code>.png</code>, <code>.pdf</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Derived</strong></td>
 <td style="text-align: left;">Spectral Probability Density</td>
 <td style="text-align: center;"><code>HSPD</code> (51)</td>
 <td style="text-align: center;"><code>.mat</code>, <code>.png</code>, <code>.pdf</code></td>
@@ -472,6 +479,7 @@ window.Quarto = {
 <p><strong><code>.mat</code> — processed spectral data.</strong> MATLAB data format of 1-minute averaged calibrated spectral data with the device-specific sensitivity curve. Contains a <code>SpectData</code> structure with frequency bins (Hz) and power spectral density.</p>
 <p><strong><code>.fft</code> — proprietary spectral data (Ocean Sonics only).</strong> Broadband spectrogram files, roughly a raw version of the plot. They use a single broadband sensitivity (around −165 to −170 dB) rather than a frequency-dependent calibration curve, so they are preliminary and unfit for scientific research.</p>
 <p><strong><code>.png</code> / <code>.pdf</code> — spectrogram.</strong> A 2D heatmap of sound: time on the x-axis, frequency (Hz) on the y-axis, colour as sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span>.</p>
+<p>These files are precomputed, so they can be downloaded directly, including long time ranges assembled from files already on disk. For absolute calibrated levels, use <a href="#hydrophone-spectral-data-2">Hydrophone spectral data 2</a>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -567,24 +575,65 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="spectral-probability-density" class="level1">
-<h1>Spectral probability density</h1>
+<section id="hydrophone-spectral-data-2" class="level1">
+<h1>Hydrophone spectral data 2</h1>
 <div class="dp-panel">
 <div class="dp-split">
 <div class="dp-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Hydrophone spectral probability density plot."><img src="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="img-fluid figure-img" data-lightbox="true" alt="Hydrophone spectral probability density plot."></a></p>
-<figcaption>Hydrophone spectral probability density plot.</figcaption>
+<p><a href="../images/ICLISTENHF1252_20260814T210509.000Z-HSD2-spect.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="5-min HSD2 spectrogram of a boat passing by a hydrophone at Digby Island. Same recording as the HSD example above, with the updated calibration."><img src="../images/ICLISTENHF1252_20260814T210509.000Z-HSD2-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="5-min HSD2 spectrogram of a boat passing by a hydrophone at Digby Island. Same recording as the HSD example above, with the updated calibration."></a></p>
+<figcaption>5-min HSD2 spectrogram of a boat passing by a hydrophone at Digby Island. Same recording as the HSD example above, with the updated calibration.</figcaption>
 </figure>
 </div>
 </div>
 <div class="dp-copy">
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSPD / 51</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .png, .pdf, .mat</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD2 / 204</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .png, .pdf</span>
 </div>
-<p>The Spectral Probability Density is a statistical view of long-term ambient noise, originally proposed by <a href="https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient">Merchant et al.&nbsp;(2013)</a>. It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.</p>
+<p>Hydrophone Spectral Data 2.0 is the calibrated spectral product. Oceans 3.0 builds each file on request from the source audio, or from FFT data when the audio is missing. The processing follows <a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12330">Merchant et al.&nbsp;(2015)</a> and <a href="https://www.iso.org/standard/82844.html">ISO 7605:2025</a>, and it is the product to use when the levels need to be absolute power spectral density.</p>
+<table class="caption-top table">
+<caption>When to use HSD or HSD2</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Use</th>
+<th style="text-align: center;">HSD</th>
+<th style="text-align: center;">HSD2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Bioacoustics</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Long products from precomputed files</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Absolute calibrated levels</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Direct download of precomputed files</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">no</td>
+</tr>
+</tbody>
+</table>
+<p>Keep a search to <strong>3 months or less</strong>.</p>
+<p><strong><code>.mat</code> — calibrated spectral data.</strong> MATLAB file with a <code>SpectData</code> structure: frequency bins (Hz), power spectral density, and <code>isCalibrated</code>. The default is a 1-minute average. The same option can return the spectrogram-resolution spectra or the full-resolution spectra.</p>
+<p><strong><code>.png</code> / <code>.pdf</code> — spectrogram.</strong> Same axes as HSD: time, frequency (Hz), and colour as sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span> when a calibration curve exists. The Digby Island figure is the same five minutes as the HSD example, with the updated calibration.</p>
+<p>How to read the plot is the same as for <a href="#hydrophone-spectral-data">Hydrophone spectral data</a>. Full processing notes are on the <a href="https://wiki.oceannetworks.ca/spaces/DP/pages/299139157/204">product page</a>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -598,6 +647,72 @@ window.Quarto = {
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>HSD2 is calculated from the WAV, FLAC, or HYD audio (or from FFT files when that is all that is available) and the device calibration curve. The curve is frequency-specific and can change over a deployment. Bins outside the calibrated band are left out of the plot, even if the hydrophone recorded them.</p>
+<p>When a calibration is available, levels are <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span> and <code>SpectData.isCalibrated</code> is true. Without one, levels are dB relative to full scale and <code>SpectData.isCalibrated</code> is false. Spectrograms filled from FFT files use a single-point calibration and are less accurate than those made from calibrated audio.</p>
+<p>Downsampling for the one-minute MAT files and for the spectrogram pixels is a block average in linear space, so the log-scaled plot is not distorted by the renderer. The raw calibrated spectra, the one-minute averages, and the values drawn on the plot are all available from the MAT file through <code>dpo_spectralDataDownsample</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand for API options
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>dpo_hydrophoneAcquisitionMode</code>: <code>"All"</code> (default), <code>"LF"</code>, <code>"HF"</code></li>
+<li><code>dpo_hydrophoneChannel</code>: <code>"H1"</code> (default), <code>"H2"</code>, <code>"H3"</code>, <code>"All"</code></li>
+<li><code>dpo_hydrophoneDataDiversionMode</code>: <code>"OD"</code> (default, original data), <code>"LPF"</code>, <code>"HPF"</code>, <code>"All"</code></li>
+<li><code>dpo_spectrogramSource</code> (PNG/PDF): <code>"MIX"</code> (default, audio preferred, FFT fills gaps), <code>"WAVFLAC"</code>, <code>"FFT"</code></li>
+<li><code>dpo_spectrogramConcatenation</code>: <code>"None"</code> (default for PNG/PDF), <code>"Concatenate"</code> (default for MAT), <code>"Daily"</code>, <code>"Weekly"</code>, <code>"Adjacent"</code> (PNG/PDF, searches of 5 minutes or less)</li>
+<li><code>dpo_spectralDataDownsample</code> (MAT): <code>"1"</code> (default, one-minute average), <code>"2"</code> (spectrogram resolution), <code>"0"</code> (full resolution)</li>
+<li><code>dpo_spectrogramColourPalette</code> (PNG/PDF): <code>"0"</code> (default), <code>"1"</code>, <code>"2"</code>, <code>"3"</code>, <code>"4"</code>, <code>"5"</code></li>
+<li><code>dpo_lowerColourLimit</code> / <code>dpo_upperColourLimit</code> (PNG/PDF): <code>"-1000"</code> (default, use device calibration); otherwise −160 to 140</li>
+<li><code>dpo_spectrogramFrequencyUpperLimit</code> (PNG/PDF): <code>"-1"</code> (default, use calibration / sample rate); otherwise 100 to 500000 Hz</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="spectral-probability-density" class="level1">
+<h1>Spectral probability density</h1>
+<div class="dp-panel">
+<div class="dp-split">
+<div class="dp-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Hydrophone spectral probability density plot."><img src="../images/ICLISTENHF6021_20250910T211503.000Z_20251010T000000.000Z-SPD.png" class="img-fluid figure-img" data-lightbox="true" alt="Hydrophone spectral probability density plot."></a></p>
+<figcaption>Hydrophone spectral probability density plot.</figcaption>
+</figure>
+</div>
+</div>
+<div class="dp-copy">
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSPD / 51</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .png, .pdf, .mat</span>
+</div>
+<p>The Spectral Probability Density is a statistical view of long-term ambient noise, originally proposed by <a href="https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient">Merchant et al.&nbsp;(2013)</a>. It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Expand to learn more about the method
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For a band-pass filtered signal <span class="math inline">\(x(t, f, \Delta f)\)</span>, the mean square acoustic pressure within bandwidth <span class="math inline">\(\Delta f\)</span> over observation period <span class="math inline">\(T\)</span> is given by:</p>
 <p><span class="math display">\[
@@ -613,7 +728,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -622,7 +737,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><code>dpo_filePlotBreaks</code>: <code>"0"</code> None (configuration changes only), <code>"1"</code> Daily, <code>"2"</code> Weekly (default), <code>"3"</code> Hourly, <code>"4"</code> Monthly, <code>"5"</code> Yearly</li>
@@ -644,7 +759,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 <div class="dp-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/aux-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."><img src="../images/aux-data.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."></a></p>
+<p><a href="../images/aux-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."><img src="../images/aux-data.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."></a></p>
 <figcaption>Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature.</figcaption>
 </figure>
 </div>
@@ -659,7 +774,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -668,7 +783,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>LF (<code>.txt</code>) and HACC (<code>.acc</code>) have no extra <code>dpo_*</code> options. There is no single <code>AUX</code> code: order <strong>LF</strong> for the engineering log and <strong>HACC</strong> for acceleration. Calibration files use <strong>HCF</strong>.</p>
 </div>
@@ -687,6 +802,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
     <!-- <li><a href="https://internal.oceannetworks.ca/spaces/DS/pages/7639165/Hydrophone+Matlab+Postprocess+Jobs">Hydrophone MATLAB Post-process Jobs</a></li> -->
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758104/7">Data Product: Audio Data (7)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45">Data Product: Hydrophone Spectral Data (45)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/299139157/204">Data Product: Hydrophone Spectral Data 2.0 (204)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51">Data Product: Hydrophone Spectral Probability Density (51)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146">Data Product: Spectrogram For Hydrophone Viewer (146)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128">Data Product: Hydrophone Acceleration Data (128)</a></li>
