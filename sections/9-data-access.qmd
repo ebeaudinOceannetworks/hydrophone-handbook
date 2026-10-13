@@ -141,7 +141,7 @@ Visit [Oceans 3.0 profile](https://data.oceannetworks.ca/Profile) (Web Services 
 Files are archived almost near-real-time. Downloading using this option is usually much faster.
 
 * **Order data product**: Oceans 3.0 can *build a new file for you*, with several options to pick from, including resampled audio files or a spectrogram with your own colour limits or frequency range.
-Depending on the request, it can take anywhere from a minute to several hours.
+Depending on the request, it can take anywhere from a minute to several hours. `HSD2` is only available this way: each file is generated from the source audio, and it is not in the pre-generated archive.
 
 A simple rule: **if an existing file would do, use Archive.**
 
@@ -217,6 +217,50 @@ FALLBACK_PRODUCTS = [
             },
             {
                 "extension": "png",
+                "options": [
+                    {"option": "dpo_hydrophoneAcquisitionMode", "allowableValues": ["All", "LF", "HF"], "defaultValue": "All"},
+                    {"option": "dpo_hydrophoneChannel", "allowableValues": ["H1", "H2", "H3", "All"], "defaultValue": "H1"},
+                    {"option": "dpo_hydrophoneDataDiversionMode", "allowableValues": ["OD", "LPF", "HPF", "All"], "defaultValue": "OD"},
+                    {"option": "dpo_lowerColourLimit", "allowableRange": {"lowerBound": "-160", "upperBound": "140"}, "allowableValues": ["-1000"], "defaultValue": "-1000"},
+                    {"option": "dpo_upperColourLimit", "allowableRange": {"lowerBound": "-160", "upperBound": "140"}, "allowableValues": ["-1000"], "defaultValue": "-1000"},
+                    {"option": "dpo_spectrogramColourPalette", "allowableValues": ["0", "1", "2", "3", "4", "5"], "defaultValue": "0"},
+                    {"option": "dpo_spectrogramConcatenation", "allowableValues": ["None", "Daily", "Weekly", "Adjacent"], "defaultValue": "None"},
+                    {"option": "dpo_spectrogramFrequencyUpperLimit", "allowableValues": ["-1", "1000", "10000"], "allowableRange": {"lowerBound": "100", "upperBound": "500000"}, "defaultValue": "-1"},
+                    {"option": "dpo_spectrogramSource", "allowableValues": ["MIX", "WAVFLAC", "FFT"], "defaultValue": "MIX"},
+                ],
+            },
+        ],
+    },
+    {
+        "code": "HSD2",
+        "name": "Hydrophone Spectral Data 2.0",
+        "formats": [
+            {
+                "extension": "mat",
+                "options": [
+                    {"option": "dpo_hydrophoneAcquisitionMode", "allowableValues": ["All", "LF", "HF"], "defaultValue": "All"},
+                    {"option": "dpo_hydrophoneChannel", "allowableValues": ["H1", "H2", "H3", "All"], "defaultValue": "H1"},
+                    {"option": "dpo_hydrophoneDataDiversionMode", "allowableValues": ["OD", "LPF", "HPF", "All"], "defaultValue": "OD"},
+                    {"option": "dpo_spectralDataDownsample", "allowableValues": ["0", "1", "2"], "defaultValue": "1"},
+                    {"option": "dpo_spectrogramConcatenation", "allowableValues": ["Daily", "Concatenate", "None"], "defaultValue": "Concatenate"},
+                ],
+            },
+            {
+                "extension": "png",
+                "options": [
+                    {"option": "dpo_hydrophoneAcquisitionMode", "allowableValues": ["All", "LF", "HF"], "defaultValue": "All"},
+                    {"option": "dpo_hydrophoneChannel", "allowableValues": ["H1", "H2", "H3", "All"], "defaultValue": "H1"},
+                    {"option": "dpo_hydrophoneDataDiversionMode", "allowableValues": ["OD", "LPF", "HPF", "All"], "defaultValue": "OD"},
+                    {"option": "dpo_lowerColourLimit", "allowableRange": {"lowerBound": "-160", "upperBound": "140"}, "allowableValues": ["-1000"], "defaultValue": "-1000"},
+                    {"option": "dpo_upperColourLimit", "allowableRange": {"lowerBound": "-160", "upperBound": "140"}, "allowableValues": ["-1000"], "defaultValue": "-1000"},
+                    {"option": "dpo_spectrogramColourPalette", "allowableValues": ["0", "1", "2", "3", "4", "5"], "defaultValue": "0"},
+                    {"option": "dpo_spectrogramConcatenation", "allowableValues": ["None", "Daily", "Weekly", "Adjacent"], "defaultValue": "None"},
+                    {"option": "dpo_spectrogramFrequencyUpperLimit", "allowableValues": ["-1", "1000", "10000"], "allowableRange": {"lowerBound": "100", "upperBound": "500000"}, "defaultValue": "-1"},
+                    {"option": "dpo_spectrogramSource", "allowableValues": ["MIX", "WAVFLAC", "FFT"], "defaultValue": "MIX"},
+                ],
+            },
+            {
+                "extension": "pdf",
                 "options": [
                     {"option": "dpo_hydrophoneAcquisitionMode", "allowableValues": ["All", "LF", "HF"], "defaultValue": "All"},
                     {"option": "dpo_hydrophoneChannel", "allowableValues": ["H1", "H2", "H3", "All"], "defaultValue": "H1"},
@@ -394,7 +438,7 @@ if token:
         locations = _fallback_locations(names)
 
 # SHV is built for the Hydrophone Viewer and cannot be ordered through the API.
-HYDRO_PRODUCTS = ["AD", "HSD", "HSPD", "LF", "HCF", "HACC", "HARD", "TSSD"]
+HYDRO_PRODUCTS = ["AD", "HSD", "HSD2", "HSPD", "LF", "HCF", "HACC", "HARD", "TSSD"]
 products = [p for p in products if p["code"] in HYDRO_PRODUCTS]
 products.sort(key=lambda p: (HYDRO_PRODUCTS.index(p["code"]), p["name"]))
 

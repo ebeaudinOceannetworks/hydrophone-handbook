@@ -16,6 +16,7 @@ Hydrophone data files are generated in 5-minute intervals, categorized as either
 | **Raw** | Acceleration Data | `HACC` (128) | `.acc` |
 | **Raw** | Auxiliary Log File | `LF` (4) | `.txt` |
 | **Derived** | Hydrophone Spectral Data | `HSD` (45, 146) | `.fft`, `.mat`, `.png`, `.pdf`, `.oct` |
+| **Derived** | Hydrophone Spectral Data 2 | `HSD2` (204) | `.mat`, `.png`, `.pdf` |
 | **Derived** | Spectral Probability Density | `HSPD` (51) | `.mat`, `.png`, `.pdf` |
 
 : Hydrophone Data Products {tbl-colwidths="[15,40,15,30]"}
@@ -94,6 +95,8 @@ This data product is a practical way for quick-checks without processing terabyt
 
 **`.png` / `.pdf` — spectrogram.** A 2D heatmap of sound: time on the x-axis, frequency (Hz) on the y-axis, colour as sound level in $\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}$.
 
+These files are precomputed, so they can be downloaded directly, including long time ranges assembled from files already on disk. For absolute calibrated levels, use [Hydrophone spectral data 2](#hydrophone-spectral-data-2).
+
 :::
 
 :::
@@ -153,6 +156,77 @@ ONC spectrogram settings in the example above:
 * `dpo_spectrogramSource` (PNG/PDF): `"MIX"` (default, audio preferred, FFT fills gaps), `"WAVFLAC"`, `"FFT"`
 * `dpo_spectrogramConcatenation`: `"None"` (default for PNG/PDF), `"Concatenate"` (default for MAT), `"Daily"`, `"Weekly"`, `"Adjacent"` (PNG/PDF, searches of 5 minutes or less)
 * `dpo_spectralDataDownsample` (MAT): `"1"` (default, one-minute, pre-generated), `"2"` (spectrogram resolution), `"0"` (full resolution)
+* `dpo_spectrogramColourPalette` (PNG/PDF): `"0"` (default), `"1"`, `"2"`, `"3"`, `"4"`, `"5"`
+* `dpo_lowerColourLimit` / `dpo_upperColourLimit` (PNG/PDF): `"-1000"` (default, use device calibration); otherwise −160 to 140
+* `dpo_spectrogramFrequencyUpperLimit` (PNG/PDF): `"-1"` (default, use calibration / sample rate); otherwise 100 to 500000 Hz
+:::
+
+:::
+
+# Hydrophone spectral data 2
+
+::: {.dp-panel}
+
+::: {.dp-split}
+
+::: {.dp-visual}
+![5-min HSD2 spectrogram of a boat passing by a hydrophone at Digby Island. Same recording as the HSD example above, with the updated calibration.](../images/ICLISTENHF1252_20260814T210509.000Z-HSD2-spect.png){lightbox=true}
+:::
+
+::: {.dp-copy}
+
+```{=html}
+<div class="dp-meta">
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD2 / 204</span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .png, .pdf</span>
+</div>
+```
+
+Hydrophone Spectral Data 2.0 is the calibrated spectral product. Oceans 3.0 builds each file on request from the source audio, or from FFT data when the audio is missing. The processing follows [Merchant et al. (2015)](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12330) and [ISO 7605:2025](https://www.iso.org/standard/82844.html), and it is the product to use when the levels need to be absolute power spectral density.
+
+| Use | HSD | HSD2 |
+| :--- | :---: | :---: |
+| Bioacoustics | yes | yes |
+| Long products from precomputed files | yes | no |
+| Absolute calibrated levels | no | yes |
+| Direct download of precomputed files | yes | no |
+
+: When to use HSD or HSD2 {tbl-colwidths="[50,25,25]"}
+
+Keep a search to **3 months or less**.
+
+**`.mat` — calibrated spectral data.** MATLAB file with a `SpectData` structure: frequency bins (Hz), power spectral density, and `isCalibrated`.
+The default is a 1-minute average. The same option can return the spectrogram-resolution spectra or the full-resolution spectra.
+
+**`.png` / `.pdf` — spectrogram.** Same axes as HSD: time, frequency (Hz), and colour as sound level in $\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}$ when a calibration curve exists.
+The Digby Island figure is the same five minutes as the HSD example, with the updated calibration.
+
+How to read the plot is the same as for [Hydrophone spectral data](#hydrophone-spectral-data). Full processing notes are on the [product page](https://wiki.oceannetworks.ca/spaces/DP/pages/299139157/204).
+
+:::
+
+:::
+
+::: {.callout-note collapse="true"}
+## Expand to learn more about the method
+
+HSD2 is calculated from the WAV, FLAC, or HYD audio (or from FFT files when that is all that is available) and the device calibration curve. The curve is frequency-specific and can change over a deployment. Bins outside the calibrated band are left out of the plot, even if the hydrophone recorded them.
+
+When a calibration is available, levels are $\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}$ and `SpectData.isCalibrated` is true. Without one, levels are dB relative to full scale and `SpectData.isCalibrated` is false. Spectrograms filled from FFT files use a single-point calibration and are less accurate than those made from calibrated audio.
+
+Downsampling for the one-minute MAT files and for the spectrogram pixels is a block average in linear space, so the log-scaled plot is not distorted by the renderer. The raw calibrated spectra, the one-minute averages, and the values drawn on the plot are all available from the MAT file through `dpo_spectralDataDownsample`.
+
+:::
+
+::: {.callout-note collapse="true"}
+## Expand for API options
+
+* `dpo_hydrophoneAcquisitionMode`: `"All"` (default), `"LF"`, `"HF"`
+* `dpo_hydrophoneChannel`: `"H1"` (default), `"H2"`, `"H3"`, `"All"`
+* `dpo_hydrophoneDataDiversionMode`: `"OD"` (default, original data), `"LPF"`, `"HPF"`, `"All"`
+* `dpo_spectrogramSource` (PNG/PDF): `"MIX"` (default, audio preferred, FFT fills gaps), `"WAVFLAC"`, `"FFT"`
+* `dpo_spectrogramConcatenation`: `"None"` (default for PNG/PDF), `"Concatenate"` (default for MAT), `"Daily"`, `"Weekly"`, `"Adjacent"` (PNG/PDF, searches of 5 minutes or less)
+* `dpo_spectralDataDownsample` (MAT): `"1"` (default, one-minute average), `"2"` (spectrogram resolution), `"0"` (full resolution)
 * `dpo_spectrogramColourPalette` (PNG/PDF): `"0"` (default), `"1"`, `"2"`, `"3"`, `"4"`, `"5"`
 * `dpo_lowerColourLimit` / `dpo_upperColourLimit` (PNG/PDF): `"-1000"` (default, use device calibration); otherwise −160 to 140
 * `dpo_spectrogramFrequencyUpperLimit` (PNG/PDF): `"-1"` (default, use calibration / sample rate); otherwise 100 to 500000 Hz
@@ -266,6 +340,7 @@ LF (`.txt`) and HACC (`.acc`) have no extra `dpo_*` options. There is no single 
     <!-- <li><a href="https://internal.oceannetworks.ca/spaces/DS/pages/7639165/Hydrophone+Matlab+Postprocess+Jobs">Hydrophone MATLAB Post-process Jobs</a></li> -->
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758104/7">Data Product: Audio Data (7)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45">Data Product: Hydrophone Spectral Data (45)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/299139157/204">Data Product: Hydrophone Spectral Data 2.0 (204)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/46990690/51">Data Product: Hydrophone Spectral Probability Density (51)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146">Data Product: Spectrogram For Hydrophone Viewer (146)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128">Data Product: Hydrophone Acceleration Data (128)</a></li>

@@ -209,10 +209,11 @@
 
   // SHV is generated for the Hydrophone Viewer and is not orderable through
   // dataProductDelivery, so it is deliberately absent here.
-  const PRODUCT_ORDER = ["AD", "HSD", "HSPD", "LF", "HCF", "HACC", "HARD", "TSSD"];
+  const PRODUCT_ORDER = ["AD", "HSD", "HSD2", "HSPD", "LF", "HCF", "HACC", "HARD", "TSSD"];
   const PRODUCT_LABELS = {
     AD: "AD — Audio Data",
     HSD: "HSD — Hydrophone Spectral Data",
+    HSD2: "HSD2 — Hydrophone Spectral Data 2.0",
     HSPD: "HSPD — Spectral Probability Density",
     LF: "LF — log / auxiliary file",
     HCF: "HCF — calibration files",
@@ -223,6 +224,7 @@
   const PRODUCT_FAMILIES = {
     AD: null,
     HSD: null,
+    HSD2: null,
     HSPD: null,
     LF: ["ocean-sonics", "other"],
     HCF: null,
@@ -281,7 +283,7 @@
     const hint = $("api-product-hint");
     if (hint) {
       const families = familiesForSelection(catalog).families;
-      const base = "AD is the acoustic data; HSD and HSPD are spectral. HACC and TSSD are ancillary " +
+      const base = "AD is the acoustic data; HSD, HSD2, and HSPD are spectral. HACC and TSSD are ancillary " +
         "instrument readings, not sound.";
       hint.textContent = families.indexOf("ios") === -1
         ? base
