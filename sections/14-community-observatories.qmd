@@ -12,13 +12,14 @@ The observatory data can be used by researchers, community members, Indigenous l
 
 ## Coastal Observatory hydrophone data use cases
 
-*Click on a marker to view projects using data from a Coastal Observatory hydrophone.*
+*Click a marker to see how many hydrophone use cases each observatory has, by category.*
 
 ```{python}
 #| echo: false
 #| message: false
 #| warning: false
 
+import html
 import pandas as pd
 import folium
 
@@ -33,6 +34,64 @@ coords = {
     "Burrard Inlet":    {"lat": 49.2982, "lon": -123.0033}
 }
 
+# Popup categories: label, colour, and a small line icon.
+categories = {
+    "Published paper": {
+        "one": "Published paper",
+        "many": "Published papers",
+        "color": "#3468a8",
+        "icon": "books",
+    },
+    "Education & outreach": {
+        "one": "Outreach",
+        "many": "Outreach",
+        "color": "#e06a32",
+        "icon": "people",
+    },
+    "PhD/ Masters thesis": {
+        "one": "Masters/PhD thesis",
+        "many": "Masters/PhD theses",
+        "color": "#7b4ea3",
+        "icon": "cap",
+    },
+    "Student research": {
+        "one": "Student research",
+        "many": "Student research",
+        "color": "#c4893a",
+        "icon": "pencil",
+    },
+    "Environmental monitoring": {
+        "one": "Environmental monitoring",
+        "many": "Environmental monitoring",
+        "color": "#3c9a5c",
+        "icon": "leaf",
+    },
+    "Environmental management": {
+        "one": "Environmental management",
+        "many": "Environmental management",
+        "color": "#3a8494",
+        "icon": "clipboard",
+    },
+    "Industry & technology applications": {
+        "one": "Industry & technology application",
+        "many": "Industry & technology applications",
+        "color": "#5c6bc0",
+        "icon": "factory",
+    },
+}
+
+icons = {
+    "books": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+    "people": '<svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><circle cx="4.2" cy="9" r="1.7"/><path d="M1.1 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7H1.1z"/><circle cx="19.8" cy="9" r="1.7"/><path d="M16.7 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7h-6.2z"/><circle cx="12" cy="7.2" r="2.15"/><path d="M8 18.5c.45-2.9 1.95-4.6 4-4.6s3.55 1.7 4 4.6H8z"/></svg>',
+    "cap": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11.5V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-4.5"/></svg>',
+    "pencil": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4z"/></svg>',
+    "leaf": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 0 14-8 14-14-6 0-14 6-14 14z"/><path d="M9 15c2-2.5 4.5-4.2 7-5"/></svg>',
+    "clipboard": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 4h6v2.2H9z"/><path d="M9 12h6M9 16h4"/></svg>',
+    "factory": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l5 3V10l5 3V8h8v13z"/><path d="M3 21h18"/></svg>',
+}
+
+pin = '<svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e15b4a" d="M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.3" fill="#fff"/></svg>'
+
 # 2. Read Excel sheet & clean up
 df = pd.read_excel('../docs/Coastal Observatory hydrophone use cases.xlsx')
 df = df.rename(columns={'CCO': 'location'})
@@ -40,62 +99,99 @@ df = df.rename(columns={'CCO': 'location'})
 if 'Sensor type' in df.columns:
     df = df[df['Sensor type'].str.contains('Hydrophone', case=False, na=False)]
 
+# In-progress studies stay off the map to protect privacy.
+df = df[df['Use case category'] != 'In progress study']
+df = df.dropna(subset=['location', 'Use case category'])
+
 # Map coordinates
 df['lat'] = df['location'].map(lambda x: coords.get(x, {}).get('lat'))
 df['lon'] = df['location'].map(lambda x: coords.get(x, {}).get('lon'))
+df = df.dropna(subset=['lat', 'lon'])
 
 # 3. Initialize Map
 m = folium.Map(
-    location=[62.0, -110.0], 
-    zoom_start=4, 
+    location=[62.0, -110.0],
+    zoom_start=4,
     tiles="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     attr="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors &copy; <a href='https://carto.com/attributions'>CARTO</a>"
 )
 
-# 4. Group by location and construct scrollable popups
+m.get_root().html.add_child(folium.Element("""
+<style>
+.leaflet-popup-content-wrapper {
+  position: relative;
+  border-radius: 16px;
+  padding: 8px 2px 10px;
+  box-shadow: none;
+  filter: drop-shadow(0 8px 18px rgba(16, 32, 51, 0.16));
+  overflow: visible;
+}
+.leaflet-popup-content-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  margin-left: -11px;
+  border-width: 11px 11px 0;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+.leaflet-popup-content { margin: 14px 16px 12px; }
+.leaflet-popup-tip-container { display: none; }
+</style>
+"""))
+
+def category_card(category, count):
+    meta = categories.get(category)
+    if meta is None:
+        label = category
+        color = "#5c6b7a"
+        icon = ""
+    else:
+        label = meta["one"] if count == 1 else meta["many"]
+        color = meta["color"]
+        icon = icons[meta["icon"]]
+    return (
+        '<div style="display:flex;align-items:center;gap:10px;padding:8px 10px;'
+        f'border:1px solid {color};border-radius:12px;background:#fff;">'
+        f'<span style="flex:none;width:26px;height:26px;border-radius:50%;background:{color};'
+        'display:flex;align-items:center;justify-content:center;">'
+        f'{icon}</span>'
+        '<span style="font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;">'
+        f'<span style="font-weight:800;">{count}</span> {html.escape(label)}</span></div>'
+    )
+
+# 4. One marker per observatory, with a count for each category
 grouped = df.groupby(['location', 'lat', 'lon'])
 
 for (loc_name, lat, lon), group in grouped:
-    project_blocks = ""
-    
-    n=0
-    for _, row in group.iterrows():
-        title = row.get('Title/ summary', 'Community Project')
-        category = row.get('Use case category', 'General')
+    counts = group.groupby('Use case category')['Use case ID'].nunique()
+    ordered = [cat for cat in categories if counts.get(cat, 0)]
+    ordered += [cat for cat in counts.index if cat not in categories and counts.get(cat, 0)]
+    if not ordered:
+        continue
 
-        if category == 'In progress study':
-            continue # we don't display in progress projects to protect privacy
-        else:
+    total = int(sum(int(counts[cat]) for cat in ordered))
+    cards = "".join(category_card(cat, int(counts[cat])) for cat in ordered)
+    use_cases = "use case" if total == 1 else "use cases"
 
-            project_blocks += f"""
-            <div style="margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;">
-                <span style="background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">
-                    {category}
-                </span>
-                <div style="font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;">{title}</div>
-            </div>
-            """
-            n+=1
+    popup_content = (
+        '<div style="font-family:system-ui,-apple-system,sans-serif;width:236px;color:#1b2430;">'
+        '<div style="display:flex;align-items:flex-start;gap:8px;margin:0 10px 11px 0;">'
+        f'<span style="margin-top:3px;line-height:0;">{pin}</span>'
+        '<div>'
+        f'<div style="font-size:16px;font-weight:650;letter-spacing:-0.01em;line-height:1.2;">{html.escape(loc_name)}</div>'
+        f'<div style="margin-top:2px;font-size:12px;font-weight:500;color:#8b93a0;">{total} {use_cases}</div>'
+        '</div></div>'
+        f'<div style="display:flex;flex-direction:column;gap:7px;">{cards}</div>'
+        '</div>'
+    )
 
-    if n>0: # only add the ones with completed projects
-        # Scrollable popup wrapper (max-height triggers vertical scrollbar when needed)
-        popup_content = f"""
-        <div style="font-family: system-ui, -apple-system, sans-serif; line-height: 1.3;">
-            <h3 style="margin: 0 0 8px 0; font-size: 15px; color: #111; border-bottom: 2px solid #005A9C; padding-bottom: 4px;">
-                📍 {loc_name} <span style='font-size: 11px; font-weight: normal; color: #666;'>
-                <!-- ({n} project{'s' if n != 1 else ''})</span> -->
-            </h3>
-            <div style="max-height: 250px; overflow-y: auto; padding-right: 6px;">
-                {project_blocks}
-            </div>
-        </div>
-        """
-
-        folium.Marker(
-            location=[lat, lon],
-            popup=folium.Popup(popup_content, max_width=360),
-            icon=folium.Icon(color="blue", icon="info-sign")
-        ).add_to(m)
+    folium.Marker(
+        location=[lat, lon],
+        popup=folium.Popup(popup_content, max_width=280),
+        icon=folium.Icon(color="blue", icon="info-sign")
+    ).add_to(m)
 
 m
 ```

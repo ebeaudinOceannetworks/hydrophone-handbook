@@ -313,9 +313,9 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <section id="coastal-observatory-hydrophone-data-use-cases" class="level2">
 <h2 class="anchored" data-anchor-id="coastal-observatory-hydrophone-data-use-cases">Coastal Observatory hydrophone data use cases</h2>
-<p>Click on a marker to view projects using data from a Coastal Observatory hydrophone.</p>
-<div id="0ead206d" class="cell" data-message="false" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
+<p><em>Click a marker to see how many hydrophone use cases each observatory has, by category.</em></p>
+<div id="2eae15da" class="cell" data-message="false" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
 <html>
 <head>
@@ -335,7 +335,7 @@ ul.task-list li input[type="checkbox"] {
             <meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
             <style>
-                #map_93fc598408ab57f0061a96d25205861c {
+                #map_9925ee0f92ff2bd0a1d4c28ccf1597ea {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -372,14 +372,37 @@ ul.task-list li input[type="checkbox"] {
 <body>
     
     
-            <div class=&quot;folium-map&quot; id=&quot;map_93fc598408ab57f0061a96d25205861c&quot; ></div>
+<style>
+.leaflet-popup-content-wrapper {
+  position: relative;
+  border-radius: 16px;
+  padding: 8px 2px 10px;
+  box-shadow: none;
+  filter: drop-shadow(0 8px 18px rgba(16, 32, 51, 0.16));
+  overflow: visible;
+}
+.leaflet-popup-content-wrapper::after {
+  content: &quot;&quot;;
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  margin-left: -11px;
+  border-width: 11px 11px 0;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+.leaflet-popup-content { margin: 14px 16px 12px; }
+.leaflet-popup-tip-container { display: none; }
+</style>
+    
+            <div class=&quot;folium-map&quot; id=&quot;map_9925ee0f92ff2bd0a1d4c28ccf1597ea&quot; ></div>
         
 </body>
 <script>
     
     
-            var map_93fc598408ab57f0061a96d25205861c = L.map(
-                &quot;map_93fc598408ab57f0061a96d25205861c&quot;,
+            var map_9925ee0f92ff2bd0a1d4c28ccf1597ea = L.map(
+                &quot;map_9925ee0f92ff2bd0a1d4c28ccf1597ea&quot;,
                 {
                     center: [62.0, -110.0],
                     crs: L.CRS.EPSG3857,
@@ -396,7 +419,7 @@ ul.task-list li input[type="checkbox"] {
 
         
     
-            var tile_layer_af3ccd6f0464d029961f3534068f5985 = L.tileLayer(
+            var tile_layer_0a2ce6e95fbf321e577fc9def751152b = L.tileLayer(
                 &quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
                 {
   &quot;minZoom&quot;: 0,
@@ -413,17 +436,17 @@ ul.task-list li input[type="checkbox"] {
             );
         
     
-            tile_layer_af3ccd6f0464d029961f3534068f5985.addTo(map_93fc598408ab57f0061a96d25205861c);
+            tile_layer_0a2ce6e95fbf321e577fc9def751152b.addTo(map_9925ee0f92ff2bd0a1d4c28ccf1597ea);
         
     
-            var marker_f643ca9384f12ee4d733fa58238ed81c = L.marker(
+            var marker_705f5887c16acf11653aaeef064d1c15 = L.marker(
                 [69.1125, -105.0632],
                 {
 }
-            ).addTo(map_93fc598408ab57f0061a96d25205861c);
+            ).addTo(map_9925ee0f92ff2bd0a1d4c28ccf1597ea);
         
     
-            var icon_e7dff8748ae6a002b5415666259081b1 = L.AwesomeMarkers.icon(
+            var icon_0592d5068635f225ca2af4c1f22af8b3 = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;blue&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -434,34 +457,34 @@ ul.task-list li input[type="checkbox"] {
             );
         
     
-        var popup_afd7fa384ea6a58f94513d6a11f48096 = L.popup({
-  &quot;maxWidth&quot;: 360,
+        var popup_ad8f8186762df9eb1efdcd80ad0f32a6 = L.popup({
+  &quot;maxWidth&quot;: 280,
 });
 
         
             
-                var html_b9865d46ff8b79aa888e3a9c77db161b = $(`<div id=&quot;html_b9865d46ff8b79aa888e3a9c77db161b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>         <div style=&quot;font-family: system-ui, -apple-system, sans-serif; line-height: 1.3;&quot;>             <h3 style=&quot;margin: 0 0 8px 0; font-size: 15px; color: #111; border-bottom: 2px solid #005A9C; padding-bottom: 4px;&quot;>                 📍 Cambridge Bay <span style='font-size: 11px; font-weight: normal; color: #666;'>                 <!-- (10 projects)</span> -->             </h3>             <div style=&quot;max-height: 250px; overflow-y: auto; padding-right: 6px;&quot;>                              <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Published paper                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Shipping and Ice-Covered Waters – How Accurate Are The MSFD “Shipping Bands”?</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     PhD/ Masters thesis                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>The Role of Variable Oceanographic and Environmental Conditions on Acoustic Tracking Effectiveness</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Education &amp; outreach                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Kitikmeot Trade Show 2026 presentation</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Education &amp; outreach                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Long-term measurements of ambient sounds in Cambridge Bay (Canada), 2015–2024 – Implications for extending the MSFD to Arctic waters. 8th Underwater Acoustics Conference and Exhibition, June 15-20, 2025, Halkidiki, Macedonie (Greece)</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Education &amp; outreach                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Acoustic properties of Arctic sea ice, from year-long underwater measurements in Cambridge Bay, Canada. Abstract from International Conference on Underwater Acoustic</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Education &amp; outreach                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Create an interactive display using Cambridge Bay data</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Published paper                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Marine soundscapes of the Arctic and human impacts: going beyond the “shipping bands”</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     PhD/ Masters thesis                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Confronting Acoustic Data Scarcity: A Physics-Informed Approach to Trustworthy Machine Learning in Canada's Arctic</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Education &amp; outreach                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>In-Community Observatory Display in the Canadian High Arctic Research Station</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Education &amp; outreach                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Introduction to Ocean Acoustics Monitoring short course</div>             </div>                          </div>         </div>         </div>`)[0];
-                popup_afd7fa384ea6a58f94513d6a11f48096.setContent(html_b9865d46ff8b79aa888e3a9c77db161b);
+                var html_0a304f73b680a67f4957b2abdc56f679 = $(`<div id=&quot;html_0a304f73b680a67f4957b2abdc56f679&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><div style=&quot;font-family:system-ui,-apple-system,sans-serif;width:236px;color:#1b2430;&quot;><div style=&quot;display:flex;align-items:flex-start;gap:8px;margin:0 10px 11px 0;&quot;><span style=&quot;margin-top:3px;line-height:0;&quot;><svg width=&quot;13&quot; height=&quot;13&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;><path fill=&quot;#e15b4a&quot; d=&quot;M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z&quot;/><circle cx=&quot;12&quot; cy=&quot;10&quot; r=&quot;2.3&quot; fill=&quot;#fff&quot;/></svg></span><div><div style=&quot;font-size:16px;font-weight:650;letter-spacing:-0.01em;line-height:1.2;&quot;>Cambridge Bay</div><div style=&quot;margin-top:2px;font-size:12px;font-weight:500;color:#8b93a0;&quot;>10 use cases</div></div></div><div style=&quot;display:flex;flex-direction:column;gap:7px;&quot;><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #3468a8;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#3468a8;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M4 19.5A2.5 2.5 0 0 1 6.5 17H20&quot;/><path d=&quot;M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>2</span> Published papers</span></div><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #e06a32;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#e06a32;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;#fff&quot;><circle cx=&quot;4.2&quot; cy=&quot;9&quot; r=&quot;1.7&quot;/><path d=&quot;M1.1 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7H1.1z&quot;/><circle cx=&quot;19.8&quot; cy=&quot;9&quot; r=&quot;1.7&quot;/><path d=&quot;M16.7 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7h-6.2z&quot;/><circle cx=&quot;12&quot; cy=&quot;7.2&quot; r=&quot;2.15&quot;/><path d=&quot;M8 18.5c.45-2.9 1.95-4.6 4-4.6s3.55 1.7 4 4.6H8z&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>6</span> Outreach</span></div><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #7b4ea3;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#7b4ea3;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M2 9l10-5 10 5-10 5L2 9z&quot;/><path d=&quot;M6 11.5V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-4.5&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>2</span> Masters/PhD theses</span></div></div></div></div>`)[0];
+                popup_ad8f8186762df9eb1efdcd80ad0f32a6.setContent(html_0a304f73b680a67f4957b2abdc56f679);
             
         
 
-        marker_f643ca9384f12ee4d733fa58238ed81c.bindPopup(popup_afd7fa384ea6a58f94513d6a11f48096)
+        marker_705f5887c16acf11653aaeef064d1c15.bindPopup(popup_ad8f8186762df9eb1efdcd80ad0f32a6)
         ;
 
         
     
     
-                marker_f643ca9384f12ee4d733fa58238ed81c.setIcon(icon_e7dff8748ae6a002b5415666259081b1);
+                marker_705f5887c16acf11653aaeef064d1c15.setIcon(icon_0592d5068635f225ca2af4c1f22af8b3);
             
     
-            var marker_279cb96c8d297b055f63c7409bdcba28 = L.marker(
+            var marker_df798916b1c1ad831ff86934d69b1358 = L.marker(
                 [49.845, -125.0059],
                 {
 }
-            ).addTo(map_93fc598408ab57f0061a96d25205861c);
+            ).addTo(map_9925ee0f92ff2bd0a1d4c28ccf1597ea);
         
     
-            var icon_dbbd66f92b362ec3707bd2779da45717 = L.AwesomeMarkers.icon(
+            var icon_3f0bd5fa0f0bf6c2b3775e8b130947e3 = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;blue&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -472,34 +495,34 @@ ul.task-list li input[type="checkbox"] {
             );
         
     
-        var popup_0e1b4da210f7371ed7e08017fabcabc0 = L.popup({
-  &quot;maxWidth&quot;: 360,
+        var popup_d54770fe0494c7e11074abbe319ea6a2 = L.popup({
+  &quot;maxWidth&quot;: 280,
 });
 
         
             
-                var html_aecf7475dd03ac3b515ce3a9345d691d = $(`<div id=&quot;html_aecf7475dd03ac3b515ce3a9345d691d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>         <div style=&quot;font-family: system-ui, -apple-system, sans-serif; line-height: 1.3;&quot;>             <h3 style=&quot;margin: 0 0 8px 0; font-size: 15px; color: #111; border-bottom: 2px solid #005A9C; padding-bottom: 4px;&quot;>                 📍 Campbell River <span style='font-size: 11px; font-weight: normal; color: #666;'>                 <!-- (2 projects)</span> -->             </h3>             <div style=&quot;max-height: 250px; overflow-y: auto; padding-right: 6px;&quot;>                              <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Published paper                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Positive-Unlabelled Active Learning to Curate a Dataset for Orca Resident Interpretation</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Industry &amp; technology applications                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Validating vessel-noise detection algorithms</div>             </div>                          </div>         </div>         </div>`)[0];
-                popup_0e1b4da210f7371ed7e08017fabcabc0.setContent(html_aecf7475dd03ac3b515ce3a9345d691d);
+                var html_c3c2b27f866eb467ea699a1e67811455 = $(`<div id=&quot;html_c3c2b27f866eb467ea699a1e67811455&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><div style=&quot;font-family:system-ui,-apple-system,sans-serif;width:236px;color:#1b2430;&quot;><div style=&quot;display:flex;align-items:flex-start;gap:8px;margin:0 10px 11px 0;&quot;><span style=&quot;margin-top:3px;line-height:0;&quot;><svg width=&quot;13&quot; height=&quot;13&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;><path fill=&quot;#e15b4a&quot; d=&quot;M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z&quot;/><circle cx=&quot;12&quot; cy=&quot;10&quot; r=&quot;2.3&quot; fill=&quot;#fff&quot;/></svg></span><div><div style=&quot;font-size:16px;font-weight:650;letter-spacing:-0.01em;line-height:1.2;&quot;>Campbell River</div><div style=&quot;margin-top:2px;font-size:12px;font-weight:500;color:#8b93a0;&quot;>2 use cases</div></div></div><div style=&quot;display:flex;flex-direction:column;gap:7px;&quot;><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #3468a8;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#3468a8;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M4 19.5A2.5 2.5 0 0 1 6.5 17H20&quot;/><path d=&quot;M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Published paper</span></div><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #5c6bc0;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#5c6bc0;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M3 21V10l5 3V10l5 3V8h8v13z&quot;/><path d=&quot;M3 21h18&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Industry &amp;amp; technology application</span></div></div></div></div>`)[0];
+                popup_d54770fe0494c7e11074abbe319ea6a2.setContent(html_c3c2b27f866eb467ea699a1e67811455);
             
         
 
-        marker_279cb96c8d297b055f63c7409bdcba28.bindPopup(popup_0e1b4da210f7371ed7e08017fabcabc0)
+        marker_df798916b1c1ad831ff86934d69b1358.bindPopup(popup_d54770fe0494c7e11074abbe319ea6a2)
         ;
 
         
     
     
-                marker_279cb96c8d297b055f63c7409bdcba28.setIcon(icon_dbbd66f92b362ec3707bd2779da45717);
+                marker_df798916b1c1ad831ff86934d69b1358.setIcon(icon_3f0bd5fa0f0bf6c2b3775e8b130947e3);
             
     
-            var marker_432f8f77bb124b52b6fe8180d62a80bb = L.marker(
+            var marker_788893c5be1304b34a2b0945873cbebb = L.marker(
                 [49.1534, -124.7936],
                 {
 }
-            ).addTo(map_93fc598408ab57f0061a96d25205861c);
+            ).addTo(map_9925ee0f92ff2bd0a1d4c28ccf1597ea);
         
     
-            var icon_472e7a0b951fc0ed9bd5c38f7070edd6 = L.AwesomeMarkers.icon(
+            var icon_e41d49e35cfd426d3e46f9bc3115e387 = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;blue&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -510,34 +533,34 @@ ul.task-list li input[type="checkbox"] {
             );
         
     
-        var popup_b7e354e8f149ecc196728d8a5db88f9f = L.popup({
-  &quot;maxWidth&quot;: 360,
+        var popup_d68dfb1c1b63fd93e3809b0dce9d2413 = L.popup({
+  &quot;maxWidth&quot;: 280,
 });
 
         
             
-                var html_bc0d21e4981a5d2bbfda0db1535a37b4 = $(`<div id=&quot;html_bc0d21e4981a5d2bbfda0db1535a37b4&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>         <div style=&quot;font-family: system-ui, -apple-system, sans-serif; line-height: 1.3;&quot;>             <h3 style=&quot;margin: 0 0 8px 0; font-size: 15px; color: #111; border-bottom: 2px solid #005A9C; padding-bottom: 4px;&quot;>                 📍 China Creek <span style='font-size: 11px; font-weight: normal; color: #666;'>                 <!-- (1 project)</span> -->             </h3>             <div style=&quot;max-height: 250px; overflow-y: auto; padding-right: 6px;&quot;>                              <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Education &amp; outreach                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Creation of a sound track for an art installation on ocean health</div>             </div>                          </div>         </div>         </div>`)[0];
-                popup_b7e354e8f149ecc196728d8a5db88f9f.setContent(html_bc0d21e4981a5d2bbfda0db1535a37b4);
+                var html_e04ddcd5c449485879f5b86194caa198 = $(`<div id=&quot;html_e04ddcd5c449485879f5b86194caa198&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><div style=&quot;font-family:system-ui,-apple-system,sans-serif;width:236px;color:#1b2430;&quot;><div style=&quot;display:flex;align-items:flex-start;gap:8px;margin:0 10px 11px 0;&quot;><span style=&quot;margin-top:3px;line-height:0;&quot;><svg width=&quot;13&quot; height=&quot;13&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;><path fill=&quot;#e15b4a&quot; d=&quot;M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z&quot;/><circle cx=&quot;12&quot; cy=&quot;10&quot; r=&quot;2.3&quot; fill=&quot;#fff&quot;/></svg></span><div><div style=&quot;font-size:16px;font-weight:650;letter-spacing:-0.01em;line-height:1.2;&quot;>China Creek</div><div style=&quot;margin-top:2px;font-size:12px;font-weight:500;color:#8b93a0;&quot;>1 use case</div></div></div><div style=&quot;display:flex;flex-direction:column;gap:7px;&quot;><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #e06a32;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#e06a32;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;#fff&quot;><circle cx=&quot;4.2&quot; cy=&quot;9&quot; r=&quot;1.7&quot;/><path d=&quot;M1.1 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7H1.1z&quot;/><circle cx=&quot;19.8&quot; cy=&quot;9&quot; r=&quot;1.7&quot;/><path d=&quot;M16.7 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7h-6.2z&quot;/><circle cx=&quot;12&quot; cy=&quot;7.2&quot; r=&quot;2.15&quot;/><path d=&quot;M8 18.5c.45-2.9 1.95-4.6 4-4.6s3.55 1.7 4 4.6H8z&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Outreach</span></div></div></div></div>`)[0];
+                popup_d68dfb1c1b63fd93e3809b0dce9d2413.setContent(html_e04ddcd5c449485879f5b86194caa198);
             
         
 
-        marker_432f8f77bb124b52b6fe8180d62a80bb.bindPopup(popup_b7e354e8f149ecc196728d8a5db88f9f)
+        marker_788893c5be1304b34a2b0945873cbebb.bindPopup(popup_d68dfb1c1b63fd93e3809b0dce9d2413)
         ;
 
         
     
     
-                marker_432f8f77bb124b52b6fe8180d62a80bb.setIcon(icon_472e7a0b951fc0ed9bd5c38f7070edd6);
+                marker_788893c5be1304b34a2b0945873cbebb.setIcon(icon_e41d49e35cfd426d3e46f9bc3115e387);
             
     
-            var marker_8ca1ecb3e246970a5b3778d036ba9c9d = L.marker(
+            var marker_800200302657c47759d1f0e8237b006c = L.marker(
                 [54.2588, -130.4307],
                 {
 }
-            ).addTo(map_93fc598408ab57f0061a96d25205861c);
+            ).addTo(map_9925ee0f92ff2bd0a1d4c28ccf1597ea);
         
     
-            var icon_eb70c1614641f8da4a97d2a597646b86 = L.AwesomeMarkers.icon(
+            var icon_1e0ffc7adfe9c0748e58bd46d78c2fad = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;blue&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -548,34 +571,34 @@ ul.task-list li input[type="checkbox"] {
             );
         
     
-        var popup_6311a5af3458c49279266849a7ac1d09 = L.popup({
-  &quot;maxWidth&quot;: 360,
+        var popup_b32586ef6f8fd6bc1226f202ab65e06c = L.popup({
+  &quot;maxWidth&quot;: 280,
 });
 
         
             
-                var html_2ed5e6ba2cd6845720f618b872118202 = $(`<div id=&quot;html_2ed5e6ba2cd6845720f618b872118202&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>         <div style=&quot;font-family: system-ui, -apple-system, sans-serif; line-height: 1.3;&quot;>             <h3 style=&quot;margin: 0 0 8px 0; font-size: 15px; color: #111; border-bottom: 2px solid #005A9C; padding-bottom: 4px;&quot;>                 📍 Digby Island <span style='font-size: 11px; font-weight: normal; color: #666;'>                 <!-- (3 projects)</span> -->             </h3>             <div style=&quot;max-height: 250px; overflow-y: auto; padding-right: 6px;&quot;>                              <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Environmental monitoring                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Validate uncrewed surface vehicle (USV) data on underwater noise levels and marine mammal presence</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Industry &amp; technology applications                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Demonstrate automatic detection, classification and analysis of underwater sound</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Education &amp; outreach                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>In-Community Observatory Display in the North Coast Ecology Center</div>             </div>                          </div>         </div>         </div>`)[0];
-                popup_6311a5af3458c49279266849a7ac1d09.setContent(html_2ed5e6ba2cd6845720f618b872118202);
+                var html_9365b0a4abcb1580337352776f5bae98 = $(`<div id=&quot;html_9365b0a4abcb1580337352776f5bae98&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><div style=&quot;font-family:system-ui,-apple-system,sans-serif;width:236px;color:#1b2430;&quot;><div style=&quot;display:flex;align-items:flex-start;gap:8px;margin:0 10px 11px 0;&quot;><span style=&quot;margin-top:3px;line-height:0;&quot;><svg width=&quot;13&quot; height=&quot;13&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;><path fill=&quot;#e15b4a&quot; d=&quot;M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z&quot;/><circle cx=&quot;12&quot; cy=&quot;10&quot; r=&quot;2.3&quot; fill=&quot;#fff&quot;/></svg></span><div><div style=&quot;font-size:16px;font-weight:650;letter-spacing:-0.01em;line-height:1.2;&quot;>Digby Island</div><div style=&quot;margin-top:2px;font-size:12px;font-weight:500;color:#8b93a0;&quot;>3 use cases</div></div></div><div style=&quot;display:flex;flex-direction:column;gap:7px;&quot;><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #e06a32;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#e06a32;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;#fff&quot;><circle cx=&quot;4.2&quot; cy=&quot;9&quot; r=&quot;1.7&quot;/><path d=&quot;M1.1 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7H1.1z&quot;/><circle cx=&quot;19.8&quot; cy=&quot;9&quot; r=&quot;1.7&quot;/><path d=&quot;M16.7 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7h-6.2z&quot;/><circle cx=&quot;12&quot; cy=&quot;7.2&quot; r=&quot;2.15&quot;/><path d=&quot;M8 18.5c.45-2.9 1.95-4.6 4-4.6s3.55 1.7 4 4.6H8z&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Outreach</span></div><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #3c9a5c;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#3c9a5c;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M5 19c8 0 14-8 14-14-6 0-14 6-14 14z&quot;/><path d=&quot;M9 15c2-2.5 4.5-4.2 7-5&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Environmental monitoring</span></div><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #5c6bc0;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#5c6bc0;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M3 21V10l5 3V10l5 3V8h8v13z&quot;/><path d=&quot;M3 21h18&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Industry &amp;amp; technology application</span></div></div></div></div>`)[0];
+                popup_b32586ef6f8fd6bc1226f202ab65e06c.setContent(html_9365b0a4abcb1580337352776f5bae98);
             
         
 
-        marker_8ca1ecb3e246970a5b3778d036ba9c9d.bindPopup(popup_6311a5af3458c49279266849a7ac1d09)
+        marker_800200302657c47759d1f0e8237b006c.bindPopup(popup_b32586ef6f8fd6bc1226f202ab65e06c)
         ;
 
         
     
     
-                marker_8ca1ecb3e246970a5b3778d036ba9c9d.setIcon(icon_eb70c1614641f8da4a97d2a597646b86);
+                marker_800200302657c47759d1f0e8237b006c.setIcon(icon_1e0ffc7adfe9c0748e58bd46d78c2fad);
             
     
-            var marker_ccf81b0f7a17c6aea371954399c4d822 = L.marker(
+            var marker_3896cb0e3eb43015f79bab48ad99c288 = L.marker(
                 [53.4225, -129.2475],
                 {
 }
-            ).addTo(map_93fc598408ab57f0061a96d25205861c);
+            ).addTo(map_9925ee0f92ff2bd0a1d4c28ccf1597ea);
         
     
-            var icon_28bdb0d0f5d43f9a87c16e630b4f2ab6 = L.AwesomeMarkers.icon(
+            var icon_09019598b5ebcc5b14ccba2ddbd1b1e7 = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;blue&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -586,34 +609,34 @@ ul.task-list li input[type="checkbox"] {
             );
         
     
-        var popup_30ee9862228e207af7ca5f6ed3d2cb74 = L.popup({
-  &quot;maxWidth&quot;: 360,
+        var popup_4687db18dd337994d2d91768ea047ef6 = L.popup({
+  &quot;maxWidth&quot;: 280,
 });
 
         
             
-                var html_333628bc8fe49fa3a54ab1f26a65c220 = $(`<div id=&quot;html_333628bc8fe49fa3a54ab1f26a65c220&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>         <div style=&quot;font-family: system-ui, -apple-system, sans-serif; line-height: 1.3;&quot;>             <h3 style=&quot;margin: 0 0 8px 0; font-size: 15px; color: #111; border-bottom: 2px solid #005A9C; padding-bottom: 4px;&quot;>                 📍 Hartley Bay <span style='font-size: 11px; font-weight: normal; color: #666;'>                 <!-- (2 projects)</span> -->             </h3>             <div style=&quot;max-height: 250px; overflow-y: auto; padding-right: 6px;&quot;>                              <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Environmental monitoring                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Gitga'at First Nation 2025 State of the Ocean Report</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Environmental management                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Analyze noise from LNG vessel</div>             </div>                          </div>         </div>         </div>`)[0];
-                popup_30ee9862228e207af7ca5f6ed3d2cb74.setContent(html_333628bc8fe49fa3a54ab1f26a65c220);
+                var html_8073b0daa281f66e651f58b0dc77b869 = $(`<div id=&quot;html_8073b0daa281f66e651f58b0dc77b869&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><div style=&quot;font-family:system-ui,-apple-system,sans-serif;width:236px;color:#1b2430;&quot;><div style=&quot;display:flex;align-items:flex-start;gap:8px;margin:0 10px 11px 0;&quot;><span style=&quot;margin-top:3px;line-height:0;&quot;><svg width=&quot;13&quot; height=&quot;13&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;><path fill=&quot;#e15b4a&quot; d=&quot;M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z&quot;/><circle cx=&quot;12&quot; cy=&quot;10&quot; r=&quot;2.3&quot; fill=&quot;#fff&quot;/></svg></span><div><div style=&quot;font-size:16px;font-weight:650;letter-spacing:-0.01em;line-height:1.2;&quot;>Hartley Bay</div><div style=&quot;margin-top:2px;font-size:12px;font-weight:500;color:#8b93a0;&quot;>2 use cases</div></div></div><div style=&quot;display:flex;flex-direction:column;gap:7px;&quot;><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #3c9a5c;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#3c9a5c;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M5 19c8 0 14-8 14-14-6 0-14 6-14 14z&quot;/><path d=&quot;M9 15c2-2.5 4.5-4.2 7-5&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Environmental monitoring</span></div><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #3a8494;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#3a8494;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><rect x=&quot;6&quot; y=&quot;4&quot; width=&quot;12&quot; height=&quot;16&quot; rx=&quot;2&quot;/><path d=&quot;M9 4h6v2.2H9z&quot;/><path d=&quot;M9 12h6M9 16h4&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Environmental management</span></div></div></div></div>`)[0];
+                popup_4687db18dd337994d2d91768ea047ef6.setContent(html_8073b0daa281f66e651f58b0dc77b869);
             
         
 
-        marker_ccf81b0f7a17c6aea371954399c4d822.bindPopup(popup_30ee9862228e207af7ca5f6ed3d2cb74)
+        marker_3896cb0e3eb43015f79bab48ad99c288.bindPopup(popup_4687db18dd337994d2d91768ea047ef6)
         ;
 
         
     
     
-                marker_ccf81b0f7a17c6aea371954399c4d822.setIcon(icon_28bdb0d0f5d43f9a87c16e630b4f2ab6);
+                marker_3896cb0e3eb43015f79bab48ad99c288.setIcon(icon_09019598b5ebcc5b14ccba2ddbd1b1e7);
             
     
-            var marker_78117c36dadbb5056dd10bfd94d549fd = L.marker(
+            var marker_9867abb90118395644286be3eaedb82a = L.marker(
                 [53.98, -128.65],
                 {
 }
-            ).addTo(map_93fc598408ab57f0061a96d25205861c);
+            ).addTo(map_9925ee0f92ff2bd0a1d4c28ccf1597ea);
         
     
-            var icon_21aaece08abc93782c55190c499a1b42 = L.AwesomeMarkers.icon(
+            var icon_41d8d9250e4d8f4a295a8ac399d18659 = L.AwesomeMarkers.icon(
                 {
   &quot;markerColor&quot;: &quot;blue&quot;,
   &quot;iconColor&quot;: &quot;white&quot;,
@@ -624,24 +647,24 @@ ul.task-list li input[type="checkbox"] {
             );
         
     
-        var popup_2ff75625d1483b7e56ba4a267669a769 = L.popup({
-  &quot;maxWidth&quot;: 360,
+        var popup_3e07c73f5afc0c6958b6d52903029a1b = L.popup({
+  &quot;maxWidth&quot;: 280,
 });
 
         
             
-                var html_9d7809144d68c7e4cc957a6ad9dcc4cc = $(`<div id=&quot;html_9d7809144d68c7e4cc957a6ad9dcc4cc&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;>         <div style=&quot;font-family: system-ui, -apple-system, sans-serif; line-height: 1.3;&quot;>             <h3 style=&quot;margin: 0 0 8px 0; font-size: 15px; color: #111; border-bottom: 2px solid #005A9C; padding-bottom: 4px;&quot;>                 📍 Kitamaat Village <span style='font-size: 11px; font-weight: normal; color: #666;'>                 <!-- (2 projects)</span> -->             </h3>             <div style=&quot;max-height: 250px; overflow-y: auto; padding-right: 6px;&quot;>                              <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     PhD/ Masters thesis                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>Confronting Acoustic Data Scarcity: A Physics-Informed Approach to Trustworthy Machine Learning in Canada's Arctic</div>             </div>                          <div style=&quot;margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee;&quot;>                 <span style=&quot;background: #e6f0fa; color: #005A9C; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;&quot;>                     Education &amp; outreach                 </span>                 <div style=&quot;font-weight: bold; margin-top: 4px; font-size: 12px; color: #111;&quot;>In-Community Observatory Display in the Haisla Youth Center</div>             </div>                          </div>         </div>         </div>`)[0];
-                popup_2ff75625d1483b7e56ba4a267669a769.setContent(html_9d7809144d68c7e4cc957a6ad9dcc4cc);
+                var html_d09f64433754eb939c67f64fe51f996b = $(`<div id=&quot;html_d09f64433754eb939c67f64fe51f996b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;><div style=&quot;font-family:system-ui,-apple-system,sans-serif;width:236px;color:#1b2430;&quot;><div style=&quot;display:flex;align-items:flex-start;gap:8px;margin:0 10px 11px 0;&quot;><span style=&quot;margin-top:3px;line-height:0;&quot;><svg width=&quot;13&quot; height=&quot;13&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;><path fill=&quot;#e15b4a&quot; d=&quot;M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z&quot;/><circle cx=&quot;12&quot; cy=&quot;10&quot; r=&quot;2.3&quot; fill=&quot;#fff&quot;/></svg></span><div><div style=&quot;font-size:16px;font-weight:650;letter-spacing:-0.01em;line-height:1.2;&quot;>Kitamaat Village</div><div style=&quot;margin-top:2px;font-size:12px;font-weight:500;color:#8b93a0;&quot;>2 use cases</div></div></div><div style=&quot;display:flex;flex-direction:column;gap:7px;&quot;><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #e06a32;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#e06a32;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;#fff&quot;><circle cx=&quot;4.2&quot; cy=&quot;9&quot; r=&quot;1.7&quot;/><path d=&quot;M1.1 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7H1.1z&quot;/><circle cx=&quot;19.8&quot; cy=&quot;9&quot; r=&quot;1.7&quot;/><path d=&quot;M16.7 17.8c.25-2.3 1.45-3.7 3.1-3.7s2.85 1.4 3.1 3.7h-6.2z&quot;/><circle cx=&quot;12&quot; cy=&quot;7.2&quot; r=&quot;2.15&quot;/><path d=&quot;M8 18.5c.45-2.9 1.95-4.6 4-4.6s3.55 1.7 4 4.6H8z&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Outreach</span></div><div style=&quot;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #7b4ea3;border-radius:12px;background:#fff;&quot;><span style=&quot;flex:none;width:26px;height:26px;border-radius:50%;background:#7b4ea3;display:flex;align-items:center;justify-content:center;&quot;><svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;#fff&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M2 9l10-5 10 5-10 5L2 9z&quot;/><path d=&quot;M6 11.5V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-4.5&quot;/></svg></span><span style=&quot;font-size:13.5px;font-weight:600;line-height:1.25;color:#1b2430;&quot;><span style=&quot;font-weight:800;&quot;>1</span> Masters/PhD thesis</span></div></div></div></div>`)[0];
+                popup_3e07c73f5afc0c6958b6d52903029a1b.setContent(html_d09f64433754eb939c67f64fe51f996b);
             
         
 
-        marker_78117c36dadbb5056dd10bfd94d549fd.bindPopup(popup_2ff75625d1483b7e56ba4a267669a769)
+        marker_9867abb90118395644286be3eaedb82a.bindPopup(popup_3e07c73f5afc0c6958b6d52903029a1b)
         ;
 
         
     
     
-                marker_78117c36dadbb5056dd10bfd94d549fd.setIcon(icon_21aaece08abc93782c55190c499a1b42);
+                marker_9867abb90118395644286be3eaedb82a.setIcon(icon_41d8d9250e4d8f4a295a8ac399d18659);
             
 </script>
 </html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
