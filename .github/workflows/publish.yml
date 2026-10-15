@@ -3,14 +3,6 @@ name: Quarto Publish
 on:
   push:
     branches: [ main, master ]
-  workflow_dispatch:
-  schedule:
-    # 13:00 UTC daily, so annotation edits show up without a handbook commit.
-    - cron: "0 13 * * *"
-
-concurrency:
-  group: quarto-publish
-  cancel-in-progress: true
 
 jobs:
   build-deploy:
