@@ -11,6 +11,7 @@ title: "2. What's New"
 
 # October 2026
 
+* [Hydrophone Map](3-hydrophone-map.qmd) now displays the current status.
 * [Hydrophone Spectral Data 2.0](https://wiki.oceannetworks.ca/spaces/DP/pages/299139157/204) (`HSD2`, product 204) is now available.
 Order it through [Data Search](9-data-access.qmd#data-search) or the [ONC API](9-data-access.qmd#onc-api-advanced).
 This product is very similar to the Hydrophone Spectral Data. It differs in the following areas:

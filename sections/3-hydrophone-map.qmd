@@ -1,21 +1,27 @@
 ---
 title: "3. Hydrophone Map"
+execute:
+  freeze: false
 ---
 
 
 # Map of all hydrophone deployments
-*Click a site for devices info and deployment dates. Active deployments shown, use the toggle to reveal inactive sites.*
+*Click a site for devices, deployment dates, and status. Deployed sites are shown; use the toggle to reveal inactive sites.*
 
 
 ```{python}
 #| echo: false
 #| message: false
 
-import os, pandas as pd
+import os, sys, pandas as pd
 from onc.onc import ONC
 from dotenv import load_dotenv
 import geopandas as gpd
 import json
+from collections import defaultdict
+
+sys.path.insert(0, "../scripts")
+from hydrophone_status import annotate_deployments
 
 # Load ONC cable shapefile
 onc_cable_shp_path = '../Instrument_and_cables_shapefiles/ONC_Cables.shp'
@@ -37,36 +43,69 @@ depl = depl.merge(names_df, on='locationCode', how='left')
 depl['locationName'] = depl['locationName'].fillna(depl['locationCode'])
 depl['siteCode'] = depl['locationCode'].str.split('.').str[0]
 
-def _fmt_date(value):
-    if pd.isna(value) or value is None:
-        return None
-    return pd.to_datetime(value, utc=True).strftime('%Y-%m-%d')
+def _blank(value):
+    return value is None or pd.isna(value)
 
-site_rows = []
-for site_code, group in depl.groupby('siteCode'):
-    group = group.sort_values('begin', na_position='last')
-    active = group[group['end'].isna()]
-    current = active.iloc[-1] if len(active) else group.iloc[-1]
-    site_rows.append({
-        'siteCode': site_code,
-        'locationName': current['locationName'],
-        'lat': current['lat'],
-        'lon': current['lon'],
-        'depth': current['depth'],
-        'any_active': len(active) > 0,
-        'deviceCode': group['deviceCode'].tolist(),
-        'locationCode': group['locationCode'].tolist(),
-        'begin': [_fmt_date(v) for v in group['begin']],
-        'end': [_fmt_date(v) for v in group['end']],
+records = []
+for row in depl.to_dict(orient="records"):
+    records.append({
+        **row,
+        "begin": None if _blank(row.get("begin")) else row.get("begin"),
+        "end": None if _blank(row.get("end")) else row.get("end"),
     })
 
-df_plot = pd.DataFrame(site_rows)
+devices = onc.getDevices({"deviceCategoryCode": "HYDROPHONE"})
+devices_by_code = {item["deviceCode"]: item for item in devices}
+annotated_rows = annotate_deployments(records, devices_by_code)
 
-# 4. Pass to OJS
+def _num(value):
+    if _blank(value):
+        return None
+    return float(value)
+
+rank = {"green": 0, "yellow": 1, "red": 2}
+grouped = defaultdict(list)
+for row in annotated_rows:
+    grouped[row["siteCode"]].append(row)
+
+sites = []
+for site_code, group in grouped.items():
+    group = sorted(group, key=lambda item: item.get("begin") or "")
+    active = [item for item in group if not item.get("end")]
+    current = active[-1] if active else group[-1]
+    if active:
+        status = max((item["status"] for item in active), key=lambda item: rank.get(item, 0))
+    else:
+        status = "inactive"
+    sites.append({
+        "siteCode": site_code,
+        "locationName": current.get("locationName") or site_code,
+        "lat": _num(current.get("lat")),
+        "lon": _num(current.get("lon")),
+        "depth": _num(current.get("depth")),
+        "any_active": bool(active),
+        "status": status,
+        "deployments": [
+            {
+                "device": item["deviceCode"],
+                "location": item["locationCode"],
+                "begin": item.get("begin"),
+                "end": item.get("end"),
+                "status": item["status"],
+                "url": item["annotationUrl"] if not item.get("end") else "",
+                "notes": [
+                    {"level": note["level"], "label": note["label"], "start": note["start"]}
+                    for note in item["notes"]
+                ],
+            }
+            for item in group
+        ],
+    })
+
 cable_geojson = json.loads(onc_cable.to_json())
 
 ojs_define(
-    status_data = df_plot.to_dict(orient='list'),
+    sites = sites,
     cable_data = cable_geojson
 )
 ```
@@ -102,49 +141,82 @@ yield container;
     }).addTo(map);
   }
 
-  function dateCell(value) {
-    return value ? value : "—";
+  const statusColor = {
+    red: "#dc3545",
+    yellow: "#ffc107",
+    green: "#28a745",
+    inactive: "#6c757d"
+  };
+
+  function esc(value) {
+    return String(value ?? "").replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[ch];
+    });
   }
 
-  function deploymentTable(rows, includeEnd) {
+  function uniqueNotes(notes) {
+    const seen = {};
+    const out = [];
+    (notes || []).forEach(function (note) {
+      if (!note.label || seen[note.label]) return;
+      seen[note.label] = true;
+      out.push(note);
+    });
+    return out;
+  }
+
+  function pillHtml(note) {
+    const css = note.level === "red" ? "hydro-pill-red" : "hydro-pill-yellow";
+    const since = note.start ? `<span class="hydro-pill-since">since ${esc(note.start)}</span>` : "";
+    return `<span class="hydro-pill ${css}"><strong>${esc(note.label)}</strong> ${since}</span>`;
+  }
+
+  function pillStack(notes, emptyGreen) {
+    const items = uniqueNotes(notes);
+    if (!items.length) {
+      return emptyGreen ? `<span class="hydro-pill hydro-pill-green">No issues</span>` : "";
+    }
+    return items.map(pillHtml).join("");
+  }
+
+  function deviceCard(label, begin, url, notes) {
+    const deployed = begin ? `<span class="hydro-deployment-dates">deployed ${esc(begin)}</span>` : "";
+    const link = url ? `<a href="${esc(url)}" target="_blank" rel="noopener">see more</a>` : "";
+    return `<div class="hydro-card"><div class="hydro-card-id"><strong>${esc(label)}</strong>${deployed}${link}</div><div class="hydro-pills">${pillStack(notes, true)}</div></div>`;
+  }
+
+  function currentBlock(rows) {
+    if (!rows.length) {
+      return `<p class="hydro-popup-heading hydro-popup-previous">No current deployments</p>`;
+    }
+    const count = rows.length > 1 ? ` (${rows.length})` : "";
+    const cards = rows.map(function (row) {
+      return deviceCard(row.device, row.begin, row.url, row.notes);
+    }).join("");
+    return `<p class="hydro-popup-heading hydro-popup-current">Current deployments${count}</p>${cards}`;
+  }
+
+  function previousBlock(rows) {
     if (!rows.length) return "";
-    const head = includeEnd
-      ? "<tr><th>Device</th><th>From</th><th>To</th></tr>"
-      : "<tr><th>Device</th><th>From</th></tr>";
-    const body = rows.map(r => includeEnd
-      ? `<tr><td>${r.device}</td><td>${dateCell(r.begin)}</td><td>${dateCell(r.end)}</td></tr>`
-      : `<tr><td>${r.device}</td><td>${dateCell(r.begin)}</td></tr>`
-    ).join("");
-    return `<table class="hydro-popup-table">${head}${body}</table>`;
+    const body = rows.map(function (row) {
+      return `<tr><td>${esc(row.device)}</td><td>${esc(row.begin || "—")}</td><td>${esc(row.end || "—")}</td></tr>`;
+    }).join("");
+    return `<p class="hydro-popup-heading hydro-popup-previous">Previous deployments</p><table class="hydro-popup-table"><tr><th>Device</th><th>From</th><th>To</th></tr>${body}</table>`;
   }
 
-  status_data.siteCode.forEach((code, i) => {
-    const isActive = status_data.any_active[i];
-    const color = isActive ? "#28a745" : "#6c757d";
-    const cleanName = status_data.locationName[i].replace(/Hydrophone [A-Z]/g, "Hydrophone Array");
+  sites.forEach(function (site) {
+    if (site.lat == null || site.lon == null || Number.isNaN(Number(site.lat)) || Number.isNaN(Number(site.lon))) return;
+    const isActive = site.any_active;
+    const color = isActive ? (statusColor[site.status] || statusColor.green) : statusColor.inactive;
+    const cleanName = String(site.locationName || site.siteCode).replace(/Hydrophone [A-Z]/g, "Hydrophone Array");
+    const deployments = site.deployments || [];
+    const activeRows = deployments.filter(function (row) { return !row.end; });
+    const previousRows = deployments.filter(function (row) { return row.end; }).sort(function (a, b) {
+      return (b.end || "").localeCompare(a.end || "");
+    });
+    const depth = (site.depth == null || Number.isNaN(Number(site.depth))) ? "—" : `${site.depth} m`;
 
-    const deployments = status_data.deviceCode[i].map((dev, idx) => ({
-      device: dev,
-      location: status_data.locationCode[i][idx],
-      begin: status_data.begin[i][idx],
-      end: status_data.end[i][idx]
-    }));
-
-    const activeRows = deployments.filter(d => !d.end);
-    const previousRows = deployments.filter(d => d.end).sort((a, b) => (b.end || "").localeCompare(a.end || ""));
-
-    const activeBlock = activeRows.length
-      ? `<p class="hydro-popup-heading hydro-popup-current">Current deployments</p>${deploymentTable(activeRows, false)}`
-      : `<p class="hydro-popup-heading hydro-popup-previous">No current deployments</p>`;
-
-    const previousBlock = previousRows.length
-      ? `<p class="hydro-popup-heading hydro-popup-previous">Previous deployments</p>${deploymentTable(previousRows, true)}`
-      : "";
-
-    const depthVal = status_data.depth[i];
-    const depth = (depthVal == null || Number.isNaN(Number(depthVal))) ? "—" : `${depthVal} m`;
-
-    const marker = L.circleMarker([status_data.lat[i], status_data.lon[i]], {
+    const marker = L.circleMarker([site.lat, site.lon], {
       radius: 8,
       fillColor: color,
       color: "white",
@@ -153,14 +225,14 @@ yield container;
     })
     .bindPopup(`
       <div style="font-family: sans-serif; min-width: 360px;">
-        <b style="font-size: 1.1em;">${cleanName}</b><br>
-        <span style="color: #666; font-size: 0.9em;">${code}</span>
+        <b style="font-size: 1.1em;">${esc(cleanName)}</b><br>
+        <span style="color: #666; font-size: 0.9em;">${esc(site.siteCode)}</span>
         <hr style="margin: 5px 0;">
-        <p style="margin: 5px 0 0 0;"><b>Depth:</b> ${depth}</p>
-        ${activeBlock}
-        ${previousBlock}
+        <p style="margin: 5px 0 0 0;"><b>Depth:</b> ${esc(depth)}</p>
+        ${currentBlock(activeRows)}
+        ${previousBlock(previousRows)}
       </div>
-    `, { minWidth: 360, maxWidth: 480, maxHeight: 340 });
+    `, { minWidth: 420, maxWidth: 560, maxHeight: 460 });
 
     if (isActive) {
       marker.addTo(activeLayer);
@@ -170,12 +242,21 @@ yield container;
   });
 
   const overlays = {
-    "<span style='color: #28a745; font-weight: bold;'>● Current Sites</span>": activeLayer,
-    "<span style='color: #6c757d; font-weight: bold;'>○ Inactive Sites</span>": inactiveLayer
+    "<span style='font-weight: bold;'>● Deployed</span>": activeLayer,
+    "<span style='color: #6c757d; font-weight: bold;'>○ Inactive</span>": inactiveLayer
   };
 
   L.control.layers(null, overlays, { collapsed: false }).addTo(map);
 }
+```
+
+```{=html}
+<div class="hydro-status-legend">
+  <p class="hydro-status-legend-title">Legend</p>
+  <p><span class="hydro-status-dot hydro-status-green"></span><strong>No issues to report.</strong> Data may be used.</p>
+  <p><span class="hydro-status-dot hydro-status-yellow"></span><strong>Commissioning, Data quality.</strong> Data is available, with possible quality concerns. Commissioning means data quality is currently being assessed. A Data quality note means something may be affecting the recording on a recurring basis, such as noise from a nearby instrument. The data can still be used, with that limitation in mind.</p>
+  <p><span class="hydro-status-dot hydro-status-red"></span><strong>Data gap, Compromised, Failed.</strong> Data is unavailable or unsuable due to hardware malfunctions, power power outages, or cable connectivity issues.</p>
+</div>
 ```
 
 Ocean Networks Canada operates a massive spatial array of underwater acoustics monitoring across the country.
@@ -193,37 +274,60 @@ The hydrophone arrays naming convention has .H1, .H2, etc., added to the locatio
 
 
 # List of all deployment sites
-Here is a list of sites per **location code** and their associated location name, latitude, longitude, depth, and current status.
-Click a column header to sort.
+Here is a list of sites per **location code** and their associated location name, latitude, longitude, depth, and status.
+The status colors are the same as the map. Click a column header to sort.
 
 ```{python}
 #| echo: false
+import html
 import pandas as pd
 from IPython.display import display, HTML
 
-# 1. Use 'depl' for the full list (not the grouped df_plot)
-# We recreate the 'active_status' column based on 'end' being None
-df_full_table = depl.copy()
-df_full_table['active_status'] = df_full_table['end'].isna()
+STATUS_LABEL = {
+    "red": "Issue",
+    "yellow": "Caution",
+    "green": "No issues",
+    "ended": "Ended",
+}
 
-# 2. Select the specific columns you want
-df_full_table = df_full_table[['locationCode', 'locationName', 'lat', 'lon', 'depth', 'deviceCode', 'active_status']]
+def status_html(row):
+    current = not row.get("end")
+    status = row["status"] if current else "ended"
+    label = STATUS_LABEL.get(status, "Ended")
+    css = status if status in {"red", "yellow", "green"} else "ended"
+    seen = []
+    if current:
+        for note in row["notes"]:
+            if note["label"] not in seen:
+                seen.append(note["label"])
+    title = ", ".join(seen) if seen else label
+    return (
+        f'<span class="hydro-status" title="{html.escape(title, quote=True)}">'
+        f'<span class="hydro-status-dot hydro-status-{css}"></span>{html.escape(label)}'
+        f"</span>"
+    )
 
-# 3. Sort by Name so similar sites are grouped visually
-df_full_table = df_full_table.sort_values(['locationName', 'locationCode'])
+table_rows = []
+for row in annotated_rows:
+    depth = row.get("depth")
+    lat = row.get("lat")
+    lon = row.get("lon")
+    table_rows.append({
+        "Location Code": html.escape(str(row.get("locationCode") or "")),
+        "Location Name": html.escape(str(row.get("locationName") or "")),
+        "Latitude": "" if lat is None or pd.isna(lat) else lat,
+        "Longitude": "" if lon is None or pd.isna(lon) else lon,
+        "Depth (m)": "" if depth is None or pd.isna(depth) else f"{float(depth):.2f}",
+        "Device Code": html.escape(str(row.get("deviceCode") or "")),
+        "Status": status_html(row),
+    })
 
-# formatting depth
-df_full_table['depth'] = df_full_table['depth'].apply(lambda x: f"{x:.2f}" if pd.notnull(x) else x)
+df_full_table = pd.DataFrame(table_rows)
+df_full_table = df_full_table.sort_values(["Location Name", "Location Code"])
 
-# 4. Rename for the professional header
-df_full_table.columns = ['Location Code', 'Location Name', 'Latitude', 'Longitude', 'Depth (m)', 'Device Code', 'Status']
-
-# 5. Map the boolean to your requested icons
-df_full_table['Status'] = df_full_table['Status'].map({True: "🟢", False: "⚪"})
-
-# 6. Display as a clean HTML table
 display(HTML(df_full_table.to_html(
     index=False,
+    escape=False,
     classes='table table-striped table-hover',
     table_id='hydrophone-deployments'
 )))
@@ -262,9 +366,32 @@ display(HTML(df_full_table.to_html(
 
         const tbody = table.tBodies[0];
         const rows = Array.from(tbody.rows);
+        const statusOrder = {
+          "hydro-status-green": 0,
+          "hydro-status-yellow": 1,
+          "hydro-status-red": 2,
+          "hydro-status-ended": 3
+        };
+        function statusRank(cell) {
+          const dot = cell.querySelector(".hydro-status-dot");
+          if (!dot) return null;
+          const names = dot.className.split(/\s+/);
+          for (let i = 0; i < names.length; i++) {
+            if (statusOrder[names[i]] !== undefined) return statusOrder[names[i]];
+          }
+          return null;
+        }
         rows.sort(function (a, b) {
-          const A = a.cells[col].textContent.trim();
-          const B = b.cells[col].textContent.trim();
+          const cellA = a.cells[col];
+          const cellB = b.cells[col];
+          const sA = statusRank(cellA);
+          const sB = statusRank(cellB);
+          if (sA !== null && sB !== null) {
+            const cmp = sA - sB;
+            return asc ? cmp : -cmp;
+          }
+          const A = cellA.textContent.trim();
+          const B = cellB.textContent.trim();
           const nA = numericValue(A);
           const nB = numericValue(B);
           let cmp;
