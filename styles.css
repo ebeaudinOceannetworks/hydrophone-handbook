@@ -167,6 +167,11 @@ figcaption i {
   user-select: none;
 }
 
+#hydrophone-deployments thead th:nth-child(1),
+#hydrophone-deployments thead th:nth-child(5) {
+  white-space: nowrap;
+}
+
 #hydrophone-deployments thead th:hover {
   color: #e67e5f;
 }
@@ -198,11 +203,145 @@ figcaption i {
 }
 
 .leaflet-popup-content .hydro-popup-current {
-  border-left-color: #28a745;
+  border-left-color: #334155;
 }
 
 .leaflet-popup-content .hydro-popup-previous {
   border-left-color: #6c757d;
+}
+
+.hydro-status-dot {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.35rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.25);
+  vertical-align: -1px;
+  flex: 0 0 auto;
+}
+
+.hydro-status-red { background: #dc3545; }
+.hydro-status-yellow { background: #ffc107; }
+.hydro-status-green { background: #28a745; }
+.hydro-status-ended,
+.hydro-status-inactive { background: #6c757d; }
+
+.hydro-status {
+  white-space: nowrap;
+}
+
+.hydro-status-legend {
+  margin: 0.75rem 0 1.5rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.hydro-status-legend p {
+  margin: 0 0 0.55rem 0;
+}
+
+.hydro-status-legend-title {
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.hydro-status-legend p:last-child {
+  margin-bottom: 0;
+}
+
+.leaflet-popup-content .hydro-deploy-details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.leaflet-popup-content .hydro-deploy-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.leaflet-popup-content .hydro-deploy-details > summary::before {
+  content: "▸";
+  color: #64748b;
+  margin-right: 0.35rem;
+}
+
+.leaflet-popup-content .hydro-deploy-details[open] > summary::before {
+  content: "▾";
+}
+
+.leaflet-popup-content .hydro-deploy-details[open] .hydro-summary-pills {
+  display: none;
+}
+
+.leaflet-popup-content .hydro-summary-pills,
+.leaflet-popup-content .hydro-pills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.28rem;
+}
+
+.leaflet-popup-content .hydro-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin: 0.45rem 0 0.2rem 0;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.leaflet-popup-content .hydro-card-id {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  color: #1e293b;
+}
+
+.leaflet-popup-content .hydro-deployment-dates {
+  color: #64748b;
+  font-size: 0.85em;
+}
+
+.leaflet-popup-content .hydro-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.82em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.leaflet-popup-content .hydro-pill-red {
+  background: #dc3545;
+  color: #fff;
+}
+
+.leaflet-popup-content .hydro-pill-yellow {
+  background: #ffc107;
+  color: #1e293b;
+}
+
+.leaflet-popup-content .hydro-pill-green {
+  background: #28a745;
+  color: #fff;
+}
+
+.leaflet-popup-content .hydro-pill-since {
+  font-weight: 400;
+}
+
+.leaflet-popup-content .hydro-prev-pills .hydro-pill {
+  margin: 0.1rem 0;
 }
 
 /* Stack Location / Sounds / Explanation as separate lines in sound examples. */
