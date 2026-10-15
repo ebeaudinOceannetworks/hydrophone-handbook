@@ -165,24 +165,33 @@ yield container;
     return out;
   }
 
-  function pillHtml(note) {
-    const css = note.level === "red" ? "hydro-pill-red" : "hydro-pill-yellow";
-    const since = note.start ? `<span class="hydro-pill-since">since ${esc(note.start)}</span>` : "";
-    return `<span class="hydro-pill ${css}"><strong>${esc(note.label)}</strong> ${since}</span>`;
+  function notesInTimeOrder(notes) {
+    const sorted = (notes || []).slice().sort(function (a, b) {
+      return (b.start || "").localeCompare(a.start || "");
+    });
+    return uniqueNotes(sorted);
   }
 
-  function pillStack(notes, emptyGreen) {
-    const items = uniqueNotes(notes);
+  function noteHtml(note) {
+    const level = note.level === "red" ? "red" : note.level === "green" ? "green" : "yellow";
+    const since = note.start ? ` <span class="hydro-note-since">(since ${esc(note.start)})</span>` : "";
+    return `<li class="hydro-note hydro-note-${level}"><span class="hydro-note-dot"></span><span class="hydro-note-text"><strong>${esc(note.label)}</strong>${since}</span></li>`;
+  }
+
+  function timelineHtml(notes, emptyGreen) {
+    const items = notesInTimeOrder(notes);
     if (!items.length) {
-      return emptyGreen ? `<span class="hydro-pill hydro-pill-green">No issues</span>` : "";
+      return emptyGreen ? `<ol class="hydro-timeline">${noteHtml({ level: "green", label: "No issues to report" })}</ol>` : "";
     }
-    return items.map(pillHtml).join("");
+    return `<ol class="hydro-timeline">${items.map(noteHtml).join("")}</ol>`;
   }
 
   function deviceCard(label, begin, url, notes) {
-    const deployed = begin ? `<span class="hydro-deployment-dates">deployed ${esc(begin)}</span>` : "";
+    const deployed = begin ? `<span class="hydro-deployed">deployed ${esc(begin)}</span>` : "";
     const link = url ? `<a href="${esc(url)}" target="_blank" rel="noopener">see more</a>` : "";
-    return `<div class="hydro-card"><div class="hydro-card-id"><strong>${esc(label)}</strong>${deployed}${link}</div><div class="hydro-pills">${pillStack(notes, true)}</div></div>`;
+    const dot = deployed && link ? `<span class="hydro-meta-dot" aria-hidden="true"></span>` : "";
+    const meta = (deployed || link) ? `<span class="hydro-deployment-dates">${deployed}${dot}${link}</span>` : "";
+    return `<div class="hydro-card"><div class="hydro-card-id"><strong>${esc(label)}</strong>${meta}</div>${timelineHtml(notes, true)}</div>`;
   }
 
   function currentBlock(rows) {
@@ -224,7 +233,7 @@ yield container;
       fillOpacity: 0.9
     })
     .bindPopup(`
-      <div style="font-family: sans-serif; min-width: 360px;">
+      <div style="font-family: sans-serif;">
         <b style="font-size: 1.1em;">${esc(cleanName)}</b><br>
         <span style="color: #666; font-size: 0.9em;">${esc(site.siteCode)}</span>
         <hr style="margin: 5px 0;">
@@ -232,7 +241,7 @@ yield container;
         ${currentBlock(activeRows)}
         ${previousBlock(previousRows)}
       </div>
-    `, { minWidth: 420, maxWidth: 560, maxHeight: 460 });
+    `, { className: "hydro-site-popup", minWidth: 400, maxWidth: 460, maxHeight: 320 });
 
     if (isActive) {
       marker.addTo(activeLayer);
