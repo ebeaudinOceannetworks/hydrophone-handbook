@@ -176,6 +176,12 @@ figcaption i {
   color: #e67e5f;
 }
 
+.hydro-site-popup .leaflet-popup-content {
+  max-height: 320px;
+  margin: 14px 18px;
+  overflow-y: auto;
+}
+
 .leaflet-popup-content .hydro-popup-table {
   width: auto;
   border-collapse: collapse;
@@ -279,20 +285,13 @@ figcaption i {
   display: none;
 }
 
-.leaflet-popup-content .hydro-summary-pills,
-.leaflet-popup-content .hydro-pills {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.28rem;
-}
-
 .leaflet-popup-content .hydro-card {
   display: flex;
-  justify-content: space-between;
-  gap: 0.8rem;
-  margin: 0.45rem 0 0.2rem 0;
-  padding: 0.55rem 0.7rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.35rem;
+  margin: 0.55rem 0 0.25rem 0;
+  padding: 0.8rem 0.95rem 0.9rem;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
 }
@@ -306,42 +305,70 @@ figcaption i {
 }
 
 .leaflet-popup-content .hydro-deployment-dates {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   color: #64748b;
-  font-size: 0.85em;
+  font-size: 0.88em;
 }
 
-.leaflet-popup-content .hydro-pill {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.35rem;
-  padding: 0.12rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.82em;
-  line-height: 1.3;
-  white-space: nowrap;
+.leaflet-popup-content .hydro-meta-dot {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: #94a3b8;
+  flex: 0 0 auto;
 }
 
-.leaflet-popup-content .hydro-pill-red {
-  background: #dc3545;
-  color: #fff;
+.leaflet-popup-content .hydro-timeline {
+  list-style: none;
+  margin: 0.45rem 0 0;
+  padding: 0;
 }
 
-.leaflet-popup-content .hydro-pill-yellow {
-  background: #ffc107;
+.leaflet-popup-content .hydro-note {
+  display: grid;
+  grid-template-columns: 0.72rem 1fr;
+  column-gap: 0.45rem;
+  align-items: start;
+}
+
+.leaflet-popup-content .hydro-note + .hydro-note {
+  margin-top: 0.62rem;
+}
+
+.leaflet-popup-content .hydro-note-dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  margin-top: 0.16rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.leaflet-popup-content .hydro-note:not(:last-child) .hydro-note-dot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 2px;
+  height: 0.82rem;
+  background: #d6dbe3;
+  transform: translateX(-50%);
+}
+
+.leaflet-popup-content .hydro-note-red .hydro-note-dot { background: #dc3545; }
+.leaflet-popup-content .hydro-note-yellow .hydro-note-dot { background: #ffc107; }
+.leaflet-popup-content .hydro-note-green .hydro-note-dot { background: #28a745; }
+
+.leaflet-popup-content .hydro-note-text {
   color: #1e293b;
+  font-size: 0.92em;
+  line-height: 1.3;
 }
 
-.leaflet-popup-content .hydro-pill-green {
-  background: #28a745;
-  color: #fff;
-}
-
-.leaflet-popup-content .hydro-pill-since {
+.leaflet-popup-content .hydro-note-since {
   font-weight: 400;
-}
-
-.leaflet-popup-content .hydro-prev-pills .hydro-pill {
-  margin: 0.1rem 0;
 }
 
 /* Stack Location / Sounds / Explanation as separate lines in sound examples. */
