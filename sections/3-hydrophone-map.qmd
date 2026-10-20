@@ -264,7 +264,7 @@ yield container;
   <p class="hydro-status-legend-title">Legend</p>
   <p><span class="hydro-status-dot hydro-status-green"></span><strong>No issues to report.</strong> Data may be used.</p>
   <p><span class="hydro-status-dot hydro-status-yellow"></span><strong>Commissioning, Data quality.</strong> Data is available, with possible quality concerns. Commissioning means data quality is currently being assessed. A Data quality note means something may be affecting the recording on a recurring basis, such as noise from a nearby instrument. The data can still be used, with that limitation in mind.</p>
-  <p><span class="hydro-status-dot hydro-status-red"></span><strong>Data gap, Compromised, Failed.</strong> Data is unavailable or unsuable due to hardware malfunctions, power power outages, or cable connectivity issues.</p>
+  <p><span class="hydro-status-dot hydro-status-red"></span><strong>Data gap, Compromised, Failed.</strong> Data is unavailable or unsuable due to hardware malfunctions, power outages, or cable connectivity issues.</p>
 </div>
 ```
 
