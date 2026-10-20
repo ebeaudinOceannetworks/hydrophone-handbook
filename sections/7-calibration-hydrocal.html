@@ -48,6 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-75b89dee9d9af485c2b7a5c14135a894.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -164,6 +167,35 @@ ul.task-list li input[type="checkbox"] {
 })();
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 
@@ -277,8 +309,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#hydrocal" id="toc-hydrocal" class="nav-link active" data-scroll-target="#hydrocal">HydroCal</a></li>
+  <li><a href="#sensitivity-curve" id="toc-sensitivity-curve" class="nav-link" data-scroll-target="#sensitivity-curve">Sensitivity curve</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -302,18 +342,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>A hydrophone does not respond the same way at every frequency, so we measure a <em>sensitivity curve</em> and use it to turn the recording into a <em>sound level</em>. We calibrate every hydrophone before it goes in the water, and again when it comes back to examine if the sensitivity has shifted.</p>
+<section id="hydrocal" class="level1">
+<h1>HydroCal</h1>
+<p><strong>HydroCal</strong> is Ocean Networks Canada’s calibration system, used at the Marine Technology Centre. It was developed in-house by Ben Biffard. The calibration curve it produces is what used to calibrate the hydrophone data products.</p>
+<p>HydroCal measures the low frequencies, from 0.1 to 700 Hz. Ocean Sonics calibrates the high frequencies, from 10 kHz to 200 kHz, and also provides a check at 26 Hz. We use that 26 Hz point to check the HydroCal result. From 700 Hz to 10 kHz, the curve is filled in between the two.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/MTC_hydrocal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="HydroCal setup at ONC’s Marine Technology Centre."><img src="../images/MTC_hydrocal.png" class="img-fluid figure-img" data-lightbox="true" alt="HydroCal setup at ONC’s Marine Technology Centre."></a></p>
+<figcaption>HydroCal setup at ONC’s Marine Technology Centre.</figcaption>
+</figure>
+</div>
+<p>How to run a calibration is in the <a href="https://internal.oceannetworks.ca/pages/viewpage.action?pageId=216205588&amp;preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf">HydroCal user manual</a>. The system is also written up on the <a href="https://wiki.oceannetworks.ca/spaces/HYD/pages/59015916/Hydrophone+Calibration+System">Hydrophone Calibration System</a> wiki page, and in <a href="https://doi.org/10.1109/oceans47191.2022.9976955">Biffard et al.&nbsp;(2022)</a>.</p>
+</section>
+<section id="sensitivity-curve" class="level1">
+<h1>Sensitivity curve</h1>
+<p>The sensitivity curve is included when you download the audio from Oceans 3.0, either in the data portal or through the API. It applies to that hydrophone for that time period. The curve will soon be available to download on its own, without the audio files.</p>
+<p>The file has two columns: frequency (Hz), and sensitivity in dB re counts²/μPa². Below is the curve for icListen HF 6016, in use since 17 June 2021.</p>
+<div id="b004f396" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="7-calibration-hydrocal_files/figure-html/cell-2-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Pre-deployment sensitivity curve for icListen HF 6016, in use since 17 June 2021."><img src="7-calibration-hydrocal_files/figure-html/cell-2-output-1.png" width="993" height="518" alt="Pre-deployment sensitivity curve for icListen HF 6016, in use since 17 June 2021." class="figure-img"></a></p>
+<figcaption>Pre-deployment sensitivity curve for icListen HF 6016, in use since 17 June 2021.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>To convert a value from the file to dB re V/μPa:</p>
+<p><span class="math display">\[
+S_{V/\mu\mathrm{Pa}} = S_{\text{counts}^2/\mu\mathrm{Pa}^2} + 20\log_{10}(3) - 20\log_{10}(2^{23})
+\]</span></p>
+<p><span class="math inline">\(S_{\text{counts}^2/\mu\mathrm{Pa}^2}\)</span> is the sensitivity in the file. <span class="math inline">\(20\log_{10}(3)\)</span> is the recorder’s <span class="math inline">\(3~\text{V}\)</span> range. <span class="math inline">\(20\log_{10}(2^{23})\)</span> is the 24-bit recording, with one bit used for the sign. For most frequencies, the result is about <span class="math inline">\(−170~\text{dB}~\text{re}~V/\mu\mathrm{Pa}\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>In progress
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This chapter is under construction. Topics: HydroCal, sensitivity curves, and tank-test, validation.</p>
+<p>Section on tank tests and validation check done just before deployment will be added shortly.</p>
 </div>
+</div>
+</section>
+<section id="resources" class="level1">
+<h1>Resources</h1>
+<div class="docs-card">
+  <div class="docs-card-title">
+    <img src="../images/confluence_logo_no_bckg.png" width="24" alt="">
+    <span>Documentation</span>
+  </div>
+  <ul class="docs-card-list">
+    <li><a href="https://internal.oceannetworks.ca/pages/viewpage.action?pageId=216205588&amp;preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf">HydroCal user manual (PDF)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/spaces/HYD/pages/59015916/Hydrophone+Calibration+System">Hydrophone Calibration System</a></li>
+    <li><a href="https://doi.org/10.1109/oceans47191.2022.9976955">Biffard et al. (2022), ONC HydroCal</a></li>
+  </ul>
 </div>
 <!-- handbook-draft: to publish this text, delete the opening HTML comment on this line and the matching closer at the end of the file.
 
@@ -483,6 +569,7 @@ paper:
 -->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -903,6 +990,38 @@ paper:
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
