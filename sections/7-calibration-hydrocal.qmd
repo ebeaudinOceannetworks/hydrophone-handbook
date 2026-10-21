@@ -2,29 +2,32 @@
 title: "7. Calibration (HydroCal)"
 ---
 
-A hydrophone does not respond the same way at every frequency, so we measure a *sensitivity curve* and use it to turn the recording into a *sound level*.
-We calibrate every hydrophone before it goes in the water, and again when it comes back to examine if the sensitivity has shifted.
+A hydrophone's sensitivity varies across frequencies.
+Calibrating hydrophones is essential to ensure accurate conversion of voltage to true underwater sound pressure levels.
+At Ocean Networks Canada, every hydrophone is calibrate before it goes in the water, and again when it comes back to examine if the sensitivity has shifted.
 
 # HydroCal
 
-**HydroCal** is Ocean Networks Canada's calibration system, used at the Marine Technology Centre.
-It was developed in-house by Ben Biffard.
+**HydroCal** is Ocean Networks Canada's calibration system, which was developed in-house (see [Biffard et al. (2022)](https://doi.org/10.1109/oceans47191.2022.9976955).
 The calibration curve it produces is what used to calibrate the hydrophone data products.
 
 HydroCal measures the low frequencies, from 0.1 to 700 Hz.
-Ocean Sonics calibrates the high frequencies, from 10 kHz to 200 kHz, and also provides a check at 26 Hz.
+Ocean Sonics calibrates the high frequencies of their hydrophones, from 10 kHz to 200 kHz, and also provides a check at 26 Hz.
 We use that 26 Hz point to check the HydroCal result.
 From 700 Hz to 10 kHz, the curve is filled in between the two.
 
 ![HydroCal setup at ONC's Marine Technology Centre.](../images/MTC_hydrocal.png){lightbox=true}
 
-How to run a calibration is in the [HydroCal user manual](https://internal.oceannetworks.ca/pages/viewpage.action?pageId=216205588&preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf). The system is also written up on the [Hydrophone Calibration System](https://wiki.oceannetworks.ca/spaces/HYD/pages/59015916/Hydrophone+Calibration+System) wiki page, and in [Biffard et al. (2022)](https://doi.org/10.1109/oceans47191.2022.9976955).
+All the details regarding HydroCal can be found in the [HydroCal user manual](https://internal.oceannetworks.ca/pages/viewpage.action?pageId=216205588&preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf).
 
 # Sensitivity curve
 
-The sensitivity curve is included when you download the audio from Oceans 3.0, either in the data portal or through the API. It applies to that hydrophone for that time period. The curve will soon be available to download on its own, without the audio files.
+The sensitivity curve is included when audio files are downloaded from Oceans 3.0, either in the data portal or through the API.
+It applies to that hydrophone for that deployment period.
+The curve will soon be available to download on its own, without the audio files.
 
-The file has two columns: frequency (Hz), and sensitivity in dB re counts²/μPa². Below is the curve for icListen HF 6016, in use since 17 June 2021.
+The file has two columns: frequency (Hz), and sensitivity in dB re counts²/μPa².
+Below is an example of the sensitivity curve for icListen HF 6016.
 
 ```{python}
 #| echo: false
@@ -88,7 +91,7 @@ $$
 $S_{\text{counts}^2/\mu\mathrm{Pa}^2}$ is the sensitivity in the file.
 $20\log_{10}(3)$ is the recorder's $3~\text{V}$ range.
 $20\log_{10}(2^{23})$ is the 24-bit recording, with one bit used for the sign.
-For most frequencies, the result is about $−170~\text{dB}~\text{re}~V/\mu\mathrm{Pa}$.
+For most frequencies, the result is about -170 dB re V/μPa.
 
 ::: {.callout-note}
 Section on tank tests and validation check done just before deployment will be added shortly.
@@ -110,7 +113,7 @@ Section on tank tests and validation check done just before deployment will be a
 </div>
 ```
 
-<!-- handbook-draft: to publish this text, delete the opening HTML comment on this line and the matching closer at the end of the file.
+<!-- handbook-draft:
 
 
 We calibrate because sensitivity is not flat
