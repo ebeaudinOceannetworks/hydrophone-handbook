@@ -101,9 +101,10 @@
         seen[item.value] = item;
       });
     });
-    return ARCHIVE_ORDER.filter(function (ext) { return seen[ext]; }).map(function (ext) {
+    const items = ARCHIVE_ORDER.filter(function (ext) { return seen[ext]; }).map(function (ext) {
       return seen[ext];
     });
+    return [{ value: "", label: "all — every format" }].concat(items);
   }
 
   function syncArchiveExtensions(catalog) {
@@ -115,18 +116,21 @@
       return "<option value='" + escapeHtml(item.value) + "'>" + escapeHtml(item.label) + "</option>";
     }).join("");
     const keep = options.some(function (item) { return item.value === current; });
-    sel.value = keep ? current : (options[0] ? options[0].value : "flac");
+    sel.value = keep ? current : (options[0] ? options[0].value : "");
     const hint = $("api-archive-hint");
     if (hint) {
       const info = familiesForSelection(catalog);
       const base = "The list covers what this instrument can produce, not what exists in this exact window. " +
         "If a download comes back empty, list the files first.";
+      const allNote = sel.value
+        ? ""
+        : " All leaves out fileExtension, so the archive returns every format your token can read.";
       if (info.families.indexOf("ios") === -1) {
-        hint.textContent = base;
+        hint.textContent = base + allNote;
       } else if (info.usedDates) {
-        hint.textContent = "This time range covers a retired IOS array, so .hyd is offered. " + base;
+        hint.textContent = "This time range covers a retired IOS array, so .hyd is offered. " + base + allNote;
       } else {
-        hint.textContent = "This location hosted a retired IOS array (.hyd), possibly outside the dates you picked. " + base;
+        hint.textContent = "This location hosted a retired IOS array (.hyd), possibly outside the dates you picked. " + base + allNote;
       }
     }
   }
