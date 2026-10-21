@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-75b89dee9d9af485c2b7a5c14135a894.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ae6d7d5b5c3d2dd4f83031b3c4beec79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -342,24 +342,24 @@ window.Quarto = {
 </header>
 
 
-<p>A hydrophone does not respond the same way at every frequency, so we measure a <em>sensitivity curve</em> and use it to turn the recording into a <em>sound level</em>. We calibrate every hydrophone before it goes in the water, and again when it comes back to examine if the sensitivity has shifted.</p>
+<p>A hydrophone’s sensitivity varies across frequencies. Calibrating hydrophones is essential to ensure accurate conversion of voltage to true underwater sound pressure levels. At Ocean Networks Canada, every hydrophone is calibrate before it goes in the water, and again when it comes back to examine if the sensitivity has shifted.</p>
 <section id="hydrocal" class="level1">
 <h1>HydroCal</h1>
-<p><strong>HydroCal</strong> is Ocean Networks Canada’s calibration system, used at the Marine Technology Centre. It was developed in-house by Ben Biffard. The calibration curve it produces is what used to calibrate the hydrophone data products.</p>
-<p>HydroCal measures the low frequencies, from 0.1 to 700 Hz. Ocean Sonics calibrates the high frequencies, from 10 kHz to 200 kHz, and also provides a check at 26 Hz. We use that 26 Hz point to check the HydroCal result. From 700 Hz to 10 kHz, the curve is filled in between the two.</p>
+<p><strong>HydroCal</strong> is Ocean Networks Canada’s calibration system, which was developed in-house (see <a href="https://doi.org/10.1109/oceans47191.2022.9976955">Biffard et al.&nbsp;(2022)</a>. The calibration curve it produces is what used to calibrate the hydrophone data products.</p>
+<p>HydroCal measures the low frequencies, from 0.1 to 700 Hz. Ocean Sonics calibrates the high frequencies of their hydrophones, from 10 kHz to 200 kHz, and also provides a check at 26 Hz. We use that 26 Hz point to check the HydroCal result. From 700 Hz to 10 kHz, the curve is filled in between the two.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="../images/MTC_hydrocal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="HydroCal setup at ONC’s Marine Technology Centre."><img src="../images/MTC_hydrocal.png" class="img-fluid figure-img" data-lightbox="true" alt="HydroCal setup at ONC’s Marine Technology Centre."></a></p>
 <figcaption>HydroCal setup at ONC’s Marine Technology Centre.</figcaption>
 </figure>
 </div>
-<p>How to run a calibration is in the <a href="https://internal.oceannetworks.ca/pages/viewpage.action?pageId=216205588&amp;preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf">HydroCal user manual</a>. The system is also written up on the <a href="https://wiki.oceannetworks.ca/spaces/HYD/pages/59015916/Hydrophone+Calibration+System">Hydrophone Calibration System</a> wiki page, and in <a href="https://doi.org/10.1109/oceans47191.2022.9976955">Biffard et al.&nbsp;(2022)</a>.</p>
+<p>All the details regarding HydroCal can be found in the <a href="https://internal.oceannetworks.ca/pages/viewpage.action?pageId=216205588&amp;preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf">HydroCal user manual</a>.</p>
 </section>
 <section id="sensitivity-curve" class="level1">
 <h1>Sensitivity curve</h1>
-<p>The sensitivity curve is included when you download the audio from Oceans 3.0, either in the data portal or through the API. It applies to that hydrophone for that time period. The curve will soon be available to download on its own, without the audio files.</p>
-<p>The file has two columns: frequency (Hz), and sensitivity in dB re counts²/μPa². Below is the curve for icListen HF 6016, in use since 17 June 2021.</p>
-<div id="b004f396" class="cell" data-execution_count="1">
+<p>The sensitivity curve is included when audio files are downloaded from Oceans 3.0, either in the data portal or through the API. It applies to that hydrophone for that deployment period. The curve will soon be available to download on its own, without the audio files.</p>
+<p>The file has two columns: frequency (Hz), and sensitivity in dB re counts²/μPa². Below is an example of the sensitivity curve for icListen HF 6016.</p>
+<div id="534a396f" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -373,7 +373,7 @@ window.Quarto = {
 <p><span class="math display">\[
 S_{V/\mu\mathrm{Pa}} = S_{\text{counts}^2/\mu\mathrm{Pa}^2} + 20\log_{10}(3) - 20\log_{10}(2^{23})
 \]</span></p>
-<p><span class="math inline">\(S_{\text{counts}^2/\mu\mathrm{Pa}^2}\)</span> is the sensitivity in the file. <span class="math inline">\(20\log_{10}(3)\)</span> is the recorder’s <span class="math inline">\(3~\text{V}\)</span> range. <span class="math inline">\(20\log_{10}(2^{23})\)</span> is the 24-bit recording, with one bit used for the sign. For most frequencies, the result is about <span class="math inline">\(−170~\text{dB}~\text{re}~V/\mu\mathrm{Pa}\)</span>.</p>
+<p><span class="math inline">\(S_{\text{counts}^2/\mu\mathrm{Pa}^2}\)</span> is the sensitivity in the file. <span class="math inline">\(20\log_{10}(3)\)</span> is the recorder’s <span class="math inline">\(3~\text{V}\)</span> range. <span class="math inline">\(20\log_{10}(2^{23})\)</span> is the 24-bit recording, with one bit used for the sign. For most frequencies, the result is about -170 dB re V/μPa.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -401,7 +401,7 @@ Note
     <li><a href="https://doi.org/10.1109/oceans47191.2022.9976955">Biffard et al. (2022), ONC HydroCal</a></li>
   </ul>
 </div>
-<!-- handbook-draft: to publish this text, delete the opening HTML comment on this line and the matching closer at the end of the file.
+<!-- handbook-draft:
 
 
 We calibrate because sensitivity is not flat
