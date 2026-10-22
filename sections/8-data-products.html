@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ae6d7d5b5c3d2dd4f83031b3c4beec79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-75b89dee9d9af485c2b7a5c14135a894.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -452,7 +452,7 @@ window.Quarto = {
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>dpo_audioDownsample</code>: <code>"-1"</code> (default, native rate), <code>"256"</code>, <code>"512"</code>, <code>"2000"</code>, <code>"4000"</code>, <code>"8000"</code>, <code>"16000"</code>, <code>"44100"</code>, <code>"48000"</code></li>
+<li><code>dpo_audioDownsample</code>: <code>"-1"</code> (default, original rate). FLAC and WAV also accept any whole number from 1 to 256000 Hz. A rate at or above the recording is left unchanged. MP3 only accepts specific rates (usually 8000, 11025, 12000, 16000, 22050, 24000, 32000, 44100, and 48000 Hz); the exact set depends on the file, and 2000 Hz is rejected.</li>
 <li><code>dpo_audioFormatConversion</code>: <code>"0"</code> (default), <code>"1"</code></li>
 <li><code>dpo_hydrophoneAcquisitionMode</code>: <code>"All"</code> (default), <code>"LF"</code>, <code>"HF"</code></li>
 <li><code>dpo_hydrophoneChannel</code>: <code>"H1"</code> (default), <code>"H2"</code>, <code>"H3"</code>, <code>"All"</code></li>

@@ -239,6 +239,10 @@
   // Extensions the catalog advertises for the whole HYDROPHONE category but
   // that no hydrophone actually delivers as a data product (.oct is archive-only).
   const ORDER_EXCLUDED_FORMATS = ["oct"];
+  // FLAC and WAV accept any integer from 1 to 256000 Hz. MP3 does not: the
+  // encoder only succeeds at specific rates, and the exact set depends on the
+  // file. These are the usual ones from the Audio Downsampling wiki.
+  const MP3_SAMPLE_RATES = ["-1", "8000", "11025", "12000", "16000", "22050", "24000", "32000", "44100", "48000"];
   const FORMAT_FAMILIES = {
     fft: ["ocean-sonics"],
     hyd: ["ios"]
@@ -536,9 +540,69 @@
     return text;
   }
 
+  function sortSampleRates(values) {
+    return values.slice().sort(function (a, b) {
+      const na = Number(a);
+      const nb = Number(b);
+      if (na === -1) return -1;
+      if (nb === -1) return 1;
+      return na - nb;
+    });
+  }
+
+  function audioDownsampleControl(opt, extension) {
+    const def = opt.defaultValue == null ? "-1" : String(opt.defaultValue);
+    if (extension === "mp3") {
+      const values = MP3_SAMPLE_RATES.slice();
+      return "<select id='dpo-" + opt.option + "' data-dpo='" + opt.option +
+        "' data-dpo-default='" + escapeHtml(def) + "'>" +
+        values.map(function (v) {
+          const selected = String(v) === def ? " selected" : "";
+          return "<option value='" + escapeHtml(v) + "'" + selected + ">" +
+            escapeHtml(dpoOptionLabel(opt.option, v, String(v) === def)) + "</option>";
+        }).join("") +
+        "</select>";
+    }
+    const values = sortSampleRates(opt.allowableValues || []);
+    return "<div class='api-downsample'>" +
+      "<select id='dpo-" + opt.option + "' data-downsample-preset data-dpo-default='" + escapeHtml(def) + "'>" +
+      values.map(function (v) {
+        const selected = String(v) === def ? " selected" : "";
+        return "<option value='" + escapeHtml(v) + "'" + selected + ">" +
+          escapeHtml(dpoOptionLabel(opt.option, v, String(v) === def)) + "</option>";
+      }).join("") +
+      "<option value='custom'>custom Hz</option></select>" +
+      "<input type='number' data-downsample-custom hidden min='1' max='256000' step='1' placeholder='1–256000' data-dpo-default='" + escapeHtml(def) + "'>" +
+      "</div>";
+  }
+
+  function bindAudioDownsample(box) {
+    const preset = box.querySelector("[data-downsample-preset]");
+    const custom = box.querySelector("[data-downsample-custom]");
+    if (!preset || !custom) return;
+    function sync() {
+      const isCustom = preset.value === "custom";
+      custom.hidden = !isCustom;
+      preset.removeAttribute("data-dpo");
+      custom.removeAttribute("data-dpo");
+      if (!isCustom) {
+        preset.setAttribute("data-dpo", "dpo_audioDownsample");
+        return;
+      }
+      const n = Number(custom.value);
+      if (Number.isInteger(n) && n >= 1 && n <= 256000) {
+        custom.setAttribute("data-dpo", "dpo_audioDownsample");
+      }
+    }
+    preset.addEventListener("change", sync);
+    custom.addEventListener("input", sync);
+    sync();
+  }
+
   function renderDpoFields(format) {
     const box = $("api-dpo-fields");
     if (!box) return;
+    const extension = format && format.extension;
     const options = (format && format.options) || [];
     if (!options.length) {
       box.innerHTML = "<p class='api-hint'>This product has no options to set.</p>";
@@ -552,9 +616,16 @@
       const def = opt.defaultValue == null ? "" : String(opt.defaultValue);
       const attrs = " id='" + id + "' data-dpo='" + escapeHtml(opt.option) +
         "' data-dpo-default='" + escapeHtml(def) + "'";
-      const help = DPO_HELP[opt.option] || "Oceans 3.0 data product option for this format.";
+      let help = DPO_HELP[opt.option] || "Oceans 3.0 data product option for this format.";
+      if (opt.option === "dpo_audioDownsample" && extension === "mp3") {
+        help = "MP3 only accepts specific rates, and which ones work depends on the file. These are the usual ones. A free rate is rejected; 2000 Hz is not valid.";
+      } else if (opt.option === "dpo_audioDownsample") {
+        help = "−1 keeps the original rate. Choose a preset, or Custom and enter any whole number from 1 to 256000 Hz. A rate at or above the recording is not upsampled.";
+      }
       let control;
-      if (values.length) {
+      if (opt.option === "dpo_audioDownsample") {
+        control = audioDownsampleControl(opt, extension);
+      } else if (values.length) {
         control = "<select" + attrs + ">" +
           values.map(function (v) {
             const selected = String(v) === def ? " selected" : "";
@@ -576,6 +647,7 @@
         control +
         "<small class='api-dpo-help'>" + escapeHtml(help + defaultNote) + "</small></label>";
     }).join("");
+    bindAudioDownsample(box);
     updateDpoSummary();
   }
 
