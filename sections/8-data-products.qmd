@@ -58,7 +58,7 @@ Why FLAC is the preferred format?
 ::: {.callout-note collapse="true"}
 ## Expand for API options
 
-* `dpo_audioDownsample`: `"-1"` (default, native rate), `"256"`, `"512"`, `"2000"`, `"4000"`, `"8000"`, `"16000"`, `"44100"`, `"48000"`
+* `dpo_audioDownsample`: `"-1"` (default, original rate). FLAC and WAV also accept any whole number from 1 to 256000 Hz. A rate at or above the recording is left unchanged. MP3 only accepts specific rates (usually 8000, 11025, 12000, 16000, 22050, 24000, 32000, 44100, and 48000 Hz); the exact set depends on the file, and 2000 Hz is rejected.
 * `dpo_audioFormatConversion`: `"0"` (default), `"1"`
 * `dpo_hydrophoneAcquisitionMode`: `"All"` (default), `"LF"`, `"HF"`
 * `dpo_hydrophoneChannel`: `"H1"` (default), `"H2"`, `"H3"`, `"All"`

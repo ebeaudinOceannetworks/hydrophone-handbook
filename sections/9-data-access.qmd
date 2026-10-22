@@ -190,6 +190,7 @@ FALLBACK_PRODUCTS = [
             {
                 "extension": "mp3",
                 "options": [
+                    {"option": "dpo_audioDownsample", "allowableValues": ["-1", "8000", "16000", "44100", "48000"], "defaultValue": "-1"},
                     {"option": "dpo_hydrophoneAcquisitionMode", "allowableValues": ["All", "LF", "HF"], "defaultValue": "All"},
                     {"option": "dpo_hydrophoneChannel", "allowableValues": ["H1", "H2", "H3", "All"], "defaultValue": "H1"},
                     {"option": "dpo_hydrophoneDataDiversionMode", "allowableValues": ["OD", "LPF", "HPF", "All"], "defaultValue": "OD"},
