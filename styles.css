@@ -1753,3 +1753,57 @@ section.listen-section > h3::before {
     font-size: 2.1rem;
   }
 }
+
+footer.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent !important;
+  margin: 2.5rem 0 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+footer.footer .nav-footer {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.88);
+  padding: 1.15rem 0 0.25rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  border: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+footer.footer .nav-footer-left,
+footer.footer .nav-footer-right {
+  display: none;
+}
+
+footer.footer .nav-footer-center {
+  text-align: left;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  flex: none;
+}
+
+footer.footer .nav-footer p {
+  margin: 0 0 0.45rem;
+}
+
+footer.footer .nav-footer p:last-child {
+  margin-bottom: 0;
+}
+
+footer.footer .nav-footer a {
+  color: #82caff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(130, 202, 255, 0.35);
+}
+
+footer.footer .nav-footer a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
