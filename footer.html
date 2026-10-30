@@ -1,0 +1,12 @@
+<script>
+(function () {
+  function placeFooter() {
+    var footer = document.querySelector("footer.footer");
+    var main = document.getElementById("quarto-document-content");
+    if (!footer || !main || main.contains(footer)) return;
+    main.appendChild(footer);
+  }
+  placeFooter();
+  document.addEventListener("DOMContentLoaded", placeFooter);
+})();
+</script>

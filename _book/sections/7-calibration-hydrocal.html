@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-285f8096acd7c926f9e067843adf601e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-86d75982ad851415328f26767709a6c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -356,7 +356,7 @@ window.Quarto = {
 <h1>Sensitivity curve</h1>
 <p>The sensitivity curve is included when audio files are downloaded from Oceans 3.0, either in the data portal or through the API. It applies to that hydrophone for that deployment period. The curve will soon be available to download on its own, without the audio files.</p>
 <p>The file has two columns: frequency (Hz), and sensitivity in dB re counts²/μPa². Below is an example of the sensitivity curve for icListen HF 6016.</p>
-<div id="534a396f" class="cell" data-execution_count="1">
+<div id="85ca9512" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -569,6 +569,18 @@ paper:
 </section>
 
 </main> <!-- /main -->
+<script>
+(function () {
+  function placeFooter() {
+    var footer = document.querySelector("footer.footer");
+    var main = document.getElementById("quarto-document-content");
+    if (!footer || !main || main.contains(footer)) return;
+    main.appendChild(footer);
+  }
+  placeFooter();
+  document.addEventListener("DOMContentLoaded", placeFooter);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -987,6 +999,20 @@ paper:
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><strong>How to cite the data:</strong> Ocean Networks Canada. ONC-owned hydrophone data is available under CC BY. Attribute Ocean Networks Canada on any use and on derived work, including model weights. You may distribute and profit from that work. Burrard Inlet is the exception: commercial use requires liaison with Tsleil-Waututh Nation.</p>
+<p>For more information or questions: <a href="mailto:info@oceannetworks.ca">info@oceannetworks.ca</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;

@@ -6,6 +6,7 @@ project:
     - audio/
     - sounds/
     - banner.html
+    - footer.html
     - scripts/
     - fonts/
 
@@ -50,12 +51,19 @@ book:
     foreground: "#ffffff"
     collapse-level: 2
 
+  page-footer:
+    center: |
+      **How to cite the data:** Ocean Networks Canada. ONC-owned hydrophone data is available under CC BY 4.0. Attribute Ocean Networks Canada on any use and on derived work, including model weights. You may distribute and profit from that work. Burrard Inlet is the exception: commercial use requires liaison with Tsleil-Waututh Nation.
+
+      For more information or questions: [info@oceannetworks.ca](mailto:info@oceannetworks.ca)
+
 
 format:
   html:
     theme: quartz
     smooth-scroll: true
     include-in-header: banner.html
+    include-after-body: footer.html
     css: styles.css
     lightbox:
       match: auto
