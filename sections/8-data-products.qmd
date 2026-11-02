@@ -129,7 +129,7 @@ A spectrogram is built from short Fourier transforms of the audio:
 1. **Time windowing**: raw audio is split into finite segments with a window (ONC uses a Hann window) to limit spectral leakage.
 2. **FFT**: each segment is transformed from the time domain to the frequency domain.
 3. **Overlap / averaging**: successive windows overlap (typically 50%) so energy at the edges is not lost.
-4. **Calibration**: values are converted to micropascals with the device-specific **frequency-dependent calibration curve**. Using the wrong curve has caused errors in the past ([internal note](https://internal.oceannetworks.ca/spaces/ONCData/pages/255101693/1.+Power+spectral+density+vs.+power+spectrum.)).
+4. **Calibration**: values are converted to micropascals with the device-specific **frequency-dependent calibration curve**.
 
 Fourier transforms assume an infinite, stationary signal. A finite cut creates edge discontinuities and **spectral leakage** into neighbouring bins. Windowing (tapering) multiplies the segment by a shape that goes to zero at the edges.
 
@@ -337,7 +337,6 @@ LF (`.txt`) and HACC (`.acc`) have no extra `dpo_*` options. There is no single 
     <span>Documentation</span>
   </div>
   <ul class="docs-card-list">
-    <!-- <li><a href="https://internal.oceannetworks.ca/spaces/DS/pages/7639165/Hydrophone+Matlab+Postprocess+Jobs">Hydrophone MATLAB Post-process Jobs</a></li> -->
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758104/7">Data Product: Audio Data (7)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/42174569/45">Data Product: Hydrophone Spectral Data (45)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/299139157/204">Data Product: Hydrophone Spectral Data 2.0 (204)</a></li>
@@ -345,7 +344,6 @@ LF (`.txt`) and HACC (`.acc`) have no extra `dpo_*` options. There is no single 
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146">Data Product: Spectrogram For Hydrophone Viewer (146)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128">Data Product: Hydrophone Acceleration Data (128)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758026/4">Data Product: Log File (4)</a></li>
-    <!-- <li><a href="https://internal.oceannetworks.ca/spaces/ONCData/pages/216205790/Passive+acoustics">Passive acoustics data products (internal)</a></li> -->
   </ul>
 </div>
 ```
