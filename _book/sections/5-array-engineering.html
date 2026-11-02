@@ -385,15 +385,6 @@ window.Quarto = {
 </figure>
 </div>
 <p>There are many more possible configurations for hydrophones, depending on the scientific objectives of ocean monitoring (e.g., line arrays, USBL, SBL, LBL).</p>
-<!--
-## Hydrophones can be deployed in several configurations: 
-
-* **Single Hydrophone**: Baseline monitoring.
-* **Line Arrays**: Arranged in a straight line for vertical profiling.
-* **USBL (Ultra-Short Base Line)**: Used for precise underwater positioning.
-* **SBL (Short Baseline)**: Examples include 3-element horizontal arrays, 4-element tetrahedral arrays, or 4-element box-type arrays.
-* **LBL (Long Base Line)**: Used for tracking over wide areas.
--->
 </section>
 <section id="mitigating-noise-and-instrument-damage" class="level1">
 <h1>Mitigating noise and instrument damage</h1>
@@ -407,7 +398,7 @@ window.Quarto = {
 <figcaption>Example of instrument interference (also referred to as noise contamination) at Holyrood, Conception Bay, NL.</figcaption>
 </figure>
 </div>
-<p>After the 2023 Holyrood recordings, ONC ran a dedicated interference investigation (Holyrood Acoustic Testing Summary, Brendan Smith) to find which platform instruments were contaminating the hydrophone. The likely sources were the ADCP, the pCO₂ sensor, and the SeaBird Microcat. That work is the template for later sites: identify the noisy neighbour, then increase separation or change the duty cycle before the next deployment.</p>
+<p>After the 2023 Holyrood recordings, ONC ran a dedicated interference investigation (Holyrood Acoustic Testing Summary, Brendan Smith) to find which platform instruments were contaminating the hydrophone. The likely sources were the ADCP, the pCO₂ sensor, and the SeaBird Microcat. This work set new standards for future deployments: identify potential noisy nearby instruments, increase separation deployment distance, or change the noisy instrument(s) duty cycle(s) before the next deployment.</p>
 <p>In general, in order to prevent acoustic contamination, the following “Rules of Thumb” separation distances between the hydrophone array and the systems:</p>
 <ul>
 <li>Small Pumps (e.g., CTD pump): &gt; 100 m</li>
@@ -472,13 +463,6 @@ window.Quarto = {
 </div>
 </div>
 <p>Sound from a given direction reaches one hydrophone slightly before the others. That <strong>time difference of arrival</strong> (TDOA) and the known element spacing give the angle (<span class="math inline">\(\theta\)</span>) of arrival. In practice we apply phase shifts to each channel in the frequency domain corresponding to a given steering direction and sum the channels.</p>
-<!--
-Sound from one direction reaches hydrophone A slightly before hydrophone B. That **time difference of arrival (TDOA)** and the known spacing give the angle.
-In practice we delay each channel so a chosen steering direction lines up, then add the channels:
-
-* Energy from that direction adds **coherently** (gain scales about as $N$, the number of hydrophones).
-* Uncorrelated noise adds more slowly (about $1/\sqrt{N}$).
--->
 <p>Three design rules matter:</p>
 <ul>
 <li><strong>Spacing vs frequency:</strong> To avoid spatial aliasing, spacing between elements (<span class="math inline">\(d\)</span>) should satisfy <span class="math inline">\(d \leq \lambda/2 = c/(2f)\)</span>, where <span class="math inline">\(\lambda\)</span> the wavelength, <span class="math inline">\(f\)</span> is the frequency, and <span class="math inline">\(c\)</span> is the sound speed. A <strong>1-m</strong> aperture sets an upper limit of <strong>~750 Hz</strong> for sound directionality, which is well suited for low-frequency sources like humpback whales, fin whales and earthquakes.</li>
@@ -489,85 +473,6 @@ In practice we delay each channel so a chosen steering direction lines up, then 
 <section id="deployment" class="level1">
 <h1>Deployment</h1>
 <p>At ONC, most hydrophones are deployed using a Remotely Operated Vehicles (ROV); which is a tethered, unoccupied underwater robots used to work in too deep or difficult to access ocean environments.</p>
-<!--
-
-# Resources
-
-
-```{=html}
-<div style="border: 1px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 8px; 
-            padding: 16px; 
-            background: rgba(255, 255, 255, 0.05); 
-            margin-top: 15px;
-            backdrop-filter: blur(5px);
-            color: white;">
-
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="../images/confluence_logo_no_bckg.png" width="24" style="object-fit: contain;">
-    <span style="font-weight: bold; font-size: 1.1em; letter-spacing: 0.3px;">
-      Confluence Documentation
-    </span>
-  </div>
-
-  <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
-    
-    <li style="margin-bottom: 10px;">
-      <a href="https://internal.oceannetworks.ca/spaces/MO/pages/125083608/Four+Element+Hydrophone+Platform" 
-         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Four Element Hydrophone Platform
-      </a>
-    </li>
-
-    <li style="margin-bottom: 10px;">
-      <a href="https://internal.oceannetworks.ca/spaces/MO/pages/216205603/Presentations+and+other+documents?preview=/216205603/216205609/Hydrophone%20system%20engineering.pdf" 
-         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Presentation: Hydrophone Deployment Systems Engineering (Tom Dakin)
-      </a>
-    </li>
-
-    <li style="margin-bottom: 10px;">
-      <a href="https://wiki.oceannetworks.ca/spaces/PLATFORM/pages/81887880/Hydrophone+Arrays" 
-         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         Hydrophone Array Positions
-      </a>
-    </li>
-
-  </ul>
-</div>
-```
-
-
-
-```{=html}
-<div style="border: 1px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 8px; 
-            padding: 16px; 
-            background: rgba(255, 255, 255, 0.05); 
-            margin-top: 15px;
-            backdrop-filter: blur(5px);
-            color: white;">
-
-  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-    <img src="../images/mystery-box.png" width="24" style="object-fit: contain;">
-    <span style="font-weight: bold; font-size: 1.1em; letter-spacing: 0.3px;">
-      External Resources
-    </span>
-  </div>
-
-  <ul style="list-style-type: none; padding-left: 36px; margin: 0;">
-    <li style="margin-bottom: 10px;">
-      <a href="https://tc.canada.ca/sites/default/files/2024-03/towards_standard_vessel_urn_measurement_shallow_water-final.pdf" 
-         style="color: #82caff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(130, 202, 255, 0.3);">
-         JASCO Report (2022): Towards a Standard for Vessel URN Measurement in Shallow Water
-      </a>
-    </li>
-
-  </ul>
-</div>
-```
-
--->
 
 
 </section>
@@ -1009,7 +914,7 @@ In practice we delay each channel so a chosen steering direction lines up, then 
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p><strong>How to cite the data:</strong> Ocean Networks Canada. ONC-owned hydrophone data is available under CC BY. Attribute Ocean Networks Canada on any use and on derived work, including model weights. You may distribute and profit from that work. Burrard Inlet is the exception: commercial use requires liaison with Tsleil-Waututh Nation.</p>
+<p><strong>How to cite the data:</strong> Ocean Networks Canada. ONC-owned hydrophone data is available under CC BY 4.0. Attribute Ocean Networks Canada on any use and on derived work, including model weights. You may distribute and profit from that work. Burrard Inlet is the exception: commercial use requires liaison with Tsleil-Waututh Nation.</p>
 <p>For more information or questions: <a href="mailto:info@oceannetworks.ca">info@oceannetworks.ca</a></p>
 </div>
     <div class="nav-footer-right">
