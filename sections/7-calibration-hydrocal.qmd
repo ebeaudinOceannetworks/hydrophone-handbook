@@ -18,7 +18,7 @@ From 700 Hz to 10 kHz, the curve is filled in between the two.
 
 ![HydroCal setup at ONC's Marine Technology Centre.](../images/MTC_hydrocal.png){lightbox=true}
 
-All the details regarding HydroCal can be found in the [HydroCal user manual](https://internal.oceannetworks.ca/pages/viewpage.action?pageId=216205588&preview=/216205588/216205599/ONC-HydrophoneCalibrationUserManual_22_03_000.pdf).
+More details regarding HydroCal can be found [here](https://wiki.oceannetworks.ca/spaces/HYD/overview).
 
 # Sensitivity curve
 
