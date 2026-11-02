@@ -92,14 +92,16 @@ icons = {
 
 pin = '<svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e15b4a" d="M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.3" fill="#fff"/></svg>'
 
-# 2. Read Excel sheet & clean up
+# 2. Read the public use-case sheet.
+# One row per hydrophone use case the map is allowed to show.
+# Titles, other sensors, and in-progress studies are not in this file.
 df = pd.read_excel('../docs/Coastal Observatory hydrophone use cases.xlsx')
 df = df.rename(columns={'CCO': 'location'})
 
 if 'Sensor type' in df.columns:
     df = df[df['Sensor type'].str.contains('Hydrophone', case=False, na=False)]
 
-# In-progress studies stay off the map to protect privacy.
+# Kept as a guard if an in-progress row is added back to the sheet.
 df = df[df['Use case category'] != 'In progress study']
 df = df.dropna(subset=['location', 'Use case category'])
 
