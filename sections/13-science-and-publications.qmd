@@ -42,8 +42,7 @@ Numerous studies have used them to track fin whales ([Weirathmueller et al., 200
 
 
 # Publications
-A non-exhaustive list of scientific papers from ONC hydrophone data.
-<!-- For the full catalogue, see [Scientific Output](https://internal.oceannetworks.ca/spaces/OS/pages/249300119/Scientific+Output) on Confluence. -->
+A non-exhaustive list of scientific papers from ONC hydrophone data:
 
 - Aghaei, O., Lam, A., Wolf, M., Muzi, L., Baillie, G. J., Biffard, B., Dorocicz, J., Snauffer, D., Bedard, J., and Foloni-Neto, H. (2024). [Best Practices for Managing Passive Acoustics Data at Ocean Networks Canada](https://doi.org/10.1109/oceans55160.2024.10754545). *OCEANS 2024 Halifax*.
 
