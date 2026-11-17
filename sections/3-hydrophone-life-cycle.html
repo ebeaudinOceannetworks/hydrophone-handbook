@@ -358,12 +358,12 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><strong>Hardware</strong>: We primarily use <strong>Ocean Sonics</strong> (HF/AF) and <strong>GeoSpectrum</strong> (from JASCO distributor) instruments, deployed as single units or four-element arrays.</li>
 <li><strong>Calibration (HydroCal)</strong>: Instruments undergo rigorous pre-deployment and post-recovery calibration to ensure accuracy. If sensors drift, they are returned to the manufacturer.</li>
-<li><strong>Validation</strong>: Hydrophones undergo validation by engineers to verify that recorded frequencies and amplitudes are accurate before the instrument is deployed. During testing, instruments are placed in a test tank to collect ~2 minutes of auxiliary, .fft, and .wav data. The resulting spectrograms are then evaluated against expected baseline values. For hydrophone arrays, all individual sensors are compared with one another to ensure clock synchronization, and that they record the same sound levels.</li>
+<li><strong>Validation</strong>: Hydrophones undergo validation by engineers to verify that recorded frequencies and amplitudes are accurate before the instrument is deployed. During testing, instruments are placed in a test tank to collect ~2 minutes of ancillary, .fft, and .wav data. The resulting spectrograms are then evaluated against expected baseline values. For hydrophone arrays, all individual sensors are compared with one another to ensure clock synchronization, and that they record the same sound levels.</li>
 <li><strong>Data Diversion</strong>: Hydrophones are “Tier 1” instruments, meaning that the data streams are subject to diversion by the Royal Canadian Navy and US Navy before reaching the ONC archive.</li>
 <li><strong>Data Transmission</strong>:
 <ul>
 <li>Acoustic Data: Transferred as raw audio (.wav or .flac).</li>
-<li>Ancillary Data: Instrument “health” (temperature, humidity, clock drift) is transmitted without diversion to monitor device’s status (only for Ocean Sonics). Also referred to as auxiliary data.</li>
+<li>Ancillary Data: Instrument “health” (temperature, humidity, clock drift) is transmitted without diversion to monitor device’s status (only for Ocean Sonics). Also referred to as ancillary data.</li>
 </ul></li>
 <li><strong>Data Processing</strong>: Performed to generate Hydrophone Spectral Data (HSD) in MAT format, and Hydrophone Spectral Density Plots (HSPD) from the raw audio files, and archived.</li>
 <li><strong>Data Availability</strong>: Data is made readily available (within a few minutes) to end-users through Oceans 3.0.</li>
@@ -375,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Once a hydrophone is deployed and recording data, the commissioning of the device starts. This process is designed to catch technical issues early and ensures the data is “science-ready”.</p>
 <ul>
 <li><strong>Immediate Post-Deployment</strong>: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming.</li>
-<li><strong>1-2 Months Post-Deployment</strong>: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4-element arrays), auxiliary data.</li>
+<li><strong>1-2 Months Post-Deployment</strong>: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4-element arrays), ancillary data.</li>
 </ul>
 <p>Commissioning is complete once the data is verified, accessible via all data access streams, and that data products generate successfully.</p>
 </section>
