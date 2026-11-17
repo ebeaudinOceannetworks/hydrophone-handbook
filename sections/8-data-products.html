@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-84de2731ebea425134b22bf9642f3c0c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7ae54ade28f2226e9b1902b9a97418e3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -500,20 +500,19 @@ window.Quarto = {
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>ONC spectrograms (Hydrophone Viewer and the <code>.png</code> / <code>.pdf</code> HSD product) are usually <strong>5-minute</strong> files. They use the same axes every time:</p>
+<p>ONC spectrograms (found in the <a href="https://data.oceannetworks.ca/SearchHydrophoneData">Hydrophone Viewer</a>) show 5 minutes of sound recorded by our hydrophones. Every plot reads the same way:</p>
 <ul>
-<li><strong>x-axis</strong>: time</li>
-<li><strong>y-axis</strong>: frequency (Hz)</li>
-<li><strong>colour</strong>: sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span></li>
+<li><strong>Left to right:</strong> Time (in minutes)</li>
+<li><strong>Bottom to top:</strong> Pitch / Frequency (Hz)</li>
+<li><strong>Color:</strong> Loudness / Sound level (dB)</li>
 </ul>
-<p>How to read features on the plot:</p>
+<p>How to recognize sound patterns by simply looking at a spectrogram:</p>
 <ul>
-<li>A <strong>thin horizontal line</strong> is a tonal — often a nearby instrument, a propeller, or electrical noise.</li>
-<li>A <strong>vertical smear</strong> or filled band is broadband — ships, earthquakes, weather, or a passing animal.</li>
-<li>A <strong>flat-topped</strong> burst or hard colour ceiling is often clipping or saturation.</li>
-<li><strong>Holes or fading</strong> can be multipath or a quiet moment, not automatically a failed hydrophone.</li>
+<li><strong>Horizontal lines:</strong> Steady tones, usually from nearby instruments, ship propellers, or electrical interference.</li>
+<li><strong>Vertical smears of a few seconds:</strong> Noise that spans many pitches at once, like passing ships, weather, earthquakes, or nearby animals.</li>
+<li><strong>Hard, flat ceilings:</strong> clipping, meaning that the recorded sound was too loud for the sensor.</li>
 </ul>
-<p>If the filename includes <strong>LPF</strong> or <strong>HPF</strong>, the band is incomplete after naval screening. See <a href="../sections/10-data-diversion.html">Data Diversion</a>.</p>
+<p><em>Heads up: If you see LPF or HPF in the filename, part of the frequency band was filtered out (see <a href="../sections/10-data-diversion.html">Data Diversion</a>).</em></p>
 </div>
 </div>
 </div>

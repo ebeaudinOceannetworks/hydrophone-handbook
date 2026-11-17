@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-84de2731ebea425134b22bf9642f3c0c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7ae54ade28f2226e9b1902b9a97418e3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -168,35 +168,6 @@ ul.task-list li input[type="checkbox"] {
 })();
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 
@@ -349,51 +320,35 @@ window.Quarto = {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>ONC spectrograms (Hydrophone Viewer and the <code>.png</code> / <code>.pdf</code> HSD product) are usually <strong>5-minute</strong> files. They use the same axes every time:</p>
+<p>ONC spectrograms (found in the <a href="https://data.oceannetworks.ca/SearchHydrophoneData">Hydrophone Viewer</a>) show 5 minutes of sound recorded by our hydrophones. Every plot reads the same way:</p>
 <ul>
-<li><strong>x-axis</strong>: time</li>
-<li><strong>y-axis</strong>: frequency (Hz)</li>
-<li><strong>colour</strong>: sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span></li>
+<li><strong>Left to right:</strong> Time (in minutes)</li>
+<li><strong>Bottom to top:</strong> Pitch / Frequency (Hz)</li>
+<li><strong>Color:</strong> Loudness / Sound level (dB)</li>
 </ul>
-<p>How to read features on the plot:</p>
+<p>How to recognize sound patterns by simply looking at a spectrogram:</p>
 <ul>
-<li>A <strong>thin horizontal line</strong> is a tonal — often a nearby instrument, a propeller, or electrical noise.</li>
-<li>A <strong>vertical smear</strong> or filled band is broadband — ships, earthquakes, weather, or a passing animal.</li>
-<li>A <strong>flat-topped</strong> burst or hard colour ceiling is often clipping or saturation.</li>
-<li><strong>Holes or fading</strong> can be multipath or a quiet moment, not automatically a failed hydrophone.</li>
+<li><strong>Horizontal lines:</strong> Steady tones, usually from nearby instruments, ship propellers, or electrical interference.</li>
+<li><strong>Vertical smears of a few seconds:</strong> Noise that spans many pitches at once, like passing ships, weather, earthquakes, or nearby animals.</li>
+<li><strong>Hard, flat ceilings:</strong> clipping, meaning that the recorded sound was too loud for the sensor.</li>
 </ul>
-<p>If the filename includes <strong>LPF</strong> or <strong>HPF</strong>, the band is incomplete after naval screening. See <a href="../sections/10-data-diversion.html">Data Diversion</a>.</p>
+<p><em>Heads up: If you see LPF or HPF in the filename, part of the frequency band was filtered out (see <a href="../sections/10-data-diversion.html">Data Diversion</a>).</em></p>
 </div>
 </div>
 </div>
 </div>
+<p><em>Note that the audio clips have been cropped to the interesting part, but the images show the full 5-min recording. Also, the sound levels have been processed to improve audio quality. For a better experience, it is recommended to wear noise-cancelling headphones (not earbuds).</em></p>
 <div class="grid sound-card-grid">
 <div class="g-col-12 g-col-md-6 g-col-xl-4">
 <div class="sound-card">
-<div class="sound-card-visual">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of ADCP interference at Strait of Georgia East."><img src="../images/JASCOAMARHYDROPHONEE000186_20260115T025100.163Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of ADCP interference at Strait of Georgia East."></a></p>
-<figcaption>Spectrogram of ADCP interference at Strait of Georgia East.</figcaption>
-</figure>
-</div>
-</div>
 <div class="sound-card-body">
 <p class="sound-card-title">
-ADCP interference
+SONAR
 </p>
 <p class="sound-card-caption">
-Strait of Georgia East, BC
+Clayoquot Slope, BC
 </p>
-<div class="sound-card-note">
-<p>An ADCP is located very close to the hydrophone, resulting in a strong signal between 35 and 40 kHz. A tonal line is seen around 22 kHz.</p>
 </div>
-<audio class="listen-audio" controls="" preload="metadata"></audio>
-</div>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6 g-col-xl-4">
-<div class="sound-card">
 <div class="sound-card-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -402,46 +357,44 @@ Strait of Georgia East, BC
 </figure>
 </div>
 </div>
-<div class="sound-card-body">
-<p class="sound-card-title">
-SONAR
-</p>
-<p class="sound-card-caption">
-Clayoquot Slope, BC
-</p>
-<div class="sound-card-note">
-<p>SONARs are used to measure distances, help navigate or detect objects by sending a sound wave into the water. Two SONAR signals here at 2 and 7 kHz are potentially coming from a nearby navy ship, and could be from different sources.</p>
-</div>
 <audio class="listen-audio" controls="" preload="metadata">
-  <source src="../sounds/ICLISTENHF6016_20260602T091500.000Z_normalized.flac" type="audio/flac">
-  Your browser does not support the audio player.
+  <source src="../sounds/ICLISTENHF6013_20260602T091500.000Z_modified.flac" type="audio/flac">
 </audio>
-</div>
 </div>
 </div>
 <div class="g-col-12 g-col-md-6 g-col-xl-4">
 <div class="sound-card">
-<div class="sound-card-visual">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/ICLISTENHF7079_20260803T232001.000Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of an airplane over Cambridge Bay."><img src="../images/ICLISTENHF7079_20260803T232001.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of an airplane over Cambridge Bay."></a></p>
-<figcaption>Spectrogram of an airplane over Cambridge Bay.</figcaption>
-</figure>
-</div>
-</div>
 <div class="sound-card-body">
 <p class="sound-card-title">
 Airplane
 </p>
 <p class="sound-card-caption">
-Cambridge Bay, NU
+Conception Bay, NL
 </p>
-<audio class="listen-audio" controls="" preload="metadata"></audio>
 </div>
+<div class="sound-card-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF7079_20260803T232001.000Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of an airplane over Conception Bay."><img src="../images/ICLISTENHF7079_20260803T232001.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of an airplane over Conception Bay."></a></p>
+<figcaption>Spectrogram of an airplane over Conception Bay.</figcaption>
+</figure>
+</div>
+</div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF7079_20260803T232001.000Z_modified.flac" type="audio/flac">
+</audio>
 </div>
 </div>
 <div class="g-col-12 g-col-md-6 g-col-xl-4">
 <div class="sound-card">
+<div class="sound-card-body">
+<p class="sound-card-title">
+Tonals
+</p>
+<p class="sound-card-caption">
+China Creek, BC
+</p>
+</div>
 <div class="sound-card-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -450,30 +403,13 @@ Cambridge Bay, NU
 </figure>
 </div>
 </div>
-<div class="sound-card-body">
-<p class="sound-card-title">
-Tonals
-</p>
-<p class="sound-card-caption">
-China Creek, BC
-</p>
-<div class="sound-card-note">
-<p>A stationary signal at a single frequency that often results from nearby instruments, ship propellers from vessels on standby, or land-based mechanical sources when the hydrophone is shallow enough.</p>
-</div>
-<audio class="listen-audio" controls="" preload="metadata"></audio>
-</div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF6405_20250605T140009.000Z_modified.flac" type="audio/flac">
+</audio>
 </div>
 </div>
 <div class="g-col-12 g-col-md-6 g-col-xl-4">
 <div class="sound-card">
-<div class="sound-card-visual">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../images/ICLISTENHF1252_20260627T072506.000Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of whale vocalizations at Digby Island."><img src="../images/ICLISTENHF1252_20260627T072506.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of whale vocalizations at Digby Island."></a></p>
-<figcaption>Spectrogram of whale vocalizations at Digby Island.</figcaption>
-</figure>
-</div>
-</div>
 <div class="sound-card-body">
 <p class="sound-card-title">
 Whales
@@ -481,23 +417,91 @@ Whales
 <p class="sound-card-caption">
 Digby Island, BC
 </p>
-<div class="sound-card-note">
-<p>Different whales vocalize at different frequencies with distinct patterns. In this example, whale vocalizations are seen below 1 kHz. A tonal at 8 kHz is also present.</p>
 </div>
-<audio class="listen-audio" controls="" preload="metadata"></audio>
+<div class="sound-card-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1252_20251122T030008.000Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of whale vocalizations at Digby Island."><img src="../images/ICLISTENHF1252_20251122T030008.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of whale vocalizations at Digby Island."></a></p>
+<figcaption>Spectrogram of whale vocalizations at Digby Island.</figcaption>
+</figure>
 </div>
+</div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF1252_20251122T030008.000Z_clip.flac" type="audio/flac">
+</audio>
 </div>
 </div>
 <div class="g-col-12 g-col-md-6 g-col-xl-4">
 <div class="sound-card">
+<div class="sound-card-body">
+<p class="sound-card-title">
+Whales
+</p>
+<p class="sound-card-caption">
+Folger Passage, BC
+</p>
+</div>
 <div class="sound-card-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/snowmobile.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of snowmobile noise at Cambridge Bay."><img src="../images/snowmobile.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of snowmobile noise at Cambridge Bay."></a></p>
-<figcaption>Spectrogram of snowmobile noise at Cambridge Bay.</figcaption>
+<p><a href="../images/ICLISTENHF6325_20260712T020000.000Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of whale vocalizations at Folger Passage."><img src="../images/ICLISTENHF6325_20260712T020000.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of whale vocalizations at Folger Passage."></a></p>
+<figcaption>Spectrogram of whale vocalizations at Folger Passage.</figcaption>
 </figure>
 </div>
 </div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF6325_20260712T020000.000Z_normalized.flac" type="audio/flac">
+</audio>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-xl-4">
+<div class="sound-card">
+<div class="sound-card-body">
+<p class="sound-card-title">
+Dolphins
+</p>
+<p class="sound-card-caption">
+Clayoquot Slope, BC
+</p>
+</div>
+<div class="sound-card-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF6015_20260912T092000.000Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of dolphin clicks at Clayoquot Slope."><img src="../images/ICLISTENHF6015_20260912T092000.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of dolphin clicks at Clayoquot Slope."></a></p>
+<figcaption>Spectrogram of dolphin clicks at Clayoquot Slope.</figcaption>
+</figure>
+</div>
+</div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF6015_20260912T092000.000Z.flac" type="audio/flac">
+</audio>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-xl-4">
+<div class="sound-card">
+<div class="sound-card-body">
+<p class="sound-card-title">
+Dolphins
+</p>
+<p class="sound-card-caption">
+Holyrood, NL
+</p>
+</div>
+<div class="sound-card-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF7079_20261010T032000.000Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of dolphin clicks at Holyrood."><img src="../images/ICLISTENHF7079_20261010T032000.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of dolphin clicks at Holyrood."></a></p>
+<figcaption>Spectrogram of dolphin clicks at Holyrood.</figcaption>
+</figure>
+</div>
+</div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF7079_20261010T032000.000Z.flac" type="audio/flac">
+</audio>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-xl-4">
+<div class="sound-card">
 <div class="sound-card-body">
 <p class="sound-card-title">
 Snowmobile
@@ -505,16 +509,30 @@ Snowmobile
 <p class="sound-card-caption">
 Cambridge Bay, NU
 </p>
-<div class="sound-card-note">
-<p>The soundscape is dominated by surface-coupled noise. In winter, snowmobiles create distinct harmonic bands (<span class="math inline">\(10^2\)</span> to <span class="math inline">\(10^3\)</span> Hz). These overlap with ringed seal vocalizations, creating a high risk of <strong>acoustic masking</strong> in shallow ice-covered leads.</p>
-<p><a href="https://www.nature.com/articles/s44384-025-00038-1">Marine soundscapes of the Arctic and human impacts: going beyond the “shipping bands”</a></p>
 </div>
-<audio class="listen-audio" controls="" preload="metadata"></audio>
+<div class="sound-card-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1951_20260103T235011.000Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of snowmobile noise at Cambridge Bay."><img src="../images/ICLISTENHF1951_20260103T235011.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of snowmobile noise at Cambridge Bay."></a></p>
+<figcaption>Spectrogram of snowmobile noise at Cambridge Bay.</figcaption>
+</figure>
 </div>
+</div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF1951_20260103T235011.000Z.flac" type="audio/flac">
+</audio>
 </div>
 </div>
 <div class="g-col-12 g-col-md-6 g-col-xl-4">
 <div class="sound-card">
+<div class="sound-card-body">
+<p class="sound-card-title">
+Helicopter
+</p>
+<p class="sound-card-caption">
+Cambridge Bay, NU
+</p>
+</div>
 <div class="sound-card-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -523,22 +541,21 @@ Cambridge Bay, NU
 </figure>
 </div>
 </div>
-<div class="sound-card-body">
-<p class="sound-card-title">
-Helicopter
-</p>
-<p class="sound-card-caption">
-Cambridge Bay, NU
-</p>
-<div class="sound-card-note">
-<p>The hydrophone in Cambridge Bay is shallow enough (10 m deep) that it can detect helicopters flying above the surface [17:55:00 – 17:55:30].</p>
-</div>
-<audio class="listen-audio" controls="" preload="metadata"></audio>
-</div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF1951_20230807T175509.000Z_clip.flac" type="audio/flac">
+</audio>
 </div>
 </div>
 <div class="g-col-12 g-col-md-6 g-col-xl-4">
 <div class="sound-card">
+<div class="sound-card-body">
+<p class="sound-card-title">
+Earthquake
+</p>
+<p class="sound-card-caption">
+Endeavour
+</p>
+</div>
 <div class="sound-card-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -547,42 +564,55 @@ Cambridge Bay, NU
 </figure>
 </div>
 </div>
-<div class="sound-card-body">
-<p class="sound-card-title">
-Earthquake
-</p>
-<p class="sound-card-caption">
-Endeavour
-</p>
-<div class="sound-card-note">
-<p>Earthquake sounds are mostly detectable at low frequency. Find more information about this event in this <a href="https://www.oceannetworks.ca/news-and-stories/stories/endeavour-site-records-the-highest-level-of-earthquake-activity-in-20-years/">ONC story</a>.</p>
-</div>
-<audio class="listen-audio" controls="" preload="metadata"></audio>
-</div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF6328_20240306T084000.000Z_clip.flac?v=2" type="audio/flac">
+</audio>
 </div>
 </div>
 <div class="g-col-12 g-col-md-6 g-col-xl-4">
 <div class="sound-card">
+<div class="sound-card-body">
+<p class="sound-card-title">
+Rain
+</p>
+<p class="sound-card-caption">
+Folger Passage, BC
+</p>
+</div>
 <div class="sound-card-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of pump contamination at Cambridge Bay."><img src="../images/ICLISTENHF1252_20160826T174703.000Z-FFT-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of pump contamination at Cambridge Bay."></a></p>
-<figcaption>Spectrogram of pump contamination at Cambridge Bay.</figcaption>
+<p><a href="../images/ICLISTENHF1333_20260418T013000.000Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of rain at Folger Passage."><img src="../images/ICLISTENHF1333_20260418T013000.000Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of rain at Folger Passage."></a></p>
+<figcaption>Spectrogram of rain at Folger Passage.</figcaption>
 </figure>
 </div>
 </div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF1333_20260418T013000.000Z_normalized.flac" type="audio/flac">
+</audio>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-xl-4">
+<div class="sound-card">
 <div class="sound-card-body">
 <p class="sound-card-title">
-Pump contamination
+Instrument noise
 </p>
 <p class="sound-card-caption">
 Cambridge Bay, NU
 </p>
-<div class="sound-card-note">
-<p>At that time, the hydrophone was too close to a platform with other noisy instruments which included a pump.</p>
 </div>
-<audio class="listen-audio" controls="" preload="metadata"></audio>
+<div class="sound-card-visual">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../images/ICLISTENHF1252_20160826T172102.996Z-spect.png" class="lightbox" data-gallery="sound-gallery" title="Spectrogram of instrument noise at Cambridge Bay."><img src="../images/ICLISTENHF1252_20160826T172102.996Z-spect.png" class="img-fluid figure-img" data-lightbox="true" alt="Spectrogram of instrument noise at Cambridge Bay."></a></p>
+<figcaption>Spectrogram of instrument noise at Cambridge Bay.</figcaption>
+</figure>
 </div>
+</div>
+<audio class="listen-audio" controls="" preload="metadata">
+  <source src="../sounds/ICLISTENHF1252_20160826T172102.996Z_20160826T172602.996Z.flac" type="audio/flac">
+</audio>
 </div>
 </div>
 </div>
