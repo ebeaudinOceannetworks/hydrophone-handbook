@@ -1,6 +1,7 @@
 pandas
 matplotlib
 geopandas
+folium
 pyogrio
 jupyter
 onc
