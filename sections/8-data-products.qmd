@@ -11,13 +11,14 @@ Hydrophone data files are generated in 5-minute intervals, categorized as either
 
 | Data Type | Product Name | Code / ID | Extensions |
 | :--- | :--- | :---: | :---: |
-| **Raw** | Audio Data | `AD` (7) | `.flac`, `.wav`, `.mp3` |
-| **Raw** | Array Data *(Retired)* | `HARD` (38) | `.hyd` |
-| **Raw** | Acceleration Data | `HACC` (128) | `.acc` |
-| **Raw** | Auxiliary Log File | `LF` (4) | `.txt` |
-| **Derived** | Hydrophone Spectral Data | `HSD` (45, 146) | `.fft`, `.mat`, `.png`, `.pdf`, `.oct` |
-| **Derived** | Hydrophone Spectral Data 2 | `HSD2` (204) | `.mat`, `.png`, `.pdf` |
-| **Derived** | Spectral Probability Density | `HSPD` (51) | `.mat`, `.png`, `.pdf` |
+| **Raw** | Audio Data | `AD / 7` | `.flac` `.wav` `.mp3` |
+| **Raw** | Array Data *(Retired)* | `HARD / 38` | `.hyd` |
+| **Raw** | Acceleration Data | `HACC / 128` | `.acc` |
+| **Raw** | Ancillary Log File | `LF / 4` | `.txt` |
+| **Raw** | Time Series Scalar Data | `TSSD / 1` | `.csv` `.json` `.mat` `.txt` |
+| **Derived** | Hydrophone Spectral Data | `HSD / 45, 146` | `.fft` `.mat` `.png` `.pdf` `.oct` |
+| **Derived** | Hydrophone Spectral Data 2 | `HSD2 / 204` | `.mat` `.png` `.pdf` |
+| **Derived** | Spectral Probability Density | `HSPD / 51` | `.mat` `.png` `.pdf` |
 
 : Hydrophone Data Products {tbl-colwidths="[15,40,15,30]"}
 
@@ -35,8 +36,8 @@ Hydrophone data files are generated in 5-minute intervals, categorized as either
 
 ```{=html}
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> AD / 7</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .flac, .wav, .mp3</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>AD / 7</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.flac</code><code>.wav</code><code>.mp3</code></span></span>
 </div>
 ```
 
@@ -81,8 +82,8 @@ Why FLAC is the preferred format?
 
 ```{=html}
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD / 45, 146</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .fft, .png, .pdf </span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>HSD / 45, 146</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.mat</code><code>.fft</code><code>.png</code><code>.pdf</code></span></span>
 </div>
 ```
 
@@ -176,8 +177,8 @@ ONC spectrogram settings in the example above:
 
 ```{=html}
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD2 / 204</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .png, .pdf</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>HSD2 / 204</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.mat</code><code>.png</code><code>.pdf</code></span></span>
 </div>
 ```
 
@@ -247,8 +248,8 @@ Downsampling for the one-minute MAT files and for the spectrogram pixels is a bl
 
 ```{=html}
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSPD / 51</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .png, .pdf, .mat</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>HSPD / 51</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.png</code><code>.pdf</code><code>.mat</code></span></span>
 </div>
 ```
 
@@ -292,28 +293,30 @@ The color on the plot represents a probability density (occupancy frequency), or
 
 :::
 
-# Auxiliary data
+# Ancillary data (*Ocean Sonics only*)
 
 ::: {.dp-panel}
 
 ::: {.dp-split}
 
 ::: {.dp-visual}
-![Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature.](../images/aux-data.png){lightbox=true}
+![Example of ancillary data for an Ocean Sonics icListen HF: board voltage, internal humidity, and internal temperature.](../images/aux-data.png){lightbox=true}
 :::
 
 ::: {.dp-copy}
 
 ```{=html}
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> LF / 4 · HACC / 128</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .txt, .acc</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>LF / 4</code><code>TSSD / 1</code><code>HACC / 128</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.txt</code><code>.csv</code><code>.json</code><code>.mat</code><code>.acc</code></span></span>
 </div>
 ```
 
-Auxiliary (ancillary) files are about the instrument, not the soundscape: internal humidity, temperature, battery, voltage, and related engineering scalars. Use them to diagnose leakage (humidity above about 50%), overheating, or a dying battery. Magnetic flux and acceleration can also indicate orientation and strong currents.
+Ancillary data are about the instrument itself, not the sound recordings. For example: internal humidity, temperature, battery, voltage.
+They can be useful to diagnose water leaks (high humidity), overheating, or a dying battery.
+Changes in magnetic flux and acceleration can also indicate orientation and strong currents.
 
-These data are only available for Ocean Sonics hydrophones.
+Only available for Ocean Sonics hydrophones.
 
 :::
 
@@ -322,7 +325,7 @@ These data are only available for Ocean Sonics hydrophones.
 ::: {.callout-note collapse="true"}
 ## Expand for API options
 
-LF (`.txt`) and HACC (`.acc`) have no extra `dpo_*` options. There is no single `AUX` code: order **LF** for the engineering log and **HACC** for acceleration. Calibration files use **HCF**.
+LF (`.txt`) and HACC (`.acc`) have no extra `dpo_*` options. TSSD (`.csv`, `.json`, `.mat`, `.txt`) accepts `dpo_dataGaps`, `dpo_qualityControl`, `dpo_resample`, and `dpo_sensorstoinclude`. Order **LF** for the engineering log, **TSSD** for the scalar time series, and **HACC** for acceleration. Calibration files use **HCF**.
 :::
 
 :::
@@ -343,6 +346,7 @@ LF (`.txt`) and HACC (`.acc`) have no extra `dpo_*` options. There is no single 
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146">Data Product: Spectrogram For Hydrophone Viewer (146)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128">Data Product: Hydrophone Acceleration Data (128)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758026/4">Data Product: Log File (4)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/display/DP/1">Data Product: Time Series Scalar Data (1)</a></li>
   </ul>
 </div>
 ```

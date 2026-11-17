@@ -10,7 +10,7 @@
       { value: "fft", label: "fft — Ocean Sonics spectral" },
       { value: "mat", label: "mat — calibrated spectral data (1-min averaged)" },
       { value: "png", label: "png — spectrogram" },
-      { value: "txt", label: "txt — logs / auxiliary data" }
+      { value: "txt", label: "txt — logs / ancillary data" }
     ],
     jasco: [
       { value: "flac", label: "flac — lossless audio" },
@@ -18,17 +18,17 @@
       { value: "oct", label: "oct — 1/3-octave spectral" },
       { value: "mat", label: "mat — calibrated spectral data (1-min averaged)" },
       { value: "png", label: "png — spectrogram" },
-      { value: "txt", label: "txt — logs / auxiliary data" }
+      { value: "txt", label: "txt — logs / ancillary data" }
     ],
     ios: [
       { value: "hyd", label: "hyd — array raw (retired IOS)" },
       { value: "wav", label: "wav — uncompressed audio" },
-      { value: "txt", label: "txt — logs / auxiliary data" }
+      { value: "txt", label: "txt — logs / ancillary data" }
     ],
     other: [
       { value: "flac", label: "flac — lossless audio" },
       { value: "wav", label: "wav — uncompressed audio" },
-      { value: "txt", label: "txt — logs / auxiliary data" }
+      { value: "txt", label: "txt — logs / ancillary data" }
     ]
   };
 
@@ -219,7 +219,7 @@
     HSD: "HSD — Hydrophone Spectral Data",
     HSD2: "HSD2 — Hydrophone Spectral Data 2.0",
     HSPD: "HSPD — Spectral Probability Density",
-    LF: "LF — log / auxiliary file",
+    LF: "LF — log / ancillary file",
     HCF: "HCF — calibration files",
     HACC: "HACC — acceleration (ancillary)",
     HARD: "HARD — array raw (retired IOS)",

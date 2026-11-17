@@ -36,12 +36,12 @@ Before a hydrophone is deployed in the water, the following legal and technical 
 * **Hardware**: We primarily use **Ocean Sonics** (HF/AF) and **GeoSpectrum** (from JASCO distributor) instruments, deployed as single units or four-element arrays.
 * **Calibration (HydroCal)**: Instruments undergo rigorous pre-deployment and post-recovery calibration to ensure accuracy. If sensors drift, they are returned to the manufacturer.
 * **Validation**: Hydrophones undergo validation by engineers to verify that recorded frequencies and amplitudes are accurate before the instrument is deployed.
-During testing, instruments are placed in a test tank to collect ~2 minutes of auxiliary, .fft, and .wav data. The resulting spectrograms are then evaluated against expected baseline values.
+During testing, instruments are placed in a test tank to collect ~2 minutes of ancillary, .fft, and .wav data. The resulting spectrograms are then evaluated against expected baseline values.
 For hydrophone arrays, all individual sensors are compared with one another to ensure clock synchronization, and that they record the same sound levels.
 * **Data Diversion**: Hydrophones are "Tier 1" instruments, meaning that the data streams are subject to diversion by the Royal Canadian Navy and US Navy before reaching the ONC archive.
 * **Data Transmission**:
 	* Acoustic Data: Transferred as raw audio (.wav or .flac).
-	* Ancillary Data: Instrument "health" (temperature, humidity, clock drift) is transmitted without diversion to monitor device's status (only for Ocean Sonics). Also referred to as auxiliary data. 
+	* Ancillary Data: Instrument "health" (temperature, humidity, clock drift) is transmitted without diversion to monitor device's status (only for Ocean Sonics). 
 * **Data Processing**: Performed to generate Hydrophone Spectral Data (HSD) in MAT format, and Hydrophone Spectral Density Plots (HSPD) from the raw audio files, and archived.
 * **Data Availability**: Data is made readily available (within a few minutes) to end-users through Oceans 3.0.
 
@@ -53,7 +53,7 @@ Once a hydrophone is deployed and recording data, the commissioning of the devic
 This process is designed to catch technical issues early and ensures the data is "science-ready".
 
 * **Immediate Post-Deployment**: Immediately after deployment, we confirm the instrument is able to record and send data to ONC archive. A public annotation is created in Oceans 3.0 to mark the start of the data streaming.
-* **1-2 Months Post-Deployment**: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4-element arrays), auxiliary data.
+* **1-2 Months Post-Deployment**: A detailed analysis of data stream is performed, and several elements are analysed including the presence of noise, saturation, array consistency (for 4-element arrays), ancillary data.
 
 Commissioning is complete once the data is verified, accessible via all data access streams, and that data products generate successfully.
 

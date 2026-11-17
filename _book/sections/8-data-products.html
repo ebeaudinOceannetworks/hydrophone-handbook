@@ -316,7 +316,7 @@ window.Quarto = {
   <li><a href="#hydrophone-spectral-data" id="toc-hydrophone-spectral-data" class="nav-link" data-scroll-target="#hydrophone-spectral-data">Hydrophone spectral data</a></li>
   <li><a href="#hydrophone-spectral-data-2" id="toc-hydrophone-spectral-data-2" class="nav-link" data-scroll-target="#hydrophone-spectral-data-2">Hydrophone spectral data 2</a></li>
   <li><a href="#spectral-probability-density" id="toc-spectral-probability-density" class="nav-link" data-scroll-target="#spectral-probability-density">Spectral probability density</a></li>
-  <li><a href="#auxiliary-data" id="toc-auxiliary-data" class="nav-link" data-scroll-target="#auxiliary-data">Auxiliary data</a></li>
+  <li><a href="#ancillary-data-ocean-sonics-only" id="toc-ancillary-data-ocean-sonics-only" class="nav-link" data-scroll-target="#ancillary-data-ocean-sonics-only">Ancillary data (<em>Ocean Sonics only</em>)</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
@@ -367,44 +367,50 @@ window.Quarto = {
 <tr class="odd">
 <td style="text-align: left;"><strong>Raw</strong></td>
 <td style="text-align: left;">Audio Data</td>
-<td style="text-align: center;"><code>AD</code> (7)</td>
-<td style="text-align: center;"><code>.flac</code>, <code>.wav</code>, <code>.mp3</code></td>
+<td style="text-align: center;"><code>AD / 7</code></td>
+<td style="text-align: center;"><code>.flac</code> <code>.wav</code> <code>.mp3</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Raw</strong></td>
 <td style="text-align: left;">Array Data <em>(Retired)</em></td>
-<td style="text-align: center;"><code>HARD</code> (38)</td>
+<td style="text-align: center;"><code>HARD / 38</code></td>
 <td style="text-align: center;"><code>.hyd</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>Raw</strong></td>
 <td style="text-align: left;">Acceleration Data</td>
-<td style="text-align: center;"><code>HACC</code> (128)</td>
+<td style="text-align: center;"><code>HACC / 128</code></td>
 <td style="text-align: center;"><code>.acc</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Raw</strong></td>
-<td style="text-align: left;">Auxiliary Log File</td>
-<td style="text-align: center;"><code>LF</code> (4)</td>
+<td style="text-align: left;">Ancillary Log File</td>
+<td style="text-align: center;"><code>LF / 4</code></td>
 <td style="text-align: center;"><code>.txt</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Derived</strong></td>
-<td style="text-align: left;">Hydrophone Spectral Data</td>
-<td style="text-align: center;"><code>HSD</code> (45, 146)</td>
-<td style="text-align: center;"><code>.fft</code>, <code>.mat</code>, <code>.png</code>, <code>.pdf</code>, <code>.oct</code></td>
+<td style="text-align: left;"><strong>Raw</strong></td>
+<td style="text-align: left;">Time Series Scalar Data</td>
+<td style="text-align: center;"><code>TSSD / 1</code></td>
+<td style="text-align: center;"><code>.csv</code> <code>.json</code> <code>.mat</code> <code>.txt</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>Derived</strong></td>
-<td style="text-align: left;">Hydrophone Spectral Data 2</td>
-<td style="text-align: center;"><code>HSD2</code> (204)</td>
-<td style="text-align: center;"><code>.mat</code>, <code>.png</code>, <code>.pdf</code></td>
+<td style="text-align: left;">Hydrophone Spectral Data</td>
+<td style="text-align: center;"><code>HSD / 45, 146</code></td>
+<td style="text-align: center;"><code>.fft</code> <code>.mat</code> <code>.png</code> <code>.pdf</code> <code>.oct</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>Derived</strong></td>
+<td style="text-align: left;">Hydrophone Spectral Data 2</td>
+<td style="text-align: center;"><code>HSD2 / 204</code></td>
+<td style="text-align: center;"><code>.mat</code> <code>.png</code> <code>.pdf</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Derived</strong></td>
 <td style="text-align: left;">Spectral Probability Density</td>
-<td style="text-align: center;"><code>HSPD</code> (51)</td>
-<td style="text-align: center;"><code>.mat</code>, <code>.png</code>, <code>.pdf</code></td>
+<td style="text-align: center;"><code>HSPD / 51</code></td>
+<td style="text-align: center;"><code>.mat</code> <code>.png</code> <code>.pdf</code></td>
 </tr>
 </tbody>
 </table>
@@ -423,8 +429,8 @@ window.Quarto = {
 </div>
 <div class="dp-copy">
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> AD / 7</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .flac, .wav, .mp3</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>AD / 7</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.flac</code><code>.wav</code><code>.mp3</code></span></span>
 </div>
 <p>Audio data is the raw recording of the acoustic environment.</p>
 <p>Older files were stored as <code>.wav</code>, but ONC now archives lossless <code>.flac</code>. The <code>.mp3</code> format is smaller but lossy, and is not recommended for scientific work. Retired IOS arrays used HARD / 38 (<code>.hyd</code>) instead of AD.</p>
@@ -474,8 +480,8 @@ window.Quarto = {
 </div>
 <div class="dp-copy">
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD / 45, 146</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .fft, .png, .pdf </span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>HSD / 45, 146</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.mat</code><code>.fft</code><code>.png</code><code>.pdf</code></span></span>
 </div>
 <p>Spectral products turn audio files into frequency vs time data. To access the data, one can go to the Hydrophone Viewer where each 5-min audio file was turned into a spectrogram (.png). This data product is a practical way for quick-checks without processing terabytes of raw audio. It comes in several formats:</p>
 <p><strong><code>.mat</code> — processed spectral data.</strong> MATLAB data format of 1-minute averaged calibrated spectral data with the device-specific sensitivity curve. Contains a <code>SpectData</code> structure with frequency bins (Hz) and power spectral density.</p>
@@ -496,20 +502,19 @@ window.Quarto = {
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>ONC spectrograms (Hydrophone Viewer and the <code>.png</code> / <code>.pdf</code> HSD product) are usually <strong>5-minute</strong> files. They use the same axes every time:</p>
+<p>ONC spectrograms (found in the <a href="https://data.oceannetworks.ca/SearchHydrophoneData">Hydrophone Viewer</a>) show 5 minutes of sound recorded by our hydrophones. Every plot reads the same way:</p>
 <ul>
-<li><strong>x-axis</strong>: time</li>
-<li><strong>y-axis</strong>: frequency (Hz)</li>
-<li><strong>colour</strong>: sound level in <span class="math inline">\(\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}\)</span></li>
+<li><strong>Left to right:</strong> Time (in minutes)</li>
+<li><strong>Bottom to top:</strong> Pitch / Frequency (Hz)</li>
+<li><strong>Color:</strong> Loudness / Sound level (dB)</li>
 </ul>
-<p>How to read features on the plot:</p>
+<p>How to recognize sound patterns by simply looking at a spectrogram:</p>
 <ul>
-<li>A <strong>thin horizontal line</strong> is a tonal — often a nearby instrument, a propeller, or electrical noise.</li>
-<li>A <strong>vertical smear</strong> or filled band is broadband — ships, earthquakes, weather, or a passing animal.</li>
-<li>A <strong>flat-topped</strong> burst or hard colour ceiling is often clipping or saturation.</li>
-<li><strong>Holes or fading</strong> can be multipath or a quiet moment, not automatically a failed hydrophone.</li>
+<li><strong>Horizontal lines:</strong> Steady tones, usually from nearby instruments, ship propellers, or electrical interference.</li>
+<li><strong>Vertical smears of a few seconds:</strong> Noise that spans many pitches at once, like passing ships, weather, earthquakes, or nearby animals.</li>
+<li><strong>Hard, flat ceilings:</strong> clipping, meaning that the recorded sound was too loud for the sensor.</li>
 </ul>
-<p>If the filename includes <strong>LPF</strong> or <strong>HPF</strong>, the band is incomplete after naval screening. See <a href="../sections/10-data-diversion.html">Data Diversion</a>.</p>
+<p><em>Heads up: If you see LPF or HPF in the filename, part of the frequency band was filtered out (see <a href="../sections/10-data-diversion.html">Data Diversion</a>).</em></p>
 </div>
 </div>
 </div>
@@ -591,8 +596,8 @@ window.Quarto = {
 </div>
 <div class="dp-copy">
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSD2 / 204</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .mat, .png, .pdf</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>HSD2 / 204</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.mat</code><code>.png</code><code>.pdf</code></span></span>
 </div>
 <p>Hydrophone Spectral Data 2.0 is the calibrated spectral product. Oceans 3.0 builds each file on request from the source audio, or from FFT data when the audio is missing. The processing follows <a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12330">Merchant et al.&nbsp;(2015)</a> and <a href="https://www.iso.org/standard/82844.html">ISO 7605:2025</a>, and it is the product to use when the levels need to be absolute power spectral density.</p>
 <table class="caption-top table">
@@ -698,8 +703,8 @@ window.Quarto = {
 </div>
 <div class="dp-copy">
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> HSPD / 51</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .png, .pdf, .mat</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>HSPD / 51</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.png</code><code>.pdf</code><code>.mat</code></span></span>
 </div>
 <p>The Spectral Probability Density is a statistical view of long-term ambient noise, originally proposed by <a href="https://pubs.aip.org/asa/jasa/article/133/4/EL262/917238/Spectral-probability-density-as-a-tool-for-ambient">Merchant et al.&nbsp;(2013)</a>. It counts how often a given dB level occurs in each frequency bin. Use it to see the persistent noise floor rather than a single 5-minute snapshot.</p>
 </div>
@@ -754,25 +759,25 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 </div>
 </section>
-<section id="auxiliary-data" class="level1">
-<h1>Auxiliary data</h1>
+<section id="ancillary-data-ocean-sonics-only" class="level1">
+<h1>Ancillary data (<em>Ocean Sonics only</em>)</h1>
 <div class="dp-panel">
 <div class="dp-split">
 <div class="dp-visual">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../images/aux-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."><img src="../images/aux-data.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature."></a></p>
-<figcaption>Example of auxiliary data for an Ocean Sonics icListen HF. Top to bottom: board voltage, internal humidity, and internal temperature.</figcaption>
+<p><a href="../images/aux-data.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Example of ancillary data for an Ocean Sonics icListen HF: board voltage, internal humidity, and internal temperature."><img src="../images/aux-data.png" class="img-fluid figure-img" data-lightbox="true" alt="Example of ancillary data for an Ocean Sonics icListen HF: board voltage, internal humidity, and internal temperature."></a></p>
+<figcaption>Example of ancillary data for an Ocean Sonics icListen HF: board voltage, internal humidity, and internal temperature.</figcaption>
 </figure>
 </div>
 </div>
 <div class="dp-copy">
 <div class="dp-meta">
-  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span> LF / 4 · HACC / 128</span>
-  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span> .txt, .acc</span>
+  <span class="dp-pill"><span class="dp-pill-k">Data Product Code</span><span class="dp-pill-v"><code>LF / 4</code><code>TSSD / 1</code><code>HACC / 128</code></span></span>
+  <span class="dp-pill"><span class="dp-pill-k">Available Formats</span><span class="dp-pill-v"><code>.txt</code><code>.csv</code><code>.json</code><code>.mat</code><code>.acc</code></span></span>
 </div>
-<p>Auxiliary (ancillary) files are about the instrument, not the soundscape: internal humidity, temperature, battery, voltage, and related engineering scalars. Use them to diagnose leakage (humidity above about 50%), overheating, or a dying battery. Magnetic flux and acceleration can also indicate orientation and strong currents.</p>
-<p>These data are only available for Ocean Sonics hydrophones.</p>
+<p>Ancillary data are about the instrument itself, not the sound recordings. For example: internal humidity, temperature, battery, voltage. They can be useful to diagnose water leaks (high humidity), overheating, or a dying battery. Changes in magnetic flux and acceleration can also indicate orientation and strong currents.</p>
+<p>Only available for Ocean Sonics hydrophones.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -787,7 +792,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>LF (<code>.txt</code>) and HACC (<code>.acc</code>) have no extra <code>dpo_*</code> options. There is no single <code>AUX</code> code: order <strong>LF</strong> for the engineering log and <strong>HACC</strong> for acceleration. Calibration files use <strong>HCF</strong>.</p>
+<p>LF (<code>.txt</code>) and HACC (<code>.acc</code>) have no extra <code>dpo_*</code> options. TSSD (<code>.csv</code>, <code>.json</code>, <code>.mat</code>, <code>.txt</code>) accepts <code>dpo_dataGaps</code>, <code>dpo_qualityControl</code>, <code>dpo_resample</code>, and <code>dpo_sensorstoinclude</code>. Order <strong>LF</strong> for the engineering log, <strong>TSSD</strong> for the scalar time series, and <strong>HACC</strong> for acceleration. Calibration files use <strong>HCF</strong>.</p>
 </div>
 </div>
 </div>
@@ -808,6 +813,7 @@ G_x(f) = \lim_{\Delta f \rightarrow 0} \frac{\Psi^2_x(f,\Delta f)}{\Delta f} = \
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414511/146">Data Product: Spectrogram For Hydrophone Viewer (146)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/78414074/128">Data Product: Hydrophone Acceleration Data (128)</a></li>
     <li><a href="https://wiki.oceannetworks.ca/spaces/DP/pages/21758026/4">Data Product: Log File (4)</a></li>
+    <li><a href="https://wiki.oceannetworks.ca/display/DP/1">Data Product: Time Series Scalar Data (1)</a></li>
   </ul>
 </div>
 
