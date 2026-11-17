@@ -105,20 +105,19 @@ These files are precomputed, so they can be downloaded directly, including long 
 ::: {.callout-note collapse="true"}
 ## Expand to learn how to read a spectrogram
 
-ONC spectrograms (Hydrophone Viewer and the `.png` / `.pdf` HSD product) are usually **5-minute** files. They use the same axes every time:
+ONC spectrograms (found in the [Hydrophone Viewer](https://data.oceannetworks.ca/SearchHydrophoneData)) show 5 minutes of sound recorded by our hydrophones. Every plot reads the same way:
 
-* **x-axis**: time
-* **y-axis**: frequency (Hz)
-* **colour**: sound level in $\text{dB re } 1~\mu\mathrm{Pa}^2/\mathrm{Hz}$
+* **Left to right:** Time (in minutes)
+* **Bottom to top:** Pitch / Frequency (Hz)
+* **Color:** Loudness / Sound level (dB)
 
-How to read features on the plot:
+How to recognize sound patterns by simply looking at a spectrogram:
 
-* A **thin horizontal line** is a tonal — often a nearby instrument, a propeller, or electrical noise.
-* A **vertical smear** or filled band is broadband — ships, earthquakes, weather, or a passing animal.
-* A **flat-topped** burst or hard colour ceiling is often clipping or saturation.
-* **Holes or fading** can be multipath or a quiet moment, not automatically a failed hydrophone.
+* **Horizontal lines:** Steady tones, usually from nearby instruments, ship propellers, or electrical interference.
+* **Vertical smears of a few seconds:** Noise that spans many pitches at once, like passing ships, weather, earthquakes, or nearby animals.
+* **Hard, flat ceilings:** clipping, meaning that the recorded sound was too loud for the sensor.
 
-If the filename includes **LPF** or **HPF**, the band is incomplete after naval screening. See [Data Diversion](10-data-diversion.qmd).
+*Heads up: If you see LPF or HPF in the filename, part of the frequency band was filtered out (see [Data Diversion](10-data-diversion.qmd)).*
 :::
 
 ::: {.callout-note collapse="true"}

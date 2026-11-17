@@ -1592,28 +1592,60 @@ section.listen-section > h3::before {
 }
 
 .sound-card {
-  padding: 0;
+  padding: 0.85rem 0.95rem 0.8rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.sound-card-visual {
-  margin: 0;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-  background: transparent;
-  border-radius: 0;
+.sound-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0.1rem 0.15rem 0;
 }
 
+.sound-card-title {
+  margin: 0;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: #fff;
+}
+
+.sound-card-caption {
+  margin: 0.18rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.sound-card-visual {
+  position: relative;
+  margin: 0.7rem 0 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #041018;
+  border-radius: 8px;
+}
+
+.sound-card-visual p,
+.sound-card-visual a,
 .sound-card-visual figure,
 #quarto-document-content .sound-card-visual .quarto-figure {
+  position: absolute;
+  inset: 0;
   width: 100% !important;
   max-width: 100% !important;
-  height: 100%;
+  height: 100% !important;
   margin: 0 !important;
   overflow: hidden;
+  display: block;
 }
 
 .sound-card-visual figcaption {
@@ -1623,41 +1655,18 @@ section.listen-section > h3::before {
 .sound-card-visual img,
 #quarto-document-content .sound-card-visual img,
 #quarto-document-content .sound-card-visual .quarto-figure img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100% !important;
   height: 100% !important;
   max-width: none !important;
   object-fit: cover;
-  object-position: center 55%;
+  object-position: 41% 60%;
   border-radius: 0;
   cursor: zoom-in;
-  transform: none;
-}
-
-.sound-card-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 1rem 1.15rem 1.15rem;
-}
-
-.sound-card-title {
-  margin: 0 0 0.2rem 0;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  color: #fff;
-}
-
-.sound-card-caption {
-  margin: 0 0 0.65rem 0;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  transform: scale(1.36);
+  transform-origin: 41% 60%;
 }
 
 .sound-card-note {
@@ -1680,7 +1689,8 @@ section.listen-section > h3::before {
 }
 
 .sound-card .listen-audio {
-  margin-top: auto;
+  margin: 0.7rem 0.1rem 0.15rem;
+  width: calc(100% - 0.2rem);
   color-scheme: dark;
 }
 
