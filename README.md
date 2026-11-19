@@ -4,4 +4,4 @@ Ocean Networks Canada guide to the hydrophones: how the instruments work, how ar
 
 ## Notes
 
-Draft chapters live in `under_construction/` and are not in the table of contents. Calibration is still in progress.
+Calibration is still in progress.

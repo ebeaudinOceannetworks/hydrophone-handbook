@@ -167,7 +167,7 @@ def category_card(category, count):
 grouped = df.groupby(['location', 'lat', 'lon'])
 
 for (loc_name, lat, lon), group in grouped:
-    counts = group.groupby('Use case category')['Use case ID'].nunique()
+    counts = group.groupby('Use case category').size()
     ordered = [cat for cat in categories if counts.get(cat, 0)]
     ordered += [cat for cat in counts.index if cat not in categories and counts.get(cat, 0)]
     if not ordered:

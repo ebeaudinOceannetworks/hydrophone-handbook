@@ -4,3 +4,8 @@
 .env
 .tmp-apitest
 .cursorignore
+__pycache__/
+*.pyc
+not-used/
+_book/
+_freeze/
